@@ -12,9 +12,17 @@ namespace SistemaGestorDeInformes
 {
     public partial class Form1 : Form
     {
+        Connection c = new Connection();
         public Form1()
         {
             InitializeComponent();
+         
+            c.connect();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
