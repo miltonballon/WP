@@ -15,7 +15,7 @@ namespace SistemaGestorDeInformes
         private OleDbConnection connection = new OleDbConnection();
         private OleDbCommand command; //para realizar consultas
         private OleDbDataAdapter da;    //para guardar los datos 
-     
+
         public Connection()
         {
             
@@ -25,8 +25,7 @@ namespace SistemaGestorDeInformes
             try
             {
                 connection.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Database/Database.accdb;
-                Persist Security Info=False;";
-                //MessageBox.Show(ruta);
+                Persist Security Info=False;";      
                 connection.Open();
                 MessageBox.Show("Conectado");
             }
