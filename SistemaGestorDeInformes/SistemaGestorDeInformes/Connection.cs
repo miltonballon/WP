@@ -28,6 +28,8 @@ namespace SistemaGestorDeInformes
                 Persist Security Info=False;";      
                 connection.Open();
                 MessageBox.Show("Conectado");
+
+
             }
             catch (Exception ex)
             {
