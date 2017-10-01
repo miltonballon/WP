@@ -52,10 +52,19 @@
     <Compile Include="InterfazPrincipal.Designer.cs">
       <DependentUpon>InterfazPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="InterfazRegistrarFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfazRegistrarFactura.Designer.cs">
+      <DependentUpon>InterfazRegistrarFactura.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="InterfazPrincipal.resx">
       <DependentUpon>InterfazPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfazRegistrarFactura.resx">
+      <DependentUpon>InterfazRegistrarFactura.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
