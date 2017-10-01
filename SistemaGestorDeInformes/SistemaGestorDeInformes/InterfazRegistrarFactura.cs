@@ -25,11 +25,6 @@ namespace SistemaGestorDeInformes
 
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void textBoxProveedor_TextChanged(object sender, EventArgs e)
         {
 
@@ -53,6 +48,14 @@ namespace SistemaGestorDeInformes
         private void textBoxNAutorizacion_TextChanged(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar);//Para impedir que se pongan letras y espacios en el N.AUTORIZACION
+        }
+
+        private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                row.Cells[dataGridView1.Columns["PrecioTotal"].Index].Value = (Convert.ToDouble(row.Cells[dataGridView1.Columns["PrecioUnitario"].Index].Value) * Convert.ToDouble(row.Cells[dataGridView1.Columns["Cantidad"].Index].Value));
+            }
         }
     }
 }
