@@ -16,6 +16,8 @@ namespace SistemaGestorDeInformes
         private OleDbCommand command; //para realizar consultas
         private OleDbDataAdapter da;    //para guardar los datos 
 
+
+
         public Connection()
         {
             
