@@ -24,5 +24,11 @@ namespace SistemaGestorDeInformes
         {
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            InterfazRegistrarFactura InterfazRegistrarFactura1=new InterfazRegistrarFactura();
+            InterfazRegistrarFactura1.Show();
+        }
     }
 }
