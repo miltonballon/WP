@@ -30,5 +30,12 @@ namespace SistemaGestorDeInformes
             InterfazRegistrarFactura InterfazRegistrarFactura1=new InterfazRegistrarFactura();
             InterfazRegistrarFactura1.Show();
         }
+
+        private void registrarFacturaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InterfazRegistrarFactura intRegFac = new InterfazRegistrarFactura();
+            intRegFac.Show();
+            this.Hide();
+        }
     }
 }

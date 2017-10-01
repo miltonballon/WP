@@ -79,5 +79,12 @@ namespace SistemaGestorDeInformes
                 e.Handled = true;
             }
         }
+
+        private void pantallaPrincipalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InterfazPrincipal principal = new InterfazPrincipal();
+            principal.Show();
+            this.Hide();
+        }
     }
 }
