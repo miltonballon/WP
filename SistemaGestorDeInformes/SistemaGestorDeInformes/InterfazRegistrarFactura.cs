@@ -54,7 +54,29 @@ namespace SistemaGestorDeInformes
         {
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
-                row.Cells[dataGridView1.Columns["PrecioTotal"].Index].Value = (Convert.ToDouble(row.Cells[dataGridView1.Columns["PrecioUnitario"].Index].Value) * Convert.ToDouble(row.Cells[dataGridView1.Columns["Cantidad"].Index].Value));
+                row.Cells[dataGridView1.Columns["PrecioTotal"].Index].Value = (Convert.ToDouble(row.Cells[dataGridView1.Columns["PrecioUnitario"].Index].Value) * Convert.ToDouble(row.Cells[dataGridView1.Columns["Cantidad"].Index].Value));//Caclula el Precio Total sumando la columna Cantidad con la columna Precio Unidad
+            }
+        }
+
+
+        private void dataGridView1_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            e.Control.KeyPress -= new KeyPressEventHandler(Column1_KeyPress);
+            if ((dataGridView1.CurrentCell.ColumnIndex == 2)||(dataGridView1.CurrentCell.ColumnIndex == 3)) //Busca las columnas Cantidad y Precio Unitario del dataGridView1
+            {
+                TextBox tb = e.Control as TextBox;
+                if (tb != null)
+                {
+                    tb.KeyPress += new KeyPressEventHandler(Column1_KeyPress);
+                }
+            }
+        }
+
+        private void Column1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && (e.KeyChar==','))//Para impedir que se pongan letras y espacios a excepcion del . 
+            {
+                e.Handled = true;
             }
         }
     }

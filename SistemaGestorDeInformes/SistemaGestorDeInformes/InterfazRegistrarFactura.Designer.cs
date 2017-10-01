@@ -30,8 +30,19 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.pantallaPrincipalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.facturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registrarFacturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verFacturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.informeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.generarInformeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verInformeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inventarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registrarEntradaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registrarSalidaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verInventarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.configuraciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.informeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.abrirTrimestreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.labelProveedor = new System.Windows.Forms.Label();
             this.labelNit = new System.Windows.Forms.Label();
             this.labelNFactura = new System.Windows.Forms.Label();
@@ -44,25 +55,14 @@
             this.textBoxNAutorizacion = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.buttonAceptar = new System.Windows.Forms.Button();
-            this.buttonAtrás = new System.Windows.Forms.Button();
-            this.labelInformaciónBásica = new System.Windows.Forms.Label();
-            this.facturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.registrarFacturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.verFacturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.abrirTrimestreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.registrarEntradaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.registrarSalidaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.verInventarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.informeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.informeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.generarInformeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.verInformeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Unidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PrecioUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PrecioTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buttonAceptar = new System.Windows.Forms.Button();
+            this.buttonAtrás = new System.Windows.Forms.Button();
+            this.labelInformaciónBásica = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -88,6 +88,48 @@
             this.pantallaPrincipalToolStripMenuItem.Size = new System.Drawing.Size(110, 20);
             this.pantallaPrincipalToolStripMenuItem.Text = "Pantalla Principal";
             // 
+            // facturasToolStripMenuItem
+            // 
+            this.facturasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.registrarFacturaToolStripMenuItem,
+            this.verFacturasToolStripMenuItem});
+            this.facturasToolStripMenuItem.Name = "facturasToolStripMenuItem";
+            this.facturasToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
+            this.facturasToolStripMenuItem.Text = "Facturas";
+            // 
+            // registrarFacturaToolStripMenuItem
+            // 
+            this.registrarFacturaToolStripMenuItem.Name = "registrarFacturaToolStripMenuItem";
+            this.registrarFacturaToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.registrarFacturaToolStripMenuItem.Text = "Registrar Factura";
+            // 
+            // verFacturasToolStripMenuItem
+            // 
+            this.verFacturasToolStripMenuItem.Name = "verFacturasToolStripMenuItem";
+            this.verFacturasToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.verFacturasToolStripMenuItem.Text = "Ver  Facturas";
+            // 
+            // informeToolStripMenuItem1
+            // 
+            this.informeToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.generarInformeToolStripMenuItem,
+            this.verInformeToolStripMenuItem});
+            this.informeToolStripMenuItem1.Name = "informeToolStripMenuItem1";
+            this.informeToolStripMenuItem1.Size = new System.Drawing.Size(61, 20);
+            this.informeToolStripMenuItem1.Text = "Informe";
+            // 
+            // generarInformeToolStripMenuItem
+            // 
+            this.generarInformeToolStripMenuItem.Name = "generarInformeToolStripMenuItem";
+            this.generarInformeToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.generarInformeToolStripMenuItem.Text = "Generar Informe";
+            // 
+            // verInformeToolStripMenuItem
+            // 
+            this.verInformeToolStripMenuItem.Name = "verInformeToolStripMenuItem";
+            this.verInformeToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.verInformeToolStripMenuItem.Text = "Ver Informe";
+            // 
             // inventarioToolStripMenuItem
             // 
             this.inventarioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -98,6 +140,24 @@
             this.inventarioToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
             this.inventarioToolStripMenuItem.Text = "Inventario";
             // 
+            // registrarEntradaToolStripMenuItem
+            // 
+            this.registrarEntradaToolStripMenuItem.Name = "registrarEntradaToolStripMenuItem";
+            this.registrarEntradaToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.registrarEntradaToolStripMenuItem.Text = "Registrar Entrada";
+            // 
+            // registrarSalidaToolStripMenuItem
+            // 
+            this.registrarSalidaToolStripMenuItem.Name = "registrarSalidaToolStripMenuItem";
+            this.registrarSalidaToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.registrarSalidaToolStripMenuItem.Text = "Registrar Salida";
+            // 
+            // verInventarioToolStripMenuItem
+            // 
+            this.verInventarioToolStripMenuItem.Name = "verInventarioToolStripMenuItem";
+            this.verInventarioToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.verInventarioToolStripMenuItem.Text = "Ver Inventario";
+            // 
             // configuraciónToolStripMenuItem
             // 
             this.configuraciónToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -105,6 +165,18 @@
             this.configuraciónToolStripMenuItem.Name = "configuraciónToolStripMenuItem";
             this.configuraciónToolStripMenuItem.Size = new System.Drawing.Size(95, 20);
             this.configuraciónToolStripMenuItem.Text = "Configuración";
+            // 
+            // informeToolStripMenuItem
+            // 
+            this.informeToolStripMenuItem.Name = "informeToolStripMenuItem";
+            this.informeToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.informeToolStripMenuItem.Text = "Informe";
+            // 
+            // abrirTrimestreToolStripMenuItem
+            // 
+            this.abrirTrimestreToolStripMenuItem.Name = "abrirTrimestreToolStripMenuItem";
+            this.abrirTrimestreToolStripMenuItem.Size = new System.Drawing.Size(97, 20);
+            this.abrirTrimestreToolStripMenuItem.Text = "Abrir Trimestre";
             // 
             // labelProveedor
             // 
@@ -210,6 +282,33 @@
             this.dataGridView1.Size = new System.Drawing.Size(541, 150);
             this.dataGridView1.TabIndex = 12;
             this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
+            this.dataGridView1.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataGridView1_EditingControlShowing);
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            // 
+            // Unidad
+            // 
+            this.Unidad.HeaderText = "Unidad";
+            this.Unidad.Name = "Unidad";
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            // 
+            // PrecioUnitario
+            // 
+            this.PrecioUnitario.HeaderText = "Precio Unitario";
+            this.PrecioUnitario.Name = "PrecioUnitario";
+            // 
+            // PrecioTotal
+            // 
+            this.PrecioTotal.HeaderText = "Precio Total";
+            this.PrecioTotal.Name = "PrecioTotal";
+            this.PrecioTotal.ReadOnly = true;
             // 
             // buttonAceptar
             // 
@@ -237,104 +336,6 @@
             this.labelInformaciónBásica.Size = new System.Drawing.Size(97, 13);
             this.labelInformaciónBásica.TabIndex = 15;
             this.labelInformaciónBásica.Text = "Información Básica";
-            // 
-            // facturasToolStripMenuItem
-            // 
-            this.facturasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.registrarFacturaToolStripMenuItem,
-            this.verFacturasToolStripMenuItem});
-            this.facturasToolStripMenuItem.Name = "facturasToolStripMenuItem";
-            this.facturasToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
-            this.facturasToolStripMenuItem.Text = "Facturas";
-            // 
-            // registrarFacturaToolStripMenuItem
-            // 
-            this.registrarFacturaToolStripMenuItem.Name = "registrarFacturaToolStripMenuItem";
-            this.registrarFacturaToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
-            this.registrarFacturaToolStripMenuItem.Text = "Registrar Factura";
-            // 
-            // verFacturasToolStripMenuItem
-            // 
-            this.verFacturasToolStripMenuItem.Name = "verFacturasToolStripMenuItem";
-            this.verFacturasToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
-            this.verFacturasToolStripMenuItem.Text = "Ver  Facturas";
-            // 
-            // abrirTrimestreToolStripMenuItem
-            // 
-            this.abrirTrimestreToolStripMenuItem.Name = "abrirTrimestreToolStripMenuItem";
-            this.abrirTrimestreToolStripMenuItem.Size = new System.Drawing.Size(97, 20);
-            this.abrirTrimestreToolStripMenuItem.Text = "Abrir Trimestre";
-            // 
-            // registrarEntradaToolStripMenuItem
-            // 
-            this.registrarEntradaToolStripMenuItem.Name = "registrarEntradaToolStripMenuItem";
-            this.registrarEntradaToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
-            this.registrarEntradaToolStripMenuItem.Text = "Registrar Entrada";
-            // 
-            // registrarSalidaToolStripMenuItem
-            // 
-            this.registrarSalidaToolStripMenuItem.Name = "registrarSalidaToolStripMenuItem";
-            this.registrarSalidaToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
-            this.registrarSalidaToolStripMenuItem.Text = "Registrar Salida";
-            // 
-            // verInventarioToolStripMenuItem
-            // 
-            this.verInventarioToolStripMenuItem.Name = "verInventarioToolStripMenuItem";
-            this.verInventarioToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
-            this.verInventarioToolStripMenuItem.Text = "Ver Inventario";
-            // 
-            // informeToolStripMenuItem
-            // 
-            this.informeToolStripMenuItem.Name = "informeToolStripMenuItem";
-            this.informeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.informeToolStripMenuItem.Text = "Informe";
-            // 
-            // informeToolStripMenuItem1
-            // 
-            this.informeToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.generarInformeToolStripMenuItem,
-            this.verInformeToolStripMenuItem});
-            this.informeToolStripMenuItem1.Name = "informeToolStripMenuItem1";
-            this.informeToolStripMenuItem1.Size = new System.Drawing.Size(61, 20);
-            this.informeToolStripMenuItem1.Text = "Informe";
-            // 
-            // generarInformeToolStripMenuItem
-            // 
-            this.generarInformeToolStripMenuItem.Name = "generarInformeToolStripMenuItem";
-            this.generarInformeToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.generarInformeToolStripMenuItem.Text = "Generar Informe";
-            // 
-            // verInformeToolStripMenuItem
-            // 
-            this.verInformeToolStripMenuItem.Name = "verInformeToolStripMenuItem";
-            this.verInformeToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.verInformeToolStripMenuItem.Text = "Ver Informe";
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            // 
-            // Unidad
-            // 
-            this.Unidad.HeaderText = "Unidad";
-            this.Unidad.Name = "Unidad";
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.Name = "Cantidad";
-            // 
-            // PrecioUnitario
-            // 
-            this.PrecioUnitario.HeaderText = "Precio Unitario";
-            this.PrecioUnitario.Name = "PrecioUnitario";
-            // 
-            // PrecioTotal
-            // 
-            this.PrecioTotal.HeaderText = "Precio Total";
-            this.PrecioTotal.Name = "PrecioTotal";
-            this.PrecioTotal.ReadOnly = true;
             // 
             // InterfazRegistrarFactura
             // 
