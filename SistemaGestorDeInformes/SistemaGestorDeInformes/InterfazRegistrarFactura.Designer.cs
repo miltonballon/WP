@@ -328,6 +328,7 @@
             this.buttonAtrás.TabIndex = 14;
             this.buttonAtrás.Text = "Atrás";
             this.buttonAtrás.UseVisualStyleBackColor = true;
+            this.buttonAtrás.Click += new System.EventHandler(this.buttonAtrás_Click_1);
             // 
             // labelInformaciónBásica
             // 
