@@ -29,12 +29,21 @@ namespace SistemaGestorDeInformes
                 connection.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Database/Database.accdb;
                 Persist Security Info=False;";      
                 connection.Open();
-                MessageBox.Show("Conectado");
+                //MessageBox.Show("Conectado");
             }
             catch (Exception ex)
             {
                 MessageBox.Show("No se conecto con la BD");
             }
+        }
+
+        public OleDbDataAdapter ejecutarConsulta(string consulta)
+        {
+            command = new OleDbCommand();
+            command.Connection = connection;
+            command.CommandText = consulta;
+            da = new OleDbDataAdapter(command);
+            return da;
         }
     }
 }
