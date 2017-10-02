@@ -79,7 +79,7 @@
             this.abrirTrimestreToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(764, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(815, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -370,7 +370,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Navy;
-            this.ClientSize = new System.Drawing.Size(764, 508);
+            this.ClientSize = new System.Drawing.Size(815, 508);
             this.Controls.Add(this.labelInformaciónBásica);
             this.Controls.Add(this.buttonAtrás);
             this.Controls.Add(this.buttonGuardar);
@@ -388,6 +388,7 @@
             this.Controls.Add(this.labelProveedor);
             this.Controls.Add(this.menuStrip1);
             this.Name = "InterfazRegistrarFactura";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "InterfazRegistrarFactura";
             this.Load += new System.EventHandler(this.InterfazRegistrarFactura_Load);
             this.menuStrip1.ResumeLayout(false);
