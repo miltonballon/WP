@@ -12,9 +12,11 @@ namespace SistemaGestorDeInformes
 {
     public partial class RegisterProduct : Form
     {
+        ProductController p;
         public RegisterProduct()
         {
             InitializeComponent();
+            p = new ProductController();
         }
 
         private void labelProveedor_Click(object sender, EventArgs e)
@@ -34,6 +36,21 @@ namespace SistemaGestorDeInformes
             ShowProducts main = new ShowProducts();
             this.Hide();
             main.Show();
+        }
+
+        private void RegistrarButton_Click(object sender, EventArgs e)
+        {
+            p.insertar(ProductoTextBox, ProveedorTextBox, UnidadTextBox);
+            p.agregarIndices(ProductoTextBox, ProveedorTextBox, UnidadTextBox);
+            cleanTextBox();
+            MessageBox.Show("agregado");
+
+        }
+        public void cleanTextBox()
+        {
+            ProductoTextBox.Text = "";
+            ProveedorTextBox.Text = "";
+            UnidadTextBox.Text = "";
         }
     }
 }
