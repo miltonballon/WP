@@ -37,5 +37,19 @@ namespace SistemaGestorDeInformes
             intRegFac.Show();
             this.Hide();
         }
+
+        private void registrarProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RegisterProduct main = new RegisterProduct();
+            this.Hide();
+            main.Show();
+        }
+
+        private void verProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowProducts products = new ShowProducts();
+            this.Hide();
+            products.Show();
+        }
     }
 }
