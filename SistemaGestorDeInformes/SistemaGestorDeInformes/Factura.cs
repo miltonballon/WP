@@ -13,7 +13,7 @@ namespace SistemaGestorDeInformes
         private int NFactura;
         private int NAutorizacion;
         private DateTime Fecha;
-        private List<Producto> productos;
+        private List<FilaFactura> FilaFacturas;
 
         public Factura(string proveedor, int nit, int nFactura, int nAutorizacion, DateTime fecha)
         {
@@ -22,7 +22,7 @@ namespace SistemaGestorDeInformes
             NFactura = nFactura;
             NAutorizacion = nAutorizacion;
             Fecha = fecha;
-            productos = new List<Producto>();
+            FilaFacturas = new List<FilaFactura>();
         }
 
         public void setProveedor(String Proveedor_1)
@@ -75,14 +75,14 @@ namespace SistemaGestorDeInformes
             return Fecha;
         }
 
-        public List<Producto> getProductos()
+        public List<FilaFactura> getFilaFacturas()
         {
-            return productos;
+            return FilaFacturas;
         }
 
-        public void agregarProducto(Producto producto)
+        public void agregarFilaFactura(FilaFactura FilaFactura)
         {
-            productos.Add(producto);
+            FilaFacturas.Add(FilaFactura);
         }
     }
 }

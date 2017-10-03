@@ -13,6 +13,7 @@ namespace SistemaGestorDeInformes
     public partial class InterfazRegistrarFactura : Form
     {
         private ControladorFactura controladorFactura;
+        Factura factura;
         public InterfazRegistrarFactura()
         {
             InitializeComponent();
@@ -102,7 +103,7 @@ namespace SistemaGestorDeInformes
 
         private void buttonGuardar_Click(object sender, EventArgs e)
         {
-            //Factura factura = crearFactura();
+            //factura = crearFactura();
             //controladorFactura.insertarFactura(factura);
             crearYAgregarProductos();
         }
@@ -114,20 +115,24 @@ namespace SistemaGestorDeInformes
                 nit = Int32.Parse(textBoxNit.Text);
             String proveedor = textBoxProveedor.Text;
             DateTime fecha = dateFecha.Value;
-            Factura factura = new Factura(proveedor, nit, nFactura, nAutorizacion, fecha);
+            factura = new Factura(proveedor, nit, nFactura, nAutorizacion, fecha);
             return factura;
         }
 
         private void crearYAgregarProductos()
         {
             int tamaño = (dataGridView1.Rows.Count)-1;
-            String temp = "";
+            Object[] datos = new Object[5];
+            String proveedor = textBoxProveedor.Text;
             for (int i = 0; i < tamaño ; i++)
             {
-                for(int j=0;j< dataGridView1.Rows[i].Cells.Count;j++)
-                temp += dataGridView1.Rows[i].Cells[j].Value+" ";
+                for (int j = 0; j < dataGridView1.Rows[i].Cells.Count; j++)
+                {
+                    datos[j]=dataGridView1.Rows[i].Cells[j].Value;
+                }
+                FilaFactura fila = new FilaFactura(datos,proveedor);
+                MessageBox.Show(fila.getCantidad()+" "+fila.getPrecioUnitario()+" "+fila.getTotal());
             }
-            MessageBox.Show(temp);
         }
     }
 }
