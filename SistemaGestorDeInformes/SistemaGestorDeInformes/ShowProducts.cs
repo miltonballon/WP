@@ -12,9 +12,12 @@ namespace SistemaGestorDeInformes
 {
     public partial class ShowProducts : Form
     {
+        ProductController p; 
         public ShowProducts()
         {
             InitializeComponent();
+            p = new ProductController();
+            showUser();
         }
 
         private void atrasButton_Click(object sender, EventArgs e)
@@ -30,5 +33,11 @@ namespace SistemaGestorDeInformes
             this.Hide();
             main.Show();
         }
+
+        public void showUser()
+        {
+            p.mostrarProducto(dataGridView1);
+        }
+
     }
 }

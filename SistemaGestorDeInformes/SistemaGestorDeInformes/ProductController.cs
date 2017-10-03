@@ -66,7 +66,7 @@ namespace SistemaGestorDeInformes
             int varNombre = c.buscarYDevolverId(NombreQuery);
             int varProveedor = c.buscarYDevolverId(ProveedorQuery);
             int varUnidad = c.buscarYDevolverId(UnidadQuery);
-            MessageBox.Show("N" + varNombre + "P" + varProveedor + "U" + varUnidad);
+           // MessageBox.Show("N" + varNombre + "P" + varProveedor + "U" + varUnidad);
             query = "insert into Producto_Proveedor_Unidad (Id_prod,id_prov,id_uni) values('" + varNombre + "','" + varProveedor + "','" + varUnidad + "')";
             c.executeInsertion(query);
         }
