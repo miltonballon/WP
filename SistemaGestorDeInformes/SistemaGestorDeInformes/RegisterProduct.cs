@@ -52,5 +52,19 @@ namespace SistemaGestorDeInformes
             ProveedorTextBox.Text = "";
             UnidadTextBox.Text = "";
         }
+
+        private void pantallaPrincipalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InterfazPrincipal intPrincipal = new InterfazPrincipal();
+            intPrincipal.Show();
+            this.Hide();
+        }
+
+        private void registrarFacturaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InterfazRegistrarFactura intInterfazRegistrarFactura = new InterfazRegistrarFactura();
+            intInterfazRegistrarFactura.Show();
+            this.Hide();
+        }
     }
 }
