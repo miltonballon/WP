@@ -69,6 +69,7 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.pantallaPrincipalToolStripMenuItem,
             this.facturasToolStripMenuItem,
@@ -78,7 +79,7 @@
             this.abrirTrimestreToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(811, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(815, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -182,91 +183,108 @@
             // labelProveedor
             // 
             this.labelProveedor.AutoSize = true;
+            this.labelProveedor.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelProveedor.ForeColor = System.Drawing.Color.White;
             this.labelProveedor.Location = new System.Drawing.Point(30, 70);
             this.labelProveedor.Name = "labelProveedor";
-            this.labelProveedor.Size = new System.Drawing.Size(78, 13);
+            this.labelProveedor.Size = new System.Drawing.Size(103, 19);
             this.labelProveedor.TabIndex = 1;
             this.labelProveedor.Text = "PROVEEDOR:";
             // 
             // labelNit
             // 
             this.labelNit.AutoSize = true;
+            this.labelNit.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNit.ForeColor = System.Drawing.Color.White;
             this.labelNit.Location = new System.Drawing.Point(30, 110);
             this.labelNit.Name = "labelNit";
-            this.labelNit.Size = new System.Drawing.Size(28, 13);
+            this.labelNit.Size = new System.Drawing.Size(37, 19);
             this.labelNit.TabIndex = 2;
             this.labelNit.Text = "NIT:";
             // 
             // labelNFactura
             // 
             this.labelNFactura.AutoSize = true;
+            this.labelNFactura.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNFactura.ForeColor = System.Drawing.Color.White;
             this.labelNFactura.Location = new System.Drawing.Point(30, 150);
             this.labelNFactura.Name = "labelNFactura";
-            this.labelNFactura.Size = new System.Drawing.Size(74, 13);
+            this.labelNFactura.Size = new System.Drawing.Size(99, 19);
             this.labelNFactura.TabIndex = 3;
             this.labelNFactura.Text = "N. FACTURA:";
             // 
             // labelNAutorizacion
             // 
             this.labelNAutorizacion.AutoSize = true;
+            this.labelNAutorizacion.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNAutorizacion.ForeColor = System.Drawing.Color.White;
             this.labelNAutorizacion.Location = new System.Drawing.Point(30, 190);
             this.labelNAutorizacion.Name = "labelNAutorizacion";
-            this.labelNAutorizacion.Size = new System.Drawing.Size(105, 13);
+            this.labelNAutorizacion.Size = new System.Drawing.Size(141, 19);
             this.labelNAutorizacion.TabIndex = 4;
             this.labelNAutorizacion.Text = "N. AUTORIZACION:";
             // 
             // labelFecha
             // 
             this.labelFecha.AutoSize = true;
+            this.labelFecha.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFecha.ForeColor = System.Drawing.Color.White;
             this.labelFecha.Location = new System.Drawing.Point(30, 230);
             this.labelFecha.Name = "labelFecha";
-            this.labelFecha.Size = new System.Drawing.Size(45, 13);
+            this.labelFecha.Size = new System.Drawing.Size(62, 19);
             this.labelFecha.TabIndex = 5;
             this.labelFecha.Text = "FECHA:";
             // 
             // labelProductos
             // 
             this.labelProductos.AutoSize = true;
+            this.labelProductos.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelProductos.ForeColor = System.Drawing.Color.Yellow;
             this.labelProductos.Location = new System.Drawing.Point(30, 270);
             this.labelProductos.Name = "labelProductos";
-            this.labelProductos.Size = new System.Drawing.Size(55, 13);
+            this.labelProductos.Size = new System.Drawing.Size(93, 19);
             this.labelProductos.TabIndex = 6;
             this.labelProductos.Text = "Productos";
             // 
             // textBoxProveedor
             // 
-            this.textBoxProveedor.Location = new System.Drawing.Point(140, 70);
+            this.textBoxProveedor.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxProveedor.Location = new System.Drawing.Point(170, 70);
             this.textBoxProveedor.Name = "textBoxProveedor";
-            this.textBoxProveedor.Size = new System.Drawing.Size(200, 20);
+            this.textBoxProveedor.Size = new System.Drawing.Size(250, 23);
             this.textBoxProveedor.TabIndex = 7;
             this.textBoxProveedor.TextChanged += new System.EventHandler(this.textBoxProveedor_TextChanged);
             // 
             // textBoxNit
             // 
-            this.textBoxNit.Location = new System.Drawing.Point(140, 110);
+            this.textBoxNit.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxNit.Location = new System.Drawing.Point(170, 110);
             this.textBoxNit.Name = "textBoxNit";
-            this.textBoxNit.Size = new System.Drawing.Size(200, 20);
+            this.textBoxNit.Size = new System.Drawing.Size(250, 23);
             this.textBoxNit.TabIndex = 8;
             // 
             // textBoxNFactura
             // 
-            this.textBoxNFactura.Location = new System.Drawing.Point(140, 150);
+            this.textBoxNFactura.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxNFactura.Location = new System.Drawing.Point(170, 150);
             this.textBoxNFactura.Name = "textBoxNFactura";
-            this.textBoxNFactura.Size = new System.Drawing.Size(200, 20);
+            this.textBoxNFactura.Size = new System.Drawing.Size(250, 23);
             this.textBoxNFactura.TabIndex = 9;
             // 
             // textBoxNAutorizacion
             // 
-            this.textBoxNAutorizacion.Location = new System.Drawing.Point(140, 190);
+            this.textBoxNAutorizacion.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxNAutorizacion.Location = new System.Drawing.Point(170, 190);
             this.textBoxNAutorizacion.Name = "textBoxNAutorizacion";
-            this.textBoxNAutorizacion.Size = new System.Drawing.Size(200, 20);
+            this.textBoxNAutorizacion.Size = new System.Drawing.Size(250, 23);
             this.textBoxNAutorizacion.TabIndex = 10;
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(140, 230);
+            this.dateTimePicker1.Font = new System.Drawing.Font("Bookman Old Style", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.Location = new System.Drawing.Point(170, 230);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(250, 23);
             this.dateTimePicker1.TabIndex = 11;
             // 
             // dataGridView1
@@ -313,29 +331,37 @@
             // 
             // buttonGuardar
             // 
-            this.buttonGuardar.Location = new System.Drawing.Point(265, 460);
+            this.buttonGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.buttonGuardar.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonGuardar.ForeColor = System.Drawing.Color.Yellow;
+            this.buttonGuardar.Location = new System.Drawing.Point(250, 456);
             this.buttonGuardar.Name = "buttonGuardar";
-            this.buttonGuardar.Size = new System.Drawing.Size(75, 23);
+            this.buttonGuardar.Size = new System.Drawing.Size(90, 32);
             this.buttonGuardar.TabIndex = 13;
             this.buttonGuardar.Text = "Guardar";
-            this.buttonGuardar.UseVisualStyleBackColor = true;
+            this.buttonGuardar.UseVisualStyleBackColor = false;
             // 
             // buttonAtrás
             // 
-            this.buttonAtrás.Location = new System.Drawing.Point(0, 486);
+            this.buttonAtrás.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.buttonAtrás.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAtrás.ForeColor = System.Drawing.Color.Yellow;
+            this.buttonAtrás.Location = new System.Drawing.Point(3, 472);
             this.buttonAtrás.Name = "buttonAtrás";
-            this.buttonAtrás.Size = new System.Drawing.Size(75, 23);
+            this.buttonAtrás.Size = new System.Drawing.Size(90, 32);
             this.buttonAtrás.TabIndex = 14;
             this.buttonAtrás.Text = "Atrás";
-            this.buttonAtrás.UseVisualStyleBackColor = true;
+            this.buttonAtrás.UseVisualStyleBackColor = false;
             this.buttonAtrás.Click += new System.EventHandler(this.buttonAtrás_Click_1);
             // 
             // labelInformaciónBásica
             // 
             this.labelInformaciónBásica.AutoSize = true;
+            this.labelInformaciónBásica.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelInformaciónBásica.ForeColor = System.Drawing.Color.Yellow;
             this.labelInformaciónBásica.Location = new System.Drawing.Point(30, 40);
             this.labelInformaciónBásica.Name = "labelInformaciónBásica";
-            this.labelInformaciónBásica.Size = new System.Drawing.Size(97, 13);
+            this.labelInformaciónBásica.Size = new System.Drawing.Size(168, 19);
             this.labelInformaciónBásica.TabIndex = 15;
             this.labelInformaciónBásica.Text = "Información Básica";
             // 
@@ -343,7 +369,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(811, 508);
+            this.BackColor = System.Drawing.Color.Navy;
+            this.ClientSize = new System.Drawing.Size(815, 508);
             this.Controls.Add(this.labelInformaciónBásica);
             this.Controls.Add(this.buttonAtrás);
             this.Controls.Add(this.buttonGuardar);
@@ -361,6 +388,7 @@
             this.Controls.Add(this.labelProveedor);
             this.Controls.Add(this.menuStrip1);
             this.Name = "InterfazRegistrarFactura";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "InterfazRegistrarFactura";
             this.Load += new System.EventHandler(this.InterfazRegistrarFactura_Load);
             this.menuStrip1.ResumeLayout(false);

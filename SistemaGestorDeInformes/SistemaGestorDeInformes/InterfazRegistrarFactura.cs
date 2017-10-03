@@ -32,7 +32,9 @@ namespace SistemaGestorDeInformes
 
         private void textBoxNit_TextChanged(object sender, KeyPressEventArgs e)
         {
-            e.Handled = !char.IsDigit(e.KeyChar);//Para impedir que se pongan letras y espacios en el NIT
+            //Para impedir que se pongan letras y espacios en el NIT
+            if (e.KeyChar != '1' && e.KeyChar != '2' && e.KeyChar != '3' && e.KeyChar != '4' && e.KeyChar != '5' && e.KeyChar != '6' && e.KeyChar != '7' && e.KeyChar != '8' && e.KeyChar != '9' && e.KeyChar != '0' && e.KeyChar != 08 && e.KeyChar != 22 && e.KeyChar != 3 && e.KeyChar != 24)
+                e.Handled = true;
         }
 
         private void buttonAtrás_Click(object sender, EventArgs e)
@@ -42,22 +44,17 @@ namespace SistemaGestorDeInformes
 
         private void textBoxNFactura_TextChanged(object sender, KeyPressEventArgs e)
         {
-            e.Handled = !char.IsDigit(e.KeyChar);//Para impedir que se pongan letras y espacios en el N.FACTURA
+            //Para impedir que se pongan letras y espacios en el N.FACTURA
+            if(e.KeyChar!='1' && e.KeyChar!= '2' && e.KeyChar != '3' && e.KeyChar != '4' && e.KeyChar != '5' && e.KeyChar != '6' && e.KeyChar != '7' && e.KeyChar != '8' && e.KeyChar != '9' && e.KeyChar != '0' && e.KeyChar != 08 && e.KeyChar != 22 && e.KeyChar != 3 && e.KeyChar != 24)
+                e.Handled = true;
         }
 
         private void textBoxNAutorizacion_TextChanged(object sender, KeyPressEventArgs e)
         {
-            e.Handled = !char.IsDigit(e.KeyChar);//Para impedir que se pongan letras y espacios en el N.AUTORIZACION
+            //Para impedir que se pongan letras y espacios en el N.AUTORIZACION
+            if (e.KeyChar != '1' && e.KeyChar != '2' && e.KeyChar != '3' && e.KeyChar != '4' && e.KeyChar != '5' && e.KeyChar != '6' && e.KeyChar != '7' && e.KeyChar != '8' && e.KeyChar != '9' && e.KeyChar != '0' && e.KeyChar != 08 && e.KeyChar != 22 && e.KeyChar != 3 && e.KeyChar != 24)
+                e.Handled = true;
         }
-
-        private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
-        {
-            foreach (DataGridViewRow row in dataGridView1.Rows)
-            {
-                row.Cells[dataGridView1.Columns["PrecioTotal"].Index].Value = (Convert.ToDouble(row.Cells[dataGridView1.Columns["PrecioUnitario"].Index].Value) * Convert.ToDouble(row.Cells[dataGridView1.Columns["Cantidad"].Index].Value));//Caclula el Precio Total sumando la columna Cantidad con la columna Precio Unidad
-            }
-        }
-
 
         private void dataGridView1_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
@@ -72,12 +69,19 @@ namespace SistemaGestorDeInformes
             }
         }
 
+        private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                row.Cells[dataGridView1.Columns["PrecioTotal"].Index].Value = (Convert.ToDouble(row.Cells[dataGridView1.Columns["PrecioUnitario"].Index].Value) * Convert.ToDouble(row.Cells[dataGridView1.Columns["Cantidad"].Index].Value));//Caclula el Precio Total sumando la columna Cantidad con la columna Precio Unidad
+            }
+        }
+
         private void Column1_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsDigit(e.KeyChar) && (e.KeyChar==','))//Para impedir que se pongan letras y espacios a excepcion del . 
-            {
+            //Para impedir que se pongan letras y espacios a excepcion de: ., copiar, pegar, cortar
+            if (e.KeyChar != '1' && e.KeyChar != '2' && e.KeyChar != '3' && e.KeyChar != '4' && e.KeyChar != '5' && e.KeyChar != '6' && e.KeyChar != '7' && e.KeyChar != '8' && e.KeyChar != '9' && e.KeyChar != '0' && e.KeyChar != 08 && e.KeyChar != '.' && e.KeyChar != 22 && e.KeyChar != 3 && e.KeyChar != 24)
                 e.Handled = true;
-            }
         }
 
         private void pantallaPrincipalToolStripMenuItem_Click(object sender, EventArgs e)
