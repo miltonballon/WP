@@ -389,7 +389,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Name = "InterfazRegistrarFactura";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "InterfazRegistrarFactura";
+            this.Text = "Registrar Factura";
             this.Load += new System.EventHandler(this.InterfazRegistrarFactura_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
