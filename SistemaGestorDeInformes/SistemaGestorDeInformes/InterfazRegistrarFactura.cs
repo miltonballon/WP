@@ -102,8 +102,9 @@ namespace SistemaGestorDeInformes
 
         private void buttonGuardar_Click(object sender, EventArgs e)
         {
-            Factura factura = crearFactura();
-            controladorFactura.insertarFactura(factura);
+            //Factura factura = crearFactura();
+            //controladorFactura.insertarFactura(factura);
+            crearYAgregarProductos();
         }
 
         private Factura crearFactura()
@@ -115,6 +116,18 @@ namespace SistemaGestorDeInformes
             DateTime fecha = dateFecha.Value;
             Factura factura = new Factura(proveedor, nit, nFactura, nAutorizacion, fecha);
             return factura;
+        }
+
+        private void crearYAgregarProductos()
+        {
+            int tamaño = (dataGridView1.Rows.Count)-1;
+            String temp = "";
+            for (int i = 0; i < tamaño ; i++)
+            {
+                for(int j=0;j< dataGridView1.Rows[i].Cells.Count;j++)
+                temp += dataGridView1.Rows[i].Cells[j].Value+" ";
+            }
+            MessageBox.Show(temp);
         }
     }
 }
