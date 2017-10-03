@@ -59,6 +59,7 @@
     <Compile Include="InterfazRegistrarFactura.Designer.cs">
       <DependentUpon>InterfazRegistrarFactura.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProductController.cs" />
     <Compile Include="Producto.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
