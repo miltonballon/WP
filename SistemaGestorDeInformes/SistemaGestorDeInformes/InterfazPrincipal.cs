@@ -16,8 +16,8 @@ namespace SistemaGestorDeInformes
         public InterfazPrincipal()
         {
             InitializeComponent();
-         
             c.connect();
+            //c.connectionOpen();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -34,8 +34,9 @@ namespace SistemaGestorDeInformes
         private void registrarFacturaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             InterfazRegistrarFactura intRegFac = new InterfazRegistrarFactura();
-            intRegFac.Show();
             this.Hide();
+            intRegFac.Show();
+
         }
 
         private void registrarProductosToolStripMenuItem_Click(object sender, EventArgs e)

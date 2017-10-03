@@ -13,6 +13,17 @@ namespace SistemaGestorDeInformes
         private int NFactura;
         private int NAutorizacion;
         private DateTime Fecha;
+        private List<FilaFactura> FilaFacturas;
+
+        public Factura(string proveedor, int nit, int nFactura, int nAutorizacion, DateTime fecha)
+        {
+            Proveedor = proveedor;
+            Nit = nit;
+            NFactura = nFactura;
+            NAutorizacion = nAutorizacion;
+            Fecha = fecha;
+            FilaFacturas = new List<FilaFactura>();
+        }
 
         public void setProveedor(String Proveedor_1)
         {
@@ -29,7 +40,7 @@ namespace SistemaGestorDeInformes
             NFactura = NFactura_1;
         }
 
-        public void setANutorizacion(int NAutorizacion_1)
+        public void setNAutorizacion(int NAutorizacion_1)
         {
             NAutorizacion = NAutorizacion_1;
         }
@@ -37,6 +48,11 @@ namespace SistemaGestorDeInformes
         public void setFecha(DateTime Fecha_1)
         {
             Fecha = Fecha_1;
+        }
+
+        public int getNit()
+        {
+            return Nit;
         }
 
         public string getProveedor()
@@ -59,13 +75,25 @@ namespace SistemaGestorDeInformes
             return Fecha;
         }
 
-        public Factura(string proveedor, int nit, int nFactura, int nAutorizacion, DateTime fecha)
+        public List<FilaFactura> getFilaFacturas()
         {
-            Proveedor = proveedor;
-            Nit = nit;
-            NFactura = nFactura;
-            NAutorizacion = nAutorizacion;
-            Fecha = fecha;
+            return FilaFacturas;
+        }
+
+        public void agregarFilaFactura(FilaFactura FilaFactura)
+        {
+            FilaFacturas.Add(FilaFactura);
+        }
+
+        public override String ToString()
+        {
+            String salida= "Proveedor: " + Proveedor + "\nNIT: " + Nit + "\nN.Factura: " + NFactura + "\nN.Autorizacion: "
+                + NAutorizacion + "\n Fecha: " + Fecha.ToString();
+            foreach (FilaFactura fila in FilaFacturas)
+            {
+                salida += "\n"+fila;
+            }
+            return salida;
         }
     }
 }

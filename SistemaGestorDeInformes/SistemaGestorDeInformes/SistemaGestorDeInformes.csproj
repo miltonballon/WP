@@ -46,7 +46,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Connection.cs" />
+    <Compile Include="ControladorFactura.cs" />
     <Compile Include="Factura.cs" />
+    <Compile Include="FilaFactura.cs" />
     <Compile Include="InterfazPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>

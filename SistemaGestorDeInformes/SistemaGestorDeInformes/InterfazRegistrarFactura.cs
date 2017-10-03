@@ -12,12 +12,15 @@ namespace SistemaGestorDeInformes
 {
     public partial class InterfazRegistrarFactura : Form
     {
+        private ControladorFactura controladorFactura;
+        Factura factura;
         public InterfazRegistrarFactura()
         {
             InitializeComponent();
             this.textBoxNit.KeyPress += new KeyPressEventHandler(textBoxNit_TextChanged);//Para impedir que se pongan letras y espacios en el NIT
             this.textBoxNFactura.KeyPress += new KeyPressEventHandler(textBoxNFactura_TextChanged);//Para impedir que se pongan letras y espacios en el N.FACTURA
             this.textBoxNAutorizacion.KeyPress += new KeyPressEventHandler(textBoxNAutorizacion_TextChanged);//Para impedir que se pongan letras y espacios en el N.AUTORIZACION
+            controladorFactura = new ControladorFactura();
         }
 
         private void InterfazRegistrarFactura_Load(object sender, EventArgs e)
@@ -98,18 +101,39 @@ namespace SistemaGestorDeInformes
             principal.Show();
         }
 
-        private void registrarProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        private void buttonGuardar_Click(object sender, EventArgs e)
         {
-            RegisterProduct intRegisterProduct = new RegisterProduct();
-            intRegisterProduct.Show();
-            this.Hide();
+            factura = crearFactura();
+            crearYAgregarProductos();
+            controladorFactura.insertarFactura(factura);
+            MessageBox.Show(factura.ToString());
         }
 
-        private void verProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        private Factura crearFactura()
         {
-            ShowProducts intShowProducts = new ShowProducts();
-            intShowProducts.Show();
-            this.Hide();
+            int nFactura = Int32.Parse(textBoxNFactura.Text),
+                nAutorizacion = Int32.Parse(textBoxNAutorizacion.Text),
+                nit = Int32.Parse(textBoxNit.Text);
+            String proveedor = textBoxProveedor.Text;
+            DateTime fecha = dateFecha.Value;
+            factura = new Factura(proveedor, nit, nFactura, nAutorizacion, fecha);
+            return factura;
+        }
+
+        private void crearYAgregarProductos()
+        {
+            int tamaño = (dataGridView1.Rows.Count)-1;
+            Object[] datos = new Object[5];
+            String proveedor = textBoxProveedor.Text;
+            for (int i = 0; i < tamaño ; i++)
+            {
+                for (int j = 0; j < dataGridView1.Rows[i].Cells.Count; j++)
+                {
+                    datos[j]=dataGridView1.Rows[i].Cells[j].Value;
+                }
+                FilaFactura fila = new FilaFactura(datos,proveedor);
+                factura.agregarFilaFactura(fila);
+            }
         }
     }
 }

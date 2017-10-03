@@ -18,8 +18,9 @@ namespace SistemaGestorDeInformes
         }
 
 
-        public void insertar(TextBox nombre, TextBox proveedor, TextBox unidad)
+        public int insertar(TextBox nombre, TextBox proveedor, TextBox unidad)
         {
+            int afectadas = 0;
             Producto p = new Producto();
             p.Nombre = nombre.Text;
             p.Proveedor = proveedor.Text;
@@ -37,18 +38,22 @@ namespace SistemaGestorDeInformes
             {
                 query = "insert into Producto (nombre) values('" + p.Nombre + "')";
                 c.executeInsertion(query);
+                afectadas++;
             }
             if (varProveedor == -1)
             {
                 query = "insert into Proveedor (Proveedor) values('" + p.Proveedor + "')";
                 c.executeInsertion(query);
+                afectadas++;
             }
             if (varUnidad == -1)
             {
                 query = "insert into Unidad (Tipo) values('" + p.Unidad + "')";
                 c.executeInsertion(query);
+                afectadas++;
             }
             c.connectionClose();
+            return afectadas;
         }
         public void agregarIndices(TextBox nombre, TextBox proveedor, TextBox unidad)
         {

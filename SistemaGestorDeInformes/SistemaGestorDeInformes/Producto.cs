@@ -33,6 +33,11 @@ namespace SistemaGestorDeInformes
             get { return unidad; }
             set { unidad = value; }
         }
+
+        public override String ToString()
+        {
+            return "Nombre: "+nombre+" Unidad: "+unidad+" Proveedor: "+proveedor;
+        }
     }
 
 }
