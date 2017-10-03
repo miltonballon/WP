@@ -36,6 +36,7 @@
             this.verFacturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.generarInformeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verInformeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,7 +49,6 @@
             this.abrirTrimestreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.atrasButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.verProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -120,9 +120,16 @@
             // registrarProductosToolStripMenuItem
             // 
             this.registrarProductosToolStripMenuItem.Name = "registrarProductosToolStripMenuItem";
-            this.registrarProductosToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
-            this.registrarProductosToolStripMenuItem.Text = "Registrar Productos";
+            this.registrarProductosToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.registrarProductosToolStripMenuItem.Text = "Registrar Producto";
             this.registrarProductosToolStripMenuItem.Click += new System.EventHandler(this.registrarProductosToolStripMenuItem_Click);
+            // 
+            // verProductosToolStripMenuItem
+            // 
+            this.verProductosToolStripMenuItem.ForeColor = System.Drawing.Color.Gray;
+            this.verProductosToolStripMenuItem.Name = "verProductosToolStripMenuItem";
+            this.verProductosToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.verProductosToolStripMenuItem.Text = "Ver Productos";
             // 
             // informeToolStripMenuItem1
             // 
@@ -217,13 +224,6 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Productos";
             // 
-            // verProductosToolStripMenuItem
-            // 
-            this.verProductosToolStripMenuItem.ForeColor = System.Drawing.Color.Gray;
-            this.verProductosToolStripMenuItem.Name = "verProductosToolStripMenuItem";
-            this.verProductosToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
-            this.verProductosToolStripMenuItem.Text = "Ver Productos";
-            // 
             // ShowProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -236,7 +236,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "ShowProducts";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Mostrar Productos";
+            this.Text = "Ver Productos";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

@@ -42,6 +42,7 @@
             this.registrarFacturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verFacturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registrarProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.generarInformeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,7 +55,6 @@
             this.informeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.abrirTrimestreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.labelInformaciónBásica = new System.Windows.Forms.Label();
-            this.registrarProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -196,11 +196,18 @@
             this.productosToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
             this.productosToolStripMenuItem.Text = "Productos";
             // 
+            // registrarProductosToolStripMenuItem
+            // 
+            this.registrarProductosToolStripMenuItem.ForeColor = System.Drawing.Color.Gray;
+            this.registrarProductosToolStripMenuItem.Name = "registrarProductosToolStripMenuItem";
+            this.registrarProductosToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.registrarProductosToolStripMenuItem.Text = "Registrar Producto";
+            // 
             // verProductosToolStripMenuItem
             // 
             this.verProductosToolStripMenuItem.Name = "verProductosToolStripMenuItem";
-            this.verProductosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.verProductosToolStripMenuItem.Text = "Ver productos";
+            this.verProductosToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.verProductosToolStripMenuItem.Text = "Ver Productos";
             this.verProductosToolStripMenuItem.Click += new System.EventHandler(this.verProductosToolStripMenuItem_Click);
             // 
             // informeToolStripMenuItem1
@@ -263,7 +270,7 @@
             // informeToolStripMenuItem
             // 
             this.informeToolStripMenuItem.Name = "informeToolStripMenuItem";
-            this.informeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.informeToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.informeToolStripMenuItem.Text = "Informe";
             // 
             // abrirTrimestreToolStripMenuItem
@@ -282,13 +289,6 @@
             this.labelInformaciónBásica.Size = new System.Drawing.Size(85, 19);
             this.labelInformaciónBásica.TabIndex = 16;
             this.labelInformaciónBásica.Text = "Producto";
-            // 
-            // registrarProductosToolStripMenuItem
-            // 
-            this.registrarProductosToolStripMenuItem.ForeColor = System.Drawing.Color.Gray;
-            this.registrarProductosToolStripMenuItem.Name = "registrarProductosToolStripMenuItem";
-            this.registrarProductosToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
-            this.registrarProductosToolStripMenuItem.Text = "Registrar Productos";
             // 
             // RegisterProduct
             // 
