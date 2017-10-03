@@ -104,8 +104,8 @@ namespace SistemaGestorDeInformes
         private void buttonGuardar_Click(object sender, EventArgs e)
         {
             factura = crearFactura();
-            //controladorFactura.insertarFactura(factura);
             crearYAgregarProductos();
+            controladorFactura.insertarFactura(factura);
             MessageBox.Show(factura.ToString());
         }
 

@@ -16,8 +16,8 @@ namespace SistemaGestorDeInformes
         public InterfazPrincipal()
         {
             InitializeComponent();
-         
             c.connect();
+            //c.connectionOpen();
         }
 
         private void Form1_Load(object sender, EventArgs e)

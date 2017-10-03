@@ -32,7 +32,9 @@ namespace SistemaGestorDeInformes
             try
             {
                 c.executeInsertion(consulta);
-                MessageBox.Show(c.buscarYDevolverId("select id_proveedor FROM Factura where n_factura = " + nFactura) + "");
+                //MessageBox.Show(c.buscarYDevolverId("select id_proveedor FROM Factura where n_factura = " + nFactura) + "");
+                MessageBox.Show("Informacion Basica de la factura agregado","INFORME");
+                registrarFilasDeLaFactura(factura);
             }
             catch (System.Data.OleDb.OleDbException)
             {
@@ -55,9 +57,50 @@ namespace SistemaGestorDeInformes
             return id;
         }
 
-        public void registrarProductosDeLaFactura(Factura factura)
+        public void registrarFilasDeLaFactura(Factura factura)
         {
+            int contador = 0;
+            foreach (FilaFactura fila in factura.getFilaFacturas())
+            {
+                registrarFilaFactura(fila,factura.getNFactura());
+                contador++;
+            }
+            MessageBox.Show(contador+" filas de la factura insertadas","INFORME");
+        }
 
+        public void registrarFilaFactura(FilaFactura fila,int nFact)//refactorizar
+        {
+            String cantidad = fila.getCantidad() + ""
+                , precioUni= fila.getPrecioUnitario() + ""
+                , total=fila.getTotal()+"";
+            Producto aux = fila.getProducto();
+            TextBox nombre = new TextBox();
+            nombre.Text =aux.Nombre;
+            TextBox proveedor = new TextBox();
+            proveedor.Text = aux.Proveedor;
+            TextBox unidad = new TextBox();
+            unidad.Text = aux.Unidad;
+            ProductController pC = new ProductController();
+            int afectadas=pC.insertar(nombre,proveedor,unidad);
+            if (afectadas > 0)
+            {
+                pC.agregarIndices(nombre,proveedor,unidad);
+            }
+            string NombreQuery = "select id FROM Producto where Nombre = " + "'" + aux.Nombre.ToString() + "'";
+            string ProveedorQuery = "select id FROM Proveedor where Proveedor = " + "'" + aux.Proveedor.ToString() + "'";
+            string UnidadQuery = "select id FROM Unidad where Tipo = " + "'" + aux.Unidad.ToString() + "'";
+            int idProd=c.buscarYDevolverId(NombreQuery)
+                , idProv= c.buscarYDevolverId(ProveedorQuery)
+                , idUni= c.buscarYDevolverId(UnidadQuery);
+            String queryInsercion = "INSERT INTO Fila_Factura (n_factura, id_prod, id_prov, id_uni, cantidad, precio_uni, total) VALUES(";
+            queryInsercion += nFact + ", ";
+            queryInsercion += idProd + ", ";
+            queryInsercion += idProv + ", ";
+            queryInsercion += idUni + ", ";
+            queryInsercion += "'"+cantidad + "', ";
+            queryInsercion += "'"+precioUni + "', ";
+            queryInsercion += "'"+total+"')" ;
+            c.executeInsertion(queryInsercion);
         }
     }
 }
