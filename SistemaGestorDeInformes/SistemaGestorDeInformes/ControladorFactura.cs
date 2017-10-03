@@ -29,16 +29,14 @@ namespace SistemaGestorDeInformes
             consulta += nit + ", ";
             consulta += "#"+fecha.ToString("dd/MM/yyyy")+"#)";
             //MessageBox.Show(consulta);
-            c.connectionOpen();
             c.executeInsertion(consulta);
-            c.connectionClose();
+            MessageBox.Show(c.buscarYDevolverId("select nit FROM Factura where n_factura = " + nFactura)+""); 
         }
 
         public int buscarProveedor(String nombreProveedor)
         {
             String consulta = "select id FROM Proveedor where Proveedor = '" + nombreProveedor + "'";
             int id = c.buscarYDevolverId(consulta);
-            c.connectionClose();
             return id;
         }
 
