@@ -29,7 +29,7 @@ namespace SistemaGestorDeInformes
             NFactura = NFactura_1;
         }
 
-        public void setANutorizacion(int NAutorizacion_1)
+        public void setNAutorizacion(int NAutorizacion_1)
         {
             NAutorizacion = NAutorizacion_1;
         }
@@ -37,6 +37,11 @@ namespace SistemaGestorDeInformes
         public void setFecha(DateTime Fecha_1)
         {
             Fecha = Fecha_1;
+        }
+
+        public int getNit()
+        {
+            return Nit;
         }
 
         public string getProveedor()
