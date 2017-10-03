@@ -53,83 +53,90 @@
             this.configuraciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.abrirTrimestreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.labelInformaciónBásica = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // ProductoTextBox
             // 
-            this.ProductoTextBox.Location = new System.Drawing.Point(272, 41);
+            this.ProductoTextBox.Location = new System.Drawing.Point(197, 94);
             this.ProductoTextBox.Name = "ProductoTextBox";
-            this.ProductoTextBox.Size = new System.Drawing.Size(143, 20);
+            this.ProductoTextBox.Size = new System.Drawing.Size(250, 20);
             this.ProductoTextBox.TabIndex = 0;
             // 
             // ProveedorTextBox
             // 
-            this.ProveedorTextBox.Location = new System.Drawing.Point(272, 80);
+            this.ProveedorTextBox.Location = new System.Drawing.Point(197, 136);
             this.ProveedorTextBox.Name = "ProveedorTextBox";
-            this.ProveedorTextBox.Size = new System.Drawing.Size(143, 20);
+            this.ProveedorTextBox.Size = new System.Drawing.Size(250, 20);
             this.ProveedorTextBox.TabIndex = 1;
             // 
             // UnidadTextBox
             // 
-            this.UnidadTextBox.Location = new System.Drawing.Point(272, 119);
+            this.UnidadTextBox.Location = new System.Drawing.Point(197, 175);
             this.UnidadTextBox.Name = "UnidadTextBox";
-            this.UnidadTextBox.Size = new System.Drawing.Size(84, 20);
+            this.UnidadTextBox.Size = new System.Drawing.Size(250, 20);
             this.UnidadTextBox.TabIndex = 2;
             // 
             // atrasButton
             // 
-            this.atrasButton.Location = new System.Drawing.Point(179, 183);
+            this.atrasButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.atrasButton.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
+            this.atrasButton.ForeColor = System.Drawing.Color.Yellow;
+            this.atrasButton.Location = new System.Drawing.Point(3, 472);
             this.atrasButton.Name = "atrasButton";
-            this.atrasButton.Size = new System.Drawing.Size(75, 23);
+            this.atrasButton.Size = new System.Drawing.Size(90, 32);
             this.atrasButton.TabIndex = 3;
-            this.atrasButton.Text = "Atras";
-            this.atrasButton.UseVisualStyleBackColor = true;
+            this.atrasButton.Text = "Atrás";
+            this.atrasButton.UseVisualStyleBackColor = false;
             this.atrasButton.Click += new System.EventHandler(this.atrasButton_Click);
             // 
             // RegistrarButton
             // 
-            this.RegistrarButton.Location = new System.Drawing.Point(297, 183);
+            this.RegistrarButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.RegistrarButton.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
+            this.RegistrarButton.ForeColor = System.Drawing.Color.Yellow;
+            this.RegistrarButton.Location = new System.Drawing.Point(250, 456);
             this.RegistrarButton.Name = "RegistrarButton";
-            this.RegistrarButton.Size = new System.Drawing.Size(75, 23);
+            this.RegistrarButton.Size = new System.Drawing.Size(90, 32);
             this.RegistrarButton.TabIndex = 4;
             this.RegistrarButton.Text = "Registrar";
-            this.RegistrarButton.UseVisualStyleBackColor = true;
+            this.RegistrarButton.UseVisualStyleBackColor = false;
             this.RegistrarButton.Click += new System.EventHandler(this.RegistrarButton_Click);
             // 
             // ProveedorLabel
             // 
             this.ProveedorLabel.AutoSize = true;
             this.ProveedorLabel.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProveedorLabel.ForeColor = System.Drawing.Color.Black;
-            this.ProveedorLabel.Location = new System.Drawing.Point(145, 81);
+            this.ProveedorLabel.ForeColor = System.Drawing.Color.White;
+            this.ProveedorLabel.Location = new System.Drawing.Point(30, 135);
             this.ProveedorLabel.Name = "ProveedorLabel";
-            this.ProveedorLabel.Size = new System.Drawing.Size(78, 19);
+            this.ProveedorLabel.Size = new System.Drawing.Size(103, 19);
             this.ProveedorLabel.TabIndex = 8;
-            this.ProveedorLabel.Text = "Proveedor";
+            this.ProveedorLabel.Text = "PROVEEDOR:";
             this.ProveedorLabel.Click += new System.EventHandler(this.labelProveedor_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(163, 120);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(30, 174);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 19);
+            this.label1.Size = new System.Drawing.Size(70, 19);
             this.label1.TabIndex = 9;
-            this.label1.Text = "Unidad";
+            this.label1.Text = "UNIDAD:";
             // 
             // ProductoLabel
             // 
             this.ProductoLabel.AutoSize = true;
             this.ProductoLabel.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProductoLabel.ForeColor = System.Drawing.Color.Black;
-            this.ProductoLabel.Location = new System.Drawing.Point(151, 40);
+            this.ProductoLabel.ForeColor = System.Drawing.Color.White;
+            this.ProductoLabel.Location = new System.Drawing.Point(30, 93);
             this.ProductoLabel.Name = "ProductoLabel";
-            this.ProductoLabel.Size = new System.Drawing.Size(72, 19);
+            this.ProductoLabel.Size = new System.Drawing.Size(76, 19);
             this.ProductoLabel.TabIndex = 10;
-            this.ProductoLabel.Text = "Producto";
+            this.ProductoLabel.Text = "NOMBRE:";
             // 
             // menuStrip1
             // 
@@ -144,7 +151,7 @@
             this.abrirTrimestreToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(582, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(815, 24);
             this.menuStrip1.TabIndex = 11;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -259,11 +266,24 @@
             this.abrirTrimestreToolStripMenuItem.Size = new System.Drawing.Size(97, 20);
             this.abrirTrimestreToolStripMenuItem.Text = "Abrir Trimestre";
             // 
+            // labelInformaciónBásica
+            // 
+            this.labelInformaciónBásica.AutoSize = true;
+            this.labelInformaciónBásica.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelInformaciónBásica.ForeColor = System.Drawing.Color.Yellow;
+            this.labelInformaciónBásica.Location = new System.Drawing.Point(30, 40);
+            this.labelInformaciónBásica.Name = "labelInformaciónBásica";
+            this.labelInformaciónBásica.Size = new System.Drawing.Size(85, 19);
+            this.labelInformaciónBásica.TabIndex = 16;
+            this.labelInformaciónBásica.Text = "Producto";
+            // 
             // RegisterProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(582, 236);
+            this.BackColor = System.Drawing.Color.Navy;
+            this.ClientSize = new System.Drawing.Size(815, 508);
+            this.Controls.Add(this.labelInformaciónBásica);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.ProductoLabel);
             this.Controls.Add(this.label1);
@@ -274,7 +294,8 @@
             this.Controls.Add(this.ProveedorTextBox);
             this.Controls.Add(this.ProductoTextBox);
             this.Name = "RegisterProduct";
-            this.Text = "RegisterProduct";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Registrar Producto";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -309,5 +330,6 @@
         private System.Windows.Forms.ToolStripMenuItem configuraciónToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem informeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem abrirTrimestreToolStripMenuItem;
+        private System.Windows.Forms.Label labelInformaciónBásica;
     }
 }

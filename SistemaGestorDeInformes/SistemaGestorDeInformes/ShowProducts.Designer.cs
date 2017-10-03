@@ -32,6 +32,10 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.pantallaPrincipalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.facturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registrarFacturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verFacturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.productosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registrarProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.generarInformeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verInformeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,12 +46,8 @@
             this.configuraciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.abrirTrimestreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.productosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.verFacturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.registrarFacturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.atrasButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.registrarProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -91,6 +91,33 @@
             this.facturasToolStripMenuItem.Name = "facturasToolStripMenuItem";
             this.facturasToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
             this.facturasToolStripMenuItem.Text = "Facturas";
+            // 
+            // registrarFacturaToolStripMenuItem
+            // 
+            this.registrarFacturaToolStripMenuItem.Name = "registrarFacturaToolStripMenuItem";
+            this.registrarFacturaToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.registrarFacturaToolStripMenuItem.Text = "Registrar Factura";
+            // 
+            // verFacturasToolStripMenuItem
+            // 
+            this.verFacturasToolStripMenuItem.Name = "verFacturasToolStripMenuItem";
+            this.verFacturasToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.verFacturasToolStripMenuItem.Text = "Ver  Facturas";
+            // 
+            // productosToolStripMenuItem
+            // 
+            this.productosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.registrarProductosToolStripMenuItem});
+            this.productosToolStripMenuItem.Name = "productosToolStripMenuItem";
+            this.productosToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
+            this.productosToolStripMenuItem.Text = "Productos";
+            // 
+            // registrarProductosToolStripMenuItem
+            // 
+            this.registrarProductosToolStripMenuItem.Name = "registrarProductosToolStripMenuItem";
+            this.registrarProductosToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.registrarProductosToolStripMenuItem.Text = "Registrar productos";
+            this.registrarProductosToolStripMenuItem.Click += new System.EventHandler(this.registrarProductosToolStripMenuItem_Click);
             // 
             // informeToolStripMenuItem1
             // 
@@ -161,26 +188,6 @@
             this.abrirTrimestreToolStripMenuItem.Size = new System.Drawing.Size(97, 20);
             this.abrirTrimestreToolStripMenuItem.Text = "Abrir Trimestre";
             // 
-            // productosToolStripMenuItem
-            // 
-            this.productosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.registrarProductosToolStripMenuItem});
-            this.productosToolStripMenuItem.Name = "productosToolStripMenuItem";
-            this.productosToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
-            this.productosToolStripMenuItem.Text = "Productos";
-            // 
-            // verFacturasToolStripMenuItem
-            // 
-            this.verFacturasToolStripMenuItem.Name = "verFacturasToolStripMenuItem";
-            this.verFacturasToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
-            this.verFacturasToolStripMenuItem.Text = "Ver  Facturas";
-            // 
-            // registrarFacturaToolStripMenuItem
-            // 
-            this.registrarFacturaToolStripMenuItem.Name = "registrarFacturaToolStripMenuItem";
-            this.registrarFacturaToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
-            this.registrarFacturaToolStripMenuItem.Text = "Registrar Factura";
-            // 
             // atrasButton
             // 
             this.atrasButton.Location = new System.Drawing.Point(12, 298);
@@ -201,13 +208,6 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Productos";
             // 
-            // registrarProductosToolStripMenuItem
-            // 
-            this.registrarProductosToolStripMenuItem.Name = "registrarProductosToolStripMenuItem";
-            this.registrarProductosToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
-            this.registrarProductosToolStripMenuItem.Text = "Registrar productos";
-            this.registrarProductosToolStripMenuItem.Click += new System.EventHandler(this.registrarProductosToolStripMenuItem_Click);
-            // 
             // ShowProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -218,7 +218,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "ShowProducts";
-            this.Text = "ShowProducts";
+            this.Text = "Mostrar Productos";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
