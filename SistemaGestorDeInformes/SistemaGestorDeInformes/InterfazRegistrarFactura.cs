@@ -135,5 +135,19 @@ namespace SistemaGestorDeInformes
                 factura.agregarFilaFactura(fila);
             }
         }
+
+        private void registrarProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RegisterProduct intRegisterProduct = new RegisterProduct();
+            intRegisterProduct.Show();
+            this.Hide();
+        }
+
+        private void verProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowProducts intShowProducts = new ShowProducts();
+            intShowProducts.Show();
+            this.Hide();
+        }
     }
 }
