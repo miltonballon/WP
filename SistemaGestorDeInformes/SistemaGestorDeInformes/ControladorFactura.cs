@@ -55,5 +55,9 @@ namespace SistemaGestorDeInformes
             return id;
         }
 
+        public void registrarProductosDeLaFactura()
+        {
+
+        }
     }
 }

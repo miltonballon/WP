@@ -102,13 +102,19 @@ namespace SistemaGestorDeInformes
 
         private void buttonGuardar_Click(object sender, EventArgs e)
         {
+            Factura factura = crearFactura();
+            controladorFactura.insertarFactura(factura);
+        }
+
+        private Factura crearFactura()
+        {
             int nFactura = Int32.Parse(textBoxNFactura.Text),
                 nAutorizacion = Int32.Parse(textBoxNAutorizacion.Text),
                 nit = Int32.Parse(textBoxNit.Text);
             String proveedor = textBoxProveedor.Text;
             DateTime fecha = dateFecha.Value;
             Factura factura = new Factura(proveedor, nit, nFactura, nAutorizacion, fecha);
-            controladorFactura.insertarFactura(factura);
+            return factura;
         }
     }
 }
