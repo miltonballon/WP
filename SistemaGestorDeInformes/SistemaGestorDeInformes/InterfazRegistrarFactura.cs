@@ -12,12 +12,14 @@ namespace SistemaGestorDeInformes
 {
     public partial class InterfazRegistrarFactura : Form
     {
+        private ControladorFactura controladorFactura;
         public InterfazRegistrarFactura()
         {
             InitializeComponent();
             this.textBoxNit.KeyPress += new KeyPressEventHandler(textBoxNit_TextChanged);//Para impedir que se pongan letras y espacios en el NIT
             this.textBoxNFactura.KeyPress += new KeyPressEventHandler(textBoxNFactura_TextChanged);//Para impedir que se pongan letras y espacios en el N.FACTURA
             this.textBoxNAutorizacion.KeyPress += new KeyPressEventHandler(textBoxNAutorizacion_TextChanged);//Para impedir que se pongan letras y espacios en el N.AUTORIZACION
+            controladorFactura = new ControladorFactura();
         }
 
         private void InterfazRegistrarFactura_Load(object sender, EventArgs e)
@@ -96,6 +98,17 @@ namespace SistemaGestorDeInformes
             InterfazPrincipal principal = new InterfazPrincipal();//para volver atras
             this.Hide();
             principal.Show();
+        }
+
+        private void buttonGuardar_Click(object sender, EventArgs e)
+        {
+            int nFactura = Int32.Parse(textBoxNFactura.Text),
+                nAutorizacion = Int32.Parse(textBoxNAutorizacion.Text),
+                nit = Int32.Parse(textBoxNit.Text);
+            String proveedor = textBoxProveedor.Text;
+            DateTime fecha = dateFecha.Value;
+            Factura factura = new Factura(proveedor, nit, nFactura, nAutorizacion, fecha);
+            controladorFactura.insertarFactura(factura);
         }
     }
 }

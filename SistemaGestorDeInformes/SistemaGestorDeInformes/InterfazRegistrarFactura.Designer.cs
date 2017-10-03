@@ -53,7 +53,7 @@
             this.textBoxNit = new System.Windows.Forms.TextBox();
             this.textBoxNFactura = new System.Windows.Forms.TextBox();
             this.textBoxNAutorizacion = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateFecha = new System.Windows.Forms.DateTimePicker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Unidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -177,7 +177,7 @@
             // abrirTrimestreToolStripMenuItem
             // 
             this.abrirTrimestreToolStripMenuItem.Name = "abrirTrimestreToolStripMenuItem";
-            this.abrirTrimestreToolStripMenuItem.Size = new System.Drawing.Size(97, 20);
+            this.abrirTrimestreToolStripMenuItem.Size = new System.Drawing.Size(98, 20);
             this.abrirTrimestreToolStripMenuItem.Text = "Abrir Trimestre";
             // 
             // labelProveedor
@@ -279,13 +279,13 @@
             this.textBoxNAutorizacion.Size = new System.Drawing.Size(250, 23);
             this.textBoxNAutorizacion.TabIndex = 10;
             // 
-            // dateTimePicker1
+            // dateFecha
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Bookman Old Style", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(170, 230);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(250, 23);
-            this.dateTimePicker1.TabIndex = 11;
+            this.dateFecha.Font = new System.Drawing.Font("Bookman Old Style", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateFecha.Location = new System.Drawing.Point(170, 230);
+            this.dateFecha.Name = "dateFecha";
+            this.dateFecha.Size = new System.Drawing.Size(250, 23);
+            this.dateFecha.TabIndex = 11;
             // 
             // dataGridView1
             // 
@@ -340,6 +340,7 @@
             this.buttonGuardar.TabIndex = 13;
             this.buttonGuardar.Text = "Guardar";
             this.buttonGuardar.UseVisualStyleBackColor = false;
+            this.buttonGuardar.Click += new System.EventHandler(this.buttonGuardar_Click);
             // 
             // buttonAtrás
             // 
@@ -375,7 +376,7 @@
             this.Controls.Add(this.buttonAtrás);
             this.Controls.Add(this.buttonGuardar);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dateFecha);
             this.Controls.Add(this.textBoxNAutorizacion);
             this.Controls.Add(this.textBoxNFactura);
             this.Controls.Add(this.textBoxNit);
@@ -415,7 +416,7 @@
         private System.Windows.Forms.TextBox textBoxNit;
         private System.Windows.Forms.TextBox textBoxNFactura;
         private System.Windows.Forms.TextBox textBoxNAutorizacion;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateFecha;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button buttonGuardar;
         private System.Windows.Forms.Button buttonAtrás;
