@@ -84,5 +84,16 @@ namespace SistemaGestorDeInformes
         {
             FilaFacturas.Add(FilaFactura);
         }
+
+        public override String ToString()
+        {
+            String salida= "Proveedor: " + Proveedor + "\nNIT: " + Nit + "\nN.Factura: " + NFactura + "\nN.Autorizacion: "
+                + NAutorizacion + "\n Fecha: " + Fecha.ToString();
+            foreach (FilaFactura fila in FilaFacturas)
+            {
+                salida += "\n"+fila;
+            }
+            return salida;
+        }
     }
 }

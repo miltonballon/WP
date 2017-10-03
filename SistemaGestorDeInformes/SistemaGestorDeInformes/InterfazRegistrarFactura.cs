@@ -103,9 +103,10 @@ namespace SistemaGestorDeInformes
 
         private void buttonGuardar_Click(object sender, EventArgs e)
         {
-            //factura = crearFactura();
+            factura = crearFactura();
             //controladorFactura.insertarFactura(factura);
             crearYAgregarProductos();
+            MessageBox.Show(factura.ToString());
         }
 
         private Factura crearFactura()
@@ -131,7 +132,7 @@ namespace SistemaGestorDeInformes
                     datos[j]=dataGridView1.Rows[i].Cells[j].Value;
                 }
                 FilaFactura fila = new FilaFactura(datos,proveedor);
-                MessageBox.Show(fila.getCantidad()+" "+fila.getPrecioUnitario()+" "+fila.getTotal());
+                factura.agregarFilaFactura(fila);
             }
         }
     }

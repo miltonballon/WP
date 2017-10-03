@@ -57,6 +57,10 @@ namespace SistemaGestorDeInformes
             this.producto = producto;
         }
 
+        public override String ToString()
+        {
+            return producto + " Cantidad: "+ cantidad+" Precio Unitario: "+precioUnitario+" Total: "+total;
+        }
 
     }
 }

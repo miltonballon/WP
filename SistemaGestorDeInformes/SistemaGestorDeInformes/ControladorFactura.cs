@@ -55,7 +55,7 @@ namespace SistemaGestorDeInformes
             return id;
         }
 
-        public void registrarProductosDeLaFactura()
+        public void registrarProductosDeLaFactura(Factura factura)
         {
 
         }
