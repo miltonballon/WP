@@ -97,5 +97,19 @@ namespace SistemaGestorDeInformes
             this.Hide();
             principal.Show();
         }
+
+        private void registrarProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RegisterProduct intRegisterProduct = new RegisterProduct();
+            intRegisterProduct.Show();
+            this.Hide();
+        }
+
+        private void verProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowProducts intShowProducts = new ShowProducts();
+            intShowProducts.Show();
+            this.Hide();
+        }
     }
 }
