@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.nombreTextBox = new System.Windows.Forms.TextBox();
+            this.ProductoTextBox = new System.Windows.Forms.TextBox();
             this.ProveedorTextBox = new System.Windows.Forms.TextBox();
             this.UnidadTextBox = new System.Windows.Forms.TextBox();
             this.atrasButton = new System.Windows.Forms.Button();
@@ -56,12 +56,12 @@
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // nombreTextBox
+            // ProductoTextBox
             // 
-            this.nombreTextBox.Location = new System.Drawing.Point(272, 41);
-            this.nombreTextBox.Name = "nombreTextBox";
-            this.nombreTextBox.Size = new System.Drawing.Size(143, 20);
-            this.nombreTextBox.TabIndex = 0;
+            this.ProductoTextBox.Location = new System.Drawing.Point(272, 41);
+            this.ProductoTextBox.Name = "ProductoTextBox";
+            this.ProductoTextBox.Size = new System.Drawing.Size(143, 20);
+            this.ProductoTextBox.TabIndex = 0;
             // 
             // ProveedorTextBox
             // 
@@ -95,6 +95,7 @@
             this.RegistrarButton.TabIndex = 4;
             this.RegistrarButton.Text = "Registrar";
             this.RegistrarButton.UseVisualStyleBackColor = true;
+            this.RegistrarButton.Click += new System.EventHandler(this.RegistrarButton_Click);
             // 
             // ProveedorLabel
             // 
@@ -185,7 +186,7 @@
             // verProductosToolStripMenuItem
             // 
             this.verProductosToolStripMenuItem.Name = "verProductosToolStripMenuItem";
-            this.verProductosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.verProductosToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.verProductosToolStripMenuItem.Text = "Ver productos";
             this.verProductosToolStripMenuItem.Click += new System.EventHandler(this.verProductosToolStripMenuItem_Click);
             // 
@@ -271,7 +272,7 @@
             this.Controls.Add(this.atrasButton);
             this.Controls.Add(this.UnidadTextBox);
             this.Controls.Add(this.ProveedorTextBox);
-            this.Controls.Add(this.nombreTextBox);
+            this.Controls.Add(this.ProductoTextBox);
             this.Name = "RegisterProduct";
             this.Text = "RegisterProduct";
             this.menuStrip1.ResumeLayout(false);
@@ -283,7 +284,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox nombreTextBox;
+        private System.Windows.Forms.TextBox ProductoTextBox;
         private System.Windows.Forms.TextBox ProveedorTextBox;
         private System.Windows.Forms.TextBox UnidadTextBox;
         private System.Windows.Forms.Button atrasButton;
