@@ -31,6 +31,7 @@ namespace SistemaGestorDeInformes
             //MessageBox.Show(consulta);
             try
             {
+                
                 c.executeInsertion(consulta);
                 //MessageBox.Show(c.buscarYDevolverId("select id_proveedor FROM Factura where n_factura = " + nFactura) + "");
                 MessageBox.Show("Informacion Basica de la factura agregado","INFORME");
@@ -46,6 +47,8 @@ namespace SistemaGestorDeInformes
         {
             String consulta = "select id FROM Proveedor where Proveedor = '" + nombreProveedor + "'";
             int id = c.buscarYDevolverId(consulta);
+
+    
             if (id < 0)
             {
                 consulta = "insert into Proveedor (Proveedor) values('" + nombreProveedor + "')";
@@ -86,6 +89,7 @@ namespace SistemaGestorDeInformes
             {
                 pC.agregarIndices(nombre,proveedor,unidad);
             }
+            string value = "holaaa";
             string NombreQuery = "select id FROM Producto where Nombre = " + "'" + aux.Nombre.ToString() + "'";
             string ProveedorQuery = "select id FROM Proveedor where Proveedor = " + "'" + aux.Proveedor.ToString() + "'";
             string UnidadQuery = "select id FROM Unidad where Tipo = " + "'" + aux.Unidad.ToString() + "'";

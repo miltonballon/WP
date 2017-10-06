@@ -6,7 +6,7 @@ using System.Data;
 using System.Data.OleDb;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Data.SQLite;
 namespace SistemaGestorDeInformes
 {
     class ProductController
@@ -29,8 +29,6 @@ namespace SistemaGestorDeInformes
             string NombreQuery = "select id FROM Producto where Nombre = " + "'" + p.Nombre.ToString() + "'";
             string ProveedorQuery = "select id FROM Proveedor where Proveedor = " + "'" + p.Proveedor.ToString() + "'";
             string UnidadQuery = "select id FROM Unidad where Tipo = " + "'" + p.Unidad.ToString() + "'";
-
-
             int varNombre = c.buscarYDevolverId(NombreQuery); //-si retorna -1 quiere decir que esta vacio la consulta y no existe el elemento
             int varProveedor = c.buscarYDevolverId(ProveedorQuery);
             int varUnidad = c.buscarYDevolverId(UnidadQuery);
@@ -52,12 +50,12 @@ namespace SistemaGestorDeInformes
                 c.executeInsertion(query);
                 afectadas++;
             }
-            c.connectionClose();
+            
             return afectadas;
         }
         public void agregarIndices(TextBox nombre, TextBox proveedor, TextBox unidad)
         {
-            c.connectionOpen();
+            
             Producto p = new Producto();
             p.Nombre = nombre.Text;
             p.Proveedor = proveedor.Text;
@@ -73,26 +71,27 @@ namespace SistemaGestorDeInformes
             int varUnidad = c.buscarYDevolverId(UnidadQuery);
            // MessageBox.Show("N" + varNombre + "P" + varProveedor + "U" + varUnidad);
             query = "insert into Producto_Proveedor_Unidad (Id_prod,id_prov,id_uni) values('" + varNombre + "','" + varProveedor + "','" + varUnidad + "')";
+            string value = "holaaa";
             c.executeInsertion(query);
         }
 
 
         public void mostrarProducto(DataGridView d)
         {
-            string query = "select DISTINCT nombre, Proveedor, Tipo FROM Producto AS PROD, Proveedor AS PRO, Unidad AS Un, Producto_Proveedor_Unidad AS PPU WHERE PROD.id = PPU.Id_prod AND PRO.id= PPU.Id_prov AND Un.id=PPU.id_uni";
+            
             List<Producto> products = new List<Producto>();
-            c.executeQuery(query);
-            using (var reader = c.getCommmand().ExecuteReader())
+            string query = "select DISTINCT nombre, Proveedor, Tipo FROM Producto AS PROD, Proveedor AS PRO, Unidad AS Un, Producto_Proveedor_Unidad AS PPU WHERE PROD.id = PPU.Id_prod AND PRO.id= PPU.id_prov AND Un.id=PPU.id_uni";
+            SQLiteDataReader data = c.mostrarconsulta(query);
+            
+            while (data.Read())
             {
-                while (reader.Read())
-                {
-                    Producto p = new Producto();
-                    p.Nombre = reader.GetString(0).ToString();
-                    p.Proveedor = reader.GetString(1).ToString();
-                    p.Unidad = reader.GetString(2).ToString();
-                    products.Add(p);
-                    d.DataSource = products;
-                }
+                Producto p = new Producto();
+                p.Nombre = data[0].ToString();
+                p.Proveedor = data[1].ToString();
+                p.Unidad = data[2].ToString();
+                MessageBox.Show(p.Nombre + p.Proveedor + p.Unidad);
+                products.Add(p);
+                d.DataSource = products;
             }
         }
     }
