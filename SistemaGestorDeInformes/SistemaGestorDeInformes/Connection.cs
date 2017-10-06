@@ -7,80 +7,68 @@ using System.Data;
 using System.Data.OleDb;
 using System.Windows.Forms;
 using System.IO;
+using System.Data.SQLite;
 namespace SistemaGestorDeInformes
 {
     class Connection
     {
-        private OleDbConnection connection = new OleDbConnection();
-        private OleDbCommand command; //para realizar consultas
-        private OleDbDataAdapter da;    //para guardar los datos 
 
-        public OleDbCommand getCommmand() { return command; }
-
+        SQLiteConnection connectionString;
+        SQLiteCommand comando;
+        SQLiteDataReader data;
+        public SQLiteCommand getCommmando() { return comando; }
+        public SQLiteDataReader getData() { return data; }
         public Connection()
         {
 
         }
+
+
         public void connect()
         {
             try
             {
-                connection.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Database/Database.accdb;
-                Persist Security Info=False;";
-                connection.Open();
-                //MessageBox.Show("Conectado");
+                connectionString = new SQLiteConnection("Data Source = Database/Database.db");
+                connectionString.Open();
+               // MessageBox.Show("Conectado SQLITE");
             }
             catch (Exception ex)
             {
 
                 MessageBox.Show("No se conecto con la BD");
             }
+            
         }
         public int buscarYDevolverId(string consulta)
         {
+           
             int respuesta = -1;
             string searchQuery = consulta;
-            executeQuery(searchQuery);
-            using (var reader = command.ExecuteReader())
-            {
-                while (reader.Read())
+            mostrarconsulta(searchQuery);  
+                while (data.Read())
                 {
-                    respuesta = reader.GetInt32(0);
+                    string r=data[0].ToString();
+                    respuesta = Int32.Parse(r);
                 }
-            }
+           
             return respuesta;
+            
 
         }
-
-        public OleDbDataAdapter executeQuery(string consulta)
+        
+        public SQLiteDataReader mostrarconsulta(string consulta)
         {
-            command = new OleDbCommand();
-            command.Connection = connection;
-            command.CommandText = consulta;
-            da = new OleDbDataAdapter(command);
-            return da;
+
+            comando = new SQLiteCommand(consulta, connectionString);
+            data= comando.ExecuteReader();
+            return data;
         }
         public void executeInsertion(string consulta)
         {
-
-            command = new OleDbCommand();
-            command.Connection = connection;
-            command.CommandText = consulta;
-            command.ExecuteNonQuery();
-
+            comando = new SQLiteCommand(consulta, connectionString);
+            comando.ExecuteNonQuery();
 
         }
-        public void connectionOpen()
-        {
-            connection.Open();
-        }
-        public void connectionClose()
-        {
-            connection.Close();
-        }
-        public void clearTextBox()
-        {
-            da = null;
-        }
+       
     }
 }
