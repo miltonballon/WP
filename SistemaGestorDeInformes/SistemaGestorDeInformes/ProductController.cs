@@ -80,7 +80,7 @@ namespace SistemaGestorDeInformes
         {
             
             List<Producto> products = new List<Producto>();
-            string query = "select DISTINCT nombre, Proveedor, Tipo FROM Producto AS PROD, Proveedor AS PRO, Unidad AS Un, Producto_Proveedor_Unidad AS PPU WHERE PROD.id = PPU.Id_prod AND PRO.id= PPU.id_prov AND Un.id=PPU.id_uni";
+            string query = "select nombre, Proveedor, Tipo FROM Producto AS PROD, Proveedor AS PRO, Unidad AS Un, Producto_Proveedor_Unidad AS PPU WHERE PROD.id = PPU.Id_prod AND PRO.id= PPU.id_prov AND Un.id= PPU.id_uni";
             SQLiteDataReader data = c.mostrarconsulta(query);
             
             while (data.Read())
@@ -89,7 +89,7 @@ namespace SistemaGestorDeInformes
                 p.Nombre = data[0].ToString();
                 p.Proveedor = data[1].ToString();
                 p.Unidad = data[2].ToString();
-                MessageBox.Show(p.Nombre + p.Proveedor + p.Unidad);
+                //MessageBox.Show(p.Nombre + p.Proveedor + p.Unidad);
                 products.Add(p);
                 d.DataSource = products;
             }

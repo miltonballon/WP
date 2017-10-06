@@ -1,0 +1,31 @@
+CREATE TABLE `Factura` (
+	`n_factura`	INTEGER,
+	`n_autorizacion`	INTEGER,
+	`id_proveedor`	INTEGER,
+	`nit`	INTEGER,
+	`fecha`	TEXT,
+	FOREIGN KEY(`id_proveedor`) REFERENCES `Proveedor`(`id`),
+	PRIMARY KEY(`n_factura`)
+);
+CREATE TABLE `Producto` (
+	`id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+	`nombre`	TEXT
+);
+
+CREATE TABLE `Proveedor` (
+	`id`	INTEGER PRIMARY KEY AUTOINCREMENT,
+	`Proveedor`	TEXT
+);
+CREATE TABLE `Unidad` (
+	`id`	INTEGER PRIMARY KEY AUTOINCREMENT,
+	`Tipo`	INTEGER
+);
+CREATE TABLE `Producto_Proveedor_Unidad` (
+	`Id_prod`	INTEGER,
+	`id_prov`	INTEGER,
+	`id_uni`	INTEGER,
+	FOREIGN KEY(`id_uni`) REFERENCES `Unidad`(`id`),
+	FOREIGN KEY(`Id_prod`) REFERENCES `Producto`(`id`),
+	FOREIGN KEY(`id_prov`) REFERENCES `Proveedor`(`id`),
+	PRIMARY KEY(`Id_prod`,`id_prov`,`id_uni`)
+);
