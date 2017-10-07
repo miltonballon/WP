@@ -8,12 +8,12 @@ namespace SistemaGestorDeInformes
 {
     class FilaFactura
     {
-        private Producto producto;
+        private Product producto;
         private double cantidad;
         private double precioUnitario;
         private double total;
 
-        public FilaFactura(Producto producto, double cantidad, double precioUnitario, double total)
+        public FilaFactura(Product producto, double cantidad, double precioUnitario, double total)
         {
             this.producto = producto;
             this.cantidad = cantidad;
@@ -23,16 +23,16 @@ namespace SistemaGestorDeInformes
 
         public FilaFactura(Object[] datos,String proveedor)
         {
-            this.producto = new Producto();
-            this.producto.Nombre = (String)datos[0];
-            this.producto.Unidad = (String)datos[1];
-            this.producto.Proveedor = proveedor;
+            this.producto = new Product();
+            this.producto.Name = (String)datos[0];
+            this.producto.Unit = (String)datos[1];
+            this.producto.Provider = proveedor;
             this.cantidad = Double.Parse((String)datos[2]);
             this.precioUnitario = Double.Parse((String)datos[3]);
             this.total = (double)datos[4];
         }
 
-        public Producto getProducto()
+        public Product getProducto()
         {
             return producto;
         }
@@ -52,7 +52,7 @@ namespace SistemaGestorDeInformes
             return total;
         }
 
-        public void setProducto(Producto producto)
+        public void setProducto(Product producto)
         {
             this.producto = producto;
         }

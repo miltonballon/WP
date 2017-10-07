@@ -83,7 +83,7 @@
             this.pantallaPrincipalToolStripMenuItem.Name = "pantallaPrincipalToolStripMenuItem";
             this.pantallaPrincipalToolStripMenuItem.Size = new System.Drawing.Size(110, 20);
             this.pantallaPrincipalToolStripMenuItem.Text = "Pantalla Principal";
-            this.pantallaPrincipalToolStripMenuItem.Click += new System.EventHandler(this.pantallaPrincipalToolStripMenuItem_Click);
+            this.pantallaPrincipalToolStripMenuItem.Click += new System.EventHandler(this.MainFormToolStripMenuItem_Click);
             // 
             // facturasToolStripMenuItem
             // 
@@ -99,7 +99,7 @@
             this.registrarFacturaToolStripMenuItem.Name = "registrarFacturaToolStripMenuItem";
             this.registrarFacturaToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.registrarFacturaToolStripMenuItem.Text = "Registrar Factura";
-            this.registrarFacturaToolStripMenuItem.Click += new System.EventHandler(this.registrarFacturaToolStripMenuItem_Click);
+            this.registrarFacturaToolStripMenuItem.Click += new System.EventHandler(this.RegisterInvoiceToolStripMenuItem_Click);
             // 
             // verFacturasToolStripMenuItem
             // 
@@ -122,7 +122,7 @@
             this.registrarProductosToolStripMenuItem.Name = "registrarProductosToolStripMenuItem";
             this.registrarProductosToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.registrarProductosToolStripMenuItem.Text = "Registrar Producto";
-            this.registrarProductosToolStripMenuItem.Click += new System.EventHandler(this.registrarProductosToolStripMenuItem_Click);
+            this.registrarProductosToolStripMenuItem.Click += new System.EventHandler(this.RegisterProductToolStripMenuItem_Click);
             // 
             // verProductosToolStripMenuItem
             // 
@@ -211,7 +211,7 @@
             this.atrasButton.TabIndex = 2;
             this.atrasButton.Text = "Atrás";
             this.atrasButton.UseVisualStyleBackColor = false;
-            this.atrasButton.Click += new System.EventHandler(this.atrasButton_Click);
+            this.atrasButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
             // label1
             // 

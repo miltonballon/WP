@@ -17,82 +17,84 @@ namespace SistemaGestorDeInformes
             c.connect();
         }
 
-
-        public int insertar(TextBox nombre, TextBox proveedor, TextBox unidad)
+        public int insertProduct(TextBox product, TextBox provider, TextBox unit)
         {
             int afectadas = 0;
-            Producto p = new Producto();
-            p.Nombre = nombre.Text;
-            p.Proveedor = proveedor.Text;
-            p.Unidad = unidad.Text;
-            string query;
-            string NombreQuery = "select id FROM Producto where Nombre = " + "'" + p.Nombre.ToString() + "'";
-            string ProveedorQuery = "select id FROM Proveedor where Proveedor = " + "'" + p.Proveedor.ToString() + "'";
-            string UnidadQuery = "select id FROM Unidad where Tipo = " + "'" + p.Unidad.ToString() + "'";
-            int varNombre = c.buscarYDevolverId(NombreQuery); //-si retorna -1 quiere decir que esta vacio la consulta y no existe el elemento
-            int varProveedor = c.buscarYDevolverId(ProveedorQuery);
-            int varUnidad = c.buscarYDevolverId(UnidadQuery);
-            if (varNombre == -1)
+            Product p = new Product(product.Text,provider.Text,unit.Text);
+            if (getIdName(p.Name) == -1) //si es -1 quiere decir que no existe y por tanto se crea
             {
-                query = "insert into Producto (nombre) values('" + p.Nombre + "')";
-                c.executeInsertion(query);
+                InsertProduct(p.Name);
                 afectadas++;
             }
-            if (varProveedor == -1)
+            if (getIdProvider(p.Provider) == -1)
             {
-                query = "insert into Proveedor (Proveedor) values('" + p.Proveedor + "')";
-                c.executeInsertion(query);
+                InsertProvider(p.Provider);
                 afectadas++;
             }
-            if (varUnidad == -1)
+            if (getIdUnit(p.Unit) == -1)
             {
-                query = "insert into Unidad (Tipo) values('" + p.Unidad + "')";
-                c.executeInsertion(query);
+                InsertUnit(p.Unit);
                 afectadas++;
-            }
-            
+            }  
             return afectadas;
         }
-        public void agregarIndices(TextBox nombre, TextBox proveedor, TextBox unidad)
-        {
-            
-            Producto p = new Producto();
-            p.Nombre = nombre.Text;
-            p.Proveedor = proveedor.Text;
-            p.Unidad = unidad.Text;
-            string query;
-            string NombreQuery = "select id FROM Producto where Nombre = " + "'" + p.Nombre.ToString() + "'";
-            string ProveedorQuery = "select id FROM Proveedor where Proveedor = " + "'" + p.Proveedor.ToString() + "'";
-            string UnidadQuery = "select id FROM Unidad where Tipo = " + "'" + p.Unidad.ToString() + "'";
-            //asignacion a la tabla  principal
 
-            int varNombre = c.buscarYDevolverId(NombreQuery);
-            int varProveedor = c.buscarYDevolverId(ProveedorQuery);
-            int varUnidad = c.buscarYDevolverId(UnidadQuery);
-           // MessageBox.Show("N" + varNombre + "P" + varProveedor + "U" + varUnidad);
-            query = "insert into Producto_Proveedor_Unidad (Id_prod,id_prov,id_uni) values('" + varNombre + "','" + varProveedor + "','" + varUnidad + "')";
-            string value = "holaaa";
-            c.executeInsertion(query);
+        public void addReferencesToTableProduct_Provider_Unit(TextBox product, TextBox provider, TextBox unit)
+        {
+            Product p = new Product(product.Text, provider.Text, unit.Text);
+            InsertProduct_Provider_Unit(getIdName(p.Name),getIdProvider(p.Provider),getIdUnit(p.Unit));   
         }
 
-
-        public void mostrarProducto(DataGridView d)
+        public void showProducts(DataGridView d)
         {
-            
-            List<Producto> products = new List<Producto>();
-            string query = "select nombre, Proveedor, Tipo FROM Producto AS PROD, Proveedor AS PRO, Unidad AS Un, Producto_Proveedor_Unidad AS PPU WHERE PROD.id = PPU.Id_prod AND PRO.id= PPU.id_prov AND Un.id= PPU.id_uni";
-            SQLiteDataReader data = c.mostrarconsulta(query);
-            
+            List<Product> products = new List<Product>();
+            string query = "select name, Provider, Type FROM Product AS PROD, Provider AS PRO, Unit AS Un, Product_Provider_Unit AS PPU WHERE PROD.id = PPU.Id_prod AND PRO.id= PPU.id_prov AND Un.id= PPU.id_uni";
+            SQLiteDataReader data = c.query_show(query);
             while (data.Read())
             {
-                Producto p = new Producto();
-                p.Nombre = data[0].ToString();
-                p.Proveedor = data[1].ToString();
-                p.Unidad = data[2].ToString();
-                //MessageBox.Show(p.Nombre + p.Proveedor + p.Unidad);
+                Product p = new Product(data[0].ToString(),data[1].ToString(),data[2].ToString());
                 products.Add(p);
                 d.DataSource = products;
             }
         }
+
+
+        public int getIdName(string name)
+        {
+            string NameQuery = "select id FROM Product where name = " + "'" + name + "'";
+            return c.FindAndGetID(NameQuery); //-si retorna -1 quiere decir que esta vacio la consulta y no existe el elemento
+        }
+        public int getIdProvider(string provider)
+        {
+            string ProviderQuery = "select id FROM Provider where Provider = " + "'" + provider + "'";
+            return c.FindAndGetID(ProviderQuery);
+        }
+        public int getIdUnit(string unit)
+        {
+            string UnitQuery = "select id FROM Unit where Type = " + "'" + unit + "'";
+            return c.FindAndGetID(UnitQuery);
+        }
+        
+        public void InsertProduct(string name)
+        {
+            string query = "insert into Product (name) values('" + name + "')";
+            c.executeInsertion(query);
+        }
+        public void InsertProvider(string provider)
+        {
+            string query = "insert into Provider (Provider) values('" + provider + "')";
+            c.executeInsertion(query);
+        }
+        public void InsertUnit(string unit)
+        {
+            string query = "insert into Unit (Type) values('" + unit + "')";
+            c.executeInsertion(query);
+        }
+        public void InsertProduct_Provider_Unit(int IDProduct ,int IDProvider,int IDUnit)
+        {
+            string query = "insert into Product_Provider_Unit (Id_prod,id_prov,id_uni) values('" + IDProduct + "','" + IDProvider + "','" + IDUnit + "')";
+            c.executeInsertion(query);
+        }
+        
     }
 }

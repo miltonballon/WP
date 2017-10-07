@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ProductoTextBox = new System.Windows.Forms.TextBox();
-            this.ProveedorTextBox = new System.Windows.Forms.TextBox();
-            this.UnidadTextBox = new System.Windows.Forms.TextBox();
+            this.ProductTextBox = new System.Windows.Forms.TextBox();
+            this.ProviderTextBox = new System.Windows.Forms.TextBox();
+            this.Unit = new System.Windows.Forms.TextBox();
             this.atrasButton = new System.Windows.Forms.Button();
             this.RegistrarButton = new System.Windows.Forms.Button();
             this.ProveedorLabel = new System.Windows.Forms.Label();
@@ -60,24 +60,24 @@
             // 
             // ProductoTextBox
             // 
-            this.ProductoTextBox.Location = new System.Drawing.Point(197, 94);
-            this.ProductoTextBox.Name = "ProductoTextBox";
-            this.ProductoTextBox.Size = new System.Drawing.Size(250, 20);
-            this.ProductoTextBox.TabIndex = 0;
+            this.ProductTextBox.Location = new System.Drawing.Point(197, 94);
+            this.ProductTextBox.Name = "ProductoTextBox";
+            this.ProductTextBox.Size = new System.Drawing.Size(250, 20);
+            this.ProductTextBox.TabIndex = 0;
             // 
             // ProveedorTextBox
             // 
-            this.ProveedorTextBox.Location = new System.Drawing.Point(197, 136);
-            this.ProveedorTextBox.Name = "ProveedorTextBox";
-            this.ProveedorTextBox.Size = new System.Drawing.Size(250, 20);
-            this.ProveedorTextBox.TabIndex = 1;
+            this.ProviderTextBox.Location = new System.Drawing.Point(197, 136);
+            this.ProviderTextBox.Name = "ProveedorTextBox";
+            this.ProviderTextBox.Size = new System.Drawing.Size(250, 20);
+            this.ProviderTextBox.TabIndex = 1;
             // 
             // UnidadTextBox
             // 
-            this.UnidadTextBox.Location = new System.Drawing.Point(197, 175);
-            this.UnidadTextBox.Name = "UnidadTextBox";
-            this.UnidadTextBox.Size = new System.Drawing.Size(250, 20);
-            this.UnidadTextBox.TabIndex = 2;
+            this.Unit.Location = new System.Drawing.Point(197, 175);
+            this.Unit.Name = "UnidadTextBox";
+            this.Unit.Size = new System.Drawing.Size(250, 20);
+            this.Unit.TabIndex = 2;
             // 
             // atrasButton
             // 
@@ -90,7 +90,7 @@
             this.atrasButton.TabIndex = 3;
             this.atrasButton.Text = "Atrás";
             this.atrasButton.UseVisualStyleBackColor = false;
-            this.atrasButton.Click += new System.EventHandler(this.atrasButton_Click);
+            this.atrasButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
             // RegistrarButton
             // 
@@ -103,7 +103,7 @@
             this.RegistrarButton.TabIndex = 4;
             this.RegistrarButton.Text = "Registrar";
             this.RegistrarButton.UseVisualStyleBackColor = false;
-            this.RegistrarButton.Click += new System.EventHandler(this.RegistrarButton_Click);
+            this.RegistrarButton.Click += new System.EventHandler(this.RegisterButton_Click);
             // 
             // ProveedorLabel
             // 
@@ -161,7 +161,7 @@
             this.pantallaPrincipalToolStripMenuItem.Name = "pantallaPrincipalToolStripMenuItem";
             this.pantallaPrincipalToolStripMenuItem.Size = new System.Drawing.Size(110, 20);
             this.pantallaPrincipalToolStripMenuItem.Text = "Pantalla Principal";
-            this.pantallaPrincipalToolStripMenuItem.Click += new System.EventHandler(this.pantallaPrincipalToolStripMenuItem_Click);
+            this.pantallaPrincipalToolStripMenuItem.Click += new System.EventHandler(this.MainFormToolStripMenuItem_Click);
             // 
             // facturasToolStripMenuItem
             // 
@@ -177,7 +177,7 @@
             this.registrarFacturaToolStripMenuItem.Name = "registrarFacturaToolStripMenuItem";
             this.registrarFacturaToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.registrarFacturaToolStripMenuItem.Text = "Registrar Factura";
-            this.registrarFacturaToolStripMenuItem.Click += new System.EventHandler(this.registrarFacturaToolStripMenuItem_Click);
+            this.registrarFacturaToolStripMenuItem.Click += new System.EventHandler(this.RegisterInvoiceToolStripMenuItem_Click);
             // 
             // verFacturasToolStripMenuItem
             // 
@@ -208,7 +208,7 @@
             this.verProductosToolStripMenuItem.Name = "verProductosToolStripMenuItem";
             this.verProductosToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.verProductosToolStripMenuItem.Text = "Ver Productos";
-            this.verProductosToolStripMenuItem.Click += new System.EventHandler(this.verProductosToolStripMenuItem_Click);
+            this.verProductosToolStripMenuItem.Click += new System.EventHandler(this.ShowProductToolStripMenuItem_Click);
             // 
             // informeToolStripMenuItem1
             // 
@@ -303,9 +303,9 @@
             this.Controls.Add(this.ProveedorLabel);
             this.Controls.Add(this.RegistrarButton);
             this.Controls.Add(this.atrasButton);
-            this.Controls.Add(this.UnidadTextBox);
-            this.Controls.Add(this.ProveedorTextBox);
-            this.Controls.Add(this.ProductoTextBox);
+            this.Controls.Add(this.Unit);
+            this.Controls.Add(this.ProviderTextBox);
+            this.Controls.Add(this.ProductTextBox);
             this.Name = "RegisterProduct";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registrar Producto";
@@ -318,9 +318,9 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox ProductoTextBox;
-        private System.Windows.Forms.TextBox ProveedorTextBox;
-        private System.Windows.Forms.TextBox UnidadTextBox;
+        private System.Windows.Forms.TextBox ProductTextBox;
+        private System.Windows.Forms.TextBox ProviderTextBox;
+        private System.Windows.Forms.TextBox Unit;
         private System.Windows.Forms.Button atrasButton;
         private System.Windows.Forms.Button RegistrarButton;
         private System.Windows.Forms.Label ProveedorLabel;
