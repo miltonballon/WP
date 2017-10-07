@@ -14,16 +14,14 @@ namespace SistemaGestorDeInformes
     {
 
         SQLiteConnection connectionString;
-        SQLiteCommand comando;
+        SQLiteCommand command;
         SQLiteDataReader data;
-        public SQLiteCommand getCommmando() { return comando; }
+        public SQLiteCommand getCommmand() { return command; }
         public SQLiteDataReader getData() { return data; }
         public Connection()
         {
 
         }
-
-
         public void connect()
         {
             try
@@ -39,34 +37,30 @@ namespace SistemaGestorDeInformes
             }
             
         }
-        public int buscarYDevolverId(string consulta)
+        public int FindAndGetID(string query)
         {
-           
-            int respuesta = -1;
-            string searchQuery = consulta;
-            mostrarconsulta(searchQuery);  
+            int answer = -1;
+            string searchQuery = query;
+            query_show(searchQuery);  
                 while (data.Read())
                 {
                     string r=data[0].ToString();
-                    respuesta = Int32.Parse(r);
+                    answer = Int32.Parse(r);
                 }
-           
-            return respuesta;
-            
-
+          return answer;
         }
         
-        public SQLiteDataReader mostrarconsulta(string consulta)
+        public SQLiteDataReader query_show(string query)
         {
 
-            comando = new SQLiteCommand(consulta, connectionString);
-            data= comando.ExecuteReader();
+            command = new SQLiteCommand(query, connectionString);
+            data= command.ExecuteReader();
             return data;
         }
-        public void executeInsertion(string consulta)
+        public void executeInsertion(string query)
         {
-            comando = new SQLiteCommand(consulta, connectionString);
-            comando.ExecuteNonQuery();
+            command = new SQLiteCommand(query, connectionString);
+            command.ExecuteNonQuery();
 
         }
        

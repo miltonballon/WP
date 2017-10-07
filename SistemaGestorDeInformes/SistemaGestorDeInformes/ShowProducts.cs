@@ -36,7 +36,7 @@ namespace SistemaGestorDeInformes
 
         public void showUser()
         {
-            p.mostrarProducto(dataGridView1);
+            p.showProducts(dataGridView1);
         }
 
         private void pantallaPrincipalToolStripMenuItem_Click(object sender, EventArgs e)

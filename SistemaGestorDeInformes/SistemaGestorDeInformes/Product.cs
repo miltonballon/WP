@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SistemaGestorDeInformes
 {
-    class Producto
+    class Product
     {
         private string nombre;
         private string unidad;
@@ -37,6 +37,18 @@ namespace SistemaGestorDeInformes
         public override String ToString()
         {
             return "Nombre: "+nombre+" Unidad: "+unidad+" Proveedor: "+proveedor;
+        }
+        public Product()
+        {
+            
+
+        }
+        public Product(string prod,string prov,string uni)
+        {
+            nombre = prod;
+            proveedor = prov;
+            unidad = uni;
+
         }
     }
 

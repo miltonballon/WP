@@ -40,8 +40,8 @@ namespace SistemaGestorDeInformes
 
         private void RegistrarButton_Click(object sender, EventArgs e)
         {
-            p.insertar(ProductoTextBox, ProveedorTextBox, UnidadTextBox);
-            p.agregarIndices(ProductoTextBox, ProveedorTextBox, UnidadTextBox);
+            p.insertProduct(ProductoTextBox, ProveedorTextBox, UnidadTextBox);
+            p.addReferencesToTableProduct_Provider_Unit(ProductoTextBox, ProveedorTextBox, UnidadTextBox);
             cleanTextBox();
             MessageBox.Show("agregado");
 
