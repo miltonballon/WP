@@ -37,7 +37,7 @@ namespace SistemaGestorDeInformes
                 MessageBox.Show("Informacion Basica de la factura agregado satisfactoriamente","INFORME");
                 registerInvoicesRows(invoice);
             }
-            catch (System.Data.OleDb.OleDbException)
+            catch (Exception)
             {
                 MessageBox.Show("El 'N. Factura' introducido ya existe.\nPor favor revise los datos introducidos.", "Error");
             }
@@ -51,7 +51,7 @@ namespace SistemaGestorDeInformes
     
             if (id < 0)
             {
-                query = "insert into Provider (Proveedor) values('" + providerName + "')";
+                query = "insert into Provider (Provider) values('" + providerName + "')";
                 c.executeInsertion(query);
                 query = "select id FROM Provider where Provider = '" + providerName + "'";
                 id = c.FindAndGetID(query);
@@ -100,8 +100,8 @@ namespace SistemaGestorDeInformes
 
         private int searchPPU(int idProd, int idProv, int idUni)
         {
-            String query = "INSERT INTO invoice_row (n_invoice, id_ppu, quantity, unit_price, total) VALUES("
-                +"id_prod="+idProd+" and id_prov="+idProv+" and id_uni="+idUni+")";
+            String query = "SELECT id FROM Product_Provider_Unit WHERE "
+                + "id_prod="+idProd+" and id_prov="+idProv+" and id_uni="+idUni+")";
             return c.FindAndGetID(query);
         }
 

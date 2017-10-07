@@ -104,7 +104,7 @@ namespace SistemaGestorDeInformes
         private void buttonGuardar_Click(object sender, EventArgs e)
         {
             invoice = createInvoice();
-            crearYAgregarProductos();
+            createAndAddProducts();
             invoiceController.addInvoice(invoice);
             MessageBox.Show(invoice.ToString());
         }
@@ -120,7 +120,7 @@ namespace SistemaGestorDeInformes
             return invoice;
         }
 
-        private void crearYAgregarProductos()
+        private void createAndAddProducts()
         {
             int tamaño = (dataGridView1.Rows.Count)-1;
             Object[] datos = new Object[5];
