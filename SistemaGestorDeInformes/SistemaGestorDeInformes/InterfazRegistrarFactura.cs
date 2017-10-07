@@ -12,15 +12,15 @@ namespace SistemaGestorDeInformes
 {
     public partial class InterfazRegistrarFactura : Form
     {
-        private ControladorFactura controladorFactura;
-        Factura factura;
+        private InvoiceController invoiceController;
+        Invoice invoice;
         public InterfazRegistrarFactura()
         {
             InitializeComponent();
             this.textBoxNit.KeyPress += new KeyPressEventHandler(textBoxNit_TextChanged);//Para impedir que se pongan letras y espacios en el NIT
             this.textBoxNFactura.KeyPress += new KeyPressEventHandler(textBoxNFactura_TextChanged);//Para impedir que se pongan letras y espacios en el N.FACTURA
             this.textBoxNAutorizacion.KeyPress += new KeyPressEventHandler(textBoxNAutorizacion_TextChanged);//Para impedir que se pongan letras y espacios en el N.AUTORIZACION
-            controladorFactura = new ControladorFactura();
+            invoiceController = new InvoiceController();
         }
 
         private void InterfazRegistrarFactura_Load(object sender, EventArgs e)
@@ -103,21 +103,21 @@ namespace SistemaGestorDeInformes
 
         private void buttonGuardar_Click(object sender, EventArgs e)
         {
-            factura = crearFactura();
+            invoice = createInvoice();
             crearYAgregarProductos();
-            controladorFactura.insertarFactura(factura);
-            MessageBox.Show(factura.ToString());
+            invoiceController.addInvoice(invoice);
+            MessageBox.Show(invoice.ToString());
         }
 
-        private Factura crearFactura()
+        private Invoice createInvoice()
         {
-            int nFactura = Int32.Parse(textBoxNFactura.Text),
+            int nInvoice = Int32.Parse(textBoxNFactura.Text),
                 nAutorizacion = Int32.Parse(textBoxNAutorizacion.Text),
                 nit = Int32.Parse(textBoxNit.Text);
             String proveedor = textBoxProveedor.Text;
             DateTime fecha = dateFecha.Value;
-            factura = new Factura(proveedor, nit, nFactura, nAutorizacion, fecha);
-            return factura;
+            invoice = new Invoice(proveedor, nit, nInvoice, nAutorizacion, fecha);
+            return invoice;
         }
 
         private void crearYAgregarProductos()
@@ -131,8 +131,8 @@ namespace SistemaGestorDeInformes
                 {
                     datos[j]=dataGridView1.Rows[i].Cells[j].Value;
                 }
-                FilaFactura fila = new FilaFactura(datos,proveedor);
-                factura.agregarFilaFactura(fila);
+                InvoiceRow fila = new InvoiceRow(datos,proveedor);
+                invoice.addInvoiceRow(fila);
             }
         }
 

@@ -1,12 +1,13 @@
-CREATE TABLE `Factura` (
-	`n_factura`	INTEGER,
-	`n_autorizacion`	INTEGER,
-	`id_proveedor`	INTEGER,
+CREATE TABLE `Invoice` (
+	`n_invoice`	INTEGER,
+	`n_autorization`	INTEGER,
+	`id_provider`	INTEGER,
 	`nit`	INTEGER,
-	`fecha`	TEXT,
-	FOREIGN KEY(`id_proveedor`) REFERENCES `Proveedor`(`id`),
-	PRIMARY KEY(`n_factura`)
+	`date`	TEXT,
+	FOREIGN KEY(`id_provider`) REFERENCES `Provider`(`id`),
+	PRIMARY KEY(`n_invoice`)
 );
+
 CREATE TABLE `Product` (
 	`id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
 	`name`	TEXT
@@ -20,11 +21,22 @@ CREATE TABLE `Unit` (
 	`Type`	TEXT
 );
 CREATE TABLE `Product_Provider_Unit` (
+	`id`	INTEGER PRIMARY KEY AUTOINCREMENT,	
 	`Id_prod`	INTEGER,
 	`id_prov`	INTEGER,
 	`id_uni`	INTEGER,
 	FOREIGN KEY(`id_prov`) REFERENCES `Provider`(`id`),
 	FOREIGN KEY(`id_uni`) REFERENCES `Unit`(`id`),
-	PRIMARY KEY(`Id_prod`,`id_prov`,`id_uni`),
 	FOREIGN KEY(`Id_prod`) REFERENCES `Product`(`id`)
+);
+
+CREATE TABLE `invoice_row` (
+	`id`		INTEGER PRIMARY KEY AUTOINCREMENT,
+	`n_invoice`	INTEGER,
+	`Id_ppu`	INTEGER,
+	`quantity`	TEXT,
+	`unit_price`	TEXT,
+	`total` 	TEXT,
+	FOREIGN KEY(`id_ppu`) REFERENCES `Product_Provider_Unit`(`id`),
+	FOREIGN KEY(`n_invoice`) REFERENCES `Invoice`(`n_invoice`)	
 );

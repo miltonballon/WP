@@ -19,24 +19,24 @@ namespace SistemaGestorDeInformes
 
         public int insertProduct(TextBox product, TextBox provider, TextBox unit)
         {
-            int afectadas = 0;
+            int affected = 0;
             Product p = new Product(product.Text,provider.Text,unit.Text);
             if (getIdName(p.Name) == -1) //si es -1 quiere decir que no existe y por tanto se crea
             {
                 InsertProduct(p.Name);
-                afectadas++;
+                affected++;
             }
             if (getIdProvider(p.Provider) == -1)
             {
                 InsertProvider(p.Provider);
-                afectadas++;
+                affected++;
             }
             if (getIdUnit(p.Unit) == -1)
             {
                 InsertUnit(p.Unit);
-                afectadas++;
+                affected++;
             }  
-            return afectadas;
+            return affected;
         }
 
         public void addReferencesToTableProduct_Provider_Unit(TextBox product, TextBox provider, TextBox unit)
