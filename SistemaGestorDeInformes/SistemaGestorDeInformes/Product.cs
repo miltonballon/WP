@@ -8,9 +8,9 @@ namespace SistemaGestorDeInformes
 {
     class Product
     {
-        private string nombre;
-        private string unidad;
-        private string proveedor;
+        private string name;
+        private string unit;
+        private string provider;
 
         /* public void setNombre(string n) { nombre = n; }
          public void setUnidad(string u) { unidad = u; }
@@ -18,25 +18,25 @@ namespace SistemaGestorDeInformes
          public string getNombre() { return nombre;}
          public string getUnidad() { return unidad; }
          public string getProveedor() { return proveedor; }*/
-        public string Nombre
+        public string Name
         {
-            get { return nombre; }
-            set { nombre = value; }
+            get { return name; }
+            set { name = value; }
         }
-        public string Proveedor
+        public string Provider
         {
-            get { return proveedor; }
-            set { proveedor = value; }
+            get { return provider; }
+            set { provider = value; }
         }
-        public string Unidad
+        public string Unit
         {
-            get { return unidad; }
-            set { unidad = value; }
+            get { return unit; }
+            set { unit = value; }
         }
 
         public override String ToString()
         {
-            return "Nombre: "+nombre+" Unidad: "+unidad+" Proveedor: "+proveedor;
+            return "Nombre: "+name+" Unidad: "+unit+" Proveedor: "+provider;
         }
         public Product()
         {
@@ -45,9 +45,9 @@ namespace SistemaGestorDeInformes
         }
         public Product(string prod,string prov,string uni)
         {
-            nombre = prod;
-            proveedor = prov;
-            unidad = uni;
+            name = prod;
+            provider = prov;
+            unit = uni;
 
         }
     }

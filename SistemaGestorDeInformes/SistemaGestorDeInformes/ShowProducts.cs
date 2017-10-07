@@ -20,14 +20,14 @@ namespace SistemaGestorDeInformes
             showUser();
         }
 
-        private void atrasButton_Click(object sender, EventArgs e)
+        private void BackButton_Click(object sender, EventArgs e)
         {
             InterfazPrincipal main = new InterfazPrincipal();
             this.Hide();
             main.Show();
         }
 
-        private void registrarProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        private void RegisterProductToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RegisterProduct main = new RegisterProduct();
             this.Hide();
@@ -39,17 +39,17 @@ namespace SistemaGestorDeInformes
             p.showProducts(dataGridView1);
         }
 
-        private void pantallaPrincipalToolStripMenuItem_Click(object sender, EventArgs e)
+        private void MainFormToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            InterfazPrincipal intPrincipal = new InterfazPrincipal();
-            intPrincipal.Show();
+            InterfazPrincipal MainInterface = new InterfazPrincipal();
+            MainInterface.Show();
             this.Hide();
         }
 
-        private void registrarFacturaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void RegisterInvoiceToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            InterfazRegistrarFactura intInterfazRegistrarFactura = new InterfazRegistrarFactura();
-            intInterfazRegistrarFactura.Show();
+            InterfazRegistrarFactura RegisterInvoiceForm = new InterfazRegistrarFactura();
+            RegisterInvoiceForm.Show();
             this.Hide();
         }
     }

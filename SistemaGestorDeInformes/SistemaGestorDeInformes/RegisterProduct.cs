@@ -24,46 +24,46 @@ namespace SistemaGestorDeInformes
 
         }
 
-        private void atrasButton_Click(object sender, EventArgs e)
+        private void BackButton_Click(object sender, EventArgs e)
         {
             InterfazPrincipal main = new InterfazPrincipal();
             this.Hide();
             main.Show();
         }
 
-        private void verProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ShowProductToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ShowProducts main = new ShowProducts();
             this.Hide();
             main.Show();
         }
 
-        private void RegistrarButton_Click(object sender, EventArgs e)
+        private void RegisterButton_Click(object sender, EventArgs e)
         {
-            p.insertProduct(ProductoTextBox, ProveedorTextBox, UnidadTextBox);
-            p.addReferencesToTableProduct_Provider_Unit(ProductoTextBox, ProveedorTextBox, UnidadTextBox);
+            p.insertProduct(ProductTextBox, ProviderTextBox, Unit);
+            p.addReferencesToTableProduct_Provider_Unit(ProductTextBox, ProviderTextBox, Unit);
             cleanTextBox();
-            MessageBox.Show("agregado");
+            MessageBox.Show("Agregado exitosamente");
 
         }
         public void cleanTextBox()
         {
-            ProductoTextBox.Text = "";
-            ProveedorTextBox.Text = "";
-            UnidadTextBox.Text = "";
+            ProductTextBox.Text = "";
+            ProviderTextBox.Text = "";
+            Unit.Text = "";
         }
 
-        private void pantallaPrincipalToolStripMenuItem_Click(object sender, EventArgs e)
+        private void MainFormToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            InterfazPrincipal intPrincipal = new InterfazPrincipal();
-            intPrincipal.Show();
+            InterfazPrincipal MainForm = new InterfazPrincipal();
+            MainForm.Show();
             this.Hide();
         }
 
-        private void registrarFacturaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void RegisterInvoiceToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            InterfazRegistrarFactura intInterfazRegistrarFactura = new InterfazRegistrarFactura();
-            intInterfazRegistrarFactura.Show();
+            InterfazRegistrarFactura RegisterInvoiceForm = new InterfazRegistrarFactura();
+            RegisterInvoiceForm.Show();
             this.Hide();
         }
     }

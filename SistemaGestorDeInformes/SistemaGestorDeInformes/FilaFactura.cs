@@ -24,9 +24,9 @@ namespace SistemaGestorDeInformes
         public FilaFactura(Object[] datos,String proveedor)
         {
             this.producto = new Product();
-            this.producto.Nombre = (String)datos[0];
-            this.producto.Unidad = (String)datos[1];
-            this.producto.Proveedor = proveedor;
+            this.producto.Name = (String)datos[0];
+            this.producto.Unit = (String)datos[1];
+            this.producto.Provider = proveedor;
             this.cantidad = Double.Parse((String)datos[2]);
             this.precioUnitario = Double.Parse((String)datos[3]);
             this.total = (double)datos[4];

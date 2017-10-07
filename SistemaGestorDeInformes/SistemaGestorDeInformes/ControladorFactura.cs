@@ -78,11 +78,11 @@ namespace SistemaGestorDeInformes
                 , total=fila.getTotal()+"";
             Product aux = fila.getProducto();
             TextBox nombre = new TextBox();
-            nombre.Text =aux.Nombre;
+            nombre.Text =aux.Name;
             TextBox proveedor = new TextBox();
-            proveedor.Text = aux.Proveedor;
+            proveedor.Text = aux.Provider;
             TextBox unidad = new TextBox();
-            unidad.Text = aux.Unidad;
+            unidad.Text = aux.Unit;
             ProductController pC = new ProductController();
             int afectadas=pC.insertProduct(nombre,proveedor,unidad);
             if (afectadas > 0)
@@ -90,9 +90,9 @@ namespace SistemaGestorDeInformes
                 pC.addReferencesToTableProduct_Provider_Unit(nombre,proveedor,unidad);
             }
             string value = "holaaa";
-            string NombreQuery = "select id FROM Producto where Nombre = " + "'" + aux.Nombre.ToString() + "'";
-            string ProveedorQuery = "select id FROM Proveedor where Proveedor = " + "'" + aux.Proveedor.ToString() + "'";
-            string UnidadQuery = "select id FROM Unidad where Tipo = " + "'" + aux.Unidad.ToString() + "'";
+            string NombreQuery = "select id FROM Producto where Nombre = " + "'" + aux.Name.ToString() + "'";
+            string ProveedorQuery = "select id FROM Proveedor where Proveedor = " + "'" + aux.Provider.ToString() + "'";
+            string UnidadQuery = "select id FROM Unidad where Tipo = " + "'" + aux.Unit.ToString() + "'";
             int idProd=c.FindAndGetID(NombreQuery)
                 , idProv= c.FindAndGetID(ProveedorQuery)
                 , idUni= c.FindAndGetID(UnidadQuery);

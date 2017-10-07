@@ -7,25 +7,24 @@ CREATE TABLE `Factura` (
 	FOREIGN KEY(`id_proveedor`) REFERENCES `Proveedor`(`id`),
 	PRIMARY KEY(`n_factura`)
 );
-CREATE TABLE `Producto` (
+CREATE TABLE `Product` (
 	`id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-	`nombre`	TEXT
+	`name`	TEXT
 );
-
-CREATE TABLE `Proveedor` (
+CREATE TABLE `Provider` (
 	`id`	INTEGER PRIMARY KEY AUTOINCREMENT,
-	`Proveedor`	TEXT
+	`Provider`	TEXT
 );
-CREATE TABLE `Unidad` (
+CREATE TABLE `Unit` (
 	`id`	INTEGER PRIMARY KEY AUTOINCREMENT,
-	`Tipo`	TEXT
+	`Type`	TEXT
 );
-CREATE TABLE `Producto_Proveedor_Unidad` (
+CREATE TABLE `Product_Provider_Unit` (
 	`Id_prod`	INTEGER,
 	`id_prov`	INTEGER,
 	`id_uni`	INTEGER,
-	FOREIGN KEY(`id_uni`) REFERENCES `Unidad`(`id`),
-	FOREIGN KEY(`Id_prod`) REFERENCES `Producto`(`id`),
-	FOREIGN KEY(`id_prov`) REFERENCES `Proveedor`(`id`),
-	PRIMARY KEY(`Id_prod`,`id_prov`,`id_uni`)
+	FOREIGN KEY(`id_prov`) REFERENCES `Provider`(`id`),
+	FOREIGN KEY(`id_uni`) REFERENCES `Unit`(`id`),
+	PRIMARY KEY(`Id_prod`,`id_prov`,`id_uni`),
+	FOREIGN KEY(`Id_prod`) REFERENCES `Product`(`id`)
 );
