@@ -52,5 +52,23 @@ namespace SistemaGestorDeInformes
             RegisterInvoiceForm.Show();
             this.Hide();
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void searchButton_Click(object sender, EventArgs e)
+        {
+            p.searchProduct(dataGridView1,textBox1.Text);
+          
+        }
+
+        private void clearSearchButton_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "";
+            p.showProducts(dataGridView1);
+            
+        }
     }
 }
