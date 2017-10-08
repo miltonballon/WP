@@ -19,14 +19,13 @@ namespace SistemaGestorDeInformes
         {
             int nInvoice = invoice.getNInvoice(),
                 nAutorization = invoice.getNAutorization(),
-                nit = invoice.getNit(),
                 idProvider = searchProvider(invoice.getProvider());
             DateTime date = invoice.getDate();
             String query = "INSERT INTO Invoice(n_invoice, n_autorization, id_provider, nit, date) VALUES (";
             query += nInvoice+", ";
             query += nAutorization + ", ";
             query += idProvider + ", ";
-            query += nit + ", ";
+            query += invoice.getProvider().getNit() + ", ";
             query += date.ToString("dd/MM/yyyy")+")";
             //MessageBox.Show(query);
             try
@@ -43,19 +42,13 @@ namespace SistemaGestorDeInformes
             }
         }
 
-        public int searchProvider(String providerName)//refactorizar
+        public int searchProvider(Provider provider)//refactorizar
         {
-            String query = "select id FROM Provider where Provider = '" + providerName + "'";
-            int id = c.FindAndGetID(query);
-
-    
+            ProviderController provCon = new ProviderController();
+            int id=provCon.findProviderIdByName(provider.getName());
             if (id < 0)
             {
-                query = "insert into Provider (Provider) values('" + providerName + "')";
-                c.executeInsertion(query);
-                query = "select id FROM Provider where Provider = '" + providerName + "'";
-                id = c.FindAndGetID(query);
-                MessageBox.Show("Nuevo proveedor registrado en el programa: " + providerName, "Nuevo Proveedor");
+                provCon.insertProvider(provider);
             }
             return id;
         }
@@ -65,13 +58,13 @@ namespace SistemaGestorDeInformes
             int counter = 0;
             foreach (InvoiceRow row in invoice.getInvoiceRows())
             {
-                registerInvoiceRow(row,invoice.getNInvoice());
+                registerInvoiceRow(row,invoice);
                 counter++;
             }
             MessageBox.Show(counter+" filas de la facturas insertadas","INFORME");
         }
 
-        public void registerInvoiceRow(InvoiceRow row,int nFact)
+        public void registerInvoiceRow(InvoiceRow row,Invoice invoice)
         {
             String quantity = row.getQuantity() + ""
                 , unitPrice= row.getUnitPrice() + ""
@@ -79,7 +72,7 @@ namespace SistemaGestorDeInformes
             searchProduct(row.getProduct());
             int idPpu = insertProduct(row.getProduct());
             String queryInsertion = "INSERT INTO invoice_row (n_invoice, id_ppu, quantity, unit_price, total) VALUES(";
-            queryInsertion += nFact + ", ";
+            queryInsertion += invoice.getNInvoice() + ", ";
             queryInsertion += idPpu + ", ";
             queryInsertion += "'"+quantity + "', ";
             queryInsertion += "'"+unitPrice + "', ";

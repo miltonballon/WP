@@ -13,7 +13,9 @@ namespace SistemaGestorDeInformes
     public partial class InterfazRegistrarFactura : Form
     {
         private InvoiceController invoiceController;
-        Invoice invoice;
+        private Invoice invoice;
+        private Provider provider;
+
         public InterfazRegistrarFactura()
         {
             InitializeComponent();
@@ -112,11 +114,11 @@ namespace SistemaGestorDeInformes
         private Invoice createInvoice()
         {
             int nInvoice = Int32.Parse(textBoxNFactura.Text),
-                nAutorizacion = Int32.Parse(textBoxNAutorizacion.Text),
+                nAutorization = Int32.Parse(textBoxNAutorizacion.Text),
                 nit = Int32.Parse(textBoxNit.Text);
             String proveedor = textBoxProveedor.Text;
-            DateTime fecha = dateFecha.Value;
-            invoice = new Invoice(proveedor, nit, nInvoice, nAutorizacion, fecha);
+            DateTime date = dateFecha.Value;
+            invoice = new Invoice(proveedor, nit, nInvoice, nAutorization, date);
             return invoice;
         }
 
