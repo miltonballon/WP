@@ -42,3 +42,9 @@ CREATE TABLE `invoice_row` (
 	FOREIGN KEY(`id_ppu`) REFERENCES `Product_Provider_Unit`(`id`),
 	FOREIGN KEY(`n_invoice`) REFERENCES `Invoice`(`n_invoice`)	
 );
+
+CREATE TABLE `Configuration` (
+	`id`		INTEGER PRIMARY KEY AUTOINCREMENT,
+	`scholarships`	INTEGER,
+	`n_departure`	INTEGER
+);
