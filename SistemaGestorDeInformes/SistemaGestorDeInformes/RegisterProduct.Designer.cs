@@ -184,6 +184,7 @@
             this.verFacturasToolStripMenuItem.Name = "verFacturasToolStripMenuItem";
             this.verFacturasToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.verFacturasToolStripMenuItem.Text = "Ver  Facturas";
+            this.verFacturasToolStripMenuItem.Click += new System.EventHandler(this.verFacturasToolStripMenuItem_Click);
             // 
             // productosToolStripMenuItem
             // 
