@@ -13,8 +13,10 @@ namespace SistemaGestorDeInformes
     public partial class InterfazRegistrarFactura : Form
     {
         private InvoiceController invoiceController;
+        ProviderController providerController;
         private Invoice invoice;
         private Provider provider;
+        private List<Provider> providers;
 
         public InterfazRegistrarFactura()
         {
@@ -23,11 +25,30 @@ namespace SistemaGestorDeInformes
             this.textBoxNFactura.KeyPress += new KeyPressEventHandler(textBoxNFactura_TextChanged);//Para impedir que se pongan letras y espacios en el N.FACTURA
             this.textBoxNAutorizacion.KeyPress += new KeyPressEventHandler(textBoxNAutorizacion_TextChanged);//Para impedir que se pongan letras y espacios en el N.AUTORIZACION
             invoiceController = new InvoiceController();
+            providerController = new ProviderController();
+            loadProviders();
+        }
+
+        private void loadProviders()
+        {
+            providers=providerController.getAllProviders();
         }
 
         private void InterfazRegistrarFactura_Load(object sender, EventArgs e)
         {
+            textBoxProveedor.AutoCompleteCustomSource = providersNames();
+            textBoxProveedor.AutoCompleteMode= AutoCompleteMode.Suggest;
+            textBoxProveedor.AutoCompleteSource= AutoCompleteSource.CustomSource;
+        }
 
+        private AutoCompleteStringCollection providersNames()
+        {
+            AutoCompleteStringCollection output = new AutoCompleteStringCollection();
+            foreach (Provider p in providers)
+            {
+                output.Add(p.getName());
+            }
+            return output;
         }
 
         private void textBoxProveedor_TextChanged(object sender, EventArgs e)
@@ -118,7 +139,7 @@ namespace SistemaGestorDeInformes
                 nit = Int32.Parse(textBoxNit.Text);
             String proveedor = textBoxProveedor.Text;
             DateTime date = dateFecha.Value;
-            invoice = new Invoice(proveedor, nit, nInvoice, nAutorization, date);
+            invoice = new Invoice(provider, nInvoice, nAutorization, date);
             return invoice;
         }
 

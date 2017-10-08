@@ -38,6 +38,19 @@ namespace SistemaGestorDeInformes
             return findProviderIdByName(name);
         }
 
+        public List<Provider> getAllProviders()
+        {
+            List<Provider> output = new List<Provider>();
+            string query = "SELECT * FROM Provider";
+            SQLiteDataReader data = c.query_show(query);
+            while (data.Read())
+            {
+                Provider provider = new Provider(data[1].ToString(), Int32.Parse(data[2].ToString()));
+                output.Add(provider);
+            }
+            return output;
+        }
+
         /*public int updateProviderById(int id, Provider provider)
         {
             String name = provider.getName();
