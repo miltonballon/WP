@@ -10,60 +10,53 @@ using System.Windows.Forms;
 
 namespace SistemaGestorDeInformes
 {
-    public partial class InterfazPrincipal : Form
+    public partial class ReportConfiguration : Form
     {
-        Connection c = new Connection();
-        public InterfazPrincipal()
+        public ReportConfiguration()
         {
             InitializeComponent();
-            c.connect();
-            //c.connectionOpen();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void pantallaPrincipalToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            InterfazRegistrarFactura InterfazRegistrarFactura1=new InterfazRegistrarFactura();
-            InterfazRegistrarFactura1.Show();
+            InterfazPrincipal principal = new InterfazPrincipal();
+            principal.Show();
+            this.Hide();
         }
 
         private void registrarFacturaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            InterfazRegistrarFactura intRegFac = new InterfazRegistrarFactura();
+            InterfazRegistrarFactura InterfazRegistrarFactura1 = new InterfazRegistrarFactura();
+            InterfazRegistrarFactura1.Show();
             this.Hide();
-            intRegFac.Show();
         }
 
         private void verFacturasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ShowBills ShowBills1 = new ShowBills();
-            this.Hide();
             ShowBills1.Show();
+            this.Hide();
         }
 
         private void registrarProductosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RegisterProduct RegisterProduct1 = new RegisterProduct();
-            this.Hide();
             RegisterProduct1.Show();
+            this.Hide();
         }
 
         private void verProductosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ShowProducts ShowProducts1 = new ShowProducts();
-            this.Hide();
             ShowProducts1.Show();
+            this.Hide();
         }
 
-        private void informeToolStripMenuItem_Click(object sender, EventArgs e)
+        private void atrasButton_Click(object sender, EventArgs e)
         {
-            ReportConfiguration ReportConfiguration1 = new ReportConfiguration();
+            InterfazPrincipal principal = new InterfazPrincipal();//para volver atras
             this.Hide();
-            ReportConfiguration1.Show();
+            principal.Show();
         }
     }
 }

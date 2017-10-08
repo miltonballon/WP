@@ -73,5 +73,12 @@ namespace SistemaGestorDeInformes
             ShowBills1.Show();
             this.Hide();
         }
+
+        private void informeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ReportConfiguration ReportConfiguration1 = new ReportConfiguration();
+            this.Hide();
+            ReportConfiguration1.Show();
+        }
     }
 }
