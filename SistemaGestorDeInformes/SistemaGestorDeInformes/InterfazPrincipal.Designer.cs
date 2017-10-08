@@ -80,7 +80,8 @@
             // 
             // pantallaPrincipalToolStripMenuItem
             // 
-            this.pantallaPrincipalToolStripMenuItem.ForeColor = System.Drawing.Color.Gray;
+            this.pantallaPrincipalToolStripMenuItem.BackColor = System.Drawing.Color.Black;
+            this.pantallaPrincipalToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.pantallaPrincipalToolStripMenuItem.Name = "pantallaPrincipalToolStripMenuItem";
             this.pantallaPrincipalToolStripMenuItem.Size = new System.Drawing.Size(110, 20);
             this.pantallaPrincipalToolStripMenuItem.Text = "Pantalla Principal";

@@ -58,35 +58,35 @@
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // ProductoTextBox
+            // ProductTextBox
             // 
             this.ProductTextBox.Location = new System.Drawing.Point(197, 94);
-            this.ProductTextBox.Name = "ProductoTextBox";
+            this.ProductTextBox.Name = "ProductTextBox";
             this.ProductTextBox.Size = new System.Drawing.Size(250, 20);
             this.ProductTextBox.TabIndex = 0;
             // 
-            // ProveedorTextBox
+            // ProviderTextBox
             // 
             this.ProviderTextBox.Location = new System.Drawing.Point(197, 136);
-            this.ProviderTextBox.Name = "ProveedorTextBox";
+            this.ProviderTextBox.Name = "ProviderTextBox";
             this.ProviderTextBox.Size = new System.Drawing.Size(250, 20);
             this.ProviderTextBox.TabIndex = 1;
             // 
-            // UnidadTextBox
+            // Unit
             // 
             this.Unit.Location = new System.Drawing.Point(197, 175);
-            this.Unit.Name = "UnidadTextBox";
+            this.Unit.Name = "Unit";
             this.Unit.Size = new System.Drawing.Size(250, 20);
             this.Unit.TabIndex = 2;
             // 
             // atrasButton
             // 
-            this.atrasButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.atrasButton.BackColor = System.Drawing.Color.Black;
             this.atrasButton.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
             this.atrasButton.ForeColor = System.Drawing.Color.Yellow;
             this.atrasButton.Location = new System.Drawing.Point(3, 472);
             this.atrasButton.Name = "atrasButton";
-            this.atrasButton.Size = new System.Drawing.Size(90, 32);
+            this.atrasButton.Size = new System.Drawing.Size(120, 30);
             this.atrasButton.TabIndex = 3;
             this.atrasButton.Text = "Atrás";
             this.atrasButton.UseVisualStyleBackColor = false;
@@ -94,12 +94,12 @@
             // 
             // RegistrarButton
             // 
-            this.RegistrarButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.RegistrarButton.BackColor = System.Drawing.Color.Black;
             this.RegistrarButton.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
             this.RegistrarButton.ForeColor = System.Drawing.Color.Yellow;
             this.RegistrarButton.Location = new System.Drawing.Point(250, 456);
             this.RegistrarButton.Name = "RegistrarButton";
-            this.RegistrarButton.Size = new System.Drawing.Size(90, 32);
+            this.RegistrarButton.Size = new System.Drawing.Size(120, 30);
             this.RegistrarButton.TabIndex = 4;
             this.RegistrarButton.Text = "Registrar";
             this.RegistrarButton.UseVisualStyleBackColor = false;
@@ -187,11 +187,11 @@
             // 
             // productosToolStripMenuItem
             // 
-            this.productosToolStripMenuItem.BackColor = System.Drawing.Color.Navy;
+            this.productosToolStripMenuItem.BackColor = System.Drawing.Color.Black;
             this.productosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.registrarProductosToolStripMenuItem,
             this.verProductosToolStripMenuItem});
-            this.productosToolStripMenuItem.ForeColor = System.Drawing.Color.Gray;
+            this.productosToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.productosToolStripMenuItem.Name = "productosToolStripMenuItem";
             this.productosToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
             this.productosToolStripMenuItem.Text = "Productos";
@@ -294,7 +294,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Navy;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(815, 508);
             this.Controls.Add(this.labelInformaciónBásica);
             this.Controls.Add(this.menuStrip1);

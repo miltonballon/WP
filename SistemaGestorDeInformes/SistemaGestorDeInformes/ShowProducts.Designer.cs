@@ -113,10 +113,11 @@
             // 
             // productosToolStripMenuItem
             // 
+            this.productosToolStripMenuItem.BackColor = System.Drawing.Color.Black;
             this.productosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.registrarProductosToolStripMenuItem,
             this.verProductosToolStripMenuItem});
-            this.productosToolStripMenuItem.ForeColor = System.Drawing.Color.Gray;
+            this.productosToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.productosToolStripMenuItem.Name = "productosToolStripMenuItem";
             this.productosToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
             this.productosToolStripMenuItem.Text = "Productos";
@@ -206,12 +207,12 @@
             // 
             // atrasButton
             // 
-            this.atrasButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.atrasButton.BackColor = System.Drawing.Color.Black;
             this.atrasButton.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
             this.atrasButton.ForeColor = System.Drawing.Color.Yellow;
             this.atrasButton.Location = new System.Drawing.Point(3, 472);
             this.atrasButton.Name = "atrasButton";
-            this.atrasButton.Size = new System.Drawing.Size(90, 32);
+            this.atrasButton.Size = new System.Drawing.Size(120, 30);
             this.atrasButton.TabIndex = 2;
             this.atrasButton.Text = "Atrás";
             this.atrasButton.UseVisualStyleBackColor = false;
@@ -250,7 +251,7 @@
             // 
             this.searchButton.Location = new System.Drawing.Point(249, 57);
             this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(75, 23);
+            this.searchButton.Size = new System.Drawing.Size(120, 30);
             this.searchButton.TabIndex = 6;
             this.searchButton.Text = "Buscar";
             this.searchButton.UseVisualStyleBackColor = true;
@@ -258,9 +259,9 @@
             // 
             // clearSearchButton
             // 
-            this.clearSearchButton.Location = new System.Drawing.Point(344, 57);
+            this.clearSearchButton.Location = new System.Drawing.Point(375, 57);
             this.clearSearchButton.Name = "clearSearchButton";
-            this.clearSearchButton.Size = new System.Drawing.Size(75, 23);
+            this.clearSearchButton.Size = new System.Drawing.Size(120, 30);
             this.clearSearchButton.TabIndex = 7;
             this.clearSearchButton.Text = "Limpiar ";
             this.clearSearchButton.UseVisualStyleBackColor = true;
@@ -270,7 +271,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Navy;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(815, 508);
             this.Controls.Add(this.clearSearchButton);
             this.Controls.Add(this.searchButton);

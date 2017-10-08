@@ -97,11 +97,11 @@
             // 
             // facturasToolStripMenuItem
             // 
-            this.facturasToolStripMenuItem.BackColor = System.Drawing.Color.Navy;
+            this.facturasToolStripMenuItem.BackColor = System.Drawing.Color.Black;
             this.facturasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.registrarFacturasToolStripMenuItem,
             this.verFacturasToolStripMenuItem});
-            this.facturasToolStripMenuItem.ForeColor = System.Drawing.Color.Gray;
+            this.facturasToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.facturasToolStripMenuItem.Name = "facturasToolStripMenuItem";
             this.facturasToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
             this.facturasToolStripMenuItem.Text = "Facturas";
@@ -213,7 +213,7 @@
             // 
             this.abrirTrimestreToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.abrirTrimestreToolStripMenuItem.Name = "abrirTrimestreToolStripMenuItem";
-            this.abrirTrimestreToolStripMenuItem.Size = new System.Drawing.Size(98, 20);
+            this.abrirTrimestreToolStripMenuItem.Size = new System.Drawing.Size(97, 20);
             this.abrirTrimestreToolStripMenuItem.Text = "Abrir Trimestre";
             // 
             // labelProveedor
@@ -367,12 +367,12 @@
             // 
             // buttonGuardar
             // 
-            this.buttonGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.buttonGuardar.BackColor = System.Drawing.Color.Black;
             this.buttonGuardar.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonGuardar.ForeColor = System.Drawing.Color.Yellow;
             this.buttonGuardar.Location = new System.Drawing.Point(250, 456);
             this.buttonGuardar.Name = "buttonGuardar";
-            this.buttonGuardar.Size = new System.Drawing.Size(90, 32);
+            this.buttonGuardar.Size = new System.Drawing.Size(120, 30);
             this.buttonGuardar.TabIndex = 13;
             this.buttonGuardar.Text = "Guardar";
             this.buttonGuardar.UseVisualStyleBackColor = false;
@@ -385,7 +385,7 @@
             this.buttonAtrás.ForeColor = System.Drawing.Color.Yellow;
             this.buttonAtrás.Location = new System.Drawing.Point(3, 472);
             this.buttonAtrás.Name = "buttonAtrás";
-            this.buttonAtrás.Size = new System.Drawing.Size(90, 32);
+            this.buttonAtrás.Size = new System.Drawing.Size(120, 30);
             this.buttonAtrás.TabIndex = 14;
             this.buttonAtrás.Text = "Atrás";
             this.buttonAtrás.UseVisualStyleBackColor = false;
@@ -406,7 +406,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Navy;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(815, 508);
             this.Controls.Add(this.labelInformaciónBásica);
             this.Controls.Add(this.buttonAtrás);
