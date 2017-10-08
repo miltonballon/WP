@@ -61,8 +61,6 @@ namespace SistemaGestorDeInformes
         {
             command = new SQLiteCommand(query, connectionString);
             command.ExecuteNonQuery();
-
         }
-       
     }
 }

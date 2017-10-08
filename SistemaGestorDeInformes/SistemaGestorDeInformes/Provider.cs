@@ -12,11 +12,11 @@ namespace SistemaGestorDeInformes
         private int nit;
         private List<Product> products;
 
-        public Provider(string name, int nit, List<Product> products)
+        public Provider(string name, int nit)
         {
             this.name = name;
             this.nit = nit;
-            this.products = products;
+            products = new List<Product>();
         }
 
         public String getName()
@@ -46,6 +46,11 @@ namespace SistemaGestorDeInformes
         public void setProducts(List<Product> products)
         {
             this.products = products;
+        }
+
+        public override string ToString()
+        {
+            return "Proveedor: "+name+"\nNIT: "+nit;
         }
     }
 }

@@ -8,31 +8,24 @@ namespace SistemaGestorDeInformes
 {
     class Invoice
     {
-        private String provider;
-        private int nit;
         private int nInvoice;
         private int nAutorization;
         private DateTime date;
         private List<InvoiceRow> InvoiceRows;
+        private Provider provider;
 
-        public Invoice(string provider, int nit, int nInvoice, int nAutorization, DateTime date)
+        public Invoice(Provider provider, int nInvoice, int nAutorization, DateTime date)
         {
             this.provider = provider;
-            this.nit = nit;
             this.nInvoice = nInvoice;
             this.nAutorization = nAutorization;
             this.date = date;
             InvoiceRows = new List<InvoiceRow>();
         }
 
-        public void setProvider(String provider)
+        public void setProvider(Provider provider)
         {
             this.provider = provider;
-        }
-
-        public void setNit(int nit_1)
-        {
-            nit = nit_1;
         }
 
         public void setNInvoice(int nInvoice_1)
@@ -50,12 +43,7 @@ namespace SistemaGestorDeInformes
             date = date_1;
         }
 
-        public int getNit()
-        {
-            return nit;
-        }
-
-        public string getProvider()
+        public Provider getProvider()
         {
             return provider;
         }
@@ -87,8 +75,8 @@ namespace SistemaGestorDeInformes
 
         public override String ToString()
         {
-            String output= "provider: " + provider + "\nnit: " + nit + "\nN.Factura: " + nInvoice + "\nN.Autorizacion: "
-                + nAutorization + "\n date: " + date.ToString();
+            String output= provider + "\nN.Factura: " + nInvoice + "\nN.Autorizacion: "
+                + nAutorization + "\n Fecha: " + date.ToString();
             foreach (InvoiceRow row in InvoiceRows)
             {
                 output += "\n"+row;

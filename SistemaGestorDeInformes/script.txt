@@ -1,9 +1,9 @@
 CREATE TABLE `Invoice` (
-	`n_invoice`	INTEGER,
+	`n_invoice`		INTEGER,
 	`n_autorization`	INTEGER,
-	`id_provider`	INTEGER,
-	`nit`	INTEGER,
-	`date`	TEXT,
+	`id_provider`		INTEGER,
+	`nit`			INTEGER,
+	`date`			TEXT,
 	FOREIGN KEY(`id_provider`) REFERENCES `Provider`(`id`),
 	PRIMARY KEY(`n_invoice`)
 );
