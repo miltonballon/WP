@@ -10,25 +10,25 @@ using System.Windows.Forms;
 
 namespace SistemaGestorDeInformes
 {
-    public partial class InterfazPrincipal : Form
+    public partial class OpenQuarter : Form
     {
-        Connection c = new Connection();
-        public InterfazPrincipal()
+        public OpenQuarter()
         {
             InitializeComponent();
-            c.connect();
-            //c.connectionOpen();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void atrasButton_Click(object sender, EventArgs e)
         {
-
+            InterfazPrincipal principal = new InterfazPrincipal();//para volver atras
+            this.Hide();
+            principal.Show();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void pantallaPrincipalToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            InterfazRegistrarFactura InterfazRegistrarFactura1=new InterfazRegistrarFactura();
-            InterfazRegistrarFactura1.Show();
+            InterfazPrincipal principal = new InterfazPrincipal();
+            this.Hide();
+            principal.Show();
         }
 
         private void registrarFacturaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -64,13 +64,6 @@ namespace SistemaGestorDeInformes
             ReportConfiguration ReportConfiguration1 = new ReportConfiguration();
             this.Hide();
             ReportConfiguration1.Show();
-        }
-
-        private void abrirTrimestreToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            OpenQuarter OpenQuarter1 = new OpenQuarter();
-            this.Hide();
-            OpenQuarter1.Show();
         }
     }
 }

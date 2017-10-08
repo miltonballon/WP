@@ -80,5 +80,12 @@ namespace SistemaGestorDeInformes
             this.Hide();
             ReportConfiguration1.Show();
         }
+
+        private void abrirTrimestreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenQuarter OpenQuarter1 = new OpenQuarter();
+            this.Hide();
+            OpenQuarter1.Show();
+        }
     }
 }
