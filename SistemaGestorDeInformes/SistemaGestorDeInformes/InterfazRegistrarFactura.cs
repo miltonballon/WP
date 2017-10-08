@@ -14,6 +14,7 @@ namespace SistemaGestorDeInformes
     {
         private InvoiceController invoiceController;
         ProviderController providerController;
+        ProductController productController;
         private Invoice invoice;
         private Provider provider;
         private List<Provider> providers;
@@ -26,6 +27,7 @@ namespace SistemaGestorDeInformes
             this.textBoxNAutorizacion.KeyPress += new KeyPressEventHandler(textBoxNAutorizacion_TextChanged);//Para impedir que se pongan letras y espacios en el N.AUTORIZACION 
             invoiceController = new InvoiceController();
             providerController = new ProviderController();
+            productController = new ProductController();
             loadProviders();
         }
 
@@ -93,14 +95,56 @@ namespace SistemaGestorDeInformes
                     tb.KeyPress += new KeyPressEventHandler(Column1_KeyPress);
                 }
             }
+            
+            if (dataGridView1.CurrentCell.ColumnIndex == 0)
+            {
+                TextBox autoText = e.Control as TextBox;
+                if (autoText != null)
+                {
+                    autoText.AutoCompleteMode = AutoCompleteMode.Suggest;
+                    autoText.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                    autoText.AutoCompleteCustomSource = providersProducts();
+                }
+            }
+        }
+
+        private AutoCompleteStringCollection providersProducts()
+        {
+            AutoCompleteStringCollection output = new AutoCompleteStringCollection();
+            List<Product> products=productController.showAllProductsByProvider(provider.getName());
+            provider.setProducts(products);
+            foreach (Product product in products)
+            {
+                output.Add(product.Name);
+            }
+            return output;
         }
 
         private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
+                row.Cells[dataGridView1.Columns["Unidad"].Index].Value = getUnitByNameOfProvidersProducts(Convert.ToString(row.Cells[dataGridView1.Columns["Nombre"].Index].Value));
+            }
+
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
                 row.Cells[dataGridView1.Columns["PrecioTotal"].Index].Value = (Convert.ToDouble(row.Cells[dataGridView1.Columns["PrecioUnitario"].Index].Value) * Convert.ToDouble(row.Cells[dataGridView1.Columns["Cantidad"].Index].Value));//Caclula el Precio Total sumando la columna Cantidad con la columna Precio Unidad
             }
+        }
+
+        private String getUnitByNameOfProvidersProducts(String name)
+        {
+            String output = "";
+            foreach (Product p in provider.getProducts())
+            {
+                if (p.Name.Equals(name))
+                {
+                    output = p.Unit;
+                    break;
+                }
+            }
+            return output;
         }
 
         private void Column1_KeyPress(object sender, KeyPressEventArgs e)
@@ -187,7 +231,7 @@ namespace SistemaGestorDeInformes
                 textBoxNit.Text ="";
             }
         }
-        //http://www.vb-tips.com/DataGridViewAutoComplete.aspx
+
         private Provider getProviderByName(String name)
         {
             Provider output = null;
