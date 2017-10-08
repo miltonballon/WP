@@ -14,7 +14,9 @@ CREATE TABLE `Product` (
 );
 CREATE TABLE `Provider` (
 	`id`	INTEGER PRIMARY KEY AUTOINCREMENT,
-	`Provider`	TEXT
+	`Provider`	TEXT,
+	`NIT`		INTEGER
+	
 );
 CREATE TABLE `Unit` (
 	`id`	INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -22,18 +24,18 @@ CREATE TABLE `Unit` (
 );
 CREATE TABLE `Product_Provider_Unit` (
 	`id`	INTEGER PRIMARY KEY AUTOINCREMENT,	
-	`Id_prod`	INTEGER,
+	`id_prod`	INTEGER,
 	`id_prov`	INTEGER,
 	`id_uni`	INTEGER,
 	FOREIGN KEY(`id_prov`) REFERENCES `Provider`(`id`),
 	FOREIGN KEY(`id_uni`) REFERENCES `Unit`(`id`),
-	FOREIGN KEY(`Id_prod`) REFERENCES `Product`(`id`)
+	FOREIGN KEY(`id_prod`) REFERENCES `Product`(`id`)
 );
 
 CREATE TABLE `invoice_row` (
 	`id`		INTEGER PRIMARY KEY AUTOINCREMENT,
 	`n_invoice`	INTEGER,
-	`Id_ppu`	INTEGER,
+	`id_ppu`	INTEGER,
 	`quantity`	TEXT,
 	`unit_price`	TEXT,
 	`total` 	TEXT,

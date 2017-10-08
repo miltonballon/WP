@@ -213,7 +213,7 @@
             // 
             this.abrirTrimestreToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.abrirTrimestreToolStripMenuItem.Name = "abrirTrimestreToolStripMenuItem";
-            this.abrirTrimestreToolStripMenuItem.Size = new System.Drawing.Size(97, 20);
+            this.abrirTrimestreToolStripMenuItem.Size = new System.Drawing.Size(98, 20);
             this.abrirTrimestreToolStripMenuItem.Text = "Abrir Trimestre";
             // 
             // labelProveedor
@@ -334,7 +334,7 @@
             this.PrecioTotal});
             this.dataGridView1.Location = new System.Drawing.Point(30, 300);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(541, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(546, 150);
             this.dataGridView1.TabIndex = 12;
             this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
             this.dataGridView1.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataGridView1_EditingControlShowing);
