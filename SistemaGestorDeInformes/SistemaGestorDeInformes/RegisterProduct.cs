@@ -66,5 +66,12 @@ namespace SistemaGestorDeInformes
             RegisterInvoiceForm.Show();
             this.Hide();
         }
+
+        private void verFacturasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowBills ShowBills1 = new ShowBills();
+            ShowBills1.Show();
+            this.Hide();
+        }
     }
 }

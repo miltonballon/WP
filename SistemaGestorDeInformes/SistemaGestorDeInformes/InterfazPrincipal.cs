@@ -36,21 +36,27 @@ namespace SistemaGestorDeInformes
             InterfazRegistrarFactura intRegFac = new InterfazRegistrarFactura();
             this.Hide();
             intRegFac.Show();
+        }
 
+        private void verFacturasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowBills ShowBills1 = new ShowBills();
+            this.Hide();
+            ShowBills1.Show();
         }
 
         private void registrarProductosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            RegisterProduct main = new RegisterProduct();
+            RegisterProduct RegisterProduct1 = new RegisterProduct();
             this.Hide();
-            main.Show();
+            RegisterProduct1.Show();
         }
 
         private void verProductosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ShowProducts products = new ShowProducts();
+            ShowProducts ShowProducts1 = new ShowProducts();
             this.Hide();
-            products.Show();
+            ShowProducts1.Show();
         }
     }
 }
