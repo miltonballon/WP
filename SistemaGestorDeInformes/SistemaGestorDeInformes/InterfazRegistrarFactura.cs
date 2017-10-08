@@ -23,7 +23,7 @@ namespace SistemaGestorDeInformes
             InitializeComponent();
             this.textBoxNit.KeyPress += new KeyPressEventHandler(textBoxNit_TextChanged);//Para impedir que se pongan letras y espacios en el NIT
             this.textBoxNFactura.KeyPress += new KeyPressEventHandler(textBoxNFactura_TextChanged);//Para impedir que se pongan letras y espacios en el N.FACTURA
-            this.textBoxNAutorizacion.KeyPress += new KeyPressEventHandler(textBoxNAutorizacion_TextChanged);//Para impedir que se pongan letras y espacios en el N.AUTORIZACION
+            this.textBoxNAutorizacion.KeyPress += new KeyPressEventHandler(textBoxNAutorizacion_TextChanged);//Para impedir que se pongan letras y espacios en el N.AUTORIZACION 
             invoiceController = new InvoiceController();
             providerController = new ProviderController();
             loadProviders();
@@ -171,6 +171,35 @@ namespace SistemaGestorDeInformes
             ShowProducts intShowProducts = new ShowProducts();
             intShowProducts.Show();
             this.Hide();
+        }
+
+        private void textBoxProveedor_Leave(object sender, EventArgs e)
+        {
+            Provider provider = getProviderByName(textBoxProveedor.Text);
+            if (provider != null)
+            {
+                this.provider = provider;
+                textBoxNit.Text = provider.getNit() + "";
+            }
+            else
+            {
+                this.provider = null;
+                textBoxNit.Text ="";
+            }
+        }
+        //http://www.vb-tips.com/DataGridViewAutoComplete.aspx
+        private Provider getProviderByName(String name)
+        {
+            Provider output = null;
+            foreach (Provider p in providers)
+            {
+                if (p.getName().Equals(name))
+                {
+                    output = p;
+                    break;
+                }
+            }
+            return output;
         }
     }
 }

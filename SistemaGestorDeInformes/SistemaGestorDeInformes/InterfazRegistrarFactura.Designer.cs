@@ -290,6 +290,7 @@
             this.textBoxProveedor.Size = new System.Drawing.Size(250, 23);
             this.textBoxProveedor.TabIndex = 7;
             this.textBoxProveedor.TextChanged += new System.EventHandler(this.textBoxProveedor_TextChanged);
+            this.textBoxProveedor.Leave += new System.EventHandler(this.textBoxProveedor_Leave);
             // 
             // textBoxNit
             // 
