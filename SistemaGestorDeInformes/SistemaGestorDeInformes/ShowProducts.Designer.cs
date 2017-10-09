@@ -53,6 +53,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.searchButton = new System.Windows.Forms.Button();
             this.clearSearchButton = new System.Windows.Forms.Button();
+            this.editButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -62,8 +63,11 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(17, 101);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(497, 236);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged_1);
             // 
             // menuStrip1
             // 
@@ -262,7 +266,7 @@
             // 
             // clearSearchButton
             // 
-            this.clearSearchButton.Location = new System.Drawing.Point(375, 57);
+            this.clearSearchButton.Location = new System.Drawing.Point(501, 57);
             this.clearSearchButton.Name = "clearSearchButton";
             this.clearSearchButton.Size = new System.Drawing.Size(120, 30);
             this.clearSearchButton.TabIndex = 7;
@@ -270,12 +274,23 @@
             this.clearSearchButton.UseVisualStyleBackColor = true;
             this.clearSearchButton.Click += new System.EventHandler(this.clearSearchButton_Click);
             // 
+            // editButton
+            // 
+            this.editButton.Location = new System.Drawing.Point(375, 57);
+            this.editButton.Name = "editButton";
+            this.editButton.Size = new System.Drawing.Size(120, 30);
+            this.editButton.TabIndex = 8;
+            this.editButton.Text = "Editar";
+            this.editButton.UseVisualStyleBackColor = true;
+            this.editButton.Click += new System.EventHandler(this.editButton_Click);
+            // 
             // ShowProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(815, 508);
+            this.Controls.Add(this.editButton);
             this.Controls.Add(this.clearSearchButton);
             this.Controls.Add(this.searchButton);
             this.Controls.Add(this.label2);
@@ -322,5 +337,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.Button clearSearchButton;
+        private System.Windows.Forms.Button editButton;
     }
 }

@@ -321,11 +321,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox ProductTextBox;
-        private System.Windows.Forms.TextBox ProviderTextBox;
-        private System.Windows.Forms.TextBox Unit;
         private System.Windows.Forms.Button atrasButton;
-        private System.Windows.Forms.Button RegistrarButton;
         private System.Windows.Forms.Label ProveedorLabel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label ProductoLabel;
@@ -348,5 +344,9 @@
         private System.Windows.Forms.ToolStripMenuItem abrirTrimestreToolStripMenuItem;
         private System.Windows.Forms.Label labelInformaciónBásica;
         private System.Windows.Forms.ToolStripMenuItem registrarProductosToolStripMenuItem;
+        public System.Windows.Forms.TextBox ProductTextBox;
+        public System.Windows.Forms.TextBox ProviderTextBox;
+        public System.Windows.Forms.TextBox Unit;
+        public System.Windows.Forms.Button RegistrarButton;
     }
 }
