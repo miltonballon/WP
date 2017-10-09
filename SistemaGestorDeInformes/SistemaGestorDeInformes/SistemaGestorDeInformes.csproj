@@ -101,6 +101,7 @@
     <Compile Include="ShowProducts.Designer.cs">
       <DependentUpon>ShowProducts.cs</DependentUpon>
     </Compile>
+    <Compile Include="Trimester.cs" />
     <EmbeddedResource Include="InterfazPrincipal.resx">
       <DependentUpon>InterfazPrincipal.cs</DependentUpon>
     </EmbeddedResource>
