@@ -11,9 +11,8 @@ namespace SistemaGestorDeInformes
         private bool open;
         private String name;
 
-        public Trimester(bool open, string name)
+        public Trimester(string name)
         {
-            this.open = open;
             this.name = name;
         }
 
