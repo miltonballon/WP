@@ -57,7 +57,20 @@ namespace SistemaGestorDeInformes
                 d.DataSource = products;
             }
         }
-
+        public List<Product> showProducts()
+        {
+            List<Product> products = new List<Product>();
+            string query = "select name, Provider, Type FROM Product AS PROD, Provider AS PRO, Unit AS Un, Product_Provider_Unit AS PPU WHERE PROD.id = PPU.Id_prod AND PRO.id= PPU.id_prov AND Un.id= PPU.id_uni";
+            SQLiteDataReader data = c.query_show(query);
+            SQLiteDataReader data2 = c.query_show(query);
+            while (data.Read())
+            {
+                Product p = new Product(data[0].ToString(), data[1].ToString(), data[2].ToString());
+                products.Add(p);
+                
+            }
+            return products;
+        }
         public List<Product> showAllProductsByProvider(String providersName)
         {
             List<Product> products = new List<Product>();
