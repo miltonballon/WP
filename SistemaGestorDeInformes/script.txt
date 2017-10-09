@@ -48,3 +48,17 @@ CREATE TABLE `Configuration` (
 	`scholarships`	INTEGER,
 	`n_departure`	INTEGER
 );
+
+INSERT INTO Product(name) VALUES ('Pan');
+INSERT INTO Product(name) VALUES ('Leche');
+INSERT INTO Product(name) VALUES ('Carne Para Sopa');
+
+INSERT INTO Unit(Type) VALUES ('Bolsa');
+INSERT INTO Unit(Type) VALUES ('Lts.');
+INSERT INTO Unit(Type) VALUES ('Kg.');
+
+INSERT INTO Provider(Provider, NIT) VALUES ('HiperMaxi',123);
+
+INSERT INTO Product_Provider_Unit(id_prod, id prov, id_uni) VALUES (1, 1, 1);
+INSERT INTO Product_Provider_Unit(id_prod, id prov, id_uni) VALUES (2, 1, 2);
+INSERT INTO Product_Provider_Unit(id_prod, id prov, id_uni) VALUES (3, 1, 3);
