@@ -32,8 +32,8 @@ namespace SistemaGestorDeInformes
             SQLiteDataReader data = c.query_show(query);
             if (data.Read())
             {
-                trimester = new Trimester(Convert.ToString(data[1]));
-                int bit = Convert.ToInt32(data[0]);
+                trimester = new Trimester(Convert.ToString(data[2]));
+                int bit = Convert.ToInt32(data[1]);
                 trimester.setOpen(bit==1);
             }
             return trimester;
@@ -44,7 +44,7 @@ namespace SistemaGestorDeInformes
             String query = "UPDATE trimester SET open=";
             int bit = trimester.isOpen() ? 1 : 0;
             String name = trimester.getName();
-            query += bit + " WHERE name='" + name + "')";
+            query += bit + " WHERE name='" + name + "'";
             c.executeInsertion(query);
         }
 

@@ -49,6 +49,9 @@
             this.RegistrarButton = new System.Windows.Forms.Button();
             this.atrasButton = new System.Windows.Forms.Button();
             this.labelInformaciónBásica = new System.Windows.Forms.Label();
+            this.lbTrim = new System.Windows.Forms.Label();
+            this.txbxNombre = new System.Windows.Forms.TextBox();
+            this.lbNombre = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -205,8 +208,9 @@
             this.RegistrarButton.Name = "RegistrarButton";
             this.RegistrarButton.Size = new System.Drawing.Size(153, 66);
             this.RegistrarButton.TabIndex = 28;
-            this.RegistrarButton.Text = "Abrir Trimestre";
+            this.RegistrarButton.Text = "Nuevo Trimestre";
             this.RegistrarButton.UseVisualStyleBackColor = false;
+            this.RegistrarButton.Click += new System.EventHandler(this.RegistrarButton_Click);
             // 
             // atrasButton
             // 
@@ -228,9 +232,39 @@
             this.labelInformaciónBásica.ForeColor = System.Drawing.Color.Yellow;
             this.labelInformaciónBásica.Location = new System.Drawing.Point(29, 66);
             this.labelInformaciónBásica.Name = "labelInformaciónBásica";
-            this.labelInformaciónBásica.Size = new System.Drawing.Size(164, 19);
+            this.labelInformaciónBásica.Size = new System.Drawing.Size(169, 19);
             this.labelInformaciónBásica.TabIndex = 24;
-            this.labelInformaciónBásica.Text = "Trimestre en curso";
+            this.labelInformaciónBásica.Text = "Trimestre en curso:";
+            this.labelInformaciónBásica.Click += new System.EventHandler(this.labelInformaciónBásica_Click);
+            // 
+            // lbTrim
+            // 
+            this.lbTrim.AutoSize = true;
+            this.lbTrim.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTrim.ForeColor = System.Drawing.Color.Yellow;
+            this.lbTrim.Location = new System.Drawing.Point(204, 66);
+            this.lbTrim.Name = "lbTrim";
+            this.lbTrim.Size = new System.Drawing.Size(0, 19);
+            this.lbTrim.TabIndex = 29;
+            // 
+            // txbxNombre
+            // 
+            this.txbxNombre.Location = new System.Drawing.Point(369, 137);
+            this.txbxNombre.Name = "txbxNombre";
+            this.txbxNombre.Size = new System.Drawing.Size(100, 20);
+            this.txbxNombre.TabIndex = 30;
+            // 
+            // lbNombre
+            // 
+            this.lbNombre.AutoSize = true;
+            this.lbNombre.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNombre.ForeColor = System.Drawing.Color.Yellow;
+            this.lbNombre.Location = new System.Drawing.Point(285, 136);
+            this.lbNombre.Name = "lbNombre";
+            this.lbNombre.Size = new System.Drawing.Size(78, 19);
+            this.lbNombre.TabIndex = 31;
+            this.lbNombre.Text = "Nombre:";
+            this.lbNombre.Click += new System.EventHandler(this.label1_Click);
             // 
             // OpenQuarter
             // 
@@ -238,6 +272,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(815, 508);
+            this.Controls.Add(this.lbNombre);
+            this.Controls.Add(this.txbxNombre);
+            this.Controls.Add(this.lbTrim);
             this.Controls.Add(this.RegistrarButton);
             this.Controls.Add(this.atrasButton);
             this.Controls.Add(this.labelInformaciónBásica);
@@ -245,6 +282,7 @@
             this.Name = "OpenQuarter";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OpenQuarter";
+            this.Load += new System.EventHandler(this.OpenQuarter_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -275,5 +313,8 @@
         private System.Windows.Forms.Button RegistrarButton;
         private System.Windows.Forms.Button atrasButton;
         private System.Windows.Forms.Label labelInformaciónBásica;
+        private System.Windows.Forms.Label lbTrim;
+        private System.Windows.Forms.TextBox txbxNombre;
+        private System.Windows.Forms.Label lbNombre;
     }
 }
