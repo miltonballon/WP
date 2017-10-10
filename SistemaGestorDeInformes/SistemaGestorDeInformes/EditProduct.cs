@@ -22,10 +22,20 @@ namespace SistemaGestorDeInformes
        
         private void EditButton_Click(object sender, EventArgs e)
         {
-          
-               // pc.DeleteProduct_Provider_Unit(1, 1, 1);
-                MessageBox.Show("Borrado");
-            
+
+           
+
+
+            //MessageBox.Show("A"+pc.getIdName(pro.Name)+ "T"+pc.getIdProvider(pro.Provider)+"B"+ pc.getIdUnit(pro.Unit));
+            pc.insertProduct(textBox1, textBox2, textBox3);
+            pc.addReferencesToTableProduct_Provider_Unit(textBox1, textBox2, textBox3);
+
+
+            MessageBox.Show("Borrado");
+
+            ShowProducts main = new ShowProducts();
+            main.Show();
+            this.Hide();
             
         }
         

@@ -47,6 +47,7 @@ namespace SistemaGestorDeInformes
                     string r=data[0].ToString();
                     answer = Int32.Parse(r);
                 }
+                data.Close();
           return answer;
         }
         
@@ -67,6 +68,10 @@ namespace SistemaGestorDeInformes
             command.ExecuteNonQuery();
         
           
+        }
+        public void dataClose()
+        {
+            data.Close();
         }
         
     }

@@ -126,25 +126,19 @@ namespace SistemaGestorDeInformes
 
         private void editButton_Click(object sender, EventArgs e)
         {
-            ModifyProduct ModifyProduct1 = new ModifyProduct();
-            this.Hide();
-            ModifyProduct1.Show();
-            /*if (dataGridView1.Rows.Count > 0)
-            {
-                Product p = new Product(dataGridView1.SelectedRows[0].Cells[0].Value.ToString(),dataGridView1.SelectedRows[0].Cells[1].Value.ToString(),dataGridView1.SelectedRows[0].Cells[2].Value.ToString());
-                
-                EditProduct edit= new EditProduct();
-               
-                edit.Show();
-                this.Close();
-              
-               
-              
-            }
-            else
-            {
-                MessageBox.Show("Seleccione una fila");
-            }*/
+            
+            Product p = new Product(dataGridView1.SelectedRows[0].Cells[0].Value.ToString(), dataGridView1.SelectedRows[0].Cells[1].Value.ToString(), dataGridView1.SelectedRows[0].Cells[2].Value.ToString());
+
+            ModifyProduct edit = new ModifyProduct();
+            edit.ProductTextBox.Text = p.Name;          
+            edit.ProviderTextBox.Text = p.Provider;
+            edit.Unit.Text = p.Unit;
+            //MessageBox.Show("A" + pc.getIdName(p.Name) + "T" + pc.getIdProvider(p.Provider) + "B" + pc.getIdUnit(p.Unit));
+            pc.DeleteProduct_Provider_Unit(pc.getIdName(p.Name), pc.getIdProvider(p.Provider), pc.getIdUnit(p.Unit));
+
+            edit.Show();
+            this.Close();
+
         }
         
     }

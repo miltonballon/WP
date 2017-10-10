@@ -76,6 +76,8 @@ namespace SistemaGestorDeInformes
                 products.Add(p);
                 d.DataSource = products;
             }
+            c.dataClose();
+            data.Close();
         }
         public List<Product> showProducts()
         {
@@ -89,6 +91,8 @@ namespace SistemaGestorDeInformes
                 products.Add(p);
                 
             }
+            c.dataClose();
+            data.Close();
             return products;
         }
         public List<Product> showAllProductsByProvider(String providersName)
@@ -104,7 +108,8 @@ namespace SistemaGestorDeInformes
                     products.Add(p);
                 }
             }
-            
+            c.dataClose();
+            data.Close();
             return products;
         }
 
@@ -119,6 +124,8 @@ namespace SistemaGestorDeInformes
                 products.Add(p);
                 d.DataSource = products;
             }
+            c.dataClose();
+            data.Close();
         }
 
        
