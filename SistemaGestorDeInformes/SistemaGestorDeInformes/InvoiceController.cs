@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.SQLite;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,10 +10,14 @@ namespace SistemaGestorDeInformes
 {
     class InvoiceController
     {
+        private ProviderController providerController;
+        private ProductController productController;
         public Connection c = new Connection();
         public InvoiceController()
         {
             c.connect();
+            providerController = new ProviderController();
+            productController = new ProductController();
         }
 
         public void addInvoice(Invoice invoice)
@@ -25,8 +30,8 @@ namespace SistemaGestorDeInformes
             query += nInvoice+", ";
             query += nAutorization + ", ";
             query += idProvider + ", ";
-            query += invoice.getProvider().getNit() + ", ";
-            query += date.ToString("dd/MM/yyyy")+")";
+            query += invoice.getProvider().getNit() + ", '";
+            query += date.ToShortDateString()+"')";
             //MessageBox.Show(query);
             try
             {
@@ -42,13 +47,12 @@ namespace SistemaGestorDeInformes
             }
         }
 
-        public int searchProvider(Provider provider)//refactorizar
+        public int searchProvider(Provider provider)
         {
-            ProviderController provCon = new ProviderController();
-            int id=provCon.findProviderIdByName(provider.getName());
+            int id=providerController.findProviderIdByName(provider.getName());
             if (id < 0)
             {
-                provCon.insertProvider(provider);
+                providerController.insertProvider(provider);
             }
             return id;
         }
@@ -106,12 +110,72 @@ namespace SistemaGestorDeInformes
             proveedor.Text = product.Provider;
             TextBox unidad = new TextBox();
             unidad.Text = product.Unit;
-            ProductController productController = new ProductController();
             int affected = productController.insertProduct(name, proveedor, unidad);
             if (affected > 0)
             {
                 productController.addReferencesToTableProduct_Provider_Unit(name, proveedor, unidad);
             }
+        }
+
+        public List<Invoice> getAllInvoices()
+        {
+            List<Invoice> output = new List<Invoice>();
+            string query = "SELECT * FROM Invoice";
+            try
+            {
+                SQLiteDataReader data = c.query_show(query);
+                while (data.Read())
+                {
+                    int nInvoice = Int32.Parse(data[0].ToString()),
+                        provId = Int32.Parse(data[2].ToString()),
+                        nAut = Int32.Parse(data[1].ToString());
+                    DateTime date = getDate(data[4].ToString());
+                    Provider provider = providerController.getProviderById(provId);
+                    Invoice invoice = new Invoice(provider, nInvoice, nAut, date);
+                    List<InvoiceRow> invoiceRows = getAllInvoicesRowByNInvoice(invoice.getNInvoice());
+                    invoice.setInvoiceRows(invoiceRows);
+                    output.Add(invoice);
+                }
+            }
+            catch (Exception)
+            { }
+            
+            return output;
+        }
+
+        public List<InvoiceRow> getAllInvoicesRowByNInvoice(int numInvoice)
+        {
+            List<InvoiceRow> output = new List<InvoiceRow>();
+            string query = "SELECT * FROM invoice_row";
+            try
+            {
+                SQLiteDataReader data = c.query_show(query);
+                while (data.Read())
+                {
+                    int ppuId = Int32.Parse(data[2].ToString());
+                    double quantity = Double.Parse(data[3].ToString()),
+                        unitPrice= Double.Parse(data[4].ToString()),
+                        total= Double.Parse(data[5].ToString());
+                    Product product = productController.showProductByPPUId(ppuId);
+                    InvoiceRow invoiceRow = new InvoiceRow(product, quantity, unitPrice, total);
+                    output.Add(invoiceRow);
+                }
+            }
+            catch (Exception)
+            { }
+
+            return output;
+        }
+
+        private DateTime getDate(String dateString)
+        {
+            DateTime date;
+            string[] dates = dateString.Split('/');
+            int day = Int32.Parse(dates[0])
+                , month= Int32.Parse(dates[1])
+                , year = Int32.Parse(dates[2]);
+            date = new DateTime(year, month, day);
+            return date;
         }
     }
 }

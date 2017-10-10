@@ -146,6 +146,10 @@ namespace SistemaGestorDeInformes
                 MessageBox.Show("Seleccione una fila");
             }*/
         }
-        
+
+        private void ShowProducts_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
