@@ -6,34 +6,21 @@ using System.Threading.Tasks;
 
 namespace SistemaGestorDeInformes
 {
-    class User
+    public class User
     {
-        private bool open;
+        private String email;
         private String name;
+        private String password;
 
-        public User(string name)
+        public User(string email, string name, string password)
         {
+            this.email = email;
             this.name = name;
+            this.password = password;
         }
 
-        public bool isOpen()
-        {
-            return open;
-        }
-
-        public void setOpen(bool open)
-        {
-            this.open = open;
-        }
-
-        public String getName()
-        {
-            return name;
-        }
-
-        public void setName(String name)
-        {
-            this.name = name;
-        }
+        public string Email { get => email; set => email = value; }
+        public string Name { get => name; set => name = value; }
+        public string Password { get => password; set => password = value; }
     }
 }

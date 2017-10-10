@@ -74,6 +74,8 @@ namespace SistemaGestorDeInformes
                 products.Add(p);
                 d.DataSource = products;
             }
+            c.dataClose();
+            data.Close();
         }
         public List<Product> showProducts()
         {
@@ -87,6 +89,8 @@ namespace SistemaGestorDeInformes
                 products.Add(p);
                 
             }
+            c.dataClose();
+            data.Close();
             return products;
         }
         public List<Product> showAllProductsByProvider(String providersName)
@@ -102,8 +106,21 @@ namespace SistemaGestorDeInformes
                     products.Add(p);
                 }
             }
-            
+            c.dataClose();
+            data.Close();
             return products;
+        }
+
+        public Product showProductByPPUId(int ppuId)
+        {
+            string query = "select name, Provider, Type FROM Product AS PROD, Provider AS PRO, Unit AS Un, Product_Provider_Unit AS PPU WHERE PPU.id="+ppuId+" AND PROD.id = PPU.Id_prod AND PRO.id= PPU.id_prov AND Un.id= PPU.id_uni";
+            SQLiteDataReader data = c.query_show(query);
+            Product product=null;
+            while (data.Read())
+            {
+                product = new Product(data[0].ToString(), data[1].ToString(), data[2].ToString());
+            }
+            return product;
         }
 
         public void searchProduct(DataGridView d,string name)
@@ -117,6 +134,8 @@ namespace SistemaGestorDeInformes
                 products.Add(p);
                 d.DataSource = products;
             }
+            c.dataClose();
+            data.Close();
         }
 
        

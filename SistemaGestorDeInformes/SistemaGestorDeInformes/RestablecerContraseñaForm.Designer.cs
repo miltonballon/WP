@@ -29,120 +29,80 @@
         private void InitializeComponent()
         {
             this.button5 = new System.Windows.Forms.Button();
-            this.confirmar = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.contraseña = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.user = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.ci = new System.Windows.Forms.TextBox();
+            this.txtbxCorreo = new System.Windows.Forms.TextBox();
+            this.labelInformaciónBásica = new System.Windows.Forms.Label();
+            this.atrasButton = new System.Windows.Forms.Button();
+            this.labelProveedor = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button5
             // 
-            this.button5.BackColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(223, 166);
+            this.button5.BackColor = System.Drawing.Color.Black;
+            this.button5.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.ForeColor = System.Drawing.Color.Yellow;
+            this.button5.Location = new System.Drawing.Point(320, 234);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.Size = new System.Drawing.Size(120, 30);
             this.button5.TabIndex = 17;
-            this.button5.Text = "Cerrar";
+            this.button5.Text = "Enviar";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click_1);
             // 
-            // confirmar
+            // txtbxCorreo
             // 
-            this.confirmar.Location = new System.Drawing.Point(235, 122);
-            this.confirmar.Name = "confirmar";
-            this.confirmar.PasswordChar = '*';
-            this.confirmar.Size = new System.Drawing.Size(100, 20);
-            this.confirmar.TabIndex = 15;
+            this.txtbxCorreo.Location = new System.Drawing.Point(320, 186);
+            this.txtbxCorreo.Name = "txtbxCorreo";
+            this.txtbxCorreo.Size = new System.Drawing.Size(250, 20);
+            this.txtbxCorreo.TabIndex = 19;
             // 
-            // label4
+            // labelInformaciónBásica
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(41, 129);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(188, 13);
-            this.label4.TabIndex = 19;
-            this.label4.Text = "Vuelva a escribir la nueva contraseña:";
+            this.labelInformaciónBásica.AutoSize = true;
+            this.labelInformaciónBásica.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelInformaciónBásica.ForeColor = System.Drawing.Color.Yellow;
+            this.labelInformaciónBásica.Location = new System.Drawing.Point(30, 40);
+            this.labelInformaciónBásica.Name = "labelInformaciónBásica";
+            this.labelInformaciónBásica.Size = new System.Drawing.Size(395, 19);
+            this.labelInformaciónBásica.TabIndex = 25;
+            this.labelInformaciónBásica.Text = "Introduzca Su Dirección De Correo Electrónico";
             // 
-            // contraseña
+            // atrasButton
             // 
-            this.contraseña.Location = new System.Drawing.Point(235, 90);
-            this.contraseña.Name = "contraseña";
-            this.contraseña.PasswordChar = '*';
-            this.contraseña.Size = new System.Drawing.Size(100, 20);
-            this.contraseña.TabIndex = 13;
+            this.atrasButton.BackColor = System.Drawing.Color.Black;
+            this.atrasButton.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
+            this.atrasButton.ForeColor = System.Drawing.Color.Yellow;
+            this.atrasButton.Location = new System.Drawing.Point(3, 472);
+            this.atrasButton.Name = "atrasButton";
+            this.atrasButton.Size = new System.Drawing.Size(120, 30);
+            this.atrasButton.TabIndex = 26;
+            this.atrasButton.Text = "Atrás";
+            this.atrasButton.UseVisualStyleBackColor = false;
+            this.atrasButton.Click += new System.EventHandler(this.atrasButton_Click);
             // 
-            // label3
+            // labelProveedor
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(43, 97);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(148, 13);
-            this.label3.TabIndex = 18;
-            this.label3.Text = "Ingrese su nueva contraseña;";
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(116, 166);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "Siguiente";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // user
-            // 
-            this.user.Location = new System.Drawing.Point(235, 58);
-            this.user.Name = "user";
-            this.user.Size = new System.Drawing.Size(100, 20);
-            this.user.TabIndex = 11;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(42, 58);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(149, 13);
-            this.label2.TabIndex = 14;
-            this.label2.Text = "Ingrese su nombre de usuario:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(41, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 13);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Ingrese su CI:";
-            // 
-            // ci
-            // 
-            this.ci.Location = new System.Drawing.Point(235, 23);
-            this.ci.Name = "ci";
-            this.ci.Size = new System.Drawing.Size(100, 20);
-            this.ci.TabIndex = 10;
+            this.labelProveedor.AutoSize = true;
+            this.labelProveedor.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelProveedor.ForeColor = System.Drawing.Color.White;
+            this.labelProveedor.Location = new System.Drawing.Point(134, 187);
+            this.labelProveedor.Name = "labelProveedor";
+            this.labelProveedor.Size = new System.Drawing.Size(180, 19);
+            this.labelProveedor.TabIndex = 27;
+            this.labelProveedor.Text = "CORREO ELECTRÓNICO:";
             // 
             // RestablecerContraseñaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(398, 217);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.ClientSize = new System.Drawing.Size(815, 508);
+            this.Controls.Add(this.labelProveedor);
+            this.Controls.Add(this.atrasButton);
+            this.Controls.Add(this.labelInformaciónBásica);
+            this.Controls.Add(this.txtbxCorreo);
             this.Controls.Add(this.button5);
-            this.Controls.Add(this.confirmar);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.contraseña);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.user);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.ci);
             this.Name = "RestablecerContraseñaForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Recuperar contreseña";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -152,14 +112,9 @@
         #endregion
 
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.TextBox confirmar;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox contraseña;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox user;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox ci;
+        private System.Windows.Forms.TextBox txtbxCorreo;
+        private System.Windows.Forms.Label labelInformaciónBásica;
+        private System.Windows.Forms.Button atrasButton;
+        private System.Windows.Forms.Label labelProveedor;
     }
 }

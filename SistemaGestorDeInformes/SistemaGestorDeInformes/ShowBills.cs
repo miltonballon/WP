@@ -12,9 +12,11 @@ namespace SistemaGestorDeInformes
 {
     public partial class ShowBills : Form
     {
+        private InvoiceController invoiceController;
         public ShowBills()
         {
             InitializeComponent();
+            invoiceController = new InvoiceController();
         }
 
         private void pantallaPrincipalToolStripMenuItem_Click(object sender, EventArgs e)
@@ -78,6 +80,30 @@ namespace SistemaGestorDeInformes
             OpenQuarter OpenQuarter1 = new OpenQuarter();
             this.Hide();
             OpenQuarter1.Show();
+        }
+
+        public void onlyReadRestrictionDataGrid()
+        {
+
+            dataGridView1.Columns["NFactura"].ReadOnly = true;
+            dataGridView1.Columns["Nautorizacion"].ReadOnly = true;
+            dataGridView1.Columns["Nit"].ReadOnly = true;
+            dataGridView1.Columns["Fecha"].ReadOnly = true;
+            dataGridView1.Columns["Productos"].ReadOnly = true;
+            dataGridView1.Columns["Proveedor"].ReadOnly = true;
+        }
+
+        private void ShowBills_Load(object sender, EventArgs e)
+        {
+            List<Invoice>invoices=invoiceController.getAllInvoices();
+            dataGridView1.DataSource = invoices;
+
+            onlyReadRestrictionDataGrid();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

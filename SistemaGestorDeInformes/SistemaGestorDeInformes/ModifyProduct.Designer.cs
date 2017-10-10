@@ -94,6 +94,7 @@
             this.RegistrarButton.TabIndex = 21;
             this.RegistrarButton.Text = "Guardar";
             this.RegistrarButton.UseVisualStyleBackColor = false;
+            this.RegistrarButton.Click += new System.EventHandler(this.RegistrarButton_Click);
             // 
             // atrasButton
             // 
