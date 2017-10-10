@@ -28,26 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelInformaciónBásica = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // label1
+            // labelInformaciónBásica
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(38, 37);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(194, 16);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Cerrando Sesion. Espere...";
+            this.labelInformaciónBásica.AutoSize = true;
+            this.labelInformaciónBásica.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelInformaciónBásica.ForeColor = System.Drawing.Color.Yellow;
+            this.labelInformaciónBásica.Location = new System.Drawing.Point(323, 245);
+            this.labelInformaciónBásica.Name = "labelInformaciónBásica";
+            this.labelInformaciónBásica.Size = new System.Drawing.Size(221, 19);
+            this.labelInformaciónBásica.TabIndex = 25;
+            this.labelInformaciónBásica.Text = "Cerrando sesión. Espere...";
             // 
             // CerrandoSesion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 100);
-            this.Controls.Add(this.label1);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.ClientSize = new System.Drawing.Size(815, 508);
+            this.Controls.Add(this.labelInformaciónBásica);
             this.Name = "CerrandoSesion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cerrando Sesion...";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -56,6 +59,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelInformaciónBásica;
     }
 }

@@ -168,5 +168,12 @@ namespace SistemaGestorDeInformes
                 MessageBox.Show("El correo ingresado no coincide con el del usuario");
             }
         }
+
+        private void atrasButton_Click(object sender, EventArgs e)
+        {
+            Login Login1 = new Login();
+            this.Hide();
+            Login1.Show();
+        }
     }
 }
