@@ -13,15 +13,16 @@ namespace SistemaGestorDeInformes
     public partial class ShowProducts : Form
     {
         List<Product> products = new List<Product>();
-        ProductController p; 
+        ProductController pc; 
         public ShowProducts()
         {
             InitializeComponent();
-            p = new ProductController();
+            pc = new ProductController();
             
             showUser();
             
         }
+       
 
         private void BackButton_Click(object sender, EventArgs e)
         {
@@ -39,10 +40,9 @@ namespace SistemaGestorDeInformes
 
         public void showUser()
         {
-            products = p.showProducts();
+            products = pc.showProducts();
             dataGridView1.DataSource = products;
             onlyReadRestrictionDataGrid();
-        
         }
 
         private void MainFormToolStripMenuItem_Click(object sender, EventArgs e)
@@ -66,7 +66,7 @@ namespace SistemaGestorDeInformes
 
         private void searchButton_Click(object sender, EventArgs e)
         {
-            p.searchProduct(dataGridView1,textBox1.Text);
+            pc.searchProduct(dataGridView1,textBox1.Text);
           
         }
 
@@ -103,8 +103,11 @@ namespace SistemaGestorDeInformes
             dataGridView1.Columns["Name"].ReadOnly = true;
             dataGridView1.Columns["Provider"].ReadOnly = true;
             dataGridView1.Columns["Unit"].ReadOnly = true;
-           
+        }
+        public void dataSelectedDataGrid()
+        {
 
+            dataGridView1.Rows[0].ReadOnly = false;
         }
         private void DataGridView1_SelectionChanged(object sender, EventArgs e)
         {
@@ -125,13 +128,14 @@ namespace SistemaGestorDeInformes
         {
             if (dataGridView1.Rows.Count > 0)
             {
-                RegisterProduct editar = new RegisterProduct();
-                editar.Show();
-                this.Hide();
-                editar.ProductTextBox.Text = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
-                editar.ProviderTextBox.Text = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
-                editar.Unit.Text = dataGridView1.SelectedRows[0].Cells[2].Value.ToString();
-                editar.RegistrarButton.Text = "Editar";
+                Product p = new Product(dataGridView1.SelectedRows[0].Cells[0].Value.ToString(),dataGridView1.SelectedRows[0].Cells[1].Value.ToString(),dataGridView1.SelectedRows[0].Cells[2].Value.ToString());
+                
+                EditProduct edit= new EditProduct();
+               
+                edit.Show();
+                this.Close();
+              
+               
               
             }
             else

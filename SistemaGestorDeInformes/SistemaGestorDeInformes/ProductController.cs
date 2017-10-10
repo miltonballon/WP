@@ -1,10 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Data;
-using System.Data.OleDb;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SQLite;
 namespace SistemaGestorDeInformes
@@ -12,6 +7,9 @@ namespace SistemaGestorDeInformes
     class ProductController
     {
         public Connection c = new Connection();
+        int var1;
+        int var2;
+        int var3;
         public ProductController()
         {
             c.connect();
@@ -44,6 +42,28 @@ namespace SistemaGestorDeInformes
             Product p = new Product(product.Text, provider.Text, unit.Text);
             InsertProduct_Provider_Unit(getIdName(p.Name),getIdProvider(p.Provider),getIdUnit(p.Unit));   
         }
+        public void insertProduct(Product p)
+        {
+            if (getIdName(p.Name) == -1) //si es -1 quiere decir que no existe y por tanto se crea
+            {
+                InsertProduct(p.Name);
+            }
+            if (getIdProvider(p.Provider) == -1)
+            {
+                InsertProvider(p.Provider);
+            
+            }
+            if (getIdUnit(p.Unit) == -1)
+            {
+                InsertUnit(p.Unit);
+            }
+        }
+
+        public void addReferencesToTableProduct_Provider_Unit(Product p)
+        {
+            InsertProduct_Provider_Unit(getIdName(p.Name), getIdProvider(p.Provider), getIdUnit(p.Unit));
+        }
+
 
         public void showProducts(DataGridView d)
         {
@@ -84,6 +104,7 @@ namespace SistemaGestorDeInformes
                     products.Add(p);
                 }
             }
+            
             return products;
         }
 
@@ -99,8 +120,8 @@ namespace SistemaGestorDeInformes
                 d.DataSource = products;
             }
         }
-        
 
+       
         public int getIdName(string name)
         {
             string NameQuery = "select id FROM Product where name = " + "'" + name + "'";
@@ -137,6 +158,15 @@ namespace SistemaGestorDeInformes
             string query = "insert into Product_Provider_Unit (Id_prod,id_prov,id_uni) values('" + IDProduct + "','" + IDProvider + "','" + IDUnit + "')";
             c.executeInsertion(query);
         }
+        public void DeleteProduct_Provider_Unit(int IDProduct, int IDProvider, int IDUnit)
+        {
+            
+            string query = "delete from Product_Provider_Unit where Id_prod='" + IDProduct + "' and id_prov='" + IDProvider + "' and id_uni='" + IDUnit + "'";
+            //string query = "delete from Product_Provider_Unit where Id_prod='1' and id_prov='1' and id_uni='1'";
+            c.executeInsertion(query);
+        }
+       
+
         
     }
 }
