@@ -27,19 +27,13 @@ namespace SistemaGestorDeInformes
             query += idProvider + ", ";
             query += invoice.getProvider().getNit() + ", ";
             query += date.ToString("dd/MM/yyyy")+")";
-            //MessageBox.Show(query);
-            /*try
-            {*/
+           
                 
                 c.executeInsertion(query);
                 //MessageBox.Show(c.buscarYDevolverId("select id_proveedor FROM Factura where n_invoice = " + nInvoice) + "");
                 MessageBox.Show("Informacion Basica de la factura agregado satisfactoriamente","INFORME");
                 registerInvoicesRows(invoice);
-            /*}
-            catch (Exception)
-            {
-                MessageBox.Show("El 'N. Factura' introducido ya existe.\nPor favor revise los datos introducidos.", "Error");
-            }*/
+           
         }
 
         public int searchProvider(Provider provider)//refactorizar

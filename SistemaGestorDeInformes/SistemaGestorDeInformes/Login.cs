@@ -16,5 +16,18 @@ namespace SistemaGestorDeInformes
         {
             InitializeComponent();
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Hide();
+            RestablecerContraseñaForm CC = new RestablecerContraseñaForm();
+            CC.ShowDialog();
+            this.Show();
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

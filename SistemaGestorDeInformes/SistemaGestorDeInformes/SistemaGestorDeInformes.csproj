@@ -48,6 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CerrandoSesion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CerrandoSesion.Designer.cs">
+      <DependentUpon>CerrandoSesion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Configuration.cs" />
     <Compile Include="Connection.cs" />
     <Compile Include="EditProduct.cs">
@@ -56,6 +62,7 @@
     <Compile Include="EditProduct.Designer.cs">
       <DependentUpon>EditProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="Inicio Sesion.cs" />
     <Compile Include="InterfazPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +114,13 @@
     <Compile Include="ReportConfiguration.Designer.cs">
       <DependentUpon>ReportConfiguration.cs</DependentUpon>
     </Compile>
+    <Compile Include="RestablecerContraseñaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RestablecerContraseñaForm.Designer.cs">
+      <DependentUpon>RestablecerContraseñaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Restablecer_Contraseña.cs" />
     <Compile Include="ShowBills.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +135,11 @@
     </Compile>
     <Compile Include="Trimester.cs" />
     <Compile Include="TrimesterController.cs" />
+    <Compile Include="User.cs" />
+    <Compile Include="UserController.cs" />
+    <EmbeddedResource Include="CerrandoSesion.resx">
+      <DependentUpon>CerrandoSesion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditProduct.resx">
       <DependentUpon>EditProduct.cs</DependentUpon>
     </EmbeddedResource>
@@ -153,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ReportConfiguration.resx">
       <DependentUpon>ReportConfiguration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RestablecerContraseñaForm.resx">
+      <DependentUpon>RestablecerContraseñaForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ShowBills.resx">
       <DependentUpon>ShowBills.cs</DependentUpon>

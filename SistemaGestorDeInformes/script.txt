@@ -57,6 +57,13 @@ CREATE TABLE `trimester` (
 	`name`		TEXT
 );
 
+CREATE TABLE `User` (
+	`id`		INTEGER PRIMARY KEY AUTOINCREMENT,
+	`name`	TEXT,
+	`password`	TEXT,
+	`email`	TEXT
+);
+
 INSERT INTO Product(name) VALUES ('Pan');
 INSERT INTO Product(name) VALUES ('Leche');
 INSERT INTO Product(name) VALUES ('Carne Para Sopa');

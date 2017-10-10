@@ -7,9 +7,7 @@ namespace SistemaGestorDeInformes
     class ProductController
     {
         public Connection c = new Connection();
-        int var1;
-        int var2;
-        int var3;
+        
         public ProductController()
         {
             c.connect();
