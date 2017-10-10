@@ -113,6 +113,18 @@ namespace SistemaGestorDeInformes
             return products;
         }
 
+        public Product showProductByPPUId(int ppuId)
+        {
+            string query = "select name, Provider, Type FROM Product AS PROD, Provider AS PRO, Unit AS Un, Product_Provider_Unit AS PPU WHERE PPU.id="+ppuId+" AND PROD.id = PPU.Id_prod AND PRO.id= PPU.id_prov AND Un.id= PPU.id_uni";
+            SQLiteDataReader data = c.query_show(query);
+            Product product=null;
+            while (data.Read())
+            {
+                product = new Product(data[0].ToString(), data[1].ToString(), data[2].ToString());
+            }
+            return product;
+        }
+
         public void searchProduct(DataGridView d,string name)
         {
             List<Product> products = new List<Product>();

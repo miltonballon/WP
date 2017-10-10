@@ -73,6 +73,11 @@ namespace SistemaGestorDeInformes
             InvoiceRows.Add(invoiceRow);
         }
 
+        public void setInvoiceRows(List<InvoiceRow> invoiceRows)
+        {
+            InvoiceRows = invoiceRows;
+        }
+
         public override String ToString()
         {
             String output= provider + "\nN.Factura: " + nInvoice + "\nN.Autorizacion: "

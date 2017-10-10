@@ -49,6 +49,12 @@
             this.buttonAtrás = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.NFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NAutorizacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Proveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Productos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -230,10 +236,48 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.NFactura,
+            this.NAutorizacion,
+            this.Proveedor,
+            this.Nit,
+            this.Fecha,
+            this.Productos});
             this.dataGridView1.Location = new System.Drawing.Point(26, 72);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(467, 371);
+            this.dataGridView1.Size = new System.Drawing.Size(646, 371);
             this.dataGridView1.TabIndex = 17;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // NFactura
+            // 
+            this.NFactura.HeaderText = "N° Factura";
+            this.NFactura.Name = "NFactura";
+            // 
+            // NAutorizacion
+            // 
+            this.NAutorizacion.HeaderText = "N° Autorizacion";
+            this.NAutorizacion.Name = "NAutorizacion";
+            // 
+            // Proveedor
+            // 
+            this.Proveedor.HeaderText = "Proveedor";
+            this.Proveedor.Name = "Proveedor";
+            // 
+            // Nit
+            // 
+            this.Nit.HeaderText = "NIT";
+            this.Nit.Name = "Nit";
+            // 
+            // Fecha
+            // 
+            this.Fecha.HeaderText = "Fecha";
+            this.Fecha.Name = "Fecha";
+            // 
+            // Productos
+            // 
+            this.Productos.HeaderText = "Productos";
+            this.Productos.Name = "Productos";
             // 
             // ShowBills
             // 
@@ -248,6 +292,7 @@
             this.Name = "ShowBills";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ver Facturas";
+            this.Load += new System.EventHandler(this.ShowBills_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -279,5 +324,11 @@
         private System.Windows.Forms.Button buttonAtrás;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NFactura;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NAutorizacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Proveedor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Productos;
     }
 }

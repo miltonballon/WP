@@ -3,7 +3,7 @@ CREATE TABLE `Invoice` (
 	`n_autorization`	INTEGER,
 	`id_provider`		INTEGER,
 	`nit`			INTEGER,
-	`date`			TEXT,
+	`date`			REAL,
 	`id_trimester`		INTEGER,
 	FOREIGN KEY(`id_provider`) REFERENCES `Provider`(`id`),
 	FOREIGN KEY(`id_trimester`) REFERENCES `trimester`(`id`),

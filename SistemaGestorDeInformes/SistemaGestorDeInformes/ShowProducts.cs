@@ -140,6 +140,10 @@ namespace SistemaGestorDeInformes
             this.Close();
 
         }
-        
+
+        private void ShowProducts_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
