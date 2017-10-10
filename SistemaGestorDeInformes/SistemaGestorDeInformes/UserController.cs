@@ -37,5 +37,24 @@ namespace SistemaGestorDeInformes
             return output;
         }
 
+        public User getUserByUsername(String username)
+        {
+            User user = null;
+            String query = "SELECT * FROM User WHERE name='" + username + "'";
+            try
+            {
+                SQLiteDataReader data = c.query_show(query);
+                if (data.Read())
+                {
+                    user = new User(Convert.ToString(data[3]), Convert.ToString(data[1]), Convert.ToString(data[2]));
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+            return user;
+        }
+
     }
 }
