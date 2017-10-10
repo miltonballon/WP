@@ -21,6 +21,8 @@ namespace SistemaGestorDeInformes
 
         private void atrasButton_Click(object sender, EventArgs e)
         {
+            pc.insertProduct(ProductTextBox, ProviderTextBox, Unit);
+            pc.addReferencesToTableProduct_Provider_Unit(ProductTextBox, ProviderTextBox, Unit);
             ShowProducts ShowProducts1 = new ShowProducts();
             this.Hide();
             ShowProducts1.Show();

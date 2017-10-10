@@ -133,7 +133,7 @@ namespace SistemaGestorDeInformes
             edit.ProductTextBox.Text = p.Name;          
             edit.ProviderTextBox.Text = p.Provider;
             edit.Unit.Text = p.Unit;
-            MessageBox.Show("A" + pc.getIdName(p.Name) + "T" + pc.getIdProvider(p.Provider) + "B" + pc.getIdUnit(p.Unit));
+            //MessageBox.Show("A" + pc.getIdName(p.Name) + "T" + pc.getIdProvider(p.Provider) + "B" + pc.getIdUnit(p.Unit));
             pc.DeleteProduct_Provider_Unit(pc.getIdName(p.Name), pc.getIdProvider(p.Provider), pc.getIdUnit(p.Unit));
 
             edit.Show();
