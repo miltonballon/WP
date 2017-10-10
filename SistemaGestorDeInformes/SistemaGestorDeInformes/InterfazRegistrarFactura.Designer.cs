@@ -29,10 +29,8 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.pantallaPrincipalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.facturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.registrarFacturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.verFacturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pantallaPrincipalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();            
+            this.registrarFacturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();            
             this.productosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -74,8 +72,7 @@
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.pantallaPrincipalToolStripMenuItem,
-            this.facturasToolStripMenuItem,
+            this.pantallaPrincipalToolStripMenuItem,            
             this.productosToolStripMenuItem,
             this.informeToolStripMenuItem1,
             this.inventarioToolStripMenuItem,
@@ -93,33 +90,13 @@
             this.pantallaPrincipalToolStripMenuItem.Name = "pantallaPrincipalToolStripMenuItem";
             this.pantallaPrincipalToolStripMenuItem.Size = new System.Drawing.Size(110, 20);
             this.pantallaPrincipalToolStripMenuItem.Text = "Pantalla Principal";
-            this.pantallaPrincipalToolStripMenuItem.Click += new System.EventHandler(this.pantallaPrincipalToolStripMenuItem_Click);
-            // 
-            // facturasToolStripMenuItem
-            // 
-            this.facturasToolStripMenuItem.BackColor = System.Drawing.Color.Black;
-            this.facturasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.registrarFacturasToolStripMenuItem,
-            this.verFacturasToolStripMenuItem});
-            this.facturasToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.facturasToolStripMenuItem.Name = "facturasToolStripMenuItem";
-            this.facturasToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
-            this.facturasToolStripMenuItem.Text = "Facturas";
-            // 
+            this.pantallaPrincipalToolStripMenuItem.Click += new System.EventHandler(this.pantallaPrincipalToolStripMenuItem_Click);            
             // registrarFacturasToolStripMenuItem
             // 
             this.registrarFacturasToolStripMenuItem.ForeColor = System.Drawing.Color.Gray;
             this.registrarFacturasToolStripMenuItem.Name = "registrarFacturasToolStripMenuItem";
             this.registrarFacturasToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
-            this.registrarFacturasToolStripMenuItem.Text = "Registrar Facturas";
-            // 
-            // verFacturasToolStripMenuItem
-            // 
-            this.verFacturasToolStripMenuItem.Name = "verFacturasToolStripMenuItem";
-            this.verFacturasToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
-            this.verFacturasToolStripMenuItem.Text = "Ver  Facturas";
-            this.verFacturasToolStripMenuItem.Click += new System.EventHandler(this.verFacturasToolStripMenuItem_Click);
-            // 
+            this.registrarFacturasToolStripMenuItem.Text = "Registrar Facturas";            
             // productosToolStripMenuItem
             // 
             this.productosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -461,10 +438,7 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button buttonGuardar;
         private System.Windows.Forms.Button buttonAtrás;
-        private System.Windows.Forms.Label labelInformaciónBásica;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem facturasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem verFacturasToolStripMenuItem;
+        private System.Windows.Forms.Label labelInformaciónBásica;                     
         private System.Windows.Forms.ToolStripMenuItem informeToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem generarInformeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verInformeToolStripMenuItem;

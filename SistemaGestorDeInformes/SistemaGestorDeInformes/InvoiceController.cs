@@ -32,7 +32,7 @@ namespace SistemaGestorDeInformes
             query += idProvider + ", ";
             query += invoice.getProvider().getNit() + ", '";
             query += date.ToShortDateString()+"')";
-            //MessageBox.Show(query);
+           
             try
             {
                 
