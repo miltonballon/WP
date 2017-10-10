@@ -19,6 +19,7 @@ namespace SistemaGestorDeInformes
             InitializeComponent();
             trimesterController = new TrimesterController();
             isRegistering = false;
+
         }
 
         private void atrasButton_Click(object sender, EventArgs e)

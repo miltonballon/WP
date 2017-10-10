@@ -28,18 +28,18 @@ namespace SistemaGestorDeInformes
             query += invoice.getProvider().getNit() + ", ";
             query += date.ToString("dd/MM/yyyy")+")";
             //MessageBox.Show(query);
-            try
-            {
+            /*try
+            {*/
                 
                 c.executeInsertion(query);
                 //MessageBox.Show(c.buscarYDevolverId("select id_proveedor FROM Factura where n_invoice = " + nInvoice) + "");
                 MessageBox.Show("Informacion Basica de la factura agregado satisfactoriamente","INFORME");
                 registerInvoicesRows(invoice);
-            }
+            /*}
             catch (Exception)
             {
                 MessageBox.Show("El 'N. Factura' introducido ya existe.\nPor favor revise los datos introducidos.", "Error");
-            }
+            }*/
         }
 
         public int searchProvider(Provider provider)//refactorizar
@@ -94,7 +94,7 @@ namespace SistemaGestorDeInformes
         private int searchPPU(int idProd, int idProv, int idUni)
         {
             String query = "SELECT id FROM Product_Provider_Unit WHERE "
-                + "id_prod="+idProd+" and id_prov="+idProv+" and id_uni="+idUni+")";
+                + "id_prod="+idProd+" and id_prov="+idProv+" and id_uni="+idUni+"";
             return c.FindAndGetID(query);
         }
 
