@@ -52,15 +52,22 @@ namespace SistemaGestorDeInformes
         
         public SQLiteDataReader query_show(string query)
         {
-
+       
             command = new SQLiteCommand(query, connectionString);
             data= command.ExecuteReader();
+         
             return data;
+            
         }
         public void executeInsertion(string query)
         {
+     
+            
             command = new SQLiteCommand(query, connectionString);
             command.ExecuteNonQuery();
+        
+          
         }
+        
     }
 }

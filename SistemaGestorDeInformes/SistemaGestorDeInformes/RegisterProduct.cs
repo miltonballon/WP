@@ -12,11 +12,14 @@ namespace SistemaGestorDeInformes
 {
     public partial class RegisterProduct : Form
     {
-        ProductController p;
+        ProductController pc;
+        Product p;
         public RegisterProduct()
         {
             InitializeComponent();
-            p = new ProductController();
+            pc = new ProductController();
+        
+            
         }
 
         private void labelProveedor_Click(object sender, EventArgs e)
@@ -38,10 +41,10 @@ namespace SistemaGestorDeInformes
             main.Show();
         }
 
-        private void RegisterButton_Click(object sender, EventArgs e)
+        void RegisterButton_Click(object sender, EventArgs e)
         {
-            p.insertProduct(ProductTextBox, ProviderTextBox, Unit);
-            p.addReferencesToTableProduct_Provider_Unit(ProductTextBox, ProviderTextBox, Unit);
+            pc.insertProduct(ProductTextBox, ProviderTextBox, Unit);
+            pc.addReferencesToTableProduct_Provider_Unit(ProductTextBox, ProviderTextBox, Unit);
             cleanTextBox();
             MessageBox.Show("Agregado exitosamente");
 
@@ -86,6 +89,14 @@ namespace SistemaGestorDeInformes
             OpenQuarter OpenQuarter1 = new OpenQuarter();
             this.Hide();
             OpenQuarter1.Show();
+        }
+        
+
+        private void editButton_Click(object sender, EventArgs e)
+        {
+            
+
+            
         }
     }
 }
