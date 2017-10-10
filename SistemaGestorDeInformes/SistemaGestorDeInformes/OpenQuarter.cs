@@ -12,9 +12,14 @@ namespace SistemaGestorDeInformes
 {
     public partial class OpenQuarter : Form
     {
+        private TrimesterController trimesterController;
+        private bool isRegistering;
         public OpenQuarter()
         {
             InitializeComponent();
+            trimesterController = new TrimesterController();
+            isRegistering = false;
+
         }
 
         private void atrasButton_Click(object sender, EventArgs e)
@@ -64,6 +69,84 @@ namespace SistemaGestorDeInformes
             ReportConfiguration ReportConfiguration1 = new ReportConfiguration();
             this.Hide();
             ReportConfiguration1.Show();
+        }
+
+        private void RegistrarButton_Click(object sender, EventArgs e)
+        {
+            if (isRegistering)
+            {
+                String name = txbxNombre.Text;
+                if (!name.Equals(""))
+                {
+                    Trimester trimester = new Trimester(name);
+                    trimester.setOpen(true);
+                    saveNewTrimester(trimester);
+                    hideNombreForms();
+                    RegistrarButton.Text = "Nuevo Trimestre";
+                    setLbTrimText();
+                    MessageBox.Show("Nuevo trimestre creado: "+trimester.getName());
+                    isRegistering = !isRegistering;
+                }
+                else
+                {
+                    MessageBox.Show("Ingrese un nombre para el trimestre");
+                }
+            }
+            else
+            {
+                showNombreForms();
+                RegistrarButton.Text = "Guardar";
+                isRegistering = !isRegistering;
+            }
+        }
+
+        private void saveNewTrimester(Trimester trimester)
+        {
+            Trimester last=trimesterController.getLastTrimester();
+            last.setOpen(false);
+            trimesterController.updateTrimester(last);
+            trimesterController.insertTrimester(trimester);
+        }
+
+        private void labelInformaciónBásica_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void OpenQuarter_Load(object sender, EventArgs e)
+        {
+            setLbTrimText();
+            hideNombreForms();
+        }
+
+        private void setLbTrimText()
+        {
+            Trimester trimester=trimesterController.getLastTrimester();
+            if (trimester != null)
+            {
+                lbTrim.Text = trimester.getName();
+            }
+            else
+            {
+                lbTrim.Text = "-";
+            }
+        }
+
+        private void hideNombreForms()
+        {
+            lbNombre.Hide();
+            txbxNombre.Hide();
+        }
+
+        private void showNombreForms()
+        {
+            lbNombre.Show();
+            txbxNombre.Show();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

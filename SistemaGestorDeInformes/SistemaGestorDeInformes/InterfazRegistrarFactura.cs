@@ -111,20 +111,26 @@ namespace SistemaGestorDeInformes
         private AutoCompleteStringCollection providersProducts()
         {
             AutoCompleteStringCollection output = new AutoCompleteStringCollection();
-            List<Product> products=productController.showAllProductsByProvider(provider.getName());
-            provider.setProducts(products);
-            foreach (Product product in products)
+            if (provider != null)
             {
-                output.Add(product.Name);
+                List<Product> products = productController.showAllProductsByProvider(provider.getName());
+                provider.setProducts(products);
+                foreach (Product product in products)
+                {
+                    output.Add(product.Name);
+                }
             }
             return output;
         }
 
         private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            foreach (DataGridViewRow row in dataGridView1.Rows)
+            if (provider != null)
             {
-                row.Cells[dataGridView1.Columns["Unidad"].Index].Value = getUnitByNameOfProvidersProducts(Convert.ToString(row.Cells[dataGridView1.Columns["Nombre"].Index].Value));
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    row.Cells[dataGridView1.Columns["Unidad"].Index].Value = getUnitByNameOfProvidersProducts(Convert.ToString(row.Cells[dataGridView1.Columns["Nombre"].Index].Value));
+                }
             }
 
             foreach (DataGridViewRow row in dataGridView1.Rows)
@@ -170,10 +176,22 @@ namespace SistemaGestorDeInformes
 
         private void buttonGuardar_Click(object sender, EventArgs e)
         {
+            if (provider == null)
+            {
+                newProvider();
+                providerController.insertProvider(provider);
+            }
             invoice = createInvoice();
             createAndAddProducts();
             invoiceController.addInvoice(invoice);
             MessageBox.Show(invoice.ToString());
+        }
+
+        private void newProvider()
+        {
+            String name = textBoxProveedor.Text;
+            int nit = Int32.Parse(textBoxNit.Text);
+            provider = new Provider(name, nit);
         }
 
         private Invoice createInvoice()

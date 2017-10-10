@@ -126,7 +126,10 @@ namespace SistemaGestorDeInformes
 
         private void editButton_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.Rows.Count > 0)
+            ModifyProduct ModifyProduct1 = new ModifyProduct();
+            this.Hide();
+            ModifyProduct1.Show();
+            /*if (dataGridView1.Rows.Count > 0)
             {
                 Product p = new Product(dataGridView1.SelectedRows[0].Cells[0].Value.ToString(),dataGridView1.SelectedRows[0].Cells[1].Value.ToString(),dataGridView1.SelectedRows[0].Cells[2].Value.ToString());
                 
@@ -141,7 +144,7 @@ namespace SistemaGestorDeInformes
             else
             {
                 MessageBox.Show("Seleccione una fila");
-            }
+            }*/
         }
         
     }
