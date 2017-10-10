@@ -29,5 +29,12 @@ namespace SistemaGestorDeInformes
         {
 
         }
+
+        private void btnEntrar_Click(object sender, EventArgs e)
+        {
+            InterfazPrincipal prin=new InterfazPrincipal();
+            this.Hide();
+            prin.Show();
+        }
     }
 }

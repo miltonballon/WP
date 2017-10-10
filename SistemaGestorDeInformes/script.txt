@@ -64,6 +64,8 @@ CREATE TABLE `User` (
 	`email`	TEXT
 );
 
+INSERT INTO User(name, password, email) VALUES ('Responsable','creamos', 'jprodriguez60@gmail.com');
+
 INSERT INTO Product(name) VALUES ('Pan');
 INSERT INTO Product(name) VALUES ('Leche');
 INSERT INTO Product(name) VALUES ('Carne Para Sopa');

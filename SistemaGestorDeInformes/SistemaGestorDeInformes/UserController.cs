@@ -15,5 +15,10 @@ namespace SistemaGestorDeInformes
             c.connect();
         }
 
+        public bool verify(String username)
+        {
+
+        }
+
     }
 }
