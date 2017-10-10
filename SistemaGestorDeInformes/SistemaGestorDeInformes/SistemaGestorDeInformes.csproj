@@ -71,6 +71,12 @@
     <Compile Include="Invoice.cs" />
     <Compile Include="InvoiceController.cs" />
     <Compile Include="InvoiceRow.cs" />
+    <Compile Include="ModifyProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModifyProduct.Designer.cs">
+      <DependentUpon>ModifyProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="OpenQuarter.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,6 +114,7 @@
       <DependentUpon>ShowProducts.cs</DependentUpon>
     </Compile>
     <Compile Include="Trimester.cs" />
+    <Compile Include="TrimesterController.cs" />
     <EmbeddedResource Include="EditProduct.resx">
       <DependentUpon>EditProduct.cs</DependentUpon>
     </EmbeddedResource>
@@ -116,6 +123,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InterfazRegistrarFactura.resx">
       <DependentUpon>InterfazRegistrarFactura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModifyProduct.resx">
+      <DependentUpon>ModifyProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OpenQuarter.resx">
       <DependentUpon>OpenQuarter.cs</DependentUpon>
