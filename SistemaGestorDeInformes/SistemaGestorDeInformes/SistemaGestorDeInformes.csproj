@@ -55,6 +55,7 @@
       <DependentUpon>CerrandoSesion.cs</DependentUpon>
     </Compile>
     <Compile Include="Configuration.cs" />
+    <Compile Include="ConfigurationController.cs" />
     <Compile Include="Connection.cs" />
     <Compile Include="EditProduct.cs">
       <SubType>Form</SubType>
