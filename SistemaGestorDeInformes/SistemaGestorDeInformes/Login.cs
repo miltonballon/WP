@@ -31,7 +31,7 @@ namespace SistemaGestorDeInformes
                     this.Hide();
                     RestablecerContraseñaForm CC = new RestablecerContraseñaForm(user);
                     CC.ShowDialog();
-                    this.Show();
+                    //this.Show();
                 }
                 else
                 {

@@ -102,6 +102,7 @@
             this.Controls.Add(this.txtbxCorreo);
             this.Controls.Add(this.button5);
             this.Name = "RestablecerContraseñaForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Recuperar contreseña";
             this.ResumeLayout(false);
             this.PerformLayout();
