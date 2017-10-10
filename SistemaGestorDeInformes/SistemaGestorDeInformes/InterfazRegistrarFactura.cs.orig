@@ -111,26 +111,20 @@ namespace SistemaGestorDeInformes
         private AutoCompleteStringCollection providersProducts()
         {
             AutoCompleteStringCollection output = new AutoCompleteStringCollection();
-            if (provider != null)
+            List<Product> products=productController.showAllProductsByProvider(provider.getName());
+            provider.setProducts(products);
+            foreach (Product product in products)
             {
-                List<Product> products = productController.showAllProductsByProvider(provider.getName());
-                provider.setProducts(products);
-                foreach (Product product in products)
-                {
-                    output.Add(product.Name);
-                }
+                output.Add(product.Name);
             }
             return output;
         }
 
         private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            if (provider != null)
+            foreach (DataGridViewRow row in dataGridView1.Rows)
             {
-                foreach (DataGridViewRow row in dataGridView1.Rows)
-                {
-                    row.Cells[dataGridView1.Columns["Unidad"].Index].Value = getUnitByNameOfProvidersProducts(Convert.ToString(row.Cells[dataGridView1.Columns["Nombre"].Index].Value));
-                }
+                row.Cells[dataGridView1.Columns["Unidad"].Index].Value = getUnitByNameOfProvidersProducts(Convert.ToString(row.Cells[dataGridView1.Columns["Nombre"].Index].Value));
             }
 
             foreach (DataGridViewRow row in dataGridView1.Rows)
@@ -176,22 +170,10 @@ namespace SistemaGestorDeInformes
 
         private void buttonGuardar_Click(object sender, EventArgs e)
         {
-            if (provider == null)
-            {
-                newProvider();
-                providerController.insertProvider(provider);
-            }
             invoice = createInvoice();
             createAndAddProducts();
             invoiceController.addInvoice(invoice);
             MessageBox.Show(invoice.ToString());
-        }
-
-        private void newProvider()
-        {
-            String name = textBoxProveedor.Text;
-            int nit = Int32.Parse(textBoxNit.Text);
-            provider = new Provider(name, nit);
         }
 
         private Invoice createInvoice()
@@ -235,6 +217,27 @@ namespace SistemaGestorDeInformes
             this.Hide();
         }
 
+<<<<<<< HEAD
+        private void verFacturasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowBills ShowBills1 = new ShowBills();
+            ShowBills1.Show();
+            this.Hide();
+        }
+
+        private void informeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ReportConfiguration ReportConfiguration1 = new ReportConfiguration();
+            this.Hide();
+            ReportConfiguration1.Show();
+        }
+
+        private void abrirTrimestreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenQuarter OpenQuarter1 = new OpenQuarter();
+            this.Hide();
+            OpenQuarter1.Show();
+=======
         private void textBoxProveedor_Leave(object sender, EventArgs e)
         {
             Provider provider = getProviderByName(textBoxProveedor.Text);
@@ -262,27 +265,7 @@ namespace SistemaGestorDeInformes
                 }
             }
             return output;
-        }
-
-        private void verFacturasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ShowBills ShowBills1 = new ShowBills();
-            ShowBills1.Show();
-            this.Hide();
-        }
-
-        private void informeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ReportConfiguration ReportConfiguration1 = new ReportConfiguration();
-            this.Hide();
-            ReportConfiguration1.Show();
-        }
-
-        private void abrirTrimestreToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            OpenQuarter OpenQuarter1 = new OpenQuarter();
-            this.Hide();
-            OpenQuarter1.Show();
+>>>>>>> origin/Autocompletado
         }
     }
 }

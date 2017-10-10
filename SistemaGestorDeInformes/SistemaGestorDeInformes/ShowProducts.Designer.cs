@@ -49,6 +49,11 @@
             this.abrirTrimestreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.atrasButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.searchButton = new System.Windows.Forms.Button();
+            this.clearSearchButton = new System.Windows.Forms.Button();
+            this.editButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -56,10 +61,14 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 52);
+            this.dataGridView1.Location = new System.Drawing.Point(17, 101);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(622, 236);
+            
+            this.dataGridView1.Size = new System.Drawing.Size(497, 236);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged_1);
             // 
             // menuStrip1
             // 
@@ -83,7 +92,7 @@
             this.pantallaPrincipalToolStripMenuItem.Name = "pantallaPrincipalToolStripMenuItem";
             this.pantallaPrincipalToolStripMenuItem.Size = new System.Drawing.Size(110, 20);
             this.pantallaPrincipalToolStripMenuItem.Text = "Pantalla Principal";
-            this.pantallaPrincipalToolStripMenuItem.Click += new System.EventHandler(this.pantallaPrincipalToolStripMenuItem_Click);
+            this.pantallaPrincipalToolStripMenuItem.Click += new System.EventHandler(this.MainFormToolStripMenuItem_Click);
             // 
             // facturasToolStripMenuItem
             // 
@@ -99,20 +108,22 @@
             this.registrarFacturaToolStripMenuItem.Name = "registrarFacturaToolStripMenuItem";
             this.registrarFacturaToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.registrarFacturaToolStripMenuItem.Text = "Registrar Factura";
-            this.registrarFacturaToolStripMenuItem.Click += new System.EventHandler(this.registrarFacturaToolStripMenuItem_Click);
+            this.registrarFacturaToolStripMenuItem.Click += new System.EventHandler(this.RegisterInvoiceToolStripMenuItem_Click);
             // 
             // verFacturasToolStripMenuItem
             // 
             this.verFacturasToolStripMenuItem.Name = "verFacturasToolStripMenuItem";
             this.verFacturasToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.verFacturasToolStripMenuItem.Text = "Ver  Facturas";
+            this.verFacturasToolStripMenuItem.Click += new System.EventHandler(this.verFacturasToolStripMenuItem_Click);
             // 
             // productosToolStripMenuItem
             // 
+            this.productosToolStripMenuItem.BackColor = System.Drawing.Color.Black;
             this.productosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.registrarProductosToolStripMenuItem,
             this.verProductosToolStripMenuItem});
-            this.productosToolStripMenuItem.ForeColor = System.Drawing.Color.Gray;
+            this.productosToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.productosToolStripMenuItem.Name = "productosToolStripMenuItem";
             this.productosToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
             this.productosToolStripMenuItem.Text = "Productos";
@@ -122,13 +133,13 @@
             this.registrarProductosToolStripMenuItem.Name = "registrarProductosToolStripMenuItem";
             this.registrarProductosToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.registrarProductosToolStripMenuItem.Text = "Registrar Producto";
-            this.registrarProductosToolStripMenuItem.Click += new System.EventHandler(this.registrarProductosToolStripMenuItem_Click);
+            this.registrarProductosToolStripMenuItem.Click += new System.EventHandler(this.RegisterProductToolStripMenuItem_Click);
             // 
             // verProductosToolStripMenuItem
             // 
             this.verProductosToolStripMenuItem.ForeColor = System.Drawing.Color.Gray;
             this.verProductosToolStripMenuItem.Name = "verProductosToolStripMenuItem";
-            this.verProductosToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.verProductosToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.verProductosToolStripMenuItem.Text = "Ver Productos";
             // 
             // informeToolStripMenuItem1
@@ -193,25 +204,27 @@
             this.informeToolStripMenuItem.Name = "informeToolStripMenuItem";
             this.informeToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.informeToolStripMenuItem.Text = "Informe";
+            this.informeToolStripMenuItem.Click += new System.EventHandler(this.informeToolStripMenuItem_Click);
             // 
             // abrirTrimestreToolStripMenuItem
             // 
             this.abrirTrimestreToolStripMenuItem.Name = "abrirTrimestreToolStripMenuItem";
             this.abrirTrimestreToolStripMenuItem.Size = new System.Drawing.Size(97, 20);
             this.abrirTrimestreToolStripMenuItem.Text = "Abrir Trimestre";
+            this.abrirTrimestreToolStripMenuItem.Click += new System.EventHandler(this.abrirTrimestreToolStripMenuItem_Click);
             // 
             // atrasButton
             // 
-            this.atrasButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.atrasButton.BackColor = System.Drawing.Color.Black;
             this.atrasButton.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
             this.atrasButton.ForeColor = System.Drawing.Color.Yellow;
             this.atrasButton.Location = new System.Drawing.Point(3, 472);
             this.atrasButton.Name = "atrasButton";
-            this.atrasButton.Size = new System.Drawing.Size(90, 32);
+            this.atrasButton.Size = new System.Drawing.Size(120, 30);
             this.atrasButton.TabIndex = 2;
             this.atrasButton.Text = "Atrás";
             this.atrasButton.UseVisualStyleBackColor = false;
-            this.atrasButton.Click += new System.EventHandler(this.atrasButton_Click);
+            this.atrasButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
             // label1
             // 
@@ -224,12 +237,65 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Productos";
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(84, 57);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(148, 20);
+            this.textBox1.TabIndex = 4;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.AliceBlue;
+            this.label2.Location = new System.Drawing.Point(27, 60);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(40, 13);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Buscar";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // searchButton
+            // 
+            this.searchButton.Location = new System.Drawing.Point(249, 57);
+            this.searchButton.Name = "searchButton";
+            this.searchButton.Size = new System.Drawing.Size(120, 30);
+            this.searchButton.TabIndex = 6;
+            this.searchButton.Text = "Buscar";
+            this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
+            // 
+            // clearSearchButton
+            // 
+            this.clearSearchButton.Location = new System.Drawing.Point(501, 57);
+            this.clearSearchButton.Name = "clearSearchButton";
+            this.clearSearchButton.Size = new System.Drawing.Size(120, 30);
+            this.clearSearchButton.TabIndex = 7;
+            this.clearSearchButton.Text = "Limpiar ";
+            this.clearSearchButton.UseVisualStyleBackColor = true;
+            this.clearSearchButton.Click += new System.EventHandler(this.clearSearchButton_Click);
+            // 
+            // editButton
+            // 
+            this.editButton.Location = new System.Drawing.Point(375, 57);
+            this.editButton.Name = "editButton";
+            this.editButton.Size = new System.Drawing.Size(120, 30);
+            this.editButton.TabIndex = 8;
+            this.editButton.Text = "Editar";
+            this.editButton.UseVisualStyleBackColor = true;
+            this.editButton.Click += new System.EventHandler(this.editButton_Click);
+            // 
             // ShowProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Navy;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(815, 508);
+            this.Controls.Add(this.editButton);
+            this.Controls.Add(this.clearSearchButton);
+            this.Controls.Add(this.searchButton);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.atrasButton);
             this.Controls.Add(this.menuStrip1);
@@ -268,5 +334,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolStripMenuItem registrarProductosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verProductosToolStripMenuItem;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button searchButton;
+        private System.Windows.Forms.Button clearSearchButton;
+        private System.Windows.Forms.Button editButton;
     }
 }

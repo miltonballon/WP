@@ -10,46 +10,46 @@ using System.Windows.Forms;
 
 namespace SistemaGestorDeInformes
 {
-    public partial class InterfazPrincipal : Form
+    public partial class ShowBills : Form
     {
-        Connection c = new Connection();
-        public InterfazPrincipal()
+        public ShowBills()
         {
             InitializeComponent();
-            c.connect();
-            //c.connectionOpen();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void pantallaPrincipalToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            InterfazPrincipal principal = new InterfazPrincipal();
+            principal.Show();
+            this.Hide();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+         private void MainFormToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            InterfazRegistrarFactura InterfazRegistrarFactura1=new InterfazRegistrarFactura();
-            InterfazRegistrarFactura1.Show();
+            InterfazPrincipal MainForm = new InterfazPrincipal();
+            MainForm.Show();
+            this.Hide();
         }
 
-        private void registrarFacturaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void RegisterInvoiceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InterfazRegistrarFactura RegisterInvoiceForm = new InterfazRegistrarFactura();
+            RegisterInvoiceForm.Show();
+            this.Hide();
+        }
+
+        private void registrarFacturasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             InterfazRegistrarFactura intRegFac = new InterfazRegistrarFactura();
             this.Hide();
             intRegFac.Show();
         }
 
-        private void verFacturasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ShowBills ShowBills1 = new ShowBills();
-            this.Hide();
-            ShowBills1.Show();
-        }
-
         private void registrarProductosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            RegisterProduct RegisterProduct1 = new RegisterProduct();
+            RegisterProduct intRegisterProduct = new RegisterProduct();
+            intRegisterProduct.Show();
             this.Hide();
-            RegisterProduct1.Show();
         }
 
         private void verProductosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -57,6 +57,13 @@ namespace SistemaGestorDeInformes
             ShowProducts ShowProducts1 = new ShowProducts();
             this.Hide();
             ShowProducts1.Show();
+        }
+
+        private void buttonAtrás_Click(object sender, EventArgs e)
+        {
+            InterfazPrincipal principal = new InterfazPrincipal();//para volver atras
+            this.Hide();
+            principal.Show();
         }
 
         private void informeToolStripMenuItem_Click(object sender, EventArgs e)
