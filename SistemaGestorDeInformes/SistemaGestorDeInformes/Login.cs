@@ -76,5 +76,10 @@ namespace SistemaGestorDeInformes
         {
             this.Close();
         }
+
+        private void txtUsuario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

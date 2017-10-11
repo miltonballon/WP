@@ -18,9 +18,21 @@ namespace SistemaGestorDeInformes
             this.name = name;
             this.password = password;
         }
-
-        public string Email { get => email; set => email = value; }
-        public string Name { get => name; set => name = value; }
-        public string Password { get => password; set => password = value; }
+        public string Email
+        {
+            get { return email; }
+            set { email = value; }
+        }
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
+        public string Password
+        {
+            get { return password; }
+            set { password = value; }
+        }
+       
     }
 }
