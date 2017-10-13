@@ -76,7 +76,7 @@ namespace SistemaGestorDeInformes
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Login log = new Login();
-            this.Hide();
+            this.Close();
             log.Show();
         }
     }

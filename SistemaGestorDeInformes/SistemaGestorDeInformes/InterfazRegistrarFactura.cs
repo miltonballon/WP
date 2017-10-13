@@ -291,5 +291,12 @@ namespace SistemaGestorDeInformes
             this.Hide();
             log.Show();
         }
+
+        private void verFacturasToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            ShowBills ShowBills1 = new ShowBills();
+            this.Hide();
+            ShowBills1.Show();
+        }
     }
 }
