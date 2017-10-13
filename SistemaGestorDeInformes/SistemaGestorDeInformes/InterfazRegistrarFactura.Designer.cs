@@ -29,8 +29,7 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.pantallaPrincipalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();            
-            this.registrarFacturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();            
+            this.pantallaPrincipalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,6 +43,7 @@
             this.configuraciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.abrirTrimestreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registrarFacturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.labelProveedor = new System.Windows.Forms.Label();
             this.labelNit = new System.Windows.Forms.Label();
             this.labelNFactura = new System.Windows.Forms.Label();
@@ -64,6 +64,7 @@
             this.buttonGuardar = new System.Windows.Forms.Button();
             this.buttonAtrás = new System.Windows.Forms.Button();
             this.labelInformaciónBásica = new System.Windows.Forms.Label();
+            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -72,12 +73,13 @@
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.pantallaPrincipalToolStripMenuItem,            
+            this.pantallaPrincipalToolStripMenuItem,
             this.productosToolStripMenuItem,
             this.informeToolStripMenuItem1,
             this.inventarioToolStripMenuItem,
             this.configuraciónToolStripMenuItem,
-            this.abrirTrimestreToolStripMenuItem});
+            this.abrirTrimestreToolStripMenuItem,
+            this.salirToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(815, 24);
@@ -90,13 +92,8 @@
             this.pantallaPrincipalToolStripMenuItem.Name = "pantallaPrincipalToolStripMenuItem";
             this.pantallaPrincipalToolStripMenuItem.Size = new System.Drawing.Size(110, 20);
             this.pantallaPrincipalToolStripMenuItem.Text = "Pantalla Principal";
-            this.pantallaPrincipalToolStripMenuItem.Click += new System.EventHandler(this.pantallaPrincipalToolStripMenuItem_Click);            
-            // registrarFacturasToolStripMenuItem
+            this.pantallaPrincipalToolStripMenuItem.Click += new System.EventHandler(this.pantallaPrincipalToolStripMenuItem_Click);
             // 
-            this.registrarFacturasToolStripMenuItem.ForeColor = System.Drawing.Color.Gray;
-            this.registrarFacturasToolStripMenuItem.Name = "registrarFacturasToolStripMenuItem";
-            this.registrarFacturasToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
-            this.registrarFacturasToolStripMenuItem.Text = "Registrar Facturas";            
             // productosToolStripMenuItem
             // 
             this.productosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -195,6 +192,13 @@
             this.abrirTrimestreToolStripMenuItem.Size = new System.Drawing.Size(97, 20);
             this.abrirTrimestreToolStripMenuItem.Text = "Abrir Trimestre";
             this.abrirTrimestreToolStripMenuItem.Click += new System.EventHandler(this.abrirTrimestreToolStripMenuItem_Click);
+            // 
+            // registrarFacturasToolStripMenuItem
+            // 
+            this.registrarFacturasToolStripMenuItem.ForeColor = System.Drawing.Color.Gray;
+            this.registrarFacturasToolStripMenuItem.Name = "registrarFacturasToolStripMenuItem";
+            this.registrarFacturasToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.registrarFacturasToolStripMenuItem.Text = "Registrar Facturas";
             // 
             // labelProveedor
             // 
@@ -383,6 +387,13 @@
             this.labelInformaciónBásica.TabIndex = 15;
             this.labelInformaciónBásica.Text = "Información Básica";
             // 
+            // salirToolStripMenuItem
+            // 
+            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
+            this.salirToolStripMenuItem.Text = "Salir";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
+            // 
             // InterfazRegistrarFactura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -456,5 +467,6 @@
         private System.Windows.Forms.ToolStripMenuItem registrarProductosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verProductosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registrarFacturasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
     }
 }

@@ -52,6 +52,7 @@
             this.lbTrim = new System.Windows.Forms.Label();
             this.txbxNombre = new System.Windows.Forms.TextBox();
             this.lbNombre = new System.Windows.Forms.Label();
+            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,7 +66,8 @@
             this.informeToolStripMenuItem1,
             this.inventarioToolStripMenuItem,
             this.configuraciónToolStripMenuItem,
-            this.abrirTrimestreToolStripMenuItem});
+            this.abrirTrimestreToolStripMenuItem,
+            this.salirToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(815, 24);
@@ -196,7 +198,7 @@
             this.abrirTrimestreToolStripMenuItem.BackColor = System.Drawing.Color.Black;
             this.abrirTrimestreToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.abrirTrimestreToolStripMenuItem.Name = "abrirTrimestreToolStripMenuItem";
-            this.abrirTrimestreToolStripMenuItem.Size = new System.Drawing.Size(98, 20);
+            this.abrirTrimestreToolStripMenuItem.Size = new System.Drawing.Size(97, 20);
             this.abrirTrimestreToolStripMenuItem.Text = "Abrir Trimestre";
             // 
             // RegistrarButton
@@ -207,7 +209,7 @@
             this.RegistrarButton.Location = new System.Drawing.Point(295, 175);
             this.RegistrarButton.Name = "RegistrarButton";
             this.RegistrarButton.Size = new System.Drawing.Size(153, 66);
-            this.RegistrarButton.TabIndex = 28;
+            this.RegistrarButton.TabIndex = 0;
             this.RegistrarButton.Text = "Nuevo Trimestre";
             this.RegistrarButton.UseVisualStyleBackColor = false;
             this.RegistrarButton.Click += new System.EventHandler(this.RegistrarButton_Click);
@@ -252,7 +254,7 @@
             this.txbxNombre.Location = new System.Drawing.Point(369, 137);
             this.txbxNombre.Name = "txbxNombre";
             this.txbxNombre.Size = new System.Drawing.Size(100, 20);
-            this.txbxNombre.TabIndex = 30;
+            this.txbxNombre.TabIndex = 1;
             // 
             // lbNombre
             // 
@@ -265,6 +267,13 @@
             this.lbNombre.TabIndex = 31;
             this.lbNombre.Text = "Nombre:";
             this.lbNombre.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // salirToolStripMenuItem
+            // 
+            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
+            this.salirToolStripMenuItem.Text = "Salir";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
             // OpenQuarter
             // 
@@ -316,5 +325,6 @@
         private System.Windows.Forms.Label lbTrim;
         private System.Windows.Forms.TextBox txbxNombre;
         private System.Windows.Forms.Label lbNombre;
+        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
     }
 }

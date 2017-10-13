@@ -55,6 +55,7 @@
             this.informeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.abrirTrimestreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.labelInformaciónBásica = new System.Windows.Forms.Label();
+            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -87,7 +88,7 @@
             this.atrasButton.Location = new System.Drawing.Point(3, 472);
             this.atrasButton.Name = "atrasButton";
             this.atrasButton.Size = new System.Drawing.Size(120, 30);
-            this.atrasButton.TabIndex = 4;
+            this.atrasButton.TabIndex = 3;
             this.atrasButton.Text = "Atrás";
             this.atrasButton.UseVisualStyleBackColor = false;
             this.atrasButton.Click += new System.EventHandler(this.BackButton_Click);
@@ -100,7 +101,7 @@
             this.RegistrarButton.Location = new System.Drawing.Point(182, 456);
             this.RegistrarButton.Name = "RegistrarButton";
             this.RegistrarButton.Size = new System.Drawing.Size(120, 30);
-            this.RegistrarButton.TabIndex = 3;
+            this.RegistrarButton.TabIndex = 4;
             this.RegistrarButton.Text = "Registrar";
             this.RegistrarButton.UseVisualStyleBackColor = false;
             this.RegistrarButton.Click += new System.EventHandler(this.RegisterButton_Click);
@@ -149,7 +150,8 @@
             this.informeToolStripMenuItem1,
             this.inventarioToolStripMenuItem,
             this.configuraciónToolStripMenuItem,
-            this.abrirTrimestreToolStripMenuItem});
+            this.abrirTrimestreToolStripMenuItem,
+            this.salirToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(815, 24);
@@ -293,6 +295,13 @@
             this.labelInformaciónBásica.TabIndex = 16;
             this.labelInformaciónBásica.Text = "Producto";
             // 
+            // salirToolStripMenuItem
+            // 
+            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
+            this.salirToolStripMenuItem.Text = "Salir";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
+            // 
             // RegisterProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -348,5 +357,6 @@
         public System.Windows.Forms.TextBox ProviderTextBox;
         public System.Windows.Forms.TextBox Unit;
         public System.Windows.Forms.Button RegistrarButton;
+        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
     }
 }

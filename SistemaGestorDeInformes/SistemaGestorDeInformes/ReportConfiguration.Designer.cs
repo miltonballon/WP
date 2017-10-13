@@ -53,6 +53,7 @@
             this.atrasButton = new System.Windows.Forms.Button();
             this.ProviderTextBox = new System.Windows.Forms.TextBox();
             this.ProductTextBox = new System.Windows.Forms.TextBox();
+            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,7 +67,8 @@
             this.informeToolStripMenuItem1,
             this.inventarioToolStripMenuItem,
             this.configuraciónToolStripMenuItem,
-            this.abrirTrimestreToolStripMenuItem});
+            this.abrirTrimestreToolStripMenuItem,
+            this.salirToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(815, 24);
@@ -273,6 +275,13 @@
             this.ProductTextBox.Size = new System.Drawing.Size(250, 20);
             this.ProductTextBox.TabIndex = 1;
             // 
+            // salirToolStripMenuItem
+            // 
+            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
+            this.salirToolStripMenuItem.Text = "Salir";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
+            // 
             // ReportConfiguration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -289,7 +298,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Name = "ReportConfiguration";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Configuración de informe";
+            this.Text = "Configuración del informe";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -324,5 +333,6 @@
         private System.Windows.Forms.Button atrasButton;
         private System.Windows.Forms.TextBox ProviderTextBox;
         private System.Windows.Forms.TextBox ProductTextBox;
+        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
     }
 }
