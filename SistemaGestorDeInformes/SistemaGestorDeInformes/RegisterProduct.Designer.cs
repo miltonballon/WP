@@ -87,7 +87,7 @@
             this.atrasButton.Location = new System.Drawing.Point(3, 472);
             this.atrasButton.Name = "atrasButton";
             this.atrasButton.Size = new System.Drawing.Size(120, 30);
-            this.atrasButton.TabIndex = 3;
+            this.atrasButton.TabIndex = 4;
             this.atrasButton.Text = "Atrás";
             this.atrasButton.UseVisualStyleBackColor = false;
             this.atrasButton.Click += new System.EventHandler(this.BackButton_Click);
@@ -100,7 +100,7 @@
             this.RegistrarButton.Location = new System.Drawing.Point(182, 456);
             this.RegistrarButton.Name = "RegistrarButton";
             this.RegistrarButton.Size = new System.Drawing.Size(120, 30);
-            this.RegistrarButton.TabIndex = 4;
+            this.RegistrarButton.TabIndex = 3;
             this.RegistrarButton.Text = "Registrar";
             this.RegistrarButton.UseVisualStyleBackColor = false;
             this.RegistrarButton.Click += new System.EventHandler(this.RegisterButton_Click);
