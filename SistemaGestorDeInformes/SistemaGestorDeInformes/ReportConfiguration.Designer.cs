@@ -178,6 +178,7 @@
             this.verInventarioToolStripMenuItem.Name = "verInventarioToolStripMenuItem";
             this.verInventarioToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.verInventarioToolStripMenuItem.Text = "Ver Inventario";
+            this.verInventarioToolStripMenuItem.Click += new System.EventHandler(this.verInventarioToolStripMenuItem_Click);
             // 
             // configuraciónToolStripMenuItem
             // 

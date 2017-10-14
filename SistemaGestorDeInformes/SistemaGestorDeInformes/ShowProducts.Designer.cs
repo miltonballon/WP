@@ -47,6 +47,7 @@
             this.configuraciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.abrirTrimestreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.atrasButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -54,7 +55,6 @@
             this.searchButton = new System.Windows.Forms.Button();
             this.clearSearchButton = new System.Windows.Forms.Button();
             this.editButton = new System.Windows.Forms.Button();
-            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -191,6 +191,7 @@
             this.verInventarioToolStripMenuItem.Name = "verInventarioToolStripMenuItem";
             this.verInventarioToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.verInventarioToolStripMenuItem.Text = "Ver Inventario";
+            this.verInventarioToolStripMenuItem.Click += new System.EventHandler(this.verInventarioToolStripMenuItem_Click);
             // 
             // configuraciónToolStripMenuItem
             // 
@@ -203,7 +204,7 @@
             // informeToolStripMenuItem
             // 
             this.informeToolStripMenuItem.Name = "informeToolStripMenuItem";
-            this.informeToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.informeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.informeToolStripMenuItem.Text = "Informe";
             this.informeToolStripMenuItem.Click += new System.EventHandler(this.informeToolStripMenuItem_Click);
             // 
@@ -213,6 +214,13 @@
             this.abrirTrimestreToolStripMenuItem.Size = new System.Drawing.Size(97, 20);
             this.abrirTrimestreToolStripMenuItem.Text = "Abrir Trimestre";
             this.abrirTrimestreToolStripMenuItem.Click += new System.EventHandler(this.abrirTrimestreToolStripMenuItem_Click);
+            // 
+            // salirToolStripMenuItem
+            // 
+            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(88, 20);
+            this.salirToolStripMenuItem.Text = "Cerrar Sesión";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
             // atrasButton
             // 
@@ -285,13 +293,6 @@
             this.editButton.Text = "Editar";
             this.editButton.UseVisualStyleBackColor = true;
             this.editButton.Click += new System.EventHandler(this.editButton_Click);
-            // 
-            // salirToolStripMenuItem
-            // 
-            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(88, 20);
-            this.salirToolStripMenuItem.Text = "Cerrar Sesión";
-            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
             // ShowProducts
             // 
