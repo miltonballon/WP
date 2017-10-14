@@ -53,6 +53,7 @@
             this.atrasButton = new System.Windows.Forms.Button();
             this.ProviderTextBox = new System.Windows.Forms.TextBox();
             this.ProductTextBox = new System.Windows.Forms.TextBox();
+            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,7 +67,8 @@
             this.informeToolStripMenuItem1,
             this.inventarioToolStripMenuItem,
             this.configuraciónToolStripMenuItem,
-            this.abrirTrimestreToolStripMenuItem});
+            this.abrirTrimestreToolStripMenuItem,
+            this.salirToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(815, 24);
@@ -176,6 +178,7 @@
             this.verInventarioToolStripMenuItem.Name = "verInventarioToolStripMenuItem";
             this.verInventarioToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.verInventarioToolStripMenuItem.Text = "Ver Inventario";
+            this.verInventarioToolStripMenuItem.Click += new System.EventHandler(this.verInventarioToolStripMenuItem_Click);
             // 
             // configuraciónToolStripMenuItem
             // 
@@ -191,7 +194,7 @@
             // 
             this.informeToolStripMenuItem.ForeColor = System.Drawing.Color.Gray;
             this.informeToolStripMenuItem.Name = "informeToolStripMenuItem";
-            this.informeToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.informeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.informeToolStripMenuItem.Text = "Informe";
             // 
             // abrirTrimestreToolStripMenuItem
@@ -242,7 +245,7 @@
             this.RegistrarButton.Location = new System.Drawing.Point(250, 456);
             this.RegistrarButton.Name = "RegistrarButton";
             this.RegistrarButton.Size = new System.Drawing.Size(120, 30);
-            this.RegistrarButton.TabIndex = 21;
+            this.RegistrarButton.TabIndex = 3;
             this.RegistrarButton.Text = "Guardar";
             this.RegistrarButton.UseVisualStyleBackColor = false;
             // 
@@ -254,7 +257,7 @@
             this.atrasButton.Location = new System.Drawing.Point(3, 472);
             this.atrasButton.Name = "atrasButton";
             this.atrasButton.Size = new System.Drawing.Size(120, 30);
-            this.atrasButton.TabIndex = 20;
+            this.atrasButton.TabIndex = 4;
             this.atrasButton.Text = "Atrás";
             this.atrasButton.UseVisualStyleBackColor = false;
             this.atrasButton.Click += new System.EventHandler(this.atrasButton_Click);
@@ -264,14 +267,21 @@
             this.ProviderTextBox.Location = new System.Drawing.Point(197, 136);
             this.ProviderTextBox.Name = "ProviderTextBox";
             this.ProviderTextBox.Size = new System.Drawing.Size(250, 20);
-            this.ProviderTextBox.TabIndex = 19;
+            this.ProviderTextBox.TabIndex = 2;
             // 
             // ProductTextBox
             // 
             this.ProductTextBox.Location = new System.Drawing.Point(197, 94);
             this.ProductTextBox.Name = "ProductTextBox";
             this.ProductTextBox.Size = new System.Drawing.Size(250, 20);
-            this.ProductTextBox.TabIndex = 18;
+            this.ProductTextBox.TabIndex = 1;
+            // 
+            // salirToolStripMenuItem
+            // 
+            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(88, 20);
+            this.salirToolStripMenuItem.Text = "Cerrar Sesión";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
             // ReportConfiguration
             // 
@@ -289,7 +299,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Name = "ReportConfiguration";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ReportConfiguration";
+            this.Text = "Configuración del informe";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -324,5 +334,6 @@
         private System.Windows.Forms.Button atrasButton;
         private System.Windows.Forms.TextBox ProviderTextBox;
         private System.Windows.Forms.TextBox ProductTextBox;
+        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
     }
 }

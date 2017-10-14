@@ -79,5 +79,12 @@ namespace SistemaGestorDeInformes
             this.Hide();
             log.Show();
         }
+
+        private void verInventarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowInventory ShowInventory1 = new ShowInventory();
+            this.Hide();
+            ShowInventory1.Show();
+        }
     }
 }

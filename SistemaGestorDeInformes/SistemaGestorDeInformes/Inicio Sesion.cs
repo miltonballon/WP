@@ -21,10 +21,6 @@ namespace SistemaGestorDeInformes
             {
                 InterfazPrincipal Index = new InterfazPrincipal();
                 Index.ShowDialog();
-                CerrandoSesion CS = new CerrandoSesion();
-                CS.Show();
-                //Thread.Sleep(2000);
-                CS.Close();
                 contraseña.Text = "";
 
             }

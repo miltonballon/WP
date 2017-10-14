@@ -63,12 +63,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CerrandoSesion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CerrandoSesion.Designer.cs">
-      <DependentUpon>CerrandoSesion.cs</DependentUpon>
-    </Compile>
     <Compile Include="Configuration.cs" />
     <Compile Include="ConfigurationController.cs" />
     <Compile Include="Connection.cs" />
@@ -143,6 +137,12 @@
     <Compile Include="ShowBills.Designer.cs">
       <DependentUpon>ShowBills.cs</DependentUpon>
     </Compile>
+    <Compile Include="ShowInventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowInventory.Designer.cs">
+      <DependentUpon>ShowInventory.cs</DependentUpon>
+    </Compile>
     <Compile Include="ShowProducts.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,9 +153,6 @@
     <Compile Include="TrimesterController.cs" />
     <Compile Include="User.cs" />
     <Compile Include="UserController.cs" />
-    <EmbeddedResource Include="CerrandoSesion.resx">
-      <DependentUpon>CerrandoSesion.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="EditProduct.resx">
       <DependentUpon>EditProduct.cs</DependentUpon>
     </EmbeddedResource>
@@ -194,6 +191,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ShowBills.resx">
       <DependentUpon>ShowBills.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowInventory.resx">
+      <DependentUpon>ShowInventory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ShowProducts.resx">
       <DependentUpon>ShowProducts.cs</DependentUpon>

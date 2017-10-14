@@ -284,5 +284,26 @@ namespace SistemaGestorDeInformes
             this.Hide();
             OpenQuarter1.Show();
         }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Login log = new Login();
+            this.Hide();
+            log.Show();
+        }
+
+        private void verFacturasToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            ShowBills ShowBills1 = new ShowBills();
+            this.Hide();
+            ShowBills1.Show();
+        }
+
+        private void verInventarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowInventory ShowInventory1 = new ShowInventory();
+            this.Hide();
+            ShowInventory1.Show();
+        }
     }
 }
