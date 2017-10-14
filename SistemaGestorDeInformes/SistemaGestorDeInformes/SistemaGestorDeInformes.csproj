@@ -48,12 +48,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CerrandoSesion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CerrandoSesion.Designer.cs">
-      <DependentUpon>CerrandoSesion.cs</DependentUpon>
-    </Compile>
     <Compile Include="Configuration.cs" />
     <Compile Include="ConfigurationController.cs" />
     <Compile Include="Connection.cs" />
@@ -138,9 +132,6 @@
     <Compile Include="TrimesterController.cs" />
     <Compile Include="User.cs" />
     <Compile Include="UserController.cs" />
-    <EmbeddedResource Include="CerrandoSesion.resx">
-      <DependentUpon>CerrandoSesion.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="EditProduct.resx">
       <DependentUpon>EditProduct.cs</DependentUpon>
     </EmbeddedResource>
