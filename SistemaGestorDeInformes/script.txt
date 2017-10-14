@@ -1,4 +1,5 @@
 CREATE TABLE `Invoice` (
+	`id`			INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
 	`n_invoice`		INTEGER,
 	`n_autorization`	INTEGER,
 	`id_provider`		INTEGER,
@@ -6,8 +7,7 @@ CREATE TABLE `Invoice` (
 	`date`			REAL,
 	`id_trimester`		INTEGER,
 	FOREIGN KEY(`id_provider`) REFERENCES `Provider`(`id`),
-	FOREIGN KEY(`id_trimester`) REFERENCES `trimester`(`id`),
-	PRIMARY KEY(`n_invoice`)
+	FOREIGN KEY(`id_trimester`) REFERENCES `trimester`(`id`)
 );
 
 CREATE TABLE `Product` (
@@ -36,13 +36,13 @@ CREATE TABLE `Product_Provider_Unit` (
 
 CREATE TABLE `invoice_row` (
 	`id`		INTEGER PRIMARY KEY AUTOINCREMENT,
-	`n_invoice`	INTEGER,
+	`id_invoice`	INTEGER,
 	`id_ppu`	INTEGER,
 	`quantity`	TEXT,
 	`unit_price`	TEXT,
 	`total` 	TEXT,
 	FOREIGN KEY(`id_ppu`) REFERENCES `Product_Provider_Unit`(`id`),
-	FOREIGN KEY(`n_invoice`) REFERENCES `Invoice`(`n_invoice`)	
+	FOREIGN KEY(`id_invoice`) REFERENCES `Invoice`(`id`)	
 );
 
 CREATE TABLE `Configuration` (
