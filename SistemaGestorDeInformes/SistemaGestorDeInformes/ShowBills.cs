@@ -132,7 +132,14 @@ namespace SistemaGestorDeInformes
             int nInvoice = Int32.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString());
             int providerId = providerController.findProviderIdByName(providersName);
             Invoice invoice = invoiceController.getInvoiceByNInvoiceAndProviderId(nInvoice,providerId);
-            MessageBox.Show(invoice.ToString());
+            openModify(invoice);
+        }
+
+        private void openModify(Invoice invoice)
+        {
+            InterfazRegistrarFactura inF = new InterfazRegistrarFactura(invoice);
+            this.Hide();
+            inF.Show();
         }
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)

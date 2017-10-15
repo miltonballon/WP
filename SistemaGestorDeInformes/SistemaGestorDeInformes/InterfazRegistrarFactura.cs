@@ -18,6 +18,7 @@ namespace SistemaGestorDeInformes
         private Invoice invoice;
         private Provider provider;
         private List<Provider> providers;
+        private bool modifying;
 
         public InterfazRegistrarFactura()
         {
@@ -29,11 +30,13 @@ namespace SistemaGestorDeInformes
             providerController = new ProviderController();
             productController = new ProductController();
             loadProviders();
+            modifying = false;
         }
 
         public InterfazRegistrarFactura(Invoice invoice)
         {
             InitializeComponent();
+            this.invoice = invoice;
             this.textBoxNit.KeyPress += new KeyPressEventHandler(textBoxNit_TextChanged);//Para impedir que se pongan letras y espacios en el NIT
             this.textBoxNFactura.KeyPress += new KeyPressEventHandler(textBoxNFactura_TextChanged);//Para impedir que se pongan letras y espacios en el N.FACTURA
             this.textBoxNAutorizacion.KeyPress += new KeyPressEventHandler(textBoxNAutorizacion_TextChanged);//Para impedir que se pongan letras y espacios en el N.AUTORIZACION 
@@ -41,6 +44,17 @@ namespace SistemaGestorDeInformes
             providerController = new ProviderController();
             productController = new ProductController();
             loadProviders();
+            modifying = true;
+            fillTextBoxes();
+        }
+
+        private void fillTextBoxes()
+        {
+            textBoxProveedor.Text = invoice.getProvider().getName();
+            textBoxNit.Text = invoice.getProvider().getNit()+"";
+            textBoxNFactura.Text = invoice.getNInvoice() + "";
+            textBoxNAutorizacion.Text = invoice.getNAutorization() + "";
+            dateFecha.Value = invoice.getDate();
         }
 
         private void loadProviders()
@@ -181,9 +195,18 @@ namespace SistemaGestorDeInformes
 
         private void buttonAtrás_Click_1(object sender, EventArgs e)
         {
-            InterfazPrincipal principal = new InterfazPrincipal();//para volver atras
-            this.Hide();
-            principal.Show();
+            if (modifying)
+            {
+                ShowBills sb = new ShowBills();
+                this.Hide();
+                sb.Show();
+            }
+            else
+            {
+                InterfazPrincipal principal = new InterfazPrincipal();//para volver atras
+                this.Hide();
+                principal.Show();
+            }
         }
 
         private void buttonGuardar_Click(object sender, EventArgs e)
@@ -196,7 +219,6 @@ namespace SistemaGestorDeInformes
             invoice = createInvoice();
             createAndAddProducts();
             invoiceController.addInvoice(invoice);
-            MessageBox.Show(invoice.ToString());
         }
 
         private void newProvider()
