@@ -103,8 +103,11 @@ namespace SistemaGestorDeInformes
         private void saveNewTrimester(Trimester trimester)
         {
             Trimester last=trimesterController.getLastTrimester();
-            last.setOpen(false);
-            trimesterController.updateTrimester(last);
+            if (last != null)
+            {
+                last.setOpen(false);
+                trimesterController.updateTrimester(last);
+            }
             trimesterController.insertTrimester(trimester);
         }
 
@@ -128,7 +131,7 @@ namespace SistemaGestorDeInformes
             }
             else
             {
-                lbTrim.Text = "-";
+                lbTrim.Text = "No se encontraron Trimestres, cree uno";
             }
         }
 
