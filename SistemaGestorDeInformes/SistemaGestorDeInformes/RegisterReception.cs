@@ -45,6 +45,8 @@ namespace SistemaGestorDeInformes
         private void RegisterReception_Load(object sender, EventArgs e)
         {
             rc.ProductAutoComplete(ProducTextBox);
+            rc.ProviderAutoComplete(ProviderTextBox);
+            
         }
 
         private void ProducTextBox_TextChanged(object sender, EventArgs e)

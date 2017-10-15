@@ -17,20 +17,33 @@ namespace SistemaGestorDeInformes
         {
             c.connect();
         }
-        public void ProductAutoComplete(TextBox Provider)
+        public void ProductAutoComplete(TextBox Product)
         {
             string query = "SELECT name FROM Product";
 
             SQLiteDataReader data = c.query_show(query);
             while (data.Read())
             {
-                Provider.AutoCompleteCustomSource.Add(data["name"].ToString());
+                Product.AutoCompleteCustomSource.Add(data["name"].ToString());
                
             }
             c.dataClose();
-            data.Close();
-          
+            data.Close();     
         }
+        public void ProviderAutoComplete(TextBox Provider)
+        {
+            string query = "SELECT Provider FROM Provider";
+
+            SQLiteDataReader data = c.query_show(query);
+            while (data.Read())
+            {
+                Provider.AutoCompleteCustomSource.Add(data["Provider"].ToString());
+            }
+            c.dataClose();
+            data.Close();
+        }
+       
+       
    
     }
 }

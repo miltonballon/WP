@@ -56,6 +56,8 @@
             // 
             // ProviderTextBox
             // 
+            this.ProviderTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.ProviderTextBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.ProviderTextBox.Location = new System.Drawing.Point(117, 77);
             this.ProviderTextBox.Name = "ProviderTextBox";
             this.ProviderTextBox.Size = new System.Drawing.Size(100, 20);
