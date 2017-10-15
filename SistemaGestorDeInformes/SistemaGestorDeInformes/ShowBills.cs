@@ -17,6 +17,8 @@ namespace SistemaGestorDeInformes
         {
             InitializeComponent();
             invoiceController = new InvoiceController();
+            List<Invoice> invoices = invoiceController.getAllInvoices();
+            MessageBox.Show(invoices[0].ToString());
         }
 
         private void pantallaPrincipalToolStripMenuItem_Click(object sender, EventArgs e)
@@ -96,8 +98,8 @@ namespace SistemaGestorDeInformes
         private void ShowBills_Load(object sender, EventArgs e)
         {
             List<Invoice>invoices=invoiceController.getAllInvoices();
+            MessageBox.Show(invoices[0].ToString());
             dataGridView1.DataSource = invoices;
-
             onlyReadRestrictionDataGrid();
         }
 

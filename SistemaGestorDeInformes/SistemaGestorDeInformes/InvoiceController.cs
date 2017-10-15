@@ -122,32 +122,35 @@ namespace SistemaGestorDeInformes
         {
             List<Invoice> output = new List<Invoice>();
             string query = "SELECT * FROM Invoice";
-            try
-            {
+            /*try
+            {*/
                 SQLiteDataReader data = c.query_show(query);
                 while (data.Read())
                 {
-                    int nInvoice = Int32.Parse(data[0].ToString()),
-                        provId = Int32.Parse(data[2].ToString()),
-                        nAut = Int32.Parse(data[1].ToString());
-                    DateTime date = getDate(data[4].ToString());
+                    int invoiceId= Int32.Parse(data[0].ToString()),
+                        nInvoice = Int32.Parse(data[1].ToString()),
+                        nAut = Int32.Parse(data[2].ToString()),
+                        provId = Int32.Parse(data[3].ToString());
+                    DateTime date = getDate(data[5].ToString());
                     Provider provider = providerController.getProviderById(provId);
                     Invoice invoice = new Invoice(provider, nInvoice, nAut, date);
-                    List<InvoiceRow> invoiceRows = getAllInvoicesRowByNInvoice(invoice.getNInvoice());
+                    List<InvoiceRow> invoiceRows = getAllInvoicesRowByNInvoice(invoiceId);
                     invoice.setInvoiceRows(invoiceRows);
                     output.Add(invoice);
                 }
-            }
+            /*}
             catch (Exception)
-            { }
-            
+            {
+                
+            }*/
+            c.dataClose();
             return output;
         }
 
-        public List<InvoiceRow> getAllInvoicesRowByNInvoice(int numInvoice)
+        public List<InvoiceRow> getAllInvoicesRowByNInvoice(int idInvoice)
         {
             List<InvoiceRow> output = new List<InvoiceRow>();
-            string query = "SELECT * FROM invoice_row";
+            string query = "SELECT * FROM invoice_row WHERE id_invoice="+idInvoice;
             try
             {
                 SQLiteDataReader data = c.query_show(query);
@@ -164,7 +167,7 @@ namespace SistemaGestorDeInformes
             }
             catch (Exception)
             { }
-
+            c.dataClose();
             return output;
         }
 
