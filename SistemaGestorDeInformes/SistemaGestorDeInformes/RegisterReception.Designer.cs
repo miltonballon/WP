@@ -42,6 +42,12 @@
             this.label6 = new System.Windows.Forms.Label();
             this.RegisterButton = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.labelInformaciónBásica = new System.Windows.Forms.Label();
+            this.buttonAtrás = new System.Windows.Forms.Button();
+            this.labelNAutorizacion = new System.Windows.Forms.Label();
+            this.labelNFactura = new System.Windows.Forms.Label();
+            this.labelNit = new System.Windows.Forms.Label();
+            this.labelProveedor = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // ProducTextBox
@@ -90,6 +96,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(13, 53);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(50, 13);
@@ -100,6 +107,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(13, 84);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 13);
@@ -109,6 +117,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(13, 113);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(41, 13);
@@ -118,6 +127,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(13, 139);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(98, 13);
@@ -127,6 +137,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(12, 165);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(92, 13);
@@ -143,6 +154,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(12, 192);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(76, 13);
@@ -169,11 +181,85 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // labelInformaciónBásica
+            // 
+            this.labelInformaciónBásica.AutoSize = true;
+            this.labelInformaciónBásica.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelInformaciónBásica.ForeColor = System.Drawing.Color.Yellow;
+            this.labelInformaciónBásica.Location = new System.Drawing.Point(40, 30);
+            this.labelInformaciónBásica.Name = "labelInformaciónBásica";
+            this.labelInformaciónBásica.Size = new System.Drawing.Size(408, 19);
+            this.labelInformaciónBásica.TabIndex = 19;
+            this.labelInformaciónBásica.Text = "Registrar Recepción De Víveres En El Inventario";
+            // 
+            // buttonAtrás
+            // 
+            this.buttonAtrás.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.buttonAtrás.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAtrás.ForeColor = System.Drawing.Color.Yellow;
+            this.buttonAtrás.Location = new System.Drawing.Point(3, 472);
+            this.buttonAtrás.Name = "buttonAtrás";
+            this.buttonAtrás.Size = new System.Drawing.Size(120, 30);
+            this.buttonAtrás.TabIndex = 20;
+            this.buttonAtrás.Text = "Atrás";
+            this.buttonAtrás.UseVisualStyleBackColor = false;
+            // 
+            // labelNAutorizacion
+            // 
+            this.labelNAutorizacion.AutoSize = true;
+            this.labelNAutorizacion.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNAutorizacion.ForeColor = System.Drawing.Color.White;
+            this.labelNAutorizacion.Location = new System.Drawing.Point(337, 305);
+            this.labelNAutorizacion.Name = "labelNAutorizacion";
+            this.labelNAutorizacion.Size = new System.Drawing.Size(141, 19);
+            this.labelNAutorizacion.TabIndex = 24;
+            this.labelNAutorizacion.Text = "N. AUTORIZACION:";
+            // 
+            // labelNFactura
+            // 
+            this.labelNFactura.AutoSize = true;
+            this.labelNFactura.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNFactura.ForeColor = System.Drawing.Color.White;
+            this.labelNFactura.Location = new System.Drawing.Point(337, 265);
+            this.labelNFactura.Name = "labelNFactura";
+            this.labelNFactura.Size = new System.Drawing.Size(70, 19);
+            this.labelNFactura.TabIndex = 23;
+            this.labelNFactura.Text = "UNIDAD:";
+            // 
+            // labelNit
+            // 
+            this.labelNit.AutoSize = true;
+            this.labelNit.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNit.ForeColor = System.Drawing.Color.White;
+            this.labelNit.Location = new System.Drawing.Point(337, 225);
+            this.labelNit.Name = "labelNit";
+            this.labelNit.Size = new System.Drawing.Size(103, 19);
+            this.labelNit.TabIndex = 22;
+            this.labelNit.Text = "PROVEEDOR:";
+            // 
+            // labelProveedor
+            // 
+            this.labelProveedor.AutoSize = true;
+            this.labelProveedor.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelProveedor.ForeColor = System.Drawing.Color.White;
+            this.labelProveedor.Location = new System.Drawing.Point(337, 185);
+            this.labelProveedor.Name = "labelProveedor";
+            this.labelProveedor.Size = new System.Drawing.Size(94, 19);
+            this.labelProveedor.TabIndex = 21;
+            this.labelProveedor.Text = "PRODUCTO:";
+            // 
             // RegisterReception
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.ClientSize = new System.Drawing.Size(815, 508);
+            this.Controls.Add(this.labelNAutorizacion);
+            this.Controls.Add(this.labelNFactura);
+            this.Controls.Add(this.labelNit);
+            this.Controls.Add(this.labelProveedor);
+            this.Controls.Add(this.buttonAtrás);
+            this.Controls.Add(this.labelInformaciónBásica);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.RegisterButton);
             this.Controls.Add(this.label6);
@@ -189,6 +275,7 @@
             this.Controls.Add(this.ProviderTextBox);
             this.Controls.Add(this.ProducTextBox);
             this.Name = "RegisterReception";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegisterReception";
             this.Load += new System.EventHandler(this.RegisterReception_Load);
             this.ResumeLayout(false);
@@ -212,5 +299,11 @@
         public System.Windows.Forms.TextBox ExpirationDate;
         public System.Windows.Forms.TextBox ReceptionDate;
         public System.Windows.Forms.TextBox TotalReception;
+        private System.Windows.Forms.Label labelInformaciónBásica;
+        private System.Windows.Forms.Button buttonAtrás;
+        private System.Windows.Forms.Label labelNAutorizacion;
+        private System.Windows.Forms.Label labelNFactura;
+        private System.Windows.Forms.Label labelNit;
+        private System.Windows.Forms.Label labelProveedor;
     }
 }

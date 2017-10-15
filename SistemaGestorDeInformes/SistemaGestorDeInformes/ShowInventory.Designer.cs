@@ -233,7 +233,7 @@
             // informeToolStripMenuItem
             // 
             this.informeToolStripMenuItem.Name = "informeToolStripMenuItem";
-            this.informeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.informeToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.informeToolStripMenuItem.Text = "Informe";
             this.informeToolStripMenuItem.Click += new System.EventHandler(this.informeToolStripMenuItem_Click);
             // 
@@ -256,7 +256,7 @@
             this.labelInformaciónBásica.AutoSize = true;
             this.labelInformaciónBásica.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelInformaciónBásica.ForeColor = System.Drawing.Color.Yellow;
-            this.labelInformaciónBásica.Location = new System.Drawing.Point(30, 40);
+            this.labelInformaciónBásica.Location = new System.Drawing.Point(30, 44);
             this.labelInformaciónBásica.Name = "labelInformaciónBásica";
             this.labelInformaciónBásica.Size = new System.Drawing.Size(306, 19);
             this.labelInformaciónBásica.TabIndex = 18;
