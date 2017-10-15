@@ -233,6 +233,15 @@ namespace SistemaGestorDeInformes
             invoice.setProvider(provider);
             invoice.setDate(date);
             invoiceController.updateInvoice(invoice,id);
+            MessageBox.Show("Se logro actualizar los datos de la Factura");
+            changeToShowBills();
+        }
+
+        private void changeToShowBills()
+        {
+            ShowBills sb = new ShowBills();
+            this.Hide();
+            sb.Show();
         }
 
         private void saveNewInvoice()
