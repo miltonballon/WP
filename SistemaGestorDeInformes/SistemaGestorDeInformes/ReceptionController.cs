@@ -42,7 +42,18 @@ namespace SistemaGestorDeInformes
             c.dataClose();
             data.Close();
         }
-       
+        public void UnitAutoComplete(TextBox Unit)
+        {
+            string query = "SELECT Type FROM Unit";
+
+            SQLiteDataReader data = c.query_show(query);
+            while (data.Read())
+            {
+                Unit.AutoCompleteCustomSource.Add(data["Type"].ToString());
+            }
+            c.dataClose();
+            data.Close();
+        }
        
    
     }

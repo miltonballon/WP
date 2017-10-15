@@ -46,7 +46,7 @@ namespace SistemaGestorDeInformes
         {
             rc.ProductAutoComplete(ProducTextBox);
             rc.ProviderAutoComplete(ProviderTextBox);
-            
+            rc.UnitAutoComplete(UnitTextBox);
         }
 
         private void ProducTextBox_TextChanged(object sender, EventArgs e)

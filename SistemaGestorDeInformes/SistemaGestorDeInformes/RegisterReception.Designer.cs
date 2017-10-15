@@ -65,6 +65,8 @@
             // 
             // UnitTextBox
             // 
+            this.UnitTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.UnitTextBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.UnitTextBox.Location = new System.Drawing.Point(117, 106);
             this.UnitTextBox.Name = "UnitTextBox";
             this.UnitTextBox.Size = new System.Drawing.Size(100, 20);
