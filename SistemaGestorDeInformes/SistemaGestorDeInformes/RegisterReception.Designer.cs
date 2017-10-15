@@ -46,10 +46,13 @@
             // 
             // ProducTextBox
             // 
+            this.ProducTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.ProducTextBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.ProducTextBox.Location = new System.Drawing.Point(117, 50);
             this.ProducTextBox.Name = "ProducTextBox";
             this.ProducTextBox.Size = new System.Drawing.Size(100, 20);
             this.ProducTextBox.TabIndex = 0;
+            this.ProducTextBox.TextChanged += new System.EventHandler(this.ProducTextBox_TextChanged);
             // 
             // ProviderTextBox
             // 
@@ -183,6 +186,7 @@
             this.Controls.Add(this.ProducTextBox);
             this.Name = "RegisterReception";
             this.Text = "RegisterReception";
+            this.Load += new System.EventHandler(this.RegisterReception_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -12,8 +12,11 @@ namespace SistemaGestorDeInformes
 {
     public partial class RegisterReception : Form
     {
+
+        ReceptionController rc;
         public RegisterReception()
         {
+            rc = new ReceptionController();
             InitializeComponent();
         }
 
@@ -29,7 +32,7 @@ namespace SistemaGestorDeInformes
 
         private void RegisterButton_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -37,6 +40,16 @@ namespace SistemaGestorDeInformes
             InterfazPrincipal main = new InterfazPrincipal();
             this.Hide();
             main.Show();
+        }
+
+        private void RegisterReception_Load(object sender, EventArgs e)
+        {
+            rc.ProductAutoComplete(ProducTextBox);
+        }
+
+        private void ProducTextBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
