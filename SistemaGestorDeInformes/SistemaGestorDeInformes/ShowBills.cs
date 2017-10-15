@@ -13,10 +13,12 @@ namespace SistemaGestorDeInformes
     public partial class ShowBills : Form
     {
         private InvoiceController invoiceController;
+        private ProviderController providerController;
         public ShowBills()
         {
             InitializeComponent();
             invoiceController = new InvoiceController();
+            providerController = new ProviderController();
         }
 
         private void pantallaPrincipalToolStripMenuItem_Click(object sender, EventArgs e)
@@ -101,7 +103,6 @@ namespace SistemaGestorDeInformes
         private void chargeData()
         {
             List<Invoice> invoices = invoiceController.getAllInvoices();
-            MessageBox.Show(invoices[0].ToString());
             foreach (Invoice invoice in invoices)
             {
                 String nInvo = invoice.getNInvoice() + "",
@@ -127,7 +128,11 @@ namespace SistemaGestorDeInformes
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            String providersName= dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            int nInvoice = Int32.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString());
+            int providerId = providerController.findProviderIdByName(providersName);
+            Invoice invoice = invoiceController.getInvoiceByNInvoiceAndProviderId(nInvoice,providerId);
+            MessageBox.Show(invoice.ToString());
         }
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)

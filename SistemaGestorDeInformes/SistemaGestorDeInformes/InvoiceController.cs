@@ -118,31 +118,44 @@ namespace SistemaGestorDeInformes
             }
         }
 
+        public Invoice getInvoiceByNInvoiceAndProviderId(int nInvoice, int providerId)
+        {
+            Invoice invoice = null;
+            string query = "SELECT * FROM Invoice WHERE n_invoice="+nInvoice+" AND id_provider="+providerId;
+            SQLiteDataReader data = c.query_show(query);
+            while (data.Read())
+            {
+                int invoiceId = Int32.Parse(data[0].ToString()),
+                    nAut = Int32.Parse(data[2].ToString()),
+                    provId = Int32.Parse(data[3].ToString());
+                DateTime date = getDate(data[5].ToString());
+                Provider provider = providerController.getProviderById(provId);
+                invoice = new Invoice(provider, nInvoice, nAut, date);
+                List<InvoiceRow> invoiceRows = getAllInvoicesRowByNInvoice(invoiceId);
+                invoice.setInvoiceRows(invoiceRows);
+            }
+            c.dataClose();
+            return invoice;
+        }
+
         public List<Invoice> getAllInvoices()
         {
             List<Invoice> output = new List<Invoice>();
             string query = "SELECT * FROM Invoice";
-            /*try
-            {*/
-                SQLiteDataReader data = c.query_show(query);
-                while (data.Read())
-                {
-                    int invoiceId= Int32.Parse(data[0].ToString()),
-                        nInvoice = Int32.Parse(data[1].ToString()),
-                        nAut = Int32.Parse(data[2].ToString()),
-                        provId = Int32.Parse(data[3].ToString());
-                    DateTime date = getDate(data[5].ToString());
-                    Provider provider = providerController.getProviderById(provId);
-                    Invoice invoice = new Invoice(provider, nInvoice, nAut, date);
-                    List<InvoiceRow> invoiceRows = getAllInvoicesRowByNInvoice(invoiceId);
-                    invoice.setInvoiceRows(invoiceRows);
-                    output.Add(invoice);
-                }
-            /*}
-            catch (Exception)
+            SQLiteDataReader data = c.query_show(query);
+            while (data.Read())
             {
-                
-            }*/
+                int invoiceId= Int32.Parse(data[0].ToString()),
+                    nInvoice = Int32.Parse(data[1].ToString()),
+                    nAut = Int32.Parse(data[2].ToString()),
+                    provId = Int32.Parse(data[3].ToString());
+                DateTime date = getDate(data[5].ToString());
+                Provider provider = providerController.getProviderById(provId);
+                Invoice invoice = new Invoice(provider, nInvoice, nAut, date);
+                List<InvoiceRow> invoiceRows = getAllInvoicesRowByNInvoice(invoiceId);
+                invoice.setInvoiceRows(invoiceRows);
+                output.Add(invoice);
+            }
             c.dataClose();
             return output;
         }

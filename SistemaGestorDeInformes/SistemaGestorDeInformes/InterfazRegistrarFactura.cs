@@ -31,6 +31,18 @@ namespace SistemaGestorDeInformes
             loadProviders();
         }
 
+        public InterfazRegistrarFactura(Invoice invoice)
+        {
+            InitializeComponent();
+            this.textBoxNit.KeyPress += new KeyPressEventHandler(textBoxNit_TextChanged);//Para impedir que se pongan letras y espacios en el NIT
+            this.textBoxNFactura.KeyPress += new KeyPressEventHandler(textBoxNFactura_TextChanged);//Para impedir que se pongan letras y espacios en el N.FACTURA
+            this.textBoxNAutorizacion.KeyPress += new KeyPressEventHandler(textBoxNAutorizacion_TextChanged);//Para impedir que se pongan letras y espacios en el N.AUTORIZACION 
+            invoiceController = new InvoiceController();
+            providerController = new ProviderController();
+            productController = new ProductController();
+            loadProviders();
+        }
+
         private void loadProviders()
         {
             providers=providerController.getAllProviders();
