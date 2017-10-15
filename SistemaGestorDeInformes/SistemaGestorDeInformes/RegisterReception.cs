@@ -32,7 +32,7 @@ namespace SistemaGestorDeInformes
 
         private void RegisterButton_Click(object sender, EventArgs e)
         {
-            
+            rc.RegisterReception(ProducTextBox,ProviderTextBox,UnitTextBox,ExpirationDate,ReceptionDate,TotalReception);
         }
 
         private void button2_Click(object sender, EventArgs e)

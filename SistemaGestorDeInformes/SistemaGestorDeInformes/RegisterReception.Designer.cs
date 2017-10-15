@@ -46,7 +46,7 @@
             // 
             // ProducTextBox
             // 
-            this.ProducTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.ProducTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.ProducTextBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.ProducTextBox.Location = new System.Drawing.Point(117, 50);
             this.ProducTextBox.Name = "ProducTextBox";
@@ -56,7 +56,7 @@
             // 
             // ProviderTextBox
             // 
-            this.ProviderTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.ProviderTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.ProviderTextBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.ProviderTextBox.Location = new System.Drawing.Point(117, 77);
             this.ProviderTextBox.Name = "ProviderTextBox";
@@ -65,7 +65,7 @@
             // 
             // UnitTextBox
             // 
-            this.UnitTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.UnitTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.UnitTextBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.UnitTextBox.Location = new System.Drawing.Point(117, 106);
             this.UnitTextBox.Name = "UnitTextBox";
