@@ -113,6 +113,7 @@
     <Compile Include="Provider.cs" />
     <Compile Include="ProviderController.cs" />
     <Compile Include="Reception.cs" />
+    <Compile Include="ReceptionController.cs" />
     <Compile Include="RegisterProduct.cs">
       <SubType>Form</SubType>
     </Compile>
