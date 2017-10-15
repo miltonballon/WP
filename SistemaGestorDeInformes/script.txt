@@ -63,6 +63,13 @@ CREATE TABLE `User` (
 	`password`	TEXT,
 	`email`	TEXT
 );
+CREATE TABLE `Reception` (
+	`id`	INTEGER PRIMARY KEY AUTOINCREMENT,
+	`ppu_id`	INTEGER,
+	`receptionDate`	TEXT,
+	`expirationDate`	TEXT,
+	`total`	INTEGER
+);
 
 INSERT INTO User(name, password, email) VALUES ('Responsable','creamos', 'jprodriguez60@gmail.com');
 
