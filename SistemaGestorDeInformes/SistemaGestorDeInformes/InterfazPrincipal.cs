@@ -86,5 +86,12 @@ namespace SistemaGestorDeInformes
             this.Hide();
             ShowInventory1.Show();
         }
+
+        private void registrarEntradaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RegisterReception main = new RegisterReception();
+            this.Hide();
+            main.Show();
+        }
     }
 }

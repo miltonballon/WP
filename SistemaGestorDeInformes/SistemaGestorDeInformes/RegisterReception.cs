@@ -26,5 +26,17 @@ namespace SistemaGestorDeInformes
         {
 
         }
+
+        private void RegisterButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            InterfazPrincipal main = new InterfazPrincipal();
+            this.Hide();
+            main.Show();
+        }
     }
 }

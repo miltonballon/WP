@@ -170,6 +170,7 @@
             this.registrarEntradaToolStripMenuItem.Name = "registrarEntradaToolStripMenuItem";
             this.registrarEntradaToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.registrarEntradaToolStripMenuItem.Text = "Registrar Entrada";
+            this.registrarEntradaToolStripMenuItem.Click += new System.EventHandler(this.registrarEntradaToolStripMenuItem_Click);
             // 
             // registrarSalidaToolStripMenuItem
             // 
