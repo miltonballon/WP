@@ -48,6 +48,29 @@ namespace SistemaGestorDeInformes
             }
         }
 
+        public void updateInvoice(Invoice invoice,int id)
+        {
+            Provider provider = invoice.getProvider();
+            int nInvoice = invoice.getNInvoice(),
+                nAutorization = invoice.getNAutorization(), 
+                idProvider = searchProvider(provider), 
+                nit=provider.getNit();
+            String date = invoice.getDate().ToShortDateString();
+            String query = "UPDATE Invoice SET n_invoice="+nInvoice+", n_autorization="+nAutorization+", id_provider="+idProvider+", nit="+nit+", date='"+date+"' WHERE id="+id;
+            c.executeInsertion(query);
+        }
+
+        public int getInvoiceIdByObjectInvoice(Invoice invoice)
+        {
+            int id = 0;
+            int nInvoice = invoice.getNInvoice(),
+                providerId=searchProvider(invoice.getProvider());
+            String query = "SELECT id FROM Invoice WHERE n_invoice="+nInvoice+" AND id_provider="+providerId;
+            id = c.FindAndGetID(query);
+            c.dataClose();
+            return id;
+        }
+
         public int searchProvider(Provider provider)
         {
             int id=providerController.findProviderIdByName(provider.getName());

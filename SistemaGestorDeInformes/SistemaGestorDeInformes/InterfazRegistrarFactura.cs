@@ -37,6 +37,7 @@ namespace SistemaGestorDeInformes
         {
             InitializeComponent();
             this.invoice = invoice;
+            this.provider = invoice.getProvider();
             this.textBoxNit.KeyPress += new KeyPressEventHandler(textBoxNit_TextChanged);//Para impedir que se pongan letras y espacios en el NIT
             this.textBoxNFactura.KeyPress += new KeyPressEventHandler(textBoxNFactura_TextChanged);//Para impedir que se pongan letras y espacios en el N.FACTURA
             this.textBoxNAutorizacion.KeyPress += new KeyPressEventHandler(textBoxNAutorizacion_TextChanged);//Para impedir que se pongan letras y espacios en el N.AUTORIZACION 
@@ -211,6 +212,31 @@ namespace SistemaGestorDeInformes
 
         private void buttonGuardar_Click(object sender, EventArgs e)
         {
+            if (modifying)
+            {
+                modifyInvoice();
+            }
+            else
+            {
+                saveNewInvoice();
+            }
+        }
+
+        private void modifyInvoice()
+        {
+            int nInvoice = Int32.Parse(textBoxNFactura.Text),
+                nAutorization = Int32.Parse(textBoxNAutorizacion.Text),
+                id=invoiceController.getInvoiceIdByObjectInvoice(invoice);
+            DateTime date = dateFecha.Value;
+            invoice.setNInvoice(nInvoice);
+            invoice.setNAutorization(nAutorization);
+            invoice.setProvider(provider);
+            invoice.setDate(date);
+            invoiceController.updateInvoice(invoice,id);
+        }
+
+        private void saveNewInvoice()
+        {
             if (provider == null)
             {
                 newProvider();
@@ -231,9 +257,7 @@ namespace SistemaGestorDeInformes
         private Invoice createInvoice()
         {
             int nInvoice = Int32.Parse(textBoxNFactura.Text),
-                nAutorization = Int32.Parse(textBoxNAutorizacion.Text),
-                nit = Int32.Parse(textBoxNit.Text);
-            String proveedor = textBoxProveedor.Text;
+                nAutorization = Int32.Parse(textBoxNAutorizacion.Text);
             DateTime date = dateFecha.Value;
             invoice = new Invoice(provider, nInvoice, nAutorization, date);
             return invoice;
@@ -271,6 +295,11 @@ namespace SistemaGestorDeInformes
 
         private void textBoxProveedor_Leave(object sender, EventArgs e)
         {
+            setProvider();
+        }
+
+        private void setProvider()
+        {
             Provider provider = getProviderByName(textBoxProveedor.Text);
             if (provider != null)
             {
@@ -280,7 +309,7 @@ namespace SistemaGestorDeInformes
             else
             {
                 this.provider = null;
-                textBoxNit.Text ="";
+                textBoxNit.Text = "";
             }
         }
 
