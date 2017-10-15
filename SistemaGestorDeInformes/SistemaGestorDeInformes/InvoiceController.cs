@@ -37,9 +37,9 @@ namespace SistemaGestorDeInformes
             {
                 
                 c.executeInsertion(query);
-                //MessageBox.Show(c.buscarYDevolverId("select id_proveedor FROM Factura where n_invoice = " + nInvoice) + "");
+                int id=c.FindAndGetID("select id FROM Invoice where n_invoice = " + nInvoice+" AND id_provider="+idProvider);
                 MessageBox.Show("Informacion Basica de la factura agregado satisfactoriamente","INFORME");
-                registerInvoicesRows(invoice);
+                registerInvoicesRows(invoice,id);
             }
             catch (Exception)
             {
@@ -57,26 +57,26 @@ namespace SistemaGestorDeInformes
             return id;
         }
 
-        public void registerInvoicesRows(Invoice invoice)
+        public void registerInvoicesRows(Invoice invoice,int invoiceId)
         {
             int counter = 0;
             foreach (InvoiceRow row in invoice.getInvoiceRows())
             {
-                registerInvoiceRow(row,invoice);
+                registerInvoiceRow(row,invoiceId);
                 counter++;
             }
             MessageBox.Show(counter+" filas de la facturas insertadas","INFORME");
         }
 
-        public void registerInvoiceRow(InvoiceRow row,Invoice invoice)
+        public void registerInvoiceRow(InvoiceRow row,int invoiceId)
         {
             String quantity = row.getQuantity() + ""
                 , unitPrice= row.getUnitPrice() + ""
                 , total=row.getTotal()+"";
             searchProduct(row.getProduct());
             int idPpu = insertProduct(row.getProduct());
-            String queryInsertion = "INSERT INTO invoice_row (n_invoice, id_ppu, quantity, unit_price, total) VALUES(";
-            queryInsertion += invoice.getNInvoice() + ", ";
+            String queryInsertion = "INSERT INTO invoice_row (id_invoice, id_ppu, quantity, unit_price, total) VALUES(";
+            queryInsertion += invoiceId + ", ";
             queryInsertion += idPpu + ", ";
             queryInsertion += "'"+quantity + "', ";
             queryInsertion += "'"+unitPrice + "', ";
