@@ -17,8 +17,6 @@ namespace SistemaGestorDeInformes
         {
             InitializeComponent();
             invoiceController = new InvoiceController();
-            List<Invoice> invoices = invoiceController.getAllInvoices();
-            MessageBox.Show(invoices[0].ToString());
         }
 
         private void pantallaPrincipalToolStripMenuItem_Click(object sender, EventArgs e)
@@ -91,16 +89,40 @@ namespace SistemaGestorDeInformes
             dataGridView1.Columns["Nautorizacion"].ReadOnly = true;
             dataGridView1.Columns["Nit"].ReadOnly = true;
             dataGridView1.Columns["Fecha"].ReadOnly = true;
-            dataGridView1.Columns["Productos"].ReadOnly = true;
             dataGridView1.Columns["Proveedor"].ReadOnly = true;
         }
 
         private void ShowBills_Load(object sender, EventArgs e)
         {
-            List<Invoice>invoices=invoiceController.getAllInvoices();
-            MessageBox.Show(invoices[0].ToString());
-            dataGridView1.DataSource = invoices;
+            chargeData();
             onlyReadRestrictionDataGrid();
+        }
+
+        private void chargeData()
+        {
+            List<Invoice> invoices = invoiceController.getAllInvoices();
+            MessageBox.Show(invoices[0].ToString());
+            foreach (Invoice invoice in invoices)
+            {
+                String nInvo = invoice.getNInvoice() + "",
+                       nAuto = invoice.getNAutorization() + "",
+                       nit = invoice.getProvider().getNit() + "",
+                       date = invoice.getDate().ToShortDateString(),
+                       providersName = invoice.getProvider().getName();
+
+                String[] row = new String[] {nInvo,nAuto,providersName,nit,date};
+                dataGridView1.Rows.Add(row);
+            }
+        }
+
+        private String invoiceRowsToString(List<InvoiceRow> rows)
+        {
+            String output = "";
+            foreach (InvoiceRow row in rows)
+            {
+                output +=row+"\n";
+            }
+            return output;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

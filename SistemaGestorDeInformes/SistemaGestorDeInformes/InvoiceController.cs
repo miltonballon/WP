@@ -160,7 +160,7 @@ namespace SistemaGestorDeInformes
                     double quantity = Double.Parse(data[3].ToString()),
                         unitPrice= Double.Parse(data[4].ToString()),
                         total= Double.Parse(data[5].ToString());
-                    Product product = productController.showProductByPPUId(ppuId);
+                    Product product = productController.getProductByPPUId(ppuId);
                     InvoiceRow invoiceRow = new InvoiceRow(product, quantity, unitPrice, total);
                     output.Add(invoiceRow);
                 }

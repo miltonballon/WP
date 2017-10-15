@@ -46,6 +46,7 @@
             this.configuraciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.abrirTrimestreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonAtrás = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -54,8 +55,6 @@
             this.Proveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Productos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -208,9 +207,16 @@
             // 
             this.abrirTrimestreToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.abrirTrimestreToolStripMenuItem.Name = "abrirTrimestreToolStripMenuItem";
-            this.abrirTrimestreToolStripMenuItem.Size = new System.Drawing.Size(97, 20);
+            this.abrirTrimestreToolStripMenuItem.Size = new System.Drawing.Size(98, 20);
             this.abrirTrimestreToolStripMenuItem.Text = "Abrir Trimestre";
             this.abrirTrimestreToolStripMenuItem.Click += new System.EventHandler(this.abrirTrimestreToolStripMenuItem_Click);
+            // 
+            // salirToolStripMenuItem
+            // 
+            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(88, 20);
+            this.salirToolStripMenuItem.Text = "Cerrar Sesión";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
             // buttonAtrás
             // 
@@ -244,11 +250,10 @@
             this.NAutorizacion,
             this.Proveedor,
             this.Nit,
-            this.Fecha,
-            this.Productos});
-            this.dataGridView1.Location = new System.Drawing.Point(26, 72);
+            this.Fecha});
+            this.dataGridView1.Location = new System.Drawing.Point(62, 66);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(646, 371);
+            this.dataGridView1.Size = new System.Drawing.Size(547, 371);
             this.dataGridView1.TabIndex = 17;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -276,18 +281,6 @@
             // 
             this.Fecha.HeaderText = "Fecha";
             this.Fecha.Name = "Fecha";
-            // 
-            // Productos
-            // 
-            this.Productos.HeaderText = "Productos";
-            this.Productos.Name = "Productos";
-            // 
-            // salirToolStripMenuItem
-            // 
-            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(88, 20);
-            this.salirToolStripMenuItem.Text = "Cerrar Sesión";
-            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
             // ShowBills
             // 
@@ -334,12 +327,11 @@
         private System.Windows.Forms.Button buttonAtrás;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn NFactura;
         private System.Windows.Forms.DataGridViewTextBoxColumn NAutorizacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Proveedor;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nit;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Productos;
-        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
     }
 }
