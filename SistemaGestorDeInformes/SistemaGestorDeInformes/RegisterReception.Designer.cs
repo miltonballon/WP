@@ -28,57 +28,57 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.ProducTextBox = new System.Windows.Forms.TextBox();
+            this.ProviderTextBox = new System.Windows.Forms.TextBox();
+            this.UnitTextBox = new System.Windows.Forms.TextBox();
+            this.ExpirationDate = new System.Windows.Forms.TextBox();
+            this.ReceptionDate = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.TotalReception = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.RegisterButton = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox1
+            // ProducTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(117, 50);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 0;
+            this.ProducTextBox.Location = new System.Drawing.Point(117, 50);
+            this.ProducTextBox.Name = "ProducTextBox";
+            this.ProducTextBox.Size = new System.Drawing.Size(100, 20);
+            this.ProducTextBox.TabIndex = 0;
             // 
-            // textBox2
+            // ProviderTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(117, 77);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 1;
+            this.ProviderTextBox.Location = new System.Drawing.Point(117, 77);
+            this.ProviderTextBox.Name = "ProviderTextBox";
+            this.ProviderTextBox.Size = new System.Drawing.Size(100, 20);
+            this.ProviderTextBox.TabIndex = 1;
             // 
-            // textBox3
+            // UnitTextBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(117, 106);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 2;
+            this.UnitTextBox.Location = new System.Drawing.Point(117, 106);
+            this.UnitTextBox.Name = "UnitTextBox";
+            this.UnitTextBox.Size = new System.Drawing.Size(100, 20);
+            this.UnitTextBox.TabIndex = 2;
             // 
-            // textBox4
+            // ExpirationDate
             // 
-            this.textBox4.Location = new System.Drawing.Point(117, 132);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 3;
+            this.ExpirationDate.Location = new System.Drawing.Point(117, 132);
+            this.ExpirationDate.Name = "ExpirationDate";
+            this.ExpirationDate.Size = new System.Drawing.Size(100, 20);
+            this.ExpirationDate.TabIndex = 3;
             // 
-            // textBox5
+            // ReceptionDate
             // 
-            this.textBox5.Location = new System.Drawing.Point(117, 158);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 4;
-            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
+            this.ReceptionDate.Location = new System.Drawing.Point(117, 158);
+            this.ReceptionDate.Name = "ReceptionDate";
+            this.ReceptionDate.Size = new System.Drawing.Size(100, 20);
+            this.ReceptionDate.TabIndex = 4;
+            this.ReceptionDate.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // label1
             // 
@@ -126,12 +126,12 @@
             this.label5.TabIndex = 9;
             this.label5.Text = "Fecha Recepcion";
             // 
-            // textBox6
+            // TotalReception
             // 
-            this.textBox6.Location = new System.Drawing.Point(117, 185);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 10;
+            this.TotalReception.Location = new System.Drawing.Point(117, 185);
+            this.TotalReception.Name = "TotalReception";
+            this.TotalReception.Size = new System.Drawing.Size(100, 20);
+            this.TotalReception.TabIndex = 10;
             // 
             // label6
             // 
@@ -170,17 +170,17 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.RegisterButton);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.TotalReception);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.ReceptionDate);
+            this.Controls.Add(this.ExpirationDate);
+            this.Controls.Add(this.UnitTextBox);
+            this.Controls.Add(this.ProviderTextBox);
+            this.Controls.Add(this.ProducTextBox);
             this.Name = "RegisterReception";
             this.Text = "RegisterReception";
             this.ResumeLayout(false);
@@ -190,19 +190,19 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button RegisterButton;
         private System.Windows.Forms.Button button2;
+        public System.Windows.Forms.TextBox ProducTextBox;
+        public System.Windows.Forms.TextBox ProviderTextBox;
+        public System.Windows.Forms.TextBox UnitTextBox;
+        public System.Windows.Forms.TextBox ExpirationDate;
+        public System.Windows.Forms.TextBox ReceptionDate;
+        public System.Windows.Forms.TextBox TotalReception;
     }
 }
