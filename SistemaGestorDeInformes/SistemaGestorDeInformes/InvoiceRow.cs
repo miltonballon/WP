@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SistemaGestorDeInformes
 {
-    class InvoiceRow
+    public class InvoiceRow
     {
         private Product product;
         private double quantity;

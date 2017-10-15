@@ -28,7 +28,6 @@ namespace SistemaGestorDeInformes
             {
                 connectionString = new SQLiteConnection("Data Source = Database/Database.db");
                 connectionString.Open();
-                // MessageBox.Show("Conectado SQLITE");
             }
             catch (Exception ex)
             {
@@ -56,7 +55,6 @@ namespace SistemaGestorDeInformes
        
             command = new SQLiteCommand(query, connectionString);
             data= command.ExecuteReader();
-         
             return data;
             
         }
