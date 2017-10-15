@@ -8,6 +8,7 @@ CREATE TABLE `Invoice` (
 	`id_trimester`		INTEGER,
 	FOREIGN KEY(`id_provider`) REFERENCES `Provider`(`id`),
 	FOREIGN KEY(`id_trimester`) REFERENCES `trimester`(`id`)
+	CONSTRAINT n_invoice_provider_unique UNIQUE (n_invoice, id_provider)
 );
 
 CREATE TABLE `Product` (

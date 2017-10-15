@@ -43,7 +43,8 @@ namespace SistemaGestorDeInformes
             }
             catch (Exception)
             {
-                MessageBox.Show("El 'N. Factura' introducido ya existe.\nPor favor revise los datos introducidos.", "Error");
+                String providersName = invoice.getProvider().getName();
+                MessageBox.Show("El 'N. Factura' introducido con este proveedor: '"+providersName+"' ya existe.\nPor favor revise los datos introducidos.", "Error");
             }
         }
 
