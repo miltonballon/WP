@@ -161,5 +161,12 @@ namespace SistemaGestorDeInformes
             this.Hide();
             ShowInventory1.Show();
         }
+
+        private void registrarEntradaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InputOfProvitions InputOfProvitions1 = new InputOfProvitions();
+            this.Hide();
+            InputOfProvitions1.Show();
+        }
     }
 }

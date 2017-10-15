@@ -85,5 +85,68 @@ namespace SistemaGestorDeInformes
             this.Hide();
             principal.Show();
         }
+
+        private void pantallaPrincipalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InterfazPrincipal Interfaz = new InterfazPrincipal();
+            this.Hide();
+            Interfaz.Show();
+        }
+
+        private void registrarFacturaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InterfazRegistrarFactura Interfaz = new InterfazRegistrarFactura();
+            this.Hide();
+            Interfaz.Show();
+        }
+
+        private void verFacturasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowBills Interfaz = new ShowBills();
+            this.Hide();
+            Interfaz.Show();
+        }
+
+        private void registrarProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RegisterProduct Interfaz = new RegisterProduct();
+            this.Hide();
+            Interfaz.Show();
+        }
+
+        private void verProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowProducts Interfaz = new ShowProducts();
+            this.Hide();
+            Interfaz.Show();
+        }
+
+        private void verInventarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowInventory Interfaz = new ShowInventory();
+            this.Hide();
+            Interfaz.Show();
+        }
+
+        private void informeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ReportConfiguration Interfaz = new ReportConfiguration();
+            this.Hide();
+            Interfaz.Show();
+        }
+
+        private void abrirTrimestreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenQuarter Interfaz = new OpenQuarter();
+            this.Hide();
+            Interfaz.Show();
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Login log = new Login();
+            this.Hide();
+            log.Show();
+        }
     }
 }

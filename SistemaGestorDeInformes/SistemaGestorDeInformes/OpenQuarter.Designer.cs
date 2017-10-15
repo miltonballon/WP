@@ -46,13 +46,13 @@
             this.configuraciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.abrirTrimestreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.RegistrarButton = new System.Windows.Forms.Button();
             this.atrasButton = new System.Windows.Forms.Button();
             this.labelInformaciónBásica = new System.Windows.Forms.Label();
             this.lbTrim = new System.Windows.Forms.Label();
             this.txbxNombre = new System.Windows.Forms.TextBox();
             this.lbNombre = new System.Windows.Forms.Label();
-            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -165,6 +165,7 @@
             this.registrarEntradaToolStripMenuItem.Name = "registrarEntradaToolStripMenuItem";
             this.registrarEntradaToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.registrarEntradaToolStripMenuItem.Text = "Registrar Entrada";
+            this.registrarEntradaToolStripMenuItem.Click += new System.EventHandler(this.registrarEntradaToolStripMenuItem_Click);
             // 
             // registrarSalidaToolStripMenuItem
             // 
@@ -201,6 +202,13 @@
             this.abrirTrimestreToolStripMenuItem.Name = "abrirTrimestreToolStripMenuItem";
             this.abrirTrimestreToolStripMenuItem.Size = new System.Drawing.Size(97, 20);
             this.abrirTrimestreToolStripMenuItem.Text = "Abrir Trimestre";
+            // 
+            // salirToolStripMenuItem
+            // 
+            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(88, 20);
+            this.salirToolStripMenuItem.Text = "Cerrar Sesión";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
             // RegistrarButton
             // 
@@ -268,13 +276,6 @@
             this.lbNombre.TabIndex = 31;
             this.lbNombre.Text = "Nombre:";
             this.lbNombre.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // salirToolStripMenuItem
-            // 
-            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(88, 20);
-            this.salirToolStripMenuItem.Text = "Cerrar Sesión";
-            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
             // OpenQuarter
             // 

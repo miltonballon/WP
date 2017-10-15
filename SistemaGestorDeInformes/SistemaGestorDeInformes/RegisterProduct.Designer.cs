@@ -54,8 +54,8 @@
             this.configuraciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.abrirTrimestreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.labelInformaciónBásica = new System.Windows.Forms.Label();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.labelInformaciónBásica = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -249,6 +249,7 @@
             this.registrarEntradaToolStripMenuItem.Name = "registrarEntradaToolStripMenuItem";
             this.registrarEntradaToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.registrarEntradaToolStripMenuItem.Text = "Registrar Entrada";
+            this.registrarEntradaToolStripMenuItem.Click += new System.EventHandler(this.registrarEntradaToolStripMenuItem_Click);
             // 
             // registrarSalidaToolStripMenuItem
             // 
@@ -274,7 +275,7 @@
             // informeToolStripMenuItem
             // 
             this.informeToolStripMenuItem.Name = "informeToolStripMenuItem";
-            this.informeToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.informeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.informeToolStripMenuItem.Text = "Informe";
             this.informeToolStripMenuItem.Click += new System.EventHandler(this.informeToolStripMenuItem_Click);
             // 
@@ -284,6 +285,13 @@
             this.abrirTrimestreToolStripMenuItem.Size = new System.Drawing.Size(97, 20);
             this.abrirTrimestreToolStripMenuItem.Text = "Abrir Trimestre";
             this.abrirTrimestreToolStripMenuItem.Click += new System.EventHandler(this.abrirTrimestreToolStripMenuItem_Click);
+            // 
+            // salirToolStripMenuItem
+            // 
+            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(88, 20);
+            this.salirToolStripMenuItem.Text = "Cerrar Sesión";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
             // labelInformaciónBásica
             // 
@@ -295,13 +303,6 @@
             this.labelInformaciónBásica.Size = new System.Drawing.Size(85, 19);
             this.labelInformaciónBásica.TabIndex = 16;
             this.labelInformaciónBásica.Text = "Producto";
-            // 
-            // salirToolStripMenuItem
-            // 
-            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(88, 20);
-            this.salirToolStripMenuItem.Text = "Cerrar Sesión";
-            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
             // RegisterProduct
             // 

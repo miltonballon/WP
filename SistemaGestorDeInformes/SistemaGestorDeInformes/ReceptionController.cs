@@ -54,7 +54,7 @@ namespace SistemaGestorDeInformes
             c.dataClose();
             data.Close();
         }
-        public void RegisterReception(TextBox Product, TextBox Provider, TextBox Unit, TextBox ExpirationDate, TextBox ReceptionDate, TextBox Total)
+        public void RegisterReception(TextBox Product, TextBox Provider, TextBox Unit, DateTimePicker ExpirationDate, DateTimePicker ReceptionDate, TextBox Total)
         {
             int idName = getIdName(Product.Text.ToString());
             int idProvider = getIdProvider(Provider.Text.ToString());
@@ -82,7 +82,7 @@ namespace SistemaGestorDeInformes
 
 
 
-        public void InsertReception(int id,TextBox expiration, TextBox reception, TextBox total)
+        public void InsertReception(int id, DateTimePicker expiration, DateTimePicker reception, TextBox total)
         {
             string query = "INSERT INTO Reception (ppu_id,receptionDate,expirationDate,total) values('" + id + "','" + expiration.Text + "','" + reception.Text + "','" + Int32.Parse(total.Text) + "')";
             c.executeInsertion(query);
