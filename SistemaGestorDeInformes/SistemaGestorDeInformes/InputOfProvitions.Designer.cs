@@ -397,7 +397,7 @@
             this.Controls.Add(this.RegisterButton);
             this.Name = "InputOfProvitions";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "RegisterReception";
+            this.Text = "Registrar Entrada";
             this.Load += new System.EventHandler(this.RegisterReception_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

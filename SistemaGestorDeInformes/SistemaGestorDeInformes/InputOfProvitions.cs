@@ -34,7 +34,7 @@ namespace SistemaGestorDeInformes
         {
             rc.RegisterReception(ProducTextBox,ProviderTextBox,UnitTextBox,ExpirationDate,ReceptionDate,TotalReception);
         }
-
+        
         private void button2_Click(object sender, EventArgs e)
         {
             InterfazPrincipal main = new InterfazPrincipal();
