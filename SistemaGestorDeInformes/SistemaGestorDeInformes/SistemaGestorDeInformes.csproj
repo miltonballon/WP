@@ -120,11 +120,11 @@
     <Compile Include="RegisterProduct.Designer.cs">
       <DependentUpon>RegisterProduct.cs</DependentUpon>
     </Compile>
-    <Compile Include="RegisterReception.cs">
+    <Compile Include="InputOfProvitions.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RegisterReception.Designer.cs">
-      <DependentUpon>RegisterReception.cs</DependentUpon>
+    <Compile Include="InputOfProvitions.Designer.cs">
+      <DependentUpon>InputOfProvitions.cs</DependentUpon>
     </Compile>
     <Compile Include="ReportConfiguration.cs">
       <SubType>Form</SubType>
@@ -191,8 +191,8 @@
     <EmbeddedResource Include="RegisterProduct.resx">
       <DependentUpon>RegisterProduct.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RegisterReception.resx">
-      <DependentUpon>RegisterReception.cs</DependentUpon>
+    <EmbeddedResource Include="InputOfProvitions.resx">
+      <DependentUpon>InputOfProvitions.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportConfiguration.resx">
       <DependentUpon>ReportConfiguration.cs</DependentUpon>

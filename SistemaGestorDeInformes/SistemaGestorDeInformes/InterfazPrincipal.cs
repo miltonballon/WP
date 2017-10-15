@@ -89,7 +89,7 @@ namespace SistemaGestorDeInformes
 
         private void registrarEntradaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            RegisterReception main = new RegisterReception();
+            InputOfProvitions main = new InputOfProvitions();
             this.Hide();
             main.Show();
         }

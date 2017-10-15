@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace SistemaGestorDeInformes
 {
-    public partial class RegisterReception : Form
+    public partial class InputOfProvitions : Form
     {
 
         ReceptionController rc;
-        public RegisterReception()
+        public InputOfProvitions()
         {
             rc = new ReceptionController();
             InitializeComponent();
@@ -50,6 +50,31 @@ namespace SistemaGestorDeInformes
         }
 
         private void ProducTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TotalReception_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ExpirationDate_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UnitTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ProviderTextBox_TextChanged(object sender, EventArgs e)
         {
 
         }
