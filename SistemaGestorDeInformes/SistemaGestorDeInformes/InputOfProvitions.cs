@@ -78,5 +78,12 @@ namespace SistemaGestorDeInformes
         {
 
         }
+
+        private void buttonAtrás_Click(object sender, EventArgs e)
+        {
+            InterfazPrincipal principal = new InterfazPrincipal();//para volver atras
+            this.Hide();
+            principal.Show();
+        }
     }
 }
