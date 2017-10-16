@@ -73,7 +73,7 @@
             this.RegisterButton.Location = new System.Drawing.Point(250, 456);
             this.RegisterButton.Name = "RegisterButton";
             this.RegisterButton.Size = new System.Drawing.Size(120, 30);
-            this.RegisterButton.TabIndex = 12;
+            this.RegisterButton.TabIndex = 6;
             this.RegisterButton.Text = "Registrar";
             this.RegisterButton.UseVisualStyleBackColor = false;
             this.RegisterButton.Click += new System.EventHandler(this.RegisterButton_Click);
@@ -97,7 +97,7 @@
             this.buttonAtrás.Location = new System.Drawing.Point(3, 472);
             this.buttonAtrás.Name = "buttonAtrás";
             this.buttonAtrás.Size = new System.Drawing.Size(120, 30);
-            this.buttonAtrás.TabIndex = 20;
+            this.buttonAtrás.TabIndex = 7;
             this.buttonAtrás.Text = "Atrás";
             this.buttonAtrás.UseVisualStyleBackColor = false;
             this.buttonAtrás.Click += new System.EventHandler(this.buttonAtrás_Click);
@@ -175,7 +175,7 @@
             this.ExpirationDate.Location = new System.Drawing.Point(230, 190);
             this.ExpirationDate.Name = "ExpirationDate";
             this.ExpirationDate.Size = new System.Drawing.Size(250, 23);
-            this.ExpirationDate.TabIndex = 30;
+            this.ExpirationDate.TabIndex = 3;
             // 
             // UnitTextBox
             // 
@@ -183,7 +183,7 @@
             this.UnitTextBox.Location = new System.Drawing.Point(230, 150);
             this.UnitTextBox.Name = "UnitTextBox";
             this.UnitTextBox.Size = new System.Drawing.Size(250, 23);
-            this.UnitTextBox.TabIndex = 29;
+            this.UnitTextBox.TabIndex = 2;
             // 
             // ProviderTextBox
             // 
@@ -191,7 +191,7 @@
             this.ProviderTextBox.Location = new System.Drawing.Point(230, 110);
             this.ProviderTextBox.Name = "ProviderTextBox";
             this.ProviderTextBox.Size = new System.Drawing.Size(250, 23);
-            this.ProviderTextBox.TabIndex = 28;
+            this.ProviderTextBox.TabIndex = 1;
             // 
             // ProducTextBox
             // 
@@ -199,7 +199,7 @@
             this.ProducTextBox.Location = new System.Drawing.Point(230, 70);
             this.ProducTextBox.Name = "ProducTextBox";
             this.ProducTextBox.Size = new System.Drawing.Size(250, 23);
-            this.ProducTextBox.TabIndex = 27;
+            this.ProducTextBox.TabIndex = 0;
             // 
             // ReceptionDate
             // 
@@ -207,7 +207,7 @@
             this.ReceptionDate.Location = new System.Drawing.Point(230, 230);
             this.ReceptionDate.Name = "ReceptionDate";
             this.ReceptionDate.Size = new System.Drawing.Size(250, 23);
-            this.ReceptionDate.TabIndex = 31;
+            this.ReceptionDate.TabIndex = 4;
             // 
             // TotalReception
             // 
@@ -215,7 +215,7 @@
             this.TotalReception.Location = new System.Drawing.Point(230, 270);
             this.TotalReception.Name = "TotalReception";
             this.TotalReception.Size = new System.Drawing.Size(250, 23);
-            this.TotalReception.TabIndex = 32;
+            this.TotalReception.TabIndex = 5;
             // 
             // menuStrip1
             // 
@@ -355,7 +355,7 @@
             // informeToolStripMenuItem
             // 
             this.informeToolStripMenuItem.Name = "informeToolStripMenuItem";
-            this.informeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.informeToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.informeToolStripMenuItem.Text = "Informe";
             this.informeToolStripMenuItem.Click += new System.EventHandler(this.informeToolStripMenuItem_Click);
             // 
