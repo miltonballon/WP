@@ -14,14 +14,20 @@ namespace SistemaGestorDeInformes
         private int total;
         public Reception()
         {
-
-
-
         }
+
+        public Reception(Product product, string expirationDate, string receptionDate, int total)
+        {
+            this.product = product;
+            this.expirationDate = expirationDate;
+            this.receptionDate = receptionDate;
+            this.total = total;
+        }
+
         public Product Product
         {
-            get { return Product; }
-            set { Product = value; }
+            get { return product; }
+            set { product = value; }
         }
         public string ExpirationDate
         {
