@@ -70,7 +70,7 @@ CREATE TABLE `Reception` (
 	`receptionDate`	TEXT,
 	`expirationDate`	TEXT,
 	`total`	INTEGER,
-	FOREIGN KEY(`ppu_id`) REFERENCES `Product_Provider_Unit`(`id`),
+	FOREIGN KEY(`ppu_id`) REFERENCES `Product_Provider_Unit`(`id`)
 );
 
 INSERT INTO User(name, password, email) VALUES ('Responsable','creamos', 'jprodriguez60@gmail.com');
