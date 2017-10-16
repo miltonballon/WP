@@ -173,6 +173,7 @@
             this.registrarSalidaToolStripMenuItem.Name = "registrarSalidaToolStripMenuItem";
             this.registrarSalidaToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.registrarSalidaToolStripMenuItem.Text = "Registrar Salida";
+            this.registrarSalidaToolStripMenuItem.Click += new System.EventHandler(this.registrarSalidaToolStripMenuItem_Click);
             // 
             // verInventarioToolStripMenuItem
             // 

@@ -10,80 +10,23 @@ using System.Windows.Forms;
 
 namespace SistemaGestorDeInformes
 {
-    public partial class InputOfProvitions : Form
+    public partial class OutputOfProvitions : Form
     {
-
-        ReceptionController rc;
-        public InputOfProvitions()
+        public OutputOfProvitions()
         {
-            rc = new ReceptionController();
             InitializeComponent();
         }
 
-        private void textBox5_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void RegisterButton_Click(object sender, EventArgs e)
-        {
-            rc.RegisterReception(ProducTextBox,ProviderTextBox,UnitTextBox,ExpirationDate,ReceptionDate,TotalReception);
-        }
-        
-        private void button2_Click(object sender, EventArgs e)
+        private void buttonAtrás_Click(object sender, EventArgs e)
         {
             InterfazPrincipal main = new InterfazPrincipal();
             this.Hide();
             main.Show();
         }
 
-        private void RegisterReception_Load(object sender, EventArgs e)
-        {
-            rc.ProductAutoComplete(ProducTextBox);
-            rc.ProviderAutoComplete(ProviderTextBox);
-            rc.UnitAutoComplete(UnitTextBox);
-        }
-
-        private void ProducTextBox_TextChanged(object sender, EventArgs e)
+        private void registrarSalidaToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TotalReception_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ExpirationDate_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void UnitTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ProviderTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buttonAtrás_Click(object sender, EventArgs e)
-        {
-            InterfazPrincipal principal = new InterfazPrincipal();//para volver atras
-            this.Hide();
-            principal.Show();
         }
 
         private void pantallaPrincipalToolStripMenuItem_Click(object sender, EventArgs e)
@@ -121,6 +64,13 @@ namespace SistemaGestorDeInformes
             Interfaz.Show();
         }
 
+        private void registrarEntradaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InputOfProvitions Interfaz = new InputOfProvitions();
+            this.Hide();
+            Interfaz.Show();
+        }
+
         private void verInventarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ShowInventory Interfaz = new ShowInventory();
@@ -144,14 +94,7 @@ namespace SistemaGestorDeInformes
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Login log = new Login();
-            this.Hide();
-            log.Show();
-        }
-
-        private void registrarSalidaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            OutputOfProvitions Interfaz = new OutputOfProvitions();
+            Login Interfaz = new Login();
             this.Hide();
             Interfaz.Show();
         }
