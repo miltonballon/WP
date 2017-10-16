@@ -137,7 +137,7 @@ namespace SistemaGestorDeInformes
 
             //MessageBox.Show("A" + pc.getIdName(p.Name) + "T" + pc.getIdProvider(p.Provider) + "B" + pc.getIdUnit(p.Unit));
             
-            pc.DeleteProduct_Provider_Unit(1,1,1);
+            //pc.DeleteProduct_Provider_Unit(1,1,1);
             pc.DeleteProduct_Provider_Unit(pc.getIdName(p.Name), pc.getIdProvider(p.Provider), pc.getIdUnit(p.Unit));
 
             edit.Show();
