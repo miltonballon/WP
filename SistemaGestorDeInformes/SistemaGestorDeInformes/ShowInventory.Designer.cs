@@ -77,7 +77,7 @@
             this.Nombre,
             this.Unidad,
             this.Cantidad});
-            this.dataGridView1.Location = new System.Drawing.Point(34, 78);
+            this.dataGridView1.Location = new System.Drawing.Point(46, 78);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(343, 370);
             this.dataGridView1.TabIndex = 15;
@@ -242,7 +242,7 @@
             // abrirTrimestreToolStripMenuItem
             // 
             this.abrirTrimestreToolStripMenuItem.Name = "abrirTrimestreToolStripMenuItem";
-            this.abrirTrimestreToolStripMenuItem.Size = new System.Drawing.Size(97, 20);
+            this.abrirTrimestreToolStripMenuItem.Size = new System.Drawing.Size(98, 20);
             this.abrirTrimestreToolStripMenuItem.Text = "Abrir Trimestre";
             this.abrirTrimestreToolStripMenuItem.Click += new System.EventHandler(this.abrirTrimestreToolStripMenuItem_Click);
             // 
@@ -277,6 +277,7 @@
             this.Name = "ShowInventory";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ver Inventario";
+            this.Load += new System.EventHandler(this.ShowInventory_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

@@ -13,9 +13,11 @@ namespace SistemaGestorDeInformes
     {
 
         private Connection c = new Connection();
+        private ProductController productController;
         public ReceptionController()
         {
             c.connect();
+            productController = new ProductController();
         }
         public void ProductAutoComplete(TextBox Product)
         {
@@ -102,7 +104,30 @@ namespace SistemaGestorDeInformes
             string UnitQuery = "select id FROM Unit where Type = " + "'" + unit + "'";
             return c.FindAndGetID(UnitQuery);
         }
-        
+
+        public List<Reception> getAllReceptions()
+        {
+            List<Reception> receptions = new List<Reception>();
+            string query = "SELECT * FROM Reception";
+            try
+            {
+                SQLiteDataReader data = c.query_show(query);
+                while (data.Read())
+                {
+                    int ppuId=Int32.Parse(data[1].ToString()), 
+                        total= Int32.Parse(data[4].ToString());
+                    String recDate=data[2].ToString(), 
+                           expDate= data[3].ToString();
+                    Product product = productController.getProductByPPUId(ppuId);
+                    Reception reception = new Reception(product,recDate,expDate,total);
+                    receptions.Add(reception);
+                }
+            }
+            catch (Exception)
+            { }
+            c.dataClose();
+            return receptions;
+        }
    
     }
 }
