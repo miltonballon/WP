@@ -179,6 +179,8 @@
             // 
             // UnitTextBox
             // 
+            this.UnitTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.UnitTextBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.UnitTextBox.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UnitTextBox.Location = new System.Drawing.Point(230, 150);
             this.UnitTextBox.Name = "UnitTextBox";
@@ -187,6 +189,8 @@
             // 
             // ProviderTextBox
             // 
+            this.ProviderTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.ProviderTextBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.ProviderTextBox.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProviderTextBox.Location = new System.Drawing.Point(230, 110);
             this.ProviderTextBox.Name = "ProviderTextBox";
@@ -195,6 +199,8 @@
             // 
             // ProducTextBox
             // 
+            this.ProducTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.ProducTextBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.ProducTextBox.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProducTextBox.Location = new System.Drawing.Point(230, 70);
             this.ProducTextBox.Name = "ProducTextBox";
