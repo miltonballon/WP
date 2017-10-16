@@ -23,5 +23,10 @@ namespace SistemaGestorDeInformes
             this.Hide();
             main.Show();
         }
+
+        private void registrarSalidaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
