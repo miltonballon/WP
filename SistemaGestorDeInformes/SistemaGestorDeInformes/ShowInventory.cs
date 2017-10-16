@@ -12,9 +12,11 @@ namespace SistemaGestorDeInformes
 {
     public partial class ShowInventory : Form
     {
+        private ReceptionController receptionController;
         public ShowInventory()
         {
             InitializeComponent();
+            receptionController = new ReceptionController();
         }
 
         private void buttonAtrás_Click(object sender, EventArgs e)
@@ -92,6 +94,26 @@ namespace SistemaGestorDeInformes
             OutputOfProvitions Interfaz = new OutputOfProvitions();
             this.Hide();
             Interfaz.Show();
+        }
+
+        private void ShowInventory_Load(object sender, EventArgs e)
+        {
+            chargeData();
+        }
+
+        private void chargeData()
+        {
+            List<Reception> receptions = receptionController.getAllReceptions();
+            foreach (Reception reception in receptions)
+            {
+                Product product = reception.Product;
+                String productsName = product.Name,
+                       unit = product.Unit,
+                       total = reception.Unit+"";
+
+                String[] row = new String[] { productsName,unit,total};
+                dataGridView1.Rows.Add(row);
+            }
         }
     }
 }
