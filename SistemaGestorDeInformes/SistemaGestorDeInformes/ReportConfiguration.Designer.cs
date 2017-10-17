@@ -52,8 +52,8 @@
             this.ProveedorLabel = new System.Windows.Forms.Label();
             this.RegistrarButton = new System.Windows.Forms.Button();
             this.atrasButton = new System.Windows.Forms.Button();
-            this.ProviderTextBox = new System.Windows.Forms.TextBox();
-            this.ProductTextBox = new System.Windows.Forms.TextBox();
+            this.txtboxnpartida = new System.Windows.Forms.TextBox();
+            this.txtboxbecas = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -251,12 +251,13 @@
             this.RegistrarButton.BackColor = System.Drawing.Color.Black;
             this.RegistrarButton.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
             this.RegistrarButton.ForeColor = System.Drawing.Color.Yellow;
-            this.RegistrarButton.Location = new System.Drawing.Point(250, 456);
+            this.RegistrarButton.Location = new System.Drawing.Point(268, 338);
             this.RegistrarButton.Name = "RegistrarButton";
             this.RegistrarButton.Size = new System.Drawing.Size(120, 30);
             this.RegistrarButton.TabIndex = 3;
             this.RegistrarButton.Text = "Guardar";
             this.RegistrarButton.UseVisualStyleBackColor = false;
+            this.RegistrarButton.Click += new System.EventHandler(this.RegistrarButton_Click);
             // 
             // atrasButton
             // 
@@ -271,19 +272,19 @@
             this.atrasButton.UseVisualStyleBackColor = false;
             this.atrasButton.Click += new System.EventHandler(this.atrasButton_Click);
             // 
-            // ProviderTextBox
+            // txtboxnpartida
             // 
-            this.ProviderTextBox.Location = new System.Drawing.Point(197, 136);
-            this.ProviderTextBox.Name = "ProviderTextBox";
-            this.ProviderTextBox.Size = new System.Drawing.Size(250, 20);
-            this.ProviderTextBox.TabIndex = 2;
+            this.txtboxnpartida.Location = new System.Drawing.Point(197, 136);
+            this.txtboxnpartida.Name = "txtboxnpartida";
+            this.txtboxnpartida.Size = new System.Drawing.Size(250, 20);
+            this.txtboxnpartida.TabIndex = 2;
             // 
-            // ProductTextBox
+            // txtboxbecas
             // 
-            this.ProductTextBox.Location = new System.Drawing.Point(197, 94);
-            this.ProductTextBox.Name = "ProductTextBox";
-            this.ProductTextBox.Size = new System.Drawing.Size(250, 20);
-            this.ProductTextBox.TabIndex = 1;
+            this.txtboxbecas.Location = new System.Drawing.Point(197, 94);
+            this.txtboxbecas.Name = "txtboxbecas";
+            this.txtboxbecas.Size = new System.Drawing.Size(250, 20);
+            this.txtboxbecas.TabIndex = 1;
             // 
             // ReportConfiguration
             // 
@@ -295,8 +296,8 @@
             this.Controls.Add(this.ProveedorLabel);
             this.Controls.Add(this.RegistrarButton);
             this.Controls.Add(this.atrasButton);
-            this.Controls.Add(this.ProviderTextBox);
-            this.Controls.Add(this.ProductTextBox);
+            this.Controls.Add(this.txtboxnpartida);
+            this.Controls.Add(this.txtboxbecas);
             this.Controls.Add(this.labelInformaciónBásica);
             this.Controls.Add(this.menuStrip1);
             this.Name = "ReportConfiguration";
@@ -334,8 +335,8 @@
         private System.Windows.Forms.Label ProveedorLabel;
         private System.Windows.Forms.Button RegistrarButton;
         private System.Windows.Forms.Button atrasButton;
-        private System.Windows.Forms.TextBox ProviderTextBox;
-        private System.Windows.Forms.TextBox ProductTextBox;
+        private System.Windows.Forms.TextBox txtboxnpartida;
+        private System.Windows.Forms.TextBox txtboxbecas;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
     }
 }

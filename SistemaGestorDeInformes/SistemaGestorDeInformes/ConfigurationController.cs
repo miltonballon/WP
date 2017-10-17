@@ -17,10 +17,10 @@ namespace SistemaGestorDeInformes
 
         public void insertConfiguration(Configuration configuration)
         {
-            String query = "INSERT INTO configuration(scholarships, nDeparture) VALUES(";
+            String query = "INSERT INTO configuration(scholarships, n_departure) VALUES(";
             int scholarships = configuration.getScholarships();
             int nDeparture = configuration.getNDeparture();
-            query += scholarships + ", '" + nDeparture + "')";
+            query += scholarships + ", " + nDeparture + ")";
             c.executeInsertion(query);
         }
     }

@@ -12,9 +12,12 @@ namespace SistemaGestorDeInformes
 {
     public partial class ReportConfiguration : Form
     {
+        private ConfigurationController configurationController;
+
         public ReportConfiguration()
         {
             InitializeComponent();
+            configurationController = new ConfigurationController();
         }
 
         private void pantallaPrincipalToolStripMenuItem_Click(object sender, EventArgs e)
@@ -92,6 +95,15 @@ namespace SistemaGestorDeInformes
             OutputOfProvitions Interfaz = new OutputOfProvitions();
             this.Hide();
             Interfaz.Show();
+        }
+
+        private void RegistrarButton_Click(object sender, EventArgs e)
+        {
+            int nScho=Int32.Parse(txtboxbecas.Text), 
+                nPar=Int32.Parse(txtboxnpartida.Text);
+            Configuration conf = new Configuration(nScho,nPar);
+            configurationController.insertConfiguration(conf);
+            MessageBox.Show("Se guardo la configuración correctamente");
         }
     }
 }
