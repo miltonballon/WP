@@ -10,7 +10,7 @@ using System.IO;
 using System.Data.SQLite;
 namespace SistemaGestorDeInformes
 {
-    class Connection
+    public class Connection
     {
 
         SQLiteConnection connectionString;

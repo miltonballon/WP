@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SistemaGestorDeInformes
 {
-    class ConfigurationController
+    public class ConfigurationController
     {
         public Connection c = new Connection();
 

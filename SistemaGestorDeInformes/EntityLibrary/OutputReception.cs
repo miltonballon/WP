@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SistemaGestorDeInformes
 {
-    class OutputReception
+    public class OutputReception
     {
         private Reception reception;
         private string outputDate;

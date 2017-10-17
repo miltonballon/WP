@@ -9,7 +9,7 @@ using System.Data.SQLite;
 
 namespace SistemaGestorDeInformes
 {
-    class ReceptionController
+    public class ReceptionController
     {
 
         private Connection c = new Connection();

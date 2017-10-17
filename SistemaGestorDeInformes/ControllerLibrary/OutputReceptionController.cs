@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace SistemaGestorDeInformes
 {
-    class OutputReceptionController
+    public class OutputReceptionController
     {
         private Connection c = new Connection();
         private ProductController productController;

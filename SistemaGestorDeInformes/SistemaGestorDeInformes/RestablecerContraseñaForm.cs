@@ -15,13 +15,11 @@ namespace SistemaGestorDeInformes
 {
     public partial class RestablecerContraseñaForm : Form
     { 
-        private Restablecer_Contraseña RC;
         private User user;
         public RestablecerContraseñaForm(User user)
         {
 
             InitializeComponent();
-            RC = new Restablecer_Contraseña();
             this.user = user;
         }
 
@@ -39,15 +37,7 @@ namespace SistemaGestorDeInformes
 
         private void button1_Click(object sender, EventArgs e)
         {
-            /*if (camposVacios())
-            {
-                MessageBox.Show("Todos los campos deben ser llenados", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-            }
-            else
-            {
-                guardar();
-            }*/
+            
 
         }
         private void guardar()
@@ -63,36 +53,12 @@ namespace SistemaGestorDeInformes
 
         private void ci_KeyPress(object sender, KeyPressEventArgs e)
         {
-            /*if ((int)e.KeyChar == (int)Keys.Enter)
-            {
-                e.Handled = true;
-                if (camposVacios())
-                {
-                    MessageBox.Show("Todos los campos deben ser llenados", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-                }
-                else
-                {
-                    guardar();
-                }
-            }*/
+            
         }
 
         private void user_KeyPress(object sender, KeyPressEventArgs e)
         {
-            /*if ((int)e.KeyChar == (int)Keys.Enter)
-            {
-                e.Handled = true;
-                if (camposVacios())
-                {
-                    MessageBox.Show("Todos los campos deben ser llenados", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-                }
-                else
-                {
-                    guardar();
-                }
-            }*/
+            
         }
 
         private void contraseña_TextChanged(object sender, EventArgs e)
@@ -102,36 +68,11 @@ namespace SistemaGestorDeInformes
 
         private void contraseña_KeyPress(object sender, KeyPressEventArgs e)
         {
-           /* if ((int)e.KeyChar == (int)Keys.Enter)
-            {
-                e.Handled = true;
-                if (camposVacios())
-                {
-                    MessageBox.Show("Todos los campos deben ser llenados", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-                }
-                else
-                {
-                    guardar();
-                }
-            }*/
+           
         }
 
         private void confirmar_KeyPress(object sender, KeyPressEventArgs e)
-        {/*
-            if ((int)e.KeyChar == (int)Keys.Enter)
-            {
-                e.Handled = true;
-                if (camposVacios())
-                {
-                    MessageBox.Show("Todos los campos deben ser llenados", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-                }
-                else
-                {
-                    guardar();
-                }
-            }*/
+        {
         }
        
 

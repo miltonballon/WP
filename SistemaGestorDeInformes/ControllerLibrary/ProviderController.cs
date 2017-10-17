@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SistemaGestorDeInformes
 {
-    class ProviderController
+    public class ProviderController
     {
         public Connection c = new Connection();
         public ProviderController()

@@ -7,7 +7,7 @@ using System.Data.SQLite;
 
 namespace SistemaGestorDeInformes
 {
-    class TrimesterController
+    public class TrimesterController
     {
         public Connection c = new Connection();
 

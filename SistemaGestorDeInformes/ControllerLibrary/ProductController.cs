@@ -4,7 +4,7 @@ using System.Windows.Forms;
 using System.Data.SQLite;
 namespace SistemaGestorDeInformes
 {
-    class ProductController
+    public class ProductController
     {
         public Connection c = new Connection();
         private ProviderController providerController;

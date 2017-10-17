@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SistemaGestorDeInformes
 {
-    class Configuration
+    public class Configuration
     {
         private int scholarships;
         private int nDeparture;

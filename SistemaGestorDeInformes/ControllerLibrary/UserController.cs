@@ -7,7 +7,7 @@ using System.Data.SQLite;
 
 namespace SistemaGestorDeInformes
 {
-    class UserController
+    public class UserController
     {
         public Connection c = new Connection();
 

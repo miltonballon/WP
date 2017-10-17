@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SistemaGestorDeInformes
 {
-    class Reception
+    public class Reception
     {
         private Product product;
         private string expirationDate;

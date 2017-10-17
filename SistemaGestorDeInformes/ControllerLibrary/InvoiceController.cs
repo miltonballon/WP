@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace SistemaGestorDeInformes
 {
-    class InvoiceController
+    public class InvoiceController
     {
         private ProviderController providerController;
         private ProductController productController;
