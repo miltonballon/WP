@@ -82,8 +82,6 @@ namespace SistemaGestorDeInformes
             }
         }
 
-
-
         public void InsertReception(int id, DateTimePicker expiration, DateTimePicker reception, TextBox total)
         {
             string query = "INSERT INTO Reception (ppu_id,receptionDate,expirationDate,total) values('" + id + "','" + expiration.Text + "','" + reception.Text + "','" + Int32.Parse(total.Text) + "')";
@@ -127,6 +125,32 @@ namespace SistemaGestorDeInformes
             { }
             c.dataClose();
             return receptions;
+        }
+
+        public Reception getReceptionById(int id)
+        {
+            Reception reception=null;
+            String query = "SELECT * FROM Reception WHERE id="+id;
+            SQLiteDataReader data = c.query_show(query);
+            while (data.Read())
+            {
+                int ppuId = Int32.Parse(data[1].ToString()),
+                    total = Int32.Parse(data[4].ToString());
+                String recDate = data[2].ToString(),
+                       expDate = data[3].ToString();
+                Product product = productController.getProductByPPUId(ppuId);
+                reception = new Reception(product, recDate, expDate, total);
+            }
+            c.dataClose();
+            return reception;
+        }
+
+        public void updateReception(int idReception, Reception reception)
+        {
+            String expDate=reception.ExpirationDate;
+            int total=reception.Unit;
+            String query = "UPDATE Reception SET total="+total+", expirationDate='"+expDate+"' WHERE id="+idReception;
+            c.executeInsertion(query);
         }
    
     }

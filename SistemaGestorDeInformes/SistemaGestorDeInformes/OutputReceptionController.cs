@@ -12,10 +12,12 @@ namespace SistemaGestorDeInformes
     {
         private Connection c = new Connection();
         private ProductController productController;
+        private ReceptionController receptionController;
         public OutputReceptionController()
         {
             c.connect();
             productController = new ProductController();
+            receptionController = new ReceptionController();
         }
         public void ProductAutoComplete(TextBox Product)
         {
@@ -83,8 +85,18 @@ namespace SistemaGestorDeInformes
 
             if (idName != notExist && idUnit != notExist && resul != notExist && resulReception != notExist)
             {
-                InsertOutputReception(resul, OutputDate, Total);
-                MessageBox.Show("Salida registrada correctamente");
+                Reception reception = receptionController.getReceptionById(resulReception);
+                reception.Unit = reception.Unit - Int32.Parse(Total.Text);
+                if (reception.Unit >= 0)
+                {
+                    InsertOutputReception(resulReception, OutputDate, Total);
+                    receptionController.updateReception(resulReception, reception);
+                    MessageBox.Show("Salida registrada correctamente");
+                }
+                else
+                {
+                    MessageBox.Show("No se posee tantas reservas en el inventario, retire una suma menor");
+                }
             }
             else
             {
