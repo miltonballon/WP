@@ -88,7 +88,7 @@ namespace SistemaGestorDeInformes
             }
             else
             {
-                MessageBox.Show("No existe recepcion de dicho producto en el inventario o el producto se acabo, por favor verifique");
+                MessageBox.Show("No existe recepcion de dicho producto en el inventario o el producto se acabo, verifique las recepciones o el inventario fisico ");
             }
         }
 
