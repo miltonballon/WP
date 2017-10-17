@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace SistemaGestorDeInformes
 {
-    class InvoiceController
+    public class InvoiceController
     {
         private ProviderController providerController;
         private ProductController productController;
@@ -37,14 +37,38 @@ namespace SistemaGestorDeInformes
             {
                 
                 c.executeInsertion(query);
-                //MessageBox.Show(c.buscarYDevolverId("select id_proveedor FROM Factura where n_invoice = " + nInvoice) + "");
+                int id=c.FindAndGetID("select id FROM Invoice where n_invoice = " + nInvoice+" AND id_provider="+idProvider);
                 MessageBox.Show("Informacion Basica de la factura agregado satisfactoriamente","INFORME");
-                registerInvoicesRows(invoice);
+                registerInvoicesRows(invoice,id);
             }
             catch (Exception)
             {
-                MessageBox.Show("El 'N. Factura' introducido ya existe.\nPor favor revise los datos introducidos.", "Error");
+                String providersName = invoice.getProvider().getName();
+                MessageBox.Show("El 'N. Factura' introducido con este proveedor: '"+providersName+"' ya existe.\nPor favor revise los datos introducidos.", "Error");
             }
+        }
+
+        public void updateInvoice(Invoice invoice,int id)
+        {
+            Provider provider = invoice.getProvider();
+            int nInvoice = invoice.getNInvoice(),
+                nAutorization = invoice.getNAutorization(), 
+                idProvider = searchProvider(provider), 
+                nit=provider.getNit();
+            String date = invoice.getDate().ToShortDateString();
+            String query = "UPDATE Invoice SET n_invoice="+nInvoice+", n_autorization="+nAutorization+", id_provider="+idProvider+", nit="+nit+", date='"+date+"' WHERE id="+id;
+            c.executeInsertion(query);
+        }
+
+        public int getInvoiceIdByObjectInvoice(Invoice invoice)
+        {
+            int id = 0;
+            int nInvoice = invoice.getNInvoice(),
+                providerId=searchProvider(invoice.getProvider());
+            String query = "SELECT id FROM Invoice WHERE n_invoice="+nInvoice+" AND id_provider="+providerId;
+            id = c.FindAndGetID(query);
+            c.dataClose();
+            return id;
         }
 
         public int searchProvider(Provider provider)
@@ -57,26 +81,26 @@ namespace SistemaGestorDeInformes
             return id;
         }
 
-        public void registerInvoicesRows(Invoice invoice)
+        public void registerInvoicesRows(Invoice invoice,int invoiceId)
         {
             int counter = 0;
             foreach (InvoiceRow row in invoice.getInvoiceRows())
             {
-                registerInvoiceRow(row,invoice);
+                registerInvoiceRow(row,invoiceId);
                 counter++;
             }
             MessageBox.Show(counter+" filas de la facturas insertadas","INFORME");
         }
 
-        public void registerInvoiceRow(InvoiceRow row,Invoice invoice)
+        public void registerInvoiceRow(InvoiceRow row,int invoiceId)
         {
             String quantity = row.getQuantity() + ""
                 , unitPrice= row.getUnitPrice() + ""
                 , total=row.getTotal()+"";
             searchProduct(row.getProduct());
             int idPpu = insertProduct(row.getProduct());
-            String queryInsertion = "INSERT INTO invoice_row (n_invoice, id_ppu, quantity, unit_price, total) VALUES(";
-            queryInsertion += invoice.getNInvoice() + ", ";
+            String queryInsertion = "INSERT INTO invoice_row (id_invoice, id_ppu, quantity, unit_price, total) VALUES(";
+            queryInsertion += invoiceId + ", ";
             queryInsertion += idPpu + ", ";
             queryInsertion += "'"+quantity + "', ";
             queryInsertion += "'"+unitPrice + "', ";
@@ -117,36 +141,52 @@ namespace SistemaGestorDeInformes
             }
         }
 
+        public Invoice getInvoiceByNInvoiceAndProviderId(int nInvoice, int providerId)
+        {
+            Invoice invoice = null;
+            string query = "SELECT * FROM Invoice WHERE n_invoice="+nInvoice+" AND id_provider="+providerId;
+            SQLiteDataReader data = c.query_show(query);
+            while (data.Read())
+            {
+                int invoiceId = Int32.Parse(data[0].ToString()),
+                    nAut = Int32.Parse(data[2].ToString()),
+                    provId = Int32.Parse(data[3].ToString());
+                DateTime date = getDate(data[5].ToString());
+                Provider provider = providerController.getProviderById(provId);
+                invoice = new Invoice(provider, nInvoice, nAut, date);
+                List<InvoiceRow> invoiceRows = getAllInvoicesRowByNInvoice(invoiceId);
+                invoice.setInvoiceRows(invoiceRows);
+            }
+            c.dataClose();
+            return invoice;
+        }
+
         public List<Invoice> getAllInvoices()
         {
             List<Invoice> output = new List<Invoice>();
             string query = "SELECT * FROM Invoice";
-            try
+            SQLiteDataReader data = c.query_show(query);
+            while (data.Read())
             {
-                SQLiteDataReader data = c.query_show(query);
-                while (data.Read())
-                {
-                    int nInvoice = Int32.Parse(data[0].ToString()),
-                        provId = Int32.Parse(data[2].ToString()),
-                        nAut = Int32.Parse(data[1].ToString());
-                    DateTime date = getDate(data[4].ToString());
-                    Provider provider = providerController.getProviderById(provId);
-                    Invoice invoice = new Invoice(provider, nInvoice, nAut, date);
-                    List<InvoiceRow> invoiceRows = getAllInvoicesRowByNInvoice(invoice.getNInvoice());
-                    invoice.setInvoiceRows(invoiceRows);
-                    output.Add(invoice);
-                }
+                int invoiceId= Int32.Parse(data[0].ToString()),
+                    nInvoice = Int32.Parse(data[1].ToString()),
+                    nAut = Int32.Parse(data[2].ToString()),
+                    provId = Int32.Parse(data[3].ToString());
+                DateTime date = getDate(data[5].ToString());
+                Provider provider = providerController.getProviderById(provId);
+                Invoice invoice = new Invoice(provider, nInvoice, nAut, date);
+                List<InvoiceRow> invoiceRows = getAllInvoicesRowByNInvoice(invoiceId);
+                invoice.setInvoiceRows(invoiceRows);
+                output.Add(invoice);
             }
-            catch (Exception)
-            { }
-            
+            c.dataClose();
             return output;
         }
 
-        public List<InvoiceRow> getAllInvoicesRowByNInvoice(int numInvoice)
+        public List<InvoiceRow> getAllInvoicesRowByNInvoice(int idInvoice)
         {
             List<InvoiceRow> output = new List<InvoiceRow>();
-            string query = "SELECT * FROM invoice_row";
+            string query = "SELECT * FROM invoice_row WHERE id_invoice="+idInvoice;
             try
             {
                 SQLiteDataReader data = c.query_show(query);
@@ -156,14 +196,14 @@ namespace SistemaGestorDeInformes
                     double quantity = Double.Parse(data[3].ToString()),
                         unitPrice= Double.Parse(data[4].ToString()),
                         total= Double.Parse(data[5].ToString());
-                    Product product = productController.showProductByPPUId(ppuId);
+                    Product product = productController.getProductByPPUId(ppuId);
                     InvoiceRow invoiceRow = new InvoiceRow(product, quantity, unitPrice, total);
                     output.Add(invoiceRow);
                 }
             }
             catch (Exception)
             { }
-
+            c.dataClose();
             return output;
         }
 

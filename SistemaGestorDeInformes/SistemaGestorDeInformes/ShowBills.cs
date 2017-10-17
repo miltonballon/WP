@@ -13,10 +13,12 @@ namespace SistemaGestorDeInformes
     public partial class ShowBills : Form
     {
         private InvoiceController invoiceController;
+        private ProviderController providerController;
         public ShowBills()
         {
             InitializeComponent();
             invoiceController = new InvoiceController();
+            providerController = new ProviderController();
         }
 
         private void pantallaPrincipalToolStripMenuItem_Click(object sender, EventArgs e)
@@ -89,21 +91,83 @@ namespace SistemaGestorDeInformes
             dataGridView1.Columns["Nautorizacion"].ReadOnly = true;
             dataGridView1.Columns["Nit"].ReadOnly = true;
             dataGridView1.Columns["Fecha"].ReadOnly = true;
-            dataGridView1.Columns["Productos"].ReadOnly = true;
             dataGridView1.Columns["Proveedor"].ReadOnly = true;
         }
 
         private void ShowBills_Load(object sender, EventArgs e)
         {
-            List<Invoice>invoices=invoiceController.getAllInvoices();
-            dataGridView1.DataSource = invoices;
-
+            chargeData();
             onlyReadRestrictionDataGrid();
+        }
+
+        private void chargeData()
+        {
+            List<Invoice> invoices = invoiceController.getAllInvoices();
+            foreach (Invoice invoice in invoices)
+            {
+                String nInvo = invoice.getNInvoice() + "",
+                       nAuto = invoice.getNAutorization() + "",
+                       nit = invoice.getProvider().getNit() + "",
+                       date = invoice.getDate().ToShortDateString(),
+                       providersName = invoice.getProvider().getName();
+
+                String[] row = new String[] {nInvo,nAuto,providersName,nit,date};
+                dataGridView1.Rows.Add(row);
+            }
+        }
+
+        private String invoiceRowsToString(List<InvoiceRow> rows)
+        {
+            String output = "";
+            foreach (InvoiceRow row in rows)
+            {
+                output +=row+"\n";
+            }
+            return output;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            String providersName= dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            int nInvoice = Int32.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString());
+            int providerId = providerController.findProviderIdByName(providersName);
+            Invoice invoice = invoiceController.getInvoiceByNInvoiceAndProviderId(nInvoice,providerId);
+            openModify(invoice);
+        }
 
+        private void openModify(Invoice invoice)
+        {
+            InterfazRegistrarFactura inF = new InterfazRegistrarFactura(invoice);
+            this.Hide();
+            inF.Show();
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Login log = new Login();
+            this.Hide();
+            log.Show();
+        }
+
+        private void verInventarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowInventory ShowInventory1 = new ShowInventory();
+            this.Hide();
+            ShowInventory1.Show();
+        }
+
+        private void registrarEntradaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InputOfProvitions InputOfProvitions1 = new InputOfProvitions();
+            this.Hide();
+            InputOfProvitions1.Show();
+        }
+
+        private void registrarSalidaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OutputOfProvitions Interfaz = new OutputOfProvitions();
+            this.Hide();
+            Interfaz.Show();
         }
     }
 }

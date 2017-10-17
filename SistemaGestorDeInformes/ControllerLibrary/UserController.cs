@@ -7,7 +7,7 @@ using System.Data.SQLite;
 
 namespace SistemaGestorDeInformes
 {
-    class UserController
+    public class UserController
     {
         public Connection c = new Connection();
 
@@ -29,6 +29,8 @@ namespace SistemaGestorDeInformes
                     user = new User(Convert.ToString(data[3]), Convert.ToString(data[1]), Convert.ToString(data[2]));
                     output = user.Password.Equals(password);
                 }
+                data.Close();
+                c.dataClose();
             }
             catch (Exception)
             {
@@ -48,6 +50,8 @@ namespace SistemaGestorDeInformes
                 {
                     user = new User(Convert.ToString(data[3]), Convert.ToString(data[1]), Convert.ToString(data[2]));
                 }
+                data.Close();
+                c.dataClose();
             }
             catch (Exception)
             {

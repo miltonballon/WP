@@ -7,7 +7,7 @@ using System.Data.SQLite;
 
 namespace SistemaGestorDeInformes
 {
-    class TrimesterController
+    public class TrimesterController
     {
         public Connection c = new Connection();
 
@@ -36,6 +36,7 @@ namespace SistemaGestorDeInformes
                 int bit = Convert.ToInt32(data[1]);
                 trimester.setOpen(bit==1);
             }
+            c.dataClose();
             return trimester;
         }
 

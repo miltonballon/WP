@@ -1,6 +1,6 @@
 ﻿namespace SistemaGestorDeInformes
 {
-    partial class ReportConfiguration
+    partial class ShowInventory
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.buttonAtrás = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Unidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.pantallaPrincipalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.facturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,14 +53,49 @@
             this.abrirTrimestreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.labelInformaciónBásica = new System.Windows.Forms.Label();
-            this.ProductoLabel = new System.Windows.Forms.Label();
-            this.ProveedorLabel = new System.Windows.Forms.Label();
-            this.RegistrarButton = new System.Windows.Forms.Button();
-            this.atrasButton = new System.Windows.Forms.Button();
-            this.txtboxnpartida = new System.Windows.Forms.TextBox();
-            this.txtboxbecas = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // buttonAtrás
+            // 
+            this.buttonAtrás.BackColor = System.Drawing.Color.Black;
+            this.buttonAtrás.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAtrás.ForeColor = System.Drawing.Color.Yellow;
+            this.buttonAtrás.Location = new System.Drawing.Point(3, 472);
+            this.buttonAtrás.Name = "buttonAtrás";
+            this.buttonAtrás.Size = new System.Drawing.Size(120, 30);
+            this.buttonAtrás.TabIndex = 16;
+            this.buttonAtrás.Text = "Atrás";
+            this.buttonAtrás.UseVisualStyleBackColor = false;
+            this.buttonAtrás.Click += new System.EventHandler(this.buttonAtrás_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Nombre,
+            this.Unidad,
+            this.Cantidad});
+            this.dataGridView1.Location = new System.Drawing.Point(46, 78);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(343, 370);
+            this.dataGridView1.TabIndex = 15;
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            // 
+            // Unidad
+            // 
+            this.Unidad.HeaderText = "Unidad";
+            this.Unidad.Name = "Unidad";
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
             // 
             // menuStrip1
             // 
@@ -72,7 +112,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(815, 24);
-            this.menuStrip1.TabIndex = 2;
+            this.menuStrip1.TabIndex = 17;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // pantallaPrincipalToolStripMenuItem
@@ -153,10 +193,12 @@
             // 
             // inventarioToolStripMenuItem
             // 
+            this.inventarioToolStripMenuItem.BackColor = System.Drawing.Color.Black;
             this.inventarioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.registrarEntradaToolStripMenuItem,
             this.registrarSalidaToolStripMenuItem,
             this.verInventarioToolStripMenuItem});
+            this.inventarioToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.inventarioToolStripMenuItem.Name = "inventarioToolStripMenuItem";
             this.inventarioToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
             this.inventarioToolStripMenuItem.Text = "Inventario";
@@ -177,32 +219,30 @@
             // 
             // verInventarioToolStripMenuItem
             // 
+            this.verInventarioToolStripMenuItem.ForeColor = System.Drawing.Color.Gray;
             this.verInventarioToolStripMenuItem.Name = "verInventarioToolStripMenuItem";
             this.verInventarioToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.verInventarioToolStripMenuItem.Text = "Ver Inventario";
-            this.verInventarioToolStripMenuItem.Click += new System.EventHandler(this.verInventarioToolStripMenuItem_Click);
             // 
             // configuraciónToolStripMenuItem
             // 
-            this.configuraciónToolStripMenuItem.BackColor = System.Drawing.Color.Black;
             this.configuraciónToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.informeToolStripMenuItem});
-            this.configuraciónToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.configuraciónToolStripMenuItem.Name = "configuraciónToolStripMenuItem";
             this.configuraciónToolStripMenuItem.Size = new System.Drawing.Size(95, 20);
             this.configuraciónToolStripMenuItem.Text = "Configuración";
             // 
             // informeToolStripMenuItem
             // 
-            this.informeToolStripMenuItem.ForeColor = System.Drawing.Color.Gray;
             this.informeToolStripMenuItem.Name = "informeToolStripMenuItem";
             this.informeToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.informeToolStripMenuItem.Text = "Informe";
+            this.informeToolStripMenuItem.Click += new System.EventHandler(this.informeToolStripMenuItem_Click);
             // 
             // abrirTrimestreToolStripMenuItem
             // 
             this.abrirTrimestreToolStripMenuItem.Name = "abrirTrimestreToolStripMenuItem";
-            this.abrirTrimestreToolStripMenuItem.Size = new System.Drawing.Size(97, 20);
+            this.abrirTrimestreToolStripMenuItem.Size = new System.Drawing.Size(98, 20);
             this.abrirTrimestreToolStripMenuItem.Text = "Abrir Trimestre";
             this.abrirTrimestreToolStripMenuItem.Click += new System.EventHandler(this.abrirTrimestreToolStripMenuItem_Click);
             // 
@@ -218,91 +258,27 @@
             this.labelInformaciónBásica.AutoSize = true;
             this.labelInformaciónBásica.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelInformaciónBásica.ForeColor = System.Drawing.Color.Yellow;
-            this.labelInformaciónBásica.Location = new System.Drawing.Point(30, 40);
+            this.labelInformaciónBásica.Location = new System.Drawing.Point(30, 44);
             this.labelInformaciónBásica.Name = "labelInformaciónBásica";
-            this.labelInformaciónBásica.Size = new System.Drawing.Size(300, 19);
-            this.labelInformaciónBásica.TabIndex = 17;
-            this.labelInformaciónBásica.Text = "Configurar Preferencias De Informe";
+            this.labelInformaciónBásica.Size = new System.Drawing.Size(306, 19);
+            this.labelInformaciónBásica.TabIndex = 18;
+            this.labelInformaciónBásica.Text = "Lista De Productos En El Inventario";
             // 
-            // ProductoLabel
-            // 
-            this.ProductoLabel.AutoSize = true;
-            this.ProductoLabel.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProductoLabel.ForeColor = System.Drawing.Color.White;
-            this.ProductoLabel.Location = new System.Drawing.Point(30, 93);
-            this.ProductoLabel.Name = "ProductoLabel";
-            this.ProductoLabel.Size = new System.Drawing.Size(61, 19);
-            this.ProductoLabel.TabIndex = 23;
-            this.ProductoLabel.Text = "BECAS:";
-            // 
-            // ProveedorLabel
-            // 
-            this.ProveedorLabel.AutoSize = true;
-            this.ProveedorLabel.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProveedorLabel.ForeColor = System.Drawing.Color.White;
-            this.ProveedorLabel.Location = new System.Drawing.Point(30, 135);
-            this.ProveedorLabel.Name = "ProveedorLabel";
-            this.ProveedorLabel.Size = new System.Drawing.Size(95, 19);
-            this.ProveedorLabel.TabIndex = 22;
-            this.ProveedorLabel.Text = "N. PARTIDA:";
-            // 
-            // RegistrarButton
-            // 
-            this.RegistrarButton.BackColor = System.Drawing.Color.Black;
-            this.RegistrarButton.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
-            this.RegistrarButton.ForeColor = System.Drawing.Color.Yellow;
-            this.RegistrarButton.Location = new System.Drawing.Point(268, 338);
-            this.RegistrarButton.Name = "RegistrarButton";
-            this.RegistrarButton.Size = new System.Drawing.Size(120, 30);
-            this.RegistrarButton.TabIndex = 3;
-            this.RegistrarButton.Text = "Guardar";
-            this.RegistrarButton.UseVisualStyleBackColor = false;
-            this.RegistrarButton.Click += new System.EventHandler(this.RegistrarButton_Click);
-            // 
-            // atrasButton
-            // 
-            this.atrasButton.BackColor = System.Drawing.Color.Black;
-            this.atrasButton.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
-            this.atrasButton.ForeColor = System.Drawing.Color.Yellow;
-            this.atrasButton.Location = new System.Drawing.Point(3, 472);
-            this.atrasButton.Name = "atrasButton";
-            this.atrasButton.Size = new System.Drawing.Size(120, 30);
-            this.atrasButton.TabIndex = 4;
-            this.atrasButton.Text = "Atrás";
-            this.atrasButton.UseVisualStyleBackColor = false;
-            this.atrasButton.Click += new System.EventHandler(this.atrasButton_Click);
-            // 
-            // txtboxnpartida
-            // 
-            this.txtboxnpartida.Location = new System.Drawing.Point(197, 136);
-            this.txtboxnpartida.Name = "txtboxnpartida";
-            this.txtboxnpartida.Size = new System.Drawing.Size(250, 20);
-            this.txtboxnpartida.TabIndex = 2;
-            // 
-            // txtboxbecas
-            // 
-            this.txtboxbecas.Location = new System.Drawing.Point(197, 94);
-            this.txtboxbecas.Name = "txtboxbecas";
-            this.txtboxbecas.Size = new System.Drawing.Size(250, 20);
-            this.txtboxbecas.TabIndex = 1;
-            // 
-            // ReportConfiguration
+            // ShowInventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(815, 508);
-            this.Controls.Add(this.ProductoLabel);
-            this.Controls.Add(this.ProveedorLabel);
-            this.Controls.Add(this.RegistrarButton);
-            this.Controls.Add(this.atrasButton);
-            this.Controls.Add(this.txtboxnpartida);
-            this.Controls.Add(this.txtboxbecas);
             this.Controls.Add(this.labelInformaciónBásica);
             this.Controls.Add(this.menuStrip1);
-            this.Name = "ReportConfiguration";
+            this.Controls.Add(this.buttonAtrás);
+            this.Controls.Add(this.dataGridView1);
+            this.Name = "ShowInventory";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Configuración del informe";
+            this.Text = "Ver Inventario";
+            this.Load += new System.EventHandler(this.ShowInventory_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -312,6 +288,11 @@
 
         #endregion
 
+        private System.Windows.Forms.Button buttonAtrás;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Unidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem pantallaPrincipalToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem facturasToolStripMenuItem;
@@ -330,13 +311,7 @@
         private System.Windows.Forms.ToolStripMenuItem configuraciónToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem informeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem abrirTrimestreToolStripMenuItem;
-        private System.Windows.Forms.Label labelInformaciónBásica;
-        private System.Windows.Forms.Label ProductoLabel;
-        private System.Windows.Forms.Label ProveedorLabel;
-        private System.Windows.Forms.Button RegistrarButton;
-        private System.Windows.Forms.Button atrasButton;
-        private System.Windows.Forms.TextBox txtboxnpartida;
-        private System.Windows.Forms.TextBox txtboxbecas;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
+        private System.Windows.Forms.Label labelInformaciónBásica;
     }
 }

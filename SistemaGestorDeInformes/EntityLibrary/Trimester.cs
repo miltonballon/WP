@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SistemaGestorDeInformes
 {
-    class Trimester
+    public class Trimester
     {
         private bool open;
         private String name;

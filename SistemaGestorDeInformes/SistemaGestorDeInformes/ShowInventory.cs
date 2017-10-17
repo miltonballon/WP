@@ -10,27 +10,33 @@ using System.Windows.Forms;
 
 namespace SistemaGestorDeInformes
 {
-    public partial class ReportConfiguration : Form
+    public partial class ShowInventory : Form
     {
-        private ConfigurationController configurationController;
-
-        public ReportConfiguration()
+        private ReceptionController receptionController;
+        public ShowInventory()
         {
             InitializeComponent();
-            configurationController = new ConfigurationController();
+            receptionController = new ReceptionController();
+        }
+
+        private void buttonAtrás_Click(object sender, EventArgs e)
+        {
+            InterfazPrincipal principal = new InterfazPrincipal();//para volver atras
+            this.Hide();
+            principal.Show();
         }
 
         private void pantallaPrincipalToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            InterfazPrincipal principal = new InterfazPrincipal();
-            principal.Show();
+            InterfazPrincipal principal = new InterfazPrincipal();//para volver atras
             this.Hide();
+            principal.Show();
         }
 
         private void registrarFacturaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            InterfazRegistrarFactura InterfazRegistrarFactura1 = new InterfazRegistrarFactura();
-            InterfazRegistrarFactura1.Show();
+            InterfazRegistrarFactura RegisterInvoiceForm = new InterfazRegistrarFactura();
+            RegisterInvoiceForm.Show();
             this.Hide();
         }
 
@@ -43,9 +49,9 @@ namespace SistemaGestorDeInformes
 
         private void registrarProductosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            RegisterProduct RegisterProduct1 = new RegisterProduct();
-            RegisterProduct1.Show();
+            RegisterProduct main = new RegisterProduct();
             this.Hide();
+            main.Show();
         }
 
         private void verProductosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -55,11 +61,11 @@ namespace SistemaGestorDeInformes
             this.Hide();
         }
 
-        private void atrasButton_Click(object sender, EventArgs e)
+        private void informeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            InterfazPrincipal principal = new InterfazPrincipal();//para volver atras
+            ReportConfiguration ReportConfiguration1 = new ReportConfiguration();
             this.Hide();
-            principal.Show();
+            ReportConfiguration1.Show();
         }
 
         private void abrirTrimestreToolStripMenuItem_Click(object sender, EventArgs e)
@@ -76,13 +82,6 @@ namespace SistemaGestorDeInformes
             log.Show();
         }
 
-        private void verInventarioToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ShowInventory ShowInventory1 = new ShowInventory();
-            this.Hide();
-            ShowInventory1.Show();
-        }
-
         private void registrarEntradaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             InputOfProvitions InputOfProvitions1 = new InputOfProvitions();
@@ -97,13 +96,24 @@ namespace SistemaGestorDeInformes
             Interfaz.Show();
         }
 
-        private void RegistrarButton_Click(object sender, EventArgs e)
+        private void ShowInventory_Load(object sender, EventArgs e)
         {
-            int nScho=Int32.Parse(txtboxbecas.Text), 
-                nPar=Int32.Parse(txtboxnpartida.Text);
-            Configuration conf = new Configuration(nScho,nPar);
-            configurationController.insertConfiguration(conf);
-            MessageBox.Show("Se guardo la configuración correctamente");
+            chargeData();
+        }
+
+        private void chargeData()
+        {
+            List<Reception> receptions = receptionController.getAllReceptions();
+            foreach (Reception reception in receptions)
+            {
+                Product product = reception.Product;
+                String productsName = product.Name,
+                       unit = product.Unit,
+                       total = reception.Unit+"";
+
+                String[] row = new String[] { productsName,unit,total};
+                dataGridView1.Rows.Add(row);
+            }
         }
     }
 }

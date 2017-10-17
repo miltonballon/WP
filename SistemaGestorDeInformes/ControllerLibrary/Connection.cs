@@ -10,7 +10,7 @@ using System.IO;
 using System.Data.SQLite;
 namespace SistemaGestorDeInformes
 {
-    class Connection
+    public class Connection
     {
 
         SQLiteConnection connectionString;
@@ -28,7 +28,6 @@ namespace SistemaGestorDeInformes
             {
                 connectionString = new SQLiteConnection("Data Source = Database/Database.db");
                 connectionString.Open();
-                // MessageBox.Show("Conectado SQLITE");
             }
             catch (Exception ex)
             {
@@ -56,7 +55,6 @@ namespace SistemaGestorDeInformes
        
             command = new SQLiteCommand(query, connectionString);
             data= command.ExecuteReader();
-         
             return data;
             
         }

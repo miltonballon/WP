@@ -103,8 +103,11 @@ namespace SistemaGestorDeInformes
         private void saveNewTrimester(Trimester trimester)
         {
             Trimester last=trimesterController.getLastTrimester();
-            last.setOpen(false);
-            trimesterController.updateTrimester(last);
+            if (last != null)
+            {
+                last.setOpen(false);
+                trimesterController.updateTrimester(last);
+            }
             trimesterController.insertTrimester(trimester);
         }
 
@@ -128,7 +131,7 @@ namespace SistemaGestorDeInformes
             }
             else
             {
-                lbTrim.Text = "-";
+                lbTrim.Text = "No se encontraron Trimestres, cree uno";
             }
         }
 
@@ -147,6 +150,34 @@ namespace SistemaGestorDeInformes
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Login log = new Login();
+            this.Hide();
+            log.Show();
+        }
+
+        private void verInventarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowInventory ShowInventory1 = new ShowInventory();
+            this.Hide();
+            ShowInventory1.Show();
+        }
+
+        private void registrarEntradaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InputOfProvitions InputOfProvitions1 = new InputOfProvitions();
+            this.Hide();
+            InputOfProvitions1.Show();
+        }
+
+        private void registrarSalidaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OutputOfProvitions Interfaz = new OutputOfProvitions();
+            this.Hide();
+            Interfaz.Show();
         }
     }
 }

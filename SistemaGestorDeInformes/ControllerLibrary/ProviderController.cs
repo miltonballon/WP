@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SistemaGestorDeInformes
 {
-    class ProviderController
+    public class ProviderController
     {
         public Connection c = new Connection();
         public ProviderController()
@@ -19,7 +19,12 @@ namespace SistemaGestorDeInformes
         {
             String query = "SELECT * FROM Provider WHERE id="+id;
             SQLiteDataReader data=c.query_show(query);
-            Provider provider = new Provider(data[1].ToString(),Int32.Parse(data[2].ToString()));
+            Provider provider=null;
+            while (data.Read())
+            {
+                provider = new Provider(data[1].ToString(), Int32.Parse(data[2].ToString()));
+            }
+            c.dataClose();
             return provider;
         }
 
@@ -53,6 +58,7 @@ namespace SistemaGestorDeInformes
             }
             catch(Exception)
             {            }
+            c.dataClose();
             return output;
         }
 

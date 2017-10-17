@@ -18,6 +18,7 @@ namespace SistemaGestorDeInformes
         private Invoice invoice;
         private Provider provider;
         private List<Provider> providers;
+        private bool modifying;
 
         public InterfazRegistrarFactura()
         {
@@ -29,6 +30,32 @@ namespace SistemaGestorDeInformes
             providerController = new ProviderController();
             productController = new ProductController();
             loadProviders();
+            modifying = false;
+        }
+
+        public InterfazRegistrarFactura(Invoice invoice)
+        {
+            InitializeComponent();
+            this.invoice = invoice;
+            this.provider = invoice.getProvider();
+            this.textBoxNit.KeyPress += new KeyPressEventHandler(textBoxNit_TextChanged);//Para impedir que se pongan letras y espacios en el NIT
+            this.textBoxNFactura.KeyPress += new KeyPressEventHandler(textBoxNFactura_TextChanged);//Para impedir que se pongan letras y espacios en el N.FACTURA
+            this.textBoxNAutorizacion.KeyPress += new KeyPressEventHandler(textBoxNAutorizacion_TextChanged);//Para impedir que se pongan letras y espacios en el N.AUTORIZACION 
+            invoiceController = new InvoiceController();
+            providerController = new ProviderController();
+            productController = new ProductController();
+            loadProviders();
+            modifying = true;
+            fillTextBoxes();
+        }
+
+        private void fillTextBoxes()
+        {
+            textBoxProveedor.Text = invoice.getProvider().getName();
+            textBoxNit.Text = invoice.getProvider().getNit()+"";
+            textBoxNFactura.Text = invoice.getNInvoice() + "";
+            textBoxNAutorizacion.Text = invoice.getNAutorization() + "";
+            dateFecha.Value = invoice.getDate();
         }
 
         private void loadProviders()
@@ -169,12 +196,55 @@ namespace SistemaGestorDeInformes
 
         private void buttonAtrás_Click_1(object sender, EventArgs e)
         {
-            InterfazPrincipal principal = new InterfazPrincipal();//para volver atras
-            this.Hide();
-            principal.Show();
+            if (modifying)
+            {
+                ShowBills sb = new ShowBills();
+                this.Hide();
+                sb.Show();
+            }
+            else
+            {
+                InterfazPrincipal principal = new InterfazPrincipal();//para volver atras
+                this.Hide();
+                principal.Show();
+            }
         }
 
         private void buttonGuardar_Click(object sender, EventArgs e)
+        {
+            if (modifying)
+            {
+                modifyInvoice();
+            }
+            else
+            {
+                saveNewInvoice();
+            }
+        }
+
+        private void modifyInvoice()
+        {
+            int nInvoice = Int32.Parse(textBoxNFactura.Text),
+                nAutorization = Int32.Parse(textBoxNAutorizacion.Text),
+                id=invoiceController.getInvoiceIdByObjectInvoice(invoice);
+            DateTime date = dateFecha.Value;
+            invoice.setNInvoice(nInvoice);
+            invoice.setNAutorization(nAutorization);
+            invoice.setProvider(provider);
+            invoice.setDate(date);
+            invoiceController.updateInvoice(invoice,id);
+            MessageBox.Show("Se logro actualizar los datos de la Factura");
+            changeToShowBills();
+        }
+
+        private void changeToShowBills()
+        {
+            ShowBills sb = new ShowBills();
+            this.Hide();
+            sb.Show();
+        }
+
+        private void saveNewInvoice()
         {
             if (provider == null)
             {
@@ -184,7 +254,6 @@ namespace SistemaGestorDeInformes
             invoice = createInvoice();
             createAndAddProducts();
             invoiceController.addInvoice(invoice);
-            MessageBox.Show(invoice.ToString());
         }
 
         private void newProvider()
@@ -197,9 +266,7 @@ namespace SistemaGestorDeInformes
         private Invoice createInvoice()
         {
             int nInvoice = Int32.Parse(textBoxNFactura.Text),
-                nAutorization = Int32.Parse(textBoxNAutorizacion.Text),
-                nit = Int32.Parse(textBoxNit.Text);
-            String proveedor = textBoxProveedor.Text;
+                nAutorization = Int32.Parse(textBoxNAutorizacion.Text);
             DateTime date = dateFecha.Value;
             invoice = new Invoice(provider, nInvoice, nAutorization, date);
             return invoice;
@@ -237,6 +304,11 @@ namespace SistemaGestorDeInformes
 
         private void textBoxProveedor_Leave(object sender, EventArgs e)
         {
+            setProvider();
+        }
+
+        private void setProvider()
+        {
             Provider provider = getProviderByName(textBoxProveedor.Text);
             if (provider != null)
             {
@@ -246,7 +318,7 @@ namespace SistemaGestorDeInformes
             else
             {
                 this.provider = null;
-                textBoxNit.Text ="";
+                textBoxNit.Text = "";
             }
         }
 
@@ -283,6 +355,41 @@ namespace SistemaGestorDeInformes
             OpenQuarter OpenQuarter1 = new OpenQuarter();
             this.Hide();
             OpenQuarter1.Show();
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Login log = new Login();
+            this.Hide();
+            log.Show();
+        }
+
+        private void verFacturasToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            ShowBills ShowBills1 = new ShowBills();
+            this.Hide();
+            ShowBills1.Show();
+        }
+
+        private void verInventarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowInventory ShowInventory1 = new ShowInventory();
+            this.Hide();
+            ShowInventory1.Show();
+        }
+
+        private void registrarEntradaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InputOfProvitions InputOfProvitions1 = new InputOfProvitions();
+            this.Hide();
+            InputOfProvitions1.Show();
+        }
+
+        private void registrarSalidaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OutputOfProvitions Interfaz = new OutputOfProvitions();
+            this.Hide();
+            Interfaz.Show();
         }
     }
 }

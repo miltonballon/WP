@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SistemaGestorDeInformes
 {
-    class Invoice
+    public class Invoice
     {
         private int nInvoice;
         private int nAutorization;

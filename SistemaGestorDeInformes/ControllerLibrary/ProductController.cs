@@ -4,13 +4,15 @@ using System.Windows.Forms;
 using System.Data.SQLite;
 namespace SistemaGestorDeInformes
 {
-    class ProductController
+    public class ProductController
     {
         public Connection c = new Connection();
+        private ProviderController providerController;
         
         public ProductController()
         {
             c.connect();
+            providerController = new ProviderController();
         }
 
         public int insertProduct(TextBox product, TextBox provider, TextBox unit)
@@ -111,16 +113,39 @@ namespace SistemaGestorDeInformes
             return products;
         }
 
-        public Product showProductByPPUId(int ppuId)
+        public Product getProductByPPUId(int ppuId)
         {
-            string query = "select name, Provider, Type FROM Product AS PROD, Provider AS PRO, Unit AS Un, Product_Provider_Unit AS PPU WHERE PPU.id="+ppuId+" AND PROD.id = PPU.Id_prod AND PRO.id= PPU.id_prov AND Un.id= PPU.id_uni";
-            SQLiteDataReader data = c.query_show(query);
+            int[] ids = getForeignIds(ppuId);
+            Product product = getProductByIds(ids);
+            return product;
+        }
+
+        private Product getProductByIds(int[] ids)
+        {
             Product product=null;
+            int idProd=ids[0], 
+                idProv= ids[1], 
+                idUni= ids[2];
+            Provider provider = providerController.getProviderById(idProv);
+            String productsName = getProductsNameById(idProd),
+                   unitsName = getUnitsNameById(idUni),
+                   providersName = provider.getName();
+            product = new Product(productsName,providersName,unitsName);
+            return product;
+        }
+
+        private int[] getForeignIds(int ppuId)
+        {
+            int[] ids = new int[3];
+            string query = "SELECT * FROM Product_Provider_Unit WHERE id="+ppuId;
+            SQLiteDataReader data = c.query_show(query);
             while (data.Read())
             {
-                product = new Product(data[0].ToString(), data[1].ToString(), data[2].ToString());
+                ids[0] = Int32.Parse(data[1].ToString());
+                ids[1] = Int32.Parse(data[2].ToString());
+                ids[2] = Int32.Parse(data[3].ToString());
             }
-            return product;
+            return ids;
         }
 
         public void searchProduct(DataGridView d,string name)
@@ -138,7 +163,30 @@ namespace SistemaGestorDeInformes
             data.Close();
         }
 
-       
+        public String getProductsNameById(int id)
+        {
+            String prodsName = "";
+            String query = "SELECT * FROM Product WHERE id="+id;
+            SQLiteDataReader data = c.query_show(query);
+            while (data.Read())
+            {
+                prodsName = data[1].ToString();
+            }
+            return prodsName;
+        }
+
+        public String getUnitsNameById(int id)
+        {
+            String unitsName = "";
+            String query = "SELECT * FROM Unit WHERE id=" + id;
+            SQLiteDataReader data = c.query_show(query);
+            while (data.Read())
+            {
+                unitsName = data[1].ToString();
+            }
+            return unitsName;
+        }
+
         public int getIdName(string name)
         {
             string NameQuery = "select id FROM Product where name = " + "'" + name + "'";

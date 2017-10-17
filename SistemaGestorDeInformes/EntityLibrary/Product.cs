@@ -6,18 +6,12 @@ using System.Threading.Tasks;
 
 namespace SistemaGestorDeInformes
 {
-    class Product
+    public class Product
     {
         private string name;
         private string unit;
         private string provider;
-
-        /* public void setNombre(string n) { nombre = n; }
-         public void setUnidad(string u) { unidad = u; }
-         public void setProveedor(string p) { proveedor = p; }
-         public string getNombre() { return nombre;}
-         public string getUnidad() { return unidad; }
-         public string getProveedor() { return proveedor; }*/
+        
         public string Name
         {
             get { return name; }
@@ -36,7 +30,7 @@ namespace SistemaGestorDeInformes
 
         public override String ToString()
         {
-            return "Nombre: "+name+" Unidad: "+unit+" Proveedor: "+provider;
+            return "Nombre: "+name+" Unidad: "+unit;
         }
         public Product()
         {

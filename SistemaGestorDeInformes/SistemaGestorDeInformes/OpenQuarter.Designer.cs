@@ -46,6 +46,7 @@
             this.configuraciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.abrirTrimestreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.RegistrarButton = new System.Windows.Forms.Button();
             this.atrasButton = new System.Windows.Forms.Button();
             this.labelInformaciónBásica = new System.Windows.Forms.Label();
@@ -65,7 +66,8 @@
             this.informeToolStripMenuItem1,
             this.inventarioToolStripMenuItem,
             this.configuraciónToolStripMenuItem,
-            this.abrirTrimestreToolStripMenuItem});
+            this.abrirTrimestreToolStripMenuItem,
+            this.salirToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(815, 24);
@@ -163,18 +165,21 @@
             this.registrarEntradaToolStripMenuItem.Name = "registrarEntradaToolStripMenuItem";
             this.registrarEntradaToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.registrarEntradaToolStripMenuItem.Text = "Registrar Entrada";
+            this.registrarEntradaToolStripMenuItem.Click += new System.EventHandler(this.registrarEntradaToolStripMenuItem_Click);
             // 
             // registrarSalidaToolStripMenuItem
             // 
             this.registrarSalidaToolStripMenuItem.Name = "registrarSalidaToolStripMenuItem";
             this.registrarSalidaToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.registrarSalidaToolStripMenuItem.Text = "Registrar Salida";
+            this.registrarSalidaToolStripMenuItem.Click += new System.EventHandler(this.registrarSalidaToolStripMenuItem_Click);
             // 
             // verInventarioToolStripMenuItem
             // 
             this.verInventarioToolStripMenuItem.Name = "verInventarioToolStripMenuItem";
             this.verInventarioToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.verInventarioToolStripMenuItem.Text = "Ver Inventario";
+            this.verInventarioToolStripMenuItem.Click += new System.EventHandler(this.verInventarioToolStripMenuItem_Click);
             // 
             // configuraciónToolStripMenuItem
             // 
@@ -196,8 +201,15 @@
             this.abrirTrimestreToolStripMenuItem.BackColor = System.Drawing.Color.Black;
             this.abrirTrimestreToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.abrirTrimestreToolStripMenuItem.Name = "abrirTrimestreToolStripMenuItem";
-            this.abrirTrimestreToolStripMenuItem.Size = new System.Drawing.Size(98, 20);
+            this.abrirTrimestreToolStripMenuItem.Size = new System.Drawing.Size(97, 20);
             this.abrirTrimestreToolStripMenuItem.Text = "Abrir Trimestre";
+            // 
+            // salirToolStripMenuItem
+            // 
+            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(88, 20);
+            this.salirToolStripMenuItem.Text = "Cerrar Sesión";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
             // RegistrarButton
             // 
@@ -207,7 +219,7 @@
             this.RegistrarButton.Location = new System.Drawing.Point(295, 175);
             this.RegistrarButton.Name = "RegistrarButton";
             this.RegistrarButton.Size = new System.Drawing.Size(153, 66);
-            this.RegistrarButton.TabIndex = 28;
+            this.RegistrarButton.TabIndex = 0;
             this.RegistrarButton.Text = "Nuevo Trimestre";
             this.RegistrarButton.UseVisualStyleBackColor = false;
             this.RegistrarButton.Click += new System.EventHandler(this.RegistrarButton_Click);
@@ -252,7 +264,7 @@
             this.txbxNombre.Location = new System.Drawing.Point(369, 137);
             this.txbxNombre.Name = "txbxNombre";
             this.txbxNombre.Size = new System.Drawing.Size(100, 20);
-            this.txbxNombre.TabIndex = 30;
+            this.txbxNombre.TabIndex = 1;
             // 
             // lbNombre
             // 
@@ -316,5 +328,6 @@
         private System.Windows.Forms.Label lbTrim;
         private System.Windows.Forms.TextBox txbxNombre;
         private System.Windows.Forms.Label lbNombre;
+        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
     }
 }

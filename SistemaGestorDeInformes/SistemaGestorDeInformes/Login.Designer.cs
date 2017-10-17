@@ -57,7 +57,7 @@
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.PasswordChar = '*';
             this.txtContraseña.Size = new System.Drawing.Size(250, 24);
-            this.txtContraseña.TabIndex = 19;
+            this.txtContraseña.TabIndex = 2;
             // 
             // txtUsuario
             // 
@@ -65,7 +65,8 @@
             this.txtUsuario.Location = new System.Drawing.Point(411, 214);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(250, 24);
-            this.txtUsuario.TabIndex = 18;
+            this.txtUsuario.TabIndex = 1;
+            this.txtUsuario.TextChanged += new System.EventHandler(this.txtUsuario_TextChanged);
             // 
             // label1
             // 
@@ -87,7 +88,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(411, 316);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(120, 30);
-            this.btnCancelar.TabIndex = 15;
+            this.btnCancelar.TabIndex = 4;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -100,7 +101,7 @@
             this.btnEntrar.Location = new System.Drawing.Point(277, 316);
             this.btnEntrar.Name = "btnEntrar";
             this.btnEntrar.Size = new System.Drawing.Size(120, 30);
-            this.btnEntrar.TabIndex = 14;
+            this.btnEntrar.TabIndex = 3;
             this.btnEntrar.Text = "Entrar";
             this.btnEntrar.UseVisualStyleBackColor = false;
             this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
@@ -125,7 +126,7 @@
             this.linkLabel1.Location = new System.Drawing.Point(274, 367);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(184, 19);
-            this.linkLabel1.TabIndex = 21;
+            this.linkLabel1.TabIndex = 5;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Olvide mi contreseña";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
