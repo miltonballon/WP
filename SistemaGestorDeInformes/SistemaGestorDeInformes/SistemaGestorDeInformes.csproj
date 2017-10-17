@@ -113,6 +113,7 @@
       <DependentUpon>OutputOfProvitions.cs</DependentUpon>
     </Compile>
     <Compile Include="OutputReception.cs" />
+    <Compile Include="OutputReceptionController.cs" />
     <Compile Include="ProductController.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="Program.cs" />

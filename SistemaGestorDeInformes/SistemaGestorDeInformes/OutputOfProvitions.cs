@@ -12,8 +12,10 @@ namespace SistemaGestorDeInformes
 {
     public partial class OutputOfProvitions : Form
     {
+        OutputReceptionController rc;
         public OutputOfProvitions()
         {
+            rc =new OutputReceptionController();
             InitializeComponent();
         }
 
@@ -97,6 +99,17 @@ namespace SistemaGestorDeInformes
             Login Interfaz = new Login();
             this.Hide();
             Interfaz.Show();
+        }
+
+        private void OutputOfProvitions_Load(object sender, EventArgs e)
+        {
+            rc.ProductAutoComplete(ProductTextBox);
+            rc.UnitAutoComplete(UnitTextBox);
+        }
+
+        private void RegisterButton_Click(object sender, EventArgs e)
+        {
+            rc.RegisterOutputReception(ProductTextBox, UnitTextBox, OutputDateTextBox,TotalTextBox);
         }
     }
 }
