@@ -84,7 +84,7 @@ namespace SistemaGestorDeInformes
             if (idName != notExist && idUnit != notExist && resul != notExist && resulReception != notExist)
             {
                 InsertOutputReception(resul, OutputDate, Total);
-                MessageBox.Show("Registrado Correctamente");
+                MessageBox.Show("Salida registrada correctamente");
             }
             else
             {
