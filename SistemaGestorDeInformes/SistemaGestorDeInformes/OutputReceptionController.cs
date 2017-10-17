@@ -88,7 +88,7 @@ namespace SistemaGestorDeInformes
             }
             else
             {
-                MessageBox.Show("El producto no existe, registre el producto previamente");
+                MessageBox.Show("No existe recepcion de dicho producto en el inventario o el producto se acabo, por favor verifique");
             }
         }
 
