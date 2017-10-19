@@ -24,5 +24,20 @@ namespace SistemaGestorDeInformes
         {
 
         }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            if (userController.CreateUser(txtName.Text, txtEmail.Text, txtPassword.Text))
+            {
+                MessageBox.Show("Usuario creado");
+            }
+            else
+            {
+                MessageBox.Show("Ocurrio un error");
+            }
+
+
+
+        }
     }
 }
