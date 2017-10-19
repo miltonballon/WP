@@ -9,7 +9,7 @@ namespace SistemaGestorDeInformes
 {
     public class TrimesterController
     {
-        public Connection c = new Connection();
+        private Connection c = new Connection();
 
         public TrimesterController()
         {
@@ -32,8 +32,10 @@ namespace SistemaGestorDeInformes
             SQLiteDataReader data = c.query_show(query);
             if (data.Read())
             {
-                trimester = new Trimester(Convert.ToString(data[2]));
-                int bit = Convert.ToInt32(data[1]);
+                String name = data[2].ToString();
+                int bit = Int32.Parse(data[1].ToString()), 
+                    id = Int32.Parse(data[0].ToString());
+                trimester = new Trimester(id,name);
                 trimester.setOpen(bit==1);
             }
             c.dataClose();
@@ -44,8 +46,8 @@ namespace SistemaGestorDeInformes
         {
             String query = "UPDATE trimester SET open=";
             int bit = trimester.isOpen() ? 1 : 0;
-            String name = trimester.getName();
-            query += bit + " WHERE name='" + name + "'";
+            int id = trimester.getId();
+            query += bit + " WHERE id='" + id + "'";
             c.executeInsertion(query);
         }
 

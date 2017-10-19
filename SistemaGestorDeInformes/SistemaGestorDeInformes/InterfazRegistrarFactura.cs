@@ -253,7 +253,7 @@ namespace SistemaGestorDeInformes
             }
             invoice = createInvoice();
             createAndAddProducts();
-            invoiceController.addInvoice(invoice);
+            invoiceController.insertInvoice(invoice);
         }
 
         private void newProvider()
