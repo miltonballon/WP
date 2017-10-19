@@ -84,7 +84,7 @@ namespace SistemaGestorDeInformes
 
         public void InsertReception(int id, DateTimePicker expiration, DateTimePicker reception, TextBox total)
         {
-            string query = "INSERT INTO Reception (ppu_id,receptionDate,expirationDate,total) values('" + id + "','" + expiration.Text + "','" + reception.Text + "','" + Int32.Parse(total.Text) + "')";
+            string query = "INSERT INTO Reception (ppu_id,receptionDate,expirationDate,total) values('" + id + "','" + expiration.Value.ToString("dd/MM/yyyy") + "','" + reception.Value.ToString("dd/MM/yyyy") + "','" + Int32.Parse(total.Text) + "')";
             c.executeInsertion(query);
         }
         public int getIdName(string name)

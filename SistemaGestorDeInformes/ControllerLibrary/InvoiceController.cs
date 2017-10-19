@@ -31,7 +31,7 @@ namespace SistemaGestorDeInformes
             query += nAutorization + ", ";
             query += idProvider + ", ";
             query += invoice.getProvider().getNit() + ", '";
-            query += date.ToShortDateString()+"')";
+            query += date.ToString("dd/MM/yyyy") +"')";
            
             try
             {
