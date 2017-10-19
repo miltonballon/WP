@@ -74,5 +74,26 @@ namespace SistemaGestorDeInformes
                 return false;
             }
         }
+
+        public bool HasUser()
+        {
+            String query = "SELECT * FROM User";
+        
+                SQLiteDataReader data = c.query_show(query);
+                if (data.Read())
+                {
+                    //si hay datos devolver true
+                    data.Close();
+                    c.dataClose();
+                    return true;
+                }
+                else
+                {
+                    data.Close();
+                    c.dataClose();
+                    return false;
+                }
+
+        }
     }
 }
