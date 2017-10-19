@@ -8,12 +8,19 @@ namespace SistemaGestorDeInformes
 {
     public class Trimester
     {
+        private int id;
         private bool open;
         private String name;
 
         public Trimester(string name)
         {
             this.name = name;
+        }
+
+        public Trimester(int id, string name)
+        {
+            this.name = name;
+            this.id = id;
         }
 
         public bool isOpen()
@@ -34,6 +41,16 @@ namespace SistemaGestorDeInformes
         public void setName(String name)
         {
             this.name = name;
+        }
+
+        public int getId()
+        {
+            return id;
+        }
+
+        public void setId(int id)
+        {
+            this.id = id;
         }
     }
 }

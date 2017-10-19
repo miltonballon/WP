@@ -12,30 +12,33 @@ namespace SistemaGestorDeInformes
     {
         private ProviderController providerController;
         private ProductController productController;
-        public Connection c = new Connection();
+        private Connection c = new Connection();
+        private TrimesterController trimesterController;
         public InvoiceController()
         {
             c.connect();
             providerController = new ProviderController();
             productController = new ProductController();
+            trimesterController = new TrimesterController();
         }
 
-        public void addInvoice(Invoice invoice)
+        public void insertInvoice(Invoice invoice)
         {
+            Trimester trimester = trimesterController.getLastTrimester();
             int nInvoice = invoice.getNInvoice(),
                 nAutorization = invoice.getNAutorization(),
-                idProvider = searchProvider(invoice.getProvider());
+                idProvider = searchProvider(invoice.getProvider()),
+                idTrimester=trimester.getId();
             DateTime date = invoice.getDate();
-            String query = "INSERT INTO Invoice(n_invoice, n_autorization, id_provider, nit, date) VALUES (";
+            String query = "INSERT INTO Invoice(n_invoice, n_autorization, id_provider, nit, date, id_trimester) VALUES (";
             query += nInvoice+", ";
             query += nAutorization + ", ";
             query += idProvider + ", ";
             query += invoice.getProvider().getNit() + ", '";
-            query += date.ToString("dd/MM/yyyy") +"')";
-           
+            query += date.ToString("dd/MM/yyyy") +"',";
+            query += idTrimester + ")";
             try
             {
-                
                 c.executeInsertion(query);
                 int id=c.FindAndGetID("select id FROM Invoice where n_invoice = " + nInvoice+" AND id_provider="+idProvider);
                 MessageBox.Show("Informacion Basica de la factura agregado satisfactoriamente","INFORME");
@@ -108,7 +111,7 @@ namespace SistemaGestorDeInformes
             c.executeInsertion(queryInsertion);
         }
 
-        private int insertProduct(Product product)
+        private int insertProduct(Product product)//revisar mas adelante
         {
             string nameQuery = "select id FROM Product where Name = " + "'" + product.Name.ToString() + "'";
             string providerQuery = "select id FROM Provider where Provider = " + "'" + product.Provider.ToString() + "'";
@@ -119,14 +122,14 @@ namespace SistemaGestorDeInformes
             return searchPPU(idProd, idProv, idUni);
         }
 
-        private int searchPPU(int idProd, int idProv, int idUni)
+        private int searchPPU(int idProd, int idProv, int idUni)//igual
         {
             String query = "SELECT id FROM Product_Provider_Unit WHERE "
                 + "id_prod="+idProd+" and id_prov="+idProv+" and id_uni="+idUni+"";
             return c.FindAndGetID(query);
         }
 
-        private void searchProduct(Product product)
+        private void searchProduct(Product product)//quitar
         {
             TextBox name = new TextBox();
             name.Text = product.Name;
@@ -158,6 +161,7 @@ namespace SistemaGestorDeInformes
                 invoice.setInvoiceRows(invoiceRows);
             }
             c.dataClose();
+            data.Close();
             return invoice;
         }
 
@@ -179,6 +183,7 @@ namespace SistemaGestorDeInformes
                 invoice.setInvoiceRows(invoiceRows);
                 output.Add(invoice);
             }
+            data.Close();
             c.dataClose();
             return output;
         }
@@ -200,6 +205,7 @@ namespace SistemaGestorDeInformes
                     InvoiceRow invoiceRow = new InvoiceRow(product, quantity, unitPrice, total);
                     output.Add(invoiceRow);
                 }
+                data.Close();
             }
             catch (Exception)
             { }
