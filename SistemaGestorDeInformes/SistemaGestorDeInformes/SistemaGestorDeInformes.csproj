@@ -191,6 +191,9 @@
     <EmbeddedResource Include="InputOfProvitions.resx">
       <DependentUpon>InputOfProvitions.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RegisterUser.resx">
+      <DependentUpon>RegisterUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReportConfiguration.resx">
       <DependentUpon>ReportConfiguration.cs</DependentUpon>
     </EmbeddedResource>
