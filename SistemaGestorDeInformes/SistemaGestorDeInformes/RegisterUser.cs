@@ -27,7 +27,8 @@ namespace SistemaGestorDeInformes
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (userController.CreateUser(txtName.Text, txtEmail.Text, txtPassword.Text))
+            User user = new User(txtName.Text, txtEmail.Text, txtPassword.Text);
+            if (userController.CreateUser(user))
             {
                 MessageBox.Show("Usuario creado");
             }

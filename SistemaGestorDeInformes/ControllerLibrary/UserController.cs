@@ -59,12 +59,12 @@ namespace SistemaGestorDeInformes
             }
             return user;
         }
-        public bool CreateUser(String Username, String Email, String Password)
+        public bool CreateUser(User user)
         {
           
             try
             {
-                String Query = "Insert into [User] (name, password, email) values ('"+Username+"', '"+Password+"', '"+Email+"' )";
+                String Query = "Insert into [User] (name, password, email) values ('"+user.Name+"', '"+user.Password+"', '"+user.Email+"' )";
                 c.executeInsertion(Query);
               return  true;
             
