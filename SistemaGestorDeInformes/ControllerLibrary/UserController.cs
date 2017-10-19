@@ -59,6 +59,20 @@ namespace SistemaGestorDeInformes
             }
             return user;
         }
-
+        public bool CreateUser(String Username, String Email, String Password)
+        {
+          
+            try
+            {
+                String Query = "Insert into [User] (name, password, email) values ('"+Username+"', '"+Password+"', '"+Email+"' )";
+                c.executeInsertion(Query);
+              return  true;
+            
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
     }
 }
