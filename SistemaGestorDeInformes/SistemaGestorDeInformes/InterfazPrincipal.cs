@@ -101,5 +101,10 @@ namespace SistemaGestorDeInformes
         {
             Application.Exit();
         }
+
+        private void InterfazPrincipal_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

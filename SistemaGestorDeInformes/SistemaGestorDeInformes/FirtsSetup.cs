@@ -21,18 +21,19 @@ namespace SistemaGestorDeInformes
 
         private void FirtsSetup_Load(object sender, EventArgs e)
         {
-            if(userController.HasUser())
+            if (userController.HasUser())
             {
                 this.Close();
             }
-            else
-            {
-                RegisterUser register = new RegisterUser();
-                this.Hide();
-                register.ShowDialog();
-                this.Close();
-               
-            }
+          
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            RegisterUser register = new RegisterUser();
+            this.Hide();
+            register.ShowDialog();
+            this.Close();
         }
     }
 }
