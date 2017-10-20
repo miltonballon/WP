@@ -39,7 +39,7 @@
             this.button1.BackColor = System.Drawing.Color.Black;
             this.button1.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
             this.button1.ForeColor = System.Drawing.Color.Yellow;
-            this.button1.Location = new System.Drawing.Point(305, 238);
+            this.button1.Location = new System.Drawing.Point(305, 286);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(120, 30);
             this.button1.TabIndex = 0;
@@ -53,7 +53,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(79, 38);
+            this.label2.Location = new System.Drawing.Point(78, 45);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(587, 160);
             this.label2.TabIndex = 5;
@@ -65,7 +65,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(751, 291);
+            this.ClientSize = new System.Drawing.Size(751, 339);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button1);
             this.Name = "FirtsSetup";
