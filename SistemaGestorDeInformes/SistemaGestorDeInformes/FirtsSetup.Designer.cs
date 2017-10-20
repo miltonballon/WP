@@ -37,6 +37,7 @@
             this.ClientSize = new System.Drawing.Size(390, 291);
             this.Name = "FirtsSetup";
             this.Text = "FirtsSetup";
+            this.Load += new System.EventHandler(this.FirtsSetup_Load);
             this.ResumeLayout(false);
 
         }

@@ -31,6 +31,7 @@ namespace SistemaGestorDeInformes
             if (userController.CreateUser(user))
             {
                 MessageBox.Show("Usuario creado");
+                this.Close();
             }
             else
             {
