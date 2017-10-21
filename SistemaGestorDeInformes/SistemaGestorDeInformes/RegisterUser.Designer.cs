@@ -35,12 +35,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.labelCerrar = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtEmail
             // 
             this.txtEmail.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtEmail.Location = new System.Drawing.Point(288, 148);
+            this.txtEmail.Location = new System.Drawing.Point(266, 150);
             this.txtEmail.MaxLength = 50;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(193, 20);
@@ -50,7 +51,7 @@
             // txtPassword
             // 
             this.txtPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtPassword.Location = new System.Drawing.Point(288, 98);
+            this.txtPassword.Location = new System.Drawing.Point(266, 100);
             this.txtPassword.MaxLength = 40;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(193, 20);
@@ -59,7 +60,7 @@
             // txtName
             // 
             this.txtName.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtName.Location = new System.Drawing.Point(288, 43);
+            this.txtName.Location = new System.Drawing.Point(266, 45);
             this.txtName.MaxLength = 20;
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(193, 20);
@@ -71,7 +72,7 @@
             this.btnGuardar.BackColor = System.Drawing.Color.Black;
             this.btnGuardar.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
             this.btnGuardar.ForeColor = System.Drawing.Color.Yellow;
-            this.btnGuardar.Location = new System.Drawing.Point(436, 205);
+            this.btnGuardar.Location = new System.Drawing.Point(406, 192);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(120, 30);
             this.btnGuardar.TabIndex = 3;
@@ -84,7 +85,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(133, 50);
+            this.label1.Location = new System.Drawing.Point(111, 52);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(88, 13);
             this.label1.TabIndex = 4;
@@ -95,7 +96,7 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(133, 98);
+            this.label2.Location = new System.Drawing.Point(111, 100);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(104, 13);
             this.label2.TabIndex = 4;
@@ -106,11 +107,23 @@
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Location = new System.Drawing.Point(133, 155);
+            this.label3.Location = new System.Drawing.Point(111, 157);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(75, 13);
             this.label3.TabIndex = 4;
             this.label3.Text = "Ingresar email:";
+            // 
+            // labelCerrar
+            // 
+            this.labelCerrar.AutoSize = true;
+            this.labelCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCerrar.ForeColor = System.Drawing.Color.Yellow;
+            this.labelCerrar.Location = new System.Drawing.Point(558, 9);
+            this.labelCerrar.Name = "labelCerrar";
+            this.labelCerrar.Size = new System.Drawing.Size(21, 20);
+            this.labelCerrar.TabIndex = 5;
+            this.labelCerrar.Text = "X";
+            this.labelCerrar.Click += new System.EventHandler(this.labelCerrar_Click);
             // 
             // RegisterUser
             // 
@@ -118,6 +131,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(590, 261);
+            this.Controls.Add(this.labelCerrar);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -125,6 +139,7 @@
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtEmail);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "RegisterUser";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro de Usuario";
@@ -142,5 +157,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label labelCerrar;
     }
 }

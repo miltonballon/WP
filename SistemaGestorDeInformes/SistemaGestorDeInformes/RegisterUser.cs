@@ -74,5 +74,10 @@ namespace SistemaGestorDeInformes
                 txtEmail.Focus();
             }
         }
+
+        private void labelCerrar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
