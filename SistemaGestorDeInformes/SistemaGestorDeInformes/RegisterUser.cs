@@ -35,9 +35,6 @@ namespace SistemaGestorDeInformes
             {
                 MessageBox.Show("Ocurrio un error");
             }
-
-
-
         }
 
         private Boolean ValidateEmail(String email)
@@ -78,6 +75,6 @@ namespace SistemaGestorDeInformes
         private void labelCerrar_Click(object sender, EventArgs e)
         {
             Application.Exit();
-        }
+        }        
     }
 }
