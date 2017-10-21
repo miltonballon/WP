@@ -86,8 +86,8 @@ namespace SistemaGestorDeInformes
             if (idName != notExist && idUnit != notExist && resul != notExist && resulReception != notExist)
             {
                 Reception reception = receptionController.getReceptionById(resulReception);
-                reception.Unit = reception.Unit - Int32.Parse(Total.Text);
-                if (reception.Unit >= 0)
+                reception.Total = reception.Total - Int32.Parse(Total.Text);
+                if (reception.Total >= 0)
                 {
                     InsertOutputReception(resulReception, OutputDate, Total);
                     receptionController.updateReception(resulReception, reception);
