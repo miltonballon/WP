@@ -59,6 +59,41 @@ namespace SistemaGestorDeInformes
             }
             return user;
         }
+        public bool CreateUser(User user)
+        {
+          
+            try
+            {
+                String Query = "Insert into [User] (name, password, email) values ('"+user.Name+"', '"+user.Password+"', '"+user.Email+"' )";
+                c.executeInsertion(Query);
+              return  true;
+            
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
 
+        public bool HasUser()
+        {
+            String query = "SELECT * FROM User";
+        
+                SQLiteDataReader data = c.query_show(query);
+                if (data.Read())
+                {
+                    //si hay datos devolver true
+                    data.Close();
+                    c.dataClose();
+                    return true;
+                }
+                else
+                {
+                    data.Close();
+                    c.dataClose();
+                    return false;
+                }
+
+        }
     }
 }

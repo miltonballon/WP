@@ -324,6 +324,7 @@
             this.Name = "RegisterProduct";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registrar Producto";
+            this.Load += new System.EventHandler(this.RegisterProduct_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

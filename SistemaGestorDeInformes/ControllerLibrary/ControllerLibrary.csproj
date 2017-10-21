@@ -61,6 +61,7 @@
   <ItemGroup>
     <Compile Include="ConfigurationController.cs" />
     <Compile Include="Connection.cs" />
+    <Compile Include="FirstSetupController.cs" />
     <Compile Include="InvoiceController.cs" />
     <Compile Include="OutputReceptionController.cs" />
     <Compile Include="ProductController.cs" />
