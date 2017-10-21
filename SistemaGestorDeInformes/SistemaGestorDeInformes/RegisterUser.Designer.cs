@@ -28,38 +28,42 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // txtName
+            // txtEmail
             // 
-            this.txtName.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtName.Location = new System.Drawing.Point(288, 43);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(193, 20);
-            this.txtName.TabIndex = 0;
+            this.txtEmail.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtEmail.Location = new System.Drawing.Point(288, 148);
+            this.txtEmail.MaxLength = 50;
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(193, 20);
+            this.txtEmail.TabIndex = 2;
+            this.txtEmail.Leave += new System.EventHandler(this.txtEmail_Leave);
             // 
             // txtPassword
             // 
             this.txtPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtPassword.Location = new System.Drawing.Point(288, 98);
+            this.txtPassword.MaxLength = 40;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(193, 20);
             this.txtPassword.TabIndex = 1;
             // 
-            // txtEmail
+            // txtName
             // 
-            this.txtEmail.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtEmail.Location = new System.Drawing.Point(288, 148);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(193, 20);
-            this.txtEmail.TabIndex = 2;
+            this.txtName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtName.Location = new System.Drawing.Point(288, 43);
+            this.txtName.MaxLength = 20;
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(193, 20);
+            this.txtName.TabIndex = 0;
             // 
             // btnGuardar
             // 
@@ -118,13 +122,12 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnGuardar);
-            this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtName);
+            this.Controls.Add(this.txtPassword);
+            this.Controls.Add(this.txtEmail);
             this.Name = "RegisterUser";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro de Usuario";
-            this.Load += new System.EventHandler(this.RegisterUser_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -132,9 +135,9 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtName;
-        private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
