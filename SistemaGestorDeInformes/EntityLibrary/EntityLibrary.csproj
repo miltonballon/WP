@@ -48,6 +48,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Provider.cs" />
     <Compile Include="Reception.cs" />
+    <Compile Include="Report.cs" />
     <Compile Include="ReportSheet.cs" />
     <Compile Include="ReportSheetCell.cs" />
     <Compile Include="Trimester.cs" />
