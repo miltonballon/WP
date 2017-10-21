@@ -21,8 +21,9 @@ namespace SistemaGestorDeInformes
 
         private void atrasButton_Click(object sender, EventArgs e)
         {
-            pc.insertProduct(ProductTextBox, ProviderTextBox, Unit);
-            pc.addReferencesToTableProduct_Provider_Unit(ProductTextBox, ProviderTextBox, Unit);
+            Product product = new Product(ProductTextBox.Text, ProviderTextBox.Text, Unit.Text);
+            pc.insertProduct(product);
+            pc.addReferencesToTableProduct_Provider_Unit(product);
             ShowProducts ShowProducts1 = new ShowProducts();
             this.Hide();
             ShowProducts1.Show();
@@ -30,8 +31,9 @@ namespace SistemaGestorDeInformes
 
         private void RegistrarButton_Click(object sender, EventArgs e)
         {
-            pc.insertProduct(ProductTextBox, ProviderTextBox, Unit);
-            pc.addReferencesToTableProduct_Provider_Unit(ProductTextBox, ProviderTextBox, Unit);
+            Product product = new Product(ProductTextBox.Text, ProviderTextBox.Text, Unit.Text);
+            pc.insertProduct(product);
+            pc.addReferencesToTableProduct_Provider_Unit(product);
             MessageBox.Show("Editado exitosamente");
             ShowProducts main = new ShowProducts();
             main.Show();

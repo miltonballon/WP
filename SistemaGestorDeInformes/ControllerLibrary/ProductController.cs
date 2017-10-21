@@ -15,10 +15,9 @@ namespace SistemaGestorDeInformes
             providerController = new ProviderController();
         }
 
-        public int insertProduct(TextBox product, TextBox provider, TextBox unit)
+        public int insertProduct(Product p)
         {
             int affected = 0;
-            Product p = new Product(product.Text,provider.Text,unit.Text);
             if (getIdName(p.Name) == -1) //si es -1 quiere decir que no existe y por tanto se crea
             {
                 InsertProduct(p.Name);
@@ -37,33 +36,13 @@ namespace SistemaGestorDeInformes
             return affected;
         }
 
-        public void addReferencesToTableProduct_Provider_Unit(TextBox product, TextBox provider, TextBox unit)
-        {
-            Product p = new Product(product.Text, provider.Text, unit.Text);
-            InsertProduct_Provider_Unit(getIdName(p.Name),getIdProvider(p.Provider),getIdUnit(p.Unit));   
-        }
-        public void insertProduct(Product p)
-        {
-            if (getIdName(p.Name) == -1) //si es -1 quiere decir que no existe y por tanto se crea
-            {
-                InsertProduct(p.Name);
-            }
-            if (getIdProvider(p.Provider) == -1)
-            {
-                InsertProvider(p.Provider);
-            
-            }
-            if (getIdUnit(p.Unit) == -1)
-            {
-                InsertUnit(p.Unit);
-            }
-        }
-
         public void addReferencesToTableProduct_Provider_Unit(Product p)
         {
-            InsertProduct_Provider_Unit(getIdName(p.Name), getIdProvider(p.Provider), getIdUnit(p.Unit));
+            InsertProduct_Provider_Unit(getIdName(p.Name),getIdProvider(p.Provider),getIdUnit(p.Unit));   
         }
+        
 
+        
 
         public void showProducts(DataGridView d)
         {

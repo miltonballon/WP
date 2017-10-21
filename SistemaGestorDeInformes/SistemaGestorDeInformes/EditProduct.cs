@@ -23,12 +23,13 @@ namespace SistemaGestorDeInformes
         private void EditButton_Click(object sender, EventArgs e)
         {
 
-           
+
 
 
             //MessageBox.Show("A"+pc.getIdName(pro.Name)+ "T"+pc.getIdProvider(pro.Provider)+"B"+ pc.getIdUnit(pro.Unit));
-            pc.insertProduct(textBox1, textBox2, textBox3);
-            pc.addReferencesToTableProduct_Provider_Unit(textBox1, textBox2, textBox3);
+            Product product = new Product(textBox1.Text, textBox2.Text, textBox3.Text);
+            pc.insertProduct(product);
+            pc.addReferencesToTableProduct_Provider_Unit(product);
 
 
             MessageBox.Show("Borrado");

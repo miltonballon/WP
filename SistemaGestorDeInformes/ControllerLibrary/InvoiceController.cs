@@ -137,10 +137,10 @@ namespace SistemaGestorDeInformes
             proveedor.Text = product.Provider;
             TextBox unidad = new TextBox();
             unidad.Text = product.Unit;
-            int affected = productController.insertProduct(name, proveedor, unidad);
+            int affected = productController.insertProduct(product);
             if (affected > 0)
             {
-                productController.addReferencesToTableProduct_Provider_Unit(name, proveedor, unidad);
+                productController.addReferencesToTableProduct_Provider_Unit(product);
             }
         }
 
