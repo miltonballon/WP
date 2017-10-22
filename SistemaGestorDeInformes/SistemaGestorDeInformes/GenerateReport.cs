@@ -21,5 +21,12 @@ namespace SistemaGestorDeInformes
         {
 
         }
+
+        private void atrasButton_Click(object sender, EventArgs e)
+        {
+            InterfazPrincipal main = new InterfazPrincipal();
+            this.Hide();
+            main.Show();
+        }
     }
 }
