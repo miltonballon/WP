@@ -16,5 +16,10 @@ namespace SistemaGestorDeInformes
         {
             InitializeComponent();
         }
+
+        private void txbxNombre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

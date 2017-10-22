@@ -47,6 +47,10 @@
             this.informeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.abrirTrimestreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lbTrim = new System.Windows.Forms.Label();
+            this.RegistrarButton = new System.Windows.Forms.Button();
+            this.atrasButton = new System.Windows.Forms.Button();
+            this.labelInformaciónBásica = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -197,12 +201,61 @@
             this.salirToolStripMenuItem.Size = new System.Drawing.Size(88, 20);
             this.salirToolStripMenuItem.Text = "Cerrar Sesión";
             // 
+            // lbTrim
+            // 
+            this.lbTrim.AutoSize = true;
+            this.lbTrim.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTrim.ForeColor = System.Drawing.Color.Yellow;
+            this.lbTrim.Location = new System.Drawing.Point(204, 66);
+            this.lbTrim.Name = "lbTrim";
+            this.lbTrim.Size = new System.Drawing.Size(0, 19);
+            this.lbTrim.TabIndex = 36;
+            // 
+            // RegistrarButton
+            // 
+            this.RegistrarButton.BackColor = System.Drawing.Color.Black;
+            this.RegistrarButton.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
+            this.RegistrarButton.ForeColor = System.Drawing.Color.Yellow;
+            this.RegistrarButton.Location = new System.Drawing.Point(295, 175);
+            this.RegistrarButton.Name = "RegistrarButton";
+            this.RegistrarButton.Size = new System.Drawing.Size(153, 66);
+            this.RegistrarButton.TabIndex = 32;
+            this.RegistrarButton.Text = "Generar Informe";
+            this.RegistrarButton.UseVisualStyleBackColor = false;
+            // 
+            // atrasButton
+            // 
+            this.atrasButton.BackColor = System.Drawing.Color.Black;
+            this.atrasButton.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
+            this.atrasButton.ForeColor = System.Drawing.Color.Yellow;
+            this.atrasButton.Location = new System.Drawing.Point(3, 472);
+            this.atrasButton.Name = "atrasButton";
+            this.atrasButton.Size = new System.Drawing.Size(120, 30);
+            this.atrasButton.TabIndex = 35;
+            this.atrasButton.Text = "Atrás";
+            this.atrasButton.UseVisualStyleBackColor = false;
+            // 
+            // labelInformaciónBásica
+            // 
+            this.labelInformaciónBásica.AutoSize = true;
+            this.labelInformaciónBásica.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelInformaciónBásica.ForeColor = System.Drawing.Color.Yellow;
+            this.labelInformaciónBásica.Location = new System.Drawing.Point(83, 105);
+            this.labelInformaciónBásica.Name = "labelInformaciónBásica";
+            this.labelInformaciónBásica.Size = new System.Drawing.Size(627, 19);
+            this.labelInformaciónBásica.TabIndex = 34;
+            this.labelInformaciónBásica.Text = "¿Desea Generar El Informe Con Las Facturas Y Los Productos Registrados?";
+            // 
             // GenerateReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(815, 508);
+            this.Controls.Add(this.lbTrim);
+            this.Controls.Add(this.RegistrarButton);
+            this.Controls.Add(this.atrasButton);
+            this.Controls.Add(this.labelInformaciónBásica);
             this.Controls.Add(this.menuStrip1);
             this.Name = "GenerateReport";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -235,5 +288,9 @@
         private System.Windows.Forms.ToolStripMenuItem informeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem abrirTrimestreToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
+        private System.Windows.Forms.Label lbTrim;
+        private System.Windows.Forms.Button RegistrarButton;
+        private System.Windows.Forms.Button atrasButton;
+        private System.Windows.Forms.Label labelInformaciónBásica;
     }
 }
