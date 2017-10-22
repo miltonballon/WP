@@ -75,6 +75,12 @@
     <Compile Include="FirtsSetup.Designer.cs">
       <DependentUpon>FirtsSetup.cs</DependentUpon>
     </Compile>
+    <Compile Include="GenerateReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GenerateReport.Designer.cs">
+      <DependentUpon>GenerateReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="InterfazPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FirtsSetup.resx">
       <DependentUpon>FirtsSetup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GenerateReport.resx">
+      <DependentUpon>GenerateReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InterfazPrincipal.resx">
       <DependentUpon>InterfazPrincipal.cs</DependentUpon>
