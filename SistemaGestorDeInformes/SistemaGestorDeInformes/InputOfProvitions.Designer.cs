@@ -193,6 +193,7 @@
             this.ProviderTextBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.ProviderTextBox.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProviderTextBox.Location = new System.Drawing.Point(230, 110);
+            this.ProviderTextBox.MaxLength = 64;
             this.ProviderTextBox.Name = "ProviderTextBox";
             this.ProviderTextBox.Size = new System.Drawing.Size(250, 23);
             this.ProviderTextBox.TabIndex = 1;
@@ -203,6 +204,7 @@
             this.ProducTextBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.ProducTextBox.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProducTextBox.Location = new System.Drawing.Point(230, 70);
+            this.ProducTextBox.MaxLength = 64;
             this.ProducTextBox.Name = "ProducTextBox";
             this.ProducTextBox.Size = new System.Drawing.Size(250, 23);
             this.ProducTextBox.TabIndex = 0;

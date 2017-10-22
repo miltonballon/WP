@@ -119,5 +119,10 @@ namespace SistemaGestorDeInformes
             this.Hide();
             Interfaz.Show();
         }
+
+        private void RegisterProduct_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

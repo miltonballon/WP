@@ -69,6 +69,12 @@
     <Compile Include="EditProduct.Designer.cs">
       <DependentUpon>EditProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="FirtsSetup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FirtsSetup.Designer.cs">
+      <DependentUpon>FirtsSetup.cs</DependentUpon>
+    </Compile>
     <Compile Include="InterfazPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +125,12 @@
     <Compile Include="InputOfProvitions.Designer.cs">
       <DependentUpon>InputOfProvitions.cs</DependentUpon>
     </Compile>
+    <Compile Include="RegisterUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegisterUser.Designer.cs">
+      <DependentUpon>RegisterUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReportConfiguration.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +164,9 @@
     <EmbeddedResource Include="EditProduct.resx">
       <DependentUpon>EditProduct.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FirtsSetup.resx">
+      <DependentUpon>FirtsSetup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InterfazPrincipal.resx">
       <DependentUpon>InterfazPrincipal.cs</DependentUpon>
     </EmbeddedResource>
@@ -184,6 +199,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InputOfProvitions.resx">
       <DependentUpon>InputOfProvitions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegisterUser.resx">
+      <DependentUpon>RegisterUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportConfiguration.resx">
       <DependentUpon>ReportConfiguration.cs</DependentUpon>

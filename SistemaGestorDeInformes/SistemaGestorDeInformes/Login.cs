@@ -74,12 +74,39 @@ namespace SistemaGestorDeInformes
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
+            Application.Exit();
             this.Close();
         }
 
         private void txtUsuario_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtContraseña_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                String user = txtUsuario.Text;
+                String pass = txtContraseña.Text;
+                if (user != "" && pass != "")
+                {
+                    if (usercontroller.verify(user, pass))
+                    {
+                        InterfazPrincipal prin = new InterfazPrincipal();
+                        this.Hide();
+                        prin.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("El usuario no existe o la contraseña es incorrecta");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Por favor llene todos los campos");
+                }
+            }
         }
     }
 }

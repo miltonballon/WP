@@ -20,10 +20,6 @@ namespace SistemaGestorDeInformes
             //c.connectionOpen();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -99,6 +95,16 @@ namespace SistemaGestorDeInformes
             OutputOfProvitions Interfaz = new OutputOfProvitions();
             this.Hide();
             Interfaz.Show();
+        }
+
+        private void InterfazPrincipal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void InterfazPrincipal_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
