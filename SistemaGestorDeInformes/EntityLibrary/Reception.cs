@@ -34,12 +34,18 @@ namespace SistemaGestorDeInformes
             get { return expirationDate; }
             set { expirationDate = value; }
         }
+
+        public string ReceptionDate
+        {
+            get { return receptionDate; }
+            set { receptionDate = value; }
+        }
         public string Provider
         {
             get { return receptionDate; }
             set { receptionDate = value; }
         }
-        public int Unit
+        public int Total
         {
             get { return total; }
             set { total = value; }

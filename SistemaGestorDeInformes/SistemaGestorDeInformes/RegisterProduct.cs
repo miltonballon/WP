@@ -43,8 +43,9 @@ namespace SistemaGestorDeInformes
 
         void RegisterButton_Click(object sender, EventArgs e)
         {
-            pc.insertProduct(ProductTextBox, ProviderTextBox, Unit);
-            pc.addReferencesToTableProduct_Provider_Unit(ProductTextBox, ProviderTextBox, Unit);
+            Product product = new Product(ProductTextBox.Text, ProviderTextBox.Text, Unit.Text);
+            pc.insertProduct(product);
+            pc.addReferencesToTableProduct_Provider_Unit(product);
             cleanTextBox();
             MessageBox.Show("Agregado exitosamente");
 

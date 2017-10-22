@@ -109,7 +109,7 @@ namespace SistemaGestorDeInformes
                 Product product = reception.Product;
                 String productsName = product.Name,
                        unit = product.Unit,
-                       total = reception.Unit+"";
+                       total = reception.Total+"";
 
                 String[] row = new String[] { productsName,unit,total};
                 dataGridView1.Rows.Add(row);
