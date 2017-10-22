@@ -111,5 +111,12 @@ namespace SistemaGestorDeInformes
         {
             rc.RegisterOutputReception(ProductTextBox, UnitTextBox, OutputDateTextBox,TotalTextBox);
         }
+
+        private void generarInformeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GenerateReport Interfaz = new GenerateReport();
+            this.Hide();
+            Interfaz.Show();
+        }
     }
 }

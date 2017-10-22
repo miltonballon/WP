@@ -105,5 +105,12 @@ namespace SistemaGestorDeInformes
             configurationController.insertConfiguration(conf);
             MessageBox.Show("Se guardo la configuración correctamente");
         }
+
+        private void generarInformeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GenerateReport Interfaz = new GenerateReport();
+            this.Hide();
+            Interfaz.Show();
+        }
     }
 }

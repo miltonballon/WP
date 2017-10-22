@@ -106,5 +106,12 @@ namespace SistemaGestorDeInformes
         {
 
         }
+
+        private void generarInformeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GenerateReport Interfaz = new GenerateReport();
+            this.Hide();
+            Interfaz.Show();
+        }
     }
 }
