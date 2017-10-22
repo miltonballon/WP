@@ -64,6 +64,16 @@ namespace SistemaGestorDeInformes
             c.dataClose();
             return output;
         }
+
+        public int forceSearchProvider(Provider provider)
+        {
+            int id = findProviderIdByName(provider.getName());
+            if (id < 0)
+            {
+                insertProvider(provider);
+            }
+            return id;
+        }
     }
 
 }
