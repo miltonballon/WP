@@ -14,16 +14,19 @@ namespace SistemaGestorDeInformes
         private ProductController productController;
         private Connection c = new Connection();
         private TrimesterController trimesterController;
+        private int ERROR;
         public InvoiceController()
         {
             c.connect();
             providerController = new ProviderController();
             productController = new ProductController();
             trimesterController = new TrimesterController();
+            ERROR = -1;
         }
 
-        public void insertInvoice(Invoice invoice)
+        public int insertInvoice(Invoice invoice)
         {
+            int output;
             Trimester trimester = trimesterController.getLastTrimester();
             int nInvoice = invoice.getNInvoice(),
                 nAutorization = invoice.getNAutorization(),
@@ -41,14 +44,13 @@ namespace SistemaGestorDeInformes
             {
                 c.executeInsertion(query);
                 int id=c.FindAndGetID("select id FROM Invoice where n_invoice = " + nInvoice+" AND id_provider="+idProvider);
-                MessageBox.Show("Informacion Basica de la factura agregado satisfactoriamente","INFORME");
-                registerInvoicesRows(invoice,id);
+                output=registerInvoicesRows(invoice,id);
             }
             catch (Exception)
             {
-                String providersName = invoice.getProvider().getName();
-                MessageBox.Show("El 'N. Factura' introducido con este proveedor: '"+providersName+"' ya existe.\nPor favor revise los datos introducidos.", "Error");
+                output = ERROR;
             }
+            return output;
         }
 
         public void updateInvoice(Invoice invoice,int id)
@@ -84,7 +86,7 @@ namespace SistemaGestorDeInformes
             return id;
         }
 
-        public void registerInvoicesRows(Invoice invoice,int invoiceId)
+        public int registerInvoicesRows(Invoice invoice,int invoiceId)
         {
             int counter = 0;
             foreach (InvoiceRow row in invoice.getInvoiceRows())
@@ -92,7 +94,7 @@ namespace SistemaGestorDeInformes
                 registerInvoiceRow(row,invoiceId);
                 counter++;
             }
-            MessageBox.Show(counter+" filas de la facturas insertadas","INFORME");
+            return counter;
         }
 
         public void registerInvoiceRow(InvoiceRow row,int invoiceId)

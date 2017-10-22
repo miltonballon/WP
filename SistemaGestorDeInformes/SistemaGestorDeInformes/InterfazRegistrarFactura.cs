@@ -253,7 +253,22 @@ namespace SistemaGestorDeInformes
             }
             invoice = createInvoice();
             createAndAddProducts();
-            invoiceController.insertInvoice(invoice);
+            int res=invoiceController.insertInvoice(invoice);
+            messages(res);
+        }
+
+        private void messages(int cod)
+        {
+            if (cod == -1)
+            {
+                String providersName = invoice.getProvider().getName();
+                MessageBox.Show("El 'N. Factura' introducido con este proveedor: '" + providersName + "' ya existe.\nPor favor revise los datos introducidos.", "Error");
+            }
+            else
+            {
+                MessageBox.Show("Informacion Basica de la factura agregado satisfactoriamente", "INFORME");
+                MessageBox.Show(cod + " filas de la facturas insertadas", "INFORME");
+            }
         }
 
         private void newProvider()
