@@ -27,10 +27,32 @@ namespace EntityLibrary
             this.column = column;
             this.content = content;
         }
-
+        /*
         public int Id { get => id; set => id = value; }
         public int Row { get => row; set => row = value; }
         public int Column { get => column; set => column = value; }
         public string Content { get => content; set => content = value; }
+         * */
+         public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+         public int Row
+        {
+            get { return row; }
+            set { row = value; }
+        }
+
+         public int Column
+        {
+            get { return column; }
+            set { column = value; }
+        }
+         public string Content
+         {
+             get { return content; }
+             set { content = value; }
+         }
     }
 }

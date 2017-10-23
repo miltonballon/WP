@@ -27,10 +27,31 @@ namespace EntityLibrary
             this.date = date;
             this.sheets = sheets;
         }
-
+        /*
         public int Id { get => id; set => id = value; }
         public string Name { get => name; set => name = value; }
         public DateTime Date { get => date; set => date = value; }
         internal List<ReportSheet> Sheets { get => sheets; set => sheets = value; }
+        */
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
+        public DateTime Date
+        {
+            get { return date; }
+            set { date = value; }
+        }
+        internal List<ReportSheet> Sheets
+        {
+            get { return sheets; }
+            set { sheets = value; }
+        }
     }
 }

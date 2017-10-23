@@ -61,20 +61,7 @@ namespace SistemaGestorDeInformes
             InsertProduct_Provider_Unit(getIdName(p.Name),getIdProvider(p.Provider),getIdUnit(p.Unit));   
         }
         
-        public void showProducts(DataGridView d)
-        {
-            List<Product> products = new List<Product>();
-            string query = "select name, Provider, Type FROM Product AS PROD, Provider AS PRO, Unit AS Un, Product_Provider_Unit AS PPU WHERE PROD.id = PPU.Id_prod AND PRO.id= PPU.id_prov AND Un.id= PPU.id_uni";
-            SQLiteDataReader data = c.query_show(query);
-            while (data.Read())
-            {
-                Product p = new Product(data[0].ToString(),data[1].ToString(),data[2].ToString());
-                products.Add(p);
-                d.DataSource = products;
-            }
-            c.dataClose();
-            data.Close();
-        }
+        
         public List<Product> showProducts()
         {
             List<Product> products = new List<Product>();
@@ -144,7 +131,7 @@ namespace SistemaGestorDeInformes
             return ids;
         }
 
-        public void searchProduct(DataGridView d,string name)
+        public List<Product> searchProduct(string name)
         {
             List<Product> products = new List<Product>();
             string query = "select name, Provider, Type FROM Product AS PROD, Provider AS PRO, Unit AS Un, Product_Provider_Unit AS PPU WHERE PROD.id = PPU.Id_prod AND PRO.id= PPU.id_prov AND Un.id= PPU.id_uni and UPPER (PROD.name)= UPPER(" + "'" + name + "')";
@@ -153,10 +140,11 @@ namespace SistemaGestorDeInformes
             {
                 Product p = new Product(data[0].ToString(), data[1].ToString(), data[2].ToString());
                 products.Add(p);
-                d.DataSource = products;
             }
+           
             c.dataClose();
             data.Close();
+            return products;
         }
 
         public String getProductsNameById(int id)
