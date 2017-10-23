@@ -58,6 +58,7 @@ namespace SistemaGestorDeInformes
                 if (usercontroller.verify(user, pass))
                 {
                     InterfazPrincipal prin = new InterfazPrincipal();
+                    prin.WindowState = this.WindowState;
                     this.Hide();
                     prin.Show();
                 }
@@ -94,6 +95,7 @@ namespace SistemaGestorDeInformes
                     if (usercontroller.verify(user, pass))
                     {
                         InterfazPrincipal prin = new InterfazPrincipal();
+                        prin.WindowState = this.WindowState;
                         this.Hide();
                         prin.Show();
                     }
