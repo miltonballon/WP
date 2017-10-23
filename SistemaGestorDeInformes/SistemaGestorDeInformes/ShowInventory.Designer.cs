@@ -53,6 +53,9 @@
             this.abrirTrimestreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.labelInformaciónBásica = new System.Windows.Forms.Label();
+            this.searchTextBox = new System.Windows.Forms.TextBox();
+            this.searchButton = new System.Windows.Forms.Button();
+            this.cleanButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -81,6 +84,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(343, 370);
             this.dataGridView1.TabIndex = 15;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Nombre
             // 
@@ -265,12 +269,41 @@
             this.labelInformaciónBásica.TabIndex = 18;
             this.labelInformaciónBásica.Text = "Lista De Productos En El Inventario";
             // 
+            // searchTextBox
+            // 
+            this.searchTextBox.Location = new System.Drawing.Point(396, 78);
+            this.searchTextBox.Name = "searchTextBox";
+            this.searchTextBox.Size = new System.Drawing.Size(100, 20);
+            this.searchTextBox.TabIndex = 19;
+            // 
+            // searchButton
+            // 
+            this.searchButton.Location = new System.Drawing.Point(395, 104);
+            this.searchButton.Name = "searchButton";
+            this.searchButton.Size = new System.Drawing.Size(75, 23);
+            this.searchButton.TabIndex = 20;
+            this.searchButton.Text = "Buscar";
+            this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
+            // 
+            // cleanButton
+            // 
+            this.cleanButton.Location = new System.Drawing.Point(396, 133);
+            this.cleanButton.Name = "cleanButton";
+            this.cleanButton.Size = new System.Drawing.Size(75, 23);
+            this.cleanButton.TabIndex = 21;
+            this.cleanButton.Text = "Limpiar";
+            this.cleanButton.UseVisualStyleBackColor = true;
+            // 
             // ShowInventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(815, 508);
+            this.Controls.Add(this.cleanButton);
+            this.Controls.Add(this.searchButton);
+            this.Controls.Add(this.searchTextBox);
             this.Controls.Add(this.labelInformaciónBásica);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.buttonAtrás);
@@ -314,5 +347,8 @@
         private System.Windows.Forms.ToolStripMenuItem abrirTrimestreToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.Label labelInformaciónBásica;
+        private System.Windows.Forms.TextBox searchTextBox;
+        private System.Windows.Forms.Button searchButton;
+        private System.Windows.Forms.Button cleanButton;
     }
 }

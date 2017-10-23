@@ -71,7 +71,30 @@ namespace SistemaGestorDeInformes
             c.dataClose();
             return receptions;
         }
+        public List<Reception> searchReception(string name)
+        {
+            List<Reception> reception = new List<Reception>();
+            
+            string query = "select name, Type, total  FROM Reception AS REC, Product AS PROD, Provider AS PRO, Unit AS Un, Product_Provider_Unit AS PPU WHERE PROD.id = PPU.Id_prod AND PRO.id= PPU.id_prov AND Un.id= PPU.id_uni AND REC.ppu_id=PPU.id AND UPPER (PROD.name)= UPPER(" + "'" + name + "')";
+            SQLiteDataReader data = c.query_show(query);
+            while (data.Read())
+            {
+                Product prod = new Product();
+                
+                Reception p = new Reception();
+                MessageBox.Show("d"+data[0].ToString()+"B"+data[1].ToString()+"C"+Int32.Parse(data[2].ToString()));
+                prod.Name = data[0].ToString();
+                prod.Unit = data[1].ToString();
+                p.Product = prod;
 
+                p.Total =Int32.Parse(data[2].ToString());
+                reception.Add(p);
+            }
+
+            c.dataClose();
+            data.Close();
+            return reception;
+        }
 
         public void updateReception(int idReception, Reception reception)
         {

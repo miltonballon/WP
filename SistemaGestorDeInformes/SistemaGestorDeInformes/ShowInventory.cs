@@ -122,5 +122,17 @@ namespace SistemaGestorDeInformes
             this.Hide();
             Interfaz.Show();
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void searchButton_Click(object sender, EventArgs e)
+        {
+            List<Reception> receptions = new List<Reception>();
+            receptions = receptionController.searchReception(searchTextBox.Text);
+            dataGridView1.DataSource = receptions;
+        }
     }
 }
