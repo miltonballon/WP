@@ -34,5 +34,15 @@ namespace SistemaGestorDeInformes
             String query = "SELECT id FROM Report_sheet WHERE id_report=" + idReport + " AND type='" + type+"'";
             return c.FindAndGetID(query);
         }
+
+        public void insertAllReportSheets(Report report)
+        {
+            List<ReportSheet> reportSheets = report.Sheets;
+            int id = report.Id;
+            foreach (ReportSheet reportSheet in reportSheets)
+            {
+                insertReportSheet(reportSheet, id);
+            }
+        }
     }
 }
