@@ -54,6 +54,22 @@ namespace SistemaGestorDeInformes
             return report;
         }
 
+        public List<Report> GetAllReportsByTrimesterId(int trimesterId)
+        {
+            List<Report> reports = new List<Report>();
+            String query = "SELECT * FROM Report_sheet WHERE id_trimester=" + trimesterId;
+            SQLiteDataReader data = c.query_show(query);
+            if (data.Read())
+            {
+                int id = Int32.Parse(data[0].ToString());
+                Report report = GetReportById(id);
+                reports.Add(report);
+            }
+            data.Close();
+            c.dataClose();
+            return reports;
+        }
+
         private DateTime getDate(String dateString)
         {
             DateTime date;
