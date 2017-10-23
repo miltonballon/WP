@@ -68,11 +68,8 @@ namespace SistemaGestorDeInformes
             SQLiteDataReader data = c.query_show(query);
             if (data.Read())
             {
-                int id= Int32.Parse(data[0].ToString()),
-                    row = Int32.Parse(data[2].ToString()),
-                    column = Int32.Parse(data[3].ToString());
-                String content = data[4].ToString();
-                ReportSheetCell reportSheetCell = new ReportSheetCell(id, row, column, content);
+                int id = Int32.Parse(data[0].ToString());
+                ReportSheetCell reportSheetCell = GetReportSheetCellById(id);
                 reportSheetsCells.Add(reportSheetCell);
             }
             data.Close();
