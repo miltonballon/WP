@@ -156,7 +156,7 @@ namespace SistemaGestorDeInformes
             {
                 foreach (DataGridViewRow row in dataGridView1.Rows)
                 {
-                    row.Cells[dataGridView1.Columns["Unidad"].Index].Value = getUnitByNameOfProvidersProducts(Convert.ToString(row.Cells[dataGridView1.Columns["Nombre"].Index].Value));
+                    row.Cells[dataGridView1.Columns["Unidad"].Index].Value = getUnitByNameOfProvidersProducts(Convert.ToString(row.Cells[dataGridView1.Columns["Nombre"].Index].Value), row.Cells[dataGridView1.Columns["Unidad"].Index].Value);
                 }
             }
 
@@ -166,7 +166,7 @@ namespace SistemaGestorDeInformes
             }
         }
 
-        private String getUnitByNameOfProvidersProducts(String name)
+        private String getUnitByNameOfProvidersProducts(String name,Object value)
         {
             String output = "";
             foreach (Product p in provider.getProducts())
@@ -176,6 +176,10 @@ namespace SistemaGestorDeInformes
                     output = p.Unit;
                     break;
                 }
+            }
+            if (output.Equals("")&&value!=null)
+            {
+                output = value.ToString();
             }
             return output;
         }
@@ -403,6 +407,13 @@ namespace SistemaGestorDeInformes
         private void registrarSalidaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OutputOfProvitions Interfaz = new OutputOfProvitions();
+            this.Hide();
+            Interfaz.Show();
+        }
+
+        private void generarInformeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GenerateReport Interfaz = new GenerateReport();
             this.Hide();
             Interfaz.Show();
         }

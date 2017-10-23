@@ -10,32 +10,30 @@ using System.Windows.Forms;
 
 namespace SistemaGestorDeInformes
 {
-    public partial class OutputOfProvitions : Form
+    public partial class GenerateReport : Form
     {
-        OutputReceptionController rc;
-        public OutputOfProvitions()
+        public GenerateReport()
         {
-            rc =new OutputReceptionController();
             InitializeComponent();
         }
 
-        private void buttonAtrás_Click(object sender, EventArgs e)
+        private void txbxNombre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void atrasButton_Click(object sender, EventArgs e)
         {
             InterfazPrincipal main = new InterfazPrincipal();
             this.Hide();
             main.Show();
         }
 
-        private void registrarSalidaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void pantallaPrincipalToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            InterfazPrincipal Interfaz = new InterfazPrincipal();
+            InterfazPrincipal main = new InterfazPrincipal();
             this.Hide();
-            Interfaz.Show();
+            main.Show();
         }
 
         private void registrarFacturaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -59,16 +57,16 @@ namespace SistemaGestorDeInformes
             Interfaz.Show();
         }
 
-        private void verProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        private void registrarEntradaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ShowProducts Interfaz = new ShowProducts();
+            InputOfProvitions Interfaz = new InputOfProvitions();
             this.Hide();
             Interfaz.Show();
         }
 
-        private void registrarEntradaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void registrarSalidaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            InputOfProvitions Interfaz = new InputOfProvitions();
+            OutputOfProvitions Interfaz = new OutputOfProvitions();
             this.Hide();
             Interfaz.Show();
         }
@@ -101,20 +99,9 @@ namespace SistemaGestorDeInformes
             Interfaz.Show();
         }
 
-        private void OutputOfProvitions_Load(object sender, EventArgs e)
+        private void verProductosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            rc.ProductAutoComplete(ProductTextBox);
-            rc.UnitAutoComplete(UnitTextBox);
-        }
-
-        private void RegisterButton_Click(object sender, EventArgs e)
-        {
-            rc.RegisterOutputReception(ProductTextBox, UnitTextBox, OutputDateTextBox,TotalTextBox);
-        }
-
-        private void generarInformeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            GenerateReport Interfaz = new GenerateReport();
+            ShowProducts Interfaz = new ShowProducts();
             this.Hide();
             Interfaz.Show();
         }

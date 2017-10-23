@@ -89,8 +89,7 @@ namespace SistemaGestorDeInformes
             String quantity = row.getQuantity() + ""
                 , unitPrice= row.getUnitPrice() + ""
                 , total=row.getTotal()+"";
-            searchProduct(row.getProduct());
-            int idPpu = insertProduct(row.getProduct());
+            int idPpu = productController.insertProductAndGetId(row.getProduct());
             String queryInsertion = "INSERT INTO invoice_row (id_invoice, id_ppu, quantity, unit_price, total) VALUES(";
             queryInsertion += invoiceId + ", ";
             queryInsertion += idPpu + ", ";
@@ -98,39 +97,6 @@ namespace SistemaGestorDeInformes
             queryInsertion += "'"+unitPrice + "', ";
             queryInsertion += "'"+total+"')" ;
             c.executeInsertion(queryInsertion);
-        }
-
-        private int insertProduct(Product product)//revisar mas adelante
-        {
-            string nameQuery = "select id FROM Product where Name = " + "'" + product.Name.ToString() + "'";
-            string providerQuery = "select id FROM Provider where Provider = " + "'" + product.Provider.ToString() + "'";
-            string unitQuery = "select id FROM Unit where Type = " + "'" + product.Unit.ToString() + "'";
-            int idProd = c.FindAndGetID(nameQuery)
-                , idProv = c.FindAndGetID(providerQuery)
-                , idUni = c.FindAndGetID(unitQuery);
-            return searchPPU(idProd, idProv, idUni);
-        }
-
-        private int searchPPU(int idProd, int idProv, int idUni)//igual
-        {
-            String query = "SELECT id FROM Product_Provider_Unit WHERE "
-                + "id_prod="+idProd+" and id_prov="+idProv+" and id_uni="+idUni+"";
-            return c.FindAndGetID(query);
-        }
-
-        private void searchProduct(Product product)//quitar
-        {
-            TextBox name = new TextBox();
-            name.Text = product.Name;
-            TextBox proveedor = new TextBox();
-            proveedor.Text = product.Provider;
-            TextBox unidad = new TextBox();
-            unidad.Text = product.Unit;
-            int affected = productController.insertProduct(product);
-            if (affected > 0)
-            {
-                productController.addReferencesToTableProduct_Provider_Unit(product);
-            }
         }
 
         public Invoice getInvoiceByNInvoiceAndProviderId(int nInvoice, int providerId)
