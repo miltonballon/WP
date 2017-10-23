@@ -34,6 +34,11 @@ namespace SistemaGestorDeInformes
             return c.FindAndGetID(query);
         }
 
+        public void insertAllReportSheetCell(ReportSheet reportSheet)
+        {
+            List<ReportSheetCell> reportSheetsCells = reportSheet.Cells;
+        }
+
         public ReportSheetCell GetReportSheetCellById(int id)
         {
             ReportSheetCell reportSheetCell = null;

@@ -40,7 +40,7 @@ namespace EntityLibrary
             set { type = value; }
         }
        
-        internal List<ReportSheetCell> Cells
+        public List<ReportSheetCell> Cells
         {
             get { return cells; }
             set { cells = value; }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using EntityLibrary;
 
 namespace SistemaGestorDeInformes
 {
@@ -15,6 +16,9 @@ namespace SistemaGestorDeInformes
             c.connect();
         }
 
+        public int insertReportSheet(ReportSheet reportSheet, int idReport)
+        {
 
+        }
     }
 }
