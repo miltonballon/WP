@@ -214,6 +214,7 @@
             // 
             // RegistrarButton
             // 
+            this.RegistrarButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.RegistrarButton.BackColor = System.Drawing.Color.Black;
             this.RegistrarButton.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
             this.RegistrarButton.ForeColor = System.Drawing.Color.Yellow;
@@ -227,6 +228,7 @@
             // 
             // atrasButton
             // 
+            this.atrasButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.atrasButton.BackColor = System.Drawing.Color.Black;
             this.atrasButton.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
             this.atrasButton.ForeColor = System.Drawing.Color.Yellow;
@@ -262,6 +264,7 @@
             // 
             // txbxNombre
             // 
+            this.txbxNombre.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txbxNombre.Location = new System.Drawing.Point(369, 137);
             this.txbxNombre.Name = "txbxNombre";
             this.txbxNombre.Size = new System.Drawing.Size(100, 20);
@@ -269,6 +272,7 @@
             // 
             // lbNombre
             // 
+            this.lbNombre.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbNombre.AutoSize = true;
             this.lbNombre.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbNombre.ForeColor = System.Drawing.Color.Yellow;

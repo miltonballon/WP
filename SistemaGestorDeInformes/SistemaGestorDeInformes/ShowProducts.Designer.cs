@@ -61,6 +61,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(17, 101);
             this.dataGridView1.Name = "dataGridView1";
@@ -227,6 +228,7 @@
             // 
             // atrasButton
             // 
+            this.atrasButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.atrasButton.BackColor = System.Drawing.Color.Black;
             this.atrasButton.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
             this.atrasButton.ForeColor = System.Drawing.Color.Yellow;
@@ -251,6 +253,7 @@
             // 
             // textBox1
             // 
+            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBox1.Location = new System.Drawing.Point(84, 57);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(148, 20);
@@ -258,6 +261,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.AliceBlue;
             this.label2.Location = new System.Drawing.Point(27, 60);
@@ -269,6 +273,7 @@
             // 
             // searchButton
             // 
+            this.searchButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.searchButton.Location = new System.Drawing.Point(249, 57);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(120, 30);
@@ -279,6 +284,7 @@
             // 
             // clearSearchButton
             // 
+            this.clearSearchButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.clearSearchButton.Location = new System.Drawing.Point(501, 57);
             this.clearSearchButton.Name = "clearSearchButton";
             this.clearSearchButton.Size = new System.Drawing.Size(120, 30);
@@ -289,6 +295,7 @@
             // 
             // editButton
             // 
+            this.editButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.editButton.Location = new System.Drawing.Point(375, 57);
             this.editButton.Name = "editButton";
             this.editButton.Size = new System.Drawing.Size(120, 30);

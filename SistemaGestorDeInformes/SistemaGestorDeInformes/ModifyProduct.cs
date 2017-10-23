@@ -25,6 +25,7 @@ namespace SistemaGestorDeInformes
             pc.insertProduct(product);
             pc.addReferencesToTableProduct_Provider_Unit(product);
             ShowProducts ShowProducts1 = new ShowProducts();
+            ShowProducts1.WindowState = this.WindowState;
             this.Hide();
             ShowProducts1.Show();
         }
@@ -36,6 +37,7 @@ namespace SistemaGestorDeInformes
             pc.addReferencesToTableProduct_Provider_Unit(product);
             MessageBox.Show("Editado exitosamente");
             ShowProducts main = new ShowProducts();
+            main.WindowState = this.WindowState;
             main.Show();
             this.Hide();
         }

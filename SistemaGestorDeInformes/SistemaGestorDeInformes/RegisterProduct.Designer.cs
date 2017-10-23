@@ -61,6 +61,7 @@
             // 
             // ProductTextBox
             // 
+            this.ProductTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ProductTextBox.Location = new System.Drawing.Point(197, 94);
             this.ProductTextBox.Name = "ProductTextBox";
             this.ProductTextBox.Size = new System.Drawing.Size(250, 20);
@@ -68,6 +69,7 @@
             // 
             // ProviderTextBox
             // 
+            this.ProviderTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ProviderTextBox.Location = new System.Drawing.Point(197, 136);
             this.ProviderTextBox.Name = "ProviderTextBox";
             this.ProviderTextBox.Size = new System.Drawing.Size(250, 20);
@@ -75,6 +77,7 @@
             // 
             // Unit
             // 
+            this.Unit.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Unit.Location = new System.Drawing.Point(197, 175);
             this.Unit.Name = "Unit";
             this.Unit.Size = new System.Drawing.Size(250, 20);
@@ -82,6 +85,7 @@
             // 
             // atrasButton
             // 
+            this.atrasButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.atrasButton.BackColor = System.Drawing.Color.Black;
             this.atrasButton.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
             this.atrasButton.ForeColor = System.Drawing.Color.Yellow;
@@ -95,10 +99,11 @@
             // 
             // RegistrarButton
             // 
+            this.RegistrarButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.RegistrarButton.BackColor = System.Drawing.Color.Black;
             this.RegistrarButton.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
             this.RegistrarButton.ForeColor = System.Drawing.Color.Yellow;
-            this.RegistrarButton.Location = new System.Drawing.Point(182, 456);
+            this.RegistrarButton.Location = new System.Drawing.Point(260, 378);
             this.RegistrarButton.Name = "RegistrarButton";
             this.RegistrarButton.Size = new System.Drawing.Size(120, 30);
             this.RegistrarButton.TabIndex = 4;
@@ -108,6 +113,7 @@
             // 
             // ProveedorLabel
             // 
+            this.ProveedorLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ProveedorLabel.AutoSize = true;
             this.ProveedorLabel.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProveedorLabel.ForeColor = System.Drawing.Color.White;
@@ -120,6 +126,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
@@ -131,6 +138,7 @@
             // 
             // ProductoLabel
             // 
+            this.ProductoLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ProductoLabel.AutoSize = true;
             this.ProductoLabel.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProductoLabel.ForeColor = System.Drawing.Color.White;

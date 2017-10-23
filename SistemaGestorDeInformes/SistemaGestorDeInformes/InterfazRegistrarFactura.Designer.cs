@@ -243,6 +243,7 @@
             // 
             // labelProveedor
             // 
+            this.labelProveedor.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelProveedor.AutoSize = true;
             this.labelProveedor.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelProveedor.ForeColor = System.Drawing.Color.White;
@@ -254,6 +255,7 @@
             // 
             // labelNit
             // 
+            this.labelNit.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelNit.AutoSize = true;
             this.labelNit.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNit.ForeColor = System.Drawing.Color.White;
@@ -265,6 +267,7 @@
             // 
             // labelNFactura
             // 
+            this.labelNFactura.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelNFactura.AutoSize = true;
             this.labelNFactura.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNFactura.ForeColor = System.Drawing.Color.White;
@@ -276,6 +279,7 @@
             // 
             // labelNAutorizacion
             // 
+            this.labelNAutorizacion.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelNAutorizacion.AutoSize = true;
             this.labelNAutorizacion.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNAutorizacion.ForeColor = System.Drawing.Color.White;
@@ -287,6 +291,7 @@
             // 
             // labelFecha
             // 
+            this.labelFecha.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelFecha.AutoSize = true;
             this.labelFecha.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelFecha.ForeColor = System.Drawing.Color.White;
@@ -298,6 +303,7 @@
             // 
             // labelProductos
             // 
+            this.labelProductos.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelProductos.AutoSize = true;
             this.labelProductos.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelProductos.ForeColor = System.Drawing.Color.Yellow;
@@ -309,6 +315,7 @@
             // 
             // textBoxProveedor
             // 
+            this.textBoxProveedor.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxProveedor.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxProveedor.Location = new System.Drawing.Point(170, 70);
             this.textBoxProveedor.Name = "textBoxProveedor";
@@ -319,6 +326,7 @@
             // 
             // textBoxNit
             // 
+            this.textBoxNit.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxNit.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxNit.Location = new System.Drawing.Point(170, 110);
             this.textBoxNit.Name = "textBoxNit";
@@ -327,6 +335,7 @@
             // 
             // textBoxNFactura
             // 
+            this.textBoxNFactura.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxNFactura.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxNFactura.Location = new System.Drawing.Point(170, 150);
             this.textBoxNFactura.Name = "textBoxNFactura";
@@ -335,6 +344,7 @@
             // 
             // textBoxNAutorizacion
             // 
+            this.textBoxNAutorizacion.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxNAutorizacion.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxNAutorizacion.Location = new System.Drawing.Point(170, 190);
             this.textBoxNAutorizacion.Name = "textBoxNAutorizacion";
@@ -343,6 +353,7 @@
             // 
             // dateFecha
             // 
+            this.dateFecha.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dateFecha.Font = new System.Drawing.Font("Bookman Old Style", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateFecha.Location = new System.Drawing.Point(170, 230);
             this.dateFecha.Name = "dateFecha";
@@ -351,6 +362,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Nombre,
@@ -393,6 +405,7 @@
             // 
             // buttonGuardar
             // 
+            this.buttonGuardar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonGuardar.BackColor = System.Drawing.Color.Black;
             this.buttonGuardar.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonGuardar.ForeColor = System.Drawing.Color.Yellow;
@@ -406,6 +419,7 @@
             // 
             // buttonAtrás
             // 
+            this.buttonAtrás.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonAtrás.BackColor = System.Drawing.Color.Black;
             this.buttonAtrás.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAtrás.ForeColor = System.Drawing.Color.Yellow;
@@ -419,6 +433,7 @@
             // 
             // labelInformaciónBásica
             // 
+            this.labelInformaciónBásica.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelInformaciónBásica.AutoSize = true;
             this.labelInformaciónBásica.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelInformaciónBásica.ForeColor = System.Drawing.Color.Yellow;

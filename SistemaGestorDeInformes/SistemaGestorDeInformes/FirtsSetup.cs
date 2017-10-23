@@ -31,6 +31,7 @@ namespace SistemaGestorDeInformes
         private void button1_Click(object sender, EventArgs e)
         {
             RegisterUser register = new RegisterUser();
+            register.WindowState = this.WindowState;
             this.Hide();
             register.ShowDialog();
             this.Close();
