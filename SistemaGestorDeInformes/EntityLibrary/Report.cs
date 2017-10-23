@@ -48,7 +48,7 @@ namespace EntityLibrary
             get { return date; }
             set { date = value; }
         }
-        internal List<ReportSheet> Sheets
+        public List<ReportSheet> Sheets
         {
             get { return sheets; }
             set { sheets = value; }
