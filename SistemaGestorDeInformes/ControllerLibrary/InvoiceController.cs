@@ -89,7 +89,7 @@ namespace SistemaGestorDeInformes
             String quantity = row.getQuantity() + ""
                 , unitPrice= row.getUnitPrice() + ""
                 , total=row.getTotal()+"";
-            int idPpu = productController.insertProduct(row.getProduct());
+            int idPpu = productController.insertProductAndGetId(row.getProduct());
             String queryInsertion = "INSERT INTO invoice_row (id_invoice, id_ppu, quantity, unit_price, total) VALUES(";
             queryInsertion += invoiceId + ", ";
             queryInsertion += idPpu + ", ";

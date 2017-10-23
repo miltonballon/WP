@@ -31,7 +31,7 @@ namespace SistemaGestorDeInformes
             }  
         }
 
-        private int insertProduct(Product product)
+        public int insertProductAndGetId(Product product)
         {
             string nameQuery = "select id FROM Product where Name = " + "'" + product.Name.ToString() + "'";
             string providerQuery = "select id FROM Provider where Provider = " + "'" + product.Provider.ToString() + "'";
@@ -39,7 +39,14 @@ namespace SistemaGestorDeInformes
             int idProd = c.FindAndGetID(nameQuery)
                 , idProv = c.FindAndGetID(providerQuery)
                 , idUni = c.FindAndGetID(unitQuery);
-            return searchPPU(idProd, idProv, idUni);
+            int id= searchPPU(idProd, idProv, idUni);
+            if (id == -1)
+            {
+                insertProduct(product);
+                addReferencesToTableProduct_Provider_Unit(product);
+                id = searchPPU(idProd, idProv, idUni);
+            }
+            return id;
         }
 
         private int searchPPU(int idProd, int idProv, int idUni)
@@ -47,21 +54,6 @@ namespace SistemaGestorDeInformes
             String query = "SELECT id FROM Product_Provider_Unit WHERE "
                 + "id_prod=" + idProd + " and id_prov=" + idProv + " and id_uni=" + idUni + "";
             return c.FindAndGetID(query);
-        }
-
-        private void searchProduct(Product product)
-        {
-            TextBox name = new TextBox();
-            name.Text = product.Name;
-            TextBox proveedor = new TextBox();
-            proveedor.Text = product.Provider;
-            TextBox unidad = new TextBox();
-            unidad.Text = product.Unit;
-            int affected = insertProduct(product);
-            if (affected > 0)
-            {
-                addReferencesToTableProduct_Provider_Unit(product);
-            }
         }
 
         public void addReferencesToTableProduct_Provider_Unit(Product p)
