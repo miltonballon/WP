@@ -61,5 +61,21 @@ namespace SistemaGestorDeInformes
             c.dataClose();
             return reportSheet;
         }
+
+        public List<ReportSheet> GetAllReportSheetsByReportId(int reportId)
+        {
+            List<ReportSheet> reportSheets = new List<ReportSheet>();
+            String query = "SELECT * FROM Report_sheet WHERE id_report=" + reportId;
+            SQLiteDataReader data = c.query_show(query);
+            if (data.Read())
+            {
+                int id = Int32.Parse(data[0].ToString());
+                ReportSheet reportSheet = GetReportSheetById(id);
+                reportSheets.Add(reportSheet);
+            }
+            data.Close();
+            c.dataClose();
+            return reportSheets;
+        }
     }
 }
