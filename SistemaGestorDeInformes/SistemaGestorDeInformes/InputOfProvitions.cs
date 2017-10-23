@@ -42,6 +42,7 @@ namespace SistemaGestorDeInformes
         private void button2_Click(object sender, EventArgs e)
         {
             InterfazPrincipal main = new InterfazPrincipal();
+            main.WindowState = this.WindowState;
             this.Hide();
             main.Show();
         }
@@ -86,6 +87,7 @@ namespace SistemaGestorDeInformes
         private void buttonAtrás_Click(object sender, EventArgs e)
         {
             InterfazPrincipal principal = new InterfazPrincipal();//para volver atras
+            principal.WindowState = this.WindowState;
             this.Hide();
             principal.Show();
         }
@@ -93,6 +95,7 @@ namespace SistemaGestorDeInformes
         private void pantallaPrincipalToolStripMenuItem_Click(object sender, EventArgs e)
         {
             InterfazPrincipal Interfaz = new InterfazPrincipal();
+            Interfaz.WindowState = this.WindowState;
             this.Hide();
             Interfaz.Show();
         }
@@ -100,6 +103,7 @@ namespace SistemaGestorDeInformes
         private void registrarFacturaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             InterfazRegistrarFactura Interfaz = new InterfazRegistrarFactura();
+            Interfaz.WindowState = this.WindowState;
             this.Hide();
             Interfaz.Show();
         }
@@ -107,6 +111,7 @@ namespace SistemaGestorDeInformes
         private void verFacturasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ShowBills Interfaz = new ShowBills();
+            Interfaz.WindowState = this.WindowState;
             this.Hide();
             Interfaz.Show();
         }
@@ -114,6 +119,7 @@ namespace SistemaGestorDeInformes
         private void registrarProductosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RegisterProduct Interfaz = new RegisterProduct();
+            Interfaz.WindowState = this.WindowState;
             this.Hide();
             Interfaz.Show();
         }
@@ -121,6 +127,7 @@ namespace SistemaGestorDeInformes
         private void verProductosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ShowProducts Interfaz = new ShowProducts();
+            Interfaz.WindowState = this.WindowState;
             this.Hide();
             Interfaz.Show();
         }
@@ -128,6 +135,7 @@ namespace SistemaGestorDeInformes
         private void verInventarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ShowInventory Interfaz = new ShowInventory();
+            Interfaz.WindowState = this.WindowState;
             this.Hide();
             Interfaz.Show();
         }
@@ -135,6 +143,7 @@ namespace SistemaGestorDeInformes
         private void informeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ReportConfiguration Interfaz = new ReportConfiguration();
+            Interfaz.WindowState = this.WindowState;
             this.Hide();
             Interfaz.Show();
         }
@@ -142,6 +151,7 @@ namespace SistemaGestorDeInformes
         private void abrirTrimestreToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenQuarter Interfaz = new OpenQuarter();
+            Interfaz.WindowState = this.WindowState;
             this.Hide();
             Interfaz.Show();
         }
@@ -149,6 +159,7 @@ namespace SistemaGestorDeInformes
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Login log = new Login();
+            log.WindowState = this.WindowState;
             this.Hide();
             log.Show();
         }
@@ -156,6 +167,7 @@ namespace SistemaGestorDeInformes
         private void registrarSalidaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OutputOfProvitions Interfaz = new OutputOfProvitions();
+            Interfaz.WindowState = this.WindowState;
             this.Hide();
             Interfaz.Show();
         }
@@ -163,6 +175,7 @@ namespace SistemaGestorDeInformes
         private void generarInformeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             GenerateReport Interfaz = new GenerateReport();
+            Interfaz.WindowState = this.WindowState;
             this.Hide();
             Interfaz.Show();
         }
