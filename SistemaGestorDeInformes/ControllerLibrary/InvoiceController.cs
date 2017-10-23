@@ -11,7 +11,7 @@ namespace SistemaGestorDeInformes
         private ProductController productController;
         private Connection c = new Connection();
         private TrimesterController trimesterController;
-        private int ERROR;
+        private int ERROR,NOTRIMESTER;
         public InvoiceController()
         {
             c.connect();
@@ -19,33 +19,41 @@ namespace SistemaGestorDeInformes
             productController = new ProductController();
             trimesterController = new TrimesterController();
             ERROR = -1;
+            NOTRIMESTER=-2;
         }
 
         public int insertInvoice(Invoice invoice)
         {
             int output;
             Trimester trimester = trimesterController.getLastTrimester();
-            int nInvoice = invoice.getNInvoice(),
+            if (trimester != null)
+            {
+                int nInvoice = invoice.getNInvoice(),
                 nAutorization = invoice.getNAutorization(),
                 idProvider = providerController.forceSearchProvider(invoice.getProvider()),
-                idTrimester=trimester.getId();
-            DateTime date = invoice.getDate();
-            String query = "INSERT INTO Invoice(n_invoice, n_autorization, id_provider, nit, date, id_trimester) VALUES (";
-            query += nInvoice+", ";
-            query += nAutorization + ", ";
-            query += idProvider + ", ";
-            query += invoice.getProvider().getNit() + ", '";
-            query += date.ToString("dd/MM/yyyy") +"',";
-            query += idTrimester + ")";
-            try
-            {
-                c.executeInsertion(query);
-                int id=c.FindAndGetID("select id FROM Invoice where n_invoice = " + nInvoice+" AND id_provider="+idProvider);
-                output=registerInvoicesRows(invoice,id);
+                idTrimester = trimester.getId();
+                DateTime date = invoice.getDate();
+                String query = "INSERT INTO Invoice(n_invoice, n_autorization, id_provider, nit, date, id_trimester) VALUES (";
+                query += nInvoice + ", ";
+                query += nAutorization + ", ";
+                query += idProvider + ", ";
+                query += invoice.getProvider().getNit() + ", '";
+                query += date.ToString("dd/MM/yyyy") + "',";
+                query += idTrimester + ")";
+                try
+                {
+                    c.executeInsertion(query);
+                    int id = c.FindAndGetID("select id FROM Invoice where n_invoice = " + nInvoice + " AND id_provider=" + idProvider);
+                    output = registerInvoicesRows(invoice, id);
+                }
+                catch (Exception)
+                {
+                    output = ERROR;
+                }
             }
-            catch (Exception)
+            else
             {
-                output = ERROR;
+                output = NOTRIMESTER;
             }
             return output;
         }

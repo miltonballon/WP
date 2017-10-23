@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EntityLibrary
 {
-    class Report
+    public class Report
     {
         private int id;
         private String name;
@@ -27,6 +27,7 @@ namespace EntityLibrary
             this.date = date;
             this.sheets = sheets;
         }
+
         /*
         public int Id { get => id; set => id = value; }
         public string Name { get => name; set => name = value; }
@@ -48,7 +49,7 @@ namespace EntityLibrary
             get { return date; }
             set { date = value; }
         }
-        internal List<ReportSheet> Sheets
+        public List<ReportSheet> Sheets
         {
             get { return sheets; }
             set { sheets = value; }

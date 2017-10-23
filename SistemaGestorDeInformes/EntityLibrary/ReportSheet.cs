@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EntityLibrary
 {
-    class ReportSheet
+    public class ReportSheet
     {
         private int id;
         private String type;
@@ -24,6 +24,14 @@ namespace EntityLibrary
             this.type = type;
             this.cells = cells;
         }
+
+        public ReportSheet(int id, string type)
+        {
+            this.id = id;
+            this.type = type;
+            this.cells = new List<ReportSheetCell>();
+        }
+
         /*
         public int Id { get => id; set => id = value; }
         public string Type { get => type; set => type = value; }
@@ -39,8 +47,7 @@ namespace EntityLibrary
             get { return type; }
             set { type = value; }
         }
-       
-        internal List<ReportSheetCell> Cells
+        public List<ReportSheetCell> Cells
         {
             get { return cells; }
             set { cells = value; }
