@@ -469,6 +469,7 @@
             this.Name = "InterfazRegistrarFactura";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registrar Factura";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.InterfazRegistrarFactura_FormClosing);
             this.Load += new System.EventHandler(this.InterfazRegistrarFactura_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
