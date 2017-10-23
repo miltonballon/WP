@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using EntityLibrary;
+using System.Data.SQLite;
 
 namespace SistemaGestorDeInformes
 {
@@ -43,6 +44,22 @@ namespace SistemaGestorDeInformes
             {
                 insertReportSheet(reportSheet, id);
             }
+        }
+
+        public ReportSheet GetReportSheetById(int id)
+        {
+            ReportSheet reportSheet = null;
+            String query = "SELECT * FROM Report_sheet WHERE id=" + id;
+            SQLiteDataReader data = c.query_show(query);
+            if (data.Read())
+            {
+                String type = data[2].ToString();
+                List<ReportSheetCell> reportSheetsCells = reportSheetCellController.GetAllReportSheetsCellsByReportSheetId(id);
+                reportSheet = new ReportSheet(id, type, reportSheetsCells);
+            }
+            data.Close();
+            c.dataClose();
+            return reportSheet;
         }
     }
 }
