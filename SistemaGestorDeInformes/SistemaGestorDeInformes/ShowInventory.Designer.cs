@@ -294,6 +294,7 @@
             this.cleanButton.TabIndex = 21;
             this.cleanButton.Text = "Limpiar";
             this.cleanButton.UseVisualStyleBackColor = true;
+            this.cleanButton.Click += new System.EventHandler(this.cleanButton_Click);
             // 
             // ShowInventory
             // 

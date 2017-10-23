@@ -17,6 +17,7 @@ namespace SistemaGestorDeInformes
         {
             InitializeComponent();
             receptionController = new ReceptionController();
+            chargeData();
         }
 
         private void buttonAtrás_Click(object sender, EventArgs e)
@@ -98,12 +99,13 @@ namespace SistemaGestorDeInformes
 
         private void ShowInventory_Load(object sender, EventArgs e)
         {
-            chargeData();
+            
         }
 
         private void chargeData()
         {
             List<Reception> receptions = receptionController.getAllReceptions();
+            
             foreach (Reception reception in receptions)
             {
                 Product product = reception.Product;
@@ -114,6 +116,7 @@ namespace SistemaGestorDeInformes
                 String[] row = new String[] { productsName,unit,total};
                 dataGridView1.Rows.Add(row);
             }
+        
         }
 
         private void generarInformeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -130,9 +133,28 @@ namespace SistemaGestorDeInformes
 
         private void searchButton_Click(object sender, EventArgs e)
         {
+            
             List<Reception> receptions = new List<Reception>();
             receptions = receptionController.searchReception(searchTextBox.Text);
             dataGridView1.DataSource = receptions;
+            
+            foreach (Reception reception in receptions)
+            {
+                Product product = reception.Product;
+                String productsName = product.Name,
+                       unit = product.Unit,
+                       total = reception.Total + "";
+
+                String[] row = new String[] { productsName, unit, total };
+                dataGridView1.Rows.Add(row);
+            }
+           
+            
+        }
+
+        private void cleanButton_Click(object sender, EventArgs e)
+        {
+            chargeData();
         }
     }
 }
