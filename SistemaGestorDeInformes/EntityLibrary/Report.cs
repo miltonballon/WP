@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EntityLibrary
 {
-    class Report
+    public class Report
     {
         private int id;
         private String name;

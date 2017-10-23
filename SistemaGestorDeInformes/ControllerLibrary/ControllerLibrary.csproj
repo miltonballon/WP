@@ -68,6 +68,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProviderController.cs" />
     <Compile Include="ReceptionController.cs" />
+    <Compile Include="ReportSheetCellController.cs" />
     <Compile Include="TrimesterController.cs" />
     <Compile Include="UserController.cs" />
   </ItemGroup>
