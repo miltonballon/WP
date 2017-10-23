@@ -23,6 +23,7 @@ namespace SistemaGestorDeInformes
         private void buttonAtrás_Click(object sender, EventArgs e)
         {
             InterfazPrincipal principal = new InterfazPrincipal();//para volver atras
+            principal.WindowState = this.WindowState;
             this.Hide();
             principal.Show();
         }
@@ -30,6 +31,7 @@ namespace SistemaGestorDeInformes
         private void pantallaPrincipalToolStripMenuItem_Click(object sender, EventArgs e)
         {
             InterfazPrincipal principal = new InterfazPrincipal();//para volver atras
+            principal.WindowState = this.WindowState;
             this.Hide();
             principal.Show();
         }
@@ -37,6 +39,7 @@ namespace SistemaGestorDeInformes
         private void registrarFacturaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             InterfazRegistrarFactura RegisterInvoiceForm = new InterfazRegistrarFactura();
+            RegisterInvoiceForm.WindowState = this.WindowState;
             RegisterInvoiceForm.Show();
             this.Hide();
         }
@@ -44,6 +47,7 @@ namespace SistemaGestorDeInformes
         private void verFacturasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ShowBills ShowBills1 = new ShowBills();
+            ShowBills1.WindowState = this.WindowState;
             ShowBills1.Show();
             this.Hide();
         }
@@ -51,6 +55,7 @@ namespace SistemaGestorDeInformes
         private void registrarProductosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RegisterProduct main = new RegisterProduct();
+            main.WindowState = this.WindowState;
             this.Hide();
             main.Show();
         }
@@ -58,6 +63,7 @@ namespace SistemaGestorDeInformes
         private void verProductosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ShowProducts ShowProducts1 = new ShowProducts();
+            ShowProducts1.WindowState = this.WindowState;
             ShowProducts1.Show();
             this.Hide();
         }
@@ -65,6 +71,7 @@ namespace SistemaGestorDeInformes
         private void informeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ReportConfiguration ReportConfiguration1 = new ReportConfiguration();
+            ReportConfiguration1.WindowState = this.WindowState;
             this.Hide();
             ReportConfiguration1.Show();
         }
@@ -72,6 +79,7 @@ namespace SistemaGestorDeInformes
         private void abrirTrimestreToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenQuarter OpenQuarter1 = new OpenQuarter();
+            OpenQuarter1.WindowState = this.WindowState;
             this.Hide();
             OpenQuarter1.Show();
         }
@@ -86,6 +94,7 @@ namespace SistemaGestorDeInformes
         private void registrarEntradaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             InputOfProvitions InputOfProvitions1 = new InputOfProvitions();
+            InputOfProvitions1.WindowState = this.WindowState;
             this.Hide();
             InputOfProvitions1.Show();
         }
@@ -93,6 +102,7 @@ namespace SistemaGestorDeInformes
         private void registrarSalidaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OutputOfProvitions Interfaz = new OutputOfProvitions();
+            Interfaz.WindowState = this.WindowState;
             this.Hide();
             Interfaz.Show();
         }
@@ -122,6 +132,7 @@ namespace SistemaGestorDeInformes
         private void generarInformeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             GenerateReport Interfaz = new GenerateReport();
+            Interfaz.WindowState = this.WindowState;
             this.Hide();
             Interfaz.Show();
         }

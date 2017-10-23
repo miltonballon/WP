@@ -105,7 +105,6 @@ namespace SistemaGestorDeInformes
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Login Interfaz = new Login();
-            Interfaz.WindowState = this.WindowState;
             this.Hide();
             Interfaz.Show();
         }

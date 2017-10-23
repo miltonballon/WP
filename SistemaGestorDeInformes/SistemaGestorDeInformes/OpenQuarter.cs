@@ -162,7 +162,6 @@ namespace SistemaGestorDeInformes
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Login log = new Login();
-            log.WindowState = this.WindowState;
             this.Hide();
             log.Show();
         }
