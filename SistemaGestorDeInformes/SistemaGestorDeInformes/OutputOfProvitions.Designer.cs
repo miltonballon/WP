@@ -223,6 +223,7 @@
             // 
             // TotalTextBox
             // 
+            this.TotalTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TotalTextBox.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TotalTextBox.Location = new System.Drawing.Point(230, 172);
             this.TotalTextBox.Name = "TotalTextBox";
@@ -231,6 +232,7 @@
             // 
             // ProductTextBox
             // 
+            this.ProductTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ProductTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.ProductTextBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.ProductTextBox.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -241,6 +243,7 @@
             // 
             // labelNFactura
             // 
+            this.labelNFactura.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelNFactura.AutoSize = true;
             this.labelNFactura.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNFactura.ForeColor = System.Drawing.Color.White;
@@ -252,6 +255,7 @@
             // 
             // labelNit
             // 
+            this.labelNit.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelNit.AutoSize = true;
             this.labelNit.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNit.ForeColor = System.Drawing.Color.White;
@@ -263,6 +267,7 @@
             // 
             // buttonAtrás
             // 
+            this.buttonAtrás.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonAtrás.BackColor = System.Drawing.Color.Black;
             this.buttonAtrás.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAtrás.ForeColor = System.Drawing.Color.Yellow;
@@ -287,6 +292,7 @@
             // 
             // RegisterButton
             // 
+            this.RegisterButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.RegisterButton.BackColor = System.Drawing.Color.Black;
             this.RegisterButton.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
             this.RegisterButton.ForeColor = System.Drawing.Color.Yellow;
@@ -300,6 +306,7 @@
             // 
             // UnitTextBox
             // 
+            this.UnitTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.UnitTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.UnitTextBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.UnitTextBox.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -310,6 +317,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
@@ -321,6 +329,7 @@
             // 
             // OutputDateTextBox
             // 
+            this.OutputDateTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.OutputDateTextBox.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.OutputDateTextBox.Location = new System.Drawing.Point(230, 201);
             this.OutputDateTextBox.Name = "OutputDateTextBox";
@@ -329,6 +338,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;

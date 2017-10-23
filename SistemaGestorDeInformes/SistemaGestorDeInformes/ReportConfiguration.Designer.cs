@@ -227,6 +227,7 @@
             // 
             // ProductoLabel
             // 
+            this.ProductoLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ProductoLabel.AutoSize = true;
             this.ProductoLabel.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProductoLabel.ForeColor = System.Drawing.Color.White;
@@ -238,6 +239,7 @@
             // 
             // ProveedorLabel
             // 
+            this.ProveedorLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ProveedorLabel.AutoSize = true;
             this.ProveedorLabel.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProveedorLabel.ForeColor = System.Drawing.Color.White;
@@ -249,6 +251,7 @@
             // 
             // RegistrarButton
             // 
+            this.RegistrarButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.RegistrarButton.BackColor = System.Drawing.Color.Black;
             this.RegistrarButton.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
             this.RegistrarButton.ForeColor = System.Drawing.Color.Yellow;
@@ -262,6 +265,7 @@
             // 
             // atrasButton
             // 
+            this.atrasButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.atrasButton.BackColor = System.Drawing.Color.Black;
             this.atrasButton.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
             this.atrasButton.ForeColor = System.Drawing.Color.Yellow;
@@ -275,6 +279,7 @@
             // 
             // txtboxnpartida
             // 
+            this.txtboxnpartida.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtboxnpartida.Location = new System.Drawing.Point(197, 136);
             this.txtboxnpartida.Name = "txtboxnpartida";
             this.txtboxnpartida.Size = new System.Drawing.Size(250, 20);
@@ -282,6 +287,7 @@
             // 
             // txtboxbecas
             // 
+            this.txtboxbecas.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtboxbecas.Location = new System.Drawing.Point(197, 94);
             this.txtboxbecas.Name = "txtboxbecas";
             this.txtboxbecas.Size = new System.Drawing.Size(250, 20);

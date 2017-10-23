@@ -62,6 +62,7 @@
             // 
             // buttonAtrás
             // 
+            this.buttonAtrás.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonAtrás.BackColor = System.Drawing.Color.Black;
             this.buttonAtrás.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAtrás.ForeColor = System.Drawing.Color.Yellow;
@@ -75,6 +76,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Nombre,
@@ -271,6 +273,7 @@
             // 
             // searchTextBox
             // 
+            this.searchTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.searchTextBox.Location = new System.Drawing.Point(396, 78);
             this.searchTextBox.Name = "searchTextBox";
             this.searchTextBox.Size = new System.Drawing.Size(100, 20);
@@ -278,6 +281,7 @@
             // 
             // searchButton
             // 
+            this.searchButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.searchButton.Location = new System.Drawing.Point(395, 104);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(75, 23);
@@ -288,6 +292,7 @@
             // 
             // cleanButton
             // 
+            this.cleanButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cleanButton.Location = new System.Drawing.Point(396, 133);
             this.cleanButton.Name = "cleanButton";
             this.cleanButton.Size = new System.Drawing.Size(75, 23);
