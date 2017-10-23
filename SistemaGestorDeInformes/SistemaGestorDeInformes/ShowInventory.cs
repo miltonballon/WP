@@ -133,10 +133,11 @@ namespace SistemaGestorDeInformes
 
         private void searchButton_Click(object sender, EventArgs e)
         {
-            
+            dataGridView1.Rows.Clear();
+            dataGridView1.Refresh();
             List<Reception> receptions = new List<Reception>();
             receptions = receptionController.searchReception(searchTextBox.Text);
-            dataGridView1.DataSource = receptions;
+           
             
             foreach (Reception reception in receptions)
             {
@@ -154,6 +155,8 @@ namespace SistemaGestorDeInformes
 
         private void cleanButton_Click(object sender, EventArgs e)
         {
+            dataGridView1.Rows.Clear();
+            dataGridView1.Refresh();
             chargeData();
         }
     }
