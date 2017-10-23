@@ -263,15 +263,19 @@ namespace SistemaGestorDeInformes
 
         private void messages(int cod)
         {
-            if (cod == -1)
+            switch (cod)
             {
-                String providersName = invoice.getProvider().getName();
-                MessageBox.Show("El 'N. Factura' introducido con este proveedor: '" + providersName + "' ya existe.\nPor favor revise los datos introducidos.", "Error");
-            }
-            else
-            {
-                MessageBox.Show("Informacion Basica de la factura agregado satisfactoriamente", "INFORME");
-                MessageBox.Show(cod + " filas de la facturas insertadas", "INFORME");
+                case -1:
+                    String providersName = invoice.getProvider().getName();
+                    MessageBox.Show("El 'N. Factura' introducido con este proveedor: '" + providersName + "' ya existe.\nPor favor revise los datos introducidos.", "Error");
+                    break;
+                case -2:
+                    MessageBox.Show("No existe ningun Trimestre abierto.\nPor favor cree uno.", "Error");
+                    break;
+                default:
+                    MessageBox.Show("Informacion Basica de la factura agregado satisfactoriamente", "INFORME");
+                    MessageBox.Show(cod + " filas de la facturas insertadas", "INFORME");
+                    break;
             }
         }
 
