@@ -229,6 +229,7 @@
             this.Name = "InterfazPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Principal";
+            this.TopMost = true;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.InterfazPrincipal_FormClosing);
             this.Load += new System.EventHandler(this.InterfazPrincipal_Load);
             this.menuStrip1.ResumeLayout(false);
