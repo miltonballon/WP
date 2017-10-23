@@ -39,7 +39,6 @@ namespace EntityLibrary
             get { return type; }
             set { type = value; }
         }
-       
         public List<ReportSheetCell> Cells
         {
             get { return cells; }
