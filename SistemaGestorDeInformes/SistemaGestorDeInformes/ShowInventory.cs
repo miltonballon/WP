@@ -115,5 +115,12 @@ namespace SistemaGestorDeInformes
                 dataGridView1.Rows.Add(row);
             }
         }
+
+        private void generarInformeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GenerateReport Interfaz = new GenerateReport();
+            this.Hide();
+            Interfaz.Show();
+        }
     }
 }
