@@ -66,9 +66,8 @@ namespace SistemaGestorDeInformes
 
         private void searchButton_Click(object sender, EventArgs e)
         {
-            List<Product> products = new List<Product>();
-            products = pc.searchProduct(textBox1.Text);
-            dataGridView1.DataSource = products;
+            pc.searchProduct(dataGridView1,textBox1.Text);
+          
         }
 
         private void clearSearchButton_Click(object sender, EventArgs e)

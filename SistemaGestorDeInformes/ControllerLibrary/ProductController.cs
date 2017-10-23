@@ -15,32 +15,66 @@ namespace SistemaGestorDeInformes
             providerController = new ProviderController();
         }
 
-        public int insertProduct(Product p)
+        public void insertProduct(Product p)
         {
-            int affected = 0;
             if (getIdName(p.Name) == -1) //si es -1 quiere decir que no existe y por tanto se crea
             {
                 InsertProduct(p.Name);
-                affected++;
             }
             if (getIdProvider(p.Provider) == -1)
             {
                 InsertProvider(p.Provider);
-                affected++;
             }
             if (getIdUnit(p.Unit) == -1)
             {
                 InsertUnit(p.Unit);
-                affected++;
             }  
-            return affected;
+        }
+
+        public int insertProductAndGetId(Product product)
+        {
+            string nameQuery = "select id FROM Product where Name = " + "'" + product.Name.ToString() + "'";
+            string providerQuery = "select id FROM Provider where Provider = " + "'" + product.Provider.ToString() + "'";
+            string unitQuery = "select id FROM Unit where Type = " + "'" + product.Unit.ToString() + "'";
+            int idProd = c.FindAndGetID(nameQuery)
+                , idProv = c.FindAndGetID(providerQuery)
+                , idUni = c.FindAndGetID(unitQuery);
+            int id= searchPPU(idProd, idProv, idUni);
+            if (id == -1)
+            {
+                insertProduct(product);
+                addReferencesToTableProduct_Provider_Unit(product);
+                id = searchPPU(idProd, idProv, idUni);
+            }
+            return id;
+        }
+
+        private int searchPPU(int idProd, int idProv, int idUni)
+        {
+            String query = "SELECT id FROM Product_Provider_Unit WHERE "
+                + "id_prod=" + idProd + " and id_prov=" + idProv + " and id_uni=" + idUni + "";
+            return c.FindAndGetID(query);
         }
 
         public void addReferencesToTableProduct_Provider_Unit(Product p)
         {
             InsertProduct_Provider_Unit(getIdName(p.Name),getIdProvider(p.Provider),getIdUnit(p.Unit));   
         }
-       
+        
+        public void showProducts(DataGridView d)
+        {
+            List<Product> products = new List<Product>();
+            string query = "select name, Provider, Type FROM Product AS PROD, Provider AS PRO, Unit AS Un, Product_Provider_Unit AS PPU WHERE PROD.id = PPU.Id_prod AND PRO.id= PPU.id_prov AND Un.id= PPU.id_uni";
+            SQLiteDataReader data = c.query_show(query);
+            while (data.Read())
+            {
+                Product p = new Product(data[0].ToString(),data[1].ToString(),data[2].ToString());
+                products.Add(p);
+                d.DataSource = products;
+            }
+            c.dataClose();
+            data.Close();
+        }
         public List<Product> showProducts()
         {
             List<Product> products = new List<Product>();
@@ -110,7 +144,7 @@ namespace SistemaGestorDeInformes
             return ids;
         }
 
-        public List<Product> searchProduct(string name)
+        public void searchProduct(DataGridView d,string name)
         {
             List<Product> products = new List<Product>();
             string query = "select name, Provider, Type FROM Product AS PROD, Provider AS PRO, Unit AS Un, Product_Provider_Unit AS PPU WHERE PROD.id = PPU.Id_prod AND PRO.id= PPU.id_prov AND Un.id= PPU.id_uni and UPPER (PROD.name)= UPPER(" + "'" + name + "')";
@@ -119,9 +153,8 @@ namespace SistemaGestorDeInformes
             {
                 Product p = new Product(data[0].ToString(), data[1].ToString(), data[2].ToString());
                 products.Add(p);
-                
+                d.DataSource = products;
             }
-            return products;
             c.dataClose();
             data.Close();
         }
