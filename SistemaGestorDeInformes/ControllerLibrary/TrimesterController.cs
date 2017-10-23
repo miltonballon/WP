@@ -38,6 +38,7 @@ namespace SistemaGestorDeInformes
                 trimester = new Trimester(id,name);
                 trimester.setOpen(bit==1);
             }
+            data.Close();
             c.dataClose();
             return trimester;
         }

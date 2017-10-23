@@ -34,5 +34,25 @@ namespace SistemaGestorDeInformes
             return c.FindAndGetID(query);
         }
 
+        public ReportSheetCell GetReportSheetCellById(int id)
+        {
+            ReportSheetCell reportSheetCell = null;
+            String query = "SELECT * FROM Report_sheet_cell WHERE id=" + id;
+            SQLiteDataReader data=c.query_show(query);
+            if (data.Read())
+            {
+                int row=Int32.Parse(data[2].ToString()), 
+                    column= Int32.Parse(data[3].ToString());
+                String content = data[4].ToString();
+                reportSheetCell = new ReportSheetCell(id,row,column,content);
+            }
+            data.Close();
+            c.dataClose();
+            return reportSheetCell;
+        }
+
+        public ReportSheetCell GetAllReportSheetsCellsByReportSheetId(int id)
+
+
     }
 }
