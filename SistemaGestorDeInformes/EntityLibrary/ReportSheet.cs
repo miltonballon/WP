@@ -24,6 +24,14 @@ namespace EntityLibrary
             this.type = type;
             this.cells = cells;
         }
+
+        public ReportSheet(int id, string type)
+        {
+            this.id = id;
+            this.type = type;
+            this.cells = new List<ReportSheetCell>();
+        }
+
         /*
         public int Id { get => id; set => id = value; }
         public string Type { get => type; set => type = value; }
