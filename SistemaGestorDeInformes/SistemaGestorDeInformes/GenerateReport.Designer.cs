@@ -275,6 +275,7 @@
             this.Name = "GenerateReport";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Generar Informe";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GenerateReport_FormClosing);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

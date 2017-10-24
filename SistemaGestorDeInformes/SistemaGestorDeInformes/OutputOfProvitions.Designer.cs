@@ -369,6 +369,7 @@
             this.Name = "OutputOfProvitions";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registrar Salida";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.OutputOfProvitions_FormClosing);
             this.Load += new System.EventHandler(this.OutputOfProvitions_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

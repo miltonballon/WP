@@ -422,6 +422,7 @@
             this.Name = "InputOfProvitions";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registrar Entrada";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.InputOfProvitions_FormClosing);
             this.Load += new System.EventHandler(this.RegisterReception_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

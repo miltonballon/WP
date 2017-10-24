@@ -170,5 +170,10 @@ namespace SistemaGestorDeInformes
             dataGridView1.Refresh();
             chargeData();
         }
+
+        private void ShowInventory_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
