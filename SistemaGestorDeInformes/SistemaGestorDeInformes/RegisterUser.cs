@@ -75,6 +75,13 @@ namespace SistemaGestorDeInformes
         private void labelCerrar_Click(object sender, EventArgs e)
         {
             Application.Exit();
-        }        
+        }
+
+        private void RegisterUser_Load(object sender, EventArgs e)
+        {
+            txtName.ShortcutsEnabled = false;
+            txtPassword.ShortcutsEnabled = false;
+            txtEmail.ShortcutsEnabled = false;
+        }
     }
 }
