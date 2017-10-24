@@ -15,7 +15,7 @@ namespace SistemaGestorDeInformes
         OutputReceptionController rc;
         public OutputOfProvitions()
         {
-            rc =new OutputReceptionController();
+            rc = new OutputReceptionController();
             InitializeComponent();
         }
 
@@ -130,7 +130,7 @@ namespace SistemaGestorDeInformes
 
         private void RegisterButton_Click(object sender, EventArgs e)
         {
-            rc.RegisterOutputReception(ProductTextBox, UnitTextBox, OutputDateTextBox,TotalTextBox);
+            rc.RegisterOutputReception(ProductTextBox, UnitTextBox, OutputDateTextBox, TotalTextBox);
         }
 
         private void generarInformeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -162,13 +162,6 @@ namespace SistemaGestorDeInformes
                 e.Handled = true;
         }
 
-        private void TotalTextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar >= 48 && e.KeyChar <= 57) || (e.KeyChar >= 97 && e.KeyChar <= 122) || (e.KeyChar >= 65 && e.KeyChar <= 90) || (e.KeyChar == 8) || (e.KeyChar == 32))
-                e.Handled = false;
-            else
-                e.Handled = true;
-        }
 
         private void OutputDateTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
