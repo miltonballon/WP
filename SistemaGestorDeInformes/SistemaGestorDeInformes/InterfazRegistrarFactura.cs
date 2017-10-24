@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ControllerLibrary;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -68,6 +69,13 @@ namespace SistemaGestorDeInformes
             textBoxProveedor.AutoCompleteCustomSource = providersNames();
             textBoxProveedor.AutoCompleteMode= AutoCompleteMode.Suggest;
             textBoxProveedor.AutoCompleteSource= AutoCompleteSource.CustomSource;
+
+
+            textBoxProveedor.MaxLength = 65;
+            textBoxNit.MaxLength = 10;
+            textBoxNFactura.MaxLength = 10;
+            textBoxNAutorizacion.MaxLength = 10;
+            
         }
 
         private AutoCompleteStringCollection providersNames()
@@ -437,6 +445,68 @@ namespace SistemaGestorDeInformes
         private void InterfazRegistrarFactura_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void textBoxProveedor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 48 && e.KeyChar <= 57) || (e.KeyChar >= 97 && e.KeyChar <= 122) || (e.KeyChar >= 65 && e.KeyChar <= 90) || (e.KeyChar == 8) || (e.KeyChar == 32))
+                e.Handled = false;
+            else
+                e.Handled = true;
+        }
+
+        
+        private void textBoxProveedor_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == (char)Keys.Escape)
+            {
+                buttonAtrás.Focus();
+            }
+        }
+
+        private void textBoxNit_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == (char)Keys.Escape)
+            {
+                buttonAtrás.Focus();
+            }
+        }
+
+        private void textBoxNFactura_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == (char)Keys.Escape)
+            {
+                buttonAtrás.Focus();
+            }
+        }
+
+        private void textBoxNAutorizacion_KeyUp(object sender, MouseEventArgs e)
+        {
+            
+        }
+
+        private void dateFecha_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == (char)Keys.Escape)
+            {
+                buttonAtrás.Focus();
+            }
+        }
+
+        private void dataGridView1_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == (char)Keys.Escape)
+            {
+                buttonAtrás.Focus();
+            }
+        }
+
+        private void textBoxNAutorizacion_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == (char)Keys.Escape)
+            {
+                buttonAtrás.Focus();
+            }
         }
     }
 }

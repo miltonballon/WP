@@ -73,6 +73,7 @@
     <Compile Include="ReportSheetController.cs" />
     <Compile Include="TrimesterController.cs" />
     <Compile Include="UserController.cs" />
+    <Compile Include="ValidationTextBox.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EntityLibrary\EntityLibrary.csproj">
