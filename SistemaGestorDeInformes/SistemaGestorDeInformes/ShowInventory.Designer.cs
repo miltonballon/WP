@@ -87,6 +87,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(343, 370);
             this.dataGridView1.TabIndex = 15;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dataGridView1_KeyUp);
             // 
             // Nombre
             // 
@@ -276,8 +277,10 @@
             this.searchTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.searchTextBox.Location = new System.Drawing.Point(396, 78);
             this.searchTextBox.Name = "searchTextBox";
-            this.searchTextBox.Size = new System.Drawing.Size(100, 20);
+            this.searchTextBox.Size = new System.Drawing.Size(150, 20);
             this.searchTextBox.TabIndex = 19;
+            this.searchTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.searchTextBox_KeyPress);
+            this.searchTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.searchTextBox_KeyUp);
             // 
             // searchButton
             // 
@@ -289,6 +292,7 @@
             this.searchButton.Text = "Buscar";
             this.searchButton.UseVisualStyleBackColor = true;
             this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
+            this.searchButton.KeyUp += new System.Windows.Forms.KeyEventHandler(this.searchButton_KeyUp);
             // 
             // cleanButton
             // 
@@ -300,6 +304,7 @@
             this.cleanButton.Text = "Limpiar";
             this.cleanButton.UseVisualStyleBackColor = true;
             this.cleanButton.Click += new System.EventHandler(this.cleanButton_Click);
+            this.cleanButton.KeyUp += new System.Windows.Forms.KeyEventHandler(this.cleanButton_KeyUp);
             // 
             // ShowInventory
             // 
