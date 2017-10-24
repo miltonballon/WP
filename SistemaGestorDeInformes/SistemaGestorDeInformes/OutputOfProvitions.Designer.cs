@@ -58,6 +58,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.OutputDateTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.atrasButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -356,12 +357,26 @@
             this.label2.TabIndex = 53;
             this.label2.Text = "FECHA:";
             // 
+            // atrasButton
+            // 
+            this.atrasButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.atrasButton.BackColor = System.Drawing.Color.Black;
+            this.atrasButton.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
+            this.atrasButton.ForeColor = System.Drawing.Color.Yellow;
+            this.atrasButton.Location = new System.Drawing.Point(3, 472);
+            this.atrasButton.Name = "atrasButton";
+            this.atrasButton.Size = new System.Drawing.Size(120, 30);
+            this.atrasButton.TabIndex = 54;
+            this.atrasButton.Text = "Atrás";
+            this.atrasButton.UseVisualStyleBackColor = false;
+            // 
             // OutputOfProvitions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(815, 508);
+            this.Controls.Add(this.atrasButton);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.OutputDateTextBox);
             this.Controls.Add(this.label1);
@@ -418,5 +433,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox OutputDateTextBox;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button atrasButton;
     }
 }

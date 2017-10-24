@@ -62,6 +62,7 @@
             this.informeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.abrirTrimestreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.atrasButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -407,12 +408,26 @@
             this.salirToolStripMenuItem.Text = "Cerrar Sesión";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
+            // atrasButton
+            // 
+            this.atrasButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.atrasButton.BackColor = System.Drawing.Color.Black;
+            this.atrasButton.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
+            this.atrasButton.ForeColor = System.Drawing.Color.Yellow;
+            this.atrasButton.Location = new System.Drawing.Point(3, 472);
+            this.atrasButton.Name = "atrasButton";
+            this.atrasButton.Size = new System.Drawing.Size(120, 30);
+            this.atrasButton.TabIndex = 36;
+            this.atrasButton.Text = "Atrás";
+            this.atrasButton.UseVisualStyleBackColor = false;
+            // 
             // InputOfProvitions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(815, 508);
+            this.Controls.Add(this.atrasButton);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.TotalReception);
             this.Controls.Add(this.ReceptionDate);
@@ -476,5 +491,6 @@
         private System.Windows.Forms.ToolStripMenuItem informeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem abrirTrimestreToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
+        private System.Windows.Forms.Button atrasButton;
     }
 }
