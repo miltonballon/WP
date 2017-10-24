@@ -77,7 +77,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(815, 24);
-            this.menuStrip1.TabIndex = 1;
+            this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // pantallaPrincipalToolStripMenuItem
@@ -148,12 +148,14 @@
             this.generarInformeToolStripMenuItem.Name = "generarInformeToolStripMenuItem";
             this.generarInformeToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.generarInformeToolStripMenuItem.Text = "Generar Informe";
+            this.generarInformeToolStripMenuItem.Click += new System.EventHandler(this.generarInformeToolStripMenuItem_Click);
             // 
             // verInformeToolStripMenuItem
             // 
             this.verInformeToolStripMenuItem.Name = "verInformeToolStripMenuItem";
             this.verInformeToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.verInformeToolStripMenuItem.Text = "Ver Informe";
+            this.verInformeToolStripMenuItem.Click += new System.EventHandler(this.verInformeToolStripMenuItem_Click);
             // 
             // inventarioToolStripMenuItem
             // 
@@ -197,7 +199,7 @@
             // informeToolStripMenuItem
             // 
             this.informeToolStripMenuItem.Name = "informeToolStripMenuItem";
-            this.informeToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.informeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.informeToolStripMenuItem.Text = "Informe";
             this.informeToolStripMenuItem.Click += new System.EventHandler(this.informeToolStripMenuItem_Click);
             // 
@@ -228,7 +230,8 @@
             this.Name = "InterfazPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Principal";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.TopMost = true;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.InterfazPrincipal_FormClosing);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

@@ -22,6 +22,7 @@ namespace SistemaGestorDeInformes
         private void buttonAtrás_Click(object sender, EventArgs e)
         {
             InterfazPrincipal main = new InterfazPrincipal();
+            main.WindowState = this.WindowState;
             this.Hide();
             main.Show();
         }
@@ -34,6 +35,7 @@ namespace SistemaGestorDeInformes
         private void pantallaPrincipalToolStripMenuItem_Click(object sender, EventArgs e)
         {
             InterfazPrincipal Interfaz = new InterfazPrincipal();
+            Interfaz.WindowState = this.WindowState;
             this.Hide();
             Interfaz.Show();
         }
@@ -41,6 +43,7 @@ namespace SistemaGestorDeInformes
         private void registrarFacturaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             InterfazRegistrarFactura Interfaz = new InterfazRegistrarFactura();
+            Interfaz.WindowState = this.WindowState;
             this.Hide();
             Interfaz.Show();
         }
@@ -48,6 +51,7 @@ namespace SistemaGestorDeInformes
         private void verFacturasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ShowBills Interfaz = new ShowBills();
+            Interfaz.WindowState = this.WindowState;
             this.Hide();
             Interfaz.Show();
         }
@@ -55,6 +59,7 @@ namespace SistemaGestorDeInformes
         private void registrarProductosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RegisterProduct Interfaz = new RegisterProduct();
+            Interfaz.WindowState = this.WindowState;
             this.Hide();
             Interfaz.Show();
         }
@@ -62,6 +67,7 @@ namespace SistemaGestorDeInformes
         private void verProductosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ShowProducts Interfaz = new ShowProducts();
+            Interfaz.WindowState = this.WindowState;
             this.Hide();
             Interfaz.Show();
         }
@@ -69,6 +75,7 @@ namespace SistemaGestorDeInformes
         private void registrarEntradaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             InputOfProvitions Interfaz = new InputOfProvitions();
+            Interfaz.WindowState = this.WindowState;
             this.Hide();
             Interfaz.Show();
         }
@@ -76,6 +83,7 @@ namespace SistemaGestorDeInformes
         private void verInventarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ShowInventory Interfaz = new ShowInventory();
+            Interfaz.WindowState = this.WindowState;
             this.Hide();
             Interfaz.Show();
         }
@@ -83,6 +91,7 @@ namespace SistemaGestorDeInformes
         private void informeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ReportConfiguration Interfaz = new ReportConfiguration();
+            Interfaz.WindowState = this.WindowState;
             this.Hide();
             Interfaz.Show();
         }
@@ -90,6 +99,7 @@ namespace SistemaGestorDeInformes
         private void abrirTrimestreToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenQuarter Interfaz = new OpenQuarter();
+            Interfaz.WindowState = this.WindowState;
             this.Hide();
             Interfaz.Show();
         }
@@ -105,11 +115,99 @@ namespace SistemaGestorDeInformes
         {
             rc.ProductAutoComplete(ProductTextBox);
             rc.UnitAutoComplete(UnitTextBox);
+
+            ProductTextBox.MaxLength = 70;
+            UnitTextBox.MaxLength = 3;
+            TotalTextBox.MaxLength = 15;
+            OutputDateTextBox.MaxLength = 10;
+
+            ProductTextBox.ShortcutsEnabled = false;
+            UnitTextBox.ShortcutsEnabled = false;
+            TotalTextBox.ShortcutsEnabled = false;
+            OutputDateTextBox.ShortcutsEnabled = false;
+
         }
 
         private void RegisterButton_Click(object sender, EventArgs e)
         {
             rc.RegisterOutputReception(ProductTextBox, UnitTextBox, OutputDateTextBox,TotalTextBox);
+        }
+
+        private void generarInformeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GenerateReport Interfaz = new GenerateReport();
+            Interfaz.WindowState = this.WindowState;
+            this.Hide();
+            Interfaz.Show();
+        }
+
+        private void OutputOfProvitions_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void ProductTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 48 && e.KeyChar <= 57) || (e.KeyChar >= 97 && e.KeyChar <= 122) || (e.KeyChar >= 65 && e.KeyChar <= 90) || (e.KeyChar == 8) || (e.KeyChar == 32))
+                e.Handled = false;
+            else
+                e.Handled = true;
+        }
+
+        private void UnitTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 48 && e.KeyChar <= 57) || (e.KeyChar >= 97 && e.KeyChar <= 122) || (e.KeyChar >= 65 && e.KeyChar <= 90) || (e.KeyChar == 8) || (e.KeyChar == 32))
+                e.Handled = false;
+            else
+                e.Handled = true;
+        }
+
+        private void TotalTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 48 && e.KeyChar <= 57) || (e.KeyChar >= 97 && e.KeyChar <= 122) || (e.KeyChar >= 65 && e.KeyChar <= 90) || (e.KeyChar == 8) || (e.KeyChar == 32))
+                e.Handled = false;
+            else
+                e.Handled = true;
+        }
+
+        private void OutputDateTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 48 && e.KeyChar <= 57) || (e.KeyChar >= 97 && e.KeyChar <= 122) || (e.KeyChar >= 65 && e.KeyChar <= 90) || (e.KeyChar == 8) || (e.KeyChar == 32))
+                e.Handled = false;
+            else
+                e.Handled = true;
+        }
+
+        private void ProductTextBox_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == (char)Keys.Escape)
+            {
+                buttonAtrás.Focus();
+            }
+        }
+
+        private void UnitTextBox_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == (char)Keys.Escape)
+            {
+                buttonAtrás.Focus();
+            }
+        }
+
+        private void TotalTextBox_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == (char)Keys.Escape)
+            {
+                buttonAtrás.Focus();
+            }
+        }
+
+        private void OutputDateTextBox_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == (char)Keys.Escape)
+            {
+                buttonAtrás.Focus();
+            }
         }
     }
 }

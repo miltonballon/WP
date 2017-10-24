@@ -14,6 +14,7 @@ namespace SistemaGestorDeInformes
         private int total;
         public Reception()
         {
+            new Product();
         }
 
         public Reception(Product product, string expirationDate, string receptionDate, int total)
@@ -34,12 +35,18 @@ namespace SistemaGestorDeInformes
             get { return expirationDate; }
             set { expirationDate = value; }
         }
+
+        public string ReceptionDate
+        {
+            get { return receptionDate; }
+            set { receptionDate = value; }
+        }
         public string Provider
         {
             get { return receptionDate; }
             set { receptionDate = value; }
         }
-        public int Unit
+        public int Total
         {
             get { return total; }
             set { total = value; }

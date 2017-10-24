@@ -23,6 +23,7 @@ namespace SistemaGestorDeInformes
         private void pantallaPrincipalToolStripMenuItem_Click(object sender, EventArgs e)
         {
             InterfazPrincipal principal = new InterfazPrincipal();
+            principal.WindowState = this.WindowState;
             principal.Show();
             this.Hide();
         }
@@ -30,6 +31,7 @@ namespace SistemaGestorDeInformes
         private void registrarFacturaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             InterfazRegistrarFactura InterfazRegistrarFactura1 = new InterfazRegistrarFactura();
+            InterfazRegistrarFactura1.WindowState = this.WindowState;
             InterfazRegistrarFactura1.Show();
             this.Hide();
         }
@@ -37,6 +39,7 @@ namespace SistemaGestorDeInformes
         private void verFacturasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ShowBills ShowBills1 = new ShowBills();
+            ShowBills1.WindowState = this.WindowState;
             ShowBills1.Show();
             this.Hide();
         }
@@ -44,6 +47,7 @@ namespace SistemaGestorDeInformes
         private void registrarProductosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RegisterProduct RegisterProduct1 = new RegisterProduct();
+            RegisterProduct1.WindowState = this.WindowState;
             RegisterProduct1.Show();
             this.Hide();
         }
@@ -51,6 +55,7 @@ namespace SistemaGestorDeInformes
         private void verProductosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ShowProducts ShowProducts1 = new ShowProducts();
+            ShowProducts1.WindowState = this.WindowState;
             ShowProducts1.Show();
             this.Hide();
         }
@@ -58,6 +63,7 @@ namespace SistemaGestorDeInformes
         private void atrasButton_Click(object sender, EventArgs e)
         {
             InterfazPrincipal principal = new InterfazPrincipal();//para volver atras
+            principal.WindowState = this.WindowState;
             this.Hide();
             principal.Show();
         }
@@ -65,6 +71,7 @@ namespace SistemaGestorDeInformes
         private void abrirTrimestreToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenQuarter OpenQuarter1 = new OpenQuarter();
+            OpenQuarter1.WindowState = this.WindowState;
             this.Hide();
             OpenQuarter1.Show();
         }
@@ -79,6 +86,7 @@ namespace SistemaGestorDeInformes
         private void verInventarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ShowInventory ShowInventory1 = new ShowInventory();
+            ShowInventory1.WindowState = this.WindowState;
             this.Hide();
             ShowInventory1.Show();
         }
@@ -86,6 +94,7 @@ namespace SistemaGestorDeInformes
         private void registrarEntradaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             InputOfProvitions InputOfProvitions1 = new InputOfProvitions();
+            InputOfProvitions1.WindowState = this.WindowState;
             this.Hide();
             InputOfProvitions1.Show();
         }
@@ -93,6 +102,7 @@ namespace SistemaGestorDeInformes
         private void registrarSalidaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OutputOfProvitions Interfaz = new OutputOfProvitions();
+            Interfaz.WindowState = this.WindowState;
             this.Hide();
             Interfaz.Show();
         }
@@ -104,6 +114,60 @@ namespace SistemaGestorDeInformes
             Configuration conf = new Configuration(nScho,nPar);
             configurationController.insertConfiguration(conf);
             MessageBox.Show("Se guardo la configuración correctamente");
+        }
+
+        private void generarInformeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GenerateReport Interfaz = new GenerateReport();
+            Interfaz.WindowState = this.WindowState;
+            this.Hide();
+            Interfaz.Show();
+        }
+
+        private void ReportConfiguration_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void txtboxbecas_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 48 && e.KeyChar <= 57) || (e.KeyChar >= 97 && e.KeyChar <= 122) || (e.KeyChar >= 65 && e.KeyChar <= 90) || (e.KeyChar == 8) || (e.KeyChar == 32))
+                e.Handled = false;
+            else
+                e.Handled = true;
+        }
+
+        private void txtboxnpartida_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 48 && e.KeyChar <= 57) || (e.KeyChar >= 97 && e.KeyChar <= 122) || (e.KeyChar >= 65 && e.KeyChar <= 90) || (e.KeyChar == 8) || (e.KeyChar == 32))
+                e.Handled = false;
+            else
+                e.Handled = true;
+        }
+
+        private void txtboxbecas_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == (char)Keys.Escape)
+            {
+                atrasButton.Focus();
+            }
+        }
+
+        private void txtboxnpartida_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == (char)Keys.Escape)
+            {
+                atrasButton.Focus();
+            }
+        }
+
+        private void ReportConfiguration_Load(object sender, EventArgs e)
+        {
+            txtboxbecas.MaxLength = 70;
+            txtboxnpartida.MaxLength = 70;
+
+            txtboxbecas.ShortcutsEnabled = false;
+            txtboxnpartida.ShortcutsEnabled = false;
         }
     }
 }

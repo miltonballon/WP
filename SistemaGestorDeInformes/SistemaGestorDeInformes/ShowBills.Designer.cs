@@ -150,6 +150,7 @@
             this.generarInformeToolStripMenuItem.Name = "generarInformeToolStripMenuItem";
             this.generarInformeToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.generarInformeToolStripMenuItem.Text = "Generar Informe";
+            this.generarInformeToolStripMenuItem.Click += new System.EventHandler(this.generarInformeToolStripMenuItem_Click);
             // 
             // verInformeToolStripMenuItem
             // 
@@ -222,6 +223,7 @@
             // 
             // buttonAtrás
             // 
+            this.buttonAtrás.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonAtrás.BackColor = System.Drawing.Color.Black;
             this.buttonAtrás.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAtrás.ForeColor = System.Drawing.Color.Yellow;
@@ -246,6 +248,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NFactura,
@@ -258,6 +261,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(547, 371);
             this.dataGridView1.TabIndex = 17;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dataGridView1_KeyUp);
             // 
             // NFactura
             // 
@@ -297,6 +301,7 @@
             this.Name = "ShowBills";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ver Facturas";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ShowBills_FormClosing);
             this.Load += new System.EventHandler(this.ShowBills_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

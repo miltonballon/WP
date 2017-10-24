@@ -87,6 +87,7 @@
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
+            this.Location = new System.Drawing.Point(411, 316);
             this.Name = "EditProduct";
             this.Text = "EditProduct";
             this.ResumeLayout(false);

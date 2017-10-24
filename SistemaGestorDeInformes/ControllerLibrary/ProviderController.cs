@@ -9,7 +9,7 @@ namespace SistemaGestorDeInformes
 {
     public class ProviderController
     {
-        public Connection c = new Connection();
+        private Connection c = new Connection();
         public ProviderController()
         {
             c.connect();
@@ -22,16 +22,20 @@ namespace SistemaGestorDeInformes
             Provider provider=null;
             while (data.Read())
             {
-                provider = new Provider(data[1].ToString(), Int32.Parse(data[2].ToString()));
+                String name = data[1].ToString();
+                int nit = Int32.Parse(data[2].ToString());
+                provider = new Provider(name, nit);
             }
             c.dataClose();
+            data.Close();
             return provider;
         }
 
         public int findProviderIdByName(String name)
         {
             String query = "SELECT id FROM Provider WHERE Provider='"+name+"'";
-            return c.FindAndGetID(query);
+            int idProvider= c.FindAndGetID(query);
+            return idProvider;
         }
 
         public int insertProvider(Provider provider)
@@ -40,35 +44,36 @@ namespace SistemaGestorDeInformes
             int nit = provider.getNit();
             String query = "INSERT INTO Provider(Provider, NIT) VALUES ('"+name+"',"+nit+")";
             c.executeInsertion(query);
-            return findProviderIdByName(name);
+            int idProvider = findProviderIdByName(name);
+            return idProvider;
         }
 
         public List<Provider> getAllProviders()
         {
             List<Provider> output = new List<Provider>();
             string query = "SELECT * FROM Provider";
-            try
+            SQLiteDataReader data = c.query_show(query);
+            while (data.Read())
             {
-                SQLiteDataReader data = c.query_show(query);
-                while (data.Read())
-                {
-                    Provider provider = new Provider(data[1].ToString(), Int32.Parse(data[2].ToString()));
-                    output.Add(provider);
-                }
+                String name = data[1].ToString();
+                int nit = Int32.Parse(data[2].ToString());
+                Provider provider = new Provider(name, nit);
+                output.Add(provider);
             }
-            catch(Exception)
-            {            }
+            data.Close();
             c.dataClose();
             return output;
         }
 
-        /*public int updateProviderById(int id, Provider provider)
+        public int forceSearchProvider(Provider provider)
         {
-            String name = provider.getName();
-            int nit = provider.getNit();
-            String query = "UPDATE Provider SET Provider='"+name+"',NIT="+nit+" WHERE id="+id;
-            c.
-        }*/
+            int id = findProviderIdByName(provider.getName());
+            if (id < 0)
+            {
+                insertProvider(provider);
+            }
+            return id;
+        }
     }
 
 }

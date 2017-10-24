@@ -19,6 +19,92 @@ namespace SistemaGestorDeInformes
             c.connect();
             productController = new ProductController();
         }
+        
+
+        public void RegisterReception(Reception reception)
+        {
+
+            int idName = getIdName(reception.Product.Name);
+            int idProvider = getIdProvider(reception.Product.Provider);
+            int idUnit = getIdUnit(reception.Product.Unit);
+            int notExist = -1;
+            int resul = -1;
+            string queryPPU = "SELECT id FROM Product_Provider_Unit where id_prod='" + idName + "' and id_prov='" + idProvider + "' and id_uni='" + idUnit + "'";
+            SQLiteDataReader data = c.query_show(queryPPU);
+            while (data.Read())
+            {
+                resul = Int32.Parse(data[0].ToString());
+            }
+            c.dataClose();
+            data.Close();
+            if (idName != notExist && idProvider != notExist && idUnit != notExist && resul != notExist)
+            {
+                InsertReception(resul, reception);
+                MessageBox.Show("Registrado Correctamente");
+            }
+            else
+            {
+                MessageBox.Show("El producto no existe, registre el producto previamente");
+            }
+        }
+
+        public List<Reception> getAllReceptions()
+        {
+            List<Reception> receptions = new List<Reception>();
+            string query = "SELECT * FROM Reception";
+            try
+            {
+                SQLiteDataReader data = c.query_show(query);
+                while (data.Read())
+                {
+                    int ppuId = Int32.Parse(data[1].ToString()),
+                        total = Int32.Parse(data[4].ToString());
+                    String recDate = data[2].ToString(),
+                           expDate = data[3].ToString();
+                    Product product = productController.getProductByPPUId(ppuId);
+                    Reception reception = new Reception(product, recDate, expDate, total);
+                    receptions.Add(reception);
+                }
+            }
+            catch (Exception)
+            { }
+            c.dataClose();
+            return receptions;
+        }
+        public List<Reception> searchReception(string name)
+        {
+            List<Reception> reception = new List<Reception>();
+            
+            string query = "select name, Type, total  FROM Reception AS REC, Product AS PROD, Provider AS PRO, Unit AS Un, Product_Provider_Unit AS PPU WHERE PROD.id = PPU.Id_prod AND PRO.id= PPU.id_prov AND Un.id= PPU.id_uni AND REC.ppu_id=PPU.id AND UPPER (PROD.name)= UPPER(" + "'" + name + "')";
+            SQLiteDataReader data = c.query_show(query);
+            while (data.Read())
+            {
+                Product prod = new Product();
+                
+                Reception p = new Reception();
+                //MessageBox.Show("d"+data[0].ToString()+"B"+data[1].ToString()+"C"+Int32.Parse(data[2].ToString()));
+                prod.Name = data[0].ToString();
+                prod.Unit = data[1].ToString();
+                p.Product = prod;
+
+                p.Total =Int32.Parse(data[2].ToString());
+                reception.Add(p);
+                //MessageBox.Show("N"+p.Product.Name+"U"+p.Product.Unit+"T"+p.Total);
+            }
+            
+            c.dataClose();
+            data.Close();
+            return reception;
+        }
+
+        public void updateReception(int idReception, Reception reception)
+        {
+            String expDate = reception.ExpirationDate;
+            int total = reception.Total;
+            String query = "UPDATE Reception SET total=" + total + ", expirationDate='" + expDate + "' WHERE id=" + idReception;
+            c.executeInsertion(query);
+        }
+
         public void ProductAutoComplete(TextBox Product)
         {
             string query = "SELECT name FROM Product";
@@ -27,11 +113,12 @@ namespace SistemaGestorDeInformes
             while (data.Read())
             {
                 Product.AutoCompleteCustomSource.Add(data["name"].ToString());
-               
+
             }
             c.dataClose();
-            data.Close();     
+            data.Close();
         }
+
         public void ProviderAutoComplete(TextBox Provider)
         {
             string query = "SELECT Provider FROM Provider";
@@ -44,6 +131,7 @@ namespace SistemaGestorDeInformes
             c.dataClose();
             data.Close();
         }
+
         public void UnitAutoComplete(TextBox Unit)
         {
             string query = "SELECT Type FROM Unit";
@@ -56,35 +144,12 @@ namespace SistemaGestorDeInformes
             c.dataClose();
             data.Close();
         }
-        public void RegisterReception(TextBox Product, TextBox Provider, TextBox Unit, DateTimePicker ExpirationDate, DateTimePicker ReceptionDate, TextBox Total)
-        {
-            int idName = getIdName(Product.Text.ToString());
-            int idProvider = getIdProvider(Provider.Text.ToString());
-            int idUnit = getIdUnit(Unit.Text.ToString());
-            int notExist=-1;
-            string queryPPU= "SELECT id FROM Product_Provider_Unit where id_prod='"+idName+"' and id_prov='"+idProvider+"' and id_uni='"+idUnit+"'";
-            SQLiteDataReader data = c.query_show(queryPPU);
-            int resul = -1;
-            while (data.Read())
-            {
-                resul = Int32.Parse(data[0].ToString());   
-            }
-            c.dataClose();
-            data.Close();
-            if (idName != notExist && idProvider != notExist && idUnit != notExist && resul != notExist)
-            {
-                InsertReception(resul, ExpirationDate, ReceptionDate, Total);
-                MessageBox.Show("Registrado Correctamente");
-            }
-            else
-            {
-                MessageBox.Show("El producto no existe, registre el producto previamente");
-            }
-        }
+        
 
-        public void InsertReception(int id, DateTimePicker expiration, DateTimePicker reception, TextBox total)
+        public void InsertReception(int id, Reception reception)
         {
-            string query = "INSERT INTO Reception (ppu_id,receptionDate,expirationDate,total) values('" + id + "','" + expiration.Text + "','" + reception.Text + "','" + Int32.Parse(total.Text) + "')";
+            
+            string query = "INSERT INTO Reception (ppu_id,receptionDate,expirationDate,total) values('" + id + "','" + reception.ExpirationDate + "','" + reception.ReceptionDate + "','" + reception.Total + "')";
             c.executeInsertion(query);
         }
         public int getIdName(string name)
@@ -103,29 +168,7 @@ namespace SistemaGestorDeInformes
             return c.FindAndGetID(UnitQuery);
         }
 
-        public List<Reception> getAllReceptions()
-        {
-            List<Reception> receptions = new List<Reception>();
-            string query = "SELECT * FROM Reception";
-            try
-            {
-                SQLiteDataReader data = c.query_show(query);
-                while (data.Read())
-                {
-                    int ppuId=Int32.Parse(data[1].ToString()), 
-                        total= Int32.Parse(data[4].ToString());
-                    String recDate=data[2].ToString(), 
-                           expDate= data[3].ToString();
-                    Product product = productController.getProductByPPUId(ppuId);
-                    Reception reception = new Reception(product,recDate,expDate,total);
-                    receptions.Add(reception);
-                }
-            }
-            catch (Exception)
-            { }
-            c.dataClose();
-            return receptions;
-        }
+        
 
         public Reception getReceptionById(int id)
         {
@@ -145,13 +188,6 @@ namespace SistemaGestorDeInformes
             return reception;
         }
 
-        public void updateReception(int idReception, Reception reception)
-        {
-            String expDate=reception.ExpirationDate;
-            int total=reception.Unit;
-            String query = "UPDATE Reception SET total="+total+", expirationDate='"+expDate+"' WHERE id="+idReception;
-            c.executeInsertion(query);
-        }
    
     }
 }

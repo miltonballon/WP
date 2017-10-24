@@ -116,5 +116,10 @@ namespace SistemaGestorDeInformes
             this.Hide();
             Login1.Show();
         }
+
+        private void RestablecerContraseñaForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

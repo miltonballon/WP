@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ControllerLibrary;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -68,6 +69,13 @@ namespace SistemaGestorDeInformes
             textBoxProveedor.AutoCompleteCustomSource = providersNames();
             textBoxProveedor.AutoCompleteMode= AutoCompleteMode.Suggest;
             textBoxProveedor.AutoCompleteSource= AutoCompleteSource.CustomSource;
+
+
+            textBoxProveedor.MaxLength = 65;
+            textBoxNit.MaxLength = 10;
+            textBoxNFactura.MaxLength = 10;
+            textBoxNAutorizacion.MaxLength = 10;
+            
         }
 
         private AutoCompleteStringCollection providersNames()
@@ -156,7 +164,7 @@ namespace SistemaGestorDeInformes
             {
                 foreach (DataGridViewRow row in dataGridView1.Rows)
                 {
-                    row.Cells[dataGridView1.Columns["Unidad"].Index].Value = getUnitByNameOfProvidersProducts(Convert.ToString(row.Cells[dataGridView1.Columns["Nombre"].Index].Value));
+                    row.Cells[dataGridView1.Columns["Unidad"].Index].Value = getUnitByNameOfProvidersProducts(Convert.ToString(row.Cells[dataGridView1.Columns["Nombre"].Index].Value), row.Cells[dataGridView1.Columns["Unidad"].Index].Value);
                 }
             }
 
@@ -166,7 +174,7 @@ namespace SistemaGestorDeInformes
             }
         }
 
-        private String getUnitByNameOfProvidersProducts(String name)
+        private String getUnitByNameOfProvidersProducts(String name,Object value)
         {
             String output = "";
             foreach (Product p in provider.getProducts())
@@ -176,6 +184,10 @@ namespace SistemaGestorDeInformes
                     output = p.Unit;
                     break;
                 }
+            }
+            if (output.Equals("")&&value!=null)
+            {
+                output = value.ToString();
             }
             return output;
         }
@@ -191,6 +203,7 @@ namespace SistemaGestorDeInformes
         {
             InterfazPrincipal principal = new InterfazPrincipal();
             principal.Show();
+            principal.WindowState = this.WindowState;
             this.Hide();
         }
 
@@ -199,12 +212,14 @@ namespace SistemaGestorDeInformes
             if (modifying)
             {
                 ShowBills sb = new ShowBills();
+                sb.WindowState = this.WindowState;
                 this.Hide();
                 sb.Show();
             }
             else
             {
                 InterfazPrincipal principal = new InterfazPrincipal();//para volver atras
+                principal.WindowState = this.WindowState;
                 this.Hide();
                 principal.Show();
             }
@@ -240,6 +255,7 @@ namespace SistemaGestorDeInformes
         private void changeToShowBills()
         {
             ShowBills sb = new ShowBills();
+            sb.WindowState = this.WindowState;
             this.Hide();
             sb.Show();
         }
@@ -253,7 +269,26 @@ namespace SistemaGestorDeInformes
             }
             invoice = createInvoice();
             createAndAddProducts();
-            invoiceController.addInvoice(invoice);
+            int res=invoiceController.insertInvoice(invoice);
+            messages(res);
+        }
+
+        private void messages(int cod)
+        {
+            switch (cod)
+            {
+                case -1:
+                    String providersName = invoice.getProvider().getName();
+                    MessageBox.Show("El 'N. Factura' introducido con este proveedor: '" + providersName + "' ya existe.\nPor favor revise los datos introducidos.", "Error");
+                    break;
+                case -2:
+                    MessageBox.Show("No existe ningun Trimestre abierto.\nPor favor cree uno.", "Error");
+                    break;
+                default:
+                    MessageBox.Show("Informacion Basica de la factura agregado satisfactoriamente", "INFORME");
+                    MessageBox.Show(cod + " filas de la facturas insertadas", "INFORME");
+                    break;
+            }
         }
 
         private void newProvider()
@@ -299,6 +334,7 @@ namespace SistemaGestorDeInformes
         {
             ShowProducts intShowProducts = new ShowProducts();
             intShowProducts.Show();
+            intShowProducts.WindowState = this.WindowState;
             this.Hide();
         }
 
@@ -340,12 +376,14 @@ namespace SistemaGestorDeInformes
         {
             ShowBills ShowBills1 = new ShowBills();
             ShowBills1.Show();
+            ShowBills1.WindowState = this.WindowState;
             this.Hide();
         }
 
         private void informeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ReportConfiguration ReportConfiguration1 = new ReportConfiguration();
+            ReportConfiguration1.WindowState = this.WindowState;
             this.Hide();
             ReportConfiguration1.Show();
         }
@@ -353,6 +391,7 @@ namespace SistemaGestorDeInformes
         private void abrirTrimestreToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenQuarter OpenQuarter1 = new OpenQuarter();
+            OpenQuarter1.WindowState = this.WindowState;
             this.Hide();
             OpenQuarter1.Show();
         }
@@ -367,6 +406,7 @@ namespace SistemaGestorDeInformes
         private void verFacturasToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             ShowBills ShowBills1 = new ShowBills();
+            ShowBills1.WindowState = this.WindowState;
             this.Hide();
             ShowBills1.Show();
         }
@@ -381,6 +421,7 @@ namespace SistemaGestorDeInformes
         private void registrarEntradaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             InputOfProvitions InputOfProvitions1 = new InputOfProvitions();
+            InputOfProvitions1.WindowState = this.WindowState;
             this.Hide();
             InputOfProvitions1.Show();
         }
@@ -388,8 +429,84 @@ namespace SistemaGestorDeInformes
         private void registrarSalidaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OutputOfProvitions Interfaz = new OutputOfProvitions();
+            Interfaz.WindowState = this.WindowState;
             this.Hide();
             Interfaz.Show();
+        }
+
+        private void generarInformeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GenerateReport Interfaz = new GenerateReport();
+            Interfaz.WindowState = this.WindowState;
+            this.Hide();
+            Interfaz.Show();
+        }
+
+        private void InterfazRegistrarFactura_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void textBoxProveedor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 48 && e.KeyChar <= 57) || (e.KeyChar >= 97 && e.KeyChar <= 122) || (e.KeyChar >= 65 && e.KeyChar <= 90) || (e.KeyChar == 8) || (e.KeyChar == 32))
+                e.Handled = false;
+            else
+                e.Handled = true;
+        }
+
+        
+        private void textBoxProveedor_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == (char)Keys.Escape)
+            {
+                buttonAtrás.Focus();
+            }
+        }
+
+        private void textBoxNit_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == (char)Keys.Escape)
+            {
+                buttonAtrás.Focus();
+            }
+        }
+
+        private void textBoxNFactura_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == (char)Keys.Escape)
+            {
+                buttonAtrás.Focus();
+            }
+        }
+
+        private void textBoxNAutorizacion_KeyUp(object sender, MouseEventArgs e)
+        {
+            
+        }
+
+        private void dateFecha_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == (char)Keys.Escape)
+            {
+                buttonAtrás.Focus();
+            }
+        }
+
+        private void dataGridView1_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == (char)Keys.Escape)
+            {
+                buttonAtrás.Focus();
+            }
+        }
+
+        private void textBoxNAutorizacion_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == (char)Keys.Escape)
+            {
+                buttonAtrás.Focus();
+            }
         }
     }
 }

@@ -143,6 +143,7 @@
             this.generarInformeToolStripMenuItem.Name = "generarInformeToolStripMenuItem";
             this.generarInformeToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.generarInformeToolStripMenuItem.Text = "Generar Informe";
+            this.generarInformeToolStripMenuItem.Click += new System.EventHandler(this.generarInformeToolStripMenuItem_Click);
             // 
             // verInformeToolStripMenuItem
             // 
@@ -213,6 +214,7 @@
             // 
             // RegistrarButton
             // 
+            this.RegistrarButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.RegistrarButton.BackColor = System.Drawing.Color.Black;
             this.RegistrarButton.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
             this.RegistrarButton.ForeColor = System.Drawing.Color.Yellow;
@@ -223,9 +225,11 @@
             this.RegistrarButton.Text = "Nuevo Trimestre";
             this.RegistrarButton.UseVisualStyleBackColor = false;
             this.RegistrarButton.Click += new System.EventHandler(this.RegistrarButton_Click);
+            this.RegistrarButton.KeyUp += new System.Windows.Forms.KeyEventHandler(this.RegistrarButton_KeyUp);
             // 
             // atrasButton
             // 
+            this.atrasButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.atrasButton.BackColor = System.Drawing.Color.Black;
             this.atrasButton.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
             this.atrasButton.ForeColor = System.Drawing.Color.Yellow;
@@ -261,13 +265,16 @@
             // 
             // txbxNombre
             // 
+            this.txbxNombre.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txbxNombre.Location = new System.Drawing.Point(369, 137);
             this.txbxNombre.Name = "txbxNombre";
             this.txbxNombre.Size = new System.Drawing.Size(100, 20);
             this.txbxNombre.TabIndex = 1;
+            this.txbxNombre.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txbxNombre_KeyUp);
             // 
             // lbNombre
             // 
+            this.lbNombre.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbNombre.AutoSize = true;
             this.lbNombre.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbNombre.ForeColor = System.Drawing.Color.Yellow;
@@ -294,6 +301,7 @@
             this.Name = "OpenQuarter";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OpenQuarter";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.OpenQuarter_FormClosing);
             this.Load += new System.EventHandler(this.OpenQuarter_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

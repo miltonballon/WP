@@ -144,6 +144,7 @@
             this.generarInformeToolStripMenuItem.Name = "generarInformeToolStripMenuItem";
             this.generarInformeToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.generarInformeToolStripMenuItem.Text = "Generar Informe";
+            this.generarInformeToolStripMenuItem.Click += new System.EventHandler(this.generarInformeToolStripMenuItem_Click);
             // 
             // verInformeToolStripMenuItem
             // 
@@ -226,6 +227,7 @@
             // 
             // ProductoLabel
             // 
+            this.ProductoLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ProductoLabel.AutoSize = true;
             this.ProductoLabel.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProductoLabel.ForeColor = System.Drawing.Color.White;
@@ -237,6 +239,7 @@
             // 
             // ProveedorLabel
             // 
+            this.ProveedorLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ProveedorLabel.AutoSize = true;
             this.ProveedorLabel.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProveedorLabel.ForeColor = System.Drawing.Color.White;
@@ -248,6 +251,7 @@
             // 
             // RegistrarButton
             // 
+            this.RegistrarButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.RegistrarButton.BackColor = System.Drawing.Color.Black;
             this.RegistrarButton.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
             this.RegistrarButton.ForeColor = System.Drawing.Color.Yellow;
@@ -261,6 +265,7 @@
             // 
             // atrasButton
             // 
+            this.atrasButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.atrasButton.BackColor = System.Drawing.Color.Black;
             this.atrasButton.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
             this.atrasButton.ForeColor = System.Drawing.Color.Yellow;
@@ -274,17 +279,23 @@
             // 
             // txtboxnpartida
             // 
+            this.txtboxnpartida.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtboxnpartida.Location = new System.Drawing.Point(197, 136);
             this.txtboxnpartida.Name = "txtboxnpartida";
             this.txtboxnpartida.Size = new System.Drawing.Size(250, 20);
             this.txtboxnpartida.TabIndex = 2;
+            this.txtboxnpartida.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtboxnpartida_KeyPress);
+            this.txtboxnpartida.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtboxnpartida_KeyUp);
             // 
             // txtboxbecas
             // 
+            this.txtboxbecas.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtboxbecas.Location = new System.Drawing.Point(197, 94);
             this.txtboxbecas.Name = "txtboxbecas";
             this.txtboxbecas.Size = new System.Drawing.Size(250, 20);
             this.txtboxbecas.TabIndex = 1;
+            this.txtboxbecas.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtboxbecas_KeyPress);
+            this.txtboxbecas.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtboxbecas_KeyUp);
             // 
             // ReportConfiguration
             // 
@@ -303,6 +314,8 @@
             this.Name = "ReportConfiguration";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Configuración del informe";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ReportConfiguration_FormClosing);
+            this.Load += new System.EventHandler(this.ReportConfiguration_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

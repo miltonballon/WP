@@ -29,7 +29,7 @@ namespace SistemaGestorDeInformes
                 connectionString = new SQLiteConnection("Data Source = Database/Database.db");
                 connectionString.Open();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
                 MessageBox.Show("No se conecto con la BD");

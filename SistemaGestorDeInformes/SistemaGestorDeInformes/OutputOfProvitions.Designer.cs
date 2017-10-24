@@ -148,6 +148,7 @@
             this.generarInformeToolStripMenuItem.Name = "generarInformeToolStripMenuItem";
             this.generarInformeToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.generarInformeToolStripMenuItem.Text = "Generar Informe";
+            this.generarInformeToolStripMenuItem.Click += new System.EventHandler(this.generarInformeToolStripMenuItem_Click);
             // 
             // verInformeToolStripMenuItem
             // 
@@ -222,14 +223,18 @@
             // 
             // TotalTextBox
             // 
+            this.TotalTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TotalTextBox.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TotalTextBox.Location = new System.Drawing.Point(230, 172);
             this.TotalTextBox.Name = "TotalTextBox";
             this.TotalTextBox.Size = new System.Drawing.Size(250, 23);
             this.TotalTextBox.TabIndex = 37;
+            this.TotalTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TotalTextBox_KeyPress);
+            this.TotalTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TotalTextBox_KeyUp);
             // 
             // ProductTextBox
             // 
+            this.ProductTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ProductTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.ProductTextBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.ProductTextBox.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -237,9 +242,12 @@
             this.ProductTextBox.Name = "ProductTextBox";
             this.ProductTextBox.Size = new System.Drawing.Size(250, 23);
             this.ProductTextBox.TabIndex = 35;
+            this.ProductTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ProductTextBox_KeyPress);
+            this.ProductTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.ProductTextBox_KeyUp);
             // 
             // labelNFactura
             // 
+            this.labelNFactura.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelNFactura.AutoSize = true;
             this.labelNFactura.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNFactura.ForeColor = System.Drawing.Color.White;
@@ -251,6 +259,7 @@
             // 
             // labelNit
             // 
+            this.labelNit.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelNit.AutoSize = true;
             this.labelNit.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNit.ForeColor = System.Drawing.Color.White;
@@ -262,6 +271,7 @@
             // 
             // buttonAtrás
             // 
+            this.buttonAtrás.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonAtrás.BackColor = System.Drawing.Color.Black;
             this.buttonAtrás.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAtrás.ForeColor = System.Drawing.Color.Yellow;
@@ -286,6 +296,7 @@
             // 
             // RegisterButton
             // 
+            this.RegisterButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.RegisterButton.BackColor = System.Drawing.Color.Black;
             this.RegisterButton.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
             this.RegisterButton.ForeColor = System.Drawing.Color.Yellow;
@@ -299,6 +310,7 @@
             // 
             // UnitTextBox
             // 
+            this.UnitTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.UnitTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.UnitTextBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.UnitTextBox.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -306,9 +318,12 @@
             this.UnitTextBox.Name = "UnitTextBox";
             this.UnitTextBox.Size = new System.Drawing.Size(250, 23);
             this.UnitTextBox.TabIndex = 36;
+            this.UnitTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.UnitTextBox_KeyPress);
+            this.UnitTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.UnitTextBox_KeyUp);
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
@@ -320,14 +335,18 @@
             // 
             // OutputDateTextBox
             // 
+            this.OutputDateTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.OutputDateTextBox.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.OutputDateTextBox.Location = new System.Drawing.Point(230, 201);
             this.OutputDateTextBox.Name = "OutputDateTextBox";
             this.OutputDateTextBox.Size = new System.Drawing.Size(250, 23);
             this.OutputDateTextBox.TabIndex = 38;
+            this.OutputDateTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OutputDateTextBox_KeyPress);
+            this.OutputDateTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.OutputDateTextBox_KeyUp);
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
@@ -358,6 +377,7 @@
             this.Name = "OutputOfProvitions";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registrar Salida";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.OutputOfProvitions_FormClosing);
             this.Load += new System.EventHandler(this.OutputOfProvitions_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

@@ -104,6 +104,7 @@
             this.Name = "RestablecerContraseñaForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Recuperar contreseña";
+            this.Load += new System.EventHandler(this.RestablecerContraseñaForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
