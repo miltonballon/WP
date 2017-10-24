@@ -234,6 +234,7 @@
             this.RegistrarButton.TabIndex = 32;
             this.RegistrarButton.Text = "Generar Informe";
             this.RegistrarButton.UseVisualStyleBackColor = false;
+            this.RegistrarButton.KeyUp += new System.Windows.Forms.KeyEventHandler(this.RegistrarButton_KeyUp);
             // 
             // atrasButton
             // 
