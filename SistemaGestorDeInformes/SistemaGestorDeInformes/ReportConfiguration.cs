@@ -131,14 +131,43 @@ namespace SistemaGestorDeInformes
 
         private void txtboxbecas_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar != '1' && e.KeyChar != '2' && e.KeyChar != '3' && e.KeyChar != '4' && e.KeyChar != '5' && e.KeyChar != '6' && e.KeyChar != '7' && e.KeyChar != '8' && e.KeyChar != '9' && e.KeyChar != '0')
+            if ((e.KeyChar >= 48 && e.KeyChar <= 57) || (e.KeyChar >= 97 && e.KeyChar <= 122) || (e.KeyChar >= 65 && e.KeyChar <= 90) || (e.KeyChar == 8) || (e.KeyChar == 32))
+                e.Handled = false;
+            else
                 e.Handled = true;
         }
 
         private void txtboxnpartida_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar != '1' && e.KeyChar != '2' && e.KeyChar != '3' && e.KeyChar != '4' && e.KeyChar != '5' && e.KeyChar != '6' && e.KeyChar != '7' && e.KeyChar != '8' && e.KeyChar != '9' && e.KeyChar != '0')
+            if ((e.KeyChar >= 48 && e.KeyChar <= 57) || (e.KeyChar >= 97 && e.KeyChar <= 122) || (e.KeyChar >= 65 && e.KeyChar <= 90) || (e.KeyChar == 8) || (e.KeyChar == 32))
+                e.Handled = false;
+            else
                 e.Handled = true;
+        }
+
+        private void txtboxbecas_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == (char)Keys.Escape)
+            {
+                atrasButton.Focus();
+            }
+        }
+
+        private void txtboxnpartida_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == (char)Keys.Escape)
+            {
+                atrasButton.Focus();
+            }
+        }
+
+        private void ReportConfiguration_Load(object sender, EventArgs e)
+        {
+            txtboxbecas.MaxLength = 70;
+            txtboxnpartida.MaxLength = 70;
+
+            txtboxbecas.ShortcutsEnabled = false;
+            txtboxnpartida.ShortcutsEnabled = false;
         }
     }
 }

@@ -292,6 +292,7 @@
             this.txtboxnpartida.Size = new System.Drawing.Size(660, 38);
             this.txtboxnpartida.TabIndex = 2;
             this.txtboxnpartida.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtboxnpartida_KeyPress);
+            this.txtboxnpartida.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtboxnpartida_KeyUp);
             // 
             // txtboxbecas
             // 
@@ -302,6 +303,7 @@
             this.txtboxbecas.Size = new System.Drawing.Size(660, 38);
             this.txtboxbecas.TabIndex = 1;
             this.txtboxbecas.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtboxbecas_KeyPress);
+            this.txtboxbecas.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtboxbecas_KeyUp);
             // 
             // ReportConfiguration
             // 
@@ -322,6 +324,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Configuración del informe";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ReportConfiguration_FormClosing);
+            this.Load += new System.EventHandler(this.ReportConfiguration_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

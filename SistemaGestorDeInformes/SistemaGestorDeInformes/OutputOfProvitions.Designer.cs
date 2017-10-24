@@ -232,6 +232,7 @@
             this.TotalTextBox.Size = new System.Drawing.Size(660, 47);
             this.TotalTextBox.TabIndex = 37;
             this.TotalTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TotalTextBox_KeyPress);
+            this.TotalTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TotalTextBox_KeyUp);
             // 
             // ProductTextBox
             // 
@@ -244,6 +245,8 @@
             this.ProductTextBox.Name = "ProductTextBox";
             this.ProductTextBox.Size = new System.Drawing.Size(660, 47);
             this.ProductTextBox.TabIndex = 35;
+            this.ProductTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ProductTextBox_KeyPress);
+            this.ProductTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.ProductTextBox_KeyUp);
             // 
             // labelNFactura
             // 
@@ -324,6 +327,8 @@
             this.UnitTextBox.Name = "UnitTextBox";
             this.UnitTextBox.Size = new System.Drawing.Size(660, 47);
             this.UnitTextBox.TabIndex = 36;
+            this.UnitTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.UnitTextBox_KeyPress);
+            this.UnitTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.UnitTextBox_KeyUp);
             // 
             // label1
             // 
@@ -347,6 +352,8 @@
             this.OutputDateTextBox.Name = "OutputDateTextBox";
             this.OutputDateTextBox.Size = new System.Drawing.Size(660, 47);
             this.OutputDateTextBox.TabIndex = 38;
+            this.OutputDateTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OutputDateTextBox_KeyPress);
+            this.OutputDateTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.OutputDateTextBox_KeyUp);
             // 
             // label2
             // 

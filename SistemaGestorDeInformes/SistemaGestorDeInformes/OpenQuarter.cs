@@ -127,6 +127,9 @@ namespace SistemaGestorDeInformes
         {
             setLbTrimText();
             hideNombreForms();
+
+            txbxNombre.MaxLength = 70;
+            txbxNombre.ShortcutsEnabled = false;
         }
 
         private void setLbTrimText()
@@ -196,6 +199,27 @@ namespace SistemaGestorDeInformes
             Interfaz.WindowState = this.WindowState;
             this.Hide();
             Interfaz.Show();
+        }
+
+        private void RegistrarButton_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == (char)Keys.Escape)
+            {
+                atrasButton.Focus();
+            }
+        }
+
+        private void txbxNombre_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == (char)Keys.Escape)
+            {
+                atrasButton.Focus();
+            }
+        }
+
+        private void OpenQuarter_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

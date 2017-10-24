@@ -195,5 +195,13 @@ namespace SistemaGestorDeInformes
         {
             Application.Exit();
         }
+
+        private void dataGridView1_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == (char)Keys.Escape)
+            {
+                buttonAtrás.Focus();
+            }
+        }
     }
 }
