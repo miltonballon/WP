@@ -121,5 +121,13 @@ namespace SistemaGestorDeInformes
         {
             Application.Exit();
         }
+
+        private void RegistrarButton_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == (char)Keys.Escape)
+            {
+                atrasButton.Focus();
+            }
+        }
     }
 }

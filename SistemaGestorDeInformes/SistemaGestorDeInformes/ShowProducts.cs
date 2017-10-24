@@ -156,7 +156,8 @@ namespace SistemaGestorDeInformes
 
         private void ShowProducts_Load(object sender, EventArgs e)
         {
-
+            textBox1.MaxLength = 70;
+            textBox1.ShortcutsEnabled = false;
         }
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
@@ -201,6 +202,30 @@ namespace SistemaGestorDeInformes
         private void ShowProducts_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 48 && e.KeyChar <= 57) || (e.KeyChar >= 97 && e.KeyChar <= 122) || (e.KeyChar >= 65 && e.KeyChar <= 90) || (e.KeyChar == 8) || (e.KeyChar == 32))
+                e.Handled = false;
+            else
+                e.Handled = true;
+        }
+
+        private void textBox1_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == (char)Keys.Escape)
+            {
+                atrasButton.Focus();
+            }
+        }
+
+        private void dataGridView1_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == (char)Keys.Escape)
+            {
+                atrasButton.Focus();
+            }
         }
     }
 }

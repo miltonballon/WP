@@ -115,6 +115,17 @@ namespace SistemaGestorDeInformes
         {
             rc.ProductAutoComplete(ProductTextBox);
             rc.UnitAutoComplete(UnitTextBox);
+
+            ProductTextBox.MaxLength = 70;
+            UnitTextBox.MaxLength = 3;
+            TotalTextBox.MaxLength = 15;
+            OutputDateTextBox.MaxLength = 10;
+
+            ProductTextBox.ShortcutsEnabled = false;
+            UnitTextBox.ShortcutsEnabled = false;
+            TotalTextBox.ShortcutsEnabled = false;
+            OutputDateTextBox.ShortcutsEnabled = false;
+
         }
 
         private void RegisterButton_Click(object sender, EventArgs e)
@@ -133,6 +144,70 @@ namespace SistemaGestorDeInformes
         private void OutputOfProvitions_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void ProductTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 48 && e.KeyChar <= 57) || (e.KeyChar >= 97 && e.KeyChar <= 122) || (e.KeyChar >= 65 && e.KeyChar <= 90) || (e.KeyChar == 8) || (e.KeyChar == 32))
+                e.Handled = false;
+            else
+                e.Handled = true;
+        }
+
+        private void UnitTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 48 && e.KeyChar <= 57) || (e.KeyChar >= 97 && e.KeyChar <= 122) || (e.KeyChar >= 65 && e.KeyChar <= 90) || (e.KeyChar == 8) || (e.KeyChar == 32))
+                e.Handled = false;
+            else
+                e.Handled = true;
+        }
+
+        private void TotalTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 48 && e.KeyChar <= 57) || (e.KeyChar >= 97 && e.KeyChar <= 122) || (e.KeyChar >= 65 && e.KeyChar <= 90) || (e.KeyChar == 8) || (e.KeyChar == 32))
+                e.Handled = false;
+            else
+                e.Handled = true;
+        }
+
+        private void OutputDateTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 48 && e.KeyChar <= 57) || (e.KeyChar >= 97 && e.KeyChar <= 122) || (e.KeyChar >= 65 && e.KeyChar <= 90) || (e.KeyChar == 8) || (e.KeyChar == 32))
+                e.Handled = false;
+            else
+                e.Handled = true;
+        }
+
+        private void ProductTextBox_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == (char)Keys.Escape)
+            {
+                buttonAtrás.Focus();
+            }
+        }
+
+        private void UnitTextBox_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == (char)Keys.Escape)
+            {
+                buttonAtrás.Focus();
+            }
+        }
+
+        private void TotalTextBox_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == (char)Keys.Escape)
+            {
+                buttonAtrás.Focus();
+            }
+        }
+
+        private void OutputDateTextBox_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == (char)Keys.Escape)
+            {
+                buttonAtrás.Focus();
+            }
         }
     }
 }

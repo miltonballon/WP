@@ -132,7 +132,13 @@ namespace SistemaGestorDeInformes
 
         private void RegisterProduct_Load(object sender, EventArgs e)
         {
+            ProductTextBox.MaxLength = 70;
+            ProviderTextBox.MaxLength = 70;
+            Unit.MaxLength = 3;
 
+            ProductTextBox.ShortcutsEnabled = false;
+            ProviderTextBox.ShortcutsEnabled = false;
+            Unit.ShortcutsEnabled = false;
         }
 
         private void generarInformeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -146,6 +152,54 @@ namespace SistemaGestorDeInformes
         private void RegisterProduct_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void ProductTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 48 && e.KeyChar <= 57) || (e.KeyChar >= 97 && e.KeyChar <= 122) || (e.KeyChar >= 65 && e.KeyChar <= 90) || (e.KeyChar == 8) || (e.KeyChar == 32))
+                e.Handled = false;
+            else
+                e.Handled = true;
+        }
+
+        private void ProviderTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 48 && e.KeyChar <= 57) || (e.KeyChar >= 97 && e.KeyChar <= 122) || (e.KeyChar >= 65 && e.KeyChar <= 90) || (e.KeyChar == 8) || (e.KeyChar == 32))
+                e.Handled = false;
+            else
+                e.Handled = true;
+        }
+
+        private void Unit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 48 && e.KeyChar <= 57) || (e.KeyChar >= 97 && e.KeyChar <= 122) || (e.KeyChar >= 65 && e.KeyChar <= 90) || (e.KeyChar == 8) || (e.KeyChar == 32))
+                e.Handled = false;
+            else
+                e.Handled = true;
+        }
+
+        private void ProductTextBox_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == (char)Keys.Escape)
+            {
+                atrasButton.Focus();
+            }
+        }
+
+        private void ProviderTextBox_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == (char)Keys.Escape)
+            {
+                atrasButton.Focus();
+            }
+        }
+
+        private void Unit_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == (char)Keys.Escape)
+            {
+                atrasButton.Focus();
+            }
         }
     }
 }
