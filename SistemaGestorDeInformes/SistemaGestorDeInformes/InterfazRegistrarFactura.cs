@@ -88,7 +88,7 @@ namespace SistemaGestorDeInformes
         private void textBoxNit_TextChanged(object sender, KeyPressEventArgs e)
         {
             //Para impedir que se pongan letras y espacios en el NIT
-            if (e.KeyChar != '1' && e.KeyChar != '2' && e.KeyChar != '3' && e.KeyChar != '4' && e.KeyChar != '5' && e.KeyChar != '6' && e.KeyChar != '7' && e.KeyChar != '8' && e.KeyChar != '9' && e.KeyChar != '0' && e.KeyChar != 08 && e.KeyChar != 22 && e.KeyChar != 3 && e.KeyChar != 24)
+            if (e.KeyChar != '1' && e.KeyChar != '2' && e.KeyChar != '3' && e.KeyChar != '4' && e.KeyChar != '5' && e.KeyChar != '6' && e.KeyChar != '7' && e.KeyChar != '8' && e.KeyChar != '9' && e.KeyChar != '0')
                 e.Handled = true;
         }
 
@@ -100,14 +100,14 @@ namespace SistemaGestorDeInformes
         private void textBoxNFactura_TextChanged(object sender, KeyPressEventArgs e)
         {
             //Para impedir que se pongan letras y espacios en el N.FACTURA
-            if(e.KeyChar!='1' && e.KeyChar!= '2' && e.KeyChar != '3' && e.KeyChar != '4' && e.KeyChar != '5' && e.KeyChar != '6' && e.KeyChar != '7' && e.KeyChar != '8' && e.KeyChar != '9' && e.KeyChar != '0' && e.KeyChar != 08 && e.KeyChar != 22 && e.KeyChar != 3 && e.KeyChar != 24)
+            if(e.KeyChar!='1' && e.KeyChar!= '2' && e.KeyChar != '3' && e.KeyChar != '4' && e.KeyChar != '5' && e.KeyChar != '6' && e.KeyChar != '7' && e.KeyChar != '8' && e.KeyChar != '9' && e.KeyChar != '0')
                 e.Handled = true;
         }
 
         private void textBoxNAutorizacion_TextChanged(object sender, KeyPressEventArgs e)
         {
             //Para impedir que se pongan letras y espacios en el N.AUTORIZACION
-            if (e.KeyChar != '1' && e.KeyChar != '2' && e.KeyChar != '3' && e.KeyChar != '4' && e.KeyChar != '5' && e.KeyChar != '6' && e.KeyChar != '7' && e.KeyChar != '8' && e.KeyChar != '9' && e.KeyChar != '0' && e.KeyChar != 08 && e.KeyChar != 22 && e.KeyChar != 3 && e.KeyChar != 24)
+            if (e.KeyChar != '1' && e.KeyChar != '2' && e.KeyChar != '3' && e.KeyChar != '4' && e.KeyChar != '5' && e.KeyChar != '6' && e.KeyChar != '7' && e.KeyChar != '8' && e.KeyChar != '9' && e.KeyChar != '0')
                 e.Handled = true;
         }
 
@@ -187,7 +187,7 @@ namespace SistemaGestorDeInformes
         private void Column1_KeyPress(object sender, KeyPressEventArgs e)
         {
             //Para impedir que se pongan letras y espacios a excepcion de: ., copiar, pegar, cortar
-            if (e.KeyChar != '1' && e.KeyChar != '2' && e.KeyChar != '3' && e.KeyChar != '4' && e.KeyChar != '5' && e.KeyChar != '6' && e.KeyChar != '7' && e.KeyChar != '8' && e.KeyChar != '9' && e.KeyChar != '0' && e.KeyChar != 08 && e.KeyChar != '.' && e.KeyChar != 22 && e.KeyChar != 3 && e.KeyChar != 24)
+            if (e.KeyChar != '1' && e.KeyChar != '2' && e.KeyChar != '3' && e.KeyChar != '4' && e.KeyChar != '5' && e.KeyChar != '6' && e.KeyChar != '7' && e.KeyChar != '8' && e.KeyChar != '9' && e.KeyChar != '0' && e.KeyChar != '.')
                 e.Handled = true;
         }
 
