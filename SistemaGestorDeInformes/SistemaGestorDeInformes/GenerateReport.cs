@@ -116,5 +116,10 @@ namespace SistemaGestorDeInformes
             this.Hide();
             Interfaz.Show();
         }
+
+        private void GenerateReport_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

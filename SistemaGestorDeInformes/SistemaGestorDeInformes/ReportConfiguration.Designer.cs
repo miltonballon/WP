@@ -310,6 +310,7 @@
             this.Name = "ReportConfiguration";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Configuración del informe";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ReportConfiguration_FormClosing);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

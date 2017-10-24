@@ -23,7 +23,7 @@ namespace SistemaGestorDeInformes
 
         private void button3_Click(object sender, EventArgs e)
         {
-            InterfazRegistrarFactura InterfazRegistrarFactura1=new InterfazRegistrarFactura();
+            InterfazRegistrarFactura InterfazRegistrarFactura1 = new InterfazRegistrarFactura();
             InterfazRegistrarFactura1.Show();
         }
 
@@ -111,10 +111,9 @@ namespace SistemaGestorDeInformes
             Application.Exit();
         }
 
-        private void InterfazPrincipal_Load(object sender, EventArgs e)
-        {
 
-        }
+
+
 
         private void generarInformeToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -123,5 +122,20 @@ namespace SistemaGestorDeInformes
             this.Hide();
             Interfaz.Show();
         }
+
+        private void verInformeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public void ControlSetFocus(Control control)
+        {
+            // Set focus to the control, if it can receive focus.
+            if (control.CanFocus)
+            {
+                control.Focus();
+            }
+        }
+
     }
 }

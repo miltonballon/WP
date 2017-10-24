@@ -322,6 +322,7 @@
             this.Name = "ShowProducts";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "7";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ShowProducts_FormClosing);
             this.Load += new System.EventHandler(this.ShowProducts_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.menuStrip1.ResumeLayout(false);

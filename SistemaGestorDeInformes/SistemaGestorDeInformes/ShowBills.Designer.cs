@@ -300,6 +300,7 @@
             this.Name = "ShowBills";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ver Facturas";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ShowBills_FormClosing);
             this.Load += new System.EventHandler(this.ShowBills_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

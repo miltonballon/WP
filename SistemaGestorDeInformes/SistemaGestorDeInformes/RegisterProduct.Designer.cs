@@ -333,6 +333,7 @@
             this.Name = "RegisterProduct";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registrar Producto";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RegisterProduct_FormClosing);
             this.Load += new System.EventHandler(this.RegisterProduct_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

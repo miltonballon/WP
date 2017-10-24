@@ -46,5 +46,13 @@ namespace SistemaGestorDeInformes
         {
 
         }
+
+        private void FirtsSetup_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if(!userController.HasUser())
+            {
+                Application.Exit();
+            }
+        }
     }
 }
