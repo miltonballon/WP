@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FirtsSetup));
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -53,11 +52,13 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(78, 45);
+            this.label2.Location = new System.Drawing.Point(166, 62);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(587, 160);
+            this.label2.Size = new System.Drawing.Size(376, 140);
             this.label2.TabIndex = 5;
-            this.label2.Text = resources.GetString("label2.Text");
+            this.label2.Text = "HOLA,\r\n\r\nNo se detecto un usuario registrado en el sistema. \r\nPor favor presione " +
+    "el boton \"Ingresar si desea crear \r\nuno  o  cierre  la  ventana para cancelar el" +
+    " proceso\". \r\n\r\nGracias.";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // FirtsSetup

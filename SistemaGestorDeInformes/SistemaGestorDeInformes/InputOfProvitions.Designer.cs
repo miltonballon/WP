@@ -62,6 +62,7 @@
             this.informeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.abrirTrimestreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.atrasButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,7 +72,7 @@
             this.RegisterButton.BackColor = System.Drawing.Color.Black;
             this.RegisterButton.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
             this.RegisterButton.ForeColor = System.Drawing.Color.Yellow;
-            this.RegisterButton.Location = new System.Drawing.Point(250, 456);
+            this.RegisterButton.Location = new System.Drawing.Point(260, 378);
             this.RegisterButton.Name = "RegisterButton";
             this.RegisterButton.Size = new System.Drawing.Size(120, 30);
             this.RegisterButton.TabIndex = 6;
@@ -96,7 +97,7 @@
             this.buttonAtrás.BackColor = System.Drawing.Color.Black;
             this.buttonAtrás.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAtrás.ForeColor = System.Drawing.Color.Yellow;
-            this.buttonAtrás.Location = new System.Drawing.Point(3, 472);
+            this.buttonAtrás.Location = new System.Drawing.Point(3, 537);
             this.buttonAtrás.Name = "buttonAtrás";
             this.buttonAtrás.Size = new System.Drawing.Size(120, 30);
             this.buttonAtrás.TabIndex = 7;
@@ -110,7 +111,7 @@
             this.labelNFactura.AutoSize = true;
             this.labelNFactura.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNFactura.ForeColor = System.Drawing.Color.White;
-            this.labelNFactura.Location = new System.Drawing.Point(30, 150);
+            this.labelNFactura.Location = new System.Drawing.Point(77, 183);
             this.labelNFactura.Name = "labelNFactura";
             this.labelNFactura.Size = new System.Drawing.Size(70, 19);
             this.labelNFactura.TabIndex = 23;
@@ -122,7 +123,7 @@
             this.labelNit.AutoSize = true;
             this.labelNit.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNit.ForeColor = System.Drawing.Color.White;
-            this.labelNit.Location = new System.Drawing.Point(30, 110);
+            this.labelNit.Location = new System.Drawing.Point(77, 143);
             this.labelNit.Name = "labelNit";
             this.labelNit.Size = new System.Drawing.Size(103, 19);
             this.labelNit.TabIndex = 22;
@@ -134,7 +135,7 @@
             this.labelProveedor.AutoSize = true;
             this.labelProveedor.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelProveedor.ForeColor = System.Drawing.Color.White;
-            this.labelProveedor.Location = new System.Drawing.Point(30, 70);
+            this.labelProveedor.Location = new System.Drawing.Point(77, 103);
             this.labelProveedor.Name = "labelProveedor";
             this.labelProveedor.Size = new System.Drawing.Size(94, 19);
             this.labelProveedor.TabIndex = 21;
@@ -146,7 +147,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(30, 230);
+            this.label7.Location = new System.Drawing.Point(77, 263);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(155, 19);
             this.label7.TabIndex = 25;
@@ -158,7 +159,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(30, 190);
+            this.label8.Location = new System.Drawing.Point(77, 223);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(191, 19);
             this.label8.TabIndex = 24;
@@ -170,7 +171,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(30, 270);
+            this.label9.Location = new System.Drawing.Point(77, 303);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(140, 19);
             this.label9.TabIndex = 26;
@@ -181,7 +182,7 @@
             // 
             this.ExpirationDate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ExpirationDate.Font = new System.Drawing.Font("Bookman Old Style", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExpirationDate.Location = new System.Drawing.Point(230, 190);
+            this.ExpirationDate.Location = new System.Drawing.Point(277, 223);
             this.ExpirationDate.Name = "ExpirationDate";
             this.ExpirationDate.Size = new System.Drawing.Size(250, 23);
             this.ExpirationDate.TabIndex = 3;
@@ -193,7 +194,7 @@
             this.UnitTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.UnitTextBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.UnitTextBox.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UnitTextBox.Location = new System.Drawing.Point(230, 150);
+            this.UnitTextBox.Location = new System.Drawing.Point(277, 183);
             this.UnitTextBox.Name = "UnitTextBox";
             this.UnitTextBox.Size = new System.Drawing.Size(250, 23);
             this.UnitTextBox.TabIndex = 2;
@@ -206,7 +207,7 @@
             this.ProviderTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.ProviderTextBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.ProviderTextBox.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProviderTextBox.Location = new System.Drawing.Point(230, 110);
+            this.ProviderTextBox.Location = new System.Drawing.Point(277, 143);
             this.ProviderTextBox.MaxLength = 64;
             this.ProviderTextBox.Name = "ProviderTextBox";
             this.ProviderTextBox.Size = new System.Drawing.Size(250, 23);
@@ -220,7 +221,7 @@
             this.ProducTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.ProducTextBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.ProducTextBox.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProducTextBox.Location = new System.Drawing.Point(230, 70);
+            this.ProducTextBox.Location = new System.Drawing.Point(277, 103);
             this.ProducTextBox.MaxLength = 64;
             this.ProducTextBox.Name = "ProducTextBox";
             this.ProducTextBox.Size = new System.Drawing.Size(250, 23);
@@ -232,7 +233,7 @@
             // 
             this.ReceptionDate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ReceptionDate.Font = new System.Drawing.Font("Bookman Old Style", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ReceptionDate.Location = new System.Drawing.Point(230, 230);
+            this.ReceptionDate.Location = new System.Drawing.Point(277, 263);
             this.ReceptionDate.Name = "ReceptionDate";
             this.ReceptionDate.Size = new System.Drawing.Size(250, 23);
             this.ReceptionDate.TabIndex = 4;
@@ -242,7 +243,7 @@
             // 
             this.TotalReception.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TotalReception.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TotalReception.Location = new System.Drawing.Point(230, 270);
+            this.TotalReception.Location = new System.Drawing.Point(277, 303);
             this.TotalReception.Name = "TotalReception";
             this.TotalReception.Size = new System.Drawing.Size(250, 23);
             this.TotalReception.TabIndex = 5;
@@ -407,12 +408,27 @@
             this.salirToolStripMenuItem.Text = "Cerrar Sesión";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
+            // atrasButton
+            // 
+            this.atrasButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.atrasButton.BackColor = System.Drawing.Color.Black;
+            this.atrasButton.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
+            this.atrasButton.ForeColor = System.Drawing.Color.Yellow;
+            this.atrasButton.Location = new System.Drawing.Point(3, 472);
+            this.atrasButton.Name = "atrasButton";
+            this.atrasButton.Size = new System.Drawing.Size(120, 30);
+            this.atrasButton.TabIndex = 36;
+            this.atrasButton.Text = "Atrás";
+            this.atrasButton.UseVisualStyleBackColor = false;
+            this.atrasButton.Click += new System.EventHandler(this.atrasButton_Click);
+            // 
             // InputOfProvitions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(815, 508);
+            this.Controls.Add(this.atrasButton);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.TotalReception);
             this.Controls.Add(this.ReceptionDate);
@@ -476,5 +492,6 @@
         private System.Windows.Forms.ToolStripMenuItem informeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem abrirTrimestreToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
+        private System.Windows.Forms.Button atrasButton;
     }
 }

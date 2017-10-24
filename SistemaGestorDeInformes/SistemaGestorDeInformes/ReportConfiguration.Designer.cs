@@ -54,6 +54,8 @@
             this.atrasButton = new System.Windows.Forms.Button();
             this.txtboxnpartida = new System.Windows.Forms.TextBox();
             this.txtboxbecas = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -231,7 +233,7 @@
             this.ProductoLabel.AutoSize = true;
             this.ProductoLabel.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProductoLabel.ForeColor = System.Drawing.Color.White;
-            this.ProductoLabel.Location = new System.Drawing.Point(30, 93);
+            this.ProductoLabel.Location = new System.Drawing.Point(77, 126);
             this.ProductoLabel.Name = "ProductoLabel";
             this.ProductoLabel.Size = new System.Drawing.Size(61, 19);
             this.ProductoLabel.TabIndex = 23;
@@ -243,7 +245,7 @@
             this.ProveedorLabel.AutoSize = true;
             this.ProveedorLabel.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProveedorLabel.ForeColor = System.Drawing.Color.White;
-            this.ProveedorLabel.Location = new System.Drawing.Point(30, 135);
+            this.ProveedorLabel.Location = new System.Drawing.Point(77, 168);
             this.ProveedorLabel.Name = "ProveedorLabel";
             this.ProveedorLabel.Size = new System.Drawing.Size(95, 19);
             this.ProveedorLabel.TabIndex = 22;
@@ -255,7 +257,7 @@
             this.RegistrarButton.BackColor = System.Drawing.Color.Black;
             this.RegistrarButton.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
             this.RegistrarButton.ForeColor = System.Drawing.Color.Yellow;
-            this.RegistrarButton.Location = new System.Drawing.Point(268, 338);
+            this.RegistrarButton.Location = new System.Drawing.Point(315, 371);
             this.RegistrarButton.Name = "RegistrarButton";
             this.RegistrarButton.Size = new System.Drawing.Size(120, 30);
             this.RegistrarButton.TabIndex = 3;
@@ -269,7 +271,7 @@
             this.atrasButton.BackColor = System.Drawing.Color.Black;
             this.atrasButton.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
             this.atrasButton.ForeColor = System.Drawing.Color.Yellow;
-            this.atrasButton.Location = new System.Drawing.Point(3, 472);
+            this.atrasButton.Location = new System.Drawing.Point(3, 537);
             this.atrasButton.Name = "atrasButton";
             this.atrasButton.Size = new System.Drawing.Size(120, 30);
             this.atrasButton.TabIndex = 4;
@@ -280,7 +282,7 @@
             // txtboxnpartida
             // 
             this.txtboxnpartida.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtboxnpartida.Location = new System.Drawing.Point(197, 136);
+            this.txtboxnpartida.Location = new System.Drawing.Point(244, 169);
             this.txtboxnpartida.Name = "txtboxnpartida";
             this.txtboxnpartida.Size = new System.Drawing.Size(250, 20);
             this.txtboxnpartida.TabIndex = 2;
@@ -290,12 +292,39 @@
             // txtboxbecas
             // 
             this.txtboxbecas.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtboxbecas.Location = new System.Drawing.Point(197, 94);
+            this.txtboxbecas.Location = new System.Drawing.Point(244, 127);
             this.txtboxbecas.Name = "txtboxbecas";
             this.txtboxbecas.Size = new System.Drawing.Size(250, 20);
             this.txtboxbecas.TabIndex = 1;
             this.txtboxbecas.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtboxbecas_KeyPress);
             this.txtboxbecas.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtboxbecas_KeyUp);
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button1.BackColor = System.Drawing.Color.Black;
+            this.button1.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
+            this.button1.ForeColor = System.Drawing.Color.Yellow;
+            this.button1.Location = new System.Drawing.Point(3, 537);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(120, 30);
+            this.button1.TabIndex = 36;
+            this.button1.Text = "Atrás";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button2.BackColor = System.Drawing.Color.Black;
+            this.button2.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
+            this.button2.ForeColor = System.Drawing.Color.Yellow;
+            this.button2.Location = new System.Drawing.Point(3, 472);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(120, 30);
+            this.button2.TabIndex = 37;
+            this.button2.Text = "Atrás";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // ReportConfiguration
             // 
@@ -303,6 +332,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(815, 508);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.ProductoLabel);
             this.Controls.Add(this.ProveedorLabel);
             this.Controls.Add(this.RegistrarButton);
@@ -351,5 +382,7 @@
         private System.Windows.Forms.TextBox txtboxnpartida;
         private System.Windows.Forms.TextBox txtboxbecas;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
