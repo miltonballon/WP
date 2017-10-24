@@ -225,6 +225,7 @@
             this.RegistrarButton.Text = "Nuevo Trimestre";
             this.RegistrarButton.UseVisualStyleBackColor = false;
             this.RegistrarButton.Click += new System.EventHandler(this.RegistrarButton_Click);
+            this.RegistrarButton.KeyUp += new System.Windows.Forms.KeyEventHandler(this.RegistrarButton_KeyUp);
             // 
             // atrasButton
             // 
@@ -269,6 +270,7 @@
             this.txbxNombre.Name = "txbxNombre";
             this.txbxNombre.Size = new System.Drawing.Size(100, 20);
             this.txbxNombre.TabIndex = 1;
+            this.txbxNombre.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txbxNombre_KeyUp);
             // 
             // lbNombre
             // 
@@ -299,6 +301,7 @@
             this.Name = "OpenQuarter";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OpenQuarter";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.OpenQuarter_FormClosing);
             this.Load += new System.EventHandler(this.OpenQuarter_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
