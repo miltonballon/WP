@@ -165,5 +165,13 @@ namespace SistemaGestorDeInformes
             txtboxbecas.ShortcutsEnabled = false;
             txtboxnpartida.ShortcutsEnabled = false;
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            InterfazPrincipal main = new InterfazPrincipal();
+            main.WindowState = this.WindowState;
+            this.Hide();
+            main.Show();
+        }
     }
 }

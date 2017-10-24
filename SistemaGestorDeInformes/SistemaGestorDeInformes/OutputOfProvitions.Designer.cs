@@ -369,6 +369,7 @@
             this.atrasButton.TabIndex = 54;
             this.atrasButton.Text = "Atrás";
             this.atrasButton.UseVisualStyleBackColor = false;
+            this.atrasButton.Click += new System.EventHandler(this.atrasButton_Click);
             // 
             // OutputOfProvitions
             // 
