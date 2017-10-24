@@ -128,5 +128,17 @@ namespace SistemaGestorDeInformes
         {
             Application.Exit();
         }
+
+        private void txtboxbecas_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != '1' && e.KeyChar != '2' && e.KeyChar != '3' && e.KeyChar != '4' && e.KeyChar != '5' && e.KeyChar != '6' && e.KeyChar != '7' && e.KeyChar != '8' && e.KeyChar != '9' && e.KeyChar != '0')
+                e.Handled = true;
+        }
+
+        private void txtboxnpartida_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != '1' && e.KeyChar != '2' && e.KeyChar != '3' && e.KeyChar != '4' && e.KeyChar != '5' && e.KeyChar != '6' && e.KeyChar != '7' && e.KeyChar != '8' && e.KeyChar != '9' && e.KeyChar != '0')
+                e.Handled = true;
+        }
     }
 }
