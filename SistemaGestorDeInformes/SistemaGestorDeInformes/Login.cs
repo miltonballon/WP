@@ -46,7 +46,8 @@ namespace SistemaGestorDeInformes
 
         private void Login_Load(object sender, EventArgs e)
         {
-
+            txtUsuario.ShortcutsEnabled = false;
+            txtContraseña.ShortcutsEnabled = false;
         }
 
         private void btnEntrar_Click(object sender, EventArgs e)
