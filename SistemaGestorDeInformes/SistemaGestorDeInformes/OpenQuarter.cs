@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ControllerLibrary;
 
 namespace SistemaGestorDeInformes
 {
@@ -117,11 +118,7 @@ namespace SistemaGestorDeInformes
             }
             trimesterController.insertTrimester(trimester);
         }
-
-        private void labelInformaciónBásica_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void OpenQuarter_Load(object sender, EventArgs e)
         {
@@ -130,6 +127,8 @@ namespace SistemaGestorDeInformes
 
             txbxNombre.MaxLength = 70;
             txbxNombre.ShortcutsEnabled = false;
+
+            KeyPreview = true;
         }
 
         private void setLbTrimText()
@@ -156,11 +155,7 @@ namespace SistemaGestorDeInformes
             lbNombre.Show();
             txbxNombre.Show();
         }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -200,26 +195,17 @@ namespace SistemaGestorDeInformes
             this.Hide();
             Interfaz.Show();
         }
-
-        private void RegistrarButton_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyValue == (char)Keys.Escape)
-            {
-                atrasButton.Focus();
-            }
-        }
-
-        private void txbxNombre_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyValue == (char)Keys.Escape)
-            {
-                atrasButton.Focus();
-            }
-        }
-
+        
         private void OpenQuarter_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void OpenQuarter_KeyUp(object sender, KeyEventArgs e)
+        {
+            InterfazPrincipal prin = new InterfazPrincipal();
+            ValidationTextBox tr = new ValidationTextBox();
+            tr.KeyEscape(sender, e, this, prin);
         }
     }
 }
