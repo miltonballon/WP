@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ControllerLibrary;
 
 namespace SistemaGestorDeInformes
 {
@@ -107,6 +108,8 @@ namespace SistemaGestorDeInformes
         {
             chargeData();
             onlyReadRestrictionDataGrid();
+
+            KeyPreview = true;
         }
 
         private void chargeData()
@@ -196,12 +199,11 @@ namespace SistemaGestorDeInformes
             Application.Exit();
         }
 
-        private void dataGridView1_KeyUp(object sender, KeyEventArgs e)
+        private void ShowBills_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.KeyValue == (char)Keys.Escape)
-            {
-                buttonAtrás.Focus();
-            }
+            InterfazPrincipal prin = new InterfazPrincipal();
+            ValidationTextBox tr = new ValidationTextBox();
+            tr.KeyEscape(sender, e, this, prin);
         }
     }
 }
