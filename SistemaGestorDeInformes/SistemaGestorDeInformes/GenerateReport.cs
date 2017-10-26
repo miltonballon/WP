@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ControllerLibrary;
 
 namespace SistemaGestorDeInformes
 {
@@ -122,12 +123,16 @@ namespace SistemaGestorDeInformes
             Application.Exit();
         }
 
-        private void RegistrarButton_KeyUp(object sender, KeyEventArgs e)
+        private void GenerateReport_Load(object sender, EventArgs e)
         {
-            if (e.KeyValue == (char)Keys.Escape)
-            {
-                atrasButton.Focus();
-            }
+            KeyPreview = true;
+        }
+
+        private void GenerateReport_KeyUp(object sender, KeyEventArgs e)
+        {
+            InterfazPrincipal prin = new InterfazPrincipal();
+            ValidationTextBox tr = new ValidationTextBox();
+            tr.KeyEscape(sender, e, this, prin);
         }
     }
 }

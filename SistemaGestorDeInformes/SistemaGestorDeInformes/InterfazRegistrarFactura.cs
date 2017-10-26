@@ -77,7 +77,6 @@ namespace SistemaGestorDeInformes
             textBoxNAutorizacion.MaxLength = 10;
 
             KeyPreview = true;
-
         }
 
         private AutoCompleteStringCollection providersNames()

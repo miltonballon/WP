@@ -234,7 +234,6 @@
             this.RegistrarButton.TabIndex = 32;
             this.RegistrarButton.Text = "Generar Informe";
             this.RegistrarButton.UseVisualStyleBackColor = false;
-            this.RegistrarButton.KeyUp += new System.Windows.Forms.KeyEventHandler(this.RegistrarButton_KeyUp);
             // 
             // atrasButton
             // 
@@ -277,6 +276,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Generar Informe";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GenerateReport_FormClosing);
+            this.Load += new System.EventHandler(this.GenerateReport_Load);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.GenerateReport_KeyUp);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
