@@ -478,6 +478,7 @@
             this.Text = "Registrar Factura";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.InterfazRegistrarFactura_FormClosing);
             this.Load += new System.EventHandler(this.InterfazRegistrarFactura_Load);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.InterfazRegistrarFactura_KeyUp);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

@@ -75,7 +75,9 @@ namespace SistemaGestorDeInformes
             textBoxNit.MaxLength = 10;
             textBoxNFactura.MaxLength = 10;
             textBoxNAutorizacion.MaxLength = 10;
-            
+
+            KeyPreview = true;
+
         }
 
         private AutoCompleteStringCollection providersNames()
@@ -507,6 +509,13 @@ namespace SistemaGestorDeInformes
             {
                 buttonAtrás.Focus();
             }
+        }
+
+        private void InterfazRegistrarFactura_KeyUp(object sender, KeyEventArgs e)
+        {
+            InterfazPrincipal prin = new InterfazPrincipal();
+            ValidationTextBox tr = new ValidationTextBox();
+            tr.KeyEscape(sender, e, this, prin);
         }
     }
 }

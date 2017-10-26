@@ -137,5 +137,9 @@ namespace SistemaGestorDeInformes
             }
         }
 
+        private void facturasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
