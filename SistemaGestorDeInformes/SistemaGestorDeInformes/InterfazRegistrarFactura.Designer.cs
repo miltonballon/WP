@@ -321,9 +321,7 @@
             this.textBoxProveedor.Name = "textBoxProveedor";
             this.textBoxProveedor.Size = new System.Drawing.Size(250, 23);
             this.textBoxProveedor.TabIndex = 7;
-            this.textBoxProveedor.TextChanged += new System.EventHandler(this.textBoxProveedor_TextChanged);
             this.textBoxProveedor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxProveedor_KeyPress);
-            this.textBoxProveedor.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxProveedor_KeyUp);
             this.textBoxProveedor.Leave += new System.EventHandler(this.textBoxProveedor_Leave);
             // 
             // textBoxNit
@@ -334,7 +332,6 @@
             this.textBoxNit.Name = "textBoxNit";
             this.textBoxNit.Size = new System.Drawing.Size(250, 23);
             this.textBoxNit.TabIndex = 8;
-            this.textBoxNit.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxNit_KeyUp);
             // 
             // textBoxNFactura
             // 
@@ -344,7 +341,6 @@
             this.textBoxNFactura.Name = "textBoxNFactura";
             this.textBoxNFactura.Size = new System.Drawing.Size(250, 23);
             this.textBoxNFactura.TabIndex = 9;
-            this.textBoxNFactura.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxNFactura_KeyUp);
             // 
             // textBoxNAutorizacion
             // 
@@ -354,7 +350,6 @@
             this.textBoxNAutorizacion.Name = "textBoxNAutorizacion";
             this.textBoxNAutorizacion.Size = new System.Drawing.Size(250, 23);
             this.textBoxNAutorizacion.TabIndex = 10;
-            this.textBoxNAutorizacion.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxNAutorizacion_KeyUp);
             // 
             // dateFecha
             // 
@@ -364,7 +359,6 @@
             this.dateFecha.Name = "dateFecha";
             this.dateFecha.Size = new System.Drawing.Size(250, 23);
             this.dateFecha.TabIndex = 11;
-            this.dateFecha.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dateFecha_KeyUp);
             // 
             // dataGridView1
             // 
@@ -382,7 +376,6 @@
             this.dataGridView1.TabIndex = 12;
             this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
             this.dataGridView1.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataGridView1_EditingControlShowing);
-            this.dataGridView1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dataGridView1_KeyUp);
             // 
             // Nombre
             // 
@@ -478,6 +471,7 @@
             this.Text = "Registrar Factura";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.InterfazRegistrarFactura_FormClosing);
             this.Load += new System.EventHandler(this.InterfazRegistrarFactura_Load);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.InterfazRegistrarFactura_KeyUp);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

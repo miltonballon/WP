@@ -225,7 +225,6 @@
             this.RegistrarButton.Text = "Nuevo Trimestre";
             this.RegistrarButton.UseVisualStyleBackColor = false;
             this.RegistrarButton.Click += new System.EventHandler(this.RegistrarButton_Click);
-            this.RegistrarButton.KeyUp += new System.Windows.Forms.KeyEventHandler(this.RegistrarButton_KeyUp);
             // 
             // atrasButton
             // 
@@ -251,7 +250,6 @@
             this.labelInformaciónBásica.Size = new System.Drawing.Size(169, 19);
             this.labelInformaciónBásica.TabIndex = 24;
             this.labelInformaciónBásica.Text = "Trimestre en curso:";
-            this.labelInformaciónBásica.Click += new System.EventHandler(this.labelInformaciónBásica_Click);
             // 
             // lbTrim
             // 
@@ -270,7 +268,6 @@
             this.txbxNombre.Name = "txbxNombre";
             this.txbxNombre.Size = new System.Drawing.Size(100, 20);
             this.txbxNombre.TabIndex = 1;
-            this.txbxNombre.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txbxNombre_KeyUp);
             // 
             // lbNombre
             // 
@@ -283,7 +280,6 @@
             this.lbNombre.Size = new System.Drawing.Size(78, 19);
             this.lbNombre.TabIndex = 31;
             this.lbNombre.Text = "Nombre:";
-            this.lbNombre.Click += new System.EventHandler(this.label1_Click);
             // 
             // OpenQuarter
             // 
@@ -303,6 +299,7 @@
             this.Text = "OpenQuarter";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.OpenQuarter_FormClosing);
             this.Load += new System.EventHandler(this.OpenQuarter_Load);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.OpenQuarter_KeyUp);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

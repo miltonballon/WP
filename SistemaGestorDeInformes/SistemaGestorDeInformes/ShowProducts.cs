@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ControllerLibrary;
 
 namespace SistemaGestorDeInformes
 {
@@ -63,11 +64,6 @@ namespace SistemaGestorDeInformes
             this.Hide();
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void searchButton_Click(object sender, EventArgs e)
         {
             List<Product> products = new List<Product>();
@@ -115,23 +111,9 @@ namespace SistemaGestorDeInformes
         }
         public void dataSelectedDataGrid()
         {
-
             dataGridView1.Rows[0].ReadOnly = false;
         }
-        private void DataGridView1_SelectionChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
-
-        private void dataGridView1_SelectionChanged_1(object sender, EventArgs e)
-        {
-            
-        }
+        
 
         private void editButton_Click(object sender, EventArgs e)
         {
@@ -158,6 +140,8 @@ namespace SistemaGestorDeInformes
         {
             textBox1.MaxLength = 70;
             textBox1.ShortcutsEnabled = false;
+
+            KeyPreview = true;
         }
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
@@ -212,20 +196,11 @@ namespace SistemaGestorDeInformes
                 e.Handled = true;
         }
 
-        private void textBox1_KeyUp(object sender, KeyEventArgs e)
+        private void ShowProducts_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.KeyValue == (char)Keys.Escape)
-            {
-                atrasButton.Focus();
-            }
-        }
-
-        private void dataGridView1_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyValue == (char)Keys.Escape)
-            {
-                atrasButton.Focus();
-            }
+            InterfazPrincipal prin = new InterfazPrincipal();
+            ValidationTextBox tr = new ValidationTextBox();
+            tr.KeyEscape(sender, e, this, prin);
         }
     }
 }

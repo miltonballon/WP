@@ -261,7 +261,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(547, 371);
             this.dataGridView1.TabIndex = 17;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            this.dataGridView1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dataGridView1_KeyUp);
             // 
             // NFactura
             // 
@@ -303,6 +302,7 @@
             this.Text = "Ver Facturas";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ShowBills_FormClosing);
             this.Load += new System.EventHandler(this.ShowBills_Load);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.ShowBills_KeyUp);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

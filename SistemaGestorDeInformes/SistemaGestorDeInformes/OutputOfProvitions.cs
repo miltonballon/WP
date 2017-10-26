@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ControllerLibrary;
 
 namespace SistemaGestorDeInformes
 {
@@ -26,11 +27,7 @@ namespace SistemaGestorDeInformes
             this.Hide();
             main.Show();
         }
-
-        private void registrarSalidaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void pantallaPrincipalToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -126,6 +123,8 @@ namespace SistemaGestorDeInformes
             TotalTextBox.ShortcutsEnabled = false;
             OutputDateTextBox.ShortcutsEnabled = false;
 
+            KeyPreview = true;
+
         }
 
         private void RegisterButton_Click(object sender, EventArgs e)
@@ -169,39 +168,9 @@ namespace SistemaGestorDeInformes
                 e.Handled = false;
             else
                 e.Handled = true;
-        }
-
-        private void ProductTextBox_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyValue == (char)Keys.Escape)
-            {
-                buttonAtrás.Focus();
-            }
-        }
-
-        private void UnitTextBox_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyValue == (char)Keys.Escape)
-            {
-                buttonAtrás.Focus();
-            }
-        }
-
-        private void TotalTextBox_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyValue == (char)Keys.Escape)
-            {
-                buttonAtrás.Focus();
-            }
-        }
-
-        private void OutputDateTextBox_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyValue == (char)Keys.Escape)
-            {
-                buttonAtrás.Focus();
-            }
-        }
+        }        
+        
+        
 
         private void TotalTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -215,6 +184,13 @@ namespace SistemaGestorDeInformes
             main.WindowState = this.WindowState;
             this.Hide();
             main.Show();
+        }
+
+        private void OutputOfProvitions_KeyUp(object sender, KeyEventArgs e)
+        {
+            InterfazPrincipal prin = new InterfazPrincipal();
+            ValidationTextBox tr = new ValidationTextBox();
+            tr.KeyEscape(sender, e, this, prin);
         }
     }
 }

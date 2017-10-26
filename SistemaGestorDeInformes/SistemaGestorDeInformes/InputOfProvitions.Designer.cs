@@ -186,7 +186,6 @@
             this.ExpirationDate.Name = "ExpirationDate";
             this.ExpirationDate.Size = new System.Drawing.Size(250, 23);
             this.ExpirationDate.TabIndex = 3;
-            this.ExpirationDate.KeyUp += new System.Windows.Forms.KeyEventHandler(this.ExpirationDate_KeyUp);
             // 
             // UnitTextBox
             // 
@@ -199,7 +198,6 @@
             this.UnitTextBox.Size = new System.Drawing.Size(250, 23);
             this.UnitTextBox.TabIndex = 2;
             this.UnitTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.UnitTextBox_KeyPress);
-            this.UnitTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.UnitTextBox_KeyUp);
             // 
             // ProviderTextBox
             // 
@@ -213,7 +211,6 @@
             this.ProviderTextBox.Size = new System.Drawing.Size(250, 23);
             this.ProviderTextBox.TabIndex = 1;
             this.ProviderTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ProviderTextBox_KeyPress);
-            this.ProviderTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.ProviderTextBox_KeyUp);
             // 
             // ProducTextBox
             // 
@@ -227,7 +224,6 @@
             this.ProducTextBox.Size = new System.Drawing.Size(250, 23);
             this.ProducTextBox.TabIndex = 0;
             this.ProducTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ProducTextBox_KeyPress);
-            this.ProducTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.ProducTextBox_KeyUp);
             // 
             // ReceptionDate
             // 
@@ -237,7 +233,6 @@
             this.ReceptionDate.Name = "ReceptionDate";
             this.ReceptionDate.Size = new System.Drawing.Size(250, 23);
             this.ReceptionDate.TabIndex = 4;
-            this.ReceptionDate.KeyUp += new System.Windows.Forms.KeyEventHandler(this.ReceptionDate_KeyUp);
             // 
             // TotalReception
             // 
@@ -248,7 +243,6 @@
             this.TotalReception.Size = new System.Drawing.Size(250, 23);
             this.TotalReception.TabIndex = 5;
             this.TotalReception.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TotalReception_KeyPress);
-            this.TotalReception.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TotalReception_KeyUp);
             // 
             // menuStrip1
             // 
@@ -450,6 +444,7 @@
             this.Text = "Registrar Entrada";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.InputOfProvitions_FormClosing);
             this.Load += new System.EventHandler(this.RegisterReception_Load);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.InputOfProvitions_KeyUp);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

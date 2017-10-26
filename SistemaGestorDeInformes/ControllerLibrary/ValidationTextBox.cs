@@ -18,5 +18,20 @@ namespace ControllerLibrary
             }
         }
 
+     
+
+
+        public event EventHandler ThresholdReached;
+        public virtual void KeyEscape(object sender, KeyEventArgs e, Form form1, Form form2)
+        {
+            EventHandler handler = ThresholdReached;
+            if (e.KeyCode == Keys.Escape)
+            {
+                form2.Show();
+                form1.Hide();
+            }
+        }
+
+
     }
 }

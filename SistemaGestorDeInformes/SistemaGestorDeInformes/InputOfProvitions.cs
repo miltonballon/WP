@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ControllerLibrary;
 
 namespace SistemaGestorDeInformes
 {
@@ -62,6 +63,8 @@ namespace SistemaGestorDeInformes
             ProviderTextBox.ShortcutsEnabled = false;
             UnitTextBox.ShortcutsEnabled = false;
             TotalReception.ShortcutsEnabled = false;
+
+            KeyPreview = true;
         }
 
         private void ProducTextBox_TextChanged(object sender, EventArgs e)
@@ -216,56 +219,8 @@ namespace SistemaGestorDeInformes
                 e.Handled = false;
             else
                 e.Handled = true;
-        }
-
-        private void ProducTextBox_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyValue == (char)Keys.Escape)
-            {
-                buttonAtrás.Focus();
-            }
-        }
-
-        private void ProviderTextBox_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyValue == (char)Keys.Escape)
-            {
-                buttonAtrás.Focus();
-            }
-        }
-
-        private void UnitTextBox_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyValue == (char)Keys.Escape)
-            {
-                buttonAtrás.Focus();
-            }
-        }
-
-        private void ExpirationDate_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyValue == (char)Keys.Escape)
-            {
-                buttonAtrás.Focus();
-            }
-        }
-
-        private void ReceptionDate_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyValue == (char)Keys.Escape)
-            {
-                buttonAtrás.Focus();
-            }
-        }
-
-        private void TotalReception_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyValue == (char)Keys.Escape)
-            {
-                buttonAtrás.Focus();
-            }
-        }
-
+        }               
+        
         private void TotalReception_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar != '1' && e.KeyChar != '2' && e.KeyChar != '3' && e.KeyChar != '4' && e.KeyChar != '5' && e.KeyChar != '6' && e.KeyChar != '7' && e.KeyChar != '8' && e.KeyChar != '9' && e.KeyChar != '0')
@@ -278,6 +233,13 @@ namespace SistemaGestorDeInformes
             main.WindowState = this.WindowState;
             this.Hide();
             main.Show();
+        }
+
+        private void InputOfProvitions_KeyUp(object sender, KeyEventArgs e)
+        {
+            InterfazPrincipal prin = new InterfazPrincipal();
+            ValidationTextBox tr = new ValidationTextBox();
+            tr.KeyEscape(sender, e, this, prin);
         }
     }
 }

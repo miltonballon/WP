@@ -183,7 +183,6 @@
             this.registrarSalidaToolStripMenuItem.Name = "registrarSalidaToolStripMenuItem";
             this.registrarSalidaToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.registrarSalidaToolStripMenuItem.Text = "Registrar Salida";
-            this.registrarSalidaToolStripMenuItem.Click += new System.EventHandler(this.registrarSalidaToolStripMenuItem_Click);
             // 
             // verInventarioToolStripMenuItem
             // 
@@ -231,7 +230,6 @@
             this.TotalTextBox.Size = new System.Drawing.Size(250, 23);
             this.TotalTextBox.TabIndex = 37;
             this.TotalTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TotalTextBox_KeyPress);
-            this.TotalTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TotalTextBox_KeyUp);
             // 
             // ProductTextBox
             // 
@@ -244,7 +242,6 @@
             this.ProductTextBox.Size = new System.Drawing.Size(250, 23);
             this.ProductTextBox.TabIndex = 35;
             this.ProductTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ProductTextBox_KeyPress);
-            this.ProductTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.ProductTextBox_KeyUp);
             // 
             // labelNFactura
             // 
@@ -320,7 +317,6 @@
             this.UnitTextBox.Size = new System.Drawing.Size(250, 23);
             this.UnitTextBox.TabIndex = 36;
             this.UnitTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.UnitTextBox_KeyPress);
-            this.UnitTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.UnitTextBox_KeyUp);
             // 
             // label1
             // 
@@ -343,7 +339,6 @@
             this.OutputDateTextBox.Size = new System.Drawing.Size(250, 23);
             this.OutputDateTextBox.TabIndex = 38;
             this.OutputDateTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OutputDateTextBox_KeyPress);
-            this.OutputDateTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.OutputDateTextBox_KeyUp);
             // 
             // label2
             // 
@@ -395,6 +390,7 @@
             this.Text = "Registrar Salida";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.OutputOfProvitions_FormClosing);
             this.Load += new System.EventHandler(this.OutputOfProvitions_Load);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.OutputOfProvitions_KeyUp);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

@@ -67,7 +67,6 @@
             this.ProductTextBox.Size = new System.Drawing.Size(250, 20);
             this.ProductTextBox.TabIndex = 0;
             this.ProductTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ProductTextBox_KeyPress);
-            this.ProductTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.ProductTextBox_KeyUp);
             // 
             // ProviderTextBox
             // 
@@ -77,7 +76,6 @@
             this.ProviderTextBox.Size = new System.Drawing.Size(250, 20);
             this.ProviderTextBox.TabIndex = 1;
             this.ProviderTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ProviderTextBox_KeyPress);
-            this.ProviderTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.ProviderTextBox_KeyUp);
             // 
             // Unit
             // 
@@ -87,7 +85,6 @@
             this.Unit.Size = new System.Drawing.Size(250, 20);
             this.Unit.TabIndex = 2;
             this.Unit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Unit_KeyPress);
-            this.Unit.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Unit_KeyUp);
             // 
             // atrasButton
             // 
@@ -341,6 +338,7 @@
             this.Text = "Registrar Producto";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RegisterProduct_FormClosing);
             this.Load += new System.EventHandler(this.RegisterProduct_Load);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.RegisterProduct_KeyUp);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

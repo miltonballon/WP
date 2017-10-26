@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ControllerLibrary;
 
 namespace SistemaGestorDeInformes
 {
@@ -139,24 +140,8 @@ namespace SistemaGestorDeInformes
         {
             if (e.KeyChar != '1' && e.KeyChar != '2' && e.KeyChar != '3' && e.KeyChar != '4' && e.KeyChar != '5' && e.KeyChar != '6' && e.KeyChar != '7' && e.KeyChar != '8' && e.KeyChar != '9' && e.KeyChar != '0')
                 e.Handled = true;
-        }
-
-        private void txtboxbecas_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyValue == (char)Keys.Escape)
-            {
-                atrasButton.Focus();
-            }
-        }
-
-        private void txtboxnpartida_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyValue == (char)Keys.Escape)
-            {
-                atrasButton.Focus();
-            }
-        }
-
+        }        
+        
         private void ReportConfiguration_Load(object sender, EventArgs e)
         {
             txtboxbecas.MaxLength = 70;
@@ -164,6 +149,8 @@ namespace SistemaGestorDeInformes
 
             txtboxbecas.ShortcutsEnabled = false;
             txtboxnpartida.ShortcutsEnabled = false;
+
+            KeyPreview = true;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -172,6 +159,13 @@ namespace SistemaGestorDeInformes
             main.WindowState = this.WindowState;
             this.Hide();
             main.Show();
+        }
+
+        private void ReportConfiguration_KeyUp(object sender, KeyEventArgs e)
+        {
+            InterfazPrincipal prin = new InterfazPrincipal();
+            ValidationTextBox tr = new ValidationTextBox();
+            tr.KeyEscape(sender, e, this, prin);
         }
     }
 }
