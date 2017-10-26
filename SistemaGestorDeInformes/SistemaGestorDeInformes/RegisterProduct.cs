@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ControllerLibrary;
 
 namespace SistemaGestorDeInformes
 {
@@ -139,6 +140,9 @@ namespace SistemaGestorDeInformes
             ProductTextBox.ShortcutsEnabled = false;
             ProviderTextBox.ShortcutsEnabled = false;
             Unit.ShortcutsEnabled = false;
+
+
+            KeyPreview = true;
         }
 
         private void generarInformeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -178,28 +182,11 @@ namespace SistemaGestorDeInformes
                 e.Handled = true;
         }
 
-        private void ProductTextBox_KeyUp(object sender, KeyEventArgs e)
+        private void RegisterProduct_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.KeyValue == (char)Keys.Escape)
-            {
-                atrasButton.Focus();
-            }
-        }
-
-        private void ProviderTextBox_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyValue == (char)Keys.Escape)
-            {
-                atrasButton.Focus();
-            }
-        }
-
-        private void Unit_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyValue == (char)Keys.Escape)
-            {
-                atrasButton.Focus();
-            }
+            InterfazPrincipal prin = new InterfazPrincipal();
+            ValidationTextBox tr = new ValidationTextBox();
+            tr.KeyEscape(sender, e, this, prin);
         }
     }
 }
