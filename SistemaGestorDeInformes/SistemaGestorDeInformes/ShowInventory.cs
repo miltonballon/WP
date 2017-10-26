@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ControllerLibrary;
 
 namespace SistemaGestorDeInformes
 {
@@ -109,7 +110,7 @@ namespace SistemaGestorDeInformes
 
         private void ShowInventory_Load(object sender, EventArgs e)
         {
-            
+            KeyPreview = true;
         }
 
         private void chargeData()
@@ -135,11 +136,6 @@ namespace SistemaGestorDeInformes
             Interfaz.WindowState = this.WindowState;
             this.Hide();
             Interfaz.Show();
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void searchButton_Click(object sender, EventArgs e)
@@ -184,36 +180,11 @@ namespace SistemaGestorDeInformes
                 e.Handled = true;
         }
 
-        private void searchTextBox_KeyUp(object sender, KeyEventArgs e)
+        private void ShowInventory_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.KeyValue == (char)Keys.Escape)
-            {
-                buttonAtrás.Focus();
-            }
-        }
-
-        private void dataGridView1_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyValue == (char)Keys.Escape)
-            {
-                buttonAtrás.Focus();
-            }
-        }
-
-        private void searchButton_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyValue == (char)Keys.Escape)
-            {
-                buttonAtrás.Focus();
-            }
-        }
-
-        private void cleanButton_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyValue == (char)Keys.Escape)
-            {
-                buttonAtrás.Focus();
-            }
+            InterfazPrincipal prin = new InterfazPrincipal();
+            ValidationTextBox tr = new ValidationTextBox();
+            tr.KeyEscape(sender, e, this, prin);
         }
     }
 }
