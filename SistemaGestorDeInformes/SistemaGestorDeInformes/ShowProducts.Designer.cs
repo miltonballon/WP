@@ -68,9 +68,6 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(497, 236);
             this.dataGridView1.TabIndex = 4;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged_1);
-            this.dataGridView1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dataGridView1_KeyUp);
             // 
             // menuStrip1
             // 
@@ -260,7 +257,6 @@
             this.textBox1.Size = new System.Drawing.Size(148, 20);
             this.textBox1.TabIndex = 0;
             this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
-            this.textBox1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyUp);
             // 
             // label2
             // 
@@ -272,7 +268,6 @@
             this.label2.Size = new System.Drawing.Size(40, 13);
             this.label2.TabIndex = 5;
             this.label2.Text = "Buscar";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // searchButton
             // 
@@ -327,6 +322,7 @@
             this.Text = "7";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ShowProducts_FormClosing);
             this.Load += new System.EventHandler(this.ShowProducts_Load);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.ShowProducts_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

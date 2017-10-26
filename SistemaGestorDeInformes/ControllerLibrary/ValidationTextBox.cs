@@ -27,7 +27,6 @@ namespace ControllerLibrary
             EventHandler handler = ThresholdReached;
             if (e.KeyCode == Keys.Escape)
             {
-
                 form2.Show();
                 form1.Hide();
             }
