@@ -1,6 +1,6 @@
 ﻿namespace SistemaGestorDeInformes
 {
-    partial class FirtsSetup
+    partial class FirstSetup
     {
         /// <summary>
         /// Required designer variable.

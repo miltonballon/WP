@@ -69,11 +69,11 @@
     <Compile Include="EditProduct.Designer.cs">
       <DependentUpon>EditProduct.cs</DependentUpon>
     </Compile>
-    <Compile Include="FirtsSetup.cs">
+    <Compile Include="FirstSetup.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FirtsSetup.Designer.cs">
-      <DependentUpon>FirtsSetup.cs</DependentUpon>
+    <Compile Include="FirstSetup.Designer.cs">
+      <DependentUpon>FirstSetup.cs</DependentUpon>
     </Compile>
     <Compile Include="GenerateReport.cs">
       <SubType>Form</SubType>
@@ -170,8 +170,8 @@
     <EmbeddedResource Include="EditProduct.resx">
       <DependentUpon>EditProduct.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FirtsSetup.resx">
-      <DependentUpon>FirtsSetup.cs</DependentUpon>
+    <EmbeddedResource Include="FirstSetup.resx">
+      <DependentUpon>FirstSetup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GenerateReport.resx">
       <DependentUpon>GenerateReport.cs</DependentUpon>
