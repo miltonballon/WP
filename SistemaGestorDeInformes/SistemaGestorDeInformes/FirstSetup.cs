@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace SistemaGestorDeInformes
 {
-    public partial class FirtsSetup : Form
+    public partial class FirstSetup : Form
     {
         UserController userController;
-        public FirtsSetup()
+        public FirstSetup()
         {
             InitializeComponent();
             userController = new UserController();
