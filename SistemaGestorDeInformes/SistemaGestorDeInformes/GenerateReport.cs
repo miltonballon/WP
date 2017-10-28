@@ -16,12 +16,7 @@ namespace SistemaGestorDeInformes
         public GenerateReport()
         {
             InitializeComponent();
-        }
-
-        private void txbxNombre_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        }        
 
         private void atrasButton_Click(object sender, EventArgs e)
         {
