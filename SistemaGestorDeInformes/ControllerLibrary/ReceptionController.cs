@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SQLite;
+using EntityLibrary;
 
-
-namespace SistemaGestorDeInformes
+namespace ControllerLibrary
 {
     public class ReceptionController
     {

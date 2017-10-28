@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Net.Mail;
 using System.Net;
+using EntityLibrary;
 
 namespace SistemaGestorDeInformes
 {

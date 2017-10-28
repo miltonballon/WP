@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Data.SQLite;
-namespace SistemaGestorDeInformes
+using EntityLibrary;
+namespace ControllerLibrary
 {
     public class ProductController
     {

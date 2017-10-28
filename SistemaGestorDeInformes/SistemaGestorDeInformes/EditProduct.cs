@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ControllerLibrary;
+using EntityLibrary;
 
 namespace SistemaGestorDeInformes
 {
@@ -42,6 +44,11 @@ namespace SistemaGestorDeInformes
             ShowProducts main = new ShowProducts();
             main.Show();
             this.Close();
+        }
+
+        private void EditProduct_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
