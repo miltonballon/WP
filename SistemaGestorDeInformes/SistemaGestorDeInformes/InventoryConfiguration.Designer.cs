@@ -69,7 +69,7 @@
             this.Controls.Add(this.RegistrarButton);
             this.Controls.Add(this.button2);
             this.Name = "InventoryConfiguration";
-            this.Text = "InventoryConfiguration";
+            this.Text = "Configuración del Inventario";
             this.ResumeLayout(false);
 
         }
