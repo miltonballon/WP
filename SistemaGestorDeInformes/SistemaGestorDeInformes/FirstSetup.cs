@@ -24,8 +24,7 @@ namespace SistemaGestorDeInformes
             if (userController.HasUser())
             {
                 this.Close();
-            }
-          
+            }          
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -37,16 +36,7 @@ namespace SistemaGestorDeInformes
             this.Close();
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
+      
         private void FirtsSetup_FormClosing(object sender, FormClosingEventArgs e)
         {
             if(!userController.HasUser())

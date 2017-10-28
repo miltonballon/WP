@@ -18,15 +18,9 @@ namespace SistemaGestorDeInformes
         public RegisterProduct()
         {
             InitializeComponent();
-            pc = new ProductController();
+            pc = new ProductController();  
+        }
         
-            
-        }
-
-        private void labelProveedor_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void BackButton_Click(object sender, EventArgs e)
         {
@@ -51,8 +45,8 @@ namespace SistemaGestorDeInformes
             pc.addReferencesToTableProduct_Provider_Unit(product);
             cleanTextBox();
             MessageBox.Show("Agregado exitosamente");
-
         }
+
         public void cleanTextBox()
         {
             ProductTextBox.Text = "";

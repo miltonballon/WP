@@ -446,8 +446,7 @@ namespace SistemaGestorDeInformes
             else
                 e.Handled = true;
         }            
-
-        
+                
         private void InterfazRegistrarFactura_KeyUp(object sender, KeyEventArgs e)
         {
             InterfazPrincipal prin = new InterfazPrincipal();
