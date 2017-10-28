@@ -20,16 +20,7 @@ namespace SistemaGestorDeInformes
             rc = new ReceptionController();
             InitializeComponent();
         }
-
-        private void textBox5_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void RegisterButton_Click(object sender, EventArgs e)
         {
@@ -65,37 +56,7 @@ namespace SistemaGestorDeInformes
             TotalReception.ShortcutsEnabled = false;
 
             KeyPreview = true;
-        }
-
-        private void ProducTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TotalReception_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ExpirationDate_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void UnitTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ProviderTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        }                
 
         private void buttonAtrás_Click(object sender, EventArgs e)
         {

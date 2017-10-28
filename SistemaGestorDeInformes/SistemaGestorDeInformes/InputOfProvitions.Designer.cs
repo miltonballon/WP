@@ -176,7 +176,6 @@
             this.label9.Size = new System.Drawing.Size(140, 19);
             this.label9.TabIndex = 26;
             this.label9.Text = "CANTIDAD TOTAL:";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // ExpirationDate
             // 
