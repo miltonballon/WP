@@ -12,7 +12,7 @@ using EntityLibrary;
 
 namespace SistemaGestorDeInformes
 {
-    public partial class InterfazRegistrarFactura : Form
+    public partial class RegisterInvoice : Form
     {
         private InvoiceController invoiceController;
         ProviderController providerController;
@@ -22,7 +22,7 @@ namespace SistemaGestorDeInformes
         private List<Provider> providers;
         private bool modifying;
 
-        public InterfazRegistrarFactura()
+        public RegisterInvoice()
         {
             InitializeComponent();
             this.textBoxNit.KeyPress += new KeyPressEventHandler(textBoxNit_TextChanged);//Para impedir que se pongan letras y espacios en el NIT
@@ -35,7 +35,7 @@ namespace SistemaGestorDeInformes
             modifying = false;
         }
 
-        public InterfazRegistrarFactura(Invoice invoice)
+        public RegisterInvoice(Invoice invoice)
         {
             InitializeComponent();
             this.invoice = invoice;
@@ -194,7 +194,7 @@ namespace SistemaGestorDeInformes
 
         private void pantallaPrincipalToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            InterfazPrincipal principal = new InterfazPrincipal();
+            Main principal = new Main();
             principal.Show();
             principal.WindowState = this.WindowState;
             this.Hide();
@@ -211,7 +211,7 @@ namespace SistemaGestorDeInformes
             }
             else
             {
-                InterfazPrincipal principal = new InterfazPrincipal();//para volver atras
+                Main principal = new Main();//para volver atras
                 principal.WindowState = this.WindowState;
                 this.Hide();
                 principal.Show();
@@ -450,7 +450,7 @@ namespace SistemaGestorDeInformes
                 
         private void InterfazRegistrarFactura_KeyUp(object sender, KeyEventArgs e)
         {
-            InterfazPrincipal prin = new InterfazPrincipal();
+            Main prin = new Main();
             ValidationTextBox tr = new ValidationTextBox();
             tr.KeyEscape(sender, e, this, prin);
         }

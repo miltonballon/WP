@@ -31,7 +31,7 @@ namespace SistemaGestorDeInformes
                 if (user != null)
                 {
                     this.Hide();
-                    RestablecerContraseñaForm CC = new RestablecerContraseñaForm(user);
+                    ForgotPassword CC = new ForgotPassword(user);
                     CC.ShowDialog();
                 }
                 else
@@ -59,7 +59,7 @@ namespace SistemaGestorDeInformes
             {
                 if (usercontroller.verify(user, pass))
                 {
-                    InterfazPrincipal prin = new InterfazPrincipal();
+                    Main prin = new Main();
                     prin.WindowState = this.WindowState;
                     this.Hide();
                     prin.Show();
@@ -92,7 +92,7 @@ namespace SistemaGestorDeInformes
                 {
                     if (usercontroller.verify(user, pass))
                     {
-                        InterfazPrincipal prin = new InterfazPrincipal();
+                        Main prin = new Main();
                         prin.WindowState = this.WindowState;
                         this.Hide();
                         prin.Show();

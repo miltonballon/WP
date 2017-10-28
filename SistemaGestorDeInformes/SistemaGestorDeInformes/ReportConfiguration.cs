@@ -24,7 +24,7 @@ namespace SistemaGestorDeInformes
 
         private void pantallaPrincipalToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            InterfazPrincipal principal = new InterfazPrincipal();
+            Main principal = new Main();
             principal.WindowState = this.WindowState;
             principal.Show();
             this.Hide();
@@ -32,7 +32,7 @@ namespace SistemaGestorDeInformes
 
         private void registrarFacturaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            InterfazRegistrarFactura InterfazRegistrarFactura1 = new InterfazRegistrarFactura();
+            RegisterInvoice InterfazRegistrarFactura1 = new RegisterInvoice();
             InterfazRegistrarFactura1.WindowState = this.WindowState;
             InterfazRegistrarFactura1.Show();
             this.Hide();
@@ -64,7 +64,7 @@ namespace SistemaGestorDeInformes
 
         private void atrasButton_Click(object sender, EventArgs e)
         {
-            InterfazPrincipal principal = new InterfazPrincipal();//para volver atras
+            Main principal = new Main();//para volver atras
             principal.WindowState = this.WindowState;
             this.Hide();
             principal.Show();
@@ -156,7 +156,7 @@ namespace SistemaGestorDeInformes
 
         private void button2_Click(object sender, EventArgs e)
         {
-            InterfazPrincipal main = new InterfazPrincipal();
+            Main main = new Main();
             main.WindowState = this.WindowState;
             this.Hide();
             main.Show();
@@ -164,7 +164,7 @@ namespace SistemaGestorDeInformes
 
         private void ReportConfiguration_KeyUp(object sender, KeyEventArgs e)
         {
-            InterfazPrincipal prin = new InterfazPrincipal();
+            Main prin = new Main();
             ValidationTextBox tr = new ValidationTextBox();
             tr.KeyEscape(sender, e, this, prin);
         }

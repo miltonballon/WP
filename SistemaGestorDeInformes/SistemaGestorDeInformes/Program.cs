@@ -19,7 +19,7 @@ namespace SistemaGestorDeInformes
             //Application.Run(new InterfazPrincipal());
             // Application.Run(new Login());
             Application.Run(new FirstSetup());
-            Application.Run(new Login());           
+            Application.Run(new Login());
         }
     }
 }

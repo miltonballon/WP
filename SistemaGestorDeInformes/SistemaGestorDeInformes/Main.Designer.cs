@@ -1,6 +1,6 @@
 ﻿namespace SistemaGestorDeInformes
 {
-    partial class InterfazPrincipal
+    partial class Main
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InterfazPrincipal));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.button3 = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.pantallaPrincipalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();

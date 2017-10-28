@@ -25,7 +25,7 @@ namespace SistemaGestorDeInformes
 
         private void BackButton_Click(object sender, EventArgs e)
         {
-            InterfazPrincipal main = new InterfazPrincipal();
+            Main main = new Main();
             main.WindowState = this.WindowState;
             this.Hide();
             main.Show();
@@ -57,7 +57,7 @@ namespace SistemaGestorDeInformes
 
         private void MainFormToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            InterfazPrincipal MainForm = new InterfazPrincipal();
+            Main MainForm = new Main();
             MainForm.WindowState = this.WindowState;
             MainForm.Show();
             this.Hide();
@@ -65,7 +65,7 @@ namespace SistemaGestorDeInformes
 
         private void RegisterInvoiceToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            InterfazRegistrarFactura RegisterInvoiceForm = new InterfazRegistrarFactura();
+            RegisterInvoice RegisterInvoiceForm = new RegisterInvoice();
             RegisterInvoiceForm.WindowState = this.WindowState;
             RegisterInvoiceForm.Show();
             this.Hide();
@@ -179,7 +179,7 @@ namespace SistemaGestorDeInformes
 
         private void RegisterProduct_KeyUp(object sender, KeyEventArgs e)
         {
-            InterfazPrincipal prin = new InterfazPrincipal();
+            Main prin = new Main();
             ValidationTextBox tr = new ValidationTextBox();
             tr.KeyEscape(sender, e, this, prin);
         }

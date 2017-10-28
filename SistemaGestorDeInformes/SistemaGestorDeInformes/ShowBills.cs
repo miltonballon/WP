@@ -25,7 +25,7 @@ namespace SistemaGestorDeInformes
 
         private void pantallaPrincipalToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            InterfazPrincipal principal = new InterfazPrincipal();
+            Main principal = new Main();
             principal.WindowState = this.WindowState;
             principal.Show();
             this.Hide();
@@ -33,7 +33,7 @@ namespace SistemaGestorDeInformes
 
          private void MainFormToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            InterfazPrincipal MainForm = new InterfazPrincipal();
+            Main MainForm = new Main();
             MainForm.WindowState = this.WindowState;
             MainForm.Show();
             this.Hide();
@@ -41,7 +41,7 @@ namespace SistemaGestorDeInformes
 
         private void RegisterInvoiceToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            InterfazRegistrarFactura RegisterInvoiceForm = new InterfazRegistrarFactura();
+            RegisterInvoice RegisterInvoiceForm = new RegisterInvoice();
             RegisterInvoiceForm.WindowState = this.WindowState;
             RegisterInvoiceForm.Show();
             this.Hide();
@@ -49,7 +49,7 @@ namespace SistemaGestorDeInformes
 
         private void registrarFacturasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            InterfazRegistrarFactura intRegFac = new InterfazRegistrarFactura();
+            RegisterInvoice intRegFac = new RegisterInvoice();
             intRegFac.WindowState = this.WindowState;
             this.Hide();
             intRegFac.Show();
@@ -73,7 +73,7 @@ namespace SistemaGestorDeInformes
 
         private void buttonAtrás_Click(object sender, EventArgs e)
         {
-            InterfazPrincipal principal = new InterfazPrincipal();//para volver atras
+            Main principal = new Main();//para volver atras
             principal.WindowState = this.WindowState;
             this.Hide();
             principal.Show();
@@ -150,7 +150,7 @@ namespace SistemaGestorDeInformes
 
         private void openModify(Invoice invoice)
         {
-            InterfazRegistrarFactura inF = new InterfazRegistrarFactura(invoice);
+            RegisterInvoice inF = new RegisterInvoice(invoice);
             inF.WindowState = this.WindowState;
             this.Hide();
             inF.Show();
@@ -202,7 +202,7 @@ namespace SistemaGestorDeInformes
 
         private void ShowBills_KeyUp(object sender, KeyEventArgs e)
         {
-            InterfazPrincipal prin = new InterfazPrincipal();
+            Main prin = new Main();
             ValidationTextBox tr = new ValidationTextBox();
             tr.KeyEscape(sender, e, this, prin);
         }

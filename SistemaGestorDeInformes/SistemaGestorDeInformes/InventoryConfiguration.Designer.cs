@@ -1,6 +1,6 @@
 ﻿namespace SistemaGestorDeInformes
 {
-    partial class ShowBills
+    partial class InventoryConfiguration
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.button2 = new System.Windows.Forms.Button();
+            this.RegistrarButton = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.pantallaPrincipalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.facturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.registrarFacturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registrarFacturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verFacturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,17 +49,41 @@
             this.informeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.abrirTrimestreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.buttonAtrás = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.NFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NAutorizacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Proveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductoLabel = new System.Windows.Forms.Label();
+            this.ProveedorLabel = new System.Windows.Forms.Label();
+            this.txtboxnpartida = new System.Windows.Forms.TextBox();
+            this.txtboxbecas = new System.Windows.Forms.TextBox();
+            this.labelInformaciónBásica = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // button2
+            // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button2.BackColor = System.Drawing.Color.Black;
+            this.button2.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
+            this.button2.ForeColor = System.Drawing.Color.Yellow;
+            this.button2.Location = new System.Drawing.Point(8, 1126);
+            this.button2.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(320, 72);
+            this.button2.TabIndex = 38;
+            this.button2.Text = "Atrás";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // RegistrarButton
+            // 
+            this.RegistrarButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.RegistrarButton.BackColor = System.Drawing.Color.Black;
+            this.RegistrarButton.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
+            this.RegistrarButton.ForeColor = System.Drawing.Color.Yellow;
+            this.RegistrarButton.Location = new System.Drawing.Point(840, 885);
+            this.RegistrarButton.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.RegistrarButton.Name = "RegistrarButton";
+            this.RegistrarButton.Size = new System.Drawing.Size(320, 72);
+            this.RegistrarButton.TabIndex = 39;
+            this.RegistrarButton.Text = "Guardar";
+            this.RegistrarButton.UseVisualStyleBackColor = false;
             // 
             // menuStrip1
             // 
@@ -75,41 +101,36 @@
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(16, 5, 0, 5);
             this.menuStrip1.Size = new System.Drawing.Size(2173, 55);
-            this.menuStrip1.TabIndex = 1;
+            this.menuStrip1.TabIndex = 40;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // pantallaPrincipalToolStripMenuItem
             // 
+            this.pantallaPrincipalToolStripMenuItem.BackColor = System.Drawing.Color.White;
             this.pantallaPrincipalToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.pantallaPrincipalToolStripMenuItem.Name = "pantallaPrincipalToolStripMenuItem";
-            this.pantallaPrincipalToolStripMenuItem.Size = new System.Drawing.Size(252, 45);
+            this.pantallaPrincipalToolStripMenuItem.Size = new System.Drawing.Size(252, 48);
             this.pantallaPrincipalToolStripMenuItem.Text = "Pantalla Principal";
-            this.pantallaPrincipalToolStripMenuItem.Click += new System.EventHandler(this.pantallaPrincipalToolStripMenuItem_Click);
             // 
             // facturasToolStripMenuItem
             // 
-            this.facturasToolStripMenuItem.BackColor = System.Drawing.Color.Black;
             this.facturasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.registrarFacturasToolStripMenuItem,
+            this.registrarFacturaToolStripMenuItem,
             this.verFacturasToolStripMenuItem});
-            this.facturasToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.facturasToolStripMenuItem.Name = "facturasToolStripMenuItem";
-            this.facturasToolStripMenuItem.Size = new System.Drawing.Size(138, 45);
+            this.facturasToolStripMenuItem.Size = new System.Drawing.Size(138, 48);
             this.facturasToolStripMenuItem.Text = "Facturas";
             // 
-            // registrarFacturasToolStripMenuItem
+            // registrarFacturaToolStripMenuItem
             // 
-            this.registrarFacturasToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
-            this.registrarFacturasToolStripMenuItem.Name = "registrarFacturasToolStripMenuItem";
-            this.registrarFacturasToolStripMenuItem.Size = new System.Drawing.Size(364, 46);
-            this.registrarFacturasToolStripMenuItem.Text = "Registrar Facturas";
-            this.registrarFacturasToolStripMenuItem.Click += new System.EventHandler(this.registrarFacturasToolStripMenuItem_Click);
+            this.registrarFacturaToolStripMenuItem.Name = "registrarFacturaToolStripMenuItem";
+            this.registrarFacturaToolStripMenuItem.Size = new System.Drawing.Size(351, 46);
+            this.registrarFacturaToolStripMenuItem.Text = "Registrar Factura";
             // 
             // verFacturasToolStripMenuItem
             // 
-            this.verFacturasToolStripMenuItem.ForeColor = System.Drawing.Color.Gray;
             this.verFacturasToolStripMenuItem.Name = "verFacturasToolStripMenuItem";
-            this.verFacturasToolStripMenuItem.Size = new System.Drawing.Size(364, 46);
+            this.verFacturasToolStripMenuItem.Size = new System.Drawing.Size(351, 46);
             this.verFacturasToolStripMenuItem.Text = "Ver  Facturas";
             // 
             // productosToolStripMenuItem
@@ -117,33 +138,29 @@
             this.productosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.registrarProductosToolStripMenuItem,
             this.verProductosToolStripMenuItem});
-            this.productosToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.productosToolStripMenuItem.Name = "productosToolStripMenuItem";
-            this.productosToolStripMenuItem.Size = new System.Drawing.Size(165, 45);
+            this.productosToolStripMenuItem.Size = new System.Drawing.Size(165, 48);
             this.productosToolStripMenuItem.Text = "Productos";
             // 
             // registrarProductosToolStripMenuItem
             // 
             this.registrarProductosToolStripMenuItem.Name = "registrarProductosToolStripMenuItem";
-            this.registrarProductosToolStripMenuItem.Size = new System.Drawing.Size(378, 46);
-            this.registrarProductosToolStripMenuItem.Text = "Registrar Producto";
-            this.registrarProductosToolStripMenuItem.Click += new System.EventHandler(this.registrarProductosToolStripMenuItem_Click);
+            this.registrarProductosToolStripMenuItem.Size = new System.Drawing.Size(379, 46);
+            this.registrarProductosToolStripMenuItem.Text = "Registrar producto";
             // 
             // verProductosToolStripMenuItem
             // 
             this.verProductosToolStripMenuItem.Name = "verProductosToolStripMenuItem";
-            this.verProductosToolStripMenuItem.Size = new System.Drawing.Size(378, 46);
+            this.verProductosToolStripMenuItem.Size = new System.Drawing.Size(379, 46);
             this.verProductosToolStripMenuItem.Text = "Ver Productos";
-            this.verProductosToolStripMenuItem.Click += new System.EventHandler(this.verProductosToolStripMenuItem_Click);
             // 
             // informeToolStripMenuItem1
             // 
             this.informeToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.generarInformeToolStripMenuItem,
             this.verInformeToolStripMenuItem});
-            this.informeToolStripMenuItem1.ForeColor = System.Drawing.Color.Black;
             this.informeToolStripMenuItem1.Name = "informeToolStripMenuItem1";
-            this.informeToolStripMenuItem1.Size = new System.Drawing.Size(134, 45);
+            this.informeToolStripMenuItem1.Size = new System.Drawing.Size(134, 48);
             this.informeToolStripMenuItem1.Text = "Informe";
             // 
             // generarInformeToolStripMenuItem
@@ -151,7 +168,6 @@
             this.generarInformeToolStripMenuItem.Name = "generarInformeToolStripMenuItem";
             this.generarInformeToolStripMenuItem.Size = new System.Drawing.Size(349, 46);
             this.generarInformeToolStripMenuItem.Text = "Generar Informe";
-            this.generarInformeToolStripMenuItem.Click += new System.EventHandler(this.generarInformeToolStripMenuItem_Click);
             // 
             // verInformeToolStripMenuItem
             // 
@@ -165,9 +181,8 @@
             this.registrarEntradaToolStripMenuItem,
             this.registrarSalidaToolStripMenuItem,
             this.verInventarioToolStripMenuItem});
-            this.inventarioToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.inventarioToolStripMenuItem.Name = "inventarioToolStripMenuItem";
-            this.inventarioToolStripMenuItem.Size = new System.Drawing.Size(162, 45);
+            this.inventarioToolStripMenuItem.Size = new System.Drawing.Size(162, 48);
             this.inventarioToolStripMenuItem.Text = "Inventario";
             // 
             // registrarEntradaToolStripMenuItem
@@ -175,143 +190,122 @@
             this.registrarEntradaToolStripMenuItem.Name = "registrarEntradaToolStripMenuItem";
             this.registrarEntradaToolStripMenuItem.Size = new System.Drawing.Size(356, 46);
             this.registrarEntradaToolStripMenuItem.Text = "Registrar Entrada";
-            this.registrarEntradaToolStripMenuItem.Click += new System.EventHandler(this.registrarEntradaToolStripMenuItem_Click);
             // 
             // registrarSalidaToolStripMenuItem
             // 
             this.registrarSalidaToolStripMenuItem.Name = "registrarSalidaToolStripMenuItem";
             this.registrarSalidaToolStripMenuItem.Size = new System.Drawing.Size(356, 46);
             this.registrarSalidaToolStripMenuItem.Text = "Registrar Salida";
-            this.registrarSalidaToolStripMenuItem.Click += new System.EventHandler(this.registrarSalidaToolStripMenuItem_Click);
             // 
             // verInventarioToolStripMenuItem
             // 
             this.verInventarioToolStripMenuItem.Name = "verInventarioToolStripMenuItem";
             this.verInventarioToolStripMenuItem.Size = new System.Drawing.Size(356, 46);
             this.verInventarioToolStripMenuItem.Text = "Ver Inventario";
-            this.verInventarioToolStripMenuItem.Click += new System.EventHandler(this.verInventarioToolStripMenuItem_Click);
             // 
             // configuraciónToolStripMenuItem
             // 
+            this.configuraciónToolStripMenuItem.BackColor = System.Drawing.Color.Black;
             this.configuraciónToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.informeToolStripMenuItem});
-            this.configuraciónToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
+            this.configuraciónToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.configuraciónToolStripMenuItem.Name = "configuraciónToolStripMenuItem";
             this.configuraciónToolStripMenuItem.Size = new System.Drawing.Size(216, 45);
             this.configuraciónToolStripMenuItem.Text = "Configuración";
             // 
             // informeToolStripMenuItem
             // 
+            this.informeToolStripMenuItem.ForeColor = System.Drawing.Color.Gray;
             this.informeToolStripMenuItem.Name = "informeToolStripMenuItem";
             this.informeToolStripMenuItem.Size = new System.Drawing.Size(236, 46);
             this.informeToolStripMenuItem.Text = "Informe";
-            this.informeToolStripMenuItem.Click += new System.EventHandler(this.informeToolStripMenuItem_Click);
             // 
             // abrirTrimestreToolStripMenuItem
             // 
-            this.abrirTrimestreToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.abrirTrimestreToolStripMenuItem.Name = "abrirTrimestreToolStripMenuItem";
-            this.abrirTrimestreToolStripMenuItem.Size = new System.Drawing.Size(223, 45);
+            this.abrirTrimestreToolStripMenuItem.Size = new System.Drawing.Size(223, 48);
             this.abrirTrimestreToolStripMenuItem.Text = "Abrir Trimestre";
-            this.abrirTrimestreToolStripMenuItem.Click += new System.EventHandler(this.abrirTrimestreToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(205, 45);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(205, 48);
             this.salirToolStripMenuItem.Text = "Cerrar Sesión";
-            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
-            // buttonAtrás
+            // ProductoLabel
             // 
-            this.buttonAtrás.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonAtrás.BackColor = System.Drawing.Color.Black;
-            this.buttonAtrás.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAtrás.ForeColor = System.Drawing.Color.Yellow;
-            this.buttonAtrás.Location = new System.Drawing.Point(8, 1126);
-            this.buttonAtrás.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.buttonAtrás.Name = "buttonAtrás";
-            this.buttonAtrás.Size = new System.Drawing.Size(320, 72);
-            this.buttonAtrás.TabIndex = 15;
-            this.buttonAtrás.Text = "Atrás";
-            this.buttonAtrás.UseVisualStyleBackColor = false;
-            this.buttonAtrás.Click += new System.EventHandler(this.buttonAtrás_Click);
+            this.ProductoLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ProductoLabel.AutoSize = true;
+            this.ProductoLabel.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProductoLabel.ForeColor = System.Drawing.Color.White;
+            this.ProductoLabel.Location = new System.Drawing.Point(205, 210);
+            this.ProductoLabel.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.ProductoLabel.Name = "ProductoLabel";
+            this.ProductoLabel.Size = new System.Drawing.Size(1569, 41);
+            this.ProductoLabel.TabIndex = 45;
+            this.ProductoLabel.Text = "DIAS PREVIOS AL VENCIMIENTO DE UN PRODUCTO ANTES DE ENVIAR LA NOTIFICACION:";
             // 
-            // label1
+            // ProveedorLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.Color.Yellow;
-            this.label1.Location = new System.Drawing.Point(32, 81);
-            this.label1.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(199, 47);
-            this.label1.TabIndex = 16;
-            this.label1.Text = "Facturas";
+            this.ProveedorLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ProveedorLabel.AutoSize = true;
+            this.ProveedorLabel.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProveedorLabel.ForeColor = System.Drawing.Color.White;
+            this.ProveedorLabel.Location = new System.Drawing.Point(205, 401);
+            this.ProveedorLabel.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.ProveedorLabel.Name = "ProveedorLabel";
+            this.ProveedorLabel.Size = new System.Drawing.Size(226, 41);
+            this.ProveedorLabel.TabIndex = 44;
+            this.ProveedorLabel.Text = "N. PARTIDA:";
             // 
-            // dataGridView1
+            // txtboxnpartida
             // 
-            this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.NFactura,
-            this.NAutorizacion,
-            this.Proveedor,
-            this.Nit,
-            this.Fecha});
-            this.dataGridView1.Location = new System.Drawing.Point(189, 157);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1459, 885);
-            this.dataGridView1.TabIndex = 17;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
-            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.txtboxnpartida.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtboxnpartida.Location = new System.Drawing.Point(651, 403);
+            this.txtboxnpartida.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.txtboxnpartida.Name = "txtboxnpartida";
+            this.txtboxnpartida.Size = new System.Drawing.Size(660, 38);
+            this.txtboxnpartida.TabIndex = 42;
             // 
-            // NFactura
+            // txtboxbecas
             // 
-            this.NFactura.HeaderText = "N° Factura";
-            this.NFactura.Name = "NFactura";
+            this.txtboxbecas.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtboxbecas.Location = new System.Drawing.Point(651, 303);
+            this.txtboxbecas.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.txtboxbecas.Name = "txtboxbecas";
+            this.txtboxbecas.Size = new System.Drawing.Size(660, 38);
+            this.txtboxbecas.TabIndex = 41;
             // 
-            // NAutorizacion
+            // labelInformaciónBásica
             // 
-            this.NAutorizacion.HeaderText = "N° Autorizacion";
-            this.NAutorizacion.Name = "NAutorizacion";
+            this.labelInformaciónBásica.AutoSize = true;
+            this.labelInformaciónBásica.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelInformaciónBásica.ForeColor = System.Drawing.Color.Yellow;
+            this.labelInformaciónBásica.Location = new System.Drawing.Point(80, 95);
+            this.labelInformaciónBásica.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.labelInformaciónBásica.Name = "labelInformaciónBásica";
+            this.labelInformaciónBásica.Size = new System.Drawing.Size(854, 47);
+            this.labelInformaciónBásica.TabIndex = 43;
+            this.labelInformaciónBásica.Text = "Configurar Notificaciones del Inventario";
             // 
-            // Proveedor
-            // 
-            this.Proveedor.HeaderText = "Proveedor";
-            this.Proveedor.Name = "Proveedor";
-            // 
-            // Nit
-            // 
-            this.Nit.HeaderText = "NIT";
-            this.Nit.Name = "Nit";
-            // 
-            // Fecha
-            // 
-            this.Fecha.HeaderText = "Fecha";
-            this.Fecha.Name = "Fecha";
-            // 
-            // ShowBills
+            // InventoryConfiguration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(2173, 1211);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.buttonAtrás);
+            this.Controls.Add(this.ProductoLabel);
+            this.Controls.Add(this.ProveedorLabel);
+            this.Controls.Add(this.txtboxnpartida);
+            this.Controls.Add(this.txtboxbecas);
+            this.Controls.Add(this.labelInformaciónBásica);
             this.Controls.Add(this.menuStrip1);
-            this.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.Name = "ShowBills";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Ver Facturas";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ShowBills_FormClosing);
-            this.Load += new System.EventHandler(this.ShowBills_Load);
-            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.ShowBills_KeyUp);
+            this.Controls.Add(this.RegistrarButton);
+            this.Controls.Add(this.button2);
+            this.Name = "InventoryConfiguration";
+            this.Text = "Configuración del Inventario";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -319,10 +313,12 @@
 
         #endregion
 
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button RegistrarButton;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem pantallaPrincipalToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem facturasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem registrarFacturasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem registrarFacturaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verFacturasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem productosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registrarProductosToolStripMenuItem;
@@ -337,14 +333,11 @@
         private System.Windows.Forms.ToolStripMenuItem configuraciónToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem informeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem abrirTrimestreToolStripMenuItem;
-        private System.Windows.Forms.Button buttonAtrás;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NFactura;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NAutorizacion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Proveedor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
+        private System.Windows.Forms.Label ProductoLabel;
+        private System.Windows.Forms.Label ProveedorLabel;
+        private System.Windows.Forms.TextBox txtboxnpartida;
+        private System.Windows.Forms.TextBox txtboxbecas;
+        private System.Windows.Forms.Label labelInformaciónBásica;
     }
 }

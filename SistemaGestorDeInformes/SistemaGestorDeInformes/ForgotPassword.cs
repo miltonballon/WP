@@ -14,10 +14,10 @@ using EntityLibrary;
 
 namespace SistemaGestorDeInformes
 {
-    public partial class RestablecerContraseñaForm : Form
+    public partial class ForgotPassword : Form
     { 
         private User user;
-        public RestablecerContraseñaForm(User user)
+        public ForgotPassword(User user)
         {
             InitializeComponent();
             this.user = user;

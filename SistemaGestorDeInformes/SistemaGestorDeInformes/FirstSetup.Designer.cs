@@ -38,9 +38,10 @@
             this.button1.BackColor = System.Drawing.Color.Black;
             this.button1.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
             this.button1.ForeColor = System.Drawing.Color.Yellow;
-            this.button1.Location = new System.Drawing.Point(305, 286);
+            this.button1.Location = new System.Drawing.Point(813, 682);
+            this.button1.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 30);
+            this.button1.Size = new System.Drawing.Size(320, 72);
             this.button1.TabIndex = 0;
             this.button1.Text = "Ingresar";
             this.button1.UseVisualStyleBackColor = false;
@@ -52,9 +53,10 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(166, 62);
+            this.label2.Location = new System.Drawing.Point(443, 148);
+            this.label2.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(376, 140);
+            this.label2.Size = new System.Drawing.Size(955, 322);
             this.label2.TabIndex = 5;
             this.label2.Text = "HOLA,\r\n\r\nNo se detecto un usuario registrado en el sistema. \r\nPor favor presione " +
     "el boton \"Ingresar si desea crear \r\nuno  o  cierre  la  ventana para cancelar el" +
@@ -62,15 +64,16 @@
             // 
             // FirstSetup
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(751, 339);
+            this.ClientSize = new System.Drawing.Size(2003, 808);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button1);
+            this.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Name = "FirstSetup";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Presentación de Sistema";
+            this.Text = "Presentación del Sistema";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FirtsSetup_FormClosing);
             this.Load += new System.EventHandler(this.FirtsSetup_Load);
             this.ResumeLayout(false);
