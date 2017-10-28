@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using EntityLibrary;
 
-namespace SistemaGestorDeInformes
+namespace ControllerLibrary
 {
     public class ConfigurationController
     {
