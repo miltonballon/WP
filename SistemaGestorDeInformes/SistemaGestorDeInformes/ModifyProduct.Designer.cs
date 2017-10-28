@@ -148,7 +148,6 @@
             this.Name = "ModifyProduct";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modificar Producto";
-            this.Load += new System.EventHandler(this.ModifyProduct_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

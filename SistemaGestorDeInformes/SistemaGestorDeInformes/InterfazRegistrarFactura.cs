@@ -96,6 +96,7 @@ namespace SistemaGestorDeInformes
                 e.Handled = true;
         }
 
+
         private void textBoxNFactura_TextChanged(object sender, KeyPressEventArgs e)
         {
             //Para impedir que se pongan letras y espacios en el N.FACTURA

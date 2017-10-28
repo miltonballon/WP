@@ -41,10 +41,5 @@ namespace SistemaGestorDeInformes
             main.Show();
             this.Hide();
         }
-
-        private void ModifyProduct_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
