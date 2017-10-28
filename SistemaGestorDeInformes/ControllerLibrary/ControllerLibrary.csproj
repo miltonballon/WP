@@ -62,6 +62,7 @@
     <Compile Include="ConfigurationController.cs" />
     <Compile Include="Connection.cs" />
     <Compile Include="InvoiceController.cs" />
+    <Compile Include="InvoiceRowController.cs" />
     <Compile Include="OutputReceptionController.cs" />
     <Compile Include="ProductController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
