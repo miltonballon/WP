@@ -24,13 +24,13 @@ namespace SistemaGestorDeInformes
 
         private void button3_Click(object sender, EventArgs e)
         {
-            InterfazRegistrarFactura InterfazRegistrarFactura1 = new InterfazRegistrarFactura();
+            RegisterInvoice InterfazRegistrarFactura1 = new RegisterInvoice();
             InterfazRegistrarFactura1.Show();
         }
 
         private void registrarFacturaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            InterfazRegistrarFactura intRegFac = new InterfazRegistrarFactura();
+            RegisterInvoice intRegFac = new RegisterInvoice();
             intRegFac.WindowState = this.WindowState;
             this.Hide();
             intRegFac.Show();

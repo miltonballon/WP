@@ -41,7 +41,7 @@ namespace SistemaGestorDeInformes
 
         private void RegisterInvoiceToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            InterfazRegistrarFactura RegisterInvoiceForm = new InterfazRegistrarFactura();
+            RegisterInvoice RegisterInvoiceForm = new RegisterInvoice();
             RegisterInvoiceForm.WindowState = this.WindowState;
             RegisterInvoiceForm.Show();
             this.Hide();
@@ -49,7 +49,7 @@ namespace SistemaGestorDeInformes
 
         private void registrarFacturasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            InterfazRegistrarFactura intRegFac = new InterfazRegistrarFactura();
+            RegisterInvoice intRegFac = new RegisterInvoice();
             intRegFac.WindowState = this.WindowState;
             this.Hide();
             intRegFac.Show();
@@ -150,7 +150,7 @@ namespace SistemaGestorDeInformes
 
         private void openModify(Invoice invoice)
         {
-            InterfazRegistrarFactura inF = new InterfazRegistrarFactura(invoice);
+            RegisterInvoice inF = new RegisterInvoice(invoice);
             inF.WindowState = this.WindowState;
             this.Hide();
             inF.Show();

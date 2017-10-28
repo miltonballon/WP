@@ -1,6 +1,6 @@
 ﻿namespace SistemaGestorDeInformes
 {
-    partial class InterfazRegistrarFactura
+    partial class RegisterInvoice
     {
         /// <summary>
         /// Required designer variable.

@@ -12,7 +12,7 @@ using EntityLibrary;
 
 namespace SistemaGestorDeInformes
 {
-    public partial class InterfazRegistrarFactura : Form
+    public partial class RegisterInvoice : Form
     {
         private InvoiceController invoiceController;
         ProviderController providerController;
@@ -22,7 +22,7 @@ namespace SistemaGestorDeInformes
         private List<Provider> providers;
         private bool modifying;
 
-        public InterfazRegistrarFactura()
+        public RegisterInvoice()
         {
             InitializeComponent();
             this.textBoxNit.KeyPress += new KeyPressEventHandler(textBoxNit_TextChanged);//Para impedir que se pongan letras y espacios en el NIT
@@ -35,7 +35,7 @@ namespace SistemaGestorDeInformes
             modifying = false;
         }
 
-        public InterfazRegistrarFactura(Invoice invoice)
+        public RegisterInvoice(Invoice invoice)
         {
             InitializeComponent();
             this.invoice = invoice;

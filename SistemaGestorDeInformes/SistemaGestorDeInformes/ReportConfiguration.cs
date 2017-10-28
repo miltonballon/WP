@@ -32,7 +32,7 @@ namespace SistemaGestorDeInformes
 
         private void registrarFacturaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            InterfazRegistrarFactura InterfazRegistrarFactura1 = new InterfazRegistrarFactura();
+            RegisterInvoice InterfazRegistrarFactura1 = new RegisterInvoice();
             InterfazRegistrarFactura1.WindowState = this.WindowState;
             InterfazRegistrarFactura1.Show();
             this.Hide();
