@@ -2,6 +2,7 @@
 using System.Data.SQLite;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using EntityLibrary;
 
 namespace ControllerLibrary
 {
