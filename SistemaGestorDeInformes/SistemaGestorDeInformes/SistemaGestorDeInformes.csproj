@@ -75,6 +75,12 @@
     <Compile Include="GenerateReport.Designer.cs">
       <DependentUpon>GenerateReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="InventoryConfiguration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InventoryConfiguration.Designer.cs">
+      <DependentUpon>InventoryConfiguration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GenerateReport.resx">
       <DependentUpon>GenerateReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InventoryConfiguration.resx">
+      <DependentUpon>InventoryConfiguration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
