@@ -5,13 +5,16 @@ using System.Text;
 using System.Threading.Tasks;
 using EntityLibrary;
 using System.Data.SQLite;
+using Microsoft.Office.Interop.Excel;
+using System.Runtime.InteropServices;
 
 namespace ControllerLibrary
 {
-    class ReportSheetController
+    public class ReportSheetController
     {
         private Connection c;
         private ReportSheetCellController reportSheetCellController;
+        private readonly int EXCELNOTINSTALLED=-1;
         public ReportSheetController()
         {
             c = new Connection();
@@ -77,5 +80,88 @@ namespace ControllerLibrary
             c.dataClose();
             return reportSheets;
         }
+
+        public ReportSheet generateQuotationSheet()
+        {
+            ReportSheet reportSheet = new ReportSheet("Cotizacion");
+            List<ReportSheetCell> cells = new List<ReportSheetCell>();
+            cells.AddRange(generateHeaderQuotationSheet(3));
+            reportSheet.Cells = cells;
+            return reportSheet;
+        }
+
+        private List<ReportSheetCell> generateHeaderQuotationSheet(int numberCopies)
+        {
+            List<ReportSheetCell> cells = new List<ReportSheetCell>();
+            int row, 
+                column=1;
+            for (int i=0;i<numberCopies; i++)
+            {
+                row = 1;
+                ReportSheetCell cell = new ReportSheetCell(row,column,i+"");
+                cells.Add(cell);
+                column++;
+                cell = new ReportSheetCell(row,column, "GOBIERNO AUTONOMO DEPARTAMENTAL");
+                row++;
+                cells.Add(cell);
+                cell = new ReportSheetCell(row, column, "SECRETARIA DEPARTAMENTAL DE DESARROLLO HUMANO");
+                row++;
+                cells.Add(cell);
+                cell = new ReportSheetCell(row, column, "SERVICIO DEPARTAMENTAL DE GESTION SOCIAL");
+                row++;
+                cells.Add(cell);
+                cell = new ReportSheetCell(row, column, "COCHABAMBA- BOLIVIA");
+                row++;
+                cells.Add(cell);
+                column += 7;
+            }
+            return cells;
+        }
+
+        public int generateExcelSheet(ReportSheet reportSheet)
+        {
+            int output;
+            Application xlApp = new Microsoft.Office.Interop.Excel.Application();
+
+            if (xlApp == null)
+            {
+                output = EXCELNOTINSTALLED;
+            }
+            else
+            {
+                Workbook xlWorkBook;
+                Worksheet xlWorkSheet;
+                object misValue = System.Reflection.Missing.Value;
+
+                xlWorkBook = xlApp.Workbooks.Add(misValue);
+                xlWorkSheet = (Worksheet)xlWorkBook.Worksheets.get_Item(1);
+
+                xlWorkSheet.Name = reportSheet.Type;
+                fillInExcelCells(reportSheet.Cells,xlWorkSheet);
+
+                xlWorkBook.SaveAs("d:\\csharp-Excel.xls", XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
+                xlWorkBook.Close(true, misValue, misValue);
+                xlApp.Quit();
+
+                Marshal.ReleaseComObject(xlWorkSheet);
+                Marshal.ReleaseComObject(xlWorkBook);
+                Marshal.ReleaseComObject(xlApp);
+
+                output = 0;
+            }
+            return output;
+        }
+
+        private void fillInExcelCells(List<ReportSheetCell> cells, Worksheet workSheet)
+        {
+            foreach (ReportSheetCell cell in cells)
+            {
+                int row=cell.Row, 
+                    column=cell.Column;
+                String content = cell.Content;
+                workSheet.Cells[row, column] = content;
+            }
+        }
     }
 }
+

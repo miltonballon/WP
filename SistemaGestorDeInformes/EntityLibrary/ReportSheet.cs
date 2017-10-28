@@ -32,11 +32,12 @@ namespace EntityLibrary
             this.cells = new List<ReportSheetCell>();
         }
 
-        /*
-        public int Id { get => id; set => id = value; }
-        public string Type { get => type; set => type = value; }
-        internal List<ReportSheetCell> Cells { get => cells; set => cells = value; }
-         * */
+        public ReportSheet(string type)
+        {
+            this.type = type;
+            this.cells = new List<ReportSheetCell>();
+        }
+
         public int Id
         {
             get { return id; }
