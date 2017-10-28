@@ -30,6 +30,26 @@
         {
             this.button2 = new System.Windows.Forms.Button();
             this.RegistrarButton = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.pantallaPrincipalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.facturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registrarFacturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verFacturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.productosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registrarProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.informeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.generarInformeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verInformeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inventarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registrarEntradaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registrarSalidaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verInventarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.configuraciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.informeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.abrirTrimestreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button2
@@ -60,17 +80,168 @@
             this.RegistrarButton.Text = "Guardar";
             this.RegistrarButton.UseVisualStyleBackColor = false;
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.pantallaPrincipalToolStripMenuItem,
+            this.facturasToolStripMenuItem,
+            this.productosToolStripMenuItem,
+            this.informeToolStripMenuItem1,
+            this.inventarioToolStripMenuItem,
+            this.configuraciónToolStripMenuItem,
+            this.abrirTrimestreToolStripMenuItem,
+            this.salirToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(16, 5, 0, 5);
+            this.menuStrip1.Size = new System.Drawing.Size(2173, 58);
+            this.menuStrip1.TabIndex = 40;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // pantallaPrincipalToolStripMenuItem
+            // 
+            this.pantallaPrincipalToolStripMenuItem.BackColor = System.Drawing.Color.White;
+            this.pantallaPrincipalToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
+            this.pantallaPrincipalToolStripMenuItem.Name = "pantallaPrincipalToolStripMenuItem";
+            this.pantallaPrincipalToolStripMenuItem.Size = new System.Drawing.Size(252, 48);
+            this.pantallaPrincipalToolStripMenuItem.Text = "Pantalla Principal";
+            // 
+            // facturasToolStripMenuItem
+            // 
+            this.facturasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.registrarFacturaToolStripMenuItem,
+            this.verFacturasToolStripMenuItem});
+            this.facturasToolStripMenuItem.Name = "facturasToolStripMenuItem";
+            this.facturasToolStripMenuItem.Size = new System.Drawing.Size(138, 48);
+            this.facturasToolStripMenuItem.Text = "Facturas";
+            // 
+            // registrarFacturaToolStripMenuItem
+            // 
+            this.registrarFacturaToolStripMenuItem.Name = "registrarFacturaToolStripMenuItem";
+            this.registrarFacturaToolStripMenuItem.Size = new System.Drawing.Size(351, 46);
+            this.registrarFacturaToolStripMenuItem.Text = "Registrar Factura";
+            // 
+            // verFacturasToolStripMenuItem
+            // 
+            this.verFacturasToolStripMenuItem.Name = "verFacturasToolStripMenuItem";
+            this.verFacturasToolStripMenuItem.Size = new System.Drawing.Size(351, 46);
+            this.verFacturasToolStripMenuItem.Text = "Ver  Facturas";
+            // 
+            // productosToolStripMenuItem
+            // 
+            this.productosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.registrarProductosToolStripMenuItem,
+            this.verProductosToolStripMenuItem});
+            this.productosToolStripMenuItem.Name = "productosToolStripMenuItem";
+            this.productosToolStripMenuItem.Size = new System.Drawing.Size(165, 48);
+            this.productosToolStripMenuItem.Text = "Productos";
+            // 
+            // registrarProductosToolStripMenuItem
+            // 
+            this.registrarProductosToolStripMenuItem.Name = "registrarProductosToolStripMenuItem";
+            this.registrarProductosToolStripMenuItem.Size = new System.Drawing.Size(379, 46);
+            this.registrarProductosToolStripMenuItem.Text = "Registrar producto";
+            // 
+            // verProductosToolStripMenuItem
+            // 
+            this.verProductosToolStripMenuItem.Name = "verProductosToolStripMenuItem";
+            this.verProductosToolStripMenuItem.Size = new System.Drawing.Size(379, 46);
+            this.verProductosToolStripMenuItem.Text = "Ver Productos";
+            // 
+            // informeToolStripMenuItem1
+            // 
+            this.informeToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.generarInformeToolStripMenuItem,
+            this.verInformeToolStripMenuItem});
+            this.informeToolStripMenuItem1.Name = "informeToolStripMenuItem1";
+            this.informeToolStripMenuItem1.Size = new System.Drawing.Size(134, 48);
+            this.informeToolStripMenuItem1.Text = "Informe";
+            // 
+            // generarInformeToolStripMenuItem
+            // 
+            this.generarInformeToolStripMenuItem.Name = "generarInformeToolStripMenuItem";
+            this.generarInformeToolStripMenuItem.Size = new System.Drawing.Size(349, 46);
+            this.generarInformeToolStripMenuItem.Text = "Generar Informe";
+            // 
+            // verInformeToolStripMenuItem
+            // 
+            this.verInformeToolStripMenuItem.Name = "verInformeToolStripMenuItem";
+            this.verInformeToolStripMenuItem.Size = new System.Drawing.Size(349, 46);
+            this.verInformeToolStripMenuItem.Text = "Ver Informe";
+            // 
+            // inventarioToolStripMenuItem
+            // 
+            this.inventarioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.registrarEntradaToolStripMenuItem,
+            this.registrarSalidaToolStripMenuItem,
+            this.verInventarioToolStripMenuItem});
+            this.inventarioToolStripMenuItem.Name = "inventarioToolStripMenuItem";
+            this.inventarioToolStripMenuItem.Size = new System.Drawing.Size(162, 48);
+            this.inventarioToolStripMenuItem.Text = "Inventario";
+            // 
+            // registrarEntradaToolStripMenuItem
+            // 
+            this.registrarEntradaToolStripMenuItem.Name = "registrarEntradaToolStripMenuItem";
+            this.registrarEntradaToolStripMenuItem.Size = new System.Drawing.Size(356, 46);
+            this.registrarEntradaToolStripMenuItem.Text = "Registrar Entrada";
+            // 
+            // registrarSalidaToolStripMenuItem
+            // 
+            this.registrarSalidaToolStripMenuItem.Name = "registrarSalidaToolStripMenuItem";
+            this.registrarSalidaToolStripMenuItem.Size = new System.Drawing.Size(356, 46);
+            this.registrarSalidaToolStripMenuItem.Text = "Registrar Salida";
+            // 
+            // verInventarioToolStripMenuItem
+            // 
+            this.verInventarioToolStripMenuItem.Name = "verInventarioToolStripMenuItem";
+            this.verInventarioToolStripMenuItem.Size = new System.Drawing.Size(356, 46);
+            this.verInventarioToolStripMenuItem.Text = "Ver Inventario";
+            // 
+            // configuraciónToolStripMenuItem
+            // 
+            this.configuraciónToolStripMenuItem.BackColor = System.Drawing.Color.Black;
+            this.configuraciónToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.informeToolStripMenuItem});
+            this.configuraciónToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.configuraciónToolStripMenuItem.Name = "configuraciónToolStripMenuItem";
+            this.configuraciónToolStripMenuItem.Size = new System.Drawing.Size(216, 48);
+            this.configuraciónToolStripMenuItem.Text = "Configuración";
+            // 
+            // informeToolStripMenuItem
+            // 
+            this.informeToolStripMenuItem.ForeColor = System.Drawing.Color.Gray;
+            this.informeToolStripMenuItem.Name = "informeToolStripMenuItem";
+            this.informeToolStripMenuItem.Size = new System.Drawing.Size(236, 46);
+            this.informeToolStripMenuItem.Text = "Informe";
+            // 
+            // abrirTrimestreToolStripMenuItem
+            // 
+            this.abrirTrimestreToolStripMenuItem.Name = "abrirTrimestreToolStripMenuItem";
+            this.abrirTrimestreToolStripMenuItem.Size = new System.Drawing.Size(223, 48);
+            this.abrirTrimestreToolStripMenuItem.Text = "Abrir Trimestre";
+            // 
+            // salirToolStripMenuItem
+            // 
+            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(205, 48);
+            this.salirToolStripMenuItem.Text = "Cerrar Sesión";
+            // 
             // InventoryConfiguration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(2173, 1211);
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.RegistrarButton);
             this.Controls.Add(this.button2);
             this.Name = "InventoryConfiguration";
             this.Text = "Configuración del Inventario";
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -78,5 +249,24 @@
 
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button RegistrarButton;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem pantallaPrincipalToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem facturasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem registrarFacturaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem verFacturasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem productosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem registrarProductosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem verProductosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem informeToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem generarInformeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem verInformeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem inventarioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem registrarEntradaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem registrarSalidaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem verInventarioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem configuraciónToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem informeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem abrirTrimestreToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
     }
 }
