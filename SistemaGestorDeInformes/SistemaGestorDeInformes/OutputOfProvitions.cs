@@ -28,7 +28,6 @@ namespace SistemaGestorDeInformes
             main.Show();
         }
         
-
         private void pantallaPrincipalToolStripMenuItem_Click(object sender, EventArgs e)
         {
             InterfazPrincipal Interfaz = new InterfazPrincipal();
@@ -124,7 +123,6 @@ namespace SistemaGestorDeInformes
             OutputDateTextBox.ShortcutsEnabled = false;
 
             KeyPreview = true;
-
         }
 
         private void RegisterButton_Click(object sender, EventArgs e)
@@ -169,8 +167,7 @@ namespace SistemaGestorDeInformes
             else
                 e.Handled = true;
         }        
-        
-        
+                
 
         private void TotalTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
