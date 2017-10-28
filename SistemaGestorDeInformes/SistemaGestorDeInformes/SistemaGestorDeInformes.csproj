@@ -81,11 +81,11 @@
     <Compile Include="GenerateReport.Designer.cs">
       <DependentUpon>GenerateReport.cs</DependentUpon>
     </Compile>
-    <Compile Include="InterfazPrincipal.cs">
+    <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InterfazPrincipal.Designer.cs">
-      <DependentUpon>InterfazPrincipal.cs</DependentUpon>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
     </Compile>
     <Compile Include="InterfazRegistrarFactura.cs">
       <SubType>Form</SubType>
@@ -176,8 +176,8 @@
     <EmbeddedResource Include="GenerateReport.resx">
       <DependentUpon>GenerateReport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InterfazPrincipal.resx">
-      <DependentUpon>InterfazPrincipal.cs</DependentUpon>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InterfazRegistrarFactura.resx">
       <DependentUpon>InterfazRegistrarFactura.cs</DependentUpon>

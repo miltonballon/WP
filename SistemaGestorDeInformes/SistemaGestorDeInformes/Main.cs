@@ -11,10 +11,10 @@ using ControllerLibrary;
 
 namespace SistemaGestorDeInformes
 {
-    public partial class InterfazPrincipal : Form
+    public partial class Main : Form
     {
         Connection c = new Connection();
-        public InterfazPrincipal()
+        public Main()
         {
             InitializeComponent();
             c.connect();
