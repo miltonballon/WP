@@ -75,8 +75,7 @@ namespace SistemaGestorDeInformes
         private void clearSearchButton_Click(object sender, EventArgs e)
         {
             textBox1.Text = "";
-            showUser();
-            
+            showUser();            
         }
 
         private void verFacturasToolStripMenuItem_Click(object sender, EventArgs e)

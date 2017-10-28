@@ -62,7 +62,6 @@ namespace SistemaGestorDeInformes
             }
         }
 
-
         private void atrasButton_Click(object sender, EventArgs e)
         {
             Login Login1 = new Login();
