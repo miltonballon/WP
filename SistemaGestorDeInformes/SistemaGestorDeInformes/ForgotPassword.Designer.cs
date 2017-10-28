@@ -1,6 +1,6 @@
 ﻿namespace SistemaGestorDeInformes
 {
-    partial class RestablecerContraseñaForm
+    partial class ForgotPassword
     {
         /// <summary>
         /// Required designer variable.

@@ -31,7 +31,7 @@ namespace SistemaGestorDeInformes
                 if (user != null)
                 {
                     this.Hide();
-                    RestablecerContraseñaForm CC = new RestablecerContraseñaForm(user);
+                    ForgotPassword CC = new ForgotPassword(user);
                     CC.ShowDialog();
                 }
                 else
