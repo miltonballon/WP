@@ -96,7 +96,6 @@ namespace SistemaGestorDeInformes
                 e.Handled = true;
         }
 
-
         private void textBoxNFactura_TextChanged(object sender, KeyPressEventArgs e)
         {
             //Para impedir que se pongan letras y espacios en el N.FACTURA
@@ -446,8 +445,7 @@ namespace SistemaGestorDeInformes
             else
                 e.Handled = true;
         }            
-
-        
+                
         private void InterfazRegistrarFactura_KeyUp(object sender, KeyEventArgs e)
         {
             InterfazPrincipal prin = new InterfazPrincipal();
