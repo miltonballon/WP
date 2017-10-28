@@ -31,7 +31,6 @@ namespace SistemaGestorDeInformes
                     this.Hide();
                     RestablecerContraseñaForm CC = new RestablecerContraseñaForm(user);
                     CC.ShowDialog();
-                    //this.Show();
                 }
                 else
                 {
@@ -80,10 +79,6 @@ namespace SistemaGestorDeInformes
             this.Close();
         }
 
-        private void txtUsuario_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void txtContraseña_KeyPress(object sender, KeyPressEventArgs e)
         {
