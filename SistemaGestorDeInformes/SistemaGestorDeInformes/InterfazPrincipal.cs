@@ -111,35 +111,13 @@ namespace SistemaGestorDeInformes
             Application.Exit();
         }
 
-
-
-
-
+                
         private void generarInformeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             GenerateReport Interfaz = new GenerateReport();
             Interfaz.WindowState = this.WindowState;
             this.Hide();
             Interfaz.Show();
-        }
-
-        private void verInformeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        public void ControlSetFocus(Control control)
-        {
-            // Set focus to the control, if it can receive focus.
-            if (control.CanFocus)
-            {
-                control.Focus();
-            }
-        }
-
-        private void facturasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
+        }        
     }
 }
