@@ -225,9 +225,9 @@
             this.labelInformaciónBásica.Location = new System.Drawing.Point(80, 95);
             this.labelInformaciónBásica.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.labelInformaciónBásica.Name = "labelInformaciónBásica";
-            this.labelInformaciónBásica.Size = new System.Drawing.Size(753, 47);
+            this.labelInformaciónBásica.Size = new System.Drawing.Size(762, 47);
             this.labelInformaciónBásica.TabIndex = 17;
-            this.labelInformaciónBásica.Text = "Configurar Preferencias De Informe";
+            this.labelInformaciónBásica.Text = "Configurar Preferencias del Informe";
             // 
             // ProductoLabel
             // 

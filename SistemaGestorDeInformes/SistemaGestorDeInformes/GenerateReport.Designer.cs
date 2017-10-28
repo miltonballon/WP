@@ -262,9 +262,9 @@
             this.labelInformaciónBásica.Location = new System.Drawing.Point(221, 250);
             this.labelInformaciónBásica.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.labelInformaciónBásica.Name = "labelInformaciónBásica";
-            this.labelInformaciónBásica.Size = new System.Drawing.Size(1585, 47);
+            this.labelInformaciónBásica.Size = new System.Drawing.Size(1545, 47);
             this.labelInformaciónBásica.TabIndex = 34;
-            this.labelInformaciónBásica.Text = "¿Desea Generar El Informe Con Las Facturas Y Los Productos Registrados?";
+            this.labelInformaciónBásica.Text = "¿Desea Generar el Informe con las Facturas y los Productos Registrados?";
             // 
             // GenerateReport
             // 

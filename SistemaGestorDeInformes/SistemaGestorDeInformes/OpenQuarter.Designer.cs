@@ -251,9 +251,9 @@
             this.labelInformaciónBásica.Location = new System.Drawing.Point(77, 157);
             this.labelInformaciónBásica.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.labelInformaciónBásica.Name = "labelInformaciónBásica";
-            this.labelInformaciónBásica.Size = new System.Drawing.Size(428, 47);
+            this.labelInformaciónBásica.Size = new System.Drawing.Size(435, 47);
             this.labelInformaciónBásica.TabIndex = 24;
-            this.labelInformaciónBásica.Text = "Trimestre en curso:";
+            this.labelInformaciónBásica.Text = "Trimestre en Curso:";
             // 
             // lbTrim
             // 

@@ -49,6 +49,11 @@
             this.informeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.abrirTrimestreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ProductoLabel = new System.Windows.Forms.Label();
+            this.ProveedorLabel = new System.Windows.Forms.Label();
+            this.txtboxnpartida = new System.Windows.Forms.TextBox();
+            this.txtboxbecas = new System.Windows.Forms.TextBox();
+            this.labelInformaciónBásica = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -95,7 +100,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(16, 5, 0, 5);
-            this.menuStrip1.Size = new System.Drawing.Size(2173, 58);
+            this.menuStrip1.Size = new System.Drawing.Size(2173, 55);
             this.menuStrip1.TabIndex = 40;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -205,7 +210,7 @@
             this.informeToolStripMenuItem});
             this.configuraciónToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.configuraciónToolStripMenuItem.Name = "configuraciónToolStripMenuItem";
-            this.configuraciónToolStripMenuItem.Size = new System.Drawing.Size(216, 48);
+            this.configuraciónToolStripMenuItem.Size = new System.Drawing.Size(216, 45);
             this.configuraciónToolStripMenuItem.Text = "Configuración";
             // 
             // informeToolStripMenuItem
@@ -227,12 +232,73 @@
             this.salirToolStripMenuItem.Size = new System.Drawing.Size(205, 48);
             this.salirToolStripMenuItem.Text = "Cerrar Sesión";
             // 
+            // ProductoLabel
+            // 
+            this.ProductoLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ProductoLabel.AutoSize = true;
+            this.ProductoLabel.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProductoLabel.ForeColor = System.Drawing.Color.White;
+            this.ProductoLabel.Location = new System.Drawing.Point(205, 210);
+            this.ProductoLabel.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.ProductoLabel.Name = "ProductoLabel";
+            this.ProductoLabel.Size = new System.Drawing.Size(1569, 41);
+            this.ProductoLabel.TabIndex = 45;
+            this.ProductoLabel.Text = "DIAS PREVIOS AL VENCIMIENTO DE UN PRODUCTO ANTES DE ENVIAR LA NOTIFICACION:";
+            // 
+            // ProveedorLabel
+            // 
+            this.ProveedorLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ProveedorLabel.AutoSize = true;
+            this.ProveedorLabel.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProveedorLabel.ForeColor = System.Drawing.Color.White;
+            this.ProveedorLabel.Location = new System.Drawing.Point(205, 401);
+            this.ProveedorLabel.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.ProveedorLabel.Name = "ProveedorLabel";
+            this.ProveedorLabel.Size = new System.Drawing.Size(226, 41);
+            this.ProveedorLabel.TabIndex = 44;
+            this.ProveedorLabel.Text = "N. PARTIDA:";
+            // 
+            // txtboxnpartida
+            // 
+            this.txtboxnpartida.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtboxnpartida.Location = new System.Drawing.Point(651, 403);
+            this.txtboxnpartida.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.txtboxnpartida.Name = "txtboxnpartida";
+            this.txtboxnpartida.Size = new System.Drawing.Size(660, 38);
+            this.txtboxnpartida.TabIndex = 42;
+            // 
+            // txtboxbecas
+            // 
+            this.txtboxbecas.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtboxbecas.Location = new System.Drawing.Point(651, 303);
+            this.txtboxbecas.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.txtboxbecas.Name = "txtboxbecas";
+            this.txtboxbecas.Size = new System.Drawing.Size(660, 38);
+            this.txtboxbecas.TabIndex = 41;
+            // 
+            // labelInformaciónBásica
+            // 
+            this.labelInformaciónBásica.AutoSize = true;
+            this.labelInformaciónBásica.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelInformaciónBásica.ForeColor = System.Drawing.Color.Yellow;
+            this.labelInformaciónBásica.Location = new System.Drawing.Point(80, 95);
+            this.labelInformaciónBásica.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.labelInformaciónBásica.Name = "labelInformaciónBásica";
+            this.labelInformaciónBásica.Size = new System.Drawing.Size(854, 47);
+            this.labelInformaciónBásica.TabIndex = 43;
+            this.labelInformaciónBásica.Text = "Configurar Notificaciones del Inventario";
+            // 
             // InventoryConfiguration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(2173, 1211);
+            this.Controls.Add(this.ProductoLabel);
+            this.Controls.Add(this.ProveedorLabel);
+            this.Controls.Add(this.txtboxnpartida);
+            this.Controls.Add(this.txtboxbecas);
+            this.Controls.Add(this.labelInformaciónBásica);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.RegistrarButton);
             this.Controls.Add(this.button2);
@@ -268,5 +334,10 @@
         private System.Windows.Forms.ToolStripMenuItem informeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem abrirTrimestreToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
+        private System.Windows.Forms.Label ProductoLabel;
+        private System.Windows.Forms.Label ProveedorLabel;
+        private System.Windows.Forms.TextBox txtboxnpartida;
+        private System.Windows.Forms.TextBox txtboxbecas;
+        private System.Windows.Forms.Label labelInformaciónBásica;
     }
 }

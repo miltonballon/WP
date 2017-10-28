@@ -65,9 +65,9 @@
             this.labelInformaciónBásica.Location = new System.Drawing.Point(80, 95);
             this.labelInformaciónBásica.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.labelInformaciónBásica.Name = "labelInformaciónBásica";
-            this.labelInformaciónBásica.Size = new System.Drawing.Size(996, 47);
+            this.labelInformaciónBásica.Size = new System.Drawing.Size(986, 47);
             this.labelInformaciónBásica.TabIndex = 25;
-            this.labelInformaciónBásica.Text = "Introduzca Su Dirección De Correo Electrónico";
+            this.labelInformaciónBásica.Text = "Introduzca su Dirección de Correo Electrónico";
             // 
             // atrasButton
             // 

@@ -295,9 +295,9 @@
             this.labelInformaciónBásica.Location = new System.Drawing.Point(80, 103);
             this.labelInformaciónBásica.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.labelInformaciónBásica.Name = "labelInformaciónBásica";
-            this.labelInformaciónBásica.Size = new System.Drawing.Size(894, 47);
+            this.labelInformaciónBásica.Size = new System.Drawing.Size(884, 47);
             this.labelInformaciónBásica.TabIndex = 42;
-            this.labelInformaciónBásica.Text = "Registrar Salida De Víveres Del Inventario";
+            this.labelInformaciónBásica.Text = "Registrar Salida de Víveres del Inventario";
             // 
             // RegisterButton
             // 
