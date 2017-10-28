@@ -89,6 +89,7 @@
             this.Location = new System.Drawing.Point(411, 316);
             this.Name = "EditProduct";
             this.Text = "EditProduct";
+            this.Load += new System.EventHandler(this.EditProduct_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

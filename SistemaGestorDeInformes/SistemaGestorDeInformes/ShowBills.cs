@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ControllerLibrary;
+using EntityLibrary;
 
 namespace SistemaGestorDeInformes
 {
@@ -204,6 +205,11 @@ namespace SistemaGestorDeInformes
             InterfazPrincipal prin = new InterfazPrincipal();
             ValidationTextBox tr = new ValidationTextBox();
             tr.KeyEscape(sender, e, this, prin);
+        }
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
