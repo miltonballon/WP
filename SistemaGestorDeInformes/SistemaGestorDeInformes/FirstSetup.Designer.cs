@@ -59,9 +59,8 @@
             this.label2.Text = "HOLA,\r\n\r\nNo se detecto un usuario registrado en el sistema. \r\nPor favor presione " +
     "el boton \"Ingresar si desea crear \r\nuno  o  cierre  la  ventana para cancelar el" +
     " proceso\". \r\n\r\nGracias.";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // FirtsSetup
+            // FirstSetup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -69,7 +68,7 @@
             this.ClientSize = new System.Drawing.Size(751, 339);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button1);
-            this.Name = "FirtsSetup";
+            this.Name = "FirstSetup";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Presentación de Sistema";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FirtsSetup_FormClosing);
