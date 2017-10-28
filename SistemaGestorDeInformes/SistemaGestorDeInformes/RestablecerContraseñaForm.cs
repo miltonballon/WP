@@ -18,63 +18,15 @@ namespace SistemaGestorDeInformes
         private User user;
         public RestablecerContraseñaForm(User user)
         {
-
             InitializeComponent();
             this.user = user;
         }
-
-        private void cambiarContraseña_Load(object sender, EventArgs e)
-        {
-
-
-
-        }
-
-        private void confirmar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
-
-        }
-        private void guardar()
-        {
-        }
-
-
-
+                
         private void button5_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
-        private void ci_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            
-        }
-
-        private void user_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            
-        }
-
-        private void contraseña_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void contraseña_KeyPress(object sender, KeyPressEventArgs e)
-        {
-           
-        }
-
-        private void confirmar_KeyPress(object sender, KeyPressEventArgs e)
-        {
-        }
-       
+                            
 
         private void button5_Click_1(object sender, EventArgs e)
         {
@@ -110,16 +62,12 @@ namespace SistemaGestorDeInformes
             }
         }
 
+
         private void atrasButton_Click(object sender, EventArgs e)
         {
             Login Login1 = new Login();
             this.Hide();
             Login1.Show();
-        }
-
-        private void RestablecerContraseñaForm_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
