@@ -125,7 +125,6 @@
             this.ProveedorLabel.Size = new System.Drawing.Size(103, 19);
             this.ProveedorLabel.TabIndex = 8;
             this.ProveedorLabel.Text = "PROVEEDOR:";
-            this.ProveedorLabel.Click += new System.EventHandler(this.labelProveedor_Click);
             // 
             // label1
             // 
