@@ -3,7 +3,7 @@ using System.Data.SQLite;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
-namespace SistemaGestorDeInformes
+namespace ControllerLibrary
 {
     public class InvoiceController
     {

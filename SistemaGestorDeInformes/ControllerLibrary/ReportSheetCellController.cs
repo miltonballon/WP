@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Data.SQLite;
 using EntityLibrary;
 
-namespace SistemaGestorDeInformes
+namespace ControllerLibrary
 {
     class ReportSheetCellController
     {

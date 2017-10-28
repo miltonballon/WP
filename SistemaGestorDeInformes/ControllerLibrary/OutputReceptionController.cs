@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Data.SQLite;
 using System.Windows.Forms;
 
-namespace SistemaGestorDeInformes
+namespace ControllerLibrary
 {
     public class OutputReceptionController
     {

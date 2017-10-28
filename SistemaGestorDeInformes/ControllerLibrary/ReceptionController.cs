@@ -7,7 +7,7 @@ using System.Windows.Forms;
 using System.Data.SQLite;
 
 
-namespace SistemaGestorDeInformes
+namespace ControllerLibrary
 {
     public class ReceptionController
     {
