@@ -259,7 +259,7 @@
             this.labelNit.AutoSize = true;
             this.labelNit.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNit.ForeColor = System.Drawing.Color.White;
-            this.labelNit.Location = new System.Drawing.Point(36, 103);
+            this.labelNit.Location = new System.Drawing.Point(56, 103);
             this.labelNit.Name = "labelNit";
             this.labelNit.Size = new System.Drawing.Size(37, 19);
             this.labelNit.TabIndex = 2;
