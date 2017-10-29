@@ -82,7 +82,7 @@
             this.Nombre,
             this.Unidad,
             this.Cantidad});
-            this.dataGridView1.Location = new System.Drawing.Point(94, 111);
+            this.dataGridView1.Location = new System.Drawing.Point(56, 81);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(343, 370);
             this.dataGridView1.TabIndex = 15;
@@ -273,7 +273,7 @@
             // searchTextBox
             // 
             this.searchTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.searchTextBox.Location = new System.Drawing.Point(444, 111);
+            this.searchTextBox.Location = new System.Drawing.Point(406, 81);
             this.searchTextBox.Name = "searchTextBox";
             this.searchTextBox.Size = new System.Drawing.Size(150, 20);
             this.searchTextBox.TabIndex = 19;
@@ -282,7 +282,7 @@
             // searchButton
             // 
             this.searchButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.searchButton.Location = new System.Drawing.Point(443, 137);
+            this.searchButton.Location = new System.Drawing.Point(405, 107);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(75, 23);
             this.searchButton.TabIndex = 20;
@@ -293,7 +293,7 @@
             // cleanButton
             // 
             this.cleanButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cleanButton.Location = new System.Drawing.Point(444, 166);
+            this.cleanButton.Location = new System.Drawing.Point(406, 136);
             this.cleanButton.Name = "cleanButton";
             this.cleanButton.Size = new System.Drawing.Size(75, 23);
             this.cleanButton.TabIndex = 21;

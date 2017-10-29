@@ -256,7 +256,7 @@
             this.Proveedor,
             this.Nit,
             this.Fecha});
-            this.dataGridView1.Location = new System.Drawing.Point(119, 99);
+            this.dataGridView1.Location = new System.Drawing.Point(56, 71);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(547, 371);
             this.dataGridView1.TabIndex = 17;

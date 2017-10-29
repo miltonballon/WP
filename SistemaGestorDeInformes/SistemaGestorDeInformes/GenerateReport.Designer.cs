@@ -228,7 +228,7 @@
             this.RegistrarButton.BackColor = System.Drawing.Color.Black;
             this.RegistrarButton.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
             this.RegistrarButton.ForeColor = System.Drawing.Color.Yellow;
-            this.RegistrarButton.Location = new System.Drawing.Point(343, 208);
+            this.RegistrarButton.Location = new System.Drawing.Point(303, 229);
             this.RegistrarButton.Name = "RegistrarButton";
             this.RegistrarButton.Size = new System.Drawing.Size(153, 66);
             this.RegistrarButton.TabIndex = 32;
@@ -255,7 +255,7 @@
             this.labelInformaciónBásica.AutoSize = true;
             this.labelInformaciónBásica.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelInformaciónBásica.ForeColor = System.Drawing.Color.Yellow;
-            this.labelInformaciónBásica.Location = new System.Drawing.Point(131, 138);
+            this.labelInformaciónBásica.Location = new System.Drawing.Point(91, 159);
             this.labelInformaciónBásica.Name = "labelInformaciónBásica";
             this.labelInformaciónBásica.Size = new System.Drawing.Size(608, 19);
             this.labelInformaciónBásica.TabIndex = 34;

@@ -218,7 +218,7 @@
             this.RegistrarButton.BackColor = System.Drawing.Color.Black;
             this.RegistrarButton.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
             this.RegistrarButton.ForeColor = System.Drawing.Color.Yellow;
-            this.RegistrarButton.Location = new System.Drawing.Point(343, 208);
+            this.RegistrarButton.Location = new System.Drawing.Point(291, 206);
             this.RegistrarButton.Name = "RegistrarButton";
             this.RegistrarButton.Size = new System.Drawing.Size(153, 66);
             this.RegistrarButton.TabIndex = 0;
@@ -245,7 +245,7 @@
             this.labelInformaciónBásica.AutoSize = true;
             this.labelInformaciónBásica.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelInformaciónBásica.ForeColor = System.Drawing.Color.Yellow;
-            this.labelInformaciónBásica.Location = new System.Drawing.Point(29, 66);
+            this.labelInformaciónBásica.Location = new System.Drawing.Point(23, 47);
             this.labelInformaciónBásica.Name = "labelInformaciónBásica";
             this.labelInformaciónBásica.Size = new System.Drawing.Size(172, 19);
             this.labelInformaciónBásica.TabIndex = 24;
@@ -256,7 +256,7 @@
             this.lbTrim.AutoSize = true;
             this.lbTrim.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTrim.ForeColor = System.Drawing.Color.Yellow;
-            this.lbTrim.Location = new System.Drawing.Point(204, 66);
+            this.lbTrim.Location = new System.Drawing.Point(198, 47);
             this.lbTrim.Name = "lbTrim";
             this.lbTrim.Size = new System.Drawing.Size(0, 19);
             this.lbTrim.TabIndex = 29;
@@ -264,7 +264,7 @@
             // txbxNombre
             // 
             this.txbxNombre.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txbxNombre.Location = new System.Drawing.Point(417, 170);
+            this.txbxNombre.Location = new System.Drawing.Point(365, 168);
             this.txbxNombre.Name = "txbxNombre";
             this.txbxNombre.Size = new System.Drawing.Size(100, 20);
             this.txbxNombre.TabIndex = 1;
@@ -275,7 +275,7 @@
             this.lbNombre.AutoSize = true;
             this.lbNombre.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbNombre.ForeColor = System.Drawing.Color.Yellow;
-            this.lbNombre.Location = new System.Drawing.Point(333, 169);
+            this.lbNombre.Location = new System.Drawing.Point(281, 167);
             this.lbNombre.Name = "lbNombre";
             this.lbNombre.Size = new System.Drawing.Size(78, 19);
             this.lbNombre.TabIndex = 31;

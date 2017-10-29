@@ -297,7 +297,7 @@
             this.RegisterButton.BackColor = System.Drawing.Color.Black;
             this.RegisterButton.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
             this.RegisterButton.ForeColor = System.Drawing.Color.Yellow;
-            this.RegisterButton.Location = new System.Drawing.Point(308, 411);
+            this.RegisterButton.Location = new System.Drawing.Point(325, 336);
             this.RegisterButton.Name = "RegisterButton";
             this.RegisterButton.Size = new System.Drawing.Size(120, 30);
             this.RegisterButton.TabIndex = 39;
