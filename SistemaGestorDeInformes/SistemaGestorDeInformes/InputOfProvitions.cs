@@ -189,14 +189,6 @@ namespace SistemaGestorDeInformes
                 e.Handled = true;
         }
 
-        private void atrasButton_Click(object sender, EventArgs e)
-        {
-            Main main = new Main();
-            main.WindowState = this.WindowState;
-            this.Hide();
-            main.Show();
-        }
-
         private void InputOfProvitions_KeyUp(object sender, KeyEventArgs e)
         {
             Main prin = new Main();
