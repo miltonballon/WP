@@ -14,18 +14,23 @@ namespace ControllerLibrary
     {
         private Connection c;
         private ReportSheetCellController reportSheetCellController;
+        private InvoiceController invoiceController;
+        private TrimesterController trimesterController;
         private readonly int EXCELNOTINSTALLED=-1;
         public ReportSheetController()
         {
             c = new Connection();
             c.connect();
             reportSheetCellController = new ReportSheetCellController();
+            invoiceController = new InvoiceController();
+            trimesterController = new TrimesterController();
         }
 
         public int insertReportSheet(ReportSheet reportSheet, int idReport)
         {
-            String type = reportSheet.Type;
-            String query = "INSERT INTO Report_sheet(id_report, type) VALUES("+idReport+", '"+type+"')";
+            String type = reportSheet.Type,
+                   tittle=reportSheet.Tittle;
+            String query = "INSERT INTO Report_sheet(id_report, type, tittle) VALUES("+idReport+", '"+type+"','"+tittle+"')";
             c.executeInsertion(query);
             int id= getIdByUniqueFields(idReport, type);
             reportSheet.Id = id;
@@ -56,9 +61,10 @@ namespace ControllerLibrary
             SQLiteDataReader data = c.query_show(query);
             if (data.Read())
             {
-                String type = data[2].ToString();
+                String type = data[2].ToString(),
+                       tittle= data[3].ToString();
                 List<ReportSheetCell> reportSheetsCells = reportSheetCellController.GetAllReportSheetsCellsByReportSheetId(id);
-                reportSheet = new ReportSheet(id, type, reportSheetsCells);
+                reportSheet = new ReportSheet(id, type, tittle,reportSheetsCells);
             }
             data.Close();
             c.dataClose();
@@ -83,14 +89,19 @@ namespace ControllerLibrary
 
         public ReportSheet generateQuotationSheet()
         {
-            ReportSheet reportSheet = new ReportSheet("Cotizacion");
-            List<ReportSheetCell> cells = new List<ReportSheetCell>();
-            cells.AddRange(generateHeaderQuotationSheet(3));
-            reportSheet.Cells = cells;
+            Trimester ongoingTrimester = trimesterController.getLastTrimester();
+            //List<Invoice>invoices=invoiceController.
+            ReportSheet reportSheet = new ReportSheet("cotizacion", "FORMULARIO DE SOLICITUD DE COTIZACION");
+            if (ongoingTrimester != null)
+            {
+                List<ReportSheetCell> cells = new List<ReportSheetCell>();
+                cells.AddRange(generateHeader(3, reportSheet.Tittle));
+                reportSheet.Cells = cells;
+            }
             return reportSheet;
         }
 
-        private List<ReportSheetCell> generateHeaderQuotationSheet(int numberCopies)
+        private List<ReportSheetCell> generateHeader(int numberCopies, String title)
         {
             List<ReportSheetCell> cells = new List<ReportSheetCell>();
             int row, 
@@ -111,7 +122,9 @@ namespace ControllerLibrary
                 row++;
                 cells.Add(cell);
                 cell = new ReportSheetCell(row, column, "COCHABAMBA- BOLIVIA");
-                row++;
+                row += 2;
+                cells.Add(cell);
+                cell = new ReportSheetCell(row, column, title);
                 cells.Add(cell);
                 column += 7;
             }
