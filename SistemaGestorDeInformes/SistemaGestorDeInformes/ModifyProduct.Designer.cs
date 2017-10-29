@@ -44,10 +44,9 @@
             this.labelInformaciónBásica.AutoSize = true;
             this.labelInformaciónBásica.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelInformaciónBásica.ForeColor = System.Drawing.Color.Yellow;
-            this.labelInformaciónBásica.Location = new System.Drawing.Point(80, 95);
-            this.labelInformaciónBásica.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.labelInformaciónBásica.Location = new System.Drawing.Point(30, 40);
             this.labelInformaciónBásica.Name = "labelInformaciónBásica";
-            this.labelInformaciónBásica.Size = new System.Drawing.Size(207, 47);
+            this.labelInformaciónBásica.Size = new System.Drawing.Size(85, 19);
             this.labelInformaciónBásica.TabIndex = 25;
             this.labelInformaciónBásica.Text = "Producto";
             // 
@@ -56,10 +55,9 @@
             this.ProductoLabel.AutoSize = true;
             this.ProductoLabel.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProductoLabel.ForeColor = System.Drawing.Color.White;
-            this.ProductoLabel.Location = new System.Drawing.Point(80, 222);
-            this.ProductoLabel.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.ProductoLabel.Location = new System.Drawing.Point(30, 93);
             this.ProductoLabel.Name = "ProductoLabel";
-            this.ProductoLabel.Size = new System.Drawing.Size(184, 41);
+            this.ProductoLabel.Size = new System.Drawing.Size(76, 19);
             this.ProductoLabel.TabIndex = 24;
             this.ProductoLabel.Text = "NOMBRE:";
             // 
@@ -68,10 +66,9 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(80, 415);
-            this.label2.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.label2.Location = new System.Drawing.Point(30, 174);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(170, 41);
+            this.label2.Size = new System.Drawing.Size(70, 19);
             this.label2.TabIndex = 23;
             this.label2.Text = "UNIDAD:";
             // 
@@ -80,10 +77,9 @@
             this.ProveedorLabel.AutoSize = true;
             this.ProveedorLabel.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProveedorLabel.ForeColor = System.Drawing.Color.White;
-            this.ProveedorLabel.Location = new System.Drawing.Point(80, 322);
-            this.ProveedorLabel.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.ProveedorLabel.Location = new System.Drawing.Point(30, 135);
             this.ProveedorLabel.Name = "ProveedorLabel";
-            this.ProveedorLabel.Size = new System.Drawing.Size(249, 41);
+            this.ProveedorLabel.Size = new System.Drawing.Size(103, 19);
             this.ProveedorLabel.TabIndex = 22;
             this.ProveedorLabel.Text = "PROVEEDOR:";
             // 
@@ -92,10 +88,9 @@
             this.RegistrarButton.BackColor = System.Drawing.Color.Black;
             this.RegistrarButton.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
             this.RegistrarButton.ForeColor = System.Drawing.Color.Yellow;
-            this.RegistrarButton.Location = new System.Drawing.Point(667, 1087);
-            this.RegistrarButton.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.RegistrarButton.Location = new System.Drawing.Point(250, 456);
             this.RegistrarButton.Name = "RegistrarButton";
-            this.RegistrarButton.Size = new System.Drawing.Size(320, 72);
+            this.RegistrarButton.Size = new System.Drawing.Size(120, 30);
             this.RegistrarButton.TabIndex = 21;
             this.RegistrarButton.Text = "Guardar";
             this.RegistrarButton.UseVisualStyleBackColor = false;
@@ -106,10 +101,9 @@
             this.atrasButton.BackColor = System.Drawing.Color.Black;
             this.atrasButton.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
             this.atrasButton.ForeColor = System.Drawing.Color.Yellow;
-            this.atrasButton.Location = new System.Drawing.Point(8, 1126);
-            this.atrasButton.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.atrasButton.Location = new System.Drawing.Point(3, 472);
             this.atrasButton.Name = "atrasButton";
-            this.atrasButton.Size = new System.Drawing.Size(320, 72);
+            this.atrasButton.Size = new System.Drawing.Size(120, 30);
             this.atrasButton.TabIndex = 20;
             this.atrasButton.Text = "Atrás";
             this.atrasButton.UseVisualStyleBackColor = false;
@@ -117,34 +111,31 @@
             // 
             // Unit
             // 
-            this.Unit.Location = new System.Drawing.Point(525, 417);
-            this.Unit.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.Unit.Location = new System.Drawing.Point(197, 175);
             this.Unit.Name = "Unit";
-            this.Unit.Size = new System.Drawing.Size(660, 38);
+            this.Unit.Size = new System.Drawing.Size(250, 20);
             this.Unit.TabIndex = 19;
             // 
             // ProviderTextBox
             // 
-            this.ProviderTextBox.Location = new System.Drawing.Point(525, 324);
-            this.ProviderTextBox.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.ProviderTextBox.Location = new System.Drawing.Point(197, 136);
             this.ProviderTextBox.Name = "ProviderTextBox";
-            this.ProviderTextBox.Size = new System.Drawing.Size(660, 38);
+            this.ProviderTextBox.Size = new System.Drawing.Size(250, 20);
             this.ProviderTextBox.TabIndex = 18;
             // 
             // ProductTextBox
             // 
-            this.ProductTextBox.Location = new System.Drawing.Point(525, 224);
-            this.ProductTextBox.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.ProductTextBox.Location = new System.Drawing.Point(197, 94);
             this.ProductTextBox.Name = "ProductTextBox";
-            this.ProductTextBox.Size = new System.Drawing.Size(660, 38);
+            this.ProductTextBox.Size = new System.Drawing.Size(250, 20);
             this.ProductTextBox.TabIndex = 17;
             // 
             // ModifyProduct
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(2173, 1211);
+            this.ClientSize = new System.Drawing.Size(815, 508);
             this.Controls.Add(this.labelInformaciónBásica);
             this.Controls.Add(this.ProductoLabel);
             this.Controls.Add(this.label2);
@@ -154,7 +145,6 @@
             this.Controls.Add(this.Unit);
             this.Controls.Add(this.ProviderTextBox);
             this.Controls.Add(this.ProductTextBox);
-            this.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Name = "ModifyProduct";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modificar Producto";

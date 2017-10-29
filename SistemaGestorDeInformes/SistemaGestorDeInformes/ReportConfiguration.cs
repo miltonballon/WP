@@ -154,14 +154,6 @@ namespace SistemaGestorDeInformes
             KeyPreview = true;
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Main main = new Main();
-            main.WindowState = this.WindowState;
-            this.Hide();
-            main.Show();
-        }
-
         private void ReportConfiguration_KeyUp(object sender, KeyEventArgs e)
         {
             Main prin = new Main();

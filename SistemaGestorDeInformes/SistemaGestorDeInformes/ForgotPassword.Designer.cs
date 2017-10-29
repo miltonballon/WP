@@ -40,10 +40,9 @@
             this.button5.BackColor = System.Drawing.Color.Black;
             this.button5.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.Yellow;
-            this.button5.Location = new System.Drawing.Point(853, 558);
-            this.button5.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.button5.Location = new System.Drawing.Point(320, 234);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(320, 72);
+            this.button5.Size = new System.Drawing.Size(120, 30);
             this.button5.TabIndex = 17;
             this.button5.Text = "Enviar";
             this.button5.UseVisualStyleBackColor = false;
@@ -51,10 +50,9 @@
             // 
             // txtbxCorreo
             // 
-            this.txtbxCorreo.Location = new System.Drawing.Point(853, 444);
-            this.txtbxCorreo.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.txtbxCorreo.Location = new System.Drawing.Point(320, 186);
             this.txtbxCorreo.Name = "txtbxCorreo";
-            this.txtbxCorreo.Size = new System.Drawing.Size(660, 38);
+            this.txtbxCorreo.Size = new System.Drawing.Size(250, 20);
             this.txtbxCorreo.TabIndex = 19;
             // 
             // labelInformaciónBásica
@@ -62,10 +60,9 @@
             this.labelInformaciónBásica.AutoSize = true;
             this.labelInformaciónBásica.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelInformaciónBásica.ForeColor = System.Drawing.Color.Yellow;
-            this.labelInformaciónBásica.Location = new System.Drawing.Point(80, 95);
-            this.labelInformaciónBásica.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.labelInformaciónBásica.Location = new System.Drawing.Point(30, 40);
             this.labelInformaciónBásica.Name = "labelInformaciónBásica";
-            this.labelInformaciónBásica.Size = new System.Drawing.Size(986, 47);
+            this.labelInformaciónBásica.Size = new System.Drawing.Size(390, 19);
             this.labelInformaciónBásica.TabIndex = 25;
             this.labelInformaciónBásica.Text = "Introduzca su Dirección de Correo Electrónico";
             // 
@@ -74,10 +71,9 @@
             this.atrasButton.BackColor = System.Drawing.Color.Black;
             this.atrasButton.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
             this.atrasButton.ForeColor = System.Drawing.Color.Yellow;
-            this.atrasButton.Location = new System.Drawing.Point(8, 1126);
-            this.atrasButton.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.atrasButton.Location = new System.Drawing.Point(3, 472);
             this.atrasButton.Name = "atrasButton";
-            this.atrasButton.Size = new System.Drawing.Size(320, 72);
+            this.atrasButton.Size = new System.Drawing.Size(120, 30);
             this.atrasButton.TabIndex = 26;
             this.atrasButton.Text = "Atrás";
             this.atrasButton.UseVisualStyleBackColor = false;
@@ -88,25 +84,23 @@
             this.labelProveedor.AutoSize = true;
             this.labelProveedor.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelProveedor.ForeColor = System.Drawing.Color.White;
-            this.labelProveedor.Location = new System.Drawing.Point(357, 446);
-            this.labelProveedor.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.labelProveedor.Location = new System.Drawing.Point(134, 187);
             this.labelProveedor.Name = "labelProveedor";
-            this.labelProveedor.Size = new System.Drawing.Size(441, 41);
+            this.labelProveedor.Size = new System.Drawing.Size(180, 19);
             this.labelProveedor.TabIndex = 27;
             this.labelProveedor.Text = "CORREO ELECTRÓNICO:";
             // 
             // ForgotPassword
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(2173, 1211);
+            this.ClientSize = new System.Drawing.Size(815, 508);
             this.Controls.Add(this.labelProveedor);
             this.Controls.Add(this.atrasButton);
             this.Controls.Add(this.labelInformaciónBásica);
             this.Controls.Add(this.txtbxCorreo);
             this.Controls.Add(this.button5);
-            this.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Name = "ForgotPassword";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Recuperar Contreseña";
