@@ -127,6 +127,30 @@ namespace ControllerLibrary
             return output;
         }
 
+        public List<Invoice> getAllInvoicesByTrimester(Trimester trimester)
+        {
+            List<Invoice> output = new List<Invoice>();
+            int idTrimester = trimester.getId();
+            string query = "SELECT * FROM Invoice WHERE id_trimester="+idTrimester;
+            SQLiteDataReader data = c.query_show(query);
+            while (data.Read())
+            {
+                int invoiceId = Int32.Parse(data[0].ToString()),
+                    nInvoice = Int32.Parse(data[1].ToString()),
+                    nAut = Int32.Parse(data[2].ToString()),
+                    provId = Int32.Parse(data[3].ToString());
+                DateTime date = getDate(data[5].ToString());
+                Provider provider = providerController.getProviderById(provId);
+                Invoice invoice = new Invoice(provider, nInvoice, nAut, date);
+                List<InvoiceRow> invoiceRows = invoiceRowController.getAllInvoicesRowByNInvoice(invoiceId);
+                invoice.setInvoiceRows(invoiceRows);
+                output.Add(invoice);
+            }
+            data.Close();
+            c.dataClose();
+            return output;
+        }
+
         private DateTime getDate(String dateString)
         {
             DateTime date;

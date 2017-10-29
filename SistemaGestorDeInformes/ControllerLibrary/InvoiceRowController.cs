@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using EntityLibrary;
+using System.Data.SQLite;
 
 namespace ControllerLibrary
 {
