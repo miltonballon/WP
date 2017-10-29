@@ -51,6 +51,7 @@
             this.RegistrarButton = new System.Windows.Forms.Button();
             this.atrasButton = new System.Windows.Forms.Button();
             this.labelInformaciónBásica = new System.Windows.Forms.Label();
+            this.inventarioToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -186,7 +187,8 @@
             // configuraciónToolStripMenuItem
             // 
             this.configuraciónToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.informeToolStripMenuItem});
+            this.informeToolStripMenuItem,
+            this.inventarioToolStripMenuItem1});
             this.configuraciónToolStripMenuItem.Name = "configuraciónToolStripMenuItem";
             this.configuraciónToolStripMenuItem.Size = new System.Drawing.Size(95, 20);
             this.configuraciónToolStripMenuItem.Text = "Configuración";
@@ -194,7 +196,7 @@
             // informeToolStripMenuItem
             // 
             this.informeToolStripMenuItem.Name = "informeToolStripMenuItem";
-            this.informeToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.informeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.informeToolStripMenuItem.Text = "Informe";
             this.informeToolStripMenuItem.Click += new System.EventHandler(this.informeToolStripMenuItem_Click);
             // 
@@ -261,6 +263,13 @@
             this.labelInformaciónBásica.TabIndex = 34;
             this.labelInformaciónBásica.Text = "¿Desea Generar el Informe con las Facturas y los Productos Registrados?";
             // 
+            // inventarioToolStripMenuItem1
+            // 
+            this.inventarioToolStripMenuItem1.Name = "inventarioToolStripMenuItem1";
+            this.inventarioToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.inventarioToolStripMenuItem1.Text = "Inventario";
+            this.inventarioToolStripMenuItem1.Click += new System.EventHandler(this.inventarioToolStripMenuItem1_Click);
+            // 
             // GenerateReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -310,5 +319,6 @@
         private System.Windows.Forms.Button RegistrarButton;
         private System.Windows.Forms.Button atrasButton;
         private System.Windows.Forms.Label labelInformaciónBásica;
+        private System.Windows.Forms.ToolStripMenuItem inventarioToolStripMenuItem1;
     }
 }

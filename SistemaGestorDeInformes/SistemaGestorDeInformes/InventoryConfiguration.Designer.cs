@@ -54,6 +54,7 @@
             this.txtboxnpartida = new System.Windows.Forms.TextBox();
             this.txtboxbecas = new System.Windows.Forms.TextBox();
             this.labelInformaciónBásica = new System.Windows.Forms.Label();
+            this.inventarioToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -204,7 +205,8 @@
             // 
             this.configuraciónToolStripMenuItem.BackColor = System.Drawing.Color.Black;
             this.configuraciónToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.informeToolStripMenuItem});
+            this.informeToolStripMenuItem,
+            this.inventarioToolStripMenuItem1});
             this.configuraciónToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.configuraciónToolStripMenuItem.Name = "configuraciónToolStripMenuItem";
             this.configuraciónToolStripMenuItem.Size = new System.Drawing.Size(95, 20);
@@ -214,7 +216,7 @@
             // 
             this.informeToolStripMenuItem.ForeColor = System.Drawing.Color.Gray;
             this.informeToolStripMenuItem.Name = "informeToolStripMenuItem";
-            this.informeToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.informeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.informeToolStripMenuItem.Text = "Informe";
             // 
             // abrirTrimestreToolStripMenuItem
@@ -280,6 +282,12 @@
             this.labelInformaciónBásica.TabIndex = 43;
             this.labelInformaciónBásica.Text = "Configurar Notificaciones del Inventario";
             // 
+            // inventarioToolStripMenuItem1
+            // 
+            this.inventarioToolStripMenuItem1.Name = "inventarioToolStripMenuItem1";
+            this.inventarioToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.inventarioToolStripMenuItem1.Text = "Inventario";
+            // 
             // InventoryConfiguration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -294,7 +302,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.RegistrarButton);
             this.Controls.Add(this.button2);
-            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "InventoryConfiguration";
             this.Text = "Configuración del Inventario";
             this.menuStrip1.ResumeLayout(false);
@@ -332,5 +340,6 @@
         private System.Windows.Forms.TextBox txtboxnpartida;
         private System.Windows.Forms.TextBox txtboxbecas;
         private System.Windows.Forms.Label labelInformaciónBásica;
+        private System.Windows.Forms.ToolStripMenuItem inventarioToolStripMenuItem1;
     }
 }

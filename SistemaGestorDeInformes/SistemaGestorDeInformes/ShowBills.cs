@@ -207,9 +207,12 @@ namespace SistemaGestorDeInformes
             tr.KeyEscape(sender, e, this, prin);
         }
 
-        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        private void inventarioToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-
+            InventoryConfiguration Interfaz = new InventoryConfiguration();
+            Interfaz.WindowState = this.WindowState;
+            this.Hide();
+            Interfaz.Show();
         }
     }
 }
