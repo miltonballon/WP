@@ -183,5 +183,13 @@ namespace SistemaGestorDeInformes
             ValidationTextBox tr = new ValidationTextBox();
             tr.KeyEscape(sender, e, this, prin);
         }
+
+        private void inventarioToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            InventoryConfiguration Interfaz = new InventoryConfiguration();
+            Interfaz.WindowState = this.WindowState;
+            this.Hide();
+            Interfaz.Show();
+        }
     }
 }

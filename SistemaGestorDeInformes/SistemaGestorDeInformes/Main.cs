@@ -121,9 +121,12 @@ namespace SistemaGestorDeInformes
             Interfaz.Show();
         }
 
-        private void InterfazPrincipal_Load(object sender, EventArgs e)
+        private void inventarioToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-
+            InventoryConfiguration Interfaz = new InventoryConfiguration();
+            Interfaz.WindowState = this.WindowState;
+            this.Hide();
+            Interfaz.Show();
         }
     }
 }
