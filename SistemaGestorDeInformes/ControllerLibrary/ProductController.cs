@@ -31,6 +31,7 @@ namespace ControllerLibrary
                 InsertUnit(p.Unit);
             }  
         }
+        
 
         public int insertProductAndGetId(Product product)
         {
