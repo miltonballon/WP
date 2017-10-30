@@ -189,9 +189,9 @@ namespace ControllerLibrary
             return c.FindAndGetID(UnitQuery);
         }
         
-        public void InsertProduct(string name, bool fresh)
+        public void InsertProduct(string name, string clasification)
         {
-            string query = "insert into Product (name,fresh) values('" + name + "','"+fresh+"')";
+            string query = "insert into Product (name,clasification) values('" + name + "','"+clasification+"')";
             c.executeInsertion(query);
         }
         public void InsertProvider(string provider)

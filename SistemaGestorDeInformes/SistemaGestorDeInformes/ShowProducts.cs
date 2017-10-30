@@ -117,8 +117,8 @@ namespace SistemaGestorDeInformes
 
         private void editButton_Click(object sender, EventArgs e)
         {
-            
-            Product p = new Product(dataGridView1.SelectedRows[0].Cells[0].Value.ToString(), dataGridView1.SelectedRows[0].Cells[1].Value.ToString(), dataGridView1.SelectedRows[0].Cells[2].Value.ToString());
+
+            Product p = new Product(dataGridView1.SelectedRows[0].Cells[0].Value.ToString(), dataGridView1.SelectedRows[0].Cells[1].Value.ToString(), dataGridView1.SelectedRows[0].Cells[2].Value.ToString(), dataGridView1.SelectedRows[0].Cells[3].Value.ToString());
 
             ModifyProduct edit = new ModifyProduct();
             edit.ProductTextBox.Text = p.Name;          
