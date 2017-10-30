@@ -195,5 +195,10 @@ namespace SistemaGestorDeInformes
             this.Hide();
             Interfaz.Show();
         }
+
+        private void searchTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
