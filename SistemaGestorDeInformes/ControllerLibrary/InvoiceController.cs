@@ -70,6 +70,7 @@ namespace ControllerLibrary
             String date = invoice.getDate().ToShortDateString();
             String query = "UPDATE Invoice SET n_invoice="+nInvoice+", n_autorization="+nAutorization+", id_provider="+idProvider+", nit="+nit+", date='"+date+"' WHERE id="+id;
             c.executeInsertion(query);
+            invoiceRowController.updateAllRowsOrInsert(invoice.getInvoiceRows(),getInvoiceIdByObjectInvoice(invoice));
         }
 
         public int getInvoiceIdByObjectInvoice(Invoice invoice)

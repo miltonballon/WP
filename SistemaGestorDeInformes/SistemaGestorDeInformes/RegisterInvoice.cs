@@ -49,6 +49,24 @@ namespace SistemaGestorDeInformes
             loadProviders();
             modifying = true;
             fillTextBoxes();
+            chargeData();
+        }
+
+        private void chargeData()
+        {
+            List<InvoiceRow> invoiceRows = invoice.getInvoiceRows();
+            foreach (InvoiceRow row in invoiceRows)
+            {
+                Product product = row.getProduct();
+                String productsName = product.Name,
+                       unit = product.Unit,
+                       quantity = row.getQuantity()+"",
+                       unitPrice=row.getUnitPrice()+"",
+                       total=row.getTotal()+"";
+
+                String[] rowData = new String[] { productsName, unit,quantity,unitPrice,total};
+                dataGridView1.Rows.Add(rowData);
+            }
         }
 
         private void fillTextBoxes()
@@ -240,6 +258,7 @@ namespace SistemaGestorDeInformes
             invoice.setNAutorization(nAutorization);
             invoice.setProvider(provider);
             invoice.setDate(date);
+            setRows();
             invoiceController.updateInvoice(invoice,id);
             MessageBox.Show("Se logro actualizar los datos de la Factura");
             changeToShowBills();
@@ -302,17 +321,42 @@ namespace SistemaGestorDeInformes
 
         private void createAndAddProducts()
         {
-            int tamaño = (dataGridView1.Rows.Count)-1;
-            Object[] datos = new Object[5];
-            String proveedor = textBoxProveedor.Text;
-            for (int i = 0; i < tamaño ; i++)
+            int size = (dataGridView1.Rows.Count)-1;
+            Object[] data = new Object[5];
+            String provider = textBoxProveedor.Text;
+            for (int i = 0; i < size ; i++)
             {
                 for (int j = 0; j < dataGridView1.Rows[i].Cells.Count; j++)
                 {
-                    datos[j]=dataGridView1.Rows[i].Cells[j].Value;
+                    data[j]=dataGridView1.Rows[i].Cells[j].Value;
                 }
-                InvoiceRow fila = new InvoiceRow(datos,proveedor);
-                invoice.addInvoiceRow(fila);
+                InvoiceRow row = new InvoiceRow(data, provider);
+                invoice.addInvoiceRow(row);
+            }
+        }
+
+        private void setRows()
+        {
+            int maxSize = invoice.getInvoiceRows().Count, 
+                size = (dataGridView1.Rows.Count) - 1;
+            Object[] data = new Object[5];
+            String provider = textBoxProveedor.Text;
+            for (int i = 0; i < size; i++)
+            {
+                for (int j = 0; j < dataGridView1.Rows[i].Cells.Count; j++)
+                {
+                    data[j] = dataGridView1.Rows[i].Cells[j].Value;
+                }
+
+                if (i < maxSize)
+                {
+                    invoice.getInvoiceRows()[i].setAllAttributes(data,provider);
+                }
+                else
+                {
+                    InvoiceRow row = new InvoiceRow(data, provider);
+                    invoice.addInvoiceRow(row);
+                }
             }
         }
 
