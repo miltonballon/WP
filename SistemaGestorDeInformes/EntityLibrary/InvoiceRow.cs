@@ -8,10 +8,20 @@ namespace EntityLibrary
 {
     public class InvoiceRow
     {
+        private int id;
         private Product product;
         private double quantity;
         private double unitPrice;
         private double total;
+
+        public InvoiceRow(int id, Product product, double quantity, double unitPrice, double total)
+        {
+            this.id = id;
+            this.product = product;
+            this.quantity = quantity;
+            this.unitPrice = unitPrice;
+            this.total = total;
+        }
 
         public InvoiceRow(Product product, double quantity, double unitPrice, double total)
         {
@@ -57,10 +67,19 @@ namespace EntityLibrary
             this.product = product;
         }
 
+        public int getId()
+        {
+            return id;
+        }
+
+        public void setId(int id)
+        {
+            this.id = id;
+        }
+
         public override String ToString()
         {
             return product + " Cantidad: "+ quantity+" Precio Unitario: "+unitPrice+" Total: "+total;
         }
-
     }
 }
