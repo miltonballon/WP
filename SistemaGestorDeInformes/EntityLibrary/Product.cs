@@ -11,6 +11,7 @@ namespace EntityLibrary
         private string name;
         private string unit;
         private string provider;
+        private bool fresh;
         
         public string Name
         {
@@ -27,7 +28,11 @@ namespace EntityLibrary
             get { return unit; }
             set { unit = value; }
         }
-
+        public bool Fresh
+        {
+            get { return fresh; }
+            set { fresh = value; }
+        }
         public override String ToString()
         {
             return "Nombre: "+name+" Unidad: "+unit;
