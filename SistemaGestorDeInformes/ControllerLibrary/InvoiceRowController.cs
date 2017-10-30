@@ -72,5 +72,31 @@ namespace ControllerLibrary
             c.dataClose();
             return output;
         }
+
+        public void updateAllRowsOrInsert(List<InvoiceRow> rows, int invoiceId)
+        {
+            foreach (InvoiceRow row in rows)
+            {
+                if (row.getId() > 0)
+                {
+                    updateInvoiceRow(row);
+                }
+                else
+                {
+                    registerInvoiceRow(row,invoiceId);
+                }
+            }
+        }
+
+        public void updateInvoiceRow(InvoiceRow row)
+        {
+            String quantity = row.getQuantity() + ""
+                , unitPrice = row.getUnitPrice() + ""
+                , total = row.getTotal() + "";
+            int idPpu = productController.insertProductAndGetId(row.getProduct()),
+                id=row.getId();
+            String queryInsertion = "UPDATE invoice_row SET id_ppu='" + idPpu+ "', quantity='" + quantity+ "', unit_price='" + unitPrice+ "', total='" + total+"' WHERE id="+id;
+            c.executeInsertion(queryInsertion);
+        }
     }
 }
