@@ -52,10 +52,14 @@
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ProductoLabel = new System.Windows.Forms.Label();
             this.ProveedorLabel = new System.Windows.Forms.Label();
-            this.txtboxnpartida = new System.Windows.Forms.TextBox();
             this.txtboxbecas = new System.Windows.Forms.TextBox();
             this.labelInformaciónBásica = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Unidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // button2
@@ -77,7 +81,7 @@
             this.RegistrarButton.BackColor = System.Drawing.Color.Black;
             this.RegistrarButton.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
             this.RegistrarButton.ForeColor = System.Drawing.Color.Yellow;
-            this.RegistrarButton.Location = new System.Drawing.Point(292, 280);
+            this.RegistrarButton.Location = new System.Drawing.Point(292, 409);
             this.RegistrarButton.Name = "RegistrarButton";
             this.RegistrarButton.Size = new System.Drawing.Size(120, 30);
             this.RegistrarButton.TabIndex = 39;
@@ -225,7 +229,7 @@
             // 
             this.informeToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.informeToolStripMenuItem.Name = "informeToolStripMenuItem";
-            this.informeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.informeToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.informeToolStripMenuItem.Text = "Informe";
             this.informeToolStripMenuItem.Click += new System.EventHandler(this.informeToolStripMenuItem_Click);
             // 
@@ -256,7 +260,7 @@
             this.ProductoLabel.AutoSize = true;
             this.ProductoLabel.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProductoLabel.ForeColor = System.Drawing.Color.White;
-            this.ProductoLabel.Location = new System.Drawing.Point(125, 121);
+            this.ProductoLabel.Location = new System.Drawing.Point(125, 80);
             this.ProductoLabel.Name = "ProductoLabel";
             this.ProductoLabel.Size = new System.Drawing.Size(639, 19);
             this.ProductoLabel.TabIndex = 45;
@@ -268,26 +272,18 @@
             this.ProveedorLabel.AutoSize = true;
             this.ProveedorLabel.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProveedorLabel.ForeColor = System.Drawing.Color.White;
-            this.ProveedorLabel.Location = new System.Drawing.Point(125, 201);
+            this.ProveedorLabel.Location = new System.Drawing.Point(125, 156);
             this.ProveedorLabel.Name = "ProveedorLabel";
-            this.ProveedorLabel.Size = new System.Drawing.Size(95, 19);
+            this.ProveedorLabel.Size = new System.Drawing.Size(597, 19);
             this.ProveedorLabel.TabIndex = 44;
-            this.ProveedorLabel.Text = "N. PARTIDA:";
-            // 
-            // txtboxnpartida
-            // 
-            this.txtboxnpartida.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtboxnpartida.Location = new System.Drawing.Point(292, 202);
-            this.txtboxnpartida.Name = "txtboxnpartida";
-            this.txtboxnpartida.Size = new System.Drawing.Size(250, 20);
-            this.txtboxnpartida.TabIndex = 42;
+            this.ProveedorLabel.Text = "UNIDADES PREVIAS AL AGOTAMIENTO DE RECERVAS DE UN PRODUCTO ANTES DE";
             // 
             // txtboxbecas
             // 
             this.txtboxbecas.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtboxbecas.Location = new System.Drawing.Point(292, 160);
+            this.txtboxbecas.Location = new System.Drawing.Point(292, 119);
             this.txtboxbecas.Name = "txtboxbecas";
-            this.txtboxbecas.Size = new System.Drawing.Size(250, 20);
+            this.txtboxbecas.Size = new System.Drawing.Size(241, 20);
             this.txtboxbecas.TabIndex = 41;
             // 
             // labelInformaciónBásica
@@ -301,15 +297,50 @@
             this.labelInformaciónBásica.TabIndex = 43;
             this.labelInformaciónBásica.Text = "Configurar Notificaciones del Inventario";
             // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(125, 184);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(198, 19);
+            this.label1.TabIndex = 46;
+            this.label1.Text = "ENVIAR LA NOTIFICACION:";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Unidad,
+            this.Cantidad});
+            this.dataGridView1.Location = new System.Drawing.Point(292, 210);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(241, 181);
+            this.dataGridView1.TabIndex = 47;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            // 
+            // Unidad
+            // 
+            this.Unidad.HeaderText = "Unidad";
+            this.Unidad.Name = "Unidad";
+            // 
             // InventoryConfiguration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(815, 508);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.ProductoLabel);
             this.Controls.Add(this.ProveedorLabel);
-            this.Controls.Add(this.txtboxnpartida);
             this.Controls.Add(this.txtboxbecas);
             this.Controls.Add(this.labelInformaciónBásica);
             this.Controls.Add(this.menuStrip1);
@@ -321,6 +352,7 @@
             this.Text = "Configuración del Inventario";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -351,9 +383,12 @@
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.Label ProductoLabel;
         private System.Windows.Forms.Label ProveedorLabel;
-        private System.Windows.Forms.TextBox txtboxnpartida;
         private System.Windows.Forms.TextBox txtboxbecas;
         private System.Windows.Forms.Label labelInformaciónBásica;
         private System.Windows.Forms.ToolStripMenuItem inventarioToolStripMenuItem1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Unidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
     }
 }
