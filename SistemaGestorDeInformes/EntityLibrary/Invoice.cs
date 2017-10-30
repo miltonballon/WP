@@ -8,6 +8,7 @@ namespace EntityLibrary
 {
     public class Invoice
     {
+        private int id;
         private int nInvoice;
         private int nAutorization;
         private DateTime date;
@@ -16,6 +17,16 @@ namespace EntityLibrary
 
         public Invoice(Provider provider, int nInvoice, int nAutorization, DateTime date)
         {
+            this.provider = provider;
+            this.nInvoice = nInvoice;
+            this.nAutorization = nAutorization;
+            this.date = date;
+            InvoiceRows = new List<InvoiceRow>();
+        }
+
+        public Invoice(int id,Provider provider, int nInvoice, int nAutorization, DateTime date)
+        {
+            this.id = id;
             this.provider = provider;
             this.nInvoice = nInvoice;
             this.nAutorization = nAutorization;
@@ -76,6 +87,16 @@ namespace EntityLibrary
         public void setInvoiceRows(List<InvoiceRow> invoiceRows)
         {
             InvoiceRows = invoiceRows;
+        }
+
+        public int getId()
+        {
+            return id;
+        }
+
+        public void setId(int id)
+        {
+            this.id = id;
         }
 
         public override String ToString()
