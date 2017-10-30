@@ -117,13 +117,21 @@ namespace SistemaGestorDeInformes
 
         private void editButton_Click(object sender, EventArgs e)
         {
-            
-            Product p = new Product(dataGridView1.SelectedRows[0].Cells[0].Value.ToString(), dataGridView1.SelectedRows[0].Cells[1].Value.ToString(), dataGridView1.SelectedRows[0].Cells[2].Value.ToString());
+
+            Product p = new Product(dataGridView1.SelectedRows[0].Cells[0].Value.ToString(), dataGridView1.SelectedRows[0].Cells[1].Value.ToString(), dataGridView1.SelectedRows[0].Cells[2].Value.ToString(), dataGridView1.SelectedRows[0].Cells[3].Value.ToString());
 
             ModifyProduct edit = new ModifyProduct();
             edit.ProductTextBox.Text = p.Name;          
             edit.ProviderTextBox.Text = p.Provider;
             edit.Unit.Text = p.Unit;
+            if (p.Clasification == "Fresco")
+            {
+                edit.FreshRadioButton.Checked = true;
+            }
+            else
+            {
+                edit.DryRadioButton.Checked = true;
+            }
 
 
             //MessageBox.Show("A" + pc.getIdName(p.Name) + "T" + pc.getIdProvider(p.Provider) + "B" + pc.getIdUnit(p.Unit));
@@ -209,6 +217,11 @@ namespace SistemaGestorDeInformes
             Interfaz.WindowState = this.WindowState;
             this.Hide();
             Interfaz.Show();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

@@ -37,6 +37,8 @@
             this.Unit = new System.Windows.Forms.TextBox();
             this.ProviderTextBox = new System.Windows.Forms.TextBox();
             this.ProductTextBox = new System.Windows.Forms.TextBox();
+            this.FreshRadioButton = new System.Windows.Forms.RadioButton();
+            this.DryRadioButton = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // labelInformaciónBásica
@@ -88,7 +90,7 @@
             this.RegistrarButton.BackColor = System.Drawing.Color.Black;
             this.RegistrarButton.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
             this.RegistrarButton.ForeColor = System.Drawing.Color.Yellow;
-            this.RegistrarButton.Location = new System.Drawing.Point(250, 230);
+            this.RegistrarButton.Location = new System.Drawing.Point(238, 276);
             this.RegistrarButton.Name = "RegistrarButton";
             this.RegistrarButton.Size = new System.Drawing.Size(120, 30);
             this.RegistrarButton.TabIndex = 21;
@@ -130,12 +132,40 @@
             this.ProductTextBox.Size = new System.Drawing.Size(250, 20);
             this.ProductTextBox.TabIndex = 17;
             // 
+            // FreshRadioButton
+            // 
+            this.FreshRadioButton.AutoSize = true;
+            this.FreshRadioButton.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.FreshRadioButton.Location = new System.Drawing.Point(197, 229);
+            this.FreshRadioButton.Name = "FreshRadioButton";
+            this.FreshRadioButton.Size = new System.Drawing.Size(68, 17);
+            this.FreshRadioButton.TabIndex = 26;
+            this.FreshRadioButton.TabStop = true;
+            this.FreshRadioButton.Text = "FRESCO";
+            this.FreshRadioButton.UseVisualStyleBackColor = true;
+            this.FreshRadioButton.CheckedChanged += new System.EventHandler(this.FreshRadioButton_CheckedChanged);
+            // 
+            // DryRadioButton
+            // 
+            this.DryRadioButton.AutoSize = true;
+            this.DryRadioButton.ForeColor = System.Drawing.SystemColors.Control;
+            this.DryRadioButton.Location = new System.Drawing.Point(288, 229);
+            this.DryRadioButton.Name = "DryRadioButton";
+            this.DryRadioButton.Size = new System.Drawing.Size(54, 17);
+            this.DryRadioButton.TabIndex = 27;
+            this.DryRadioButton.TabStop = true;
+            this.DryRadioButton.Text = "SECO";
+            this.DryRadioButton.UseVisualStyleBackColor = true;
+            this.DryRadioButton.CheckedChanged += new System.EventHandler(this.DryRadioButton_CheckedChanged);
+            // 
             // ModifyProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(815, 508);
+            this.Controls.Add(this.DryRadioButton);
+            this.Controls.Add(this.FreshRadioButton);
             this.Controls.Add(this.labelInformaciónBásica);
             this.Controls.Add(this.ProductoLabel);
             this.Controls.Add(this.label2);
@@ -148,6 +178,7 @@
             this.Name = "ModifyProduct";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modificar Producto";
+            this.Load += new System.EventHandler(this.ModifyProduct_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -163,5 +194,7 @@
         public System.Windows.Forms.TextBox Unit;
         public System.Windows.Forms.TextBox ProviderTextBox;
         public System.Windows.Forms.TextBox ProductTextBox;
+        public System.Windows.Forms.RadioButton FreshRadioButton;
+        public System.Windows.Forms.RadioButton DryRadioButton;
     }
 }

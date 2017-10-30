@@ -15,15 +15,25 @@ namespace SistemaGestorDeInformes
     public partial class ModifyProduct : Form
     {
         ProductController pc;
+        Product product;
         public ModifyProduct()
         {
             InitializeComponent();
             pc = new ProductController();
+            product = new Product();
         }
-
+        public void registerClassProduct()
+        {
+            product.Name = ProductTextBox.Text;
+            product.Provider = ProviderTextBox.Text;
+            product.Unit = Unit.Text;
+        }
         private void atrasButton_Click(object sender, EventArgs e)
         {
-            Product product = new Product(ProductTextBox.Text, ProviderTextBox.Text, Unit.Text);
+
+
+            registerClassProduct();
+
             pc.insertProduct(product);
             pc.addReferencesToTableProduct_Provider_Unit(product);
             ShowProducts ShowProducts1 = new ShowProducts();
@@ -34,7 +44,7 @@ namespace SistemaGestorDeInformes
 
         private void RegistrarButton_Click(object sender, EventArgs e)
         {
-            Product product = new Product(ProductTextBox.Text, ProviderTextBox.Text, Unit.Text);
+            registerClassProduct();
             pc.insertProduct(product);
             pc.addReferencesToTableProduct_Provider_Unit(product);
             MessageBox.Show("Editado exitosamente");
@@ -42,6 +52,21 @@ namespace SistemaGestorDeInformes
             main.WindowState = this.WindowState;
             main.Show();
             this.Hide();
+        }
+
+        private void FreshRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            product.Clasification = "Fresco";
+        }
+
+        private void DryRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            product.Clasification = "Seco";
+        }
+
+        private void ModifyProduct_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

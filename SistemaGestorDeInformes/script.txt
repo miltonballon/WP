@@ -13,7 +13,8 @@ CREATE TABLE `Invoice` (
 
 CREATE TABLE `Product` (
 	`id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-	`name`	TEXT
+	`name`	TEXT,
+	`clasification`	TEXT
 );
 CREATE TABLE `Provider` (
 	`id`	INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -103,7 +104,12 @@ CREATE TABLE `Report_sheet_cell` (
 	`content`		TEXT,
 	FOREIGN KEY(`id_report_sheet`) REFERENCES `Report_sheet`(`id`)
 );
-
+CREATE TABLE `Inventory` (
+	`id`	INTEGER PRIMARY KEY AUTOINCREMENT,
+	`ppu_id`	INTEGER,
+	`stock`	INTEGER,
+	FOREIGN KEY(`ppu_id`) REFERENCES `Product_Provider_Unit`(`id`)
+);
 INSERT INTO Product(name) VALUES ('Pan');
 INSERT INTO Product(name) VALUES ('Leche');
 INSERT INTO Product(name) VALUES ('Carne Para Sopa');

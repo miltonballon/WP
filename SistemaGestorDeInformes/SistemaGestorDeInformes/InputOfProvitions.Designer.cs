@@ -59,10 +59,12 @@
             this.verInventarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.configuraciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inventarioToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.abrirTrimestreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.inventarioToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.FreshRadioButton = new System.Windows.Forms.RadioButton();
+            this.DryRadioButton = new System.Windows.Forms.RadioButton();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -366,9 +368,16 @@
             // informeToolStripMenuItem
             // 
             this.informeToolStripMenuItem.Name = "informeToolStripMenuItem";
-            this.informeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.informeToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.informeToolStripMenuItem.Text = "Informe";
             this.informeToolStripMenuItem.Click += new System.EventHandler(this.informeToolStripMenuItem_Click);
+            // 
+            // inventarioToolStripMenuItem1
+            // 
+            this.inventarioToolStripMenuItem1.Name = "inventarioToolStripMenuItem1";
+            this.inventarioToolStripMenuItem1.Size = new System.Drawing.Size(127, 22);
+            this.inventarioToolStripMenuItem1.Text = "Inventario";
+            this.inventarioToolStripMenuItem1.Click += new System.EventHandler(this.inventarioToolStripMenuItem1_Click);
             // 
             // abrirTrimestreToolStripMenuItem
             // 
@@ -402,12 +411,30 @@
             this.menuStrip1.TabIndex = 33;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // inventarioToolStripMenuItem1
+            // FreshRadioButton
             // 
-            this.inventarioToolStripMenuItem1.Name = "inventarioToolStripMenuItem1";
-            this.inventarioToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.inventarioToolStripMenuItem1.Text = "Inventario";
-            this.inventarioToolStripMenuItem1.Click += new System.EventHandler(this.inventarioToolStripMenuItem1_Click);
+            this.FreshRadioButton.AutoSize = true;
+            this.FreshRadioButton.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.FreshRadioButton.Location = new System.Drawing.Point(325, 370);
+            this.FreshRadioButton.Name = "FreshRadioButton";
+            this.FreshRadioButton.Size = new System.Drawing.Size(68, 17);
+            this.FreshRadioButton.TabIndex = 34;
+            this.FreshRadioButton.TabStop = true;
+            this.FreshRadioButton.Text = "FRESCO";
+            this.FreshRadioButton.UseVisualStyleBackColor = true;
+            this.FreshRadioButton.CheckedChanged += new System.EventHandler(this.FreshRadioButton_CheckedChanged);
+            // 
+            // DryRadioButton
+            // 
+            this.DryRadioButton.AutoSize = true;
+            this.DryRadioButton.ForeColor = System.Drawing.SystemColors.Control;
+            this.DryRadioButton.Location = new System.Drawing.Point(408, 370);
+            this.DryRadioButton.Name = "DryRadioButton";
+            this.DryRadioButton.Size = new System.Drawing.Size(54, 17);
+            this.DryRadioButton.TabIndex = 35;
+            this.DryRadioButton.TabStop = true;
+            this.DryRadioButton.Text = "SECO";
+            this.DryRadioButton.UseVisualStyleBackColor = true;
             // 
             // InputOfProvitions
             // 
@@ -415,6 +442,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(815, 508);
+            this.Controls.Add(this.DryRadioButton);
+            this.Controls.Add(this.FreshRadioButton);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.TotalReception);
             this.Controls.Add(this.ReceptionDate);
@@ -480,5 +509,7 @@
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem inventarioToolStripMenuItem1;
+        public System.Windows.Forms.RadioButton FreshRadioButton;
+        public System.Windows.Forms.RadioButton DryRadioButton;
     }
 }
