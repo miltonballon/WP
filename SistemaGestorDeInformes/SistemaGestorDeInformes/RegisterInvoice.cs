@@ -49,6 +49,24 @@ namespace SistemaGestorDeInformes
             loadProviders();
             modifying = true;
             fillTextBoxes();
+            chargeData();
+        }
+
+        private void chargeData()
+        {
+            List<InvoiceRow> invoiceRows = invoice.getInvoiceRows();
+            foreach (InvoiceRow row in invoiceRows)
+            {
+                Product product = row.getProduct();
+                String productsName = product.Name,
+                       unit = product.Unit,
+                       quantity = row.getQuantity()+"",
+                       unitPrice=row.getUnitPrice()+"",
+                       total=row.getTotal()+"";
+
+                String[] rowData = new String[] { productsName, unit,quantity,unitPrice,total};
+                dataGridView1.Rows.Add(rowData);
+            }
         }
 
         private void fillTextBoxes()
