@@ -16,16 +16,20 @@ namespace SistemaGestorDeInformes
     {
 
         ReceptionController rc;
+        Product product;
         public InputOfProvitions()
         {
             rc = new ReceptionController();
             InitializeComponent();
+            product = new Product();
         }
        
 
         private void RegisterButton_Click(object sender, EventArgs e)
         {
-            Product product = new Product(ProducTextBox.Text, ProviderTextBox.Text, UnitTextBox.Text);
+            product.Name=ProducTextBox.Text;
+            product.Provider=ProviderTextBox.Text;
+            product.Unit=UnitTextBox.Text;
 
             Reception reception = new Reception(product, ExpirationDate.Value.ToString("dd/MM/yyyy"), ReceptionDate.Value.ToString("dd/MM/yyyy"), Int32.Parse(TotalReception.Text));
            // rc.RegisterReception(ProducTextBox,ProviderTextBox,UnitTextBox,ExpirationDate,ReceptionDate,TotalReception);
@@ -202,6 +206,11 @@ namespace SistemaGestorDeInformes
             Interfaz.WindowState = this.WindowState;
             this.Hide();
             Interfaz.Show();
+        }
+
+        private void FreshRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+          
         }
     }
 }

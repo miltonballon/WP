@@ -42,6 +42,14 @@ namespace EntityLibrary
             
 
         }
+        public Product(string prod, string prov, string uni)
+        {
+            name = prod;
+            provider = prov;
+            unit = uni;
+        
+
+        }
         public Product(string prod,string prov,string uni,string cla)
         {
             name = prod;

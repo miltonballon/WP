@@ -143,6 +143,7 @@
             this.FreshRadioButton.TabStop = true;
             this.FreshRadioButton.Text = "FRESCO";
             this.FreshRadioButton.UseVisualStyleBackColor = true;
+            this.FreshRadioButton.CheckedChanged += new System.EventHandler(this.FreshRadioButton_CheckedChanged);
             // 
             // DryRadioButton
             // 
@@ -155,6 +156,7 @@
             this.DryRadioButton.TabStop = true;
             this.DryRadioButton.Text = "SECO";
             this.DryRadioButton.UseVisualStyleBackColor = true;
+            this.DryRadioButton.CheckedChanged += new System.EventHandler(this.DryRadioButton_CheckedChanged);
             // 
             // ModifyProduct
             // 
@@ -176,6 +178,7 @@
             this.Name = "ModifyProduct";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modificar Producto";
+            this.Load += new System.EventHandler(this.ModifyProduct_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -191,7 +194,7 @@
         public System.Windows.Forms.TextBox Unit;
         public System.Windows.Forms.TextBox ProviderTextBox;
         public System.Windows.Forms.TextBox ProductTextBox;
-        private System.Windows.Forms.RadioButton FreshRadioButton;
-        private System.Windows.Forms.RadioButton DryRadioButton;
+        public System.Windows.Forms.RadioButton FreshRadioButton;
+        public System.Windows.Forms.RadioButton DryRadioButton;
     }
 }

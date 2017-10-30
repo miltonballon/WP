@@ -124,6 +124,14 @@ namespace SistemaGestorDeInformes
             edit.ProductTextBox.Text = p.Name;          
             edit.ProviderTextBox.Text = p.Provider;
             edit.Unit.Text = p.Unit;
+            if (p.Clasification == "Fresco")
+            {
+                edit.FreshRadioButton.Checked = true;
+            }
+            else
+            {
+                edit.DryRadioButton.Checked = true;
+            }
 
 
             //MessageBox.Show("A" + pc.getIdName(p.Name) + "T" + pc.getIdProvider(p.Provider) + "B" + pc.getIdUnit(p.Unit));
