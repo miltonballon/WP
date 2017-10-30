@@ -25,6 +25,7 @@ namespace EntityLibrary
 
         public InvoiceRow(Product product, double quantity, double unitPrice, double total)
         {
+            id = -1;
             this.product = product;
             this.quantity = quantity;
             this.unitPrice = unitPrice;
@@ -47,9 +48,19 @@ namespace EntityLibrary
             return product;
         }
 
+        public void setProduct(Product product)
+        {
+            this.product = product;
+        }
+
         public double getQuantity()
         {
             return quantity;
+        }
+
+        public void setQuantity(double quantity)
+        {
+            this.quantity = quantity;
         }
 
         public double getUnitPrice()
@@ -57,14 +68,19 @@ namespace EntityLibrary
             return unitPrice;
         }
 
+        public void setUnitPrice(double unitPrice)
+        {
+            this.unitPrice = unitPrice;
+        }
+
         public double getTotal()
         {
             return total;
         }
 
-        public void setProduct(Product product)
+        public void setTotal(double total)
         {
-            this.product = product;
+            this.total = total;
         }
 
         public int getId()
