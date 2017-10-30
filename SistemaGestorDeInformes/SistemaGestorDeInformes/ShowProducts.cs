@@ -118,7 +118,7 @@ namespace SistemaGestorDeInformes
         private void editButton_Click(object sender, EventArgs e)
         {
 
-            /*Product p = new Product(dataGridView1.SelectedRows[0].Cells[0].Value.ToString(), dataGridView1.SelectedRows[0].Cells[1].Value.ToString(), dataGridView1.SelectedRows[0].Cells[2].Value.ToString(), dataGridView1.SelectedRows[0].Cells[3].Value.ToString());
+            Product p = new Product(dataGridView1.SelectedRows[0].Cells[0].Value.ToString(), dataGridView1.SelectedRows[0].Cells[1].Value.ToString(), dataGridView1.SelectedRows[0].Cells[2].Value.ToString(), dataGridView1.SelectedRows[0].Cells[3].Value.ToString());
 
             ModifyProduct edit = new ModifyProduct();
             
@@ -134,15 +134,15 @@ namespace SistemaGestorDeInformes
             {
                 edit.DryRadioButton.Checked = true;
             }
-            */
+         
 
             //MessageBox.Show("A" + pc.getIdName(p.Name) + "T" + pc.getIdProvider(p.Provider) + "B" + pc.getIdUnit(p.Unit));
             
             //pc.DeleteProduct_Provider_Unit(1,1,1);
-            //pc.DeleteProduct_Provider_Unit(pc.getIdName(p.Name), pc.getIdProvider(p.Provider), pc.getIdUnit(p.Unit));
-            ModifyProduct edit = new ModifyProduct();
+            pc.DeleteProduct_Provider_Unit(pc.getIdName(p.Name), pc.getIdProvider(p.Provider), pc.getIdUnit(p.Unit));
+            
             edit.Show();
-            this.Close();
+            //this.Close();
 
         }
 

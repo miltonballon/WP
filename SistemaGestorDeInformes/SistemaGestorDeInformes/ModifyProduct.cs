@@ -47,6 +47,9 @@ namespace SistemaGestorDeInformes
             registerClassProduct();
             pc.insertProduct(product);
             pc.addReferencesToTableProduct_Provider_Unit(product);
+
+
+
             MessageBox.Show("Editado exitosamente");
             ShowProducts main = new ShowProducts();
             main.WindowState = this.WindowState;
