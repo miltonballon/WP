@@ -15,11 +15,12 @@ namespace SistemaGestorDeInformes
     public partial class RegisterProduct : Form
     {
         ProductController pc;
-        Product p;
+        Product product;
         public RegisterProduct()
         {
             InitializeComponent();
-            pc = new ProductController();  
+            pc = new ProductController();
+            product = new Product();
         }
         
 
@@ -40,8 +41,12 @@ namespace SistemaGestorDeInformes
         }
 
         void RegisterButton_Click(object sender, EventArgs e)
-        {
-            Product product = new Product(ProductTextBox.Text, ProviderTextBox.Text, Unit.Text);
+        {   
+           
+            product.Name = ProductTextBox.Text;
+            product.Provider=ProviderTextBox.Text;
+            product.Unit= Unit.Text;
+
             pc.insertProduct(product);
             pc.addReferencesToTableProduct_Provider_Unit(product);
             cleanTextBox();
@@ -190,6 +195,16 @@ namespace SistemaGestorDeInformes
             Interfaz.WindowState = this.WindowState;
             this.Hide();
             Interfaz.Show();
+        }
+
+        private void FreshRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            product.Fresh = true;
+        }
+
+        private void DryRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            product.Fresh = false;
         }
     }
 }
