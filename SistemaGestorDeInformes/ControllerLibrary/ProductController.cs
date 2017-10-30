@@ -83,11 +83,11 @@ namespace ControllerLibrary
         public List<Product> showAllProductsByProvider(String providersName)
         {
             List<Product> products = new List<Product>();
-            string query = "select name, Provider, Type FROM Product AS PROD, Provider AS PRO, Unit AS Un, Product_Provider_Unit AS PPU WHERE PROD.id = PPU.Id_prod AND PRO.id= PPU.id_prov AND Un.id= PPU.id_uni";
+            string query = "select name, Provider, Type, clasification FROM Product AS PROD, Provider AS PRO, Unit AS Un, Product_Provider_Unit AS PPU WHERE PROD.id = PPU.Id_prod AND PRO.id= PPU.id_prov AND Un.id= PPU.id_uni";
             SQLiteDataReader data = c.query_show(query);
             while (data.Read())
             {
-                Product p = new Product(data[0].ToString(), data[1].ToString(), data[2].ToString());
+                Product p = new Product(data[0].ToString(), data[1].ToString(), data[2].ToString(),data[3].ToString());
                 if (p.Provider.Equals(providersName))
                 {
                     products.Add(p);
@@ -136,11 +136,11 @@ namespace ControllerLibrary
         public List<Product> searchProduct(string name)
         {
             List<Product> products = new List<Product>();
-            string query = "select name, Provider, Type FROM Product AS PROD, Provider AS PRO, Unit AS Un, Product_Provider_Unit AS PPU WHERE PROD.id = PPU.Id_prod AND PRO.id= PPU.id_prov AND Un.id= PPU.id_uni and UPPER (PROD.name)= UPPER(" + "'" + name + "')";
+            string query = "select name, Provider, Type, clasification FROM Product AS PROD, Provider AS PRO, Unit AS Un, Product_Provider_Unit AS PPU WHERE PROD.id = PPU.Id_prod AND PRO.id= PPU.id_prov AND Un.id= PPU.id_uni and UPPER (PROD.name)= UPPER(" + "'" + name + "')";
             SQLiteDataReader data = c.query_show(query);
             while (data.Read())
             {
-                Product p = new Product(data[0].ToString(), data[1].ToString(), data[2].ToString());
+                Product p = new Product(data[0].ToString(), data[1].ToString(), data[2].ToString(),data[3].ToString());
                 products.Add(p);
             }
            
