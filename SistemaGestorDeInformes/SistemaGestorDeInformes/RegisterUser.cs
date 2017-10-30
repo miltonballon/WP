@@ -85,8 +85,16 @@ namespace SistemaGestorDeInformes
             txtEmail.ShortcutsEnabled = false;
         }
 
+       
+
         private void txtName_KeyPress(object sender, KeyPressEventArgs e)
         {
+            //Verificar este codigo
+            InitializeComponent();
+
+           // txtName.KeyPress += new KeyPressEventHandler(CharacterEspecial.myKeyCounter);
+
+
             ValidationTextBox tr = new ValidationTextBox();           
         }
 
