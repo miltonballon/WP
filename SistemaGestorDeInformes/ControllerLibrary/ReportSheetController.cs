@@ -160,7 +160,7 @@ namespace ControllerLibrary
                 cells.Add(cell);
                 column += 7;
             }
-            column = 1;
+            column = 2;
             for (int i = 0; i < numberCopies; i++)
             {
                 String[] headers = { "ITEM", "DESCRIPCION", "UNIDAD", "CANTIDAD", "PRECIO EN BS.", "OBSERVACIONES", "UNITARIO", "TOTAL" };
