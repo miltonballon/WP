@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EntityLibrary
 {
-    class Inventory
+    public class Inventory
     {
         private Product product;
         private int stock;

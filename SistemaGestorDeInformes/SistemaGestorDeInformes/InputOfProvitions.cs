@@ -32,6 +32,8 @@ namespace SistemaGestorDeInformes
             product.Unit=UnitTextBox.Text;
 
             Reception reception = new Reception(product, ExpirationDate.Value.ToString("dd/MM/yyyy"), ReceptionDate.Value.ToString("dd/MM/yyyy"), Int32.Parse(TotalReception.Text));
+            Inventory inventory = new Inventory(product, Int32.Parse(TotalReception.Text));
+
            // rc.RegisterReception(ProducTextBox,ProviderTextBox,UnitTextBox,ExpirationDate,ReceptionDate,TotalReception);
             rc.RegisterReception(reception);
         }
