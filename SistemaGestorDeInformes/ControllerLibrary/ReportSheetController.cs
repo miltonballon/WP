@@ -94,11 +94,9 @@ namespace ControllerLibrary
             if (ongoingTrimester != null)
             {
                 List<Invoice> invoices = invoiceController.getAllInvoicesByTrimester(ongoingTrimester);
-                int total = invoices.Count;
+                int numberOfCopies = invoices.Count;
                 List<ReportSheetCell> cells = new List<ReportSheetCell>();
-                cells.AddRange(generateHeader(total, reportSheet.Tittle));
-                String[] headers = {"ITEM", "DESCRIPCION", "UNIDAD", "CANTIDAD", "PRECIO EN BS.", "OBSERVACIONES", "UNITARIO", "TOTAL"};
-                cells.AddRange(generateEnumerateTable(8, 1, 15, headers));
+                cells.AddRange(generateHeader(numberOfCopies, reportSheet.Tittle));
                 reportSheet.Cells = cells;
             }
             return reportSheet;
@@ -107,7 +105,7 @@ namespace ControllerLibrary
         private List<ReportSheetCell> generateEnumerateTable(int initialRow, int initialColumn, int heigth, string[] headers)
         {
             List<ReportSheetCell> cells = new List<ReportSheetCell>();
-            cells.AddRange(generateHeaderOfTable(initialRow,initialColumn,headers));
+            cells.AddRange(fillRowWithText(initialRow,initialColumn,headers));
             for (int row = (initialRow)+1; row <= (initialRow + heigth); row++)
             {
                 ReportSheetCell cell = new ReportSheetCell(row,initialColumn,(row-initialRow)+"");
@@ -116,7 +114,7 @@ namespace ControllerLibrary
             return cells;
         }
 
-        private List<ReportSheetCell> generateHeaderOfTable(int row, int column, string[] headers)
+        private List<ReportSheetCell> fillRowWithText(int row, int column, string[] headers)
         {
             List<ReportSheetCell> cells = new List<ReportSheetCell>();
             for (int i=0;i<headers.Length;i++)
@@ -138,7 +136,7 @@ namespace ControllerLibrary
         private List<ReportSheetCell> generateHeader(int numberCopies, String title)
         {
             List<ReportSheetCell> cells = new List<ReportSheetCell>();
-            int row, 
+            int row=0, 
                 column=1;
             for (int i=0;i<numberCopies; i++)
             {
@@ -160,6 +158,15 @@ namespace ControllerLibrary
                 cells.Add(cell);
                 cell = new ReportSheetCell(row, column, title);
                 cells.Add(cell);
+                column += 7;
+            }
+            column = 1;
+            for (int i = 0; i < numberCopies; i++)
+            {
+                String[] headers = { "ITEM", "DESCRIPCION", "UNIDAD", "CANTIDAD", "PRECIO EN BS.", "OBSERVACIONES", "UNITARIO", "TOTAL" };
+                String[] text = { "CENTRO:   ASOCIACION CREAMOS", " ", "VIVERES SECOS:", " ", "VIVERES FRESCOS:	"};
+                cells.AddRange(fillRowWithText(row+2,column,text));
+                cells.AddRange(generateEnumerateTable(row+3, column, 15, headers));
                 column += 7;
             }
             return cells;
