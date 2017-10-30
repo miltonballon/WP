@@ -20,7 +20,7 @@ namespace ControllerLibrary
         {
             if (getIdName(p.Name) == -1) //si es -1 quiere decir que no existe y por tanto se crea
             {
-                InsertProduct(p.Name, p.Fresh);
+                InsertProduct(p.Name, p.Clasification);
             }
             if (getIdProvider(p.Provider) == -1)
             {

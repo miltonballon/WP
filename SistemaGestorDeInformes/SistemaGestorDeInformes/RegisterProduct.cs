@@ -199,12 +199,12 @@ namespace SistemaGestorDeInformes
 
         private void FreshRadioButton_CheckedChanged(object sender, EventArgs e)
         {
-            product.Fresh = true;
+            product.Clasification = "Fresco";
         }
 
         private void DryRadioButton_CheckedChanged(object sender, EventArgs e)
         {
-            product.Fresh = false;
+            product.Clasification="Seco";
         }
     }
 }
