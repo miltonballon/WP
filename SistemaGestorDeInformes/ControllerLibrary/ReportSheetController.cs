@@ -90,16 +90,50 @@ namespace ControllerLibrary
         public ReportSheet generateQuotationSheet()
         {
             Trimester ongoingTrimester = trimesterController.getLastTrimester();
-            //List<Invoice>invoices=invoiceController.
             ReportSheet reportSheet = new ReportSheet("cotizacion", "FORMULARIO DE SOLICITUD DE COTIZACION");
             if (ongoingTrimester != null)
             {
+                List<Invoice> invoices = invoiceController.getAllInvoicesByTrimester(ongoingTrimester);
+                int total = invoices.Count;
                 List<ReportSheetCell> cells = new List<ReportSheetCell>();
-                cells.AddRange(generateHeader(3, reportSheet.Tittle));
+                cells.AddRange(generateHeader(total, reportSheet.Tittle));
+                String[] headers = {"ITEM", "DESCRIPCION", "UNIDAD", "CANTIDAD", "PRECIO EN BS.", "OBSERVACIONES", "UNITARIO", "TOTAL"};
+                cells.AddRange(generateEnumerateTable(8, 1, 15, headers));
                 reportSheet.Cells = cells;
             }
             return reportSheet;
         }
+
+        private List<ReportSheetCell> generateEnumerateTable(int initialRow, int initialColumn, int heigth, string[] headers)
+        {
+            List<ReportSheetCell> cells = new List<ReportSheetCell>();
+            cells.AddRange(generateHeaderOfTable(initialRow,initialColumn,headers));
+            for (int row = (initialRow)+1; row <= (initialRow + heigth); row++)
+            {
+                ReportSheetCell cell = new ReportSheetCell(row,initialColumn,(row-initialRow)+"");
+                cells.Add(cell);   
+            }
+            return cells;
+        }
+
+        private List<ReportSheetCell> generateHeaderOfTable(int row, int column, string[] headers)
+        {
+            List<ReportSheetCell> cells = new List<ReportSheetCell>();
+            for (int i=0;i<headers.Length;i++)
+            {
+                ReportSheetCell cell=new ReportSheetCell(row, column, headers[i]);
+                cells.Add(cell);
+                column++;
+            }
+            return cells;
+        }
+
+        /*private ReportSheetCell generateCellWithText(int row, int column, String text)
+        {
+            ReportSheetCell reportSheetCell;
+
+            return reportSheetCell;
+        }*/
 
         private List<ReportSheetCell> generateHeader(int numberCopies, String title)
         {
