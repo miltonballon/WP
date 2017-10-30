@@ -20,7 +20,7 @@ namespace ControllerLibrary
         {
             if (getIdName(p.Name) == -1) //si es -1 quiere decir que no existe y por tanto se crea
             {
-                InsertProduct(p.Name);
+                InsertProduct(p.Name, p.Fresh);
             }
             if (getIdProvider(p.Provider) == -1)
             {
@@ -188,9 +188,9 @@ namespace ControllerLibrary
             return c.FindAndGetID(UnitQuery);
         }
         
-        public void InsertProduct(string name)
+        public void InsertProduct(string name, bool fresh)
         {
-            string query = "insert into Product (name) values('" + name + "')";
+            string query = "insert into Product (name,fresh) values('" + name + "','"+fresh+"')";
             c.executeInsertion(query);
         }
         public void InsertProvider(string provider)
