@@ -56,12 +56,13 @@ namespace ControllerLibrary
                 SQLiteDataReader data = c.query_show(query);
                 while (data.Read())
                 {
-                    int ppuId = Int32.Parse(data[2].ToString());
+                    int ppuId = Int32.Parse(data[2].ToString()),
+                        id= Int32.Parse(data[0].ToString());
                     double quantity = Double.Parse(data[3].ToString()),
                         unitPrice = Double.Parse(data[4].ToString()),
                         total = Double.Parse(data[5].ToString());
                     Product product = productController.getProductByPPUId(ppuId);
-                    InvoiceRow invoiceRow = new InvoiceRow(product, quantity, unitPrice, total);
+                    InvoiceRow invoiceRow = new InvoiceRow(id, product, quantity, unitPrice, total);
                     output.Add(invoiceRow);
                 }
                 data.Close();
