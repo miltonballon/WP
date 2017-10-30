@@ -32,15 +32,25 @@ namespace EntityLibrary
             this.total = total;
         }
 
-        public InvoiceRow(Object[] datos,String provider)
+        public InvoiceRow(Object[] data,String provider)
         {
             this.product = new Product();
-            this.product.Name = (String)datos[0];
-            this.product.Unit = (String)datos[1];
+            this.product.Name = (String)data[0];
+            this.product.Unit = (String)data[1];
             this.product.Provider = provider;
-            this.quantity = Double.Parse((String)datos[2]);
-            this.unitPrice = Double.Parse((String)datos[3]);
-            this.total = (double)datos[4];
+            this.quantity = Double.Parse((String)data[2]);
+            this.unitPrice = Double.Parse((String)data[3]);
+            this.total = (double)data[4];
+        }
+
+        public void setAllAttributes(Object[] data, String provider)
+        {
+            this.product.Name = (String)data[0];
+            this.product.Unit = (String)data[1];
+            this.product.Provider = provider;
+            this.quantity = Double.Parse((String)data[2]);
+            this.unitPrice = Double.Parse((String)data[3]);
+            this.total = (double)data[4];
         }
 
         public Product getProduct()
