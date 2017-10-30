@@ -11,7 +11,7 @@ namespace EntityLibrary
         private string name;
         private string unit;
         private string provider;
-        private bool fresh;
+        private string clasification;
         
         public string Name
         {
@@ -28,10 +28,10 @@ namespace EntityLibrary
             get { return unit; }
             set { unit = value; }
         }
-        public bool Fresh
+        public string Clasification
         {
-            get { return fresh; }
-            set { fresh = value; }
+            get { return clasification; }
+            set { clasification = value; }
         }
         public override String ToString()
         {
@@ -42,11 +42,12 @@ namespace EntityLibrary
             
 
         }
-        public Product(string prod,string prov,string uni)
+        public Product(string prod,string prov,string uni,string cla)
         {
             name = prod;
             provider = prov;
             unit = uni;
+            clasification = cla;
 
         }
 
