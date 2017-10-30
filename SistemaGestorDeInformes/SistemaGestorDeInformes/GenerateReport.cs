@@ -8,14 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ControllerLibrary;
+using EntityLibrary;
 
 namespace SistemaGestorDeInformes
 {
     public partial class GenerateReport : Form
     {
+        private ReportSheetController reportSheetController;
         public GenerateReport()
         {
             InitializeComponent();
+            reportSheetController = new ReportSheetController();
         }        
 
         private void atrasButton_Click(object sender, EventArgs e)

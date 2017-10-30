@@ -93,6 +93,7 @@ CREATE TABLE `Report_sheet` (
 	`id`	INTEGER PRIMARY KEY AUTOINCREMENT,
 	`id_report`	INTEGER,
 	`type`		TEXT,
+	`tittle`	TEXT,
 	FOREIGN KEY(`id_report`) REFERENCES `Report`(`id`)
 );
 

@@ -9,16 +9,17 @@ namespace ControllerLibrary
     public class InvoiceController
     {
         private ProviderController providerController;
-        private ProductController productController;
-        private Connection c = new Connection();
+        private Connection c;
         private TrimesterController trimesterController;
+        private InvoiceRowController invoiceRowController;
         private int ERROR,NOTRIMESTER;
         public InvoiceController()
         {
-            c.connect();
+            c = new Connection();
             providerController = new ProviderController();
-            productController = new ProductController();
+            invoiceRowController = new InvoiceRowController();
             trimesterController = new TrimesterController();
+            c.connect();
             ERROR = -1;
             NOTRIMESTER=-2;
         }
@@ -45,7 +46,7 @@ namespace ControllerLibrary
                 {
                     c.executeInsertion(query);
                     int id = c.FindAndGetID("select id FROM Invoice where n_invoice = " + nInvoice + " AND id_provider=" + idProvider);
-                    output = registerInvoicesRows(invoice, id);
+                    output = invoiceRowController.registerInvoicesRows(invoice, id);
                 }
                 catch (Exception)
                 {
@@ -82,32 +83,6 @@ namespace ControllerLibrary
             return id;
         }
 
-        public int registerInvoicesRows(Invoice invoice,int invoiceId)
-        {
-            int counter = 0;
-            foreach (InvoiceRow row in invoice.getInvoiceRows())
-            {
-                registerInvoiceRow(row,invoiceId);
-                counter++;
-            }
-            return counter;
-        }
-
-        public void registerInvoiceRow(InvoiceRow row,int invoiceId)
-        {
-            String quantity = row.getQuantity() + ""
-                , unitPrice= row.getUnitPrice() + ""
-                , total=row.getTotal()+"";
-            int idPpu = productController.insertProductAndGetId(row.getProduct());
-            String queryInsertion = "INSERT INTO invoice_row (id_invoice, id_ppu, quantity, unit_price, total) VALUES(";
-            queryInsertion += invoiceId + ", ";
-            queryInsertion += idPpu + ", ";
-            queryInsertion += "'"+quantity + "', ";
-            queryInsertion += "'"+unitPrice + "', ";
-            queryInsertion += "'"+total+"')" ;
-            c.executeInsertion(queryInsertion);
-        }
-
         public Invoice getInvoiceByNInvoiceAndProviderId(int nInvoice, int providerId)
         {
             Invoice invoice = null;
@@ -121,7 +96,7 @@ namespace ControllerLibrary
                 DateTime date = getDate(data[5].ToString());
                 Provider provider = providerController.getProviderById(provId);
                 invoice = new Invoice(provider, nInvoice, nAut, date);
-                List<InvoiceRow> invoiceRows = getAllInvoicesRowByNInvoice(invoiceId);
+                List<InvoiceRow> invoiceRows = invoiceRowController.getAllInvoicesRowByNInvoice(invoiceId);
                 invoice.setInvoiceRows(invoiceRows);
             }
             c.dataClose();
@@ -143,7 +118,7 @@ namespace ControllerLibrary
                 DateTime date = getDate(data[5].ToString());
                 Provider provider = providerController.getProviderById(provId);
                 Invoice invoice = new Invoice(provider, nInvoice, nAut, date);
-                List<InvoiceRow> invoiceRows = getAllInvoicesRowByNInvoice(invoiceId);
+                List<InvoiceRow> invoiceRows = invoiceRowController.getAllInvoicesRowByNInvoice(invoiceId);
                 invoice.setInvoiceRows(invoiceRows);
                 output.Add(invoice);
             }
@@ -152,27 +127,26 @@ namespace ControllerLibrary
             return output;
         }
 
-        public List<InvoiceRow> getAllInvoicesRowByNInvoice(int idInvoice)
+        public List<Invoice> getAllInvoicesByTrimester(Trimester trimester)
         {
-            List<InvoiceRow> output = new List<InvoiceRow>();
-            string query = "SELECT * FROM invoice_row WHERE id_invoice="+idInvoice;
-            try
+            List<Invoice> output = new List<Invoice>();
+            int idTrimester = trimester.getId();
+            string query = "SELECT * FROM Invoice WHERE id_trimester="+idTrimester;
+            SQLiteDataReader data = c.query_show(query);
+            while (data.Read())
             {
-                SQLiteDataReader data = c.query_show(query);
-                while (data.Read())
-                {
-                    int ppuId = Int32.Parse(data[2].ToString());
-                    double quantity = Double.Parse(data[3].ToString()),
-                        unitPrice= Double.Parse(data[4].ToString()),
-                        total= Double.Parse(data[5].ToString());
-                    Product product = productController.getProductByPPUId(ppuId);
-                    InvoiceRow invoiceRow = new InvoiceRow(product, quantity, unitPrice, total);
-                    output.Add(invoiceRow);
-                }
-                data.Close();
+                int invoiceId = Int32.Parse(data[0].ToString()),
+                    nInvoice = Int32.Parse(data[1].ToString()),
+                    nAut = Int32.Parse(data[2].ToString()),
+                    provId = Int32.Parse(data[3].ToString());
+                DateTime date = getDate(data[5].ToString());
+                Provider provider = providerController.getProviderById(provId);
+                Invoice invoice = new Invoice(provider, nInvoice, nAut, date);
+                List<InvoiceRow> invoiceRows = invoiceRowController.getAllInvoicesRowByNInvoice(invoiceId);
+                invoice.setInvoiceRows(invoiceRows);
+                output.Add(invoice);
             }
-            catch (Exception)
-            { }
+            data.Close();
             c.dataClose();
             return output;
         }
