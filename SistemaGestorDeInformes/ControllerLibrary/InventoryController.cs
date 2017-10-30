@@ -21,5 +21,12 @@ namespace ControllerLibrary
             string query = "INSERT INTO Inventory (ppu_id,stock) values('" + id + "','" + reception.Total + "')";
             productController.c.executeInsertion(query);
         }
+        public int getIdInventory(int id)
+        {
+
+            string query = "select id FROM Inventory where id = " + "'" + id + "'";
+            int resultado = productController.c.FindAndGetID(query);
+            return resultado;
+        }
     }
 }
