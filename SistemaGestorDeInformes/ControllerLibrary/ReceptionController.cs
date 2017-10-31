@@ -90,7 +90,9 @@ namespace ControllerLibrary
                 prod.Unit = data[1].ToString();
                 p.Product = prod;
 
-                
+                p.Total =Int32.Parse(data[2].ToString());
+                reception.Add(p);
+                //MessageBox.Show("N"+p.Product.Name+"U"+p.Product.Unit+"T"+p.Total);
             }
             
             c.dataClose();
