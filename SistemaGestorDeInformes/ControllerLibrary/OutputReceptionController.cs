@@ -80,35 +80,7 @@ namespace ControllerLibrary
             string queryIDReception = "SELECT id FROM Reception where ppu_id='" + resul + "'";
             SQLiteDataReader data2 = c.query_show(queryIDReception);
 
-            int resulReception = -1;
-            while (data2.Read())
-            {
-                resulReception = Int32.Parse(data2[0].ToString());
-            }
-            c.dataClose();
-            data2.Close();
-
-            if (idName != notExist && idUnit != notExist && resul != notExist && resulReception != notExist)
-            {
-                Reception reception = receptionController.getReceptionById(resulReception);
-                reception.Total = reception.Total - Int32.Parse(Total.Text);
-                if (reception.Total >= 0)
-                {
-                    InsertOutputReception(resulReception, OutputDate, Total);
-                    receptionController.updateReception(resulReception, reception);
-                    MessageBox.Show("Salida registrada correctamente");
-                }
-                else
-                {
-                    MessageBox.Show("No se posee tantas reservas en el inventario, retire una suma menor");
-                }
-            }
-            else
-            {
-                MessageBox.Show("No existe recepcion de dicho producto en el inventario o el producto se acabo, verifique las recepciones o el inventario fisico ");
-            }
-        }
-
+            
         */
         public void InsertOutputReceptionAndInventory(OutputReception outputReception)
         {
