@@ -106,7 +106,7 @@ namespace ControllerLibrary
             {
                 List<Invoice> invoices = invoiceController.getAllInvoicesByTrimester(ongoingTrimester);
                 List<ReportSheetCell> cells = new List<ReportSheetCell>();
-                cells.AddRange(generateHeaderAndTableOfQuotation(invoices, reportSheet.Tittle));
+                cells.AddRange(generateHeaderAndTableOfReferentialPricesSheet(invoices, reportSheet.Tittle));
                 reportSheet.Cells = cells;
             }
             return reportSheet;
@@ -136,12 +136,79 @@ namespace ControllerLibrary
             return cells;
         }
 
-        /*private ReportSheetCell generateCellWithText(int row, int column, String text)
+        private List<ReportSheetCell> generateHeaderAndTableOfReferentialPricesSheet(List<Invoice> invoices, String title)
         {
-            ReportSheetCell reportSheetCell;
+            List<ReportSheetCell> cells = new List<ReportSheetCell>();
+            int row = 0,
+                column = 1;
+            int numberCopies = invoices.Count;
+            for (int i = 0; i < numberCopies; i++)
+            {
+                row = 1;
+                ReportSheetCell cell = new ReportSheetCell(row, column, i + "");
+                cells.Add(cell);
+                column++;
+                cell = new ReportSheetCell(row, column, "GOBIERNO AUTONOMO DEPARTAMENTAL");
+                row++;
+                cells.Add(cell);
+                cell = new ReportSheetCell(row, column, "SECRETARIA DEPARTAMENTAL DE DESARROLLO HUMANO");
+                row++;
+                cells.Add(cell);
+                cell = new ReportSheetCell(row, column, "SERVICIO DEPARTAMENTAL DE GESTION SOCIAL");
+                row++;
+                cells.Add(cell);
+                cell = new ReportSheetCell(row, column, "COCHABAMBA- BOLIVIA");
+                row += 2;
+                cells.Add(cell);
+                cell = new ReportSheetCell(row, column, title);
+                cells.Add(cell);
+                column += 7;
+            }
+            column = 2;
+            for (int i = 0; i < numberCopies; i++)
+            {
+                String[] headers = { "ITEM", "DESCRIPCION", "UNIDAD", "CANTIDAD", "PRECIO EN BS.", "UNITARIO", "TOTAL" };
+                String[] text = { "UNIDAD/CENTRO:", "ASOCIACION CREAMOS"};
+                cells.AddRange(fillRowWithText(row + 2, column, text));
+                String[]  text1 = { "DOCUMENTO DE REFERENCIA:", "COTIZACIÓN"};
+                cells.AddRange(fillRowWithText(row + 3, column, text1));
+                String[]  text2 = { "FECHA:", " "};
+                cells.AddRange(fillRowWithText(row + 4, column, text2));
+                cells.AddRange(generateEnumerateTable(row + 5, column, 15, headers));
+                List<InvoiceRow> invoiceRows = invoices[i].getInvoiceRows();
+                cells.AddRange(fillTableWithInvoiceRows(row + 6, column + 1, invoiceRows, 5));
+                cells.AddRange(generateFooterOfTableOfReferentialPrices(row + 23, column - 1,invoices[i]));
+                cells.AddRange(generateFooterOfReferentialPrices(row + 29, column - 1));
+                column += 8;
+            }
+            return cells;
+        }
 
-            return reportSheetCell;
-        }*/
+        private List<ReportSheetCell> generateFooterOfTableOfReferentialPrices(int row, int column,Invoice invoice)
+        {
+            double total = invoice.getTotal();
+            List<ReportSheetCell> cells = new List<ReportSheetCell>();
+            String[] text = {"TOTAL",total+""};
+            cells.AddRange(fillRowWithText(row, column+5, text));
+            row++;
+            String spellNumber = Util.toSpelling(total+"");
+            String[] text1 = { "Son", spellNumber };
+            cells.AddRange(fillRowWithText(row, column, text1));
+            row++;
+            return cells;
+        }
+
+        private List<ReportSheetCell> generateFooterOfReferentialPrices(int row, int column)
+        {
+            List<ReportSheetCell> cells = new List<ReportSheetCell>();
+            ReportSheetCell cell = new ReportSheetCell(row, column, "NOMBRE EJEMPLO");
+            row++;
+            cells.Add(cell);
+            cell = new ReportSheetCell(row, column, "Responsable de Recursos Asociacion Creamos");
+            row++;
+            cells.Add(cell);
+            return cells;
+        }
 
         private List<ReportSheetCell> generateHeaderAndTableOfQuotation(List<Invoice> invoices, String title)
         {
