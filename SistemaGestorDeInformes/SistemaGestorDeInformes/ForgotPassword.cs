@@ -11,6 +11,7 @@ using System.Data.SqlClient;
 using System.Net.Mail;
 using System.Net;
 using EntityLibrary;
+using ControllerLibrary;
 
 namespace SistemaGestorDeInformes
 {
@@ -68,6 +69,14 @@ namespace SistemaGestorDeInformes
             Login Login1 = new Login();
             this.Hide();
             Login1.Show();
+        }
+
+        private void txtbxCorreo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 48 && e.KeyChar <= 57) || (e.KeyChar >= 97 && e.KeyChar <= 122) || (e.KeyChar >= 65 && e.KeyChar <= 90) || (e.KeyChar == 8) || (e.KeyChar == 32) || (e.KeyChar == 64) || (e.KeyChar == 46) || (e.KeyChar == 95))
+                e.Handled = false;
+            else
+                e.Handled = true;
         }
     }
 }

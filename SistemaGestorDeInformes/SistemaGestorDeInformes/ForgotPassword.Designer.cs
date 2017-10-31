@@ -54,6 +54,7 @@
             this.txtbxCorreo.Name = "txtbxCorreo";
             this.txtbxCorreo.Size = new System.Drawing.Size(250, 20);
             this.txtbxCorreo.TabIndex = 19;
+            this.txtbxCorreo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbxCorreo_KeyPress);
             // 
             // labelInformaciónBásica
             // 
