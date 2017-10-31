@@ -5,8 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using EntityLibrary;
 using System.Data.SQLite;
-using Microsoft.Office.Interop.Excel;
-using System.Runtime.InteropServices;
 
 namespace ControllerLibrary
 {
@@ -16,7 +14,6 @@ namespace ControllerLibrary
         private ReportSheetCellController reportSheetCellController;
         private InvoiceController invoiceController;
         private TrimesterController trimesterController;
-        private readonly int EXCELNOTINSTALLED=-1;
         public ReportSheetController()
         {
             c = new Connection();
@@ -246,51 +243,6 @@ namespace ControllerLibrary
                 tempColumn = column;
             }
             return cells;
-        }
-
-        public int generateExcelSheet(ReportSheet reportSheet)
-        {
-            int output;
-            Application xlApp = new Microsoft.Office.Interop.Excel.Application();
-
-            if (xlApp == null)
-            {
-                output = EXCELNOTINSTALLED;
-            }
-            else
-            {
-                Workbook xlWorkBook;
-                Worksheet xlWorkSheet;
-                object misValue = System.Reflection.Missing.Value;
-
-                xlWorkBook = xlApp.Workbooks.Add(misValue);
-                xlWorkSheet = (Worksheet)xlWorkBook.Worksheets.get_Item(1);
-
-                xlWorkSheet.Name = reportSheet.Type;
-                fillInExcelCells(reportSheet.Cells,xlWorkSheet);
-
-                xlWorkBook.SaveAs("d:\\csharp-Excel.xls", XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
-                xlWorkBook.Close(true, misValue, misValue);
-                xlApp.Quit();
-
-                Marshal.ReleaseComObject(xlWorkSheet);
-                Marshal.ReleaseComObject(xlWorkBook);
-                Marshal.ReleaseComObject(xlApp);
-
-                output = 0;
-            }
-            return output;
-        }
-
-        private void fillInExcelCells(List<ReportSheetCell> cells, Worksheet workSheet)
-        {
-            foreach (ReportSheetCell cell in cells)
-            {
-                int row=cell.Row, 
-                    column=cell.Column;
-                String content = cell.Content;
-                workSheet.Cells[row, column] = content;
-            }
         }
     }
 }
