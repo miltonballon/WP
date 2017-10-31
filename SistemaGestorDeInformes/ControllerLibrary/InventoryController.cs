@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using EntityLibrary;
+using System.Data.SQLite;
 namespace ControllerLibrary
 {
     public class InventoryController
@@ -21,12 +22,15 @@ namespace ControllerLibrary
             string query = "INSERT INTO Inventory (ppu_id,stock) values('" + id + "','" + reception.Total + "')";
             productController.c.executeInsertion(query);
         }
-        public int getIdInventory(int id)
-        {
+       
 
-            string query = "select id FROM Inventory where id = " + "'" + id + "'";
-            int resultado = productController.c.FindAndGetID(query);
-            return resultado;
+        public void updateReception(int idInventory, int total)
+        {
+            String query = "UPDATE Inventory SET stock=" + total + ", WHERE id=" + idInventory;
+            productController.c.executeInsertion(query);
         }
+        
+       
+
     }
 }

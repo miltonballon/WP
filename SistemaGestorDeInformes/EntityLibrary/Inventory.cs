@@ -10,14 +10,16 @@ namespace EntityLibrary
     {
         private Product product;
         private int stock;
+        private string expirationDate;
         public Inventory()
         {
             new Product();
         }
-        public Inventory(Product p, int s)
+        public Inventory(Product p, int s, string date)
         {
             product = p;
             stock = s;
+            expirationDate = date ;
         }
         public Product Product
         {
@@ -28,6 +30,11 @@ namespace EntityLibrary
         {
             get { return stock; }
             set { stock = value; }
+        }
+        public string ExpirationDate
+        {
+            get { return expirationDate; }
+            set { expirationDate = value; }
         }
     }
 }
