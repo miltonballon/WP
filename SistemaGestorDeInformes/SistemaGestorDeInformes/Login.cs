@@ -22,39 +22,44 @@ namespace SistemaGestorDeInformes
             usercontroller = new UserController();
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void Login_Load(object sender, EventArgs e)
         {
-            String username = txtUsuario.Text;
-            if (username != "")
+            Usuario_Textbox.ShortcutsEnabled = false;
+            Contraseña_Textbox.ShortcutsEnabled = false;
+        }
+
+
+        private void txtContraseña_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == Convert.ToChar(Keys.Enter))
             {
-                User user = usercontroller.getUserByUsername(username);
-                if (user != null)
+                String user = Usuario_Textbox.Text;
+                String pass = Contraseña_Textbox.Text;
+                if (user != "" && pass != "")
                 {
-                    this.Hide();
-                    ForgotPassword CC = new ForgotPassword(user);
-                    CC.ShowDialog();
+                    if (usercontroller.verify(user, pass))
+                    {
+                        Main prin = new Main();
+                        prin.WindowState = this.WindowState;
+                        this.Hide();
+                        prin.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("El usuario no existe o la contraseña es incorrecta");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Nombre de usuario inexistente");
+                    MessageBox.Show("Por favor llene todos los campos");
                 }
             }
-            else
-            {
-                MessageBox.Show("Ingrese un nombre de usuario");
-            }
         }
 
-        private void Login_Load(object sender, EventArgs e)
+        private void Entrar_Button_Click(object sender, EventArgs e)
         {
-            txtUsuario.ShortcutsEnabled = false;
-            txtContraseña.ShortcutsEnabled = false;
-        }
-
-        private void btnEntrar_Click(object sender, EventArgs e)
-        {
-            String user = txtUsuario.Text;
-            String pass = txtContraseña.Text;
+            String user = Usuario_Textbox.Text;
+            String pass = Contraseña_Textbox.Text;
             if (user != "" && pass != "")
             {
                 if (usercontroller.verify(user, pass))
@@ -75,37 +80,32 @@ namespace SistemaGestorDeInformes
             }
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
+        private void Cancelar_Button_Click(object sender, EventArgs e)
         {
             Application.Exit();
             this.Close();
         }
 
-
-        private void txtContraseña_KeyPress(object sender, KeyPressEventArgs e)
+        private void Contrasena_linkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            if(e.KeyChar == Convert.ToChar(Keys.Enter))
+            String username = Usuario_Textbox.Text;
+            if (username != "")
             {
-                String user = txtUsuario.Text;
-                String pass = txtContraseña.Text;
-                if (user != "" && pass != "")
+                User user = usercontroller.getUserByUsername(username);
+                if (user != null)
                 {
-                    if (usercontroller.verify(user, pass))
-                    {
-                        Main prin = new Main();
-                        prin.WindowState = this.WindowState;
-                        this.Hide();
-                        prin.Show();
-                    }
-                    else
-                    {
-                        MessageBox.Show("El usuario no existe o la contraseña es incorrecta");
-                    }
+                    this.Hide();
+                    ForgotPassword CC = new ForgotPassword(user);
+                    CC.ShowDialog();
                 }
                 else
                 {
-                    MessageBox.Show("Por favor llene todos los campos");
+                    MessageBox.Show("Nombre de usuario inexistente");
                 }
+            }
+            else
+            {
+                MessageBox.Show("Ingrese un nombre de usuario");
             }
         }
     }

@@ -30,13 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.txtContraseña = new System.Windows.Forms.TextBox();
-            this.txtUsuario = new System.Windows.Forms.TextBox();
+            this.Contraseña_Textbox = new System.Windows.Forms.TextBox();
+            this.Usuario_Textbox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnEntrar = new System.Windows.Forms.Button();
+            this.Cancelar_Button = new System.Windows.Forms.Button();
+            this.Entrar_Button = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.Contrasena_linkLabel = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,23 +50,23 @@
             this.pictureBox1.TabIndex = 20;
             this.pictureBox1.TabStop = false;
             // 
-            // txtContraseña
+            // Contraseña_Textbox
             // 
-            this.txtContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContraseña.Location = new System.Drawing.Point(411, 266);
-            this.txtContraseña.Name = "txtContraseña";
-            this.txtContraseña.PasswordChar = '*';
-            this.txtContraseña.Size = new System.Drawing.Size(250, 24);
-            this.txtContraseña.TabIndex = 2;
-            this.txtContraseña.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtContraseña_KeyPress);
+            this.Contraseña_Textbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Contraseña_Textbox.Location = new System.Drawing.Point(411, 266);
+            this.Contraseña_Textbox.Name = "Contraseña_Textbox";
+            this.Contraseña_Textbox.PasswordChar = '*';
+            this.Contraseña_Textbox.Size = new System.Drawing.Size(250, 24);
+            this.Contraseña_Textbox.TabIndex = 2;
+            this.Contraseña_Textbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtContraseña_KeyPress);
             // 
-            // txtUsuario
+            // Usuario_Textbox
             // 
-            this.txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsuario.Location = new System.Drawing.Point(411, 214);
-            this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(250, 24);
-            this.txtUsuario.TabIndex = 1;
+            this.Usuario_Textbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Usuario_Textbox.Location = new System.Drawing.Point(411, 214);
+            this.Usuario_Textbox.Name = "Usuario_Textbox";
+            this.Usuario_Textbox.Size = new System.Drawing.Size(250, 24);
+            this.Usuario_Textbox.TabIndex = 1;
             // 
             // label1
             // 
@@ -80,31 +80,31 @@
             this.label1.TabIndex = 16;
             this.label1.Text = "USUARIO:";
             // 
-            // btnCancelar
+            // Cancelar_Button
             // 
-            this.btnCancelar.BackColor = System.Drawing.Color.Black;
-            this.btnCancelar.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.ForeColor = System.Drawing.Color.Yellow;
-            this.btnCancelar.Location = new System.Drawing.Point(411, 316);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(120, 30);
-            this.btnCancelar.TabIndex = 4;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = false;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            this.Cancelar_Button.BackColor = System.Drawing.Color.Black;
+            this.Cancelar_Button.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cancelar_Button.ForeColor = System.Drawing.Color.Yellow;
+            this.Cancelar_Button.Location = new System.Drawing.Point(411, 316);
+            this.Cancelar_Button.Name = "Cancelar_Button";
+            this.Cancelar_Button.Size = new System.Drawing.Size(120, 30);
+            this.Cancelar_Button.TabIndex = 4;
+            this.Cancelar_Button.Text = "Cancelar";
+            this.Cancelar_Button.UseVisualStyleBackColor = false;
+            this.Cancelar_Button.Click += new System.EventHandler(this.Cancelar_Button_Click);
             // 
-            // btnEntrar
+            // Entrar_Button
             // 
-            this.btnEntrar.BackColor = System.Drawing.Color.Black;
-            this.btnEntrar.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEntrar.ForeColor = System.Drawing.Color.Yellow;
-            this.btnEntrar.Location = new System.Drawing.Point(277, 316);
-            this.btnEntrar.Name = "btnEntrar";
-            this.btnEntrar.Size = new System.Drawing.Size(120, 30);
-            this.btnEntrar.TabIndex = 3;
-            this.btnEntrar.Text = "Entrar";
-            this.btnEntrar.UseVisualStyleBackColor = false;
-            this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
+            this.Entrar_Button.BackColor = System.Drawing.Color.Black;
+            this.Entrar_Button.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Entrar_Button.ForeColor = System.Drawing.Color.Yellow;
+            this.Entrar_Button.Location = new System.Drawing.Point(277, 316);
+            this.Entrar_Button.Name = "Entrar_Button";
+            this.Entrar_Button.Size = new System.Drawing.Size(120, 30);
+            this.Entrar_Button.TabIndex = 3;
+            this.Entrar_Button.Text = "Entrar";
+            this.Entrar_Button.UseVisualStyleBackColor = false;
+            this.Entrar_Button.Click += new System.EventHandler(this.Entrar_Button_Click);
             // 
             // label2
             // 
@@ -118,18 +118,18 @@
             this.label2.TabIndex = 17;
             this.label2.Text = "CONTRASEÑA:";
             // 
-            // linkLabel1
+            // Contrasena_linkLabel
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.LinkColor = System.Drawing.Color.Yellow;
-            this.linkLabel1.Location = new System.Drawing.Point(274, 367);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(187, 19);
-            this.linkLabel1.TabIndex = 5;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Olvide mi Contraseña";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            this.Contrasena_linkLabel.AutoSize = true;
+            this.Contrasena_linkLabel.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Contrasena_linkLabel.LinkColor = System.Drawing.Color.Yellow;
+            this.Contrasena_linkLabel.Location = new System.Drawing.Point(274, 367);
+            this.Contrasena_linkLabel.Name = "Contrasena_linkLabel";
+            this.Contrasena_linkLabel.Size = new System.Drawing.Size(187, 19);
+            this.Contrasena_linkLabel.TabIndex = 5;
+            this.Contrasena_linkLabel.TabStop = true;
+            this.Contrasena_linkLabel.Text = "Olvide mi Contraseña";
+            this.Contrasena_linkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.Contrasena_linkLabel_LinkClicked);
             // 
             // Login
             // 
@@ -137,14 +137,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(831, 547);
-            this.Controls.Add(this.linkLabel1);
+            this.Controls.Add(this.Contrasena_linkLabel);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.txtContraseña);
-            this.Controls.Add(this.txtUsuario);
+            this.Controls.Add(this.Contraseña_Textbox);
+            this.Controls.Add(this.Usuario_Textbox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.btnEntrar);
+            this.Controls.Add(this.Cancelar_Button);
+            this.Controls.Add(this.Entrar_Button);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -159,12 +159,12 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox txtContraseña;
-        private System.Windows.Forms.TextBox txtUsuario;
+        private System.Windows.Forms.TextBox Contraseña_Textbox;
+        private System.Windows.Forms.TextBox Usuario_Textbox;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.Button btnEntrar;
+        private System.Windows.Forms.Button Cancelar_Button;
+        private System.Windows.Forms.Button Entrar_Button;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.LinkLabel Contrasena_linkLabel;
     }
 }
