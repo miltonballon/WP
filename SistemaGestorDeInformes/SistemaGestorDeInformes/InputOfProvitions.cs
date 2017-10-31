@@ -54,7 +54,7 @@ namespace SistemaGestorDeInformes
 
             ProducTextBox.MaxLength = 70;
             ProviderTextBox.MaxLength = 70;
-            UnitTextBox.MaxLength = 3;
+            UnitTextBox.MaxLength = 20;
             TotalReception.MaxLength = 15;
 
             ProducTextBox.ShortcutsEnabled = false;
