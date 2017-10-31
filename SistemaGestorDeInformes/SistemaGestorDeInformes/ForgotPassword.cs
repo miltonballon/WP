@@ -37,17 +37,9 @@ namespace SistemaGestorDeInformes
             Login1.Show();
         }
 
-        private void txtbxCorreo_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar >= 48 && e.KeyChar <= 57) || (e.KeyChar >= 97 && e.KeyChar <= 122) || (e.KeyChar >= 65 && e.KeyChar <= 90) || (e.KeyChar == 8) || (e.KeyChar == 32) || (e.KeyChar == 64) || (e.KeyChar == 46) || (e.KeyChar == 95))
-                e.Handled = false;
-            else
-                e.Handled = true;
-        }
-
         private void Enviar_button_Click(object sender, EventArgs e)
         {
-            String mail = txtbxCorreo.Text;
+            String mail = Correo_textbox.Text;
             if (user.Email.Equals(mail))
             {
 
@@ -77,6 +69,14 @@ namespace SistemaGestorDeInformes
             {
                 MessageBox.Show("El correo ingresado no coincide con el del usuario");
             }
+        }
+
+        private void Correo_textbox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 48 && e.KeyChar <= 57) || (e.KeyChar >= 97 && e.KeyChar <= 122) || (e.KeyChar >= 65 && e.KeyChar <= 90) || (e.KeyChar == 8) || (e.KeyChar == 32) || (e.KeyChar == 64) || (e.KeyChar == 46) || (e.KeyChar == 95))
+                e.Handled = false;
+            else
+                e.Handled = true;
         }
     }
 }

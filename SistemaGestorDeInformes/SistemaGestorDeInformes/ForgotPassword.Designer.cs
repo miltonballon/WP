@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.Enviar_button = new System.Windows.Forms.Button();
-            this.txtbxCorreo = new System.Windows.Forms.TextBox();
+            this.Correo_textbox = new System.Windows.Forms.TextBox();
             this.labelInformaciónBásica = new System.Windows.Forms.Label();
             this.atrasButton = new System.Windows.Forms.Button();
             this.labelProveedor = new System.Windows.Forms.Label();
@@ -48,13 +48,13 @@
             this.Enviar_button.UseVisualStyleBackColor = false;
             this.Enviar_button.Click += new System.EventHandler(this.Enviar_button_Click);
             // 
-            // txtbxCorreo
+            // Correo_textbox
             // 
-            this.txtbxCorreo.Location = new System.Drawing.Point(320, 186);
-            this.txtbxCorreo.Name = "txtbxCorreo";
-            this.txtbxCorreo.Size = new System.Drawing.Size(250, 20);
-            this.txtbxCorreo.TabIndex = 19;
-            this.txtbxCorreo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbxCorreo_KeyPress);
+            this.Correo_textbox.Location = new System.Drawing.Point(320, 186);
+            this.Correo_textbox.Name = "Correo_textbox";
+            this.Correo_textbox.Size = new System.Drawing.Size(250, 20);
+            this.Correo_textbox.TabIndex = 19;
+            this.Correo_textbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Correo_textbox_KeyPress);
             // 
             // labelInformaciónBásica
             // 
@@ -100,7 +100,7 @@
             this.Controls.Add(this.labelProveedor);
             this.Controls.Add(this.atrasButton);
             this.Controls.Add(this.labelInformaciónBásica);
-            this.Controls.Add(this.txtbxCorreo);
+            this.Controls.Add(this.Correo_textbox);
             this.Controls.Add(this.Enviar_button);
             this.Name = "ForgotPassword";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -113,7 +113,7 @@
         #endregion
 
         private System.Windows.Forms.Button Enviar_button;
-        private System.Windows.Forms.TextBox txtbxCorreo;
+        private System.Windows.Forms.TextBox Correo_textbox;
         private System.Windows.Forms.Label labelInformaciónBásica;
         private System.Windows.Forms.Button atrasButton;
         private System.Windows.Forms.Label labelProveedor;
