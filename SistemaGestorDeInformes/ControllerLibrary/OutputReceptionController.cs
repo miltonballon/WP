@@ -60,28 +60,7 @@ namespace ControllerLibrary
             c.dataClose();
             data.Close();
         }
-        /*
-        public void RegisterOutputReception(TextBox Product, TextBox Unit,TextBox OutputDate, TextBox Total)
-        {
-            int idName = getIdName(Product.Text.ToString());
-            int idUnit = getIdUnit(Unit.Text.ToString());
-            int notExist = -1;
-            string queryPPU = "SELECT id FROM Product_Provider_Unit where id_prod='" + idName + "' and id_uni='" + idUnit + "'";
-            SQLiteDataReader data = c.query_show(queryPPU);
-            
-            int resul = -1;
-            while (data.Read())
-            {
-                resul = Int32.Parse(data[0].ToString());
-            }
-            //c.dataClose();
-            data.Close();
-
-            string queryIDReception = "SELECT id FROM Reception where ppu_id='" + resul + "'";
-            SQLiteDataReader data2 = c.query_show(queryIDReception);
-
-            
-        */
+        
         public void InsertOutputReceptionAndInventory(OutputReception outputReception)
         {
             int idName = getIdName(outputReception.Reception.Product.Name);
