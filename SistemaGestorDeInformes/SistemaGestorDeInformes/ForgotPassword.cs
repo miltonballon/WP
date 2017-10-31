@@ -30,7 +30,22 @@ namespace SistemaGestorDeInformes
         }
                             
 
-        private void button5_Click_1(object sender, EventArgs e)
+        private void atrasButton_Click(object sender, EventArgs e)
+        {
+            Login Login1 = new Login();
+            this.Hide();
+            Login1.Show();
+        }
+
+        private void txtbxCorreo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 48 && e.KeyChar <= 57) || (e.KeyChar >= 97 && e.KeyChar <= 122) || (e.KeyChar >= 65 && e.KeyChar <= 90) || (e.KeyChar == 8) || (e.KeyChar == 32) || (e.KeyChar == 64) || (e.KeyChar == 46) || (e.KeyChar == 95))
+                e.Handled = false;
+            else
+                e.Handled = true;
+        }
+
+        private void Enviar_button_Click(object sender, EventArgs e)
         {
             String mail = txtbxCorreo.Text;
             if (user.Email.Equals(mail))
@@ -53,7 +68,7 @@ namespace SistemaGestorDeInformes
                 MailAddress receiver = new MailAddress("jprodriguez60@gmail.com", "Responsable de Recursos");
                 MailMessage Mymessage = new MailMessage(from, receiver);
                 Mymessage.Subject = "Recuperacion de Contraseña";
-                Mymessage.Body = "La contraseña es: "+user.Password;
+                Mymessage.Body = "La contraseña es: " + user.Password;
                 //sends the email
                 MyServer.Send(Mymessage);
                 MessageBox.Show("Se envio un correo electronico con la contraseña, por favor revise su correo");
@@ -62,21 +77,6 @@ namespace SistemaGestorDeInformes
             {
                 MessageBox.Show("El correo ingresado no coincide con el del usuario");
             }
-        }
-
-        private void atrasButton_Click(object sender, EventArgs e)
-        {
-            Login Login1 = new Login();
-            this.Hide();
-            Login1.Show();
-        }
-
-        private void txtbxCorreo_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar >= 48 && e.KeyChar <= 57) || (e.KeyChar >= 97 && e.KeyChar <= 122) || (e.KeyChar >= 65 && e.KeyChar <= 90) || (e.KeyChar == 8) || (e.KeyChar == 32) || (e.KeyChar == 64) || (e.KeyChar == 46) || (e.KeyChar == 95))
-                e.Handled = false;
-            else
-                e.Handled = true;
         }
     }
 }
