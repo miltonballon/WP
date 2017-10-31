@@ -41,6 +41,31 @@ namespace ControllerLibrary
          
 
         }
+        public List<Inventory> getAllProducts()
+        {
+            List<Inventory> receptions = new List<Inventory>();
+            string query = "SELECT * FROM Inventory";
+            try
+            {
+                SQLiteDataReader data = productController.c.query_show(query);
+                while (data.Read())
+                {
+                    int ppuId = Int32.Parse(data[1].ToString()),
+                        total = Int32.Parse(data[2].ToString());
+                   
+                    Product product = productController.getProductByPPUId(ppuId);
+                    Inventory reception = new Inventory();
+                    reception.Product = product;
+                    reception.Stock = total;
+                    receptions.Add(reception);
+                    MessageBox.Show("" + product.Name + "" + reception.Stock);
+                }
+            }
+            catch (Exception)
+            { }
+            productController.c.dataClose();
+            return receptions;
+        }
         public bool ifProductIsAvailable(OutputReception outputReception,int ppu_id)
         {
             if (restTotalToProduct(findId(ppu_id), outputReception.Total) >= 0)

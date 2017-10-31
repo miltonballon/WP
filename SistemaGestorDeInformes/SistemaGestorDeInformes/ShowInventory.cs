@@ -15,10 +15,12 @@ namespace SistemaGestorDeInformes
     public partial class ShowInventory : Form
     {
         private ReceptionController receptionController;
+        private InventoryController inventoryController;
         public ShowInventory()
         {
             InitializeComponent();
             receptionController = new ReceptionController();
+            inventoryController = new InventoryController();
             chargeData();
         }
 
@@ -116,14 +118,13 @@ namespace SistemaGestorDeInformes
 
         private void chargeData()
         {
-            List<Reception> receptions = receptionController.getAllReceptions();
-            
-            foreach (Reception reception in receptions)
+            List<Inventory> products = inventoryController.getAllProducts();
+            foreach (Inventory inventory in products)
             {
-                Product product = reception.Product;
+                Product product = inventory.Product;
                 String productsName = product.Name,
                        unit = product.Unit,
-                       total = reception.Total+"";
+                       total = inventory.Stock+"";
 
                 String[] row = new String[] { productsName,unit,total};
                 dataGridView1.Rows.Add(row);
@@ -197,6 +198,11 @@ namespace SistemaGestorDeInformes
         }
 
         private void searchTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
