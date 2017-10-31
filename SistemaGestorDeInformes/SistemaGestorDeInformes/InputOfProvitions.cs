@@ -201,10 +201,5 @@ namespace SistemaGestorDeInformes
             this.Hide();
             Interfaz.Show();
         }
-
-        private void FreshRadioButton_CheckedChanged(object sender, EventArgs e)
-        {
-          
-        }
     }
 }

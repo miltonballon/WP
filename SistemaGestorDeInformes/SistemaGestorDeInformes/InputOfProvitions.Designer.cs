@@ -422,7 +422,6 @@
             this.FreshRadioButton.TabStop = true;
             this.FreshRadioButton.Text = "FRESCO";
             this.FreshRadioButton.UseVisualStyleBackColor = true;
-            this.FreshRadioButton.CheckedChanged += new System.EventHandler(this.FreshRadioButton_CheckedChanged);
             // 
             // DryRadioButton
             // 
