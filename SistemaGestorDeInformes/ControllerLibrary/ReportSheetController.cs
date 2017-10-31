@@ -101,6 +101,20 @@ namespace ControllerLibrary
             return reportSheet;
         }
 
+        public ReportSheet generateReferentialPricesSheet()
+        {
+            Trimester ongoingTrimester = trimesterController.getLastTrimester();
+            ReportSheet reportSheet = new ReportSheet("referenciales", "PRECIOS REFERENCIALES");
+            if (ongoingTrimester != null)
+            {
+                List<Invoice> invoices = invoiceController.getAllInvoicesByTrimester(ongoingTrimester);
+                List<ReportSheetCell> cells = new List<ReportSheetCell>();
+                cells.AddRange(generateHeaderAndTableOfQuotation(invoices, reportSheet.Tittle));
+                reportSheet.Cells = cells;
+            }
+            return reportSheet;
+        }
+
         private List<ReportSheetCell> generateEnumerateTable(int initialRow, int initialColumn, int heigth, string[] headers)
         {
             List<ReportSheetCell> cells = new List<ReportSheetCell>();
