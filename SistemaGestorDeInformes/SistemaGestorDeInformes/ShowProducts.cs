@@ -26,14 +26,6 @@ namespace SistemaGestorDeInformes
         }
        
 
-        private void BackButton_Click(object sender, EventArgs e)
-        {
-            Main main = new Main();
-            main.WindowState = this.WindowState;
-            this.Hide();
-            main.Show();
-        }
-
         private void RegisterProductToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RegisterProduct main = new RegisterProduct();
@@ -212,6 +204,14 @@ namespace SistemaGestorDeInformes
         {
             Buscar_textBox.Text = "";
             showUser();
+        }
+
+        private void Atras_Button_Click(object sender, EventArgs e)
+        {
+            Main main = new Main();
+            main.WindowState = this.WindowState;
+            this.Hide();
+            main.Show();
         }
     }
 }
