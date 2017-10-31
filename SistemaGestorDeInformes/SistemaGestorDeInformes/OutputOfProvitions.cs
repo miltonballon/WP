@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ControllerLibrary;
+using EntityLibrary;
 
 namespace SistemaGestorDeInformes
 {
@@ -127,7 +128,14 @@ namespace SistemaGestorDeInformes
 
         private void RegisterButton_Click(object sender, EventArgs e)
         {
-            rc.RegisterOutputReception(ProductTextBox, UnitTextBox, OutputDateTextBox, TotalTextBox);
+            //rc.RegisterOutputReception(ProductTextBox, UnitTextBox, OutputDateTextBox, TotalTextBox);
+            OutputReception outputReception = new OutputReception();
+            outputReception.Reception.Product.Name = ProductTextBox.Text;
+            outputReception.Reception.Product.Unit = UnitTextBox.Text;
+            outputReception.OutputDate = OutputDateTextBox.Text;
+            outputReception.Total = Int32.Parse(TotalTextBox.Text);
+
+            rc.InsertOutputReceptionAndInventory(outputReception);
         }
 
         private void generarInformeToolStripMenuItem_Click(object sender, EventArgs e)
