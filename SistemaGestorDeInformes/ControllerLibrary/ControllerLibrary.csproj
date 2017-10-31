@@ -74,6 +74,7 @@
     <Compile Include="ReportSheetController.cs" />
     <Compile Include="TrimesterController.cs" />
     <Compile Include="UserController.cs" />
+    <Compile Include="Util.cs" />
     <Compile Include="ValidationTextBox.cs" />
   </ItemGroup>
   <ItemGroup>
