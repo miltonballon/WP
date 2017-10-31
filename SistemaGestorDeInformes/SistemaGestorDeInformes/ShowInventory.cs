@@ -24,14 +24,6 @@ namespace SistemaGestorDeInformes
             chargeData();
         }
 
-        private void buttonAtrás_Click(object sender, EventArgs e)
-        {
-            Main principal = new Main();//para volver atras
-            principal.WindowState = this.WindowState;
-            this.Hide();
-            principal.Show();
-        }
-
         private void pantallaPrincipalToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Main principal = new Main();//para volver atras
@@ -140,46 +132,9 @@ namespace SistemaGestorDeInformes
             Interfaz.Show();
         }
 
-        private void searchButton_Click(object sender, EventArgs e)
-        {
-            dataGridView1.Rows.Clear();
-            dataGridView1.Refresh();
-            List<Reception> receptions = new List<Reception>();
-            receptions = receptionController.searchReception(searchTextBox.Text);
-           
-            
-            foreach (Reception reception in receptions)
-            {
-                Product product = reception.Product;
-                String productsName = product.Name,
-                       unit = product.Unit,
-                       total = reception.Total + "";
-
-                String[] row = new String[] { productsName, unit, total };
-                dataGridView1.Rows.Add(row);
-            }
-           
-            
-        }
-
-        private void cleanButton_Click(object sender, EventArgs e)
-        {
-            dataGridView1.Rows.Clear();
-            dataGridView1.Refresh();
-            chargeData();
-        }
-
         private void ShowInventory_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
-        }
-
-        private void searchTextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar >= 48 && e.KeyChar <= 57) || (e.KeyChar >= 97 && e.KeyChar <= 122) || (e.KeyChar >= 65 && e.KeyChar <= 90) || (e.KeyChar == 8) || (e.KeyChar == 32))
-                e.Handled = false;
-            else
-                e.Handled = true;
         }
 
         private void ShowInventory_KeyUp(object sender, KeyEventArgs e)
@@ -195,6 +150,47 @@ namespace SistemaGestorDeInformes
             Interfaz.WindowState = this.WindowState;
             this.Hide();
             Interfaz.Show();
+        }
+
+        private void search_Textbox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidationTextBox tr = new ValidationTextBox();
+            tr.CharacterEspecial(sender, e);
+        }
+
+        private void Search_Button_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Rows.Clear();
+            dataGridView1.Refresh();
+            List<Reception> receptions = new List<Reception>();
+            receptions = receptionController.searchReception(search_Textbox.Text);
+
+
+            foreach (Reception reception in receptions)
+            {
+                Product product = reception.Product;
+                String productsName = product.Name,
+                       unit = product.Unit,
+                       total = reception.Total + "";
+
+                String[] row = new String[] { productsName, unit, total };
+                dataGridView1.Rows.Add(row);
+            }
+        }
+
+        private void Clean_Button_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Rows.Clear();
+            dataGridView1.Refresh();
+            chargeData();
+        }
+
+        private void Atras_button_Click(object sender, EventArgs e)
+        {
+            Main principal = new Main();//para volver atras
+            principal.WindowState = this.WindowState;
+            this.Hide();
+            principal.Show();
         }
 
         private void searchTextBox_TextChanged(object sender, EventArgs e)

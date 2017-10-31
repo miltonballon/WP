@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.button2 = new System.Windows.Forms.Button();
-            this.RegistrarButton = new System.Windows.Forms.Button();
+            this.Registrar_Button = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.pantallaPrincipalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.facturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,7 +52,7 @@
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ProductoLabel = new System.Windows.Forms.Label();
             this.ProveedorLabel = new System.Windows.Forms.Label();
-            this.txtboxbecas = new System.Windows.Forms.TextBox();
+            this.Becas_textbox = new System.Windows.Forms.TextBox();
             this.labelInformaciónBásica = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -75,18 +75,18 @@
             this.button2.Text = "Atrás";
             this.button2.UseVisualStyleBackColor = false;
             // 
-            // RegistrarButton
+            // Registrar_Button
             // 
-            this.RegistrarButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.RegistrarButton.BackColor = System.Drawing.Color.Black;
-            this.RegistrarButton.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
-            this.RegistrarButton.ForeColor = System.Drawing.Color.Yellow;
-            this.RegistrarButton.Location = new System.Drawing.Point(292, 409);
-            this.RegistrarButton.Name = "RegistrarButton";
-            this.RegistrarButton.Size = new System.Drawing.Size(120, 30);
-            this.RegistrarButton.TabIndex = 39;
-            this.RegistrarButton.Text = "Guardar";
-            this.RegistrarButton.UseVisualStyleBackColor = false;
+            this.Registrar_Button.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Registrar_Button.BackColor = System.Drawing.Color.Black;
+            this.Registrar_Button.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
+            this.Registrar_Button.ForeColor = System.Drawing.Color.Yellow;
+            this.Registrar_Button.Location = new System.Drawing.Point(292, 409);
+            this.Registrar_Button.Name = "Registrar_Button";
+            this.Registrar_Button.Size = new System.Drawing.Size(120, 30);
+            this.Registrar_Button.TabIndex = 39;
+            this.Registrar_Button.Text = "Guardar";
+            this.Registrar_Button.UseVisualStyleBackColor = false;
             // 
             // menuStrip1
             // 
@@ -278,13 +278,13 @@
             this.ProveedorLabel.TabIndex = 44;
             this.ProveedorLabel.Text = "UNIDADES PREVIAS AL AGOTAMIENTO DE RECERVAS DE UN PRODUCTO ANTES DE";
             // 
-            // txtboxbecas
+            // Becas_textbox
             // 
-            this.txtboxbecas.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtboxbecas.Location = new System.Drawing.Point(292, 119);
-            this.txtboxbecas.Name = "txtboxbecas";
-            this.txtboxbecas.Size = new System.Drawing.Size(241, 20);
-            this.txtboxbecas.TabIndex = 41;
+            this.Becas_textbox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Becas_textbox.Location = new System.Drawing.Point(292, 119);
+            this.Becas_textbox.Name = "Becas_textbox";
+            this.Becas_textbox.Size = new System.Drawing.Size(241, 20);
+            this.Becas_textbox.TabIndex = 41;
             this.txtboxbecas.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtboxbecas_KeyPress);
             // 
             // labelInformaciónBásica
@@ -332,6 +332,11 @@
             this.Cantidad.HeaderText = "Cantidad";
             this.Cantidad.Name = "Cantidad";
             // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            // 
             // InventoryConfiguration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -342,10 +347,10 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ProductoLabel);
             this.Controls.Add(this.ProveedorLabel);
-            this.Controls.Add(this.txtboxbecas);
+            this.Controls.Add(this.Becas_textbox);
             this.Controls.Add(this.labelInformaciónBásica);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.RegistrarButton);
+            this.Controls.Add(this.Registrar_Button);
             this.Controls.Add(this.button2);
             this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "InventoryConfiguration";
@@ -362,7 +367,7 @@
         #endregion
 
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button RegistrarButton;
+        private System.Windows.Forms.Button Registrar_Button;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem pantallaPrincipalToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem facturasToolStripMenuItem;
@@ -384,7 +389,7 @@
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.Label ProductoLabel;
         private System.Windows.Forms.Label ProveedorLabel;
-        private System.Windows.Forms.TextBox txtboxbecas;
+        private System.Windows.Forms.TextBox Becas_textbox;
         private System.Windows.Forms.Label labelInformaciónBásica;
         private System.Windows.Forms.ToolStripMenuItem inventarioToolStripMenuItem1;
         private System.Windows.Forms.Label label1;

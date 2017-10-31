@@ -167,6 +167,12 @@
     <Compile Include="ShowProducts.Designer.cs">
       <DependentUpon>ShowProducts.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewReport.Designer.cs">
+      <DependentUpon>ViewReport.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FirstSetup.resx">
       <DependentUpon>FirstSetup.cs</DependentUpon>
     </EmbeddedResource>
@@ -226,6 +232,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ShowProducts.resx">
       <DependentUpon>ShowProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewReport.resx">
+      <DependentUpon>ViewReport.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

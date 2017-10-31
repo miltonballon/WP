@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonAtrás = new System.Windows.Forms.Button();
+            this.Atras_button = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Unidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,26 +54,26 @@
             this.abrirTrimestreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.labelInformaciónBásica = new System.Windows.Forms.Label();
-            this.searchTextBox = new System.Windows.Forms.TextBox();
-            this.searchButton = new System.Windows.Forms.Button();
-            this.cleanButton = new System.Windows.Forms.Button();
+            this.search_Textbox = new System.Windows.Forms.TextBox();
+            this.Search_Button = new System.Windows.Forms.Button();
+            this.Clean_Button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // buttonAtrás
+            // Atras_button
             // 
-            this.buttonAtrás.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonAtrás.BackColor = System.Drawing.Color.Black;
-            this.buttonAtrás.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAtrás.ForeColor = System.Drawing.Color.Yellow;
-            this.buttonAtrás.Location = new System.Drawing.Point(3, 472);
-            this.buttonAtrás.Name = "buttonAtrás";
-            this.buttonAtrás.Size = new System.Drawing.Size(120, 30);
-            this.buttonAtrás.TabIndex = 16;
-            this.buttonAtrás.Text = "Atrás";
-            this.buttonAtrás.UseVisualStyleBackColor = false;
-            this.buttonAtrás.Click += new System.EventHandler(this.buttonAtrás_Click);
+            this.Atras_button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.Atras_button.BackColor = System.Drawing.Color.Black;
+            this.Atras_button.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Atras_button.ForeColor = System.Drawing.Color.Yellow;
+            this.Atras_button.Location = new System.Drawing.Point(3, 472);
+            this.Atras_button.Name = "Atras_button";
+            this.Atras_button.Size = new System.Drawing.Size(120, 30);
+            this.Atras_button.TabIndex = 16;
+            this.Atras_button.Text = "Atrás";
+            this.Atras_button.UseVisualStyleBackColor = false;
+            this.Atras_button.Click += new System.EventHandler(this.Atras_button_Click);
             // 
             // dataGridView1
             // 
@@ -280,50 +280,47 @@
             this.labelInformaciónBásica.TabIndex = 18;
             this.labelInformaciónBásica.Text = "Lista De Productos En El Inventario";
             // 
-            // searchTextBox
+            // search_Textbox
             // 
-            this.searchTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.searchTextBox.Location = new System.Drawing.Point(406, 81);
-            this.searchTextBox.Name = "searchTextBox";
-            this.searchTextBox.Size = new System.Drawing.Size(150, 20);
-            this.searchTextBox.TabIndex = 19;
-            this.searchTextBox.TextChanged += new System.EventHandler(this.searchTextBox_TextChanged);
-            this.searchTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.searchTextBox_KeyPress);
+            this.search_Textbox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.search_Textbox.Location = new System.Drawing.Point(406, 81);
+            this.search_Textbox.Name = "search_Textbox";
+            this.search_Textbox.Size = new System.Drawing.Size(150, 20);
+            this.search_Textbox.TabIndex = 19;
+            this.search_Textbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.search_Textbox_KeyPress);
             // 
-            // searchButton
+            // Search_Button
             // 
-            this.searchButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.searchButton.Location = new System.Drawing.Point(405, 107);
-            this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(75, 23);
-            this.searchButton.TabIndex = 20;
-            this.searchButton.Text = "Buscar";
-            this.searchButton.UseVisualStyleBackColor = true;
-            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
+            this.Search_Button.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Search_Button.Location = new System.Drawing.Point(405, 107);
+            this.Search_Button.Name = "Search_Button";
+            this.Search_Button.Size = new System.Drawing.Size(75, 23);
+            this.Search_Button.TabIndex = 20;
+            this.Search_Button.Text = "Buscar";
+            this.Search_Button.UseVisualStyleBackColor = true;
+            this.Search_Button.Click += new System.EventHandler(this.Search_Button_Click);
             // 
-            // cleanButton
-            // 
-            this.cleanButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cleanButton.Location = new System.Drawing.Point(406, 136);
-            this.cleanButton.Name = "cleanButton";
-            this.cleanButton.Size = new System.Drawing.Size(75, 23);
-            this.cleanButton.TabIndex = 21;
-            this.cleanButton.Text = "Limpiar";
-            this.cleanButton.UseVisualStyleBackColor = true;
-            this.cleanButton.Click += new System.EventHandler(this.cleanButton_Click);
-            // 
+            // Clean_Button
+            this.Clean_Button.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Clean_Button.Location = new System.Drawing.Point(406, 136);
+            this.Clean_Button.Name = "Clean_Button";
+            this.Clean_Button.Size = new System.Drawing.Size(75, 23);
+            this.Clean_Button.TabIndex = 21;
+            this.Clean_Button.Text = "Limpiar";
+            this.Clean_Button.UseVisualStyleBackColor = true;
+            this.Clean_Button.Click += new System.EventHandler(this.Clean_Button_Click);
             // ShowInventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(815, 508);
-            this.Controls.Add(this.cleanButton);
-            this.Controls.Add(this.searchButton);
-            this.Controls.Add(this.searchTextBox);
+            this.Controls.Add(this.Clean_Button);
+            this.Controls.Add(this.Search_Button);
+            this.Controls.Add(this.search_Textbox);
             this.Controls.Add(this.labelInformaciónBásica);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.buttonAtrás);
+            this.Controls.Add(this.Atras_button);
             this.Controls.Add(this.dataGridView1);
             this.Name = "ShowInventory";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -341,7 +338,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button buttonAtrás;
+        private System.Windows.Forms.Button Atras_button;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Unidad;
@@ -366,9 +363,9 @@
         private System.Windows.Forms.ToolStripMenuItem abrirTrimestreToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.Label labelInformaciónBásica;
-        private System.Windows.Forms.TextBox searchTextBox;
-        private System.Windows.Forms.Button searchButton;
-        private System.Windows.Forms.Button cleanButton;
+        private System.Windows.Forms.TextBox search_Textbox;
+        private System.Windows.Forms.Button Search_Button;
+        private System.Windows.Forms.Button Clean_Button;
         private System.Windows.Forms.ToolStripMenuItem inventarioToolStripMenuItem1;
     }
 }

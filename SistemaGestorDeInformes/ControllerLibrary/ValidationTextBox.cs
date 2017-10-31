@@ -33,5 +33,14 @@ namespace ControllerLibrary
         }
 
 
+        public virtual void CharacterEspecial(object sender, KeyPressEventArgs e)
+        {
+            EventHandler handler = ThresholdReached;
+            if ((e.KeyChar >= 48 && e.KeyChar <= 57) || (e.KeyChar >= 97 && e.KeyChar <= 122) || (e.KeyChar >= 65 && e.KeyChar <= 90) || (e.KeyChar == 8) || (e.KeyChar == 32))
+                e.Handled = false;
+            else
+                e.Handled = true;
+        }
+        
     }
 }

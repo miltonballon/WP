@@ -48,7 +48,7 @@
             this.inventarioToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.abrirTrimestreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.buttonAtrás = new System.Windows.Forms.Button();
+            this.Atras_Button = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.NFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -219,7 +219,7 @@
             // 
             this.abrirTrimestreToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.abrirTrimestreToolStripMenuItem.Name = "abrirTrimestreToolStripMenuItem";
-            this.abrirTrimestreToolStripMenuItem.Size = new System.Drawing.Size(98, 20);
+            this.abrirTrimestreToolStripMenuItem.Size = new System.Drawing.Size(97, 20);
             this.abrirTrimestreToolStripMenuItem.Text = "Abrir Trimestre";
             this.abrirTrimestreToolStripMenuItem.Click += new System.EventHandler(this.abrirTrimestreToolStripMenuItem_Click);
             // 
@@ -230,19 +230,19 @@
             this.salirToolStripMenuItem.Text = "Cerrar Sesión";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
-            // buttonAtrás
+            // Atras_Button
             // 
-            this.buttonAtrás.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonAtrás.BackColor = System.Drawing.Color.Black;
-            this.buttonAtrás.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAtrás.ForeColor = System.Drawing.Color.Yellow;
-            this.buttonAtrás.Location = new System.Drawing.Point(3, 472);
-            this.buttonAtrás.Name = "buttonAtrás";
-            this.buttonAtrás.Size = new System.Drawing.Size(120, 30);
-            this.buttonAtrás.TabIndex = 15;
-            this.buttonAtrás.Text = "Atrás";
-            this.buttonAtrás.UseVisualStyleBackColor = false;
-            this.buttonAtrás.Click += new System.EventHandler(this.buttonAtrás_Click);
+            this.Atras_Button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.Atras_Button.BackColor = System.Drawing.Color.Black;
+            this.Atras_Button.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Atras_Button.ForeColor = System.Drawing.Color.Yellow;
+            this.Atras_Button.Location = new System.Drawing.Point(3, 472);
+            this.Atras_Button.Name = "Atras_Button";
+            this.Atras_Button.Size = new System.Drawing.Size(120, 30);
+            this.Atras_Button.TabIndex = 15;
+            this.Atras_Button.Text = "Atrás";
+            this.Atras_Button.UseVisualStyleBackColor = false;
+            this.Atras_Button.Click += new System.EventHandler(this.Atras_Button_Click);
             // 
             // label1
             // 
@@ -304,7 +304,7 @@
             this.ClientSize = new System.Drawing.Size(815, 508);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.buttonAtrás);
+            this.Controls.Add(this.Atras_Button);
             this.Controls.Add(this.menuStrip1);
             this.Name = "ShowBills";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -340,7 +340,7 @@
         private System.Windows.Forms.ToolStripMenuItem configuraciónToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem informeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem abrirTrimestreToolStripMenuItem;
-        private System.Windows.Forms.Button buttonAtrás;
+        private System.Windows.Forms.Button Atras_Button;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;

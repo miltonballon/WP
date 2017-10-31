@@ -32,11 +32,11 @@
             this.ProductoLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.ProveedorLabel = new System.Windows.Forms.Label();
-            this.RegistrarButton = new System.Windows.Forms.Button();
+            this.Registrar_Button = new System.Windows.Forms.Button();
             this.atrasButton = new System.Windows.Forms.Button();
-            this.Unit = new System.Windows.Forms.TextBox();
-            this.ProviderTextBox = new System.Windows.Forms.TextBox();
-            this.ProductTextBox = new System.Windows.Forms.TextBox();
+            this.Unit_TextBox = new System.Windows.Forms.TextBox();
+            this.Provider_TextBox = new System.Windows.Forms.TextBox();
+            this.Product_TextBox = new System.Windows.Forms.TextBox();
             this.FreshRadioButton = new System.Windows.Forms.RadioButton();
             this.DryRadioButton = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
@@ -85,18 +85,18 @@
             this.ProveedorLabel.TabIndex = 22;
             this.ProveedorLabel.Text = "PROVEEDOR:";
             // 
-            // RegistrarButton
+            // Registrar_Button
             // 
-            this.RegistrarButton.BackColor = System.Drawing.Color.Black;
-            this.RegistrarButton.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
-            this.RegistrarButton.ForeColor = System.Drawing.Color.Yellow;
-            this.RegistrarButton.Location = new System.Drawing.Point(238, 276);
-            this.RegistrarButton.Name = "RegistrarButton";
-            this.RegistrarButton.Size = new System.Drawing.Size(120, 30);
-            this.RegistrarButton.TabIndex = 21;
-            this.RegistrarButton.Text = "Guardar";
-            this.RegistrarButton.UseVisualStyleBackColor = false;
-            this.RegistrarButton.Click += new System.EventHandler(this.RegistrarButton_Click);
+            this.Registrar_Button.BackColor = System.Drawing.Color.Black;
+            this.Registrar_Button.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
+            this.Registrar_Button.ForeColor = System.Drawing.Color.Yellow;
+            this.Registrar_Button.Location = new System.Drawing.Point(238, 276);
+            this.Registrar_Button.Name = "Registrar_Button";
+            this.Registrar_Button.Size = new System.Drawing.Size(120, 30);
+            this.Registrar_Button.TabIndex = 21;
+            this.Registrar_Button.Text = "Guardar";
+            this.Registrar_Button.UseVisualStyleBackColor = false;
+            this.Registrar_Button.Click += new System.EventHandler(this.Registrar_Button_Click);
             // 
             // atrasButton
             // 
@@ -111,26 +111,26 @@
             this.atrasButton.UseVisualStyleBackColor = false;
             this.atrasButton.Click += new System.EventHandler(this.atrasButton_Click);
             // 
-            // Unit
+            // Unit_TextBox
             // 
-            this.Unit.Location = new System.Drawing.Point(197, 175);
-            this.Unit.Name = "Unit";
-            this.Unit.Size = new System.Drawing.Size(250, 20);
-            this.Unit.TabIndex = 19;
+            this.Unit_TextBox.Location = new System.Drawing.Point(197, 175);
+            this.Unit_TextBox.Name = "Unit_TextBox";
+            this.Unit_TextBox.Size = new System.Drawing.Size(250, 20);
+            this.Unit_TextBox.TabIndex = 19;
             // 
-            // ProviderTextBox
+            // Provider_TextBox
             // 
-            this.ProviderTextBox.Location = new System.Drawing.Point(197, 136);
-            this.ProviderTextBox.Name = "ProviderTextBox";
-            this.ProviderTextBox.Size = new System.Drawing.Size(250, 20);
-            this.ProviderTextBox.TabIndex = 18;
+            this.Provider_TextBox.Location = new System.Drawing.Point(197, 136);
+            this.Provider_TextBox.Name = "Provider_TextBox";
+            this.Provider_TextBox.Size = new System.Drawing.Size(250, 20);
+            this.Provider_TextBox.TabIndex = 18;
             // 
-            // ProductTextBox
+            // Product_TextBox
             // 
-            this.ProductTextBox.Location = new System.Drawing.Point(197, 94);
-            this.ProductTextBox.Name = "ProductTextBox";
-            this.ProductTextBox.Size = new System.Drawing.Size(250, 20);
-            this.ProductTextBox.TabIndex = 17;
+            this.Product_TextBox.Location = new System.Drawing.Point(197, 94);
+            this.Product_TextBox.Name = "Product_TextBox";
+            this.Product_TextBox.Size = new System.Drawing.Size(250, 20);
+            this.Product_TextBox.TabIndex = 17;
             // 
             // FreshRadioButton
             // 
@@ -170,15 +170,14 @@
             this.Controls.Add(this.ProductoLabel);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.ProveedorLabel);
-            this.Controls.Add(this.RegistrarButton);
+            this.Controls.Add(this.Registrar_Button);
             this.Controls.Add(this.atrasButton);
-            this.Controls.Add(this.Unit);
-            this.Controls.Add(this.ProviderTextBox);
-            this.Controls.Add(this.ProductTextBox);
+            this.Controls.Add(this.Unit_TextBox);
+            this.Controls.Add(this.Provider_TextBox);
+            this.Controls.Add(this.Product_TextBox);
             this.Name = "ModifyProduct";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modificar Producto";
-            this.Load += new System.EventHandler(this.ModifyProduct_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -189,11 +188,11 @@
         private System.Windows.Forms.Label ProductoLabel;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label ProveedorLabel;
-        public System.Windows.Forms.Button RegistrarButton;
+        public System.Windows.Forms.Button Registrar_Button;
         private System.Windows.Forms.Button atrasButton;
-        public System.Windows.Forms.TextBox Unit;
-        public System.Windows.Forms.TextBox ProviderTextBox;
-        public System.Windows.Forms.TextBox ProductTextBox;
+        public System.Windows.Forms.TextBox Unit_TextBox;
+        public System.Windows.Forms.TextBox Provider_TextBox;
+        public System.Windows.Forms.TextBox Product_TextBox;
         public System.Windows.Forms.RadioButton FreshRadioButton;
         public System.Windows.Forms.RadioButton DryRadioButton;
     }

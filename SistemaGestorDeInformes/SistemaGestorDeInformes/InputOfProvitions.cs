@@ -27,50 +27,36 @@ namespace SistemaGestorDeInformes
 
         private void RegisterButton_Click(object sender, EventArgs e)
         {
-            product.Name=ProducTextBox.Text;
-            product.Provider=ProviderTextBox.Text;
-            product.Unit=UnitTextBox.Text;
-
-            Reception reception = new Reception(product, ExpirationDate.Value.ToString("dd/MM/yyyy"), ReceptionDate.Value.ToString("dd/MM/yyyy"), Int32.Parse(TotalReception.Text));
+            
             Inventory inventory = new Inventory(product, Int32.Parse(TotalReception.Text), ExpirationDate.Value.ToString("dd/MM/yyyy"));
 
-           // rc.RegisterReception(ProducTextBox,ProviderTextBox,UnitTextBox,ExpirationDate,ReceptionDate,TotalReception);
-            rc.RegisterReception(reception);
-        }
-        
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Main main = new Main();
-            main.WindowState = this.WindowState;
-            this.Hide();
-            main.Show();
-        }
-
+        }        
+       
         private void RegisterReception_Load(object sender, EventArgs e)
         {
-            rc.ProductAutoComplete(ProducTextBox);
-            rc.ProviderAutoComplete(ProviderTextBox);
-            rc.UnitAutoComplete(UnitTextBox);
+            rc.ProductAutoComplete(Produc_TextBox);
+            rc.ProviderAutoComplete(Provider_TextBox);
+            rc.UnitAutoComplete(Unit_TextBox);
 
-            ProducTextBox.MaxLength = 70;
-            ProviderTextBox.MaxLength = 70;
+            Produc_TextBox.MaxLength = 70;
+            Provider_TextBox.MaxLength = 70;
             UnitTextBox.MaxLength = 20;
-            TotalReception.MaxLength = 15;
+            TotalReception_Textbox.MaxLength = 15;
 
-            ProducTextBox.ShortcutsEnabled = false;
-            ProviderTextBox.ShortcutsEnabled = false;
-            UnitTextBox.ShortcutsEnabled = false;
-            TotalReception.ShortcutsEnabled = false;
+            Produc_TextBox.ShortcutsEnabled = false;
+            Provider_TextBox.ShortcutsEnabled = false;
+            Unit_TextBox.ShortcutsEnabled = false;
+            TotalReception_Textbox.ShortcutsEnabled = false;
 
             KeyPreview = true;
         }                
 
         private void buttonAtrás_Click(object sender, EventArgs e)
         {
-            Main principal = new Main();//para volver atras
-            principal.WindowState = this.WindowState;
+            Main main = new Main();
+            main.WindowState = this.WindowState;
             this.Hide();
-            principal.Show();
+            main.Show();
         }
 
         private void pantallaPrincipalToolStripMenuItem_Click(object sender, EventArgs e)
@@ -164,30 +150,6 @@ namespace SistemaGestorDeInformes
         {
             Application.Exit();
         }
-
-        private void ProducTextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar >= 48 && e.KeyChar <= 57) || (e.KeyChar >= 97 && e.KeyChar <= 122) || (e.KeyChar >= 65 && e.KeyChar <= 90) || (e.KeyChar == 8) || (e.KeyChar == 32))
-                e.Handled = false;
-            else
-                e.Handled = true;
-        }
-
-        private void ProviderTextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar >= 48 && e.KeyChar <= 57) || (e.KeyChar >= 97 && e.KeyChar <= 122) || (e.KeyChar >= 65 && e.KeyChar <= 90) || (e.KeyChar == 8) || (e.KeyChar == 32))
-                e.Handled = false;
-            else
-                e.Handled = true;
-        }
-
-        private void UnitTextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar >= 48 && e.KeyChar <= 57) || (e.KeyChar >= 97 && e.KeyChar <= 122) || (e.KeyChar >= 65 && e.KeyChar <= 90) || (e.KeyChar == 8) || (e.KeyChar == 32))
-                e.Handled = false;
-            else
-                e.Handled = true;
-        }               
         
         private void TotalReception_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -210,9 +172,32 @@ namespace SistemaGestorDeInformes
             Interfaz.Show();
         }
 
-        private void FreshRadioButton_CheckedChanged(object sender, EventArgs e)
+        private void Produc_TextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-          
+            ValidationTextBox tr = new ValidationTextBox();
+            tr.CharacterEspecial(sender, e);
+        }
+
+        private void Provider_TextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidationTextBox tr = new ValidationTextBox();
+            tr.CharacterEspecial(sender, e);
+        }
+
+        private void Unit_TextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidationTextBox tr = new ValidationTextBox();
+            tr.CharacterEspecial(sender, e);
+        }
+
+        private void Register_Button_Click(object sender, EventArgs e)
+        {
+            product.Name = Produc_TextBox.Text;
+            product.Provider = Provider_TextBox.Text;
+            product.Unit = Unit_TextBox.Text;
+
+            Reception reception = new Reception(product, ExpirationDate.Value.ToString("dd/MM/yyyy"), ReceptionDate.Value.ToString("dd/MM/yyyy"), Int32.Parse(TotalReception_Textbox.Text));
+            rc.RegisterReception(reception);
         }
     }
 }

@@ -71,14 +71,6 @@ namespace SistemaGestorDeInformes
             ShowProducts1.Show();
         }
 
-        private void buttonAtrás_Click(object sender, EventArgs e)
-        {
-            Main principal = new Main();//para volver atras
-            principal.WindowState = this.WindowState;
-            this.Hide();
-            principal.Show();
-        }
-
         private void informeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ReportConfiguration ReportConfiguration1 = new ReportConfiguration();
@@ -213,6 +205,14 @@ namespace SistemaGestorDeInformes
             Interfaz.WindowState = this.WindowState;
             this.Hide();
             Interfaz.Show();
+        }
+
+        private void Atras_Button_Click(object sender, EventArgs e)
+        {
+            Main principal = new Main();//para volver atras
+            principal.WindowState = this.WindowState;
+            this.Hide();
+            principal.Show();
         }
     }
 }

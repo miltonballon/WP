@@ -28,32 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button5 = new System.Windows.Forms.Button();
-            this.txtbxCorreo = new System.Windows.Forms.TextBox();
+            this.Enviar_button = new System.Windows.Forms.Button();
+            this.Correo_textbox = new System.Windows.Forms.TextBox();
             this.labelInformaciónBásica = new System.Windows.Forms.Label();
             this.atrasButton = new System.Windows.Forms.Button();
             this.labelProveedor = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // button5
+            // Enviar_button
             // 
-            this.button5.BackColor = System.Drawing.Color.Black;
-            this.button5.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.Yellow;
-            this.button5.Location = new System.Drawing.Point(320, 234);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(120, 30);
-            this.button5.TabIndex = 17;
-            this.button5.Text = "Enviar";
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click_1);
+            this.Enviar_button.BackColor = System.Drawing.Color.Black;
+            this.Enviar_button.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Enviar_button.ForeColor = System.Drawing.Color.Yellow;
+            this.Enviar_button.Location = new System.Drawing.Point(320, 234);
+            this.Enviar_button.Name = "Enviar_button";
+            this.Enviar_button.Size = new System.Drawing.Size(120, 30);
+            this.Enviar_button.TabIndex = 17;
+            this.Enviar_button.Text = "Enviar";
+            this.Enviar_button.UseVisualStyleBackColor = false;
+            this.Enviar_button.Click += new System.EventHandler(this.Enviar_button_Click);
             // 
-            // txtbxCorreo
+            // Correo_textbox
             // 
-            this.txtbxCorreo.Location = new System.Drawing.Point(320, 186);
-            this.txtbxCorreo.Name = "txtbxCorreo";
-            this.txtbxCorreo.Size = new System.Drawing.Size(250, 20);
-            this.txtbxCorreo.TabIndex = 19;
+            this.Correo_textbox.Location = new System.Drawing.Point(320, 186);
+            this.Correo_textbox.Name = "Correo_textbox";
+            this.Correo_textbox.Size = new System.Drawing.Size(250, 20);
+            this.Correo_textbox.TabIndex = 19;
+            this.Correo_textbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Correo_textbox_KeyPress);
             // 
             // labelInformaciónBásica
             // 
@@ -99,8 +100,8 @@
             this.Controls.Add(this.labelProveedor);
             this.Controls.Add(this.atrasButton);
             this.Controls.Add(this.labelInformaciónBásica);
-            this.Controls.Add(this.txtbxCorreo);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.Correo_textbox);
+            this.Controls.Add(this.Enviar_button);
             this.Name = "ForgotPassword";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Recuperar Contreseña";
@@ -111,8 +112,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.TextBox txtbxCorreo;
+        private System.Windows.Forms.Button Enviar_button;
+        private System.Windows.Forms.TextBox Correo_textbox;
         private System.Windows.Forms.Label labelInformaciónBásica;
         private System.Windows.Forms.Button atrasButton;
         private System.Windows.Forms.Label labelProveedor;
