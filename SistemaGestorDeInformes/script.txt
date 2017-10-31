@@ -50,7 +50,10 @@ CREATE TABLE `invoice_row` (
 CREATE TABLE `Configuration` (
 	`id`		INTEGER PRIMARY KEY AUTOINCREMENT,
 	`scholarships`	INTEGER,
-	`n_departure`	INTEGER
+	`n_departure`	INTEGER,
+	`days_left`	INTEGER,
+	`minimum_quantity` INTEGER
+
 );
 
 CREATE TABLE `trimester` (
