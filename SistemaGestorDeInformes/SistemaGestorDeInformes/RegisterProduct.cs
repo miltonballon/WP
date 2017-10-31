@@ -135,7 +135,7 @@ namespace SistemaGestorDeInformes
         {
             ProductTextBox.MaxLength = 70;
             ProviderTextBox.MaxLength = 70;
-            Unit.MaxLength = 3;
+            Unit.MaxLength = 20;
 
             ProductTextBox.ShortcutsEnabled = false;
             ProviderTextBox.ShortcutsEnabled = false;
