@@ -5,19 +5,23 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SQLite;
 using System.Windows.Forms;
+using EntityLibrary;
 
-namespace SistemaGestorDeInformes
+namespace ControllerLibrary
 {
     public class OutputReceptionController
     {
         private Connection c = new Connection();
         private ProductController productController;
         private ReceptionController receptionController;
+        private InventoryController inventoryController;
+
         public OutputReceptionController()
         {
             c.connect();
             productController = new ProductController();
             receptionController = new ReceptionController();
+            inventoryController = new InventoryController();
         }
         public void ProductAutoComplete(TextBox Product)
         {
@@ -56,6 +60,7 @@ namespace SistemaGestorDeInformes
             c.dataClose();
             data.Close();
         }
+        /*
         public void RegisterOutputReception(TextBox Product, TextBox Unit,TextBox OutputDate, TextBox Total)
         {
             int idName = getIdName(Product.Text.ToString());
@@ -104,11 +109,57 @@ namespace SistemaGestorDeInformes
             }
         }
 
-
-
-        public void InsertOutputReception(int id, TextBox outputDate, TextBox total)
+        */
+        public void InsertOutputReceptionAndInventory(OutputReception outputReception)
         {
-            string query = "INSERT INTO OutputReception (id_reception,output_total,output_date) values('" + id + "','" + Int32.Parse(total.Text) + "','" + outputDate.Text + "')";
+            int idName = getIdName(outputReception.Reception.Product.Name);
+
+            int idUnit = getIdUnit(outputReception.Reception.Product.Unit);
+            int notExist = -1;
+            string queryPPU = "SELECT id FROM Product_Provider_Unit where id_prod='" + idName + "' and id_uni='" + idUnit + "'";
+            SQLiteDataReader data = c.query_show(queryPPU);
+            
+            int resul = -1;
+            while (data.Read())
+            {
+                resul = Int32.Parse(data[0].ToString());
+            }
+            //c.dataClose();
+            data.Close();
+
+            string queryIDReception = "SELECT id FROM Reception where ppu_id='" + resul + "'";
+            SQLiteDataReader data2 = c.query_show(queryIDReception);
+
+            int resulReception = -1;
+            while (data2.Read())
+            {
+                resulReception = Int32.Parse(data2[0].ToString());
+            }
+            c.dataClose();
+            data2.Close();
+            if (idName != notExist && idUnit != notExist && resul != notExist && resulReception != notExist)
+            {
+                
+                if (inventoryController.ifProductIsAvailable(outputReception,resul))
+                {
+                    InsertOutputReception(resulReception, outputReception);
+                    inventoryController.ModifyInventory(resul, outputReception);
+                    MessageBox.Show("Salida registrada correctamente");
+
+                }
+                else
+                {
+                    MessageBox.Show("No se posee tantas reservas en el inventario, retire una suma menor");
+                }
+            }
+            
+            
+            
+        }
+        public void InsertOutputReception(int id, OutputReception reception)
+        {
+
+            string query = "INSERT INTO OutputReception (id_reception,output_total,output_date) values('" + id + "','" + reception.Total + "','" + reception.OutputDate + "')";
             c.executeInsertion(query);
         }
         public int getIdName(string name)

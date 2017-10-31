@@ -7,21 +7,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ControllerLibrary;
+using EntityLibrary;
 
 namespace SistemaGestorDeInformes
 {
     public partial class ModifyProduct : Form
     {
         ProductController pc;
+        Product product;
         public ModifyProduct()
         {
             InitializeComponent();
             pc = new ProductController();
+            product = new Product();
         }
-
+        public void registerClassProduct()
+        {
+            product.Name = Product_TextBox.Text;
+            product.Provider = Provider_TextBox.Text;
+            product.Unit = Unit_TextBox.Text;
+        }
         private void atrasButton_Click(object sender, EventArgs e)
         {
-            Product product = new Product(ProductTextBox.Text, ProviderTextBox.Text, Unit.Text);
+            registerClassProduct();
+
             pc.insertProduct(product);
             pc.addReferencesToTableProduct_Provider_Unit(product);
             ShowProducts ShowProducts1 = new ShowProducts();
@@ -30,9 +40,22 @@ namespace SistemaGestorDeInformes
             ShowProducts1.Show();
         }
 
-        private void RegistrarButton_Click(object sender, EventArgs e)
+
+
+
+        private void FreshRadioButton_CheckedChanged(object sender, EventArgs e)
         {
-            Product product = new Product(ProductTextBox.Text, ProviderTextBox.Text, Unit.Text);
+            product.Clasification = "Fresco";
+        }
+
+        private void DryRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            product.Clasification = "Seco";
+        }
+
+        private void Registrar_Button_Click(object sender, EventArgs e)
+        {
+            registerClassProduct();
             pc.insertProduct(product);
             pc.addReferencesToTableProduct_Provider_Unit(product);
             MessageBox.Show("Editado exitosamente");
@@ -40,11 +63,6 @@ namespace SistemaGestorDeInformes
             main.WindowState = this.WindowState;
             main.Show();
             this.Hide();
-        }
-
-        private void ModifyProduct_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

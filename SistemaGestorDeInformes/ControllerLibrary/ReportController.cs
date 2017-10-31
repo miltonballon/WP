@@ -5,13 +5,16 @@ using System.Text;
 using System.Threading.Tasks;
 using EntityLibrary;
 using System.Data.SQLite;
+using Microsoft.Office.Interop.Excel;
+using System.Runtime.InteropServices;
 
-namespace SistemaGestorDeInformes
+namespace ControllerLibrary
 {
-    class ReportController
+    public class ReportController
     {
         private Connection c;
         private ReportSheetController reportSheetController;
+        private readonly int EXCELNOTINSTALLED = -1;
         public ReportController()
         {
             c = new Connection();
@@ -79,6 +82,61 @@ namespace SistemaGestorDeInformes
                 , year = Int32.Parse(dates[2]);
             date = new DateTime(year, month, day);
             return date;
+        }
+
+        public int generateExcel(Report report)
+        {
+            int output;
+            Application xlApp = new Microsoft.Office.Interop.Excel.Application();
+
+            if (xlApp == null)
+            {
+                output = EXCELNOTINSTALLED;
+            }
+            else
+            {
+                Workbook xlWorkBook;
+                Worksheet xlWorkSheet;
+                object misValue = System.Reflection.Missing.Value;
+                xlWorkBook = xlApp.Workbooks.Add(misValue);
+
+                List<ReportSheet> reportSheets = report.Sheets;
+                int numSheet = 1;
+                List<Worksheet> workSheets=new List<Worksheet>();
+                foreach (ReportSheet reportSheet in reportSheets)
+                {
+                    xlWorkSheet = (Worksheet)xlWorkBook.Worksheets.get_Item(numSheet);
+
+                    xlWorkSheet.Name = reportSheet.Type;
+                    fillInExcelCells(reportSheet.Cells, xlWorkSheet);
+                    workSheets.Add(xlWorkSheet);
+                    numSheet++;
+                }
+
+                xlWorkBook.SaveAs("d:\\"+report.Name+".xls", XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
+                xlWorkBook.Close(true, misValue, misValue);
+                xlApp.Quit();
+                foreach (Worksheet worksheet in workSheets)
+                {
+                    Marshal.ReleaseComObject(worksheet);
+                }
+                Marshal.ReleaseComObject(xlWorkBook);
+                Marshal.ReleaseComObject(xlApp);
+
+                output = 0;
+            }
+            return output;
+        }
+
+        private void fillInExcelCells(List<ReportSheetCell> cells, Worksheet workSheet)
+        {
+            foreach (ReportSheetCell cell in cells)
+            {
+                int row = cell.Row,
+                    column = cell.Column;
+                String content = cell.Content;
+                workSheet.Cells[row, column] = content;
+            }
         }
     }
 }

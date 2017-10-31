@@ -45,17 +45,16 @@
             this.verInventarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.configuraciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inventarioToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.abrirTrimestreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.labelInformaciónBásica = new System.Windows.Forms.Label();
             this.ProductoLabel = new System.Windows.Forms.Label();
             this.ProveedorLabel = new System.Windows.Forms.Label();
-            this.RegistrarButton = new System.Windows.Forms.Button();
-            this.atrasButton = new System.Windows.Forms.Button();
-            this.txtboxnpartida = new System.Windows.Forms.TextBox();
-            this.txtboxbecas = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.Registrar_Button = new System.Windows.Forms.Button();
+            this.Atras_Button = new System.Windows.Forms.Button();
+            this.NPartida_textbox = new System.Windows.Forms.TextBox();
+            this.becas_Textbox = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -189,7 +188,8 @@
             // 
             this.configuraciónToolStripMenuItem.BackColor = System.Drawing.Color.Black;
             this.configuraciónToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.informeToolStripMenuItem});
+            this.informeToolStripMenuItem,
+            this.inventarioToolStripMenuItem1});
             this.configuraciónToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.configuraciónToolStripMenuItem.Name = "configuraciónToolStripMenuItem";
             this.configuraciónToolStripMenuItem.Size = new System.Drawing.Size(95, 20);
@@ -199,8 +199,15 @@
             // 
             this.informeToolStripMenuItem.ForeColor = System.Drawing.Color.Gray;
             this.informeToolStripMenuItem.Name = "informeToolStripMenuItem";
-            this.informeToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.informeToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.informeToolStripMenuItem.Text = "Informe";
+            // 
+            // inventarioToolStripMenuItem1
+            // 
+            this.inventarioToolStripMenuItem1.Name = "inventarioToolStripMenuItem1";
+            this.inventarioToolStripMenuItem1.Size = new System.Drawing.Size(127, 22);
+            this.inventarioToolStripMenuItem1.Text = "Inventario";
+            this.inventarioToolStripMenuItem1.Click += new System.EventHandler(this.inventarioToolStripMenuItem1_Click);
             // 
             // abrirTrimestreToolStripMenuItem
             // 
@@ -223,9 +230,9 @@
             this.labelInformaciónBásica.ForeColor = System.Drawing.Color.Yellow;
             this.labelInformaciónBásica.Location = new System.Drawing.Point(30, 40);
             this.labelInformaciónBásica.Name = "labelInformaciónBásica";
-            this.labelInformaciónBásica.Size = new System.Drawing.Size(300, 19);
+            this.labelInformaciónBásica.Size = new System.Drawing.Size(303, 19);
             this.labelInformaciónBásica.TabIndex = 17;
-            this.labelInformaciónBásica.Text = "Configurar Preferencias De Informe";
+            this.labelInformaciónBásica.Text = "Configurar Preferencias del Informe";
             // 
             // ProductoLabel
             // 
@@ -233,7 +240,7 @@
             this.ProductoLabel.AutoSize = true;
             this.ProductoLabel.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProductoLabel.ForeColor = System.Drawing.Color.White;
-            this.ProductoLabel.Location = new System.Drawing.Point(77, 126);
+            this.ProductoLabel.Location = new System.Drawing.Point(125, 159);
             this.ProductoLabel.Name = "ProductoLabel";
             this.ProductoLabel.Size = new System.Drawing.Size(61, 19);
             this.ProductoLabel.TabIndex = 23;
@@ -245,86 +252,57 @@
             this.ProveedorLabel.AutoSize = true;
             this.ProveedorLabel.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProveedorLabel.ForeColor = System.Drawing.Color.White;
-            this.ProveedorLabel.Location = new System.Drawing.Point(77, 168);
+            this.ProveedorLabel.Location = new System.Drawing.Point(125, 201);
             this.ProveedorLabel.Name = "ProveedorLabel";
             this.ProveedorLabel.Size = new System.Drawing.Size(95, 19);
             this.ProveedorLabel.TabIndex = 22;
             this.ProveedorLabel.Text = "N. PARTIDA:";
             // 
-            // RegistrarButton
+            // Registrar_Button
             // 
-            this.RegistrarButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.RegistrarButton.BackColor = System.Drawing.Color.Black;
-            this.RegistrarButton.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
-            this.RegistrarButton.ForeColor = System.Drawing.Color.Yellow;
-            this.RegistrarButton.Location = new System.Drawing.Point(315, 371);
-            this.RegistrarButton.Name = "RegistrarButton";
-            this.RegistrarButton.Size = new System.Drawing.Size(120, 30);
-            this.RegistrarButton.TabIndex = 3;
-            this.RegistrarButton.Text = "Guardar";
-            this.RegistrarButton.UseVisualStyleBackColor = false;
-            this.RegistrarButton.Click += new System.EventHandler(this.RegistrarButton_Click);
+            this.Registrar_Button.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Registrar_Button.BackColor = System.Drawing.Color.Black;
+            this.Registrar_Button.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
+            this.Registrar_Button.ForeColor = System.Drawing.Color.Yellow;
+            this.Registrar_Button.Location = new System.Drawing.Point(292, 280);
+            this.Registrar_Button.Name = "Registrar_Button";
+            this.Registrar_Button.Size = new System.Drawing.Size(120, 30);
+            this.Registrar_Button.TabIndex = 3;
+            this.Registrar_Button.Text = "Guardar";
+            this.Registrar_Button.UseVisualStyleBackColor = false;
+            this.Registrar_Button.Click += new System.EventHandler(this.Registrar_Button_Click);
             // 
-            // atrasButton
+            // Atras_Button
             // 
-            this.atrasButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.atrasButton.BackColor = System.Drawing.Color.Black;
-            this.atrasButton.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
-            this.atrasButton.ForeColor = System.Drawing.Color.Yellow;
-            this.atrasButton.Location = new System.Drawing.Point(3, 537);
-            this.atrasButton.Name = "atrasButton";
-            this.atrasButton.Size = new System.Drawing.Size(120, 30);
-            this.atrasButton.TabIndex = 4;
-            this.atrasButton.Text = "Atrás";
-            this.atrasButton.UseVisualStyleBackColor = false;
-            this.atrasButton.Click += new System.EventHandler(this.atrasButton_Click);
+            this.Atras_Button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.Atras_Button.BackColor = System.Drawing.Color.Black;
+            this.Atras_Button.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
+            this.Atras_Button.ForeColor = System.Drawing.Color.Yellow;
+            this.Atras_Button.Location = new System.Drawing.Point(3, 472);
+            this.Atras_Button.Name = "Atras_Button";
+            this.Atras_Button.Size = new System.Drawing.Size(120, 30);
+            this.Atras_Button.TabIndex = 4;
+            this.Atras_Button.Text = "Atrás";
+            this.Atras_Button.UseVisualStyleBackColor = false;
+            this.Atras_Button.Click += new System.EventHandler(this.Atras_Button_Click);
             // 
-            // txtboxnpartida
+            // NPartida_textbox
             // 
-            this.txtboxnpartida.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtboxnpartida.Location = new System.Drawing.Point(244, 169);
-            this.txtboxnpartida.Name = "txtboxnpartida";
-            this.txtboxnpartida.Size = new System.Drawing.Size(250, 20);
-            this.txtboxnpartida.TabIndex = 2;
-            this.txtboxnpartida.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtboxnpartida_KeyPress);
-            this.txtboxnpartida.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtboxnpartida_KeyUp);
+            this.NPartida_textbox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.NPartida_textbox.Location = new System.Drawing.Point(292, 202);
+            this.NPartida_textbox.Name = "NPartida_textbox";
+            this.NPartida_textbox.Size = new System.Drawing.Size(250, 20);
+            this.NPartida_textbox.TabIndex = 2;
+            this.NPartida_textbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NPartida_textbox_KeyPress);
             // 
-            // txtboxbecas
+            // becas_Textbox
             // 
-            this.txtboxbecas.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtboxbecas.Location = new System.Drawing.Point(244, 127);
-            this.txtboxbecas.Name = "txtboxbecas";
-            this.txtboxbecas.Size = new System.Drawing.Size(250, 20);
-            this.txtboxbecas.TabIndex = 1;
-            this.txtboxbecas.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtboxbecas_KeyPress);
-            this.txtboxbecas.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtboxbecas_KeyUp);
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button1.BackColor = System.Drawing.Color.Black;
-            this.button1.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
-            this.button1.ForeColor = System.Drawing.Color.Yellow;
-            this.button1.Location = new System.Drawing.Point(3, 537);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 30);
-            this.button1.TabIndex = 36;
-            this.button1.Text = "Atrás";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button2.BackColor = System.Drawing.Color.Black;
-            this.button2.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
-            this.button2.ForeColor = System.Drawing.Color.Yellow;
-            this.button2.Location = new System.Drawing.Point(3, 472);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(120, 30);
-            this.button2.TabIndex = 37;
-            this.button2.Text = "Atrás";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.becas_Textbox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.becas_Textbox.Location = new System.Drawing.Point(292, 160);
+            this.becas_Textbox.Name = "becas_Textbox";
+            this.becas_Textbox.Size = new System.Drawing.Size(250, 20);
+            this.becas_Textbox.TabIndex = 1;
+            this.becas_Textbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.becas_Textbox_KeyPress);
             // 
             // ReportConfiguration
             // 
@@ -332,21 +310,20 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(815, 508);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.ProductoLabel);
             this.Controls.Add(this.ProveedorLabel);
-            this.Controls.Add(this.RegistrarButton);
-            this.Controls.Add(this.atrasButton);
-            this.Controls.Add(this.txtboxnpartida);
-            this.Controls.Add(this.txtboxbecas);
+            this.Controls.Add(this.Registrar_Button);
+            this.Controls.Add(this.Atras_Button);
+            this.Controls.Add(this.NPartida_textbox);
+            this.Controls.Add(this.becas_Textbox);
             this.Controls.Add(this.labelInformaciónBásica);
             this.Controls.Add(this.menuStrip1);
             this.Name = "ReportConfiguration";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Configuración del informe";
+            this.Text = "Configuración del Informe";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ReportConfiguration_FormClosing);
             this.Load += new System.EventHandler(this.ReportConfiguration_Load);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.ReportConfiguration_KeyUp);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -377,12 +354,11 @@
         private System.Windows.Forms.Label labelInformaciónBásica;
         private System.Windows.Forms.Label ProductoLabel;
         private System.Windows.Forms.Label ProveedorLabel;
-        private System.Windows.Forms.Button RegistrarButton;
-        private System.Windows.Forms.Button atrasButton;
-        private System.Windows.Forms.TextBox txtboxnpartida;
-        private System.Windows.Forms.TextBox txtboxbecas;
+        private System.Windows.Forms.Button Registrar_Button;
+        private System.Windows.Forms.Button Atras_Button;
+        private System.Windows.Forms.TextBox NPartida_textbox;
+        private System.Windows.Forms.TextBox becas_Textbox;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ToolStripMenuItem inventarioToolStripMenuItem1;
     }
 }

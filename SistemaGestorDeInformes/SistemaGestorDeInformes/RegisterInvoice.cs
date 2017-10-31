@@ -8,10 +8,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using EntityLibrary;
 
 namespace SistemaGestorDeInformes
 {
-    public partial class InterfazRegistrarFactura : Form
+    public partial class RegisterInvoice : Form
     {
         private InvoiceController invoiceController;
         ProviderController providerController;
@@ -21,7 +22,7 @@ namespace SistemaGestorDeInformes
         private List<Provider> providers;
         private bool modifying;
 
-        public InterfazRegistrarFactura()
+        public RegisterInvoice()
         {
             InitializeComponent();
             this.textBoxNit.KeyPress += new KeyPressEventHandler(textBoxNit_TextChanged);//Para impedir que se pongan letras y espacios en el NIT
@@ -34,7 +35,7 @@ namespace SistemaGestorDeInformes
             modifying = false;
         }
 
-        public InterfazRegistrarFactura(Invoice invoice)
+        public RegisterInvoice(Invoice invoice)
         {
             InitializeComponent();
             this.invoice = invoice;
@@ -48,6 +49,24 @@ namespace SistemaGestorDeInformes
             loadProviders();
             modifying = true;
             fillTextBoxes();
+            chargeData();
+        }
+
+        private void chargeData()
+        {
+            List<InvoiceRow> invoiceRows = invoice.getInvoiceRows();
+            foreach (InvoiceRow row in invoiceRows)
+            {
+                Product product = row.getProduct();
+                String productsName = product.Name,
+                       unit = product.Unit,
+                       quantity = row.getQuantity()+"",
+                       unitPrice=row.getUnitPrice()+"",
+                       total=row.getTotal()+"";
+
+                String[] rowData = new String[] { productsName, unit,quantity,unitPrice,total};
+                dataGridView1.Rows.Add(rowData);
+            }
         }
 
         private void fillTextBoxes()
@@ -75,7 +94,8 @@ namespace SistemaGestorDeInformes
             textBoxNit.MaxLength = 10;
             textBoxNFactura.MaxLength = 10;
             textBoxNAutorizacion.MaxLength = 10;
-            
+
+            KeyPreview = true;
         }
 
         private AutoCompleteStringCollection providersNames()
@@ -88,34 +108,25 @@ namespace SistemaGestorDeInformes
             return output;
         }
 
-        private void textBoxProveedor_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void textBoxNit_TextChanged(object sender, KeyPressEventArgs e)
         {
             //Para impedir que se pongan letras y espacios en el NIT
-            if (e.KeyChar != '1' && e.KeyChar != '2' && e.KeyChar != '3' && e.KeyChar != '4' && e.KeyChar != '5' && e.KeyChar != '6' && e.KeyChar != '7' && e.KeyChar != '8' && e.KeyChar != '9' && e.KeyChar != '0')
+            if (e.KeyChar != 08 && e.KeyChar != '1' && e.KeyChar != '2' && e.KeyChar != '3' && e.KeyChar != '4' && e.KeyChar != '5' && e.KeyChar != '6' && e.KeyChar != '7' && e.KeyChar != '8' && e.KeyChar != '9' && e.KeyChar != '0')
                 e.Handled = true;
         }
 
-        private void buttonAtrás_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void textBoxNFactura_TextChanged(object sender, KeyPressEventArgs e)
         {
             //Para impedir que se pongan letras y espacios en el N.FACTURA
-            if(e.KeyChar!='1' && e.KeyChar!= '2' && e.KeyChar != '3' && e.KeyChar != '4' && e.KeyChar != '5' && e.KeyChar != '6' && e.KeyChar != '7' && e.KeyChar != '8' && e.KeyChar != '9' && e.KeyChar != '0')
+            if(e.KeyChar != 08 && e.KeyChar!='1' && e.KeyChar!= '2' && e.KeyChar != '3' && e.KeyChar != '4' && e.KeyChar != '5' && e.KeyChar != '6' && e.KeyChar != '7' && e.KeyChar != '8' && e.KeyChar != '9' && e.KeyChar != '0')
                 e.Handled = true;
         }
 
         private void textBoxNAutorizacion_TextChanged(object sender, KeyPressEventArgs e)
         {
             //Para impedir que se pongan letras y espacios en el N.AUTORIZACION
-            if (e.KeyChar != '1' && e.KeyChar != '2' && e.KeyChar != '3' && e.KeyChar != '4' && e.KeyChar != '5' && e.KeyChar != '6' && e.KeyChar != '7' && e.KeyChar != '8' && e.KeyChar != '9' && e.KeyChar != '0')
+            if (e.KeyChar != 08 && e.KeyChar != '1' && e.KeyChar != '2' && e.KeyChar != '3' && e.KeyChar != '4' && e.KeyChar != '5' && e.KeyChar != '6' && e.KeyChar != '7' && e.KeyChar != '8' && e.KeyChar != '9' && e.KeyChar != '0')
                 e.Handled = true;
         }
 
@@ -201,7 +212,7 @@ namespace SistemaGestorDeInformes
 
         private void pantallaPrincipalToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            InterfazPrincipal principal = new InterfazPrincipal();
+            Main principal = new Main();
             principal.Show();
             principal.WindowState = this.WindowState;
             this.Hide();
@@ -218,7 +229,7 @@ namespace SistemaGestorDeInformes
             }
             else
             {
-                InterfazPrincipal principal = new InterfazPrincipal();//para volver atras
+                Main principal = new Main();//para volver atras
                 principal.WindowState = this.WindowState;
                 this.Hide();
                 principal.Show();
@@ -247,6 +258,7 @@ namespace SistemaGestorDeInformes
             invoice.setNAutorization(nAutorization);
             invoice.setProvider(provider);
             invoice.setDate(date);
+            setRows();
             invoiceController.updateInvoice(invoice,id);
             MessageBox.Show("Se logro actualizar los datos de la Factura");
             changeToShowBills();
@@ -309,17 +321,42 @@ namespace SistemaGestorDeInformes
 
         private void createAndAddProducts()
         {
-            int tamaño = (dataGridView1.Rows.Count)-1;
-            Object[] datos = new Object[5];
-            String proveedor = textBoxProveedor.Text;
-            for (int i = 0; i < tamaño ; i++)
+            int size = (dataGridView1.Rows.Count)-1;
+            Object[] data = new Object[5];
+            String provider = textBoxProveedor.Text;
+            for (int i = 0; i < size ; i++)
             {
                 for (int j = 0; j < dataGridView1.Rows[i].Cells.Count; j++)
                 {
-                    datos[j]=dataGridView1.Rows[i].Cells[j].Value;
+                    data[j]=dataGridView1.Rows[i].Cells[j].Value;
                 }
-                InvoiceRow fila = new InvoiceRow(datos,proveedor);
-                invoice.addInvoiceRow(fila);
+                InvoiceRow row = new InvoiceRow(data, provider);
+                invoice.addInvoiceRow(row);
+            }
+        }
+
+        private void setRows()
+        {
+            int maxSize = invoice.getInvoiceRows().Count, 
+                size = (dataGridView1.Rows.Count) - 1;
+            Object[] data = new Object[5];
+            String provider = textBoxProveedor.Text;
+            for (int i = 0; i < size; i++)
+            {
+                for (int j = 0; j < dataGridView1.Rows[i].Cells.Count; j++)
+                {
+                    data[j] = dataGridView1.Rows[i].Cells[j].Value;
+                }
+
+                if (i < maxSize)
+                {
+                    invoice.getInvoiceRows()[i].setAllAttributes(data,provider);
+                }
+                else
+                {
+                    InvoiceRow row = new InvoiceRow(data, provider);
+                    invoice.addInvoiceRow(row);
+                }
             }
         }
 
@@ -453,60 +490,21 @@ namespace SistemaGestorDeInformes
                 e.Handled = false;
             else
                 e.Handled = true;
+        }            
+                
+        private void InterfazRegistrarFactura_KeyUp(object sender, KeyEventArgs e)
+        {
+            Main prin = new Main();
+            ValidationTextBox tr = new ValidationTextBox();
+            tr.KeyEscape(sender, e, this, prin);
         }
 
-        
-        private void textBoxProveedor_KeyUp(object sender, KeyEventArgs e)
+        private void inventarioToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            if (e.KeyValue == (char)Keys.Escape)
-            {
-                buttonAtrás.Focus();
-            }
-        }
-
-        private void textBoxNit_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyValue == (char)Keys.Escape)
-            {
-                buttonAtrás.Focus();
-            }
-        }
-
-        private void textBoxNFactura_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyValue == (char)Keys.Escape)
-            {
-                buttonAtrás.Focus();
-            }
-        }
-
-        private void textBoxNAutorizacion_KeyUp(object sender, MouseEventArgs e)
-        {
-            
-        }
-
-        private void dateFecha_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyValue == (char)Keys.Escape)
-            {
-                buttonAtrás.Focus();
-            }
-        }
-
-        private void dataGridView1_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyValue == (char)Keys.Escape)
-            {
-                buttonAtrás.Focus();
-            }
-        }
-
-        private void textBoxNAutorizacion_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyValue == (char)Keys.Escape)
-            {
-                buttonAtrás.Focus();
-            }
+            InventoryConfiguration Interfaz = new InventoryConfiguration();
+            Interfaz.WindowState = this.WindowState;
+            this.Hide();
+            Interfaz.Show();
         }
     }
 }

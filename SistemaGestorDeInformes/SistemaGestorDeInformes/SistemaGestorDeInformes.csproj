@@ -63,17 +63,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EditProduct.cs">
+    <Compile Include="FirstSetup.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditProduct.Designer.cs">
-      <DependentUpon>EditProduct.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FirtsSetup.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FirtsSetup.Designer.cs">
-      <DependentUpon>FirtsSetup.cs</DependentUpon>
+    <Compile Include="FirstSetup.Designer.cs">
+      <DependentUpon>FirstSetup.cs</DependentUpon>
     </Compile>
     <Compile Include="GenerateReport.cs">
       <SubType>Form</SubType>
@@ -81,17 +75,23 @@
     <Compile Include="GenerateReport.Designer.cs">
       <DependentUpon>GenerateReport.cs</DependentUpon>
     </Compile>
-    <Compile Include="InterfazPrincipal.cs">
+    <Compile Include="InventoryConfiguration.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InterfazPrincipal.Designer.cs">
-      <DependentUpon>InterfazPrincipal.cs</DependentUpon>
+    <Compile Include="InventoryConfiguration.Designer.cs">
+      <DependentUpon>InventoryConfiguration.cs</DependentUpon>
     </Compile>
-    <Compile Include="InterfazRegistrarFactura.cs">
+    <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InterfazRegistrarFactura.Designer.cs">
-      <DependentUpon>InterfazRegistrarFactura.cs</DependentUpon>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegisterInvoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegisterInvoice.Designer.cs">
+      <DependentUpon>RegisterInvoice.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -143,11 +143,11 @@
     <Compile Include="ReportConfiguration.Designer.cs">
       <DependentUpon>ReportConfiguration.cs</DependentUpon>
     </Compile>
-    <Compile Include="RestablecerContraseñaForm.cs">
+    <Compile Include="ForgotPassword.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RestablecerContraseñaForm.Designer.cs">
-      <DependentUpon>RestablecerContraseñaForm.cs</DependentUpon>
+    <Compile Include="ForgotPassword.Designer.cs">
+      <DependentUpon>ForgotPassword.cs</DependentUpon>
     </Compile>
     <Compile Include="ShowBills.cs">
       <SubType>Form</SubType>
@@ -167,20 +167,26 @@
     <Compile Include="ShowProducts.Designer.cs">
       <DependentUpon>ShowProducts.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="EditProduct.resx">
-      <DependentUpon>EditProduct.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FirtsSetup.resx">
-      <DependentUpon>FirtsSetup.cs</DependentUpon>
+    <Compile Include="ViewReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewReport.Designer.cs">
+      <DependentUpon>ViewReport.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FirstSetup.resx">
+      <DependentUpon>FirstSetup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GenerateReport.resx">
       <DependentUpon>GenerateReport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InterfazPrincipal.resx">
-      <DependentUpon>InterfazPrincipal.cs</DependentUpon>
+    <EmbeddedResource Include="InventoryConfiguration.resx">
+      <DependentUpon>InventoryConfiguration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InterfazRegistrarFactura.resx">
-      <DependentUpon>InterfazRegistrarFactura.cs</DependentUpon>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegisterInvoice.resx">
+      <DependentUpon>RegisterInvoice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -215,8 +221,8 @@
     <EmbeddedResource Include="ReportConfiguration.resx">
       <DependentUpon>ReportConfiguration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RestablecerContraseñaForm.resx">
-      <DependentUpon>RestablecerContraseñaForm.cs</DependentUpon>
+    <EmbeddedResource Include="ForgotPassword.resx">
+      <DependentUpon>ForgotPassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ShowBills.resx">
       <DependentUpon>ShowBills.cs</DependentUpon>
@@ -226,6 +232,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ShowProducts.resx">
       <DependentUpon>ShowProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewReport.resx">
+      <DependentUpon>ViewReport.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

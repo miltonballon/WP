@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ControllerLibrary;
+using EntityLibrary;
 
 namespace SistemaGestorDeInformes
 {
@@ -14,97 +16,52 @@ namespace SistemaGestorDeInformes
     {
 
         ReceptionController rc;
+        Product product;
         public InputOfProvitions()
         {
             rc = new ReceptionController();
             InitializeComponent();
+            product = new Product();
         }
-
-        private void textBox5_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void RegisterButton_Click(object sender, EventArgs e)
         {
-            Product product = new Product(ProducTextBox.Text, ProviderTextBox.Text, UnitTextBox.Text);
+            
+            Inventory inventory = new Inventory(product, Int32.Parse(TotalReception_Textbox.Text), ExpirationDate.Value.ToString("dd/MM/yyyy"));
 
-            Reception reception = new Reception(product, ExpirationDate.Value.ToString("dd/MM/yyyy"), ReceptionDate.Value.ToString("dd/MM/yyyy"), Int32.Parse(TotalReception.Text));
-           // rc.RegisterReception(ProducTextBox,ProviderTextBox,UnitTextBox,ExpirationDate,ReceptionDate,TotalReception);
-            rc.RegisterReception(reception);
-        }
-        
-        private void button2_Click(object sender, EventArgs e)
+        }        
+       
+        private void RegisterReception_Load(object sender, EventArgs e)
         {
-            InterfazPrincipal main = new InterfazPrincipal();
+            rc.ProductAutoComplete(Produc_TextBox);
+            rc.ProviderAutoComplete(Provider_TextBox);
+            rc.UnitAutoComplete(Unit_TextBox);
+
+            Produc_TextBox.MaxLength = 70;
+            Provider_TextBox.MaxLength = 70;
+            Unit_TextBox.MaxLength = 20;
+            TotalReception_Textbox.MaxLength = 15;
+
+            Produc_TextBox.ShortcutsEnabled = false;
+            Provider_TextBox.ShortcutsEnabled = false;
+            Unit_TextBox.ShortcutsEnabled = false;
+            TotalReception_Textbox.ShortcutsEnabled = false;
+
+            KeyPreview = true;
+        }                
+
+        private void buttonAtrás_Click(object sender, EventArgs e)
+        {
+            Main main = new Main();
             main.WindowState = this.WindowState;
             this.Hide();
             main.Show();
         }
 
-        private void RegisterReception_Load(object sender, EventArgs e)
-        {
-            rc.ProductAutoComplete(ProducTextBox);
-            rc.ProviderAutoComplete(ProviderTextBox);
-            rc.UnitAutoComplete(UnitTextBox);
-
-            ProducTextBox.MaxLength = 70;
-            ProviderTextBox.MaxLength = 70;
-            UnitTextBox.MaxLength = 3;
-            TotalReception.MaxLength = 15;
-
-            ProducTextBox.ShortcutsEnabled = false;
-            ProviderTextBox.ShortcutsEnabled = false;
-            UnitTextBox.ShortcutsEnabled = false;
-            TotalReception.ShortcutsEnabled = false;
-        }
-
-        private void ProducTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TotalReception_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ExpirationDate_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void UnitTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ProviderTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buttonAtrás_Click(object sender, EventArgs e)
-        {
-            InterfazPrincipal principal = new InterfazPrincipal();//para volver atras
-            principal.WindowState = this.WindowState;
-            this.Hide();
-            principal.Show();
-        }
-
         private void pantallaPrincipalToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            InterfazPrincipal Interfaz = new InterfazPrincipal();
+            Main Interfaz = new Main();
             Interfaz.WindowState = this.WindowState;
             this.Hide();
             Interfaz.Show();
@@ -112,7 +69,7 @@ namespace SistemaGestorDeInformes
 
         private void registrarFacturaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            InterfazRegistrarFactura Interfaz = new InterfazRegistrarFactura();
+            RegisterInvoice Interfaz = new RegisterInvoice();
             Interfaz.WindowState = this.WindowState;
             this.Hide();
             Interfaz.Show();
@@ -193,91 +150,54 @@ namespace SistemaGestorDeInformes
         {
             Application.Exit();
         }
-
-        private void ProducTextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar >= 48 && e.KeyChar <= 57) || (e.KeyChar >= 97 && e.KeyChar <= 122) || (e.KeyChar >= 65 && e.KeyChar <= 90) || (e.KeyChar == 8) || (e.KeyChar == 32))
-                e.Handled = false;
-            else
-                e.Handled = true;
-        }
-
-        private void ProviderTextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar >= 48 && e.KeyChar <= 57) || (e.KeyChar >= 97 && e.KeyChar <= 122) || (e.KeyChar >= 65 && e.KeyChar <= 90) || (e.KeyChar == 8) || (e.KeyChar == 32))
-                e.Handled = false;
-            else
-                e.Handled = true;
-        }
-
-        private void UnitTextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar >= 48 && e.KeyChar <= 57) || (e.KeyChar >= 97 && e.KeyChar <= 122) || (e.KeyChar >= 65 && e.KeyChar <= 90) || (e.KeyChar == 8) || (e.KeyChar == 32))
-                e.Handled = false;
-            else
-                e.Handled = true;
-        }
-
-        private void ProducTextBox_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyValue == (char)Keys.Escape)
-            {
-                buttonAtrás.Focus();
-            }
-        }
-
-        private void ProviderTextBox_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyValue == (char)Keys.Escape)
-            {
-                buttonAtrás.Focus();
-            }
-        }
-
-        private void UnitTextBox_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyValue == (char)Keys.Escape)
-            {
-                buttonAtrás.Focus();
-            }
-        }
-
-        private void ExpirationDate_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyValue == (char)Keys.Escape)
-            {
-                buttonAtrás.Focus();
-            }
-        }
-
-        private void ReceptionDate_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyValue == (char)Keys.Escape)
-            {
-                buttonAtrás.Focus();
-            }
-        }
-
-        private void TotalReception_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyValue == (char)Keys.Escape)
-            {
-                buttonAtrás.Focus();
-            }
-        }
-
+        
         private void TotalReception_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar != '1' && e.KeyChar != '2' && e.KeyChar != '3' && e.KeyChar != '4' && e.KeyChar != '5' && e.KeyChar != '6' && e.KeyChar != '7' && e.KeyChar != '8' && e.KeyChar != '9' && e.KeyChar != '0')
+            if (e.KeyChar != 08 && e.KeyChar != '1' && e.KeyChar != '2' && e.KeyChar != '3' && e.KeyChar != '4' && e.KeyChar != '5' && e.KeyChar != '6' && e.KeyChar != '7' && e.KeyChar != '8' && e.KeyChar != '9' && e.KeyChar != '0')
                 e.Handled = true;
         }
 
-        private void atrasButton_Click(object sender, EventArgs e)
+        private void InputOfProvitions_KeyUp(object sender, KeyEventArgs e)
         {
-            InterfazPrincipal main = new InterfazPrincipal();
-            main.WindowState = this.WindowState;
+            Main prin = new Main();
+            ValidationTextBox tr = new ValidationTextBox();
+            tr.KeyEscape(sender, e, this, prin);
+        }
+
+        private void inventarioToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            InventoryConfiguration Interfaz = new InventoryConfiguration();
+            Interfaz.WindowState = this.WindowState;
             this.Hide();
-            main.Show();
+            Interfaz.Show();
+        }
+
+        private void Produc_TextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidationTextBox tr = new ValidationTextBox();
+            tr.CharacterEspecial(sender, e);
+        }
+
+        private void Provider_TextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidationTextBox tr = new ValidationTextBox();
+            tr.CharacterEspecial(sender, e);
+        }
+
+        private void Unit_TextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidationTextBox tr = new ValidationTextBox();
+            tr.CharacterEspecial(sender, e);
+        }
+
+        private void Register_Button_Click(object sender, EventArgs e)
+        {
+            product.Name = Produc_TextBox.Text;
+            product.Provider = Provider_TextBox.Text;
+            product.Unit = Unit_TextBox.Text;
+
+            Reception reception = new Reception(product, ExpirationDate.Value.ToString("dd/MM/yyyy"), ReceptionDate.Value.ToString("dd/MM/yyyy"), Int32.Parse(TotalReception_Textbox.Text));
+            rc.RegisterReception(reception);
         }
     }
 }

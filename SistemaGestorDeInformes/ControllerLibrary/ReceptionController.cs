@@ -5,19 +5,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SQLite;
+using EntityLibrary;
 
-
-namespace SistemaGestorDeInformes
+namespace ControllerLibrary
 {
     public class ReceptionController
     {
 
         private Connection c = new Connection();
         private ProductController productController;
+        private InventoryController inventoryController;
         public ReceptionController()
         {
             c.connect();
             productController = new ProductController();
+            inventoryController = new InventoryController();
         }
         
 
@@ -40,6 +42,7 @@ namespace SistemaGestorDeInformes
             if (idName != notExist && idProvider != notExist && idUnit != notExist && resul != notExist)
             {
                 InsertReception(resul, reception);
+                inventoryController.InsertToInventory(resul, reception);
                 MessageBox.Show("Registrado Correctamente");
             }
             else

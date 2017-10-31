@@ -7,29 +7,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ControllerLibrary;
+using EntityLibrary;
 
 namespace SistemaGestorDeInformes
 {
     public partial class RegisterProduct : Form
     {
         ProductController pc;
-        Product p;
+        Product product;
         public RegisterProduct()
         {
             InitializeComponent();
             pc = new ProductController();
+            product = new Product();
+        }
         
-            
-        }
-
-        private void labelProveedor_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void BackButton_Click(object sender, EventArgs e)
         {
-            InterfazPrincipal main = new InterfazPrincipal();
+            Main main = new Main();
             main.WindowState = this.WindowState;
             this.Hide();
             main.Show();
@@ -44,14 +41,18 @@ namespace SistemaGestorDeInformes
         }
 
         void RegisterButton_Click(object sender, EventArgs e)
-        {
-            Product product = new Product(ProductTextBox.Text, ProviderTextBox.Text, Unit.Text);
+        {   
+           
+            product.Name = ProductTextBox.Text;
+            product.Provider=ProviderTextBox.Text;
+            product.Unit= Unit.Text;
+
             pc.insertProduct(product);
             pc.addReferencesToTableProduct_Provider_Unit(product);
             cleanTextBox();
             MessageBox.Show("Agregado exitosamente");
-
         }
+
         public void cleanTextBox()
         {
             ProductTextBox.Text = "";
@@ -61,7 +62,7 @@ namespace SistemaGestorDeInformes
 
         private void MainFormToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            InterfazPrincipal MainForm = new InterfazPrincipal();
+            Main MainForm = new Main();
             MainForm.WindowState = this.WindowState;
             MainForm.Show();
             this.Hide();
@@ -69,7 +70,7 @@ namespace SistemaGestorDeInformes
 
         private void RegisterInvoiceToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            InterfazRegistrarFactura RegisterInvoiceForm = new InterfazRegistrarFactura();
+            RegisterInvoice RegisterInvoiceForm = new RegisterInvoice();
             RegisterInvoiceForm.WindowState = this.WindowState;
             RegisterInvoiceForm.Show();
             this.Hide();
@@ -134,11 +135,14 @@ namespace SistemaGestorDeInformes
         {
             ProductTextBox.MaxLength = 70;
             ProviderTextBox.MaxLength = 70;
-            Unit.MaxLength = 3;
+            Unit.MaxLength = 20;
 
             ProductTextBox.ShortcutsEnabled = false;
             ProviderTextBox.ShortcutsEnabled = false;
             Unit.ShortcutsEnabled = false;
+
+
+            KeyPreview = true;
         }
 
         private void generarInformeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -178,28 +182,29 @@ namespace SistemaGestorDeInformes
                 e.Handled = true;
         }
 
-        private void ProductTextBox_KeyUp(object sender, KeyEventArgs e)
+        private void RegisterProduct_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.KeyValue == (char)Keys.Escape)
-            {
-                atrasButton.Focus();
-            }
+            Main prin = new Main();
+            ValidationTextBox tr = new ValidationTextBox();
+            tr.KeyEscape(sender, e, this, prin);
         }
 
-        private void ProviderTextBox_KeyUp(object sender, KeyEventArgs e)
+        private void inventarioToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            if (e.KeyValue == (char)Keys.Escape)
-            {
-                atrasButton.Focus();
-            }
+            InventoryConfiguration Interfaz = new InventoryConfiguration();
+            Interfaz.WindowState = this.WindowState;
+            this.Hide();
+            Interfaz.Show();
         }
 
-        private void Unit_KeyUp(object sender, KeyEventArgs e)
+        private void FreshRadioButton_CheckedChanged(object sender, EventArgs e)
         {
-            if (e.KeyValue == (char)Keys.Escape)
-            {
-                atrasButton.Focus();
-            }
+            product.Clasification = "Fresco";
+        }
+
+        private void DryRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            product.Clasification="Seco";
         }
     }
 }

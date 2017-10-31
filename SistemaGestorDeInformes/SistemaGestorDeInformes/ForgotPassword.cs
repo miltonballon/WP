@@ -10,75 +10,36 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Net.Mail;
 using System.Net;
+using EntityLibrary;
+using ControllerLibrary;
 
 namespace SistemaGestorDeInformes
 {
-    public partial class RestablecerContraseñaForm : Form
+    public partial class ForgotPassword : Form
     { 
         private User user;
-        public RestablecerContraseñaForm(User user)
+        public ForgotPassword(User user)
         {
-
             InitializeComponent();
             this.user = user;
         }
-
-        private void cambiarContraseña_Load(object sender, EventArgs e)
-        {
-
-
-
-        }
-
-        private void confirmar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
-
-        }
-        private void guardar()
-        {
-        }
-
-
-
+                
         private void button5_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+                            
 
-        private void ci_KeyPress(object sender, KeyPressEventArgs e)
+        private void atrasButton_Click(object sender, EventArgs e)
         {
-            
+            Login Login1 = new Login();
+            this.Hide();
+            Login1.Show();
         }
 
-        private void user_KeyPress(object sender, KeyPressEventArgs e)
+        private void Enviar_button_Click(object sender, EventArgs e)
         {
-            
-        }
-
-        private void contraseña_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void contraseña_KeyPress(object sender, KeyPressEventArgs e)
-        {
-           
-        }
-
-        private void confirmar_KeyPress(object sender, KeyPressEventArgs e)
-        {
-        }
-       
-
-        private void button5_Click_1(object sender, EventArgs e)
-        {
-            String mail = txtbxCorreo.Text;
+            String mail = Correo_textbox.Text;
             if (user.Email.Equals(mail))
             {
 
@@ -99,7 +60,7 @@ namespace SistemaGestorDeInformes
                 MailAddress receiver = new MailAddress("jprodriguez60@gmail.com", "Responsable de Recursos");
                 MailMessage Mymessage = new MailMessage(from, receiver);
                 Mymessage.Subject = "Recuperacion de Contraseña";
-                Mymessage.Body = "La contraseña es: "+user.Password;
+                Mymessage.Body = "La contraseña es: " + user.Password;
                 //sends the email
                 MyServer.Send(Mymessage);
                 MessageBox.Show("Se envio un correo electronico con la contraseña, por favor revise su correo");
@@ -110,16 +71,12 @@ namespace SistemaGestorDeInformes
             }
         }
 
-        private void atrasButton_Click(object sender, EventArgs e)
+        private void Correo_textbox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            Login Login1 = new Login();
-            this.Hide();
-            Login1.Show();
-        }
-
-        private void RestablecerContraseñaForm_Load(object sender, EventArgs e)
-        {
-
+            if ((e.KeyChar >= 48 && e.KeyChar <= 57) || (e.KeyChar >= 97 && e.KeyChar <= 122) || (e.KeyChar >= 65 && e.KeyChar <= 90) || (e.KeyChar == 8) || (e.KeyChar == 32) || (e.KeyChar == 64) || (e.KeyChar == 46) || (e.KeyChar == 95))
+                e.Handled = false;
+            else
+                e.Handled = true;
         }
     }
 }

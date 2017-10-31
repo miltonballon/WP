@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Data.SQLite;
-namespace SistemaGestorDeInformes
+using EntityLibrary;
+namespace ControllerLibrary
 {
     public class ProductController
     {
@@ -19,7 +20,7 @@ namespace SistemaGestorDeInformes
         {
             if (getIdName(p.Name) == -1) //si es -1 quiere decir que no existe y por tanto se crea
             {
-                InsertProduct(p.Name);
+                InsertProduct(p.Name, p.Clasification);
             }
             if (getIdProvider(p.Provider) == -1)
             {
@@ -30,6 +31,7 @@ namespace SistemaGestorDeInformes
                 InsertUnit(p.Unit);
             }  
         }
+        
 
         public int insertProductAndGetId(Product product)
         {
@@ -65,12 +67,13 @@ namespace SistemaGestorDeInformes
         public List<Product> showProducts()
         {
             List<Product> products = new List<Product>();
-            string query = "select name, Provider, Type FROM Product AS PROD, Provider AS PRO, Unit AS Un, Product_Provider_Unit AS PPU WHERE PROD.id = PPU.Id_prod AND PRO.id= PPU.id_prov AND Un.id= PPU.id_uni";
+            string query = "select name, Provider, Type, clasification FROM Product AS PROD, Provider AS PRO, Unit AS Un, Product_Provider_Unit AS PPU WHERE PROD.id = PPU.Id_prod AND PRO.id= PPU.id_prov AND Un.id= PPU.id_uni";
             SQLiteDataReader data = c.query_show(query);
             SQLiteDataReader data2 = c.query_show(query);
             while (data.Read())
             {
-                Product p = new Product(data[0].ToString(), data[1].ToString(), data[2].ToString());
+                
+                Product p = new Product(data[0].ToString(), data[1].ToString(), data[2].ToString(),data[3].ToString());
                 products.Add(p);
                 
             }
@@ -81,11 +84,11 @@ namespace SistemaGestorDeInformes
         public List<Product> showAllProductsByProvider(String providersName)
         {
             List<Product> products = new List<Product>();
-            string query = "select name, Provider, Type FROM Product AS PROD, Provider AS PRO, Unit AS Un, Product_Provider_Unit AS PPU WHERE PROD.id = PPU.Id_prod AND PRO.id= PPU.id_prov AND Un.id= PPU.id_uni";
+            string query = "select name, Provider, Type, clasification FROM Product AS PROD, Provider AS PRO, Unit AS Un, Product_Provider_Unit AS PPU WHERE PROD.id = PPU.Id_prod AND PRO.id= PPU.id_prov AND Un.id= PPU.id_uni";
             SQLiteDataReader data = c.query_show(query);
             while (data.Read())
             {
-                Product p = new Product(data[0].ToString(), data[1].ToString(), data[2].ToString());
+                Product p = new Product(data[0].ToString(), data[1].ToString(), data[2].ToString(),data[3].ToString());
                 if (p.Provider.Equals(providersName))
                 {
                     products.Add(p);
@@ -134,11 +137,11 @@ namespace SistemaGestorDeInformes
         public List<Product> searchProduct(string name)
         {
             List<Product> products = new List<Product>();
-            string query = "select name, Provider, Type FROM Product AS PROD, Provider AS PRO, Unit AS Un, Product_Provider_Unit AS PPU WHERE PROD.id = PPU.Id_prod AND PRO.id= PPU.id_prov AND Un.id= PPU.id_uni and UPPER (PROD.name)= UPPER(" + "'" + name + "')";
+            string query = "select name, Provider, Type, clasification FROM Product AS PROD, Provider AS PRO, Unit AS Un, Product_Provider_Unit AS PPU WHERE PROD.id = PPU.Id_prod AND PRO.id= PPU.id_prov AND Un.id= PPU.id_uni and UPPER (PROD.name)= UPPER(" + "'" + name + "')";
             SQLiteDataReader data = c.query_show(query);
             while (data.Read())
             {
-                Product p = new Product(data[0].ToString(), data[1].ToString(), data[2].ToString());
+                Product p = new Product(data[0].ToString(), data[1].ToString(), data[2].ToString(),data[3].ToString());
                 products.Add(p);
             }
            
@@ -187,9 +190,9 @@ namespace SistemaGestorDeInformes
             return c.FindAndGetID(UnitQuery);
         }
         
-        public void InsertProduct(string name)
+        public void InsertProduct(string name, string clasification)
         {
-            string query = "insert into Product (name) values('" + name + "')";
+            string query = "insert into Product (name,clasification) values('" + name + "','"+clasification+"')";
             c.executeInsertion(query);
         }
         public void InsertProvider(string provider)

@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ControllerLibrary;
+using EntityLibrary;
 
 namespace SistemaGestorDeInformes
 {
@@ -19,12 +21,11 @@ namespace SistemaGestorDeInformes
             InitializeComponent();
             trimesterController = new TrimesterController();
             isRegistering = false;
-
         }
 
         private void atrasButton_Click(object sender, EventArgs e)
         {
-            InterfazPrincipal principal = new InterfazPrincipal();//para volver atras
+            Main principal = new Main();//para volver atras
             principal.WindowState = this.WindowState;
             this.Hide();
             principal.Show();
@@ -32,7 +33,7 @@ namespace SistemaGestorDeInformes
 
         private void pantallaPrincipalToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            InterfazPrincipal principal = new InterfazPrincipal();
+            Main principal = new Main();
             principal.WindowState = this.WindowState;
             this.Hide();
             principal.Show();
@@ -40,7 +41,7 @@ namespace SistemaGestorDeInformes
 
         private void registrarFacturaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            InterfazRegistrarFactura intRegFac = new InterfazRegistrarFactura();
+            RegisterInvoice intRegFac = new RegisterInvoice();
             intRegFac.WindowState = this.WindowState;
             this.Hide();
             intRegFac.Show();
@@ -78,35 +79,6 @@ namespace SistemaGestorDeInformes
             ReportConfiguration1.Show();
         }
 
-        private void RegistrarButton_Click(object sender, EventArgs e)
-        {
-            if (isRegistering)
-            {
-                String name = txbxNombre.Text;
-                if (!name.Equals(""))
-                {
-                    Trimester trimester = new Trimester(name);
-                    trimester.setOpen(true);
-                    saveNewTrimester(trimester);
-                    hideNombreForms();
-                    RegistrarButton.Text = "Nuevo Trimestre";
-                    setLbTrimText();
-                    MessageBox.Show("Nuevo trimestre creado: "+trimester.getName());
-                    isRegistering = !isRegistering;
-                }
-                else
-                {
-                    MessageBox.Show("Ingrese un nombre para el trimestre");
-                }
-            }
-            else
-            {
-                showNombreForms();
-                RegistrarButton.Text = "Guardar";
-                isRegistering = !isRegistering;
-            }
-        }
-
         private void saveNewTrimester(Trimester trimester)
         {
             Trimester last=trimesterController.getLastTrimester();
@@ -117,19 +89,17 @@ namespace SistemaGestorDeInformes
             }
             trimesterController.insertTrimester(trimester);
         }
-
-        private void labelInformaciónBásica_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void OpenQuarter_Load(object sender, EventArgs e)
         {
             setLbTrimText();
             hideNombreForms();
 
-            txbxNombre.MaxLength = 70;
-            txbxNombre.ShortcutsEnabled = false;
+            Nombre_Textbox.MaxLength = 70;
+            Nombre_Textbox.ShortcutsEnabled = false;
+
+            KeyPreview = true;
         }
 
         private void setLbTrimText()
@@ -148,19 +118,15 @@ namespace SistemaGestorDeInformes
         private void hideNombreForms()
         {
             lbNombre.Hide();
-            txbxNombre.Hide();
+            Nombre_Textbox.Hide();
         }
 
         private void showNombreForms()
         {
             lbNombre.Show();
-            txbxNombre.Show();
+            Nombre_Textbox.Show();
         }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -200,26 +166,54 @@ namespace SistemaGestorDeInformes
             this.Hide();
             Interfaz.Show();
         }
-
-        private void RegistrarButton_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyValue == (char)Keys.Escape)
-            {
-                atrasButton.Focus();
-            }
-        }
-
-        private void txbxNombre_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyValue == (char)Keys.Escape)
-            {
-                atrasButton.Focus();
-            }
-        }
-
+        
         private void OpenQuarter_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void OpenQuarter_KeyUp(object sender, KeyEventArgs e)
+        {
+            Main prin = new Main();
+            ValidationTextBox tr = new ValidationTextBox();
+            tr.KeyEscape(sender, e, this, prin);
+        }
+
+        private void inventarioToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            InventoryConfiguration Interfaz = new InventoryConfiguration();
+            Interfaz.WindowState = this.WindowState;
+            this.Hide();
+            Interfaz.Show();
+        }
+
+        private void Registrar_Button_Click(object sender, EventArgs e)
+        {
+            if (isRegistering)
+            {
+                String name = Nombre_Textbox.Text;
+                if (!name.Equals(""))
+                {
+                    Trimester trimester = new Trimester(name);
+                    trimester.setOpen(true);
+                    saveNewTrimester(trimester);
+                    hideNombreForms();
+                    Registrar_Button.Text = "Nuevo Trimestre";
+                    setLbTrimText();
+                    MessageBox.Show("Nuevo trimestre creado: " + trimester.getName());
+                    isRegistering = !isRegistering;
+                }
+                else
+                {
+                    MessageBox.Show("Ingrese un nombre para el trimestre");
+                }
+            }
+            else
+            {
+                showNombreForms();
+                Registrar_Button.Text = "Guardar";
+                isRegistering = !isRegistering;
+            }
         }
     }
 }

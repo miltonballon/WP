@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ControllerLibrary;
+using EntityLibrary;
 
 namespace SistemaGestorDeInformes
 {
@@ -23,7 +25,7 @@ namespace SistemaGestorDeInformes
 
         private void pantallaPrincipalToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            InterfazPrincipal principal = new InterfazPrincipal();
+            Main principal = new Main();
             principal.WindowState = this.WindowState;
             principal.Show();
             this.Hide();
@@ -31,7 +33,7 @@ namespace SistemaGestorDeInformes
 
          private void MainFormToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            InterfazPrincipal MainForm = new InterfazPrincipal();
+            Main MainForm = new Main();
             MainForm.WindowState = this.WindowState;
             MainForm.Show();
             this.Hide();
@@ -39,7 +41,7 @@ namespace SistemaGestorDeInformes
 
         private void RegisterInvoiceToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            InterfazRegistrarFactura RegisterInvoiceForm = new InterfazRegistrarFactura();
+            RegisterInvoice RegisterInvoiceForm = new RegisterInvoice();
             RegisterInvoiceForm.WindowState = this.WindowState;
             RegisterInvoiceForm.Show();
             this.Hide();
@@ -47,7 +49,7 @@ namespace SistemaGestorDeInformes
 
         private void registrarFacturasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            InterfazRegistrarFactura intRegFac = new InterfazRegistrarFactura();
+            RegisterInvoice intRegFac = new RegisterInvoice();
             intRegFac.WindowState = this.WindowState;
             this.Hide();
             intRegFac.Show();
@@ -67,14 +69,6 @@ namespace SistemaGestorDeInformes
             ShowProducts1.WindowState = this.WindowState;
             this.Hide();
             ShowProducts1.Show();
-        }
-
-        private void buttonAtrás_Click(object sender, EventArgs e)
-        {
-            InterfazPrincipal principal = new InterfazPrincipal();//para volver atras
-            principal.WindowState = this.WindowState;
-            this.Hide();
-            principal.Show();
         }
 
         private void informeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -107,6 +101,8 @@ namespace SistemaGestorDeInformes
         {
             chargeData();
             onlyReadRestrictionDataGrid();
+
+            KeyPreview = true;
         }
 
         private void chargeData()
@@ -146,7 +142,7 @@ namespace SistemaGestorDeInformes
 
         private void openModify(Invoice invoice)
         {
-            InterfazRegistrarFactura inF = new InterfazRegistrarFactura(invoice);
+            RegisterInvoice inF = new RegisterInvoice(invoice);
             inF.WindowState = this.WindowState;
             this.Hide();
             inF.Show();
@@ -196,12 +192,27 @@ namespace SistemaGestorDeInformes
             Application.Exit();
         }
 
-        private void dataGridView1_KeyUp(object sender, KeyEventArgs e)
+        private void ShowBills_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.KeyValue == (char)Keys.Escape)
-            {
-                buttonAtrás.Focus();
-            }
+            Main prin = new Main();
+            ValidationTextBox tr = new ValidationTextBox();
+            tr.KeyEscape(sender, e, this, prin);
+        }
+
+        private void inventarioToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            InventoryConfiguration Interfaz = new InventoryConfiguration();
+            Interfaz.WindowState = this.WindowState;
+            this.Hide();
+            Interfaz.Show();
+        }
+
+        private void Atras_Button_Click(object sender, EventArgs e)
+        {
+            Main principal = new Main();//para volver atras
+            principal.WindowState = this.WindowState;
+            this.Hide();
+            principal.Show();
         }
     }
 }

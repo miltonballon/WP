@@ -45,13 +45,14 @@
             this.verInventarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.configuraciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inventarioToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.abrirTrimestreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.RegistrarButton = new System.Windows.Forms.Button();
+            this.Registrar_Button = new System.Windows.Forms.Button();
             this.atrasButton = new System.Windows.Forms.Button();
             this.labelInformaciónBásica = new System.Windows.Forms.Label();
             this.lbTrim = new System.Windows.Forms.Label();
-            this.txbxNombre = new System.Windows.Forms.TextBox();
+            this.Nombre_Textbox = new System.Windows.Forms.TextBox();
             this.lbNombre = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -185,7 +186,8 @@
             // configuraciónToolStripMenuItem
             // 
             this.configuraciónToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.informeToolStripMenuItem});
+            this.informeToolStripMenuItem,
+            this.inventarioToolStripMenuItem1});
             this.configuraciónToolStripMenuItem.Name = "configuraciónToolStripMenuItem";
             this.configuraciónToolStripMenuItem.Size = new System.Drawing.Size(95, 20);
             this.configuraciónToolStripMenuItem.Text = "Configuración";
@@ -193,9 +195,16 @@
             // informeToolStripMenuItem
             // 
             this.informeToolStripMenuItem.Name = "informeToolStripMenuItem";
-            this.informeToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.informeToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.informeToolStripMenuItem.Text = "Informe";
             this.informeToolStripMenuItem.Click += new System.EventHandler(this.informeToolStripMenuItem_Click);
+            // 
+            // inventarioToolStripMenuItem1
+            // 
+            this.inventarioToolStripMenuItem1.Name = "inventarioToolStripMenuItem1";
+            this.inventarioToolStripMenuItem1.Size = new System.Drawing.Size(127, 22);
+            this.inventarioToolStripMenuItem1.Text = "Inventario";
+            this.inventarioToolStripMenuItem1.Click += new System.EventHandler(this.inventarioToolStripMenuItem1_Click);
             // 
             // abrirTrimestreToolStripMenuItem
             // 
@@ -212,20 +221,19 @@
             this.salirToolStripMenuItem.Text = "Cerrar Sesión";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
-            // RegistrarButton
+            // Registrar_Button
             // 
-            this.RegistrarButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.RegistrarButton.BackColor = System.Drawing.Color.Black;
-            this.RegistrarButton.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
-            this.RegistrarButton.ForeColor = System.Drawing.Color.Yellow;
-            this.RegistrarButton.Location = new System.Drawing.Point(295, 175);
-            this.RegistrarButton.Name = "RegistrarButton";
-            this.RegistrarButton.Size = new System.Drawing.Size(153, 66);
-            this.RegistrarButton.TabIndex = 0;
-            this.RegistrarButton.Text = "Nuevo Trimestre";
-            this.RegistrarButton.UseVisualStyleBackColor = false;
-            this.RegistrarButton.Click += new System.EventHandler(this.RegistrarButton_Click);
-            this.RegistrarButton.KeyUp += new System.Windows.Forms.KeyEventHandler(this.RegistrarButton_KeyUp);
+            this.Registrar_Button.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Registrar_Button.BackColor = System.Drawing.Color.Black;
+            this.Registrar_Button.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
+            this.Registrar_Button.ForeColor = System.Drawing.Color.Yellow;
+            this.Registrar_Button.Location = new System.Drawing.Point(291, 206);
+            this.Registrar_Button.Name = "Registrar_Button";
+            this.Registrar_Button.Size = new System.Drawing.Size(153, 66);
+            this.Registrar_Button.TabIndex = 0;
+            this.Registrar_Button.Text = "Nuevo Trimestre";
+            this.Registrar_Button.UseVisualStyleBackColor = false;
+            this.Registrar_Button.Click += new System.EventHandler(this.Registrar_Button_Click);
             // 
             // atrasButton
             // 
@@ -246,31 +254,29 @@
             this.labelInformaciónBásica.AutoSize = true;
             this.labelInformaciónBásica.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelInformaciónBásica.ForeColor = System.Drawing.Color.Yellow;
-            this.labelInformaciónBásica.Location = new System.Drawing.Point(29, 66);
+            this.labelInformaciónBásica.Location = new System.Drawing.Point(23, 47);
             this.labelInformaciónBásica.Name = "labelInformaciónBásica";
-            this.labelInformaciónBásica.Size = new System.Drawing.Size(169, 19);
+            this.labelInformaciónBásica.Size = new System.Drawing.Size(172, 19);
             this.labelInformaciónBásica.TabIndex = 24;
-            this.labelInformaciónBásica.Text = "Trimestre en curso:";
-            this.labelInformaciónBásica.Click += new System.EventHandler(this.labelInformaciónBásica_Click);
+            this.labelInformaciónBásica.Text = "Trimestre en Curso:";
             // 
             // lbTrim
             // 
             this.lbTrim.AutoSize = true;
             this.lbTrim.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTrim.ForeColor = System.Drawing.Color.Yellow;
-            this.lbTrim.Location = new System.Drawing.Point(204, 66);
+            this.lbTrim.Location = new System.Drawing.Point(198, 47);
             this.lbTrim.Name = "lbTrim";
             this.lbTrim.Size = new System.Drawing.Size(0, 19);
             this.lbTrim.TabIndex = 29;
             // 
-            // txbxNombre
+            // Nombre_Textbox
             // 
-            this.txbxNombre.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txbxNombre.Location = new System.Drawing.Point(369, 137);
-            this.txbxNombre.Name = "txbxNombre";
-            this.txbxNombre.Size = new System.Drawing.Size(100, 20);
-            this.txbxNombre.TabIndex = 1;
-            this.txbxNombre.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txbxNombre_KeyUp);
+            this.Nombre_Textbox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Nombre_Textbox.Location = new System.Drawing.Point(365, 168);
+            this.Nombre_Textbox.Name = "Nombre_Textbox";
+            this.Nombre_Textbox.Size = new System.Drawing.Size(100, 20);
+            this.Nombre_Textbox.TabIndex = 1;
             // 
             // lbNombre
             // 
@@ -278,12 +284,11 @@
             this.lbNombre.AutoSize = true;
             this.lbNombre.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbNombre.ForeColor = System.Drawing.Color.Yellow;
-            this.lbNombre.Location = new System.Drawing.Point(285, 136);
+            this.lbNombre.Location = new System.Drawing.Point(281, 167);
             this.lbNombre.Name = "lbNombre";
             this.lbNombre.Size = new System.Drawing.Size(78, 19);
             this.lbNombre.TabIndex = 31;
             this.lbNombre.Text = "Nombre:";
-            this.lbNombre.Click += new System.EventHandler(this.label1_Click);
             // 
             // OpenQuarter
             // 
@@ -292,17 +297,18 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(815, 508);
             this.Controls.Add(this.lbNombre);
-            this.Controls.Add(this.txbxNombre);
+            this.Controls.Add(this.Nombre_Textbox);
             this.Controls.Add(this.lbTrim);
-            this.Controls.Add(this.RegistrarButton);
+            this.Controls.Add(this.Registrar_Button);
             this.Controls.Add(this.atrasButton);
             this.Controls.Add(this.labelInformaciónBásica);
             this.Controls.Add(this.menuStrip1);
             this.Name = "OpenQuarter";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "OpenQuarter";
+            this.Text = "Abrir Trimestre";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.OpenQuarter_FormClosing);
             this.Load += new System.EventHandler(this.OpenQuarter_Load);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.OpenQuarter_KeyUp);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -330,12 +336,13 @@
         private System.Windows.Forms.ToolStripMenuItem configuraciónToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem informeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem abrirTrimestreToolStripMenuItem;
-        private System.Windows.Forms.Button RegistrarButton;
+        private System.Windows.Forms.Button Registrar_Button;
         private System.Windows.Forms.Button atrasButton;
         private System.Windows.Forms.Label labelInformaciónBásica;
         private System.Windows.Forms.Label lbTrim;
-        private System.Windows.Forms.TextBox txbxNombre;
+        private System.Windows.Forms.TextBox Nombre_Textbox;
         private System.Windows.Forms.Label lbNombre;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem inventarioToolStripMenuItem1;
     }
 }

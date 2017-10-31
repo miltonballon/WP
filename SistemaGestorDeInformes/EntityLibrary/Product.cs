@@ -4,13 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SistemaGestorDeInformes
+namespace EntityLibrary
 {
     public class Product
     {
         private string name;
         private string unit;
         private string provider;
+        private string clasification;
         
         public string Name
         {
@@ -27,7 +28,11 @@ namespace SistemaGestorDeInformes
             get { return unit; }
             set { unit = value; }
         }
-
+        public string Clasification
+        {
+            get { return clasification; }
+            set { clasification = value; }
+        }
         public override String ToString()
         {
             return "Nombre: "+name+" Unidad: "+unit;
@@ -37,11 +42,20 @@ namespace SistemaGestorDeInformes
             
 
         }
-        public Product(string prod,string prov,string uni)
+        public Product(string prod, string prov, string uni)
         {
             name = prod;
             provider = prov;
             unit = uni;
+        
+
+        }
+        public Product(string prod,string prov,string uni,string cla)
+        {
+            name = prod;
+            provider = prov;
+            unit = uni;
+            clasification = cla;
 
         }
 

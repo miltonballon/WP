@@ -4,8 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SQLite;
+using EntityLibrary;
 
-namespace SistemaGestorDeInformes
+namespace ControllerLibrary
 {
     public class TrimesterController
     {

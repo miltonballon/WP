@@ -7,13 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ControllerLibrary;
 
 namespace SistemaGestorDeInformes
 {
-    public partial class FirtsSetup : Form
+    public partial class FirstSetup : Form
     {
         UserController userController;
-        public FirtsSetup()
+        public FirstSetup()
         {
             InitializeComponent();
             userController = new UserController();
@@ -24,35 +25,25 @@ namespace SistemaGestorDeInformes
             if (userController.HasUser())
             {
                 this.Close();
-            }
-          
+            }          
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            RegisterUser register = new RegisterUser();
-            register.WindowState = this.WindowState;
-            this.Hide();
-            register.ShowDialog();
-            this.Close();
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
+      
         private void FirtsSetup_FormClosing(object sender, FormClosingEventArgs e)
         {
             if(!userController.HasUser())
             {
                 Application.Exit();
             }
+        }
+
+        private void Ingresar_button_Click(object sender, EventArgs e)
+        {
+            RegisterUser register = new RegisterUser();
+            register.WindowState = this.WindowState;
+            this.Hide();
+            register.ShowDialog();
+            this.Close();
         }
     }
 }

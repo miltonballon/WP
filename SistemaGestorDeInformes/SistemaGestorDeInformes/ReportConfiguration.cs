@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ControllerLibrary;
+using EntityLibrary;
 
 namespace SistemaGestorDeInformes
 {
@@ -22,7 +24,7 @@ namespace SistemaGestorDeInformes
 
         private void pantallaPrincipalToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            InterfazPrincipal principal = new InterfazPrincipal();
+            Main principal = new Main();
             principal.WindowState = this.WindowState;
             principal.Show();
             this.Hide();
@@ -30,7 +32,7 @@ namespace SistemaGestorDeInformes
 
         private void registrarFacturaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            InterfazRegistrarFactura InterfazRegistrarFactura1 = new InterfazRegistrarFactura();
+            RegisterInvoice InterfazRegistrarFactura1 = new RegisterInvoice();
             InterfazRegistrarFactura1.WindowState = this.WindowState;
             InterfazRegistrarFactura1.Show();
             this.Hide();
@@ -58,14 +60,6 @@ namespace SistemaGestorDeInformes
             ShowProducts1.WindowState = this.WindowState;
             ShowProducts1.Show();
             this.Hide();
-        }
-
-        private void atrasButton_Click(object sender, EventArgs e)
-        {
-            InterfazPrincipal principal = new InterfazPrincipal();//para volver atras
-            principal.WindowState = this.WindowState;
-            this.Hide();
-            principal.Show();
         }
 
         private void abrirTrimestreToolStripMenuItem_Click(object sender, EventArgs e)
@@ -107,15 +101,6 @@ namespace SistemaGestorDeInformes
             Interfaz.Show();
         }
 
-        private void RegistrarButton_Click(object sender, EventArgs e)
-        {
-            int nScho=Int32.Parse(txtboxbecas.Text), 
-                nPar=Int32.Parse(txtboxnpartida.Text);
-            Configuration conf = new Configuration(nScho,nPar);
-            configurationController.insertConfiguration(conf);
-            MessageBox.Show("Se guardo la configuración correctamente");
-        }
-
         private void generarInformeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             GenerateReport Interfaz = new GenerateReport();
@@ -128,50 +113,60 @@ namespace SistemaGestorDeInformes
         {
             Application.Exit();
         }
-
-        private void txtboxbecas_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar != '1' && e.KeyChar != '2' && e.KeyChar != '3' && e.KeyChar != '4' && e.KeyChar != '5' && e.KeyChar != '6' && e.KeyChar != '7' && e.KeyChar != '8' && e.KeyChar != '9' && e.KeyChar != '0')
-                e.Handled = true;
-        }
-
-        private void txtboxnpartida_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar != '1' && e.KeyChar != '2' && e.KeyChar != '3' && e.KeyChar != '4' && e.KeyChar != '5' && e.KeyChar != '6' && e.KeyChar != '7' && e.KeyChar != '8' && e.KeyChar != '9' && e.KeyChar != '0')
-                e.Handled = true;
-        }
-
-        private void txtboxbecas_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyValue == (char)Keys.Escape)
-            {
-                atrasButton.Focus();
-            }
-        }
-
-        private void txtboxnpartida_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyValue == (char)Keys.Escape)
-            {
-                atrasButton.Focus();
-            }
-        }
-
+        
         private void ReportConfiguration_Load(object sender, EventArgs e)
         {
-            txtboxbecas.MaxLength = 70;
-            txtboxnpartida.MaxLength = 70;
+            becas_Textbox.MaxLength = 70;
+            NPartida_textbox.MaxLength = 70;
 
-            txtboxbecas.ShortcutsEnabled = false;
-            txtboxnpartida.ShortcutsEnabled = false;
+            becas_Textbox.ShortcutsEnabled = false;
+            NPartida_textbox.ShortcutsEnabled = false;
+
+            KeyPreview = true;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void ReportConfiguration_KeyUp(object sender, KeyEventArgs e)
         {
-            InterfazPrincipal main = new InterfazPrincipal();
-            main.WindowState = this.WindowState;
+            Main prin = new Main();
+            ValidationTextBox tr = new ValidationTextBox();
+            tr.KeyEscape(sender, e, this, prin);
+        }
+
+        private void inventarioToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            InventoryConfiguration Interfaz = new InventoryConfiguration();
+            Interfaz.WindowState = this.WindowState;
             this.Hide();
-            main.Show();
+            Interfaz.Show();
+        }
+
+        private void becas_Textbox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != '1' && e.KeyChar != '2' && e.KeyChar != '3' && e.KeyChar != '4' && e.KeyChar != '5' && e.KeyChar != '6' && e.KeyChar != '7' && e.KeyChar != '8' && e.KeyChar != '9' && e.KeyChar != '0')
+                e.Handled = true;
+        }
+
+        private void NPartida_textbox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != '1' && e.KeyChar != '2' && e.KeyChar != '3' && e.KeyChar != '4' && e.KeyChar != '5' && e.KeyChar != '6' && e.KeyChar != '7' && e.KeyChar != '8' && e.KeyChar != '9' && e.KeyChar != '0')
+                e.Handled = true;
+        }
+
+        private void Registrar_Button_Click(object sender, EventArgs e)
+        {
+            int nScho = Int32.Parse(becas_Textbox.Text),
+                nPar = Int32.Parse(NPartida_textbox.Text);
+            Configuration conf = new Configuration(nScho, nPar);
+            configurationController.insertConfiguration(conf);
+            MessageBox.Show("Se guardo la configuración correctamente");
+        }
+
+        private void Atras_Button_Click(object sender, EventArgs e)
+        {
+            Main principal = new Main();//para volver atras
+            principal.WindowState = this.WindowState;
+            this.Hide();
+            principal.Show();
         }
     }
 }

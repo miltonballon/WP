@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SistemaGestorDeInformes
+namespace EntityLibrary
 {
     public class OutputReception
     {
@@ -13,6 +13,7 @@ namespace SistemaGestorDeInformes
         private int total;
         public OutputReception()
         {
+            reception = new Reception();
         }
 
         public OutputReception(Reception reception,string outputDate, int total)

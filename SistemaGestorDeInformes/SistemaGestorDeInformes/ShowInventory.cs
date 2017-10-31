@@ -7,30 +7,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ControllerLibrary;
+using EntityLibrary;
 
 namespace SistemaGestorDeInformes
 {
     public partial class ShowInventory : Form
     {
         private ReceptionController receptionController;
+        private InventoryController inventoryController;
         public ShowInventory()
         {
             InitializeComponent();
             receptionController = new ReceptionController();
+            inventoryController = new InventoryController();
             chargeData();
-        }
-
-        private void buttonAtrás_Click(object sender, EventArgs e)
-        {
-            InterfazPrincipal principal = new InterfazPrincipal();//para volver atras
-            principal.WindowState = this.WindowState;
-            this.Hide();
-            principal.Show();
         }
 
         private void pantallaPrincipalToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            InterfazPrincipal principal = new InterfazPrincipal();//para volver atras
+            Main principal = new Main();//para volver atras
             principal.WindowState = this.WindowState;
             this.Hide();
             principal.Show();
@@ -38,7 +34,7 @@ namespace SistemaGestorDeInformes
 
         private void registrarFacturaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            InterfazRegistrarFactura RegisterInvoiceForm = new InterfazRegistrarFactura();
+            RegisterInvoice RegisterInvoiceForm = new RegisterInvoice();
             RegisterInvoiceForm.WindowState = this.WindowState;
             RegisterInvoiceForm.Show();
             this.Hide();
@@ -109,19 +105,18 @@ namespace SistemaGestorDeInformes
 
         private void ShowInventory_Load(object sender, EventArgs e)
         {
-            
+            KeyPreview = true;
         }
 
         private void chargeData()
         {
-            List<Reception> receptions = receptionController.getAllReceptions();
-            
-            foreach (Reception reception in receptions)
+            List<Inventory> products = inventoryController.getAllProducts();
+            foreach (Inventory inventory in products)
             {
-                Product product = reception.Product;
+                Product product = inventory.Product;
                 String productsName = product.Name,
                        unit = product.Unit,
-                       total = reception.Total+"";
+                       total = inventory.Stock+"";
 
                 String[] row = new String[] { productsName,unit,total};
                 dataGridView1.Rows.Add(row);
@@ -137,19 +132,40 @@ namespace SistemaGestorDeInformes
             Interfaz.Show();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void ShowInventory_FormClosing(object sender, FormClosingEventArgs e)
         {
-
+            Application.Exit();
         }
 
-        private void searchButton_Click(object sender, EventArgs e)
+        private void ShowInventory_KeyUp(object sender, KeyEventArgs e)
+        {
+            Main prin = new Main();
+            ValidationTextBox tr = new ValidationTextBox();
+            tr.KeyEscape(sender, e, this, prin);
+        }
+
+        private void inventarioToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            InventoryConfiguration Interfaz = new InventoryConfiguration();
+            Interfaz.WindowState = this.WindowState;
+            this.Hide();
+            Interfaz.Show();
+        }
+
+        private void search_Textbox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidationTextBox tr = new ValidationTextBox();
+            tr.CharacterEspecial(sender, e);
+        }
+
+        private void Search_Button_Click(object sender, EventArgs e)
         {
             dataGridView1.Rows.Clear();
             dataGridView1.Refresh();
             List<Reception> receptions = new List<Reception>();
-            receptions = receptionController.searchReception(searchTextBox.Text);
-           
-            
+            receptions = receptionController.searchReception(search_Textbox.Text);
+
+
             foreach (Reception reception in receptions)
             {
                 Product product = reception.Product;
@@ -160,60 +176,31 @@ namespace SistemaGestorDeInformes
                 String[] row = new String[] { productsName, unit, total };
                 dataGridView1.Rows.Add(row);
             }
-           
-            
         }
 
-        private void cleanButton_Click(object sender, EventArgs e)
+        private void Clean_Button_Click(object sender, EventArgs e)
         {
             dataGridView1.Rows.Clear();
             dataGridView1.Refresh();
             chargeData();
         }
 
-        private void ShowInventory_FormClosing(object sender, FormClosingEventArgs e)
+        private void Atras_button_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Main principal = new Main();//para volver atras
+            principal.WindowState = this.WindowState;
+            this.Hide();
+            principal.Show();
         }
 
-        private void searchTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        private void searchTextBox_TextChanged(object sender, EventArgs e)
         {
-            if ((e.KeyChar >= 48 && e.KeyChar <= 57) || (e.KeyChar >= 97 && e.KeyChar <= 122) || (e.KeyChar >= 65 && e.KeyChar <= 90) || (e.KeyChar == 8) || (e.KeyChar == 32))
-                e.Handled = false;
-            else
-                e.Handled = true;
+
         }
 
-        private void searchTextBox_KeyUp(object sender, KeyEventArgs e)
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.KeyValue == (char)Keys.Escape)
-            {
-                buttonAtrás.Focus();
-            }
-        }
 
-        private void dataGridView1_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyValue == (char)Keys.Escape)
-            {
-                buttonAtrás.Focus();
-            }
-        }
-
-        private void searchButton_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyValue == (char)Keys.Escape)
-            {
-                buttonAtrás.Focus();
-            }
-        }
-
-        private void cleanButton_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyValue == (char)Keys.Escape)
-            {
-                buttonAtrás.Focus();
-            }
         }
     }
 }

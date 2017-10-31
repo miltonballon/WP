@@ -7,13 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ControllerLibrary;
 
 namespace SistemaGestorDeInformes
 {
-    public partial class InterfazPrincipal : Form
+    public partial class Main : Form
     {
         Connection c = new Connection();
-        public InterfazPrincipal()
+        public Main()
         {
             InitializeComponent();
             c.connect();
@@ -23,13 +24,13 @@ namespace SistemaGestorDeInformes
 
         private void button3_Click(object sender, EventArgs e)
         {
-            InterfazRegistrarFactura InterfazRegistrarFactura1 = new InterfazRegistrarFactura();
+            RegisterInvoice InterfazRegistrarFactura1 = new RegisterInvoice();
             InterfazRegistrarFactura1.Show();
         }
 
         private void registrarFacturaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            InterfazRegistrarFactura intRegFac = new InterfazRegistrarFactura();
+            RegisterInvoice intRegFac = new RegisterInvoice();
             intRegFac.WindowState = this.WindowState;
             this.Hide();
             intRegFac.Show();
@@ -111,10 +112,7 @@ namespace SistemaGestorDeInformes
             Application.Exit();
         }
 
-
-
-
-
+                
         private void generarInformeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             GenerateReport Interfaz = new GenerateReport();
@@ -123,19 +121,20 @@ namespace SistemaGestorDeInformes
             Interfaz.Show();
         }
 
+        private void inventarioToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            InventoryConfiguration Interfaz = new InventoryConfiguration();
+            Interfaz.WindowState = this.WindowState;
+            this.Hide();
+            Interfaz.Show();
+        }
+
         private void verInformeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            ViewReport ViewReport = new ViewReport();
+            ViewReport.WindowState = this.WindowState;
+            this.Hide();
+            ViewReport.Show();
         }
-
-        public void ControlSetFocus(Control control)
-        {
-            // Set focus to the control, if it can receive focus.
-            if (control.CanFocus)
-            {
-                control.Focus();
-            }
-        }
-
     }
 }

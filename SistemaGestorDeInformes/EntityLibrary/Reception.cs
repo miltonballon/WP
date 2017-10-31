@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SistemaGestorDeInformes
+namespace EntityLibrary
 {
     public class Reception
     {
@@ -14,7 +14,7 @@ namespace SistemaGestorDeInformes
         private int total;
         public Reception()
         {
-            new Product();
+            product = new Product();
         }
 
         public Reception(Product product, string expirationDate, string receptionDate, int total)

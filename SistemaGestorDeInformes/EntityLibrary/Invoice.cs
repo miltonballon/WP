@@ -4,18 +4,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SistemaGestorDeInformes
+namespace EntityLibrary
 {
     public class Invoice
     {
+        private int id;
         private int nInvoice;
         private int nAutorization;
         private DateTime date;
         private List<InvoiceRow> InvoiceRows;
         private Provider provider;
+        private double total;
 
         public Invoice(Provider provider, int nInvoice, int nAutorization, DateTime date)
         {
+            this.provider = provider;
+            this.nInvoice = nInvoice;
+            this.nAutorization = nAutorization;
+            this.date = date;
+            InvoiceRows = new List<InvoiceRow>();
+        }
+
+        public Invoice(int id,Provider provider, int nInvoice, int nAutorization, DateTime date)
+        {
+            this.id = id;
             this.provider = provider;
             this.nInvoice = nInvoice;
             this.nAutorization = nAutorization;
@@ -76,6 +88,32 @@ namespace SistemaGestorDeInformes
         public void setInvoiceRows(List<InvoiceRow> invoiceRows)
         {
             InvoiceRows = invoiceRows;
+        }
+
+        public int getId()
+        {
+            return id;
+        }
+
+        public void setId(int id)
+        {
+            this.id = id;
+        }
+
+        public void setTotal()
+        {
+            double addition = 0;
+            foreach (InvoiceRow row in InvoiceRows)
+            {
+                addition += row.getTotal();
+            }
+            total = addition;
+        }
+
+        public double getTotal()
+        {
+            setTotal();
+            return total;
         }
 
         public override String ToString()

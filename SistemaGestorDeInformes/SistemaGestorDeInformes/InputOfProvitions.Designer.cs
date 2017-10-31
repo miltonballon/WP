@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.RegisterButton = new System.Windows.Forms.Button();
+            this.Register_Button = new System.Windows.Forms.Button();
             this.labelInformaciónBásica = new System.Windows.Forms.Label();
             this.buttonAtrás = new System.Windows.Forms.Button();
             this.labelNFactura = new System.Windows.Forms.Label();
@@ -38,12 +38,11 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.ExpirationDate = new System.Windows.Forms.DateTimePicker();
-            this.UnitTextBox = new System.Windows.Forms.TextBox();
-            this.ProviderTextBox = new System.Windows.Forms.TextBox();
-            this.ProducTextBox = new System.Windows.Forms.TextBox();
+            this.Unit_TextBox = new System.Windows.Forms.TextBox();
+            this.Provider_TextBox = new System.Windows.Forms.TextBox();
+            this.Produc_TextBox = new System.Windows.Forms.TextBox();
             this.ReceptionDate = new System.Windows.Forms.DateTimePicker();
-            this.TotalReception = new System.Windows.Forms.TextBox();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.TotalReception_Textbox = new System.Windows.Forms.TextBox();
             this.pantallaPrincipalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.facturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarFacturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -60,25 +59,28 @@
             this.verInventarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.configuraciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inventarioToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.abrirTrimestreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.atrasButton = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.FreshRadioButton = new System.Windows.Forms.RadioButton();
+            this.DryRadioButton = new System.Windows.Forms.RadioButton();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // RegisterButton
+            // Register_Button
             // 
-            this.RegisterButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.RegisterButton.BackColor = System.Drawing.Color.Black;
-            this.RegisterButton.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
-            this.RegisterButton.ForeColor = System.Drawing.Color.Yellow;
-            this.RegisterButton.Location = new System.Drawing.Point(260, 378);
-            this.RegisterButton.Name = "RegisterButton";
-            this.RegisterButton.Size = new System.Drawing.Size(120, 30);
-            this.RegisterButton.TabIndex = 6;
-            this.RegisterButton.Text = "Registrar";
-            this.RegisterButton.UseVisualStyleBackColor = false;
-            this.RegisterButton.Click += new System.EventHandler(this.RegisterButton_Click);
+            this.Register_Button.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Register_Button.BackColor = System.Drawing.Color.Black;
+            this.Register_Button.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
+            this.Register_Button.ForeColor = System.Drawing.Color.Yellow;
+            this.Register_Button.Location = new System.Drawing.Point(325, 393);
+            this.Register_Button.Name = "Register_Button";
+            this.Register_Button.Size = new System.Drawing.Size(120, 30);
+            this.Register_Button.TabIndex = 6;
+            this.Register_Button.Text = "Registrar";
+            this.Register_Button.UseVisualStyleBackColor = false;
+            this.Register_Button.Click += new System.EventHandler(this.Register_Button_Click);
             // 
             // labelInformaciónBásica
             // 
@@ -87,9 +89,9 @@
             this.labelInformaciónBásica.ForeColor = System.Drawing.Color.Yellow;
             this.labelInformaciónBásica.Location = new System.Drawing.Point(30, 40);
             this.labelInformaciónBásica.Name = "labelInformaciónBásica";
-            this.labelInformaciónBásica.Size = new System.Drawing.Size(408, 19);
+            this.labelInformaciónBásica.Size = new System.Drawing.Size(400, 19);
             this.labelInformaciónBásica.TabIndex = 19;
-            this.labelInformaciónBásica.Text = "Registrar Recepción De Víveres En El Inventario";
+            this.labelInformaciónBásica.Text = "Registrar Recepción de Víveres en el Inventario";
             // 
             // buttonAtrás
             // 
@@ -97,7 +99,7 @@
             this.buttonAtrás.BackColor = System.Drawing.Color.Black;
             this.buttonAtrás.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAtrás.ForeColor = System.Drawing.Color.Yellow;
-            this.buttonAtrás.Location = new System.Drawing.Point(3, 537);
+            this.buttonAtrás.Location = new System.Drawing.Point(3, 472);
             this.buttonAtrás.Name = "buttonAtrás";
             this.buttonAtrás.Size = new System.Drawing.Size(120, 30);
             this.buttonAtrás.TabIndex = 7;
@@ -111,7 +113,7 @@
             this.labelNFactura.AutoSize = true;
             this.labelNFactura.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNFactura.ForeColor = System.Drawing.Color.White;
-            this.labelNFactura.Location = new System.Drawing.Point(77, 183);
+            this.labelNFactura.Location = new System.Drawing.Point(125, 216);
             this.labelNFactura.Name = "labelNFactura";
             this.labelNFactura.Size = new System.Drawing.Size(70, 19);
             this.labelNFactura.TabIndex = 23;
@@ -123,7 +125,7 @@
             this.labelNit.AutoSize = true;
             this.labelNit.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNit.ForeColor = System.Drawing.Color.White;
-            this.labelNit.Location = new System.Drawing.Point(77, 143);
+            this.labelNit.Location = new System.Drawing.Point(125, 176);
             this.labelNit.Name = "labelNit";
             this.labelNit.Size = new System.Drawing.Size(103, 19);
             this.labelNit.TabIndex = 22;
@@ -135,7 +137,7 @@
             this.labelProveedor.AutoSize = true;
             this.labelProveedor.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelProveedor.ForeColor = System.Drawing.Color.White;
-            this.labelProveedor.Location = new System.Drawing.Point(77, 103);
+            this.labelProveedor.Location = new System.Drawing.Point(125, 136);
             this.labelProveedor.Name = "labelProveedor";
             this.labelProveedor.Size = new System.Drawing.Size(94, 19);
             this.labelProveedor.TabIndex = 21;
@@ -147,7 +149,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(77, 263);
+            this.label7.Location = new System.Drawing.Point(125, 296);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(155, 19);
             this.label7.TabIndex = 25;
@@ -159,7 +161,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(77, 223);
+            this.label8.Location = new System.Drawing.Point(125, 256);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(191, 19);
             this.label8.TabIndex = 24;
@@ -171,102 +173,77 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(77, 303);
+            this.label9.Location = new System.Drawing.Point(125, 336);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(140, 19);
             this.label9.TabIndex = 26;
             this.label9.Text = "CANTIDAD TOTAL:";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // ExpirationDate
             // 
             this.ExpirationDate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ExpirationDate.Font = new System.Drawing.Font("Bookman Old Style", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExpirationDate.Location = new System.Drawing.Point(277, 223);
+            this.ExpirationDate.Location = new System.Drawing.Point(325, 256);
             this.ExpirationDate.Name = "ExpirationDate";
             this.ExpirationDate.Size = new System.Drawing.Size(250, 23);
             this.ExpirationDate.TabIndex = 3;
-            this.ExpirationDate.KeyUp += new System.Windows.Forms.KeyEventHandler(this.ExpirationDate_KeyUp);
             // 
-            // UnitTextBox
+            // Unit_TextBox
             // 
-            this.UnitTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.UnitTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.UnitTextBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.UnitTextBox.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UnitTextBox.Location = new System.Drawing.Point(277, 183);
-            this.UnitTextBox.Name = "UnitTextBox";
-            this.UnitTextBox.Size = new System.Drawing.Size(250, 23);
-            this.UnitTextBox.TabIndex = 2;
-            this.UnitTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.UnitTextBox_KeyPress);
-            this.UnitTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.UnitTextBox_KeyUp);
+            this.Unit_TextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Unit_TextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.Unit_TextBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.Unit_TextBox.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Unit_TextBox.Location = new System.Drawing.Point(325, 216);
+            this.Unit_TextBox.Name = "Unit_TextBox";
+            this.Unit_TextBox.Size = new System.Drawing.Size(250, 23);
+            this.Unit_TextBox.TabIndex = 2;
+            this.Unit_TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Unit_TextBox_KeyPress);
             // 
-            // ProviderTextBox
+            // Provider_TextBox
             // 
-            this.ProviderTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ProviderTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.ProviderTextBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.ProviderTextBox.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProviderTextBox.Location = new System.Drawing.Point(277, 143);
-            this.ProviderTextBox.MaxLength = 64;
-            this.ProviderTextBox.Name = "ProviderTextBox";
-            this.ProviderTextBox.Size = new System.Drawing.Size(250, 23);
-            this.ProviderTextBox.TabIndex = 1;
-            this.ProviderTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ProviderTextBox_KeyPress);
-            this.ProviderTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.ProviderTextBox_KeyUp);
+            this.Provider_TextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Provider_TextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.Provider_TextBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.Provider_TextBox.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Provider_TextBox.Location = new System.Drawing.Point(325, 176);
+            this.Provider_TextBox.MaxLength = 64;
+            this.Provider_TextBox.Name = "Provider_TextBox";
+            this.Provider_TextBox.Size = new System.Drawing.Size(250, 23);
+            this.Provider_TextBox.TabIndex = 1;
+            this.Provider_TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Provider_TextBox_KeyPress);
             // 
-            // ProducTextBox
+            // Produc_TextBox
             // 
-            this.ProducTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ProducTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.ProducTextBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.ProducTextBox.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProducTextBox.Location = new System.Drawing.Point(277, 103);
-            this.ProducTextBox.MaxLength = 64;
-            this.ProducTextBox.Name = "ProducTextBox";
-            this.ProducTextBox.Size = new System.Drawing.Size(250, 23);
-            this.ProducTextBox.TabIndex = 0;
-            this.ProducTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ProducTextBox_KeyPress);
-            this.ProducTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.ProducTextBox_KeyUp);
+            this.Produc_TextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Produc_TextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.Produc_TextBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.Produc_TextBox.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Produc_TextBox.Location = new System.Drawing.Point(325, 136);
+            this.Produc_TextBox.MaxLength = 64;
+            this.Produc_TextBox.Name = "Produc_TextBox";
+            this.Produc_TextBox.Size = new System.Drawing.Size(250, 23);
+            this.Produc_TextBox.TabIndex = 0;
+            this.Produc_TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Produc_TextBox_KeyPress);
             // 
             // ReceptionDate
             // 
             this.ReceptionDate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ReceptionDate.Font = new System.Drawing.Font("Bookman Old Style", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ReceptionDate.Location = new System.Drawing.Point(277, 263);
+            this.ReceptionDate.Location = new System.Drawing.Point(325, 296);
             this.ReceptionDate.Name = "ReceptionDate";
             this.ReceptionDate.Size = new System.Drawing.Size(250, 23);
             this.ReceptionDate.TabIndex = 4;
-            this.ReceptionDate.KeyUp += new System.Windows.Forms.KeyEventHandler(this.ReceptionDate_KeyUp);
             // 
-            // TotalReception
+            // TotalReception_Textbox
             // 
-            this.TotalReception.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.TotalReception.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TotalReception.Location = new System.Drawing.Point(277, 303);
-            this.TotalReception.Name = "TotalReception";
-            this.TotalReception.Size = new System.Drawing.Size(250, 23);
-            this.TotalReception.TabIndex = 5;
-            this.TotalReception.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TotalReception_KeyPress);
-            this.TotalReception.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TotalReception_KeyUp);
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.pantallaPrincipalToolStripMenuItem,
-            this.facturasToolStripMenuItem,
-            this.productosToolStripMenuItem,
-            this.informeToolStripMenuItem1,
-            this.inventarioToolStripMenuItem,
-            this.configuraciónToolStripMenuItem,
-            this.abrirTrimestreToolStripMenuItem,
-            this.salirToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(815, 24);
-            this.menuStrip1.TabIndex = 33;
-            this.menuStrip1.Text = "menuStrip1";
+            this.TotalReception_Textbox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.TotalReception_Textbox.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalReception_Textbox.Location = new System.Drawing.Point(325, 336);
+            this.TotalReception_Textbox.Name = "TotalReception_Textbox";
+            this.TotalReception_Textbox.Size = new System.Drawing.Size(250, 23);
+            this.TotalReception_Textbox.TabIndex = 5;
+            this.TotalReception_Textbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TotalReception_KeyPress);
             // 
             // pantallaPrincipalToolStripMenuItem
             // 
@@ -382,7 +359,8 @@
             // configuraciónToolStripMenuItem
             // 
             this.configuraciónToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.informeToolStripMenuItem});
+            this.informeToolStripMenuItem,
+            this.inventarioToolStripMenuItem1});
             this.configuraciónToolStripMenuItem.Name = "configuraciónToolStripMenuItem";
             this.configuraciónToolStripMenuItem.Size = new System.Drawing.Size(95, 20);
             this.configuraciónToolStripMenuItem.Text = "Configuración";
@@ -390,9 +368,16 @@
             // informeToolStripMenuItem
             // 
             this.informeToolStripMenuItem.Name = "informeToolStripMenuItem";
-            this.informeToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.informeToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.informeToolStripMenuItem.Text = "Informe";
             this.informeToolStripMenuItem.Click += new System.EventHandler(this.informeToolStripMenuItem_Click);
+            // 
+            // inventarioToolStripMenuItem1
+            // 
+            this.inventarioToolStripMenuItem1.Name = "inventarioToolStripMenuItem1";
+            this.inventarioToolStripMenuItem1.Size = new System.Drawing.Size(127, 22);
+            this.inventarioToolStripMenuItem1.Text = "Inventario";
+            this.inventarioToolStripMenuItem1.Click += new System.EventHandler(this.inventarioToolStripMenuItem1_Click);
             // 
             // abrirTrimestreToolStripMenuItem
             // 
@@ -408,19 +393,47 @@
             this.salirToolStripMenuItem.Text = "Cerrar Sesión";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
-            // atrasButton
+            // menuStrip1
             // 
-            this.atrasButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.atrasButton.BackColor = System.Drawing.Color.Black;
-            this.atrasButton.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
-            this.atrasButton.ForeColor = System.Drawing.Color.Yellow;
-            this.atrasButton.Location = new System.Drawing.Point(3, 472);
-            this.atrasButton.Name = "atrasButton";
-            this.atrasButton.Size = new System.Drawing.Size(120, 30);
-            this.atrasButton.TabIndex = 36;
-            this.atrasButton.Text = "Atrás";
-            this.atrasButton.UseVisualStyleBackColor = false;
-            this.atrasButton.Click += new System.EventHandler(this.atrasButton_Click);
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.pantallaPrincipalToolStripMenuItem,
+            this.facturasToolStripMenuItem,
+            this.productosToolStripMenuItem,
+            this.informeToolStripMenuItem1,
+            this.inventarioToolStripMenuItem,
+            this.configuraciónToolStripMenuItem,
+            this.abrirTrimestreToolStripMenuItem,
+            this.salirToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(815, 24);
+            this.menuStrip1.TabIndex = 33;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // FreshRadioButton
+            // 
+            this.FreshRadioButton.AutoSize = true;
+            this.FreshRadioButton.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.FreshRadioButton.Location = new System.Drawing.Point(325, 370);
+            this.FreshRadioButton.Name = "FreshRadioButton";
+            this.FreshRadioButton.Size = new System.Drawing.Size(68, 17);
+            this.FreshRadioButton.TabIndex = 34;
+            this.FreshRadioButton.TabStop = true;
+            this.FreshRadioButton.Text = "FRESCO";
+            this.FreshRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // DryRadioButton
+            // 
+            this.DryRadioButton.AutoSize = true;
+            this.DryRadioButton.ForeColor = System.Drawing.SystemColors.Control;
+            this.DryRadioButton.Location = new System.Drawing.Point(408, 370);
+            this.DryRadioButton.Name = "DryRadioButton";
+            this.DryRadioButton.Size = new System.Drawing.Size(54, 17);
+            this.DryRadioButton.TabIndex = 35;
+            this.DryRadioButton.TabStop = true;
+            this.DryRadioButton.Text = "SECO";
+            this.DryRadioButton.UseVisualStyleBackColor = true;
             // 
             // InputOfProvitions
             // 
@@ -428,14 +441,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(815, 508);
-            this.Controls.Add(this.atrasButton);
+            this.Controls.Add(this.DryRadioButton);
+            this.Controls.Add(this.FreshRadioButton);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.TotalReception);
+            this.Controls.Add(this.TotalReception_Textbox);
             this.Controls.Add(this.ReceptionDate);
             this.Controls.Add(this.ExpirationDate);
-            this.Controls.Add(this.UnitTextBox);
-            this.Controls.Add(this.ProviderTextBox);
-            this.Controls.Add(this.ProducTextBox);
+            this.Controls.Add(this.Unit_TextBox);
+            this.Controls.Add(this.Provider_TextBox);
+            this.Controls.Add(this.Produc_TextBox);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label8);
@@ -444,12 +458,13 @@
             this.Controls.Add(this.labelProveedor);
             this.Controls.Add(this.buttonAtrás);
             this.Controls.Add(this.labelInformaciónBásica);
-            this.Controls.Add(this.RegisterButton);
+            this.Controls.Add(this.Register_Button);
             this.Name = "InputOfProvitions";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registrar Entrada";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.InputOfProvitions_FormClosing);
             this.Load += new System.EventHandler(this.RegisterReception_Load);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.InputOfProvitions_KeyUp);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -458,7 +473,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button RegisterButton;
+        private System.Windows.Forms.Button Register_Button;
         private System.Windows.Forms.Label labelInformaciónBásica;
         private System.Windows.Forms.Button buttonAtrás;
         private System.Windows.Forms.Label labelNFactura;
@@ -468,12 +483,11 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DateTimePicker ExpirationDate;
-        private System.Windows.Forms.TextBox UnitTextBox;
-        private System.Windows.Forms.TextBox ProviderTextBox;
-        private System.Windows.Forms.TextBox ProducTextBox;
+        private System.Windows.Forms.TextBox Unit_TextBox;
+        private System.Windows.Forms.TextBox Provider_TextBox;
+        private System.Windows.Forms.TextBox Produc_TextBox;
         private System.Windows.Forms.DateTimePicker ReceptionDate;
-        private System.Windows.Forms.TextBox TotalReception;
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.TextBox TotalReception_Textbox;
         private System.Windows.Forms.ToolStripMenuItem pantallaPrincipalToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem facturasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registrarFacturaToolStripMenuItem;
@@ -492,6 +506,9 @@
         private System.Windows.Forms.ToolStripMenuItem informeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem abrirTrimestreToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
-        private System.Windows.Forms.Button atrasButton;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem inventarioToolStripMenuItem1;
+        public System.Windows.Forms.RadioButton FreshRadioButton;
+        public System.Windows.Forms.RadioButton DryRadioButton;
     }
 }

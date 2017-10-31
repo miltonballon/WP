@@ -8,7 +8,7 @@ using System.Data.OleDb;
 using System.Windows.Forms;
 using System.IO;
 using System.Data.SQLite;
-namespace SistemaGestorDeInformes
+namespace ControllerLibrary
 {
     public class Connection
     {

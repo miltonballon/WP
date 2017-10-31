@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ControllerLibrary;
+using EntityLibrary;
 
 namespace SistemaGestorDeInformes
 {
@@ -21,20 +23,15 @@ namespace SistemaGestorDeInformes
 
         private void buttonAtrás_Click(object sender, EventArgs e)
         {
-            InterfazPrincipal main = new InterfazPrincipal();
+            Main main = new Main();
             main.WindowState = this.WindowState;
             this.Hide();
             main.Show();
         }
 
-        private void registrarSalidaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void pantallaPrincipalToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            InterfazPrincipal Interfaz = new InterfazPrincipal();
+            Main Interfaz = new Main();
             Interfaz.WindowState = this.WindowState;
             this.Hide();
             Interfaz.Show();
@@ -42,7 +39,7 @@ namespace SistemaGestorDeInformes
 
         private void registrarFacturaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            InterfazRegistrarFactura Interfaz = new InterfazRegistrarFactura();
+            RegisterInvoice Interfaz = new RegisterInvoice();
             Interfaz.WindowState = this.WindowState;
             this.Hide();
             Interfaz.Show();
@@ -113,108 +110,92 @@ namespace SistemaGestorDeInformes
 
         private void OutputOfProvitions_Load(object sender, EventArgs e)
         {
-            rc.ProductAutoComplete(ProductTextBox);
-            rc.UnitAutoComplete(UnitTextBox);
+            rc.ProductAutoComplete(Product_TextBox);
+            rc.UnitAutoComplete(Unit_TextBox);
 
-            ProductTextBox.MaxLength = 70;
-            UnitTextBox.MaxLength = 3;
-            TotalTextBox.MaxLength = 15;
-            OutputDateTextBox.MaxLength = 10;
+            Product_TextBox.MaxLength = 70;
+            Unit_TextBox.MaxLength = 20;
+            Total_TextBox.MaxLength = 15;
+            OutputDate_TextBox.MaxLength = 10;
 
-            ProductTextBox.ShortcutsEnabled = false;
-            UnitTextBox.ShortcutsEnabled = false;
-            TotalTextBox.ShortcutsEnabled = false;
-            OutputDateTextBox.ShortcutsEnabled = false;
+            Product_TextBox.ShortcutsEnabled = false;
+            Unit_TextBox.ShortcutsEnabled = false;
+            Total_TextBox.ShortcutsEnabled = false;
+            OutputDate_TextBox.ShortcutsEnabled = false;
 
+            KeyPreview = true;
         }
 
         private void RegisterButton_Click(object sender, EventArgs e)
         {
-            rc.RegisterOutputReception(ProductTextBox, UnitTextBox, OutputDateTextBox, TotalTextBox);
+            //rc.RegisterOutputReception(ProductTextBox, UnitTextBox, OutputDateTextBox, TotalTextBox);
+            OutputReception outputReception = new OutputReception();
+            outputReception.Reception.Product.Name = Product_TextBox.Text;
+            outputReception.Reception.Product.Unit = Unit_TextBox.Text;
+            outputReception.OutputDate = OutputDate_TextBox.Text;
+            outputReception.Total = Int32.Parse(Total_TextBox.Text);
+
+            rc.InsertOutputReceptionAndInventory(outputReception);
         }
-
-        private void generarInformeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            GenerateReport Interfaz = new GenerateReport();
-            Interfaz.WindowState = this.WindowState;
-            this.Hide();
-            Interfaz.Show();
-        }
-
-        private void OutputOfProvitions_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void ProductTextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar >= 48 && e.KeyChar <= 57) || (e.KeyChar >= 97 && e.KeyChar <= 122) || (e.KeyChar >= 65 && e.KeyChar <= 90) || (e.KeyChar == 8) || (e.KeyChar == 32))
-                e.Handled = false;
-            else
-                e.Handled = true;
-        }
-
-        private void UnitTextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar >= 48 && e.KeyChar <= 57) || (e.KeyChar >= 97 && e.KeyChar <= 122) || (e.KeyChar >= 65 && e.KeyChar <= 90) || (e.KeyChar == 8) || (e.KeyChar == 32))
-                e.Handled = false;
-            else
-                e.Handled = true;
-        }
-
-
-        private void OutputDateTextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar >= 48 && e.KeyChar <= 57) || (e.KeyChar >= 97 && e.KeyChar <= 122) || (e.KeyChar >= 65 && e.KeyChar <= 90) || (e.KeyChar == 8) || (e.KeyChar == 32))
-                e.Handled = false;
-            else
-                e.Handled = true;
-        }
-
-        private void ProductTextBox_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyValue == (char)Keys.Escape)
+            private void generarInformeToolStripMenuItem_Click(object sender, EventArgs e)
             {
-                buttonAtrás.Focus();
+                GenerateReport Interfaz = new GenerateReport();
+                Interfaz.WindowState = this.WindowState;
+                this.Hide();
+                Interfaz.Show();
             }
-        }
 
-        private void UnitTextBox_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyValue == (char)Keys.Escape)
+            private void OutputOfProvitions_FormClosing(object sender, FormClosingEventArgs e)
             {
-                buttonAtrás.Focus();
+                Application.Exit();
             }
-        }
 
-        private void TotalTextBox_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyValue == (char)Keys.Escape)
+
+
+            private void OutputOfProvitions_KeyUp(object sender, KeyEventArgs e)
             {
-                buttonAtrás.Focus();
+                Main prin = new Main();
+                ValidationTextBox tr = new ValidationTextBox();
+                tr.KeyEscape(sender, e, this, prin);
             }
-        }
 
-        private void OutputDateTextBox_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyValue == (char)Keys.Escape)
+            private void inventarioToolStripMenuItem1_Click(object sender, EventArgs e)
             {
-                buttonAtrás.Focus();
+                InventoryConfiguration Interfaz = new InventoryConfiguration();
+                Interfaz.WindowState = this.WindowState;
+                this.Hide();
+                Interfaz.Show();
             }
-        }
 
-        private void TotalTextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar != '1' && e.KeyChar != '2' && e.KeyChar != '3' && e.KeyChar != '4' && e.KeyChar != '5' && e.KeyChar != '6' && e.KeyChar != '7' && e.KeyChar != '8' && e.KeyChar != '9' && e.KeyChar != '0')
-                e.Handled = true;
-        }
+            private void Product_TextBox_KeyPress(object sender, KeyPressEventArgs e)
+            {
+                //if ((e.KeyChar >= 48 && e.KeyChar <= 57) || (e.KeyChar >= 97 && e.KeyChar <= 122) || (e.KeyChar >= 65 && e.KeyChar <= 90) || (e.KeyChar == 8) || (e.KeyChar == 32) || (e.KeyChar == 47))
+                ValidationTextBox tr = new ValidationTextBox();
+                tr.CharacterEspecial(sender, e);
+            }
 
-        private void atrasButton_Click(object sender, EventArgs e)
-        {
-            InterfazPrincipal main = new InterfazPrincipal();
-            main.WindowState = this.WindowState;
-            this.Hide();
-            main.Show();
+            private void Unit_TextBox_KeyPress(object sender, KeyPressEventArgs e)
+            {
+                ValidationTextBox tr = new ValidationTextBox();
+                tr.CharacterEspecial(sender, e);
+            }
+
+            private void Total_TextBox_KeyPress(object sender, KeyPressEventArgs e)
+            {
+                if (e.KeyChar != 08 && e.KeyChar != '1' && e.KeyChar != '2' && e.KeyChar != '3' && e.KeyChar != '4' && e.KeyChar != '5' && e.KeyChar != '6' && e.KeyChar != '7' && e.KeyChar != '8' && e.KeyChar != '9' && e.KeyChar != '0')
+                    e.Handled = true;
+            }
+
+            private void OutputDate_TextBox_KeyPress(object sender, KeyPressEventArgs e)
+            {
+                ValidationTextBox tr = new ValidationTextBox();
+                tr.CharacterEspecial(sender, e);
+            }
+
+            private void Register_Button_Click(object sender, EventArgs e)
+            {
+                //rc.registerOutputReception(Product_TextBox, Unit_TextBox, OutputDate_TextBox, Total_TextBox);
+            }
         }
     }
-}
+

@@ -1,6 +1,6 @@
 ﻿namespace SistemaGestorDeInformes
 {
-    partial class InterfazRegistrarFactura
+    partial class RegisterInvoice
     {
         /// <summary>
         /// Required designer variable.
@@ -68,6 +68,7 @@
             this.buttonGuardar = new System.Windows.Forms.Button();
             this.buttonAtrás = new System.Windows.Forms.Button();
             this.labelInformaciónBásica = new System.Windows.Forms.Label();
+            this.inventarioToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -206,7 +207,8 @@
             // configuraciónToolStripMenuItem
             // 
             this.configuraciónToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.informeToolStripMenuItem});
+            this.informeToolStripMenuItem,
+            this.inventarioToolStripMenuItem1});
             this.configuraciónToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.configuraciónToolStripMenuItem.Name = "configuraciónToolStripMenuItem";
             this.configuraciónToolStripMenuItem.Size = new System.Drawing.Size(95, 20);
@@ -215,7 +217,7 @@
             // informeToolStripMenuItem
             // 
             this.informeToolStripMenuItem.Name = "informeToolStripMenuItem";
-            this.informeToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.informeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.informeToolStripMenuItem.Text = "Informe";
             this.informeToolStripMenuItem.Click += new System.EventHandler(this.informeToolStripMenuItem_Click);
             // 
@@ -247,7 +249,7 @@
             this.labelProveedor.AutoSize = true;
             this.labelProveedor.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelProveedor.ForeColor = System.Drawing.Color.White;
-            this.labelProveedor.Location = new System.Drawing.Point(30, 70);
+            this.labelProveedor.Location = new System.Drawing.Point(56, 63);
             this.labelProveedor.Name = "labelProveedor";
             this.labelProveedor.Size = new System.Drawing.Size(103, 19);
             this.labelProveedor.TabIndex = 1;
@@ -259,7 +261,7 @@
             this.labelNit.AutoSize = true;
             this.labelNit.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNit.ForeColor = System.Drawing.Color.White;
-            this.labelNit.Location = new System.Drawing.Point(30, 110);
+            this.labelNit.Location = new System.Drawing.Point(56, 103);
             this.labelNit.Name = "labelNit";
             this.labelNit.Size = new System.Drawing.Size(37, 19);
             this.labelNit.TabIndex = 2;
@@ -271,7 +273,7 @@
             this.labelNFactura.AutoSize = true;
             this.labelNFactura.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNFactura.ForeColor = System.Drawing.Color.White;
-            this.labelNFactura.Location = new System.Drawing.Point(30, 150);
+            this.labelNFactura.Location = new System.Drawing.Point(56, 143);
             this.labelNFactura.Name = "labelNFactura";
             this.labelNFactura.Size = new System.Drawing.Size(99, 19);
             this.labelNFactura.TabIndex = 3;
@@ -283,7 +285,7 @@
             this.labelNAutorizacion.AutoSize = true;
             this.labelNAutorizacion.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNAutorizacion.ForeColor = System.Drawing.Color.White;
-            this.labelNAutorizacion.Location = new System.Drawing.Point(30, 190);
+            this.labelNAutorizacion.Location = new System.Drawing.Point(56, 183);
             this.labelNAutorizacion.Name = "labelNAutorizacion";
             this.labelNAutorizacion.Size = new System.Drawing.Size(141, 19);
             this.labelNAutorizacion.TabIndex = 4;
@@ -295,7 +297,7 @@
             this.labelFecha.AutoSize = true;
             this.labelFecha.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelFecha.ForeColor = System.Drawing.Color.White;
-            this.labelFecha.Location = new System.Drawing.Point(30, 230);
+            this.labelFecha.Location = new System.Drawing.Point(56, 223);
             this.labelFecha.Name = "labelFecha";
             this.labelFecha.Size = new System.Drawing.Size(62, 19);
             this.labelFecha.TabIndex = 5;
@@ -307,7 +309,7 @@
             this.labelProductos.AutoSize = true;
             this.labelProductos.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelProductos.ForeColor = System.Drawing.Color.Yellow;
-            this.labelProductos.Location = new System.Drawing.Point(30, 270);
+            this.labelProductos.Location = new System.Drawing.Point(56, 263);
             this.labelProductos.Name = "labelProductos";
             this.labelProductos.Size = new System.Drawing.Size(93, 19);
             this.labelProductos.TabIndex = 6;
@@ -317,54 +319,48 @@
             // 
             this.textBoxProveedor.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxProveedor.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxProveedor.Location = new System.Drawing.Point(170, 70);
+            this.textBoxProveedor.Location = new System.Drawing.Point(196, 63);
             this.textBoxProveedor.Name = "textBoxProveedor";
             this.textBoxProveedor.Size = new System.Drawing.Size(250, 23);
             this.textBoxProveedor.TabIndex = 7;
-            this.textBoxProveedor.TextChanged += new System.EventHandler(this.textBoxProveedor_TextChanged);
             this.textBoxProveedor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxProveedor_KeyPress);
-            this.textBoxProveedor.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxProveedor_KeyUp);
             this.textBoxProveedor.Leave += new System.EventHandler(this.textBoxProveedor_Leave);
             // 
             // textBoxNit
             // 
             this.textBoxNit.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxNit.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxNit.Location = new System.Drawing.Point(170, 110);
+            this.textBoxNit.Location = new System.Drawing.Point(196, 103);
             this.textBoxNit.Name = "textBoxNit";
             this.textBoxNit.Size = new System.Drawing.Size(250, 23);
             this.textBoxNit.TabIndex = 8;
-            this.textBoxNit.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxNit_KeyUp);
             // 
             // textBoxNFactura
             // 
             this.textBoxNFactura.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxNFactura.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxNFactura.Location = new System.Drawing.Point(170, 150);
+            this.textBoxNFactura.Location = new System.Drawing.Point(196, 143);
             this.textBoxNFactura.Name = "textBoxNFactura";
             this.textBoxNFactura.Size = new System.Drawing.Size(250, 23);
             this.textBoxNFactura.TabIndex = 9;
-            this.textBoxNFactura.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxNFactura_KeyUp);
             // 
             // textBoxNAutorizacion
             // 
             this.textBoxNAutorizacion.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxNAutorizacion.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxNAutorizacion.Location = new System.Drawing.Point(170, 190);
+            this.textBoxNAutorizacion.Location = new System.Drawing.Point(196, 183);
             this.textBoxNAutorizacion.Name = "textBoxNAutorizacion";
             this.textBoxNAutorizacion.Size = new System.Drawing.Size(250, 23);
             this.textBoxNAutorizacion.TabIndex = 10;
-            this.textBoxNAutorizacion.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxNAutorizacion_KeyUp);
             // 
             // dateFecha
             // 
             this.dateFecha.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dateFecha.Font = new System.Drawing.Font("Bookman Old Style", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateFecha.Location = new System.Drawing.Point(170, 230);
+            this.dateFecha.Location = new System.Drawing.Point(196, 223);
             this.dateFecha.Name = "dateFecha";
             this.dateFecha.Size = new System.Drawing.Size(250, 23);
             this.dateFecha.TabIndex = 11;
-            this.dateFecha.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dateFecha_KeyUp);
             // 
             // dataGridView1
             // 
@@ -376,13 +372,12 @@
             this.Cantidad,
             this.PrecioUnitario,
             this.PrecioTotal});
-            this.dataGridView1.Location = new System.Drawing.Point(30, 300);
+            this.dataGridView1.Location = new System.Drawing.Point(56, 293);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(546, 150);
             this.dataGridView1.TabIndex = 12;
             this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
             this.dataGridView1.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataGridView1_EditingControlShowing);
-            this.dataGridView1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dataGridView1_KeyUp);
             // 
             // Nombre
             // 
@@ -416,7 +411,7 @@
             this.buttonGuardar.BackColor = System.Drawing.Color.Black;
             this.buttonGuardar.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonGuardar.ForeColor = System.Drawing.Color.Yellow;
-            this.buttonGuardar.Location = new System.Drawing.Point(250, 456);
+            this.buttonGuardar.Location = new System.Drawing.Point(230, 449);
             this.buttonGuardar.Name = "buttonGuardar";
             this.buttonGuardar.Size = new System.Drawing.Size(120, 30);
             this.buttonGuardar.TabIndex = 13;
@@ -444,13 +439,20 @@
             this.labelInformaciónBásica.AutoSize = true;
             this.labelInformaciónBásica.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelInformaciónBásica.ForeColor = System.Drawing.Color.Yellow;
-            this.labelInformaciónBásica.Location = new System.Drawing.Point(30, 40);
+            this.labelInformaciónBásica.Location = new System.Drawing.Point(56, 33);
             this.labelInformaciónBásica.Name = "labelInformaciónBásica";
             this.labelInformaciónBásica.Size = new System.Drawing.Size(168, 19);
             this.labelInformaciónBásica.TabIndex = 15;
             this.labelInformaciónBásica.Text = "Información Básica";
             // 
-            // InterfazRegistrarFactura
+            // inventarioToolStripMenuItem1
+            // 
+            this.inventarioToolStripMenuItem1.Name = "inventarioToolStripMenuItem1";
+            this.inventarioToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.inventarioToolStripMenuItem1.Text = "Inventario";
+            this.inventarioToolStripMenuItem1.Click += new System.EventHandler(this.inventarioToolStripMenuItem1_Click);
+            // 
+            // RegisterInvoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -473,11 +475,12 @@
             this.Controls.Add(this.labelProveedor);
             this.Controls.Add(this.menuStrip1);
             this.ForeColor = System.Drawing.Color.Gray;
-            this.Name = "InterfazRegistrarFactura";
+            this.Name = "RegisterInvoice";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registrar Factura";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.InterfazRegistrarFactura_FormClosing);
             this.Load += new System.EventHandler(this.InterfazRegistrarFactura_Load);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.InterfazRegistrarFactura_KeyUp);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -528,5 +531,6 @@
         private System.Windows.Forms.ToolStripMenuItem facturasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem verFacturasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem inventarioToolStripMenuItem1;
     }
 }
