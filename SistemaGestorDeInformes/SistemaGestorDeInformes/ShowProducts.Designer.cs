@@ -51,11 +51,11 @@
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.atrasButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Buscar_textBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.searchButton = new System.Windows.Forms.Button();
-            this.clearSearchButton = new System.Windows.Forms.Button();
-            this.editButton = new System.Windows.Forms.Button();
+            this.search_Button = new System.Windows.Forms.Button();
+            this.clearSearch_Button = new System.Windows.Forms.Button();
+            this.Edit_Button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -259,14 +259,14 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Productos";
             // 
-            // textBox1
+            // Buscar_textBox
             // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox1.Location = new System.Drawing.Point(123, 89);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(148, 20);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.Buscar_textBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Buscar_textBox.Location = new System.Drawing.Point(123, 89);
+            this.Buscar_textBox.Name = "Buscar_textBox";
+            this.Buscar_textBox.Size = new System.Drawing.Size(148, 20);
+            this.Buscar_textBox.TabIndex = 0;
+            this.Buscar_textBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Buscar_textBox_KeyPress);
             // 
             // label2
             // 
@@ -279,38 +279,38 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Buscar";
             // 
-            // searchButton
+            // search_Button
             // 
-            this.searchButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.searchButton.Location = new System.Drawing.Point(288, 89);
-            this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(120, 30);
-            this.searchButton.TabIndex = 1;
-            this.searchButton.Text = "Buscar";
-            this.searchButton.UseVisualStyleBackColor = true;
-            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
+            this.search_Button.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.search_Button.Location = new System.Drawing.Point(288, 89);
+            this.search_Button.Name = "search_Button";
+            this.search_Button.Size = new System.Drawing.Size(120, 30);
+            this.search_Button.TabIndex = 1;
+            this.search_Button.Text = "Buscar";
+            this.search_Button.UseVisualStyleBackColor = true;
+            this.search_Button.Click += new System.EventHandler(this.search_Button_Click);
             // 
-            // clearSearchButton
+            // clearSearch_Button
             // 
-            this.clearSearchButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.clearSearchButton.Location = new System.Drawing.Point(540, 89);
-            this.clearSearchButton.Name = "clearSearchButton";
-            this.clearSearchButton.Size = new System.Drawing.Size(120, 30);
-            this.clearSearchButton.TabIndex = 3;
-            this.clearSearchButton.Text = "Limpiar ";
-            this.clearSearchButton.UseVisualStyleBackColor = true;
-            this.clearSearchButton.Click += new System.EventHandler(this.clearSearchButton_Click);
+            this.clearSearch_Button.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.clearSearch_Button.Location = new System.Drawing.Point(540, 89);
+            this.clearSearch_Button.Name = "clearSearch_Button";
+            this.clearSearch_Button.Size = new System.Drawing.Size(120, 30);
+            this.clearSearch_Button.TabIndex = 3;
+            this.clearSearch_Button.Text = "Limpiar ";
+            this.clearSearch_Button.UseVisualStyleBackColor = true;
+            this.clearSearch_Button.Click += new System.EventHandler(this.clearSearch_Button_Click);
             // 
-            // editButton
+            // Edit_Button
             // 
-            this.editButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.editButton.Location = new System.Drawing.Point(414, 89);
-            this.editButton.Name = "editButton";
-            this.editButton.Size = new System.Drawing.Size(120, 30);
-            this.editButton.TabIndex = 2;
-            this.editButton.Text = "Editar";
-            this.editButton.UseVisualStyleBackColor = true;
-            this.editButton.Click += new System.EventHandler(this.editButton_Click);
+            this.Edit_Button.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Edit_Button.Location = new System.Drawing.Point(414, 89);
+            this.Edit_Button.Name = "Edit_Button";
+            this.Edit_Button.Size = new System.Drawing.Size(120, 30);
+            this.Edit_Button.TabIndex = 2;
+            this.Edit_Button.Text = "Editar";
+            this.Edit_Button.UseVisualStyleBackColor = true;
+            this.Edit_Button.Click += new System.EventHandler(this.Edit_Button_Click);
             // 
             // ShowProducts
             // 
@@ -318,11 +318,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(815, 508);
-            this.Controls.Add(this.editButton);
-            this.Controls.Add(this.clearSearchButton);
-            this.Controls.Add(this.searchButton);
+            this.Controls.Add(this.Edit_Button);
+            this.Controls.Add(this.clearSearch_Button);
+            this.Controls.Add(this.search_Button);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.Buscar_textBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.atrasButton);
             this.Controls.Add(this.menuStrip1);
@@ -364,11 +364,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolStripMenuItem registrarProductosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verProductosToolStripMenuItem;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox Buscar_textBox;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button searchButton;
-        private System.Windows.Forms.Button clearSearchButton;
-        private System.Windows.Forms.Button editButton;
+        private System.Windows.Forms.Button search_Button;
+        private System.Windows.Forms.Button clearSearch_Button;
+        private System.Windows.Forms.Button Edit_Button;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inventarioToolStripMenuItem1;
     }
