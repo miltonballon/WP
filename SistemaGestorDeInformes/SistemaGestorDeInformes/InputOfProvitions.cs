@@ -33,16 +33,8 @@ namespace SistemaGestorDeInformes
 
             Reception reception = new Reception(product, ExpirationDate.Value.ToString("dd/MM/yyyy"), ReceptionDate.Value.ToString("dd/MM/yyyy"), Int32.Parse(TotalReception_Textbox.Text));           
             rc.RegisterReception(reception);
-        }
-        
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Main main = new Main();
-            main.WindowState = this.WindowState;
-            this.Hide();
-            main.Show();
-        }
-
+        }        
+       
         private void RegisterReception_Load(object sender, EventArgs e)
         {
             rc.ProductAutoComplete(Produc_TextBox);
@@ -64,10 +56,10 @@ namespace SistemaGestorDeInformes
 
         private void buttonAtrás_Click(object sender, EventArgs e)
         {
-            Main principal = new Main();//para volver atras
-            principal.WindowState = this.WindowState;
+            Main main = new Main();
+            main.WindowState = this.WindowState;
             this.Hide();
-            principal.Show();
+            main.Show();
         }
 
         private void pantallaPrincipalToolStripMenuItem_Click(object sender, EventArgs e)
