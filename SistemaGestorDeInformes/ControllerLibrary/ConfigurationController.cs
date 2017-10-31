@@ -18,10 +18,12 @@ namespace ControllerLibrary
 
         public void insertConfiguration(Configuration configuration)
         {
-            String query = "INSERT INTO configuration(scholarships, n_departure) VALUES(";
-            int scholarships = configuration.getScholarships();
-            int nDeparture = configuration.getNDeparture();
-            query += scholarships + ", " + nDeparture + ")";
+            String query = "INSERT INTO configuration(scholarships, n_departure, days_left, minimum_quantity) VALUES(";
+            int scholarships = configuration.getScholarships(),
+                nDeparture = configuration.getNDeparture(),
+                nDaysLeft=configuration.getNDaysLeft(),
+                minimumQuantity=configuration.getMinimumQuantity();
+            query += scholarships + ", " + nDeparture + ","+nDaysLeft+","+minimumQuantity+")";
             c.executeInsertion(query);
         }
     }
