@@ -32,15 +32,7 @@ namespace ControllerLibrary
             }
             
         }
-        public void ModifyInventory(int id, OutputReception reception)
-        {
-            
-                int total = restTotalToProduct(findId(id), reception.Total);
-                //MessageBox.Show("asd" + findId(id) + " " + total);
-                updateReception(findId(id), total);
-         
-
-        }
+        
         public List<Inventory> getAllProducts()
         {
             List<Inventory> receptions = new List<Inventory>();
