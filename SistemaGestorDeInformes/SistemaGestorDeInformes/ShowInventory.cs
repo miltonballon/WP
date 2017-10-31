@@ -26,7 +26,7 @@ namespace SistemaGestorDeInformes
 
         private void pantallaPrincipalToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Main principal = new Main();//para volver atras
+            Main principal = new Main();
             principal.WindowState = this.WindowState;
             this.Hide();
             principal.Show();
