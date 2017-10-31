@@ -38,11 +38,11 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.ExpirationDate = new System.Windows.Forms.DateTimePicker();
-            this.UnitTextBox = new System.Windows.Forms.TextBox();
-            this.ProviderTextBox = new System.Windows.Forms.TextBox();
-            this.ProducTextBox = new System.Windows.Forms.TextBox();
+            this.Unit_TextBox = new System.Windows.Forms.TextBox();
+            this.Provider_TextBox = new System.Windows.Forms.TextBox();
+            this.Produc_TextBox = new System.Windows.Forms.TextBox();
             this.ReceptionDate = new System.Windows.Forms.DateTimePicker();
-            this.TotalReception = new System.Windows.Forms.TextBox();
+            this.TotalReception_Textbox = new System.Windows.Forms.TextBox();
             this.pantallaPrincipalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.facturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarFacturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -188,43 +188,43 @@
             this.ExpirationDate.Size = new System.Drawing.Size(250, 23);
             this.ExpirationDate.TabIndex = 3;
             // 
-            // UnitTextBox
+            // Unit_TextBox
             // 
-            this.UnitTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.UnitTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.UnitTextBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.UnitTextBox.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UnitTextBox.Location = new System.Drawing.Point(325, 216);
-            this.UnitTextBox.Name = "UnitTextBox";
-            this.UnitTextBox.Size = new System.Drawing.Size(250, 23);
-            this.UnitTextBox.TabIndex = 2;
-            this.UnitTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.UnitTextBox_KeyPress);
+            this.Unit_TextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Unit_TextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.Unit_TextBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.Unit_TextBox.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Unit_TextBox.Location = new System.Drawing.Point(325, 216);
+            this.Unit_TextBox.Name = "Unit_TextBox";
+            this.Unit_TextBox.Size = new System.Drawing.Size(250, 23);
+            this.Unit_TextBox.TabIndex = 2;
+            this.Unit_TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Unit_TextBox_KeyPress);
             // 
-            // ProviderTextBox
+            // Provider_TextBox
             // 
-            this.ProviderTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ProviderTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.ProviderTextBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.ProviderTextBox.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProviderTextBox.Location = new System.Drawing.Point(325, 176);
-            this.ProviderTextBox.MaxLength = 64;
-            this.ProviderTextBox.Name = "ProviderTextBox";
-            this.ProviderTextBox.Size = new System.Drawing.Size(250, 23);
-            this.ProviderTextBox.TabIndex = 1;
-            this.ProviderTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ProviderTextBox_KeyPress);
+            this.Provider_TextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Provider_TextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.Provider_TextBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.Provider_TextBox.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Provider_TextBox.Location = new System.Drawing.Point(325, 176);
+            this.Provider_TextBox.MaxLength = 64;
+            this.Provider_TextBox.Name = "Provider_TextBox";
+            this.Provider_TextBox.Size = new System.Drawing.Size(250, 23);
+            this.Provider_TextBox.TabIndex = 1;
+            this.Provider_TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Provider_TextBox_KeyPress);
             // 
-            // ProducTextBox
+            // Produc_TextBox
             // 
-            this.ProducTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ProducTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.ProducTextBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.ProducTextBox.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProducTextBox.Location = new System.Drawing.Point(325, 136);
-            this.ProducTextBox.MaxLength = 64;
-            this.ProducTextBox.Name = "ProducTextBox";
-            this.ProducTextBox.Size = new System.Drawing.Size(250, 23);
-            this.ProducTextBox.TabIndex = 0;
-            this.ProducTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ProducTextBox_KeyPress);
+            this.Produc_TextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Produc_TextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.Produc_TextBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.Produc_TextBox.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Produc_TextBox.Location = new System.Drawing.Point(325, 136);
+            this.Produc_TextBox.MaxLength = 64;
+            this.Produc_TextBox.Name = "Produc_TextBox";
+            this.Produc_TextBox.Size = new System.Drawing.Size(250, 23);
+            this.Produc_TextBox.TabIndex = 0;
+            this.Produc_TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Produc_TextBox_KeyPress);
             // 
             // ReceptionDate
             // 
@@ -235,15 +235,15 @@
             this.ReceptionDate.Size = new System.Drawing.Size(250, 23);
             this.ReceptionDate.TabIndex = 4;
             // 
-            // TotalReception
+            // TotalReception_Textbox
             // 
-            this.TotalReception.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.TotalReception.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TotalReception.Location = new System.Drawing.Point(325, 336);
-            this.TotalReception.Name = "TotalReception";
-            this.TotalReception.Size = new System.Drawing.Size(250, 23);
-            this.TotalReception.TabIndex = 5;
-            this.TotalReception.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TotalReception_KeyPress);
+            this.TotalReception_Textbox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.TotalReception_Textbox.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalReception_Textbox.Location = new System.Drawing.Point(325, 336);
+            this.TotalReception_Textbox.Name = "TotalReception_Textbox";
+            this.TotalReception_Textbox.Size = new System.Drawing.Size(250, 23);
+            this.TotalReception_Textbox.TabIndex = 5;
+            this.TotalReception_Textbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TotalReception_KeyPress);
             // 
             // pantallaPrincipalToolStripMenuItem
             // 
@@ -444,12 +444,12 @@
             this.Controls.Add(this.DryRadioButton);
             this.Controls.Add(this.FreshRadioButton);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.TotalReception);
+            this.Controls.Add(this.TotalReception_Textbox);
             this.Controls.Add(this.ReceptionDate);
             this.Controls.Add(this.ExpirationDate);
-            this.Controls.Add(this.UnitTextBox);
-            this.Controls.Add(this.ProviderTextBox);
-            this.Controls.Add(this.ProducTextBox);
+            this.Controls.Add(this.Unit_TextBox);
+            this.Controls.Add(this.Provider_TextBox);
+            this.Controls.Add(this.Produc_TextBox);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label8);
@@ -483,11 +483,11 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DateTimePicker ExpirationDate;
-        private System.Windows.Forms.TextBox UnitTextBox;
-        private System.Windows.Forms.TextBox ProviderTextBox;
-        private System.Windows.Forms.TextBox ProducTextBox;
+        private System.Windows.Forms.TextBox Unit_TextBox;
+        private System.Windows.Forms.TextBox Provider_TextBox;
+        private System.Windows.Forms.TextBox Produc_TextBox;
         private System.Windows.Forms.DateTimePicker ReceptionDate;
-        private System.Windows.Forms.TextBox TotalReception;
+        private System.Windows.Forms.TextBox TotalReception_Textbox;
         private System.Windows.Forms.ToolStripMenuItem pantallaPrincipalToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem facturasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registrarFacturaToolStripMenuItem;

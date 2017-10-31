@@ -27,11 +27,11 @@ namespace SistemaGestorDeInformes
 
         private void RegisterButton_Click(object sender, EventArgs e)
         {
-            product.Name=ProducTextBox.Text;
-            product.Provider=ProviderTextBox.Text;
-            product.Unit=UnitTextBox.Text;
+            product.Name=Produc_TextBox.Text;
+            product.Provider=Provider_TextBox.Text;
+            product.Unit=Unit_TextBox.Text;
 
-            Reception reception = new Reception(product, ExpirationDate.Value.ToString("dd/MM/yyyy"), ReceptionDate.Value.ToString("dd/MM/yyyy"), Int32.Parse(TotalReception.Text));
+            Reception reception = new Reception(product, ExpirationDate.Value.ToString("dd/MM/yyyy"), ReceptionDate.Value.ToString("dd/MM/yyyy"), Int32.Parse(TotalReception_Textbox.Text));
            // rc.RegisterReception(ProducTextBox,ProviderTextBox,UnitTextBox,ExpirationDate,ReceptionDate,TotalReception);
             rc.RegisterReception(reception);
         }
@@ -46,19 +46,19 @@ namespace SistemaGestorDeInformes
 
         private void RegisterReception_Load(object sender, EventArgs e)
         {
-            rc.ProductAutoComplete(ProducTextBox);
-            rc.ProviderAutoComplete(ProviderTextBox);
-            rc.UnitAutoComplete(UnitTextBox);
+            rc.ProductAutoComplete(Produc_TextBox);
+            rc.ProviderAutoComplete(Provider_TextBox);
+            rc.UnitAutoComplete(Unit_TextBox);
 
-            ProducTextBox.MaxLength = 70;
-            ProviderTextBox.MaxLength = 70;
-            UnitTextBox.MaxLength = 3;
-            TotalReception.MaxLength = 15;
+            Produc_TextBox.MaxLength = 70;
+            Provider_TextBox.MaxLength = 70;
+            Unit_TextBox.MaxLength = 3;
+            TotalReception_Textbox.MaxLength = 15;
 
-            ProducTextBox.ShortcutsEnabled = false;
-            ProviderTextBox.ShortcutsEnabled = false;
-            UnitTextBox.ShortcutsEnabled = false;
-            TotalReception.ShortcutsEnabled = false;
+            Produc_TextBox.ShortcutsEnabled = false;
+            Provider_TextBox.ShortcutsEnabled = false;
+            Unit_TextBox.ShortcutsEnabled = false;
+            TotalReception_Textbox.ShortcutsEnabled = false;
 
             KeyPreview = true;
         }                
@@ -162,24 +162,6 @@ namespace SistemaGestorDeInformes
         {
             Application.Exit();
         }
-
-        private void ProducTextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            ValidationTextBox tr = new ValidationTextBox();
-            tr.CharacterEspecial(sender, e);
-        }
-
-        private void ProviderTextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            ValidationTextBox tr = new ValidationTextBox();
-            tr.CharacterEspecial(sender, e);
-        }
-
-        private void UnitTextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            ValidationTextBox tr = new ValidationTextBox();
-            tr.CharacterEspecial(sender, e);
-        }               
         
         private void TotalReception_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -200,6 +182,24 @@ namespace SistemaGestorDeInformes
             Interfaz.WindowState = this.WindowState;
             this.Hide();
             Interfaz.Show();
+        }
+
+        private void Produc_TextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidationTextBox tr = new ValidationTextBox();
+            tr.CharacterEspecial(sender, e);
+        }
+
+        private void Provider_TextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidationTextBox tr = new ValidationTextBox();
+            tr.CharacterEspecial(sender, e);
+        }
+
+        private void Unit_TextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidationTextBox tr = new ValidationTextBox();
+            tr.CharacterEspecial(sender, e);
         }
     }
 }
