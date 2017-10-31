@@ -31,8 +31,7 @@ namespace SistemaGestorDeInformes
             product.Provider=Provider_TextBox.Text;
             product.Unit=Unit_TextBox.Text;
 
-            Reception reception = new Reception(product, ExpirationDate.Value.ToString("dd/MM/yyyy"), ReceptionDate.Value.ToString("dd/MM/yyyy"), Int32.Parse(TotalReception_Textbox.Text));
-           // rc.RegisterReception(ProducTextBox,ProviderTextBox,UnitTextBox,ExpirationDate,ReceptionDate,TotalReception);
+            Reception reception = new Reception(product, ExpirationDate.Value.ToString("dd/MM/yyyy"), ReceptionDate.Value.ToString("dd/MM/yyyy"), Int32.Parse(TotalReception_Textbox.Text));           
             rc.RegisterReception(reception);
         }
         
