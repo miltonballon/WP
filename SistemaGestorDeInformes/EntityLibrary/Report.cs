@@ -31,6 +31,7 @@ namespace EntityLibrary
         public Report(string name)
         {
             this.name = name;
+            sheets = new List<ReportSheet>();
         }
 
         public int Id

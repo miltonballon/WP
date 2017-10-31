@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 
 namespace ControllerLibrary
 {
-    class ReportController
+    public class ReportController
     {
         private Connection c;
         private ReportSheetController reportSheetController;
@@ -84,7 +84,7 @@ namespace ControllerLibrary
             return date;
         }
 
-        public int generateExcelSheet(Report report)
+        public int generateExcel(Report report)
         {
             int output;
             Application xlApp = new Microsoft.Office.Interop.Excel.Application();
