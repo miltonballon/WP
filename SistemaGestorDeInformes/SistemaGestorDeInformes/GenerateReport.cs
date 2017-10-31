@@ -150,7 +150,21 @@ namespace SistemaGestorDeInformes
             report.Sheets.Add(reportSheet);
             reportSheet = reportSheetController.generateReferentialPricesSheet();
             report.Sheets.Add(reportSheet);
-            MessageBox.Show(reportController.generateExcel(report) + "");
+            int result = reportController.generateExcel(report);
+            printMessage(result);
+        }
+
+        private void printMessage(int input)
+        {
+            switch (input)
+            {
+                case 0:
+                    MessageBox.Show("Se genero el informe exitosamente");
+                    break;
+                default:
+                    MessageBox.Show("Hubo un error al generar informe");
+                    break;
+            }
         }
     }
 }
