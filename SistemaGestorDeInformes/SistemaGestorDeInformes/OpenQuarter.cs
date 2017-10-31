@@ -79,35 +79,6 @@ namespace SistemaGestorDeInformes
             ReportConfiguration1.Show();
         }
 
-        private void RegistrarButton_Click(object sender, EventArgs e)
-        {
-            if (isRegistering)
-            {
-                String name = txbxNombre.Text;
-                if (!name.Equals(""))
-                {
-                    Trimester trimester = new Trimester(name);
-                    trimester.setOpen(true);
-                    saveNewTrimester(trimester);
-                    hideNombreForms();
-                    RegistrarButton.Text = "Nuevo Trimestre";
-                    setLbTrimText();
-                    MessageBox.Show("Nuevo trimestre creado: "+trimester.getName());
-                    isRegistering = !isRegistering;
-                }
-                else
-                {
-                    MessageBox.Show("Ingrese un nombre para el trimestre");
-                }
-            }
-            else
-            {
-                showNombreForms();
-                RegistrarButton.Text = "Guardar";
-                isRegistering = !isRegistering;
-            }
-        }
-
         private void saveNewTrimester(Trimester trimester)
         {
             Trimester last=trimesterController.getLastTrimester();
@@ -125,8 +96,8 @@ namespace SistemaGestorDeInformes
             setLbTrimText();
             hideNombreForms();
 
-            txbxNombre.MaxLength = 70;
-            txbxNombre.ShortcutsEnabled = false;
+            Nombre_Textbox.MaxLength = 70;
+            Nombre_Textbox.ShortcutsEnabled = false;
 
             KeyPreview = true;
         }
@@ -147,13 +118,13 @@ namespace SistemaGestorDeInformes
         private void hideNombreForms()
         {
             lbNombre.Hide();
-            txbxNombre.Hide();
+            Nombre_Textbox.Hide();
         }
 
         private void showNombreForms()
         {
             lbNombre.Show();
-            txbxNombre.Show();
+            Nombre_Textbox.Show();
         }
        
 
@@ -214,6 +185,35 @@ namespace SistemaGestorDeInformes
             Interfaz.WindowState = this.WindowState;
             this.Hide();
             Interfaz.Show();
+        }
+
+        private void Registrar_Button_Click(object sender, EventArgs e)
+        {
+            if (isRegistering)
+            {
+                String name = Nombre_Textbox.Text;
+                if (!name.Equals(""))
+                {
+                    Trimester trimester = new Trimester(name);
+                    trimester.setOpen(true);
+                    saveNewTrimester(trimester);
+                    hideNombreForms();
+                    Registrar_Button.Text = "Nuevo Trimestre";
+                    setLbTrimText();
+                    MessageBox.Show("Nuevo trimestre creado: " + trimester.getName());
+                    isRegistering = !isRegistering;
+                }
+                else
+                {
+                    MessageBox.Show("Ingrese un nombre para el trimestre");
+                }
+            }
+            else
+            {
+                showNombreForms();
+                Registrar_Button.Text = "Guardar";
+                isRegistering = !isRegistering;
+            }
         }
     }
 }
