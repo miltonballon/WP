@@ -27,12 +27,7 @@ namespace SistemaGestorDeInformes
 
         private void RegisterButton_Click(object sender, EventArgs e)
         {
-            product.Name=Produc_TextBox.Text;
-            product.Provider=Provider_TextBox.Text;
-            product.Unit=Unit_TextBox.Text;
-
-            Reception reception = new Reception(product, ExpirationDate.Value.ToString("dd/MM/yyyy"), ReceptionDate.Value.ToString("dd/MM/yyyy"), Int32.Parse(TotalReception_Textbox.Text));           
-            rc.RegisterReception(reception);
+            
         }        
        
         private void RegisterReception_Load(object sender, EventArgs e)
@@ -191,6 +186,16 @@ namespace SistemaGestorDeInformes
         {
             ValidationTextBox tr = new ValidationTextBox();
             tr.CharacterEspecial(sender, e);
+        }
+
+        private void Register_Button_Click(object sender, EventArgs e)
+        {
+            product.Name = Produc_TextBox.Text;
+            product.Provider = Provider_TextBox.Text;
+            product.Unit = Unit_TextBox.Text;
+
+            Reception reception = new Reception(product, ExpirationDate.Value.ToString("dd/MM/yyyy"), ReceptionDate.Value.ToString("dd/MM/yyyy"), Int32.Parse(TotalReception_Textbox.Text));
+            rc.RegisterReception(reception);
         }
     }
 }

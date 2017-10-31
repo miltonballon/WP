@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.RegisterButton = new System.Windows.Forms.Button();
+            this.Register_Button = new System.Windows.Forms.Button();
             this.labelInformaciónBásica = new System.Windows.Forms.Label();
             this.buttonAtrás = new System.Windows.Forms.Button();
             this.labelNFactura = new System.Windows.Forms.Label();
@@ -68,19 +68,19 @@
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // RegisterButton
+            // Register_Button
             // 
-            this.RegisterButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.RegisterButton.BackColor = System.Drawing.Color.Black;
-            this.RegisterButton.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
-            this.RegisterButton.ForeColor = System.Drawing.Color.Yellow;
-            this.RegisterButton.Location = new System.Drawing.Point(325, 393);
-            this.RegisterButton.Name = "RegisterButton";
-            this.RegisterButton.Size = new System.Drawing.Size(120, 30);
-            this.RegisterButton.TabIndex = 6;
-            this.RegisterButton.Text = "Registrar";
-            this.RegisterButton.UseVisualStyleBackColor = false;
-            this.RegisterButton.Click += new System.EventHandler(this.RegisterButton_Click);
+            this.Register_Button.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Register_Button.BackColor = System.Drawing.Color.Black;
+            this.Register_Button.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
+            this.Register_Button.ForeColor = System.Drawing.Color.Yellow;
+            this.Register_Button.Location = new System.Drawing.Point(325, 393);
+            this.Register_Button.Name = "Register_Button";
+            this.Register_Button.Size = new System.Drawing.Size(120, 30);
+            this.Register_Button.TabIndex = 6;
+            this.Register_Button.Text = "Registrar";
+            this.Register_Button.UseVisualStyleBackColor = false;
+            this.Register_Button.Click += new System.EventHandler(this.Register_Button_Click);
             // 
             // labelInformaciónBásica
             // 
@@ -458,7 +458,7 @@
             this.Controls.Add(this.labelProveedor);
             this.Controls.Add(this.buttonAtrás);
             this.Controls.Add(this.labelInformaciónBásica);
-            this.Controls.Add(this.RegisterButton);
+            this.Controls.Add(this.Register_Button);
             this.Name = "InputOfProvitions";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registrar Entrada";
@@ -473,7 +473,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button RegisterButton;
+        private System.Windows.Forms.Button Register_Button;
         private System.Windows.Forms.Label labelInformaciónBásica;
         private System.Windows.Forms.Button buttonAtrás;
         private System.Windows.Forms.Label labelNFactura;
