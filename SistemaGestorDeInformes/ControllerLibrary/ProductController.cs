@@ -214,7 +214,7 @@ namespace ControllerLibrary
         {
             
             string query = "delete from Product_Provider_Unit where Id_prod='" + IDProduct + "' and id_prov='" + IDProvider + "' and id_uni='" + IDUnit + "'";
-            //string query = "delete from Product_Provider_Unit where Id_prod='1' and id_prov='1' and id_uni='1'";
+           
             c.executeInsertion(query);
         }
        
