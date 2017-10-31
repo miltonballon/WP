@@ -36,7 +36,7 @@ namespace ControllerLibrary
         {
             
                 int total = restTotalToProduct(findId(id), reception.Total);
-                //MessageBox.Show("asd" + findId(id) + " " + total);
+               
                 updateReception(findId(id), total);
          
 
