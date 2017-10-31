@@ -52,7 +52,7 @@
             this.ProductoLabel = new System.Windows.Forms.Label();
             this.ProveedorLabel = new System.Windows.Forms.Label();
             this.Registrar_Button = new System.Windows.Forms.Button();
-            this.atrasButton = new System.Windows.Forms.Button();
+            this.Atras_Button = new System.Windows.Forms.Button();
             this.NPartida_textbox = new System.Windows.Forms.TextBox();
             this.becas_Textbox = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
@@ -272,19 +272,19 @@
             this.Registrar_Button.UseVisualStyleBackColor = false;
             this.Registrar_Button.Click += new System.EventHandler(this.Registrar_Button_Click);
             // 
-            // atrasButton
+            // Atras_Button
             // 
-            this.atrasButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.atrasButton.BackColor = System.Drawing.Color.Black;
-            this.atrasButton.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
-            this.atrasButton.ForeColor = System.Drawing.Color.Yellow;
-            this.atrasButton.Location = new System.Drawing.Point(3, 472);
-            this.atrasButton.Name = "atrasButton";
-            this.atrasButton.Size = new System.Drawing.Size(120, 30);
-            this.atrasButton.TabIndex = 4;
-            this.atrasButton.Text = "Atrás";
-            this.atrasButton.UseVisualStyleBackColor = false;
-            this.atrasButton.Click += new System.EventHandler(this.atrasButton_Click);
+            this.Atras_Button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.Atras_Button.BackColor = System.Drawing.Color.Black;
+            this.Atras_Button.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
+            this.Atras_Button.ForeColor = System.Drawing.Color.Yellow;
+            this.Atras_Button.Location = new System.Drawing.Point(3, 472);
+            this.Atras_Button.Name = "Atras_Button";
+            this.Atras_Button.Size = new System.Drawing.Size(120, 30);
+            this.Atras_Button.TabIndex = 4;
+            this.Atras_Button.Text = "Atrás";
+            this.Atras_Button.UseVisualStyleBackColor = false;
+            this.Atras_Button.Click += new System.EventHandler(this.Atras_Button_Click);
             // 
             // NPartida_textbox
             // 
@@ -313,7 +313,7 @@
             this.Controls.Add(this.ProductoLabel);
             this.Controls.Add(this.ProveedorLabel);
             this.Controls.Add(this.Registrar_Button);
-            this.Controls.Add(this.atrasButton);
+            this.Controls.Add(this.Atras_Button);
             this.Controls.Add(this.NPartida_textbox);
             this.Controls.Add(this.becas_Textbox);
             this.Controls.Add(this.labelInformaciónBásica);
@@ -355,7 +355,7 @@
         private System.Windows.Forms.Label ProductoLabel;
         private System.Windows.Forms.Label ProveedorLabel;
         private System.Windows.Forms.Button Registrar_Button;
-        private System.Windows.Forms.Button atrasButton;
+        private System.Windows.Forms.Button Atras_Button;
         private System.Windows.Forms.TextBox NPartida_textbox;
         private System.Windows.Forms.TextBox becas_Textbox;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;

@@ -62,14 +62,6 @@ namespace SistemaGestorDeInformes
             this.Hide();
         }
 
-        private void atrasButton_Click(object sender, EventArgs e)
-        {
-            Main principal = new Main();//para volver atras
-            principal.WindowState = this.WindowState;
-            this.Hide();
-            principal.Show();
-        }
-
         private void abrirTrimestreToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenQuarter OpenQuarter1 = new OpenQuarter();
@@ -167,6 +159,14 @@ namespace SistemaGestorDeInformes
             Configuration conf = new Configuration(nScho, nPar);
             configurationController.insertConfiguration(conf);
             MessageBox.Show("Se guardo la configuración correctamente");
+        }
+
+        private void Atras_Button_Click(object sender, EventArgs e)
+        {
+            Main principal = new Main();//para volver atras
+            principal.WindowState = this.WindowState;
+            this.Hide();
+            principal.Show();
         }
     }
 }
