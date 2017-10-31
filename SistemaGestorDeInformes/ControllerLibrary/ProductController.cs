@@ -18,7 +18,7 @@ namespace ControllerLibrary
 
         public void insertProduct(Product p)
         {
-            if (getIdName(p.Name) == -1) //si es -1 quiere decir que no existe y por tanto se crea
+            if (getIdName(p.Name) == -1) 
             {
                 InsertProduct(p.Name, p.Clasification);
             }
