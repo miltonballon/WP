@@ -198,10 +198,8 @@ namespace SistemaGestorDeInformes
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((e.KeyChar >= 48 && e.KeyChar <= 57) || (e.KeyChar >= 97 && e.KeyChar <= 122) || (e.KeyChar >= 65 && e.KeyChar <= 90) || (e.KeyChar == 8) || (e.KeyChar == 32))
-                e.Handled = false;
-            else
-                e.Handled = true;
+            ValidationTextBox tr = new ValidationTextBox();
+            tr.CharacterEspecial(sender, e);
         }
 
         private void ShowProducts_KeyUp(object sender, KeyEventArgs e)
@@ -217,11 +215,6 @@ namespace SistemaGestorDeInformes
             Interfaz.WindowState = this.WindowState;
             this.Hide();
             Interfaz.Show();
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }
