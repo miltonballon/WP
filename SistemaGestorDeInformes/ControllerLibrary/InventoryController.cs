@@ -27,7 +27,7 @@ namespace ControllerLibrary
             else
             {
                 int total = addTotalToProduct(findId(id), reception.Total);
-                MessageBox.Show("asd" + findId(id) + " "+total);
+                //MessageBox.Show("asd" + findId(id) + " "+total);
                 updateReception(findId(id), total);
             }
             
