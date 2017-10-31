@@ -28,15 +28,6 @@ namespace SistemaGestorDeInformes
             }          
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            RegisterUser register = new RegisterUser();
-            register.WindowState = this.WindowState;
-            this.Hide();
-            register.ShowDialog();
-            this.Close();
-        }
-
       
         private void FirtsSetup_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -44,6 +35,15 @@ namespace SistemaGestorDeInformes
             {
                 Application.Exit();
             }
+        }
+
+        private void Ingresar_button_Click(object sender, EventArgs e)
+        {
+            RegisterUser register = new RegisterUser();
+            register.WindowState = this.WindowState;
+            this.Hide();
+            register.ShowDialog();
+            this.Close();
         }
     }
 }

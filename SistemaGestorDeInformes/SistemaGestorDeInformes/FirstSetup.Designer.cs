@@ -28,23 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.Ingresar_button = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // button1
+            // Ingresar_button
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button1.BackColor = System.Drawing.Color.Black;
-            this.button1.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
-            this.button1.ForeColor = System.Drawing.Color.Yellow;
-            this.button1.Location = new System.Drawing.Point(289, 237);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 30);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Ingresar";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.Ingresar_button.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.Ingresar_button.BackColor = System.Drawing.Color.Black;
+            this.Ingresar_button.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
+            this.Ingresar_button.ForeColor = System.Drawing.Color.Yellow;
+            this.Ingresar_button.Location = new System.Drawing.Point(289, 237);
+            this.Ingresar_button.Name = "Ingresar_button";
+            this.Ingresar_button.Size = new System.Drawing.Size(120, 30);
+            this.Ingresar_button.TabIndex = 0;
+            this.Ingresar_button.Text = "Ingresar";
+            this.Ingresar_button.UseVisualStyleBackColor = false;
+            this.Ingresar_button.Click += new System.EventHandler(this.Ingresar_button_Click);
             // 
             // label2
             // 
@@ -67,7 +67,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(718, 339);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Ingresar_button);
             this.Name = "FirstSetup";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Presentación del Sistema";
@@ -80,7 +80,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Ingresar_button;
         private System.Windows.Forms.Label label2;
     }
 }
