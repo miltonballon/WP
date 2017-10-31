@@ -56,8 +56,8 @@
             this.labelInformaciónBásica = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Unidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -285,6 +285,7 @@
             this.txtboxbecas.Name = "txtboxbecas";
             this.txtboxbecas.Size = new System.Drawing.Size(241, 20);
             this.txtboxbecas.TabIndex = 41;
+            this.txtboxbecas.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtboxbecas_KeyPress);
             // 
             // labelInformaciónBásica
             // 
@@ -321,15 +322,15 @@
             this.dataGridView1.Size = new System.Drawing.Size(241, 181);
             this.dataGridView1.TabIndex = 47;
             // 
-            // Cantidad
-            // 
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.Name = "Cantidad";
-            // 
             // Unidad
             // 
             this.Unidad.HeaderText = "Unidad";
             this.Unidad.Name = "Unidad";
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
             // 
             // InventoryConfiguration
             // 
