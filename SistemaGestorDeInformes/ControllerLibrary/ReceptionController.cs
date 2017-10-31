@@ -84,11 +84,7 @@ namespace ControllerLibrary
             {
                 Product prod = new Product();
                 
-                Reception p = new Reception();
-                //MessageBox.Show("d"+data[0].ToString()+"B"+data[1].ToString()+"C"+Int32.Parse(data[2].ToString()));
-                prod.Name = data[0].ToString();
-                prod.Unit = data[1].ToString();
-                p.Product = prod;
+               
 
                 p.Total =Int32.Parse(data[2].ToString());
                 reception.Add(p);
