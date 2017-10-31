@@ -149,7 +149,7 @@
             this.generarInformeToolStripMenuItem.Name = "generarInformeToolStripMenuItem";
             this.generarInformeToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.generarInformeToolStripMenuItem.Text = "Generar Informe";
-            this.generarInformeToolStripMenuItem.Click += new System.EventHandler(this.generarInformeToolStripMenuItem_Click);
+            //this.generarInformeToolStripMenuItem.Click += new System.EventHandler(this.generarInformeToolStripMenuItem_Click);
             // 
             // verInformeToolStripMenuItem
             // 
@@ -213,7 +213,7 @@
             this.inventarioToolStripMenuItem1.Name = "inventarioToolStripMenuItem1";
             this.inventarioToolStripMenuItem1.Size = new System.Drawing.Size(127, 22);
             this.inventarioToolStripMenuItem1.Text = "Inventario";
-            this.inventarioToolStripMenuItem1.Click += new System.EventHandler(this.inventarioToolStripMenuItem1_Click);
+            //this.inventarioToolStripMenuItem1.Click += new System.EventHandler(this.inventarioToolStripMenuItem1_Click);
             // 
             // abrirTrimestreToolStripMenuItem
             // 
@@ -237,7 +237,7 @@
             this.Total_TextBox.Name = "Total_TextBox";
             this.Total_TextBox.Size = new System.Drawing.Size(250, 23);
             this.Total_TextBox.TabIndex = 37;
-            this.Total_TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Total_TextBox_KeyPress);
+            //this.Total_TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Total_TextBox_KeyPress);
             // 
             // Product_TextBox
             // 
@@ -249,7 +249,7 @@
             this.Product_TextBox.Name = "Product_TextBox";
             this.Product_TextBox.Size = new System.Drawing.Size(250, 23);
             this.Product_TextBox.TabIndex = 35;
-            this.Product_TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Product_TextBox_KeyPress);
+            //this.Product_TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Product_TextBox_KeyPress);
             // 
             // labelNFactura
             // 
@@ -312,7 +312,7 @@
             this.Register_Button.TabIndex = 39;
             this.Register_Button.Text = "Registrar";
             this.Register_Button.UseVisualStyleBackColor = false;
-            this.Register_Button.Click += new System.EventHandler(this.Register_Button_Click);
+            //this.Register_Button.Click += new System.EventHandler(this.Register_Button_Click);
             // 
             // Unit_TextBox
             // 
@@ -324,7 +324,7 @@
             this.Unit_TextBox.Name = "Unit_TextBox";
             this.Unit_TextBox.Size = new System.Drawing.Size(250, 23);
             this.Unit_TextBox.TabIndex = 36;
-            this.Unit_TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Unit_TextBox_KeyPress);
+            //this.Unit_TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Unit_TextBox_KeyPress);
             // 
             // label1
             // 
@@ -346,7 +346,7 @@
             this.OutputDate_TextBox.Name = "OutputDate_TextBox";
             this.OutputDate_TextBox.Size = new System.Drawing.Size(250, 23);
             this.OutputDate_TextBox.TabIndex = 38;
-            this.OutputDate_TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OutputDate_TextBox_KeyPress);
+            //this.OutputDate_TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OutputDate_TextBox_KeyPress);
             // 
             // label2
             // 
@@ -381,9 +381,9 @@
             this.Name = "OutputOfProvitions";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registrar Salida";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.OutputOfProvitions_FormClosing);
+            //this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.OutputOfProvitions_FormClosing);
             this.Load += new System.EventHandler(this.OutputOfProvitions_Load);
-            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.OutputOfProvitions_KeyUp);
+            //this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.OutputOfProvitions_KeyUp);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

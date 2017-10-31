@@ -28,7 +28,7 @@ namespace SistemaGestorDeInformes
         private void RegisterButton_Click(object sender, EventArgs e)
         {
             
-            Inventory inventory = new Inventory(product, Int32.Parse(TotalReception.Text), ExpirationDate.Value.ToString("dd/MM/yyyy"));
+            Inventory inventory = new Inventory(product, Int32.Parse(TotalReception_Textbox.Text), ExpirationDate.Value.ToString("dd/MM/yyyy"));
 
         }        
        
@@ -40,7 +40,7 @@ namespace SistemaGestorDeInformes
 
             Produc_TextBox.MaxLength = 70;
             Provider_TextBox.MaxLength = 70;
-            UnitTextBox.MaxLength = 20;
+            Unit_TextBox.MaxLength = 20;
             TotalReception_Textbox.MaxLength = 15;
 
             Produc_TextBox.ShortcutsEnabled = false;

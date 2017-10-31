@@ -162,6 +162,7 @@ namespace SistemaGestorDeInformes
             Interfaz.Show();
         }
         private void Buscar_textBox_KeyPress(object sender, KeyPressEventArgs e)
+        { 
             ValidationTextBox tr = new ValidationTextBox();
             tr.CharacterEspecial(sender, e);
         }
@@ -211,5 +212,6 @@ namespace SistemaGestorDeInformes
             main.WindowState = this.WindowState;
             this.Hide();
             main.Show();
+        }
     }
 }

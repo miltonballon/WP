@@ -285,7 +285,7 @@
             this.Becas_textbox.Name = "Becas_textbox";
             this.Becas_textbox.Size = new System.Drawing.Size(241, 20);
             this.Becas_textbox.TabIndex = 41;
-            this.txtboxbecas.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtboxbecas_KeyPress);
+            //this.txtboxbecas.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtboxbecas_KeyPress);
             // 
             // labelInformaciónBásica
             // 
