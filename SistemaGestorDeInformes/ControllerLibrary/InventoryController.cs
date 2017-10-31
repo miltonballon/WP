@@ -58,7 +58,7 @@ namespace ControllerLibrary
                     reception.Product = product;
                     reception.Stock = total;
                     receptions.Add(reception);
-                    //MessageBox.Show("" + product.Name + "" + reception.Stock);
+                    
                 }
             }
             catch (Exception)
