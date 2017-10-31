@@ -32,7 +32,7 @@ namespace EntityLibrary
             this.total = total;
         }
 
-        public InvoiceRow(Object[] data,String provider)
+        public InvoiceRow(Object[] data, String provider)
         {
             this.product = new Product();
             this.product.Name = (String)data[0];
@@ -101,6 +101,17 @@ namespace EntityLibrary
         public void setId(int id)
         {
             this.id = id;
+        }
+
+        public String[] getAllAttributesAsText()
+        {
+            String[] output = new String[5];
+            output[0] = product.Name;
+            output[1] = product.Unit;
+            output[2] = quantity+"";
+            output[3] = unitPrice+"";
+            output[4] = total+"";
+            return output;
         }
 
         public override String ToString()

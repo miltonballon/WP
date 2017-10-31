@@ -14,6 +14,7 @@ namespace EntityLibrary
         private DateTime date;
         private List<InvoiceRow> InvoiceRows;
         private Provider provider;
+        private double total;
 
         public Invoice(Provider provider, int nInvoice, int nAutorization, DateTime date)
         {
@@ -97,6 +98,22 @@ namespace EntityLibrary
         public void setId(int id)
         {
             this.id = id;
+        }
+
+        public void setTotal()
+        {
+            double addition = 0;
+            foreach (InvoiceRow row in InvoiceRows)
+            {
+                addition += row.getTotal();
+            }
+            total = addition;
+        }
+
+        public double getTotal()
+        {
+            setTotal();
+            return total;
         }
 
         public override String ToString()

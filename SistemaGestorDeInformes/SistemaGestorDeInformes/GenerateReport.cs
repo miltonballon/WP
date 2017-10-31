@@ -15,10 +15,12 @@ namespace SistemaGestorDeInformes
     public partial class GenerateReport : Form
     {
         private ReportSheetController reportSheetController;
+        private ReportController reportController;
         public GenerateReport()
         {
             InitializeComponent();
             reportSheetController = new ReportSheetController();
+            reportController = new ReportController();
         }        
 
         private void atrasButton_Click(object sender, EventArgs e)
@@ -144,7 +146,25 @@ namespace SistemaGestorDeInformes
         private void RegistrarButton_Click(object sender, EventArgs e)
         {
             ReportSheet reportSheet = reportSheetController.generateQuotationSheet();
-            MessageBox.Show(reportSheetController.generateExcelSheet(reportSheet) + "");
+            Report report = new Report("prueba");
+            report.Sheets.Add(reportSheet);
+            reportSheet = reportSheetController.generateReferentialPricesSheet();
+            report.Sheets.Add(reportSheet);
+            int result = reportController.generateExcel(report);
+            printMessage(result);
+        }
+
+        private void printMessage(int input)
+        {
+            switch (input)
+            {
+                case 0:
+                    MessageBox.Show("Se genero el informe exitosamente");
+                    break;
+                default:
+                    MessageBox.Show("Hubo un error al generar informe");
+                    break;
+            }
         }
     }
 }

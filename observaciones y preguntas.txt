@@ -1,0 +1,17 @@
+HOJA DE COTIZACION
+
+	agregar direccion a proveedor
+		crear interfaz para creacion, edicion y mostrar proveedores
+
+	contactos, uno por proveedor?
+		(de todas maneras se necesita nueva entidad, contacto(nombre, id_proveedor?, telefono))
+
+	la fecha de vencimiento de los productos secos, como se calculan?
+
+	en la pantalla de inicio principal, pedir el email de la organizacion en si y el telefono del hogar
+	
+	ademas al crear usuario que pida el nombre completo del Responsable de Recursos
+
+hoja de referenciales
+	la fecha, es de la factura?
+	por que la linea verde en la parte inferior de algunos cuadros?
