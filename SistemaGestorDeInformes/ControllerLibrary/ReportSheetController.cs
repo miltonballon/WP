@@ -94,9 +94,8 @@ namespace ControllerLibrary
             if (ongoingTrimester != null)
             {
                 List<Invoice> invoices = invoiceController.getAllInvoicesByTrimester(ongoingTrimester);
-                int numberOfCopies = invoices.Count;
                 List<ReportSheetCell> cells = new List<ReportSheetCell>();
-                cells.AddRange(generateHeader(numberOfCopies, reportSheet.Tittle));
+                cells.AddRange(generateHeaderAndTableOfQuotation(invoices, reportSheet.Tittle));
                 reportSheet.Cells = cells;
             }
             return reportSheet;
@@ -133,11 +132,12 @@ namespace ControllerLibrary
             return reportSheetCell;
         }*/
 
-        private List<ReportSheetCell> generateHeader(int numberCopies, String title)
+        private List<ReportSheetCell> generateHeaderAndTableOfQuotation(List<Invoice> invoices, String title)
         {
             List<ReportSheetCell> cells = new List<ReportSheetCell>();
             int row=0, 
                 column=1;
+            int numberCopies = invoices.Count;
             for (int i=0;i<numberCopies; i++)
             {
                 row = 1;
@@ -164,10 +164,72 @@ namespace ControllerLibrary
             for (int i = 0; i < numberCopies; i++)
             {
                 String[] headers = { "ITEM", "DESCRIPCION", "UNIDAD", "CANTIDAD", "PRECIO EN BS.", "OBSERVACIONES", "UNITARIO", "TOTAL" };
-                String[] text = { "CENTRO:   ASOCIACION CREAMOS", " ", "VIVERES SECOS:", " ", "VIVERES FRESCOS:	"};
+                String[] text = { "CENTRO:   ASOCIACION CREAMOS", " ", "VIVERES SECOS:", " ", " ", "VIVERES FRESCOS:	" };
                 cells.AddRange(fillRowWithText(row+2,column,text));
                 cells.AddRange(generateEnumerateTable(row+3, column, 15, headers));
-                column += 7;
+                List<InvoiceRow> invoiceRows = invoices[i].getInvoiceRows();
+                cells.AddRange(fillTableWithInvoiceRows(row + 4, column+1, invoiceRows, 3));
+                cells.AddRange(generateFooterOfQuotation(row + 19, column-1));
+                column += 8;
+            }
+            return cells;
+        }
+
+        private List<ReportSheetCell> generateFooterOfQuotation(int row, int column)
+        {
+            List<ReportSheetCell> cells = new List<ReportSheetCell>();
+            ReportSheetCell cell = new ReportSheetCell(row, column, "Se considera causa de invalidación de la cotización, el no llenado de precios unitarios y totales");
+            row++;
+            cells.Add(cell);
+            cell = new ReportSheetCell(row, column, "Los productos deben ser de primera calidad");
+            row++;
+            cells.Add(cell);
+            cell = new ReportSheetCell(row, column, "Los precios ofertados tendrán vegencia de:");
+            row++;
+            cells.Add(cell);
+            cell = new ReportSheetCell(row, column, "En caso de productos secos, colocar vencimiento:");
+            row++;
+            cells.Add(cell);
+            cell = new ReportSheetCell(row, column, "Condiciones de pago:");
+            row++;
+            cells.Add(cell);
+            cell = new ReportSheetCell(row, column, "Tiempo de Entrega:");
+            row++;
+            cells.Add(cell);
+            cell = new ReportSheetCell(row, column, "Lugar de Entrega:");
+            row++;
+            cells.Add(cell);
+            cell = new ReportSheetCell(row, column, "Dirección del Proveedor:");
+            row++;
+            cells.Add(cell);
+            cell = new ReportSheetCell(row, column, "Teléfono de contacto:");
+            row++;
+            cells.Add(cell);
+            cell = new ReportSheetCell(row, column, "Persona de Contacto:");
+            row++;
+            cells.Add(cell);
+            cell = new ReportSheetCell(row, column, "Cheque a nombre de (Razon Social y/o titular de NIT)");
+            row++;
+            cells.Add(cell);
+            return cells;
+        }
+
+        private List<ReportSheetCell> fillTableWithInvoiceRows(int row, int column,List<InvoiceRow> invoiceRows,int numAttributes)
+        {
+            List<ReportSheetCell> cells = new List<ReportSheetCell>();
+            int tempColumn = column;
+            foreach (InvoiceRow invoceRow in invoiceRows)
+            {
+                String[] attributes = invoceRow.getAllAttributesAsText();
+                for (int i=0;i<numAttributes;i++)
+                {
+                    String text = attributes[i];
+                    ReportSheetCell cell = new ReportSheetCell(row, tempColumn, text);
+                    tempColumn++;
+                    cells.Add(cell);
+                }
+                row++;
+                tempColumn = column;
             }
             return cells;
         }
