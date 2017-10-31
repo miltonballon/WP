@@ -18,7 +18,7 @@ namespace ControllerLibrary
 
         public void insertProduct(Product p)
         {
-            if (getIdName(p.Name) == -1) //si es -1 quiere decir que no existe y por tanto se crea
+            if (getIdName(p.Name) == -1) 
             {
                 InsertProduct(p.Name, p.Clasification);
             }
@@ -177,7 +177,7 @@ namespace ControllerLibrary
         public int getIdName(string name)
         {
             string NameQuery = "select id FROM Product where name = " + "'" + name + "'";
-            return c.FindAndGetID(NameQuery); //-si retorna -1 quiere decir que esta vacio la consulta y no existe el elemento
+            return c.FindAndGetID(NameQuery);
         }
         public int getIdProvider(string provider)
         {
@@ -214,7 +214,7 @@ namespace ControllerLibrary
         {
             
             string query = "delete from Product_Provider_Unit where Id_prod='" + IDProduct + "' and id_prov='" + IDProvider + "' and id_uni='" + IDUnit + "'";
-            //string query = "delete from Product_Provider_Unit where Id_prod='1' and id_prov='1' and id_uni='1'";
+           
             c.executeInsertion(query);
         }
        

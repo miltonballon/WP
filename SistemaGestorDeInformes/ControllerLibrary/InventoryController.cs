@@ -27,7 +27,7 @@ namespace ControllerLibrary
             else
             {
                 int total = addTotalToProduct(findId(id), reception.Total);
-                //MessageBox.Show("asd" + findId(id) + " "+total);
+                
                 updateReception(findId(id), total);
             }
             
@@ -36,7 +36,7 @@ namespace ControllerLibrary
         {
             
                 int total = restTotalToProduct(findId(id), reception.Total);
-                //MessageBox.Show("asd" + findId(id) + " " + total);
+               
                 updateReception(findId(id), total);
          
 
@@ -58,7 +58,7 @@ namespace ControllerLibrary
                     reception.Product = product;
                     reception.Stock = total;
                     receptions.Add(reception);
-                    //MessageBox.Show("" + product.Name + "" + reception.Stock);
+                    
                 }
             }
             catch (Exception)
