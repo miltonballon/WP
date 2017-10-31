@@ -24,14 +24,12 @@ namespace SistemaGestorDeInformes
         }
         public void registerClassProduct()
         {
-            product.Name = ProductTextBox.Text;
-            product.Provider = ProviderTextBox.Text;
-            product.Unit = Unit.Text;
+            product.Name = Product_TextBox.Text;
+            product.Provider = Provider_TextBox.Text;
+            product.Unit = Unit_TextBox.Text;
         }
         private void atrasButton_Click(object sender, EventArgs e)
         {
-
-
             registerClassProduct();
 
             pc.insertProduct(product);
@@ -40,18 +38,6 @@ namespace SistemaGestorDeInformes
             ShowProducts1.WindowState = this.WindowState;
             this.Hide();
             ShowProducts1.Show();
-        }
-
-        private void RegistrarButton_Click(object sender, EventArgs e)
-        {
-            registerClassProduct();
-            pc.insertProduct(product);
-            pc.addReferencesToTableProduct_Provider_Unit(product);
-            MessageBox.Show("Editado exitosamente");
-            ShowProducts main = new ShowProducts();
-            main.WindowState = this.WindowState;
-            main.Show();
-            this.Hide();
         }
 
         private void FreshRadioButton_CheckedChanged(object sender, EventArgs e)
@@ -64,9 +50,16 @@ namespace SistemaGestorDeInformes
             product.Clasification = "Seco";
         }
 
-        private void ModifyProduct_Load(object sender, EventArgs e)
+        private void Registrar_Button_Click(object sender, EventArgs e)
         {
-
+            registerClassProduct();
+            pc.insertProduct(product);
+            pc.addReferencesToTableProduct_Provider_Unit(product);
+            MessageBox.Show("Editado exitosamente");
+            ShowProducts main = new ShowProducts();
+            main.WindowState = this.WindowState;
+            main.Show();
+            this.Hide();
         }
     }
 }

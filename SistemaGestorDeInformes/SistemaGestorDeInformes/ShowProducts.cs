@@ -121,9 +121,9 @@ namespace SistemaGestorDeInformes
             Product p = new Product(dataGridView1.SelectedRows[0].Cells[0].Value.ToString(), dataGridView1.SelectedRows[0].Cells[1].Value.ToString(), dataGridView1.SelectedRows[0].Cells[2].Value.ToString(), dataGridView1.SelectedRows[0].Cells[3].Value.ToString());
 
             ModifyProduct edit = new ModifyProduct();
-            edit.ProductTextBox.Text = p.Name;          
-            edit.ProviderTextBox.Text = p.Provider;
-            edit.Unit.Text = p.Unit;
+            edit.Product_TextBox.Text = p.Name;          
+            edit.Provider_TextBox.Text = p.Provider;
+            edit.Unit_TextBox.Text = p.Unit;
             if (p.Clasification == "Fresco")
             {
                 edit.FreshRadioButton.Checked = true;
