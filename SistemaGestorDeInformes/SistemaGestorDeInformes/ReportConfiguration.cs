@@ -109,15 +109,6 @@ namespace SistemaGestorDeInformes
             Interfaz.Show();
         }
 
-        private void RegistrarButton_Click(object sender, EventArgs e)
-        {
-            int nScho=Int32.Parse(txtboxbecas.Text), 
-                nPar=Int32.Parse(txtboxnpartida.Text);
-            Configuration conf = new Configuration(nScho,nPar);
-            configurationController.insertConfiguration(conf);
-            MessageBox.Show("Se guardo la configuración correctamente");
-        }
-
         private void generarInformeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             GenerateReport Interfaz = new GenerateReport();
@@ -130,26 +121,14 @@ namespace SistemaGestorDeInformes
         {
             Application.Exit();
         }
-
-        private void txtboxbecas_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar != '1' && e.KeyChar != '2' && e.KeyChar != '3' && e.KeyChar != '4' && e.KeyChar != '5' && e.KeyChar != '6' && e.KeyChar != '7' && e.KeyChar != '8' && e.KeyChar != '9' && e.KeyChar != '0')
-                e.Handled = true;
-        }
-
-        private void txtboxnpartida_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar != '1' && e.KeyChar != '2' && e.KeyChar != '3' && e.KeyChar != '4' && e.KeyChar != '5' && e.KeyChar != '6' && e.KeyChar != '7' && e.KeyChar != '8' && e.KeyChar != '9' && e.KeyChar != '0')
-                e.Handled = true;
-        }        
         
         private void ReportConfiguration_Load(object sender, EventArgs e)
         {
-            txtboxbecas.MaxLength = 70;
-            txtboxnpartida.MaxLength = 70;
+            becas_Textbox.MaxLength = 70;
+            NPartida_textbox.MaxLength = 70;
 
-            txtboxbecas.ShortcutsEnabled = false;
-            txtboxnpartida.ShortcutsEnabled = false;
+            becas_Textbox.ShortcutsEnabled = false;
+            NPartida_textbox.ShortcutsEnabled = false;
 
             KeyPreview = true;
         }
@@ -167,6 +146,27 @@ namespace SistemaGestorDeInformes
             Interfaz.WindowState = this.WindowState;
             this.Hide();
             Interfaz.Show();
+        }
+
+        private void becas_Textbox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != '1' && e.KeyChar != '2' && e.KeyChar != '3' && e.KeyChar != '4' && e.KeyChar != '5' && e.KeyChar != '6' && e.KeyChar != '7' && e.KeyChar != '8' && e.KeyChar != '9' && e.KeyChar != '0')
+                e.Handled = true;
+        }
+
+        private void NPartida_textbox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != '1' && e.KeyChar != '2' && e.KeyChar != '3' && e.KeyChar != '4' && e.KeyChar != '5' && e.KeyChar != '6' && e.KeyChar != '7' && e.KeyChar != '8' && e.KeyChar != '9' && e.KeyChar != '0')
+                e.Handled = true;
+        }
+
+        private void Registrar_Button_Click(object sender, EventArgs e)
+        {
+            int nScho = Int32.Parse(becas_Textbox.Text),
+                nPar = Int32.Parse(NPartida_textbox.Text);
+            Configuration conf = new Configuration(nScho, nPar);
+            configurationController.insertConfiguration(conf);
+            MessageBox.Show("Se guardo la configuración correctamente");
         }
     }
 }
