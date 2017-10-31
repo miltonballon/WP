@@ -13,6 +13,7 @@ namespace EntityLibrary
         private int total;
         public OutputReception()
         {
+            reception = new Reception();
         }
 
         public OutputReception(Reception reception,string outputDate, int total)

@@ -14,10 +14,12 @@ namespace ControllerLibrary
 
         private Connection c = new Connection();
         private ProductController productController;
+        private InventoryController inventoryController;
         public ReceptionController()
         {
             c.connect();
             productController = new ProductController();
+            inventoryController = new InventoryController();
         }
         
 
@@ -40,6 +42,7 @@ namespace ControllerLibrary
             if (idName != notExist && idProvider != notExist && idUnit != notExist && resul != notExist)
             {
                 InsertReception(resul, reception);
+                inventoryController.InsertToInventory(resul, reception);
                 MessageBox.Show("Registrado Correctamente");
             }
             else

@@ -14,7 +14,7 @@ namespace EntityLibrary
         private int total;
         public Reception()
         {
-            new Product();
+            product = new Product();
         }
 
         public Reception(Product product, string expirationDate, string receptionDate, int total)

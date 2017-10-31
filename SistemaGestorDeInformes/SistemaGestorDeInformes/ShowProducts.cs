@@ -121,9 +121,11 @@ namespace SistemaGestorDeInformes
             Product p = new Product(dataGridView1.SelectedRows[0].Cells[0].Value.ToString(), dataGridView1.SelectedRows[0].Cells[1].Value.ToString(), dataGridView1.SelectedRows[0].Cells[2].Value.ToString(), dataGridView1.SelectedRows[0].Cells[3].Value.ToString());
 
             ModifyProduct edit = new ModifyProduct();
+            
             edit.ProductTextBox.Text = p.Name;          
             edit.ProviderTextBox.Text = p.Provider;
             edit.Unit.Text = p.Unit;
+            
             if (p.Clasification == "Fresco")
             {
                 edit.FreshRadioButton.Checked = true;
@@ -132,15 +134,15 @@ namespace SistemaGestorDeInformes
             {
                 edit.DryRadioButton.Checked = true;
             }
-
+         
 
             //MessageBox.Show("A" + pc.getIdName(p.Name) + "T" + pc.getIdProvider(p.Provider) + "B" + pc.getIdUnit(p.Unit));
             
             //pc.DeleteProduct_Provider_Unit(1,1,1);
             pc.DeleteProduct_Provider_Unit(pc.getIdName(p.Name), pc.getIdProvider(p.Provider), pc.getIdUnit(p.Unit));
-
+            
             edit.Show();
-            this.Close();
+            //this.Close();
 
         }
 
