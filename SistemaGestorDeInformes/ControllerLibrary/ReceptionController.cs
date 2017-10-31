@@ -158,7 +158,7 @@ namespace ControllerLibrary
         public int getIdName(string name)
         {
             string NameQuery = "select id FROM Product where name = " + "'" + name + "'";
-            return c.FindAndGetID(NameQuery); //-si retorna -1 quiere decir que esta vacio la consulta y no existe el elemento
+            return c.FindAndGetID(NameQuery); 
         }
         public int getIdProvider(string provider)
         {
