@@ -39,30 +39,30 @@ namespace EntityLibrary
             this.content = content;
             styles = "";
         }
-        public ReportSheetCell(int row, int column, string content,String styles)
-        {
+         public ReportSheetCell(int row, int column, string content,String styles)
+         {
             this.row = row;
             this.column = column;
             this.content = content;
             this.styles = styles;
-        }
+         }
 
-        public int Id
+         public int Id
          {
             get { return id; }
             set { id = value; }
          }
          public int Row
-        {
+         {
             get { return row; }
             set { row = value; }
-        }
+         }
 
          public int Column
-        {
+         {
             get { return column; }
             set { column = value; }
-        }
+         }
          public string Content
          {
              get { return content; }
@@ -74,5 +74,51 @@ namespace EntityLibrary
             get { return content; }
             set { content = value; }
         }
+
+        public void AddBold()
+        {
+            if (styles.Equals(""))
+            {
+                styles = "b";
+            }
+            else
+            {
+                styles+= ",b";
+            }
+        }
+        public void WidthForCell(int width)
+        {
+            if (styles.Equals(""))
+            {
+                styles = "w"+width;
+            }
+            else
+            {
+                styles += ",w"+width;
+            }
+        }
+        public void HeigthForCell(int heigth)
+        {
+            if (styles.Equals(""))
+            {
+                styles = "h" + heigth;
+            }
+            else
+            {
+                styles += ",h" + heigth;
+            }
+        }
+        public void CenterText()
+        {
+            if (styles.Equals(""))
+            {
+                styles = "c";
+            }
+            else
+            {
+                styles += ",c";
+            }
+        }
+
     }
 }

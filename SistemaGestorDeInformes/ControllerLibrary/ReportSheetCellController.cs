@@ -17,7 +17,7 @@ namespace ControllerLibrary
             c.connect();
         }
 
-        public int insertReportSheetCell(ReportSheetCell reportSheetCell, int idReporSheet)
+        public int InsertReportSheetCell(ReportSheetCell reportSheetCell, int idReporSheet)
         {
             int row = reportSheetCell.Row,
                 column = reportSheetCell.Column;
@@ -26,22 +26,22 @@ namespace ControllerLibrary
             String query = "INSERT INTO Report_sheet_cell(id_report_sheet, row, column, content, styles) VALUES("
                 +idReporSheet+", "+row+", "+column+" ,'"+content+"','"+styles+"')";
             c.executeInsertion(query);
-            return getIdByUniqueFields(idReporSheet,row,column);
+            return GetIdByUniqueFields(idReporSheet,row,column);
         }
 
-        public int getIdByUniqueFields(int idReporSheet, int row, int column)
+        public int GetIdByUniqueFields(int idReporSheet, int row, int column)
         {
             String query = "SELECT id FROM Report_sheet_cell WHERE id_report_sheet="+idReporSheet+" AND row="+row+" AND column="+column;
             return c.FindAndGetID(query);
         }
 
-        public void insertAllReportSheetsCells(ReportSheet reportSheet)
+        public void InsertAllReportSheetsCells(ReportSheet reportSheet)
         {
             List<ReportSheetCell> reportSheetsCells = reportSheet.Cells;
             int id = reportSheet.Id;
             foreach (ReportSheetCell reportSheetCell in reportSheetsCells)
             {
-                insertReportSheetCell(reportSheetCell,id);
+                InsertReportSheetCell(reportSheetCell,id);
             }
         }
 

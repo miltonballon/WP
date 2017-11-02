@@ -8,7 +8,7 @@ namespace ControllerLibrary
 {
     class Util
     {
-        public static string toSpelling(string num)
+        public static string NumberToString(string num)
         {
             string res, dec = "";
             Int64 entero;
