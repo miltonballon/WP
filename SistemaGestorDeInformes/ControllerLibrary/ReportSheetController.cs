@@ -236,6 +236,7 @@ namespace ControllerLibrary
                 row += 2;
                 cells.Add(cell);
                 cell = new ReportSheetCell(row, column, title);
+                cell.AddBold();
                 cells.Add(cell);
                 column += 7;
             }

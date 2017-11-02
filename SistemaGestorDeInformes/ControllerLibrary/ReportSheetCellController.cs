@@ -22,7 +22,7 @@ namespace ControllerLibrary
             int row = reportSheetCell.Row,
                 column = reportSheetCell.Column;
             String content = reportSheetCell.Content,
-                   styles=reportSheetCell.Style;
+                   styles=reportSheetCell.Styles;
             String query = "INSERT INTO Report_sheet_cell(id_report_sheet, row, column, content, styles) VALUES("
                 +idReporSheet+", "+row+", "+column+" ,'"+content+"','"+styles+"')";
             c.executeInsertion(query);

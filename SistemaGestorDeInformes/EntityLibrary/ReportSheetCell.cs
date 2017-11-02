@@ -69,10 +69,10 @@ namespace EntityLibrary
              set { content = value; }
          }
 
-        public string Style
+        public string Styles
         {
-            get { return content; }
-            set { content = value; }
+            get { return styles; }
+            set { styles = value; }
         }
 
         public void AddBold()
@@ -119,6 +119,27 @@ namespace EntityLibrary
                 styles += ",c";
             }
         }
-
+        public void mergeHorizontally(int number)
+        {
+            if (styles.Equals(""))
+            {
+                styles = "h" + number;
+            }
+            else
+            {
+                styles += ",h" + number;
+            }
+        }
+        public void mergeVertically(int number)
+        {
+            if (styles.Equals(""))
+            {
+                styles = "v" + number;
+            }
+            else
+            {
+                styles += ",v" + number;
+            }
+        }
     }
 }

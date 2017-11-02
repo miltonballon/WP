@@ -26,7 +26,7 @@ namespace ControllerLibrary
         {
             String name = report.Name,
                    date=report.Date.ToString("dd/MM/yyyy");
-            String query = "INSERT INTO Report(name, date, id_trimester) VALUES('"+name+"', '"+date+"'" + idTrimester + ")";
+            String query = "INSERT INTO Report(name, date, id_trimester) VALUES('"+name+"', '"+date+"'," + idTrimester + ")";
             c.executeInsertion(query);
             int id = GetIdByUniqueFields(idTrimester, name);
             report.Id = id;
@@ -108,6 +108,7 @@ namespace ControllerLibrary
                     xlWorkSheet = (Worksheet)xlWorkBook.Worksheets.get_Item(numSheet);
 
                     xlWorkSheet.Name = reportSheet.Type;
+                    xlWorkSheet.Columns[3].ColumnWidth = 18;
                     fillInExcelCells(reportSheet.Cells, xlWorkSheet);
                     workSheets.Add(xlWorkSheet);
                     numSheet++;
@@ -135,15 +136,18 @@ namespace ControllerLibrary
                 int row = cell.Row,
                     column = cell.Column;
                 String content = cell.Content,
-                       styles=cell.Style;
+                       styles=cell.Styles;
                 workSheet.Cells[row, column] = content;
-                AddStyle(workSheet.Cells[row, column],row,column,styles);                
+                AddStyle(workSheet,row,column,styles);                
             }
         }
 
         private void AddStyle(Worksheet workSheet, int row, int column,string styles)
         {
-            workSheet.Cells[row, column].Font.Bold = true;
+            if (Util.isBold(styles))
+            {
+                workSheet.Cells[row, column].Font.Bold = true;
+            }
         }
     }
 }

@@ -101,5 +101,10 @@ namespace ControllerLibrary
             return Num2Text;
 
         }
+
+        public static bool isBold(String styles)
+        {
+            return styles.Contains("b");
+        }
     }
 }

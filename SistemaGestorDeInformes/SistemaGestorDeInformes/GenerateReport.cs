@@ -145,11 +145,12 @@ namespace SistemaGestorDeInformes
 
         private void RegistrarButton_Click(object sender, EventArgs e)
         {
-            ReportSheet reportSheet = reportSheetController.generateQuotationSheet();
+            ReportSheet reportSheet = reportSheetController.GenerateQuotationSheet();
             Report report = new Report("prueba");
             report.Sheets.Add(reportSheet);
-            reportSheet = reportSheetController.generateReferentialPricesSheet();
+            reportSheet = reportSheetController.GenerateReferentialPricesSheet();
             report.Sheets.Add(reportSheet);
+            //reportController.insertReport(report,2);
             int result = reportController.generateExcel(report);
             printMessage(result);
         }
