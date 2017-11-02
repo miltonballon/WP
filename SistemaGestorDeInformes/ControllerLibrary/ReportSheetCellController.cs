@@ -21,9 +21,10 @@ namespace ControllerLibrary
         {
             int row = reportSheetCell.Row,
                 column = reportSheetCell.Column;
-            String content = reportSheetCell.Content;
-            String query = "INSERT INTO Report_sheet_cell(id_report_sheet, row, column, content) VALUES("
-                +idReporSheet+", "+row+", "+column+" ,'"+content+"')";
+            String content = reportSheetCell.Content,
+                   styles=reportSheetCell.Style;
+            String query = "INSERT INTO Report_sheet_cell(id_report_sheet, row, column, content, styles) VALUES("
+                +idReporSheet+", "+row+", "+column+" ,'"+content+"','"+styles+"')";
             c.executeInsertion(query);
             return getIdByUniqueFields(idReporSheet,row,column);
         }
@@ -53,8 +54,9 @@ namespace ControllerLibrary
             {
                 int row=Int32.Parse(data[2].ToString()), 
                     column= Int32.Parse(data[3].ToString());
-                String content = data[4].ToString();
-                reportSheetCell = new ReportSheetCell(id,row,column,content);
+                String content = data[4].ToString(),
+                       styles= data[5].ToString();
+                reportSheetCell = new ReportSheetCell(id,row,column,content,styles);
             }
             data.Close();
             c.dataClose();

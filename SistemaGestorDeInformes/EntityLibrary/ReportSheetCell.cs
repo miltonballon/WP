@@ -20,6 +20,16 @@ namespace EntityLibrary
             this.row = row;
             this.column = column;
             this.content = content;
+            styles = "";
+        }
+
+        public ReportSheetCell(int id, int row, int column, string content, string styles)
+        {
+            this.id = id;
+            this.row = row;
+            this.column = column;
+            this.content = content;
+            this.styles = styles;
         }
 
         public ReportSheetCell(int row, int column, string content)
@@ -27,6 +37,7 @@ namespace EntityLibrary
             this.row = row;
             this.column = column;
             this.content = content;
+            styles = "";
         }
         public ReportSheetCell(int row, int column, string content,String styles)
         {
