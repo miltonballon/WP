@@ -108,7 +108,6 @@ namespace ControllerLibrary
                     xlWorkSheet = (Worksheet)xlWorkBook.Worksheets.get_Item(numSheet);
 
                     xlWorkSheet.Name = reportSheet.Type;
-                    xlWorkSheet.Columns[3].ColumnWidth = 18;
                     fillInExcelCells(reportSheet.Cells, xlWorkSheet);
                     workSheets.Add(xlWorkSheet);
                     numSheet++;

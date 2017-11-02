@@ -84,20 +84,6 @@ namespace ControllerLibrary
             return reportSheets;
         }
 
-        public ReportSheet GenerateQuotationSheet()
-        {
-            Trimester ongoingTrimester = trimesterController.getLastTrimester();
-            ReportSheet reportSheet = new ReportSheet("cotizacion", "FORMULARIO DE SOLICITUD DE COTIZACION");
-            if (ongoingTrimester != null)
-            {
-                List<Invoice> invoices = invoiceController.getAllInvoicesByTrimester(ongoingTrimester);
-                List<ReportSheetCell> cells = new List<ReportSheetCell>();
-                cells.AddRange(GenerateHeaderAndTableOfQuotation(invoices, reportSheet.Tittle));
-                reportSheet.Cells = cells;
-            }
-            return reportSheet;
-        }
-
         public ReportSheet GenerateReferentialPricesSheet()
         {
             Trimester ongoingTrimester = trimesterController.getLastTrimester();
@@ -112,7 +98,7 @@ namespace ControllerLibrary
             return reportSheet;
         }
 
-        private List<ReportSheetCell> GenerateEnumerateTable(int initialRow, int initialColumn, int heigth, string[] headers)
+        public List<ReportSheetCell> GenerateEnumerateTable(int initialRow, int initialColumn, int heigth, string[] headers)
         {
             List<ReportSheetCell> cells = new List<ReportSheetCell>();
             cells.AddRange(FillRowWithText(initialRow,initialColumn,headers));
@@ -124,7 +110,7 @@ namespace ControllerLibrary
             return cells;
         }
 
-        private List<ReportSheetCell> FillRowWithText(int row, int column, string[] headers)
+        public List<ReportSheetCell> FillRowWithText(int row, int column, string[] headers)
         {
             List<ReportSheetCell> cells = new List<ReportSheetCell>();
             for (int i=0;i<headers.Length;i++)
@@ -136,7 +122,7 @@ namespace ControllerLibrary
             return cells;
         }
 
-        private List<ReportSheetCell> GenerateHeaderAndTableOfReferentialPricesSheet(List<Invoice> invoices, String title)
+        public List<ReportSheetCell> GenerateHeaderAndTableOfReferentialPricesSheet(List<Invoice> invoices, String title)
         {
             List<ReportSheetCell> cells = new List<ReportSheetCell>();
             int row = 0,
@@ -185,7 +171,7 @@ namespace ControllerLibrary
             return cells;
         }
 
-        private List<ReportSheetCell> GenerateFooterOfTableOfReferentialPrices(int row, int column,Invoice invoice)
+        public List<ReportSheetCell> GenerateFooterOfTableOfReferentialPrices(int row, int column,Invoice invoice)
         {
             double total = invoice.getTotal();
             List<ReportSheetCell> cells = new List<ReportSheetCell>();
@@ -199,7 +185,7 @@ namespace ControllerLibrary
             return cells;
         }
 
-        private List<ReportSheetCell> GenerateFooterOfReferentialPrices(int row, int column)
+        public List<ReportSheetCell> GenerateFooterOfReferentialPrices(int row, int column)
         {
             List<ReportSheetCell> cells = new List<ReportSheetCell>();
             ReportSheetCell cell = new ReportSheetCell(row, column, "NOMBRE EJEMPLO");
@@ -211,90 +197,7 @@ namespace ControllerLibrary
             return cells;
         }
 
-        private List<ReportSheetCell> GenerateHeaderAndTableOfQuotation(List<Invoice> invoices, String title)
-        {
-            List<ReportSheetCell> cells = new List<ReportSheetCell>();
-            int row=0, 
-                column=1;
-            int numberCopies = invoices.Count;
-            for (int i=0;i<numberCopies; i++)
-            {
-                row = 1;
-                ReportSheetCell cell = new ReportSheetCell(row,column,i+"");
-                cells.Add(cell);
-                column++;
-                cell = new ReportSheetCell(row,column, "GOBIERNO AUTONOMO DEPARTAMENTAL");
-                row++;
-                cells.Add(cell);
-                cell = new ReportSheetCell(row, column, "SECRETARIA DEPARTAMENTAL DE DESARROLLO HUMANO");
-                row++;
-                cells.Add(cell);
-                cell = new ReportSheetCell(row, column, "SERVICIO DEPARTAMENTAL DE GESTION SOCIAL");
-                row++;
-                cells.Add(cell);
-                cell = new ReportSheetCell(row, column, "COCHABAMBA- BOLIVIA");
-                row += 2;
-                cells.Add(cell);
-                cell = new ReportSheetCell(row, column, title);
-                cell.AddBold();
-                cells.Add(cell);
-                column += 7;
-            }
-            column = 2;
-            for (int i = 0; i < numberCopies; i++)
-            {
-                String[] headers = { "ITEM", "DESCRIPCION", "UNIDAD", "CANTIDAD", "PRECIO EN BS.", "OBSERVACIONES", "UNITARIO", "TOTAL" };
-                String[] text = { "CENTRO:   ASOCIACION CREAMOS", " ", "VIVERES SECOS:", " ", " ", "VIVERES FRESCOS:	" };
-                cells.AddRange(FillRowWithText(row+2,column,text));
-                cells.AddRange(GenerateEnumerateTable(row+3, column, 15, headers));
-                List<InvoiceRow> invoiceRows = invoices[i].getInvoiceRows();
-                cells.AddRange(FillTableWithInvoiceRows(row + 4, column+1, invoiceRows, 3));
-                cells.AddRange(GenerateFooterOfQuotation(row + 19, column-1));
-                column += 8;
-            }
-            return cells;
-        }
-
-        private List<ReportSheetCell> GenerateFooterOfQuotation(int row, int column)
-        {
-            List<ReportSheetCell> cells = new List<ReportSheetCell>();
-            ReportSheetCell cell = new ReportSheetCell(row, column, "Se considera causa de invalidación de la cotización, el no llenado de precios unitarios y totales");
-            row++;
-            cells.Add(cell);
-            cell = new ReportSheetCell(row, column, "Los productos deben ser de primera calidad");
-            row++;
-            cells.Add(cell);
-            cell = new ReportSheetCell(row, column, "Los precios ofertados tendrán vegencia de:");
-            row++;
-            cells.Add(cell);
-            cell = new ReportSheetCell(row, column, "En caso de productos secos, colocar vencimiento:");
-            row++;
-            cells.Add(cell);
-            cell = new ReportSheetCell(row, column, "Condiciones de pago:");
-            row++;
-            cells.Add(cell);
-            cell = new ReportSheetCell(row, column, "Tiempo de Entrega:");
-            row++;
-            cells.Add(cell);
-            cell = new ReportSheetCell(row, column, "Lugar de Entrega:");
-            row++;
-            cells.Add(cell);
-            cell = new ReportSheetCell(row, column, "Dirección del Proveedor:");
-            row++;
-            cells.Add(cell);
-            cell = new ReportSheetCell(row, column, "Teléfono de contacto:");
-            row++;
-            cells.Add(cell);
-            cell = new ReportSheetCell(row, column, "Persona de Contacto:");
-            row++;
-            cells.Add(cell);
-            cell = new ReportSheetCell(row, column, "Cheque a nombre de (Razon Social y/o titular de NIT)");
-            row++;
-            cells.Add(cell);
-            return cells;
-        }
-
-        private List<ReportSheetCell> FillTableWithInvoiceRows(int row, int column,List<InvoiceRow> invoiceRows,int numAttributes)
+        public List<ReportSheetCell> FillTableWithInvoiceRows(int row, int column,List<InvoiceRow> invoiceRows,int numAttributes)
         {
             List<ReportSheetCell> cells = new List<ReportSheetCell>();
             int tempColumn = column;
