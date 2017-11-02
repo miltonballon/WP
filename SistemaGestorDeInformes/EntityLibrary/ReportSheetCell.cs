@@ -12,6 +12,7 @@ namespace EntityLibrary
         private int row;
         private int column;
         private String content;
+        private String styles;
 
         public ReportSheetCell(int id, int row, int column, string content)
         {
@@ -27,17 +28,19 @@ namespace EntityLibrary
             this.column = column;
             this.content = content;
         }
-        /*
-        public int Id { get => id; set => id = value; }
-        public int Row { get => row; set => row = value; }
-        public int Column { get => column; set => column = value; }
-        public string Content { get => content; set => content = value; }
-         * */
-         public int Id
+        public ReportSheetCell(int row, int column, string content,String styles)
         {
+            this.row = row;
+            this.column = column;
+            this.content = content;
+            this.styles = styles;
+        }
+
+        public int Id
+         {
             get { return id; }
             set { id = value; }
-        }
+         }
          public int Row
         {
             get { return row; }
@@ -54,5 +57,11 @@ namespace EntityLibrary
              get { return content; }
              set { content = value; }
          }
+
+        public string Style
+        {
+            get { return content; }
+            set { content = value; }
+        }
     }
 }
