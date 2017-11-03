@@ -7,7 +7,7 @@ using EntityLibrary;
 
 namespace ControllerLibrary
 {
-    class QuotationSheetGenerator
+    public class QuotationSheetGenerator
     {
         private TrimesterController trimesterController;
         private InvoiceController invoiceController;
@@ -43,6 +43,7 @@ namespace ControllerLibrary
             {
                 row = 1;
                 ReportSheetCell cell = new ReportSheetCell(row, column, i + "");
+                cell.WidthForCell(2);
                 cells.Add(cell);
                 column++;
                 cell = new ReportSheetCell(row, column, "GOBIERNO AUTONOMO DEPARTAMENTAL");
@@ -65,7 +66,7 @@ namespace ControllerLibrary
             column = 2;
             for (int i = 0; i < numberCopies; i++)
             {
-                String[] headers = { "ITEM", "DESCRIPCION", "UNIDAD", "CANTIDAD", "PRECIO EN BS.", "OBSERVACIONES", "UNITARIO", "TOTAL" };
+                String[] headers = { "ITEM\nw4", "DESCRIPCION\nw50\nb", "UNIDAD", "CANTIDAD", "PRECIO EN BS.", "OBSERVACIONES", "UNITARIO", "TOTAL" };
                 String[] text = { "CENTRO:   ASOCIACION CREAMOS", " ", "VIVERES SECOS:", " ", " ", "VIVERES FRESCOS:	" };
                 cells.AddRange(reportSheetController.FillRowWithText(row + 2, column, text));
                 cells.AddRange(reportSheetController.GenerateEnumerateTable(row + 3, column, 15, headers));

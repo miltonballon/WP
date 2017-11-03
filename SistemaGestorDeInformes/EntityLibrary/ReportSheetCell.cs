@@ -20,7 +20,8 @@ namespace EntityLibrary
             this.row = row;
             this.column = column;
             this.content = content;
-            styles = "";
+            this.styles = "";
+            Broker();
         }
 
         public ReportSheetCell(int id, int row, int column, string content, string styles)
@@ -37,7 +38,8 @@ namespace EntityLibrary
             this.row = row;
             this.column = column;
             this.content = content;
-            styles = "";
+            this.styles = "";
+            Broker();
         }
          public ReportSheetCell(int row, int column, string content,String styles)
          {
@@ -46,7 +48,27 @@ namespace EntityLibrary
             this.content = content;
             this.styles = styles;
          }
+        private void Broker()
+        {
+            String[] token = content.Split('\n');
+            for (int i = 1; i < token.Length; i++)
+            {
+                AddGeneric(token[i]);
+            }
+            content = token[0];
+        }
 
+        private void AddGeneric(String input)
+        {
+            if (styles.Equals(""))
+            {
+                styles = input;
+            }
+            else
+            {
+                styles += ","+input;
+            }
+        }
          public int Id
          {
             get { return id; }

@@ -106,5 +106,32 @@ namespace ControllerLibrary
         {
             return styles.Contains("b");
         }
+
+        public static int GetWidth(String styles)
+        {
+            int output=-1;
+            String token = LookFor('w',styles);
+            if (!token.Equals(""))
+            {
+                String aux = styles.Substring(1);
+                output = Int32.Parse(aux);
+            }
+            return output;
+        }
+
+        private static String LookFor(char style,string styles)
+        {
+            String found="";
+            String[] tokens = styles.Split(',');
+            foreach (String token in tokens)
+            {
+                if (token.Contains(style))
+                {
+                    found = token;
+                    break;
+                }
+            }
+            return found;
+        }
     }
 }

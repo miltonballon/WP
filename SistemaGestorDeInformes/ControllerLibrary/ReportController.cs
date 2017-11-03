@@ -147,6 +147,11 @@ namespace ControllerLibrary
             {
                 workSheet.Cells[row, column].Font.Bold = true;
             }
+
+            if (Util.GetWidth(styles)>0)
+            {
+                workSheet.Columns[column].ColumnWidth = Util.GetWidth(styles);
+            }
         }
     }
 }
