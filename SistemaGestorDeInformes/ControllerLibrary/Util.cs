@@ -8,7 +8,7 @@ namespace ControllerLibrary
 {
     class Util
     {
-        public static string toSpelling(string num)
+        public static string NumberToString(string num)
         {
             string res, dec = "";
             Int64 entero;
@@ -100,6 +100,36 @@ namespace ControllerLibrary
             }
             return Num2Text;
 
+        }
+
+        public static bool isBold(String styles)
+        {
+            return styles.Contains("b");
+        }
+
+        public static int GetWidth(String styles)
+        {
+            int output=-1;
+            String token = LookFor('w',styles);
+            if (!token.Equals(""))
+            {
+                String aux = styles.Substring(1);
+                output = Int32.Parse(aux);
+            }
+            return output;
+        }
+
+        private static String LookFor(char style,string styles)
+        {
+            String[] tokens = styles.Split(',');
+            for (int i = 0; i < tokens.Length; i++)
+            {
+                if (tokens[i].Contains(style))
+                {
+                    return tokens[i];
+                }
+            }
+            return "";
         }
     }
 }

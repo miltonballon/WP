@@ -106,6 +106,7 @@ CREATE TABLE `Report_sheet_cell` (
 	`row`			INTEGER,
 	`column`		INTEGER,
 	`content`		TEXT,
+	`styles`		TEXT,
 	FOREIGN KEY(`id_report_sheet`) REFERENCES `Report_sheet`(`id`)
 );
 CREATE TABLE `Inventory` (

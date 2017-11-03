@@ -26,15 +26,15 @@ namespace ControllerLibrary
         {
             String name = report.Name,
                    date=report.Date.ToString("dd/MM/yyyy");
-            String query = "INSERT INTO Report(name, date, id_trimester) VALUES('"+name+"', '"+date+"'" + idTrimester + ")";
+            String query = "INSERT INTO Report(name, date, id_trimester) VALUES('"+name+"', '"+date+"'," + idTrimester + ")";
             c.executeInsertion(query);
-            int id = getIdByUniqueFields(idTrimester, name);
+            int id = GetIdByUniqueFields(idTrimester, name);
             report.Id = id;
-            reportSheetController.insertAllReportSheets(report);
+            reportSheetController.InsertAllReportSheets(report);
             return id;
         }
 
-        public int getIdByUniqueFields(int idTrimester, String name)
+        public int GetIdByUniqueFields(int idTrimester, String name)
         {
             String query = "SELECT id FROM Report WHERE id_trimester=" + idTrimester + " AND name='" + name + "'";
             return c.FindAndGetID(query);
@@ -134,8 +134,23 @@ namespace ControllerLibrary
             {
                 int row = cell.Row,
                     column = cell.Column;
-                String content = cell.Content;
+                String content = cell.Content,
+                       styles=cell.Styles;
                 workSheet.Cells[row, column] = content;
+                AddStyle(workSheet,row,column,styles);                
+            }
+        }
+
+        private void AddStyle(Worksheet workSheet, int row, int column,string styles)
+        {
+            if (Util.isBold(styles))
+            {
+                workSheet.Cells[row, column].Font.Bold = true;
+            }
+
+            if (Util.GetWidth(styles)>0)
+            {
+                workSheet.Columns[column].ColumnWidth = Util.GetWidth(styles);
             }
         }
     }
