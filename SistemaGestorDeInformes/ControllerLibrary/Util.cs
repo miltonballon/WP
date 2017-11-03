@@ -121,17 +121,15 @@ namespace ControllerLibrary
 
         private static String LookFor(char style,string styles)
         {
-            String found="";
             String[] tokens = styles.Split(',');
-            foreach (String token in tokens)
+            for (int i = 0; i < tokens.Length; i++)
             {
-                if (token.Contains(style))
+                if (tokens[i].Contains(style))
                 {
-                    found = token;
-                    break;
+                    return tokens[i];
                 }
             }
-            return found;
+            return "";
         }
     }
 }

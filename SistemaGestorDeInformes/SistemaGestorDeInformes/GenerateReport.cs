@@ -151,7 +151,7 @@ namespace SistemaGestorDeInformes
             report.Sheets.Add(reportSheet);
             reportSheet = reportSheetController.GenerateReferentialPricesSheet();
             report.Sheets.Add(reportSheet);
-            reportController.insertReport(report,2);
+            //reportController.insertReport(report,2);
             int result = reportController.generateExcel(report);
             printMessage(result);
         }
