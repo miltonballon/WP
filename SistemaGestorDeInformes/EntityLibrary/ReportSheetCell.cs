@@ -66,7 +66,7 @@ namespace EntityLibrary
             }
             else
             {
-                styles += ","+input;
+                styles += "," + input;
             }
         }
          public int Id
@@ -116,7 +116,7 @@ namespace EntityLibrary
             }
             else
             {
-                styles += ",w"+width;
+                styles += ",w" + width;
             }
         }
         public void HeigthForCell(int heigth)

@@ -152,6 +152,8 @@ namespace ControllerLibrary
             {
                 workSheet.Columns[column].ColumnWidth = Util.GetWidth(styles);
             }
+
+
         }
     }
 }
