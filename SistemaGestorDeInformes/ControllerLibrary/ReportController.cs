@@ -103,13 +103,16 @@ namespace ControllerLibrary
                 List<ReportSheet> reportSheets = report.Sheets;
                 int numSheet = 1;
                 List<Worksheet> workSheets=new List<Worksheet>();
+                xlWorkSheet = (Worksheet)xlWorkBook.Worksheets.get_Item(numSheet);
                 foreach (ReportSheet reportSheet in reportSheets)
                 {
-                    xlWorkSheet = (Worksheet)xlWorkBook.Worksheets.get_Item(numSheet);
-
                     xlWorkSheet.Name = reportSheet.Type;
                     fillInExcelCells(reportSheet.Cells, xlWorkSheet);
-                    workSheets.Add(xlWorkSheet);
+                    Sheets xlSheets = xlWorkBook.Sheets as Sheets;
+
+                    // The first argument below inserts the new worksheet as the first one
+                    xlWorkSheet = (Worksheet)xlSheets.Add(xlSheets[numSheet], Type.Missing, Type.Missing, Type.Missing);
+                    //workSheets.Add(xlWorkSheet);
                     numSheet++;
                 }
 
@@ -120,7 +123,6 @@ namespace ControllerLibrary
                 {
                     Marshal.ReleaseComObject(worksheet);
                 }
-                Marshal.ReleaseComObject(xlWorkBook);
                 Marshal.ReleaseComObject(xlApp);
 
                 output = 0;
