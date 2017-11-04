@@ -145,11 +145,11 @@ namespace EntityLibrary
         {
             if (styles.Equals(""))
             {
-                styles = "h" + number;
+                styles = "m" + number;
             }
             else
             {
-                styles += ",h" + number;
+                styles += ",m" + number;
             }
         }
         public void mergeVertically(int number)
@@ -157,6 +157,7 @@ namespace EntityLibrary
             if (styles.Equals(""))
             {
                 styles = "v" + number;
+
             }
             else
             {

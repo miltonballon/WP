@@ -123,6 +123,39 @@ namespace ControllerLibrary
             return output;
         }
 
+        public static int GetHeigth(String styles)
+        {
+            int output = -1;
+            String token = LookFor('h', styles);
+            if (!token.Equals(""))
+            {
+                output = Int32.Parse(token);
+            }
+            return output;
+        }
+
+        public static int getMergeHorizontally(String styles)
+        {
+            int output = -1;
+            String token = LookFor('m', styles);
+            if (!token.Equals(""))
+            {
+                output = Int32.Parse(token);
+            }
+            return output;
+        }
+
+        public static int getMergeVertically(String styles)
+        {
+            int output = -1;
+            String token = LookFor('v', styles);
+            if (!token.Equals(""))
+            {
+                output = Int32.Parse(token);
+            }
+            return output;
+        }
+
         private static String LookFor(char style,string styles)
         {
             int initialIndex = styles.IndexOf(style);

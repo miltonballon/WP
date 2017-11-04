@@ -22,7 +22,7 @@ namespace ControllerLibrary
         public ReportSheet GenerateQuotationSheet()
         {
             Trimester ongoingTrimester = trimesterController.getLastTrimester();
-            ReportSheet reportSheet = new ReportSheet("cotizacion", "FORMULARIO DE SOLICITUD DE COTIZACION");
+            ReportSheet reportSheet = new ReportSheet("cotizacion", "FORMULARIO DE SOLICITUD DE COTIZACION\nm6\nc");
             if (ongoingTrimester != null)
             {
                 List<Invoice> invoices = invoiceController.getAllInvoicesByTrimester(ongoingTrimester);

@@ -145,19 +145,35 @@ namespace ControllerLibrary
 
         private void AddStyle(Worksheet workSheet, int row, int column,string styles)
         {
+            int aux;
             if (Util.isBold(styles))
             {
                 workSheet.Cells[row, column].Font.Bold = true;
             }
-
-            if (Util.GetWidth(styles)>0)
+            aux = Util.GetWidth(styles);
+            if (aux>0)
             {
-                workSheet.Columns[column].ColumnWidth = Util.GetWidth(styles);
+                workSheet.Columns[column].ColumnWidth = aux;
             }
 
             if (Util.isCenter(styles))
             {
                 workSheet.Cells[row, column].HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
+            }
+            aux = Util.getMergeVertically(styles);
+            if (aux>0)
+            {
+                workSheet.Range[workSheet.Cells[row, column], workSheet.Cells[row, column+aux]].Merge();
+            }
+            aux = Util.getMergeHorizontally(styles);
+            if (aux > 0)
+            {
+                workSheet.Range[workSheet.Cells[row, column], workSheet.Cells[row+aux, column]].Merge();
+            }
+            aux = Util.GetHeigth(styles);
+            if (aux > 0)
+            {
+                workSheet.Columns[column].ColumnHeigth = aux;
             }
         }
     }
