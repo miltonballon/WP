@@ -107,29 +107,40 @@ namespace ControllerLibrary
             return styles.Contains("b");
         }
 
+        public static bool isCenter(String styles)
+        {
+            return styles.Contains("c");
+        }
+
         public static int GetWidth(String styles)
         {
             int output=-1;
             String token = LookFor('w',styles);
             if (!token.Equals(""))
             {
-                String aux = styles.Substring(1);
-                output = Int32.Parse(aux);
+                output = Int32.Parse(token);
             }
             return output;
         }
 
         private static String LookFor(char style,string styles)
         {
-            String[] tokens = styles.Split(',');
-            for (int i = 0; i < tokens.Length; i++)
+            int initialIndex = styles.IndexOf(style);
+            String output = "";
+            if (initialIndex >= 0)
             {
-                if (tokens[i].Contains(style))
+                string sub = styles.Substring(initialIndex+1);
+                int lastIndex = sub.IndexOf(',');
+                if (lastIndex >= 0)
                 {
-                    return tokens[i];
+                    output = sub.Substring(0, lastIndex);
+                }
+                else
+                {
+                    output = sub;
                 }
             }
-            return "";
+            return output;
         }
     }
 }

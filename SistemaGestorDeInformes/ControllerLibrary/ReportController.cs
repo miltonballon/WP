@@ -152,6 +152,11 @@ namespace ControllerLibrary
             {
                 workSheet.Columns[column].ColumnWidth = Util.GetWidth(styles);
             }
+
+            if (Util.isCenter(styles))
+            {
+                workSheet.Cells[row, column].HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
+            }
         }
     }
 }
