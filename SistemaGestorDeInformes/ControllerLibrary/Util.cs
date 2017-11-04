@@ -107,6 +107,11 @@ namespace ControllerLibrary
             return styles.Contains("b");
         }
 
+        public static bool isCenter(String styles)
+        {
+            return styles.Contains("c");
+        }
+
         public static int GetWidth(String styles)
         {
             int output=-1;

@@ -66,7 +66,7 @@ namespace ControllerLibrary
             column = 2;
             for (int i = 0; i < numberCopies; i++)
             {
-                String[] headers = { "ITEM\nw4", "DESCRIPCION\nw50\nb", "UNIDAD", "CANTIDAD", "PRECIO EN BS.", "OBSERVACIONES", "UNITARIO", "TOTAL" };
+                String[] headers = { "ITEM\nw4\nc", "DESCRIPCION\nw50\nb\nc", "UNIDAD\nc", "CANTIDAD\nc", "PRECIO EN BS.", "OBSERVACIONES", "UNITARIO", "TOTAL" };
                 String[] text = { "CENTRO:   ASOCIACION CREAMOS", " ", "VIVERES SECOS:", " ", " ", "VIVERES FRESCOS:	" };
                 cells.AddRange(reportSheetController.FillRowWithText(row + 2, column, text));
                 cells.AddRange(reportSheetController.GenerateEnumerateTable(row + 3, column, 15, headers));
