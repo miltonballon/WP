@@ -23,32 +23,32 @@ namespace EntityLibrary
             this.id = id;
         }
 
-        public bool isOpen()
+        public bool IsOpen()
         {
             return open;
         }
 
-        public void setOpen(bool open)
+        public void SetOpen(bool open)
         {
             this.open = open;
         }
 
-        public String getName()
+        public String GetName()
         {
             return name;
         }
 
-        public void setName(String name)
+        public void SetName(String name)
         {
             this.name = name;
         }
 
-        public int getId()
+        public int GetId()
         {
             return id;
         }
 
-        public void setId(int id)
+        public void SetId(int id)
         {
             this.id = id;
         }
