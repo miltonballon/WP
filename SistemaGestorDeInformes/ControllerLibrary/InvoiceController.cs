@@ -24,29 +24,29 @@ namespace ControllerLibrary
             NOTRIMESTER=-2;
         }
 
-        public int insertInvoice(Invoice invoice)
+        public int InsertInvoice(Invoice invoice)
         {
             int output;
-            Trimester trimester = trimesterController.getLastTrimester();
+            Trimester trimester = trimesterController.GetLastTrimester();
             if (trimester != null)
             {
-                int nInvoice = invoice.getNInvoice(),
-                nAutorization = invoice.getNAutorization(),
-                idProvider = providerController.forceSearchProvider(invoice.getProvider()),
-                idTrimester = trimester.getId();
-                DateTime date = invoice.getDate();
+                int nInvoice = invoice.GetNInvoice(),
+                nAutorization = invoice.GetNAutorization(),
+                idProvider = providerController.ForceSearchProvider(invoice.GetProvider()),
+                idTrimester = trimester.GetId();
+                DateTime date = invoice.GetDate();
                 String query = "INSERT INTO Invoice(n_invoice, n_autorization, id_provider, nit, date, id_trimester) VALUES (";
                 query += nInvoice + ", ";
                 query += nAutorization + ", ";
                 query += idProvider + ", ";
-                query += invoice.getProvider().getNit() + ", '";
+                query += invoice.GetProvider().GetNit() + ", '";
                 query += date.ToString("dd/MM/yyyy") + "',";
                 query += idTrimester + ")";
                 try
                 {
                     c.executeInsertion(query);
                     int id = c.FindAndGetID("select id FROM Invoice where n_invoice = " + nInvoice + " AND id_provider=" + idProvider);
-                    output = invoiceRowController.registerInvoicesRows(invoice, id);
+                    output = invoiceRowController.RegisterInvoicesRows(invoice, id);
                 }
                 catch (Exception)
                 {
@@ -60,31 +60,31 @@ namespace ControllerLibrary
             return output;
         }
 
-        public void updateInvoice(Invoice invoice,int id)
+        public void UpdateInvoice(Invoice invoice,int id)
         {
-            Provider provider = invoice.getProvider();
-            int nInvoice = invoice.getNInvoice(),
-                nAutorization = invoice.getNAutorization(), 
-                idProvider = providerController.forceSearchProvider(provider), 
-                nit=provider.getNit();
-            String date = invoice.getDate().ToShortDateString();
+            Provider provider = invoice.GetProvider();
+            int nInvoice = invoice.GetNInvoice(),
+                nAutorization = invoice.GetNAutorization(), 
+                idProvider = providerController.ForceSearchProvider(provider), 
+                nit=provider.GetNit();
+            String date = invoice.GetDate().ToShortDateString();
             String query = "UPDATE Invoice SET n_invoice="+nInvoice+", n_autorization="+nAutorization+", id_provider="+idProvider+", nit="+nit+", date='"+date+"' WHERE id="+id;
             c.executeInsertion(query);
-            invoiceRowController.updateAllRowsOrInsert(invoice.getInvoiceRows(),getInvoiceIdByObjectInvoice(invoice));
+            invoiceRowController.UpdateAllRowsOrInsert(invoice.GetInvoiceRows(),GetInvoiceIdByObjectInvoice(invoice));
         }
 
-        public int getInvoiceIdByObjectInvoice(Invoice invoice)
+        public int GetInvoiceIdByObjectInvoice(Invoice invoice)
         {
             int id = 0;
-            int nInvoice = invoice.getNInvoice(),
-                providerId= providerController.forceSearchProvider(invoice.getProvider());
+            int nInvoice = invoice.GetNInvoice(),
+                providerId= providerController.ForceSearchProvider(invoice.GetProvider());
             String query = "SELECT id FROM Invoice WHERE n_invoice="+nInvoice+" AND id_provider="+providerId;
             id = c.FindAndGetID(query);
             c.dataClose();
             return id;
         }
 
-        public Invoice getInvoiceByNInvoiceAndProviderId(int nInvoice, int providerId)
+        public Invoice GetInvoiceByNInvoiceAndProviderId(int nInvoice, int providerId)
         {
             Invoice invoice = null;
             string query = "SELECT * FROM Invoice WHERE n_invoice="+nInvoice+" AND id_provider="+providerId;
@@ -94,18 +94,18 @@ namespace ControllerLibrary
                 int invoiceId = Int32.Parse(data[0].ToString()),
                     nAut = Int32.Parse(data[2].ToString()),
                     provId = Int32.Parse(data[3].ToString());
-                DateTime date = getDate(data[5].ToString());
-                Provider provider = providerController.getProviderById(provId);
+                DateTime date = GetDate(data[5].ToString());
+                Provider provider = providerController.GetProviderById(provId);
                 invoice = new Invoice(provider, nInvoice, nAut, date);
-                List<InvoiceRow> invoiceRows = invoiceRowController.getAllInvoicesRowByNInvoice(invoiceId);
-                invoice.setInvoiceRows(invoiceRows);
+                List<InvoiceRow> invoiceRows = invoiceRowController.GetAllInvoicesRowByNInvoice(invoiceId);
+                invoice.SetInvoiceRows(invoiceRows);
             }
             c.dataClose();
             data.Close();
             return invoice;
         }
 
-        public List<Invoice> getAllInvoices()
+        public List<Invoice> GetAllInvoices()
         {
             List<Invoice> output = new List<Invoice>();
             string query = "SELECT * FROM Invoice";
@@ -116,11 +116,11 @@ namespace ControllerLibrary
                     nInvoice = Int32.Parse(data[1].ToString()),
                     nAut = Int32.Parse(data[2].ToString()),
                     provId = Int32.Parse(data[3].ToString());
-                DateTime date = getDate(data[5].ToString());
-                Provider provider = providerController.getProviderById(provId);
+                DateTime date = GetDate(data[5].ToString());
+                Provider provider = providerController.GetProviderById(provId);
                 Invoice invoice = new Invoice(provider, nInvoice, nAut, date);
-                List<InvoiceRow> invoiceRows = invoiceRowController.getAllInvoicesRowByNInvoice(invoiceId);
-                invoice.setInvoiceRows(invoiceRows);
+                List<InvoiceRow> invoiceRows = invoiceRowController.GetAllInvoicesRowByNInvoice(invoiceId);
+                invoice.SetInvoiceRows(invoiceRows);
                 output.Add(invoice);
             }
             data.Close();
@@ -128,10 +128,10 @@ namespace ControllerLibrary
             return output;
         }
 
-        public List<Invoice> getAllInvoicesByTrimester(Trimester trimester)
+        public List<Invoice> GetAllInvoicesByTrimester(Trimester trimester)
         {
             List<Invoice> output = new List<Invoice>();
-            int idTrimester = trimester.getId();
+            int idTrimester = trimester.GetId();
             string query = "SELECT * FROM Invoice WHERE id_trimester="+idTrimester;
             SQLiteDataReader data = c.query_show(query);
             while (data.Read())
@@ -140,11 +140,11 @@ namespace ControllerLibrary
                     nInvoice = Int32.Parse(data[1].ToString()),
                     nAut = Int32.Parse(data[2].ToString()),
                     provId = Int32.Parse(data[3].ToString());
-                DateTime date = getDate(data[5].ToString());
-                Provider provider = providerController.getProviderById(provId);
+                DateTime date = GetDate(data[5].ToString());
+                Provider provider = providerController.GetProviderById(provId);
                 Invoice invoice = new Invoice(provider, nInvoice, nAut, date);
-                List<InvoiceRow> invoiceRows = invoiceRowController.getAllInvoicesRowByNInvoice(invoiceId);
-                invoice.setInvoiceRows(invoiceRows);
+                List<InvoiceRow> invoiceRows = invoiceRowController.GetAllInvoicesRowByNInvoice(invoiceId);
+                invoice.SetInvoiceRows(invoiceRows);
                 output.Add(invoice);
             }
             data.Close();
@@ -152,7 +152,7 @@ namespace ControllerLibrary
             return output;
         }
 
-        private DateTime getDate(String dateString)
+        private DateTime GetDate(String dateString)
         {
             DateTime date;
             string[] dates = dateString.Split('/');
