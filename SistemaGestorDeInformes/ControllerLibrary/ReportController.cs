@@ -138,8 +138,11 @@ namespace ControllerLibrary
                     column = cell.Column;
                 String content = cell.Content,
                        styles=cell.Styles;
-                workSheet.Cells[row, column] = content;
-                AddStyle(workSheet,row,column,styles);                
+                if (!content.Equals(" ") && !content.Equals(""))
+                {
+                    workSheet.Cells[row, column] = content;
+                    AddStyle(workSheet, row, column, styles);
+                }
             }
         }
 
@@ -160,12 +163,12 @@ namespace ControllerLibrary
             {
                 workSheet.Cells[row, column].HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
             }
-            aux = Util.getMergeVertically(styles);
+            aux = Util.getMergeHorizontally(styles);
             if (aux>0)
             {
                 workSheet.Range[workSheet.Cells[row, column], workSheet.Cells[row, column+aux]].Merge();
             }
-            aux = Util.getMergeHorizontally(styles);
+            aux = Util.getMergeVertically(styles);
             if (aux > 0)
             {
                 workSheet.Range[workSheet.Cells[row, column], workSheet.Cells[row+aux, column]].Merge();
