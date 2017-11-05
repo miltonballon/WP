@@ -16,7 +16,7 @@ namespace ControllerLibrary
             c.connect();
         }
 
-        public Provider getProviderById(int id)
+        public Provider GetProviderById(int id)
         {
             String query = "SELECT * FROM Provider WHERE id="+id;
             SQLiteDataReader data=c.query_show(query);
@@ -32,24 +32,24 @@ namespace ControllerLibrary
             return provider;
         }
 
-        public int findProviderIdByName(String name)
+        public int FindProviderIdByName(String name)
         {
             String query = "SELECT id FROM Provider WHERE Provider='"+name+"'";
             int idProvider= c.FindAndGetID(query);
             return idProvider;
         }
 
-        public int insertProvider(Provider provider)
+        public int InsertProvider(Provider provider)
         {
-            String name = provider.getName();
-            int nit = provider.getNit();
+            String name = provider.GetName();
+            int nit = provider.GetNit();
             String query = "INSERT INTO Provider(Provider, NIT) VALUES ('"+name+"',"+nit+")";
             c.executeInsertion(query);
-            int idProvider = findProviderIdByName(name);
+            int idProvider = FindProviderIdByName(name);
             return idProvider;
         }
 
-        public List<Provider> getAllProviders()
+        public List<Provider> GetAllProviders()
         {
             List<Provider> output = new List<Provider>();
             string query = "SELECT * FROM Provider";
@@ -66,12 +66,12 @@ namespace ControllerLibrary
             return output;
         }
 
-        public int forceSearchProvider(Provider provider)
+        public int ForceSearchProvider(Provider provider)
         {
-            int id = findProviderIdByName(provider.getName());
+            int id = FindProviderIdByName(provider.GetName());
             if (id < 0)
             {
-                insertProvider(provider);
+                InsertProvider(provider);
             }
             return id;
         }
