@@ -102,12 +102,12 @@ namespace ControllerLibrary
 
         }
 
-        public static bool isBold(String styles)
+        public static bool IsBold(String styles)
         {
             return styles.Contains("b");
         }
 
-        public static bool isCenter(String styles)
+        public static bool IsCenter(String styles)
         {
             return styles.Contains("c");
         }
@@ -184,7 +184,7 @@ namespace ControllerLibrary
             return output;
         }
 
-        public static int getMergeHorizontally(String styles)
+        public static int GetMergeHorizontally(String styles)
         {
             int output = -1;
             String token = LookFor('m', styles);
@@ -195,7 +195,7 @@ namespace ControllerLibrary
             return output;
         }
 
-        public static int getMergeVertically(String styles)
+        public static int GetMergeVertically(String styles)
         {
             int output = -1;
             String token = LookFor('v', styles);
