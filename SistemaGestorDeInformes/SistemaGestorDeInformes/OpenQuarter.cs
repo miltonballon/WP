@@ -81,13 +81,13 @@ namespace SistemaGestorDeInformes
 
         private void saveNewTrimester(Trimester trimester)
         {
-            Trimester last=trimesterController.getLastTrimester();
+            Trimester last=trimesterController.GetLastTrimester();
             if (last != null)
             {
-                last.setOpen(false);
-                trimesterController.updateTrimester(last);
+                last.SetOpen(false);
+                trimesterController.UpdateTrimester(last);
             }
-            trimesterController.insertTrimester(trimester);
+            trimesterController.InsertTrimester(trimester);
         }
         
 
@@ -104,10 +104,10 @@ namespace SistemaGestorDeInformes
 
         private void setLbTrimText()
         {
-            Trimester trimester=trimesterController.getLastTrimester();
+            Trimester trimester=trimesterController.GetLastTrimester();
             if (trimester != null)
             {
-                lbTrim.Text = trimester.getName();
+                lbTrim.Text = trimester.GetName();
             }
             else
             {
@@ -195,12 +195,12 @@ namespace SistemaGestorDeInformes
                 if (!name.Equals(""))
                 {
                     Trimester trimester = new Trimester(name);
-                    trimester.setOpen(true);
+                    trimester.SetOpen(true);
                     saveNewTrimester(trimester);
                     hideNombreForms();
                     Registrar_Button.Text = "Nuevo Trimestre";
                     setLbTrimText();
-                    MessageBox.Show("Nuevo trimestre creado: " + trimester.getName());
+                    MessageBox.Show("Nuevo trimestre creado: " + trimester.GetName());
                     isRegistering = !isRegistering;
                 }
                 else

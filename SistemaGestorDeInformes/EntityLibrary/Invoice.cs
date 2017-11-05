@@ -105,7 +105,7 @@ namespace EntityLibrary
             double addition = 0;
             foreach (InvoiceRow row in InvoiceRows)
             {
-                addition += row.getTotal();
+                addition += row.GetTotal();
             }
             total = addition;
         }

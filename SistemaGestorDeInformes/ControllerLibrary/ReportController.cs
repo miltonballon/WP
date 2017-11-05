@@ -146,7 +146,7 @@ namespace ControllerLibrary
         private void AddStyle(Worksheet workSheet, int row, int column,string styles)
         {
             int aux;
-            if (Util.isBold(styles))
+            if (Util.IsBold(styles))
             {
                 workSheet.Cells[row, column].Font.Bold = true;
             }
@@ -156,16 +156,16 @@ namespace ControllerLibrary
                 workSheet.Columns[column].ColumnWidth = aux;
             }
 
-            if (Util.isCenter(styles))
+            if (Util.IsCenter(styles))
             {
                 workSheet.Cells[row, column].HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
             }
-            aux = Util.getMergeHorizontally(styles);
+            aux = Util.GetMergeHorizontally(styles);
             if (aux>0)
             {
                 workSheet.Range[workSheet.Cells[row, column], workSheet.Cells[row, column+aux]].Merge();
             }
-            aux = Util.getMergeVertically(styles);
+            aux = Util.GetMergeVertically(styles);
             if (aux > 0)
             {
                 workSheet.Range[workSheet.Cells[row, column], workSheet.Cells[row+aux, column]].Merge();
