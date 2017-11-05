@@ -43,7 +43,7 @@ namespace EntityLibrary
             this.total = (double)data[4];
         }
 
-        public void setAllAttributes(Object[] data, String provider)
+        public void SetAllAttributes(Object[] data, String provider)
         {
             this.product.Name = (String)data[0];
             this.product.Unit = (String)data[1];
@@ -53,57 +53,57 @@ namespace EntityLibrary
             this.total = (double)data[4];
         }
 
-        public Product getProduct()
+        public Product GetProduct()
         {
             return product;
         }
 
-        public void setProduct(Product product)
+        public void SetProduct(Product product)
         {
             this.product = product;
         }
 
-        public double getQuantity()
+        public double GetQuantity()
         {
             return quantity;
         }
 
-        public void setQuantity(double quantity)
+        public void SetQuantity(double quantity)
         {
             this.quantity = quantity;
         }
 
-        public double getUnitPrice()
+        public double GetUnitPrice()
         {
             return unitPrice;
         }
 
-        public void setUnitPrice(double unitPrice)
+        public void SetUnitPrice(double unitPrice)
         {
             this.unitPrice = unitPrice;
         }
 
-        public double getTotal()
+        public double GetTotal()
         {
             return total;
         }
 
-        public void setTotal(double total)
+        public void SetTotal(double total)
         {
             this.total = total;
         }
 
-        public int getId()
+        public int GetId()
         {
             return id;
         }
 
-        public void setId(int id)
+        public void SetId(int id)
         {
             this.id = id;
         }
 
-        public String[] getAllAttributesAsText()
+        public String[] GetAllAttributesAsText()
         {
             String[] output = new String[5];
             output[0] = product.Name;
