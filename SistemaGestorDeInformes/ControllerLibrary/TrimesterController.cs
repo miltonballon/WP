@@ -17,16 +17,16 @@ namespace ControllerLibrary
             c.connect();
         }
 
-        public void insertTrimester(Trimester trimester)
+        public void InsertTrimester(Trimester trimester)
         {
             String query = "INSERT INTO trimester(open, name) VALUES(";
-            int bit = trimester.isOpen() ? 1 : 0;
-            String name = trimester.getName();
+            int bit = trimester.IsOpen() ? 1 : 0;
+            String name = trimester.GetName();
             query += bit + ", '"+name+"')";
             c.executeInsertion(query);
         }
 
-        public Trimester getLastTrimester()
+        public Trimester GetLastTrimester()
         {
             Trimester trimester=null;
             String query = "SELECT * FROM trimester WHERE id=(SELECT MAX(id) FROM trimester)";
@@ -37,18 +37,18 @@ namespace ControllerLibrary
                 int bit = Int32.Parse(data[1].ToString()), 
                     id = Int32.Parse(data[0].ToString());
                 trimester = new Trimester(id,name);
-                trimester.setOpen(bit==1);
+                trimester.SetOpen(bit==1);
             }
             data.Close();
             c.dataClose();
             return trimester;
         }
 
-        public void updateTrimester(Trimester trimester)
+        public void UpdateTrimester(Trimester trimester)
         {
             String query = "UPDATE trimester SET open=";
-            int bit = trimester.isOpen() ? 1 : 0;
-            int id = trimester.getId();
+            int bit = trimester.IsOpen() ? 1 : 0;
+            int id = trimester.GetId();
             query += bit + " WHERE id='" + id + "'";
             c.executeInsertion(query);
         }

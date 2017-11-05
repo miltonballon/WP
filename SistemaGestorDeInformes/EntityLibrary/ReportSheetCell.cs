@@ -142,7 +142,7 @@ namespace EntityLibrary
                 styles += ",c";
             }
         }
-        public void mergeHorizontally(int number)
+        public void MergeHorizontally(int number)
         {
             if (styles.Equals(""))
             {
@@ -153,7 +153,7 @@ namespace EntityLibrary
                 styles += ",m" + number;
             }
         }
-        public void mergeVertically(int number)
+        public void MergeVertically(int number)
         {
             if (styles.Equals(""))
             {

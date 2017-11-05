@@ -19,31 +19,31 @@ namespace EntityLibrary
             products = new List<Product>();
         }
 
-        public String getName()
+        public String GetName()
         {
             return name;
         }
 
-        public int getNit()
+        public int GetNit()
         {
             return nit;
         }
 
-        public List<Product> getProducts()
+        public List<Product> GetProducts()
         {
             return products;
         }
 
-        public void setName(String name)
+        public void SetName(String name)
         {
             this.name = name;
         }
 
-        public void setNit(int nit)
+        public void SetNit(int nit)
         {
             this.nit = nit;
         }
-        public void setProducts(List<Product> products)
+        public void SetProducts(List<Product> products)
         {
             this.products = products;
         }

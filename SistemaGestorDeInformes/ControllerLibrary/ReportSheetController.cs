@@ -86,11 +86,11 @@ namespace ControllerLibrary
 
         public ReportSheet GenerateReferentialPricesSheet()
         {
-            Trimester ongoingTrimester = trimesterController.getLastTrimester();
+            Trimester ongoingTrimester = trimesterController.GetLastTrimester();
             ReportSheet reportSheet = new ReportSheet("referenciales", "PRECIOS REFERENCIALES");
             if (ongoingTrimester != null)
             {
-                List<Invoice> invoices = invoiceController.getAllInvoicesByTrimester(ongoingTrimester);
+                List<Invoice> invoices = invoiceController.GetAllInvoicesByTrimester(ongoingTrimester);
                 List<ReportSheetCell> cells = new List<ReportSheetCell>();
                 cells.AddRange(GenerateHeaderAndTableOfReferentialPricesSheet(invoices, reportSheet.Tittle));
                 reportSheet.Cells = cells;
@@ -167,7 +167,7 @@ namespace ControllerLibrary
                 cells.AddRange(FillRowWithText(row + 4, column, text2));
                 cells.AddRange(FillRowWithText(row + 5, column, headers));
                 cells.AddRange(GenerateEnumerateTable(row + 6, column, 15,7));
-                List<InvoiceRow> invoiceRows = invoices[i].getInvoiceRows();
+                List<InvoiceRow> invoiceRows = invoices[i].GetInvoiceRows();
                 cells.AddRange(FillTableWithInvoiceRows(row + 6, column + 1, invoiceRows, 5));
                 cells.AddRange(GenerateFooterOfTableOfReferentialPrices(row + 23, column - 1,invoices[i]));
                 cells.AddRange(GenerateFooterOfReferentialPrices(row + 29, column - 1));
@@ -178,7 +178,7 @@ namespace ControllerLibrary
 
         public List<ReportSheetCell> GenerateFooterOfTableOfReferentialPrices(int row, int column,Invoice invoice)
         {
-            double total = invoice.getTotal();
+            double total = invoice.GetTotal();
             List<ReportSheetCell> cells = new List<ReportSheetCell>();
             String[] text = {"TOTAL",total+""};
             cells.AddRange(FillRowWithText(row, column+5, text));
@@ -208,7 +208,7 @@ namespace ControllerLibrary
             int tempColumn = column;
             foreach (InvoiceRow invoceRow in invoiceRows)
             {
-                String[] attributes = invoceRow.getAllAttributesAsText();
+                String[] attributes = invoceRow.GetAllAttributesAsText();
                 for (int i=0;i<numAttributes;i++)
                 {
                     String text = attributes[i];

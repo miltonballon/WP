@@ -112,10 +112,10 @@ namespace ControllerLibrary
             int idProd=ids[0], 
                 idProv= ids[1], 
                 idUni= ids[2];
-            Provider provider = providerController.getProviderById(idProv);
+            Provider provider = providerController.GetProviderById(idProv);
             String productsName = getProductsNameById(idProd),
                    unitsName = getUnitsNameById(idUni),
-                   providersName = provider.getName();
+                   providersName = provider.GetName();
             product = new Product(productsName,providersName,unitsName);
             return product;
         }

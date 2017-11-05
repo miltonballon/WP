@@ -21,11 +21,11 @@ namespace ControllerLibrary
         }
         public ReportSheet GenerateQuotationSheet()
         {
-            Trimester ongoingTrimester = trimesterController.getLastTrimester();
+            Trimester ongoingTrimester = trimesterController.GetLastTrimester();
             ReportSheet reportSheet = new ReportSheet("cotizacion", "FORMULARIO DE SOLICITUD DE COTIZACION\nm6\nc");
             if (ongoingTrimester != null)
             {
-                List<Invoice> invoices = invoiceController.getAllInvoicesByTrimester(ongoingTrimester);
+                List<Invoice> invoices = invoiceController.GetAllInvoicesByTrimester(ongoingTrimester);
                 List<ReportSheetCell> cells = new List<ReportSheetCell>();
                 cells.AddRange(GenerateHeaderAndTableOfQuotation(invoices, reportSheet.Tittle));
                 reportSheet.Cells = cells;
@@ -75,7 +75,7 @@ namespace ControllerLibrary
                 cells.AddRange(reportSheetController.FillRowWithText(row + 3, column+4, s1));
                 cells.AddRange(reportSheetController.FillRowWithText(row + 4, column+4, s2));
                 cells.AddRange(reportSheetController.GenerateEnumerateTable(row + 4, column, 15,6));
-                List<InvoiceRow> invoiceRows = invoices[i].getInvoiceRows();
+                List<InvoiceRow> invoiceRows = invoices[i].GetInvoiceRows();
                 cells.AddRange(reportSheetController.FillTableWithInvoiceRows(row + 5, column + 1, invoiceRows, 3));
                 cells.AddRange(GenerateFooterOfQuotation(row + 20, column - 1));
                 column += 8;
