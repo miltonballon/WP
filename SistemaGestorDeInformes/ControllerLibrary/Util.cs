@@ -112,6 +112,56 @@ namespace ControllerLibrary
             return styles.Contains("c");
         }
 
+        public static bool IsTopBordered(String styles)
+        {
+            return styles.Contains("t");
+        }
+
+        public static bool IsBottomBordered(String styles)
+        {
+            return styles.Contains("d");
+        }
+
+        public static bool IsLeftBordered(String styles)
+        {
+            return styles.Contains("l");
+        }
+
+        public static bool IsRightBordered(String styles)
+        {
+            return styles.Contains("r");
+        }
+
+        public static bool IsFullBordered(String styles)
+        {
+            return styles.Contains("f");
+        }
+
+        public static bool IsTopBorderedDot(String styles)
+        {
+            return styles.Contains("q");
+        }
+
+        public static bool IsBottomBorderedDot(String styles)
+        {
+            return styles.Contains("o");
+        }
+
+        public static bool IsLeftBorderedDot(String styles)
+        {
+            return styles.Contains("h");
+        }
+
+        public static bool IsRightBorderedDot(String styles)
+        {
+            return styles.Contains("k");
+        }
+
+        public static bool IsFullBorderedDot(String styles)
+        {
+            return styles.Contains("y");
+        }
+
         public static int GetWidth(String styles)
         {
             int output=-1;

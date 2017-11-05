@@ -98,13 +98,18 @@ namespace ControllerLibrary
             return reportSheet;
         }
 
-        public List<ReportSheetCell> GenerateEnumerateTable(int initialRow, int initialColumn, int heigth)
+        public List<ReportSheetCell> GenerateEnumerateTable(int initialRow, int initialColumn, int heigth,int length)
         {
             List<ReportSheetCell> cells = new List<ReportSheetCell>();
             for (int row = (initialRow)+1; row <= (initialRow + heigth); row++)
             {
-                ReportSheetCell cell = new ReportSheetCell(row,initialColumn,(row-initialRow)+"\nc");
-                cells.Add(cell);   
+                ReportSheetCell cell = new ReportSheetCell(row,initialColumn,(row-initialRow)+"","c,y");
+                cells.Add(cell);
+                for (int column = initialColumn + 1; column <= (initialColumn + length); column++)
+                {
+                    ReportSheetCell emptyCell = new ReportSheetCell(row, column, "","y");
+                    cells.Add(emptyCell);
+                }
             }
             return cells;
         }
@@ -161,7 +166,7 @@ namespace ControllerLibrary
                 String[]  text2 = { "FECHA:", " "};
                 cells.AddRange(FillRowWithText(row + 4, column, text2));
                 cells.AddRange(FillRowWithText(row + 5, column, headers));
-                cells.AddRange(GenerateEnumerateTable(row + 6, column, 15));
+                cells.AddRange(GenerateEnumerateTable(row + 6, column, 15,7));
                 List<InvoiceRow> invoiceRows = invoices[i].getInvoiceRows();
                 cells.AddRange(FillTableWithInvoiceRows(row + 6, column + 1, invoiceRows, 5));
                 cells.AddRange(GenerateFooterOfTableOfReferentialPrices(row + 23, column - 1,invoices[i]));
