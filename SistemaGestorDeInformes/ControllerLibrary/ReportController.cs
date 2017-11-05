@@ -138,11 +138,8 @@ namespace ControllerLibrary
                     column = cell.Column;
                 String content = cell.Content,
                        styles=cell.Styles;
-                if (!content.Equals(" ") && !content.Equals(""))
-                {
-                    workSheet.Cells[row, column] = content;
-                    AddStyle(workSheet, row, column, styles);
-                }
+                workSheet.Cells[row, column] = content;
+                AddStyle(workSheet, row, column, styles);
             }
         }
 
@@ -178,6 +175,63 @@ namespace ControllerLibrary
             {
                 workSheet.Columns[column].ColumnHeigth = aux;
             }
+
+            if (Util.IsTopBordered(styles))
+            {
+                workSheet.Cells[row, column].Borders[XlBordersIndex.xlEdgeTop].LineStyle = Microsoft.Office.Interop.Excel.XlLineStyle.xlContinuous;
+            }
+
+            if (Util.IsBottomBordered(styles))
+            {
+                workSheet.Cells[row, column].Borders[XlBordersIndex.xlEdgeBottom].LineStyle = Microsoft.Office.Interop.Excel.XlLineStyle.xlContinuous;
+            }
+
+            if (Util.IsRightBordered(styles))
+            {
+                workSheet.Cells[row, column].Borders[XlBordersIndex.xlEdgeRight].LineStyle = Microsoft.Office.Interop.Excel.XlLineStyle.xlContinuous;
+            }
+
+            if (Util.IsLeftBordered(styles))
+            {
+                workSheet.Cells[row, column].Borders[XlBordersIndex.xlEdgeLeft].LineStyle = Microsoft.Office.Interop.Excel.XlLineStyle.xlContinuous;
+            }
+
+            if (Util.IsFullBordered(styles))
+            {
+                workSheet.Cells[row, column].Borders[XlBordersIndex.xlEdgeLeft].LineStyle = Microsoft.Office.Interop.Excel.XlLineStyle.xlContinuous;
+                workSheet.Cells[row, column].Borders[XlBordersIndex.xlEdgeRight].LineStyle = Microsoft.Office.Interop.Excel.XlLineStyle.xlContinuous;
+                workSheet.Cells[row, column].Borders[XlBordersIndex.xlEdgeTop].LineStyle = Microsoft.Office.Interop.Excel.XlLineStyle.xlContinuous;
+                workSheet.Cells[row, column].Borders[XlBordersIndex.xlEdgeBottom].LineStyle = Microsoft.Office.Interop.Excel.XlLineStyle.xlContinuous;
+            }
+
+            if (Util.IsTopBorderedDot(styles))
+            {
+                workSheet.Cells[row, column].Borders[XlBordersIndex.xlEdgeTop].LineStyle = Microsoft.Office.Interop.Excel.XlLineStyle.xlDot;
+            }
+
+            if (Util.IsBottomBorderedDot(styles))
+            {
+                workSheet.Cells[row, column].Borders[XlBordersIndex.xlEdgeBottom].LineStyle = Microsoft.Office.Interop.Excel.XlLineStyle.xlDot;
+            }
+
+            if (Util.IsRightBorderedDot(styles))
+            {
+                workSheet.Cells[row, column].Borders[XlBordersIndex.xlEdgeRight].LineStyle = Microsoft.Office.Interop.Excel.XlLineStyle.xlDot;
+            }
+
+            if (Util.IsLeftBorderedDot(styles))
+            {
+                workSheet.Cells[row, column].Borders[XlBordersIndex.xlEdgeLeft].LineStyle = Microsoft.Office.Interop.Excel.XlLineStyle.xlDot;
+            }
+
+            if (Util.IsFullBorderedDot(styles))
+            {
+                workSheet.Cells[row, column].Borders[XlBordersIndex.xlEdgeLeft].LineStyle = Microsoft.Office.Interop.Excel.XlLineStyle.xlDot;
+                workSheet.Cells[row, column].Borders[XlBordersIndex.xlEdgeRight].LineStyle = Microsoft.Office.Interop.Excel.XlLineStyle.xlDot;
+                workSheet.Cells[row, column].Borders[XlBordersIndex.xlEdgeTop].LineStyle = Microsoft.Office.Interop.Excel.XlLineStyle.xlDot;
+                workSheet.Cells[row, column].Borders[XlBordersIndex.xlEdgeBottom].LineStyle = Microsoft.Office.Interop.Excel.XlLineStyle.xlDot;
+            }
+
         }
     }
 }

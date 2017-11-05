@@ -48,6 +48,7 @@ namespace EntityLibrary
             this.content = content;
             this.styles = styles;
          }
+
         private void Broker()
         {
             String[] token = content.Split('\n');
@@ -162,6 +163,136 @@ namespace EntityLibrary
             else
             {
                 styles += ",v" + number;
+            }
+        }
+
+        public void TopBorder()
+        {
+            if (styles.Equals(""))
+            {
+                styles = "t";
+
+            }
+            else
+            {
+                styles += ",t";
+            }
+        }
+
+        public void BottomBorder()
+        {
+            if (styles.Equals(""))
+            {
+                styles = "d";
+
+            }
+            else
+            {
+                styles += ",d";
+            }
+        }
+
+        public void LeftBorder()
+        {
+            if (styles.Equals(""))
+            {
+                styles = "l";
+
+            }
+            else
+            {
+                styles += ",l";
+            }
+        }
+
+        public void RightBorder()
+        {
+            if (styles.Equals(""))
+            {
+                styles = "r";
+
+            }
+            else
+            {
+                styles += ",r";
+            }
+        }
+
+        public void FullBordered()
+        {
+            if (styles.Equals(""))
+            {
+                styles = "f";
+
+            }
+            else
+            {
+                styles += ",f";
+            }
+        }
+
+        public void TopBorderDot()
+        {
+            if (styles.Equals(""))
+            {
+                styles = "q";
+
+            }
+            else
+            {
+                styles += ",q";
+            }
+        }
+
+        public void BottomBorderDot()
+        {
+            if (styles.Equals(""))
+            {
+                styles = "o";
+
+            }
+            else
+            {
+                styles += ",o";
+            }
+        }
+
+        public void LeftBorderDot()
+        {
+            if (styles.Equals(""))
+            {
+                styles = "h";
+
+            }
+            else
+            {
+                styles += ",h";
+            }
+        }
+
+        public void RightBorderDot()
+        {
+            if (styles.Equals(""))
+            {
+                styles = "k";
+
+            }
+            else
+            {
+                styles += ",k";
+            }
+        }
+
+        public void FullBorderedDot()
+        {
+            if (styles.Equals(""))
+            {
+                styles = "y";
+
+            }
+            else
+            {
+                styles += ",y";
             }
         }
     }
