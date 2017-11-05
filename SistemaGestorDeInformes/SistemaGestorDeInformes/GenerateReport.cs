@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ControllerLibrary;
 using EntityLibrary;
+using System.Runtime.InteropServices;
 
 namespace SistemaGestorDeInformes
 {
@@ -152,8 +153,15 @@ namespace SistemaGestorDeInformes
             reportSheet = reportSheetController.GenerateReferentialPricesSheet();
             report.Sheets.Add(reportSheet);
             //reportController.insertReport(report,2);
-            int result = reportController.generateExcel(report);
-            printMessage(result);
+            try
+            {
+                int result = reportController.generateExcel(report);
+                printMessage(result);
+            }
+            catch (COMException)
+            {
+                MessageBox.Show("Cierre el archivo Excel por favor");
+            }
         }
 
         private void printMessage(int input)

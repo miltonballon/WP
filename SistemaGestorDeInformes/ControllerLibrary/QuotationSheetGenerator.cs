@@ -66,12 +66,14 @@ namespace ControllerLibrary
             column = 2;
             for (int i = 0; i < numberCopies; i++)
             {
-                String[] headers = { "ITEM\nw4\nc", "DESCRIPCION\nw50\nb\nc", "UNIDAD\nc", "CANTIDAD\nc", "PRECIO EN BS.", "OBSERVACIONES", "UNITARIO", "TOTAL" };
-                String[] text = { "CENTRO:   ASOCIACION CREAMOS", " ", "VIVERES SECOS:", " ", " ", "VIVERES FRESCOS:	" };
+                String[] headers = { "ITEM\nw4\nc\nv1", "DESCRIPCION\nw50\nb\nc\nv1", "UNIDAD\nc\nv1", "CANTIDAD\nc\nv1"," "," " , "OBSERVACIONES\nv1"};
+                String s1= "PRECIO EN BS.", s2= "UNITARIO", s3 = "TOTAL";
+                String[] text = { "CENTRO:   ASOCIACION CREAMOS\nb", " ", "VIVERES SECOS:", " ", " ", "VIVERES FRESCOS:	" };
                 cells.AddRange(reportSheetController.FillRowWithText(row + 2, column, text));
-                cells.AddRange(reportSheetController.GenerateEnumerateTable(row + 3, column, 15, headers));
+                cells.AddRange(reportSheetController.FillRowWithText(row + 3, column, headers));
+                cells.AddRange(reportSheetController.GenerateEnumerateTable(row + 4, column, 15));
                 List<InvoiceRow> invoiceRows = invoices[i].getInvoiceRows();
-                cells.AddRange(reportSheetController.FillTableWithInvoiceRows(row + 4, column + 1, invoiceRows, 3));
+                cells.AddRange(reportSheetController.FillTableWithInvoiceRows(row + 5, column + 1, invoiceRows, 3));
                 cells.AddRange(GenerateFooterOfQuotation(row + 19, column - 1));
                 column += 8;
             }
