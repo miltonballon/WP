@@ -33,10 +33,11 @@ namespace ControllerLibrary
         }
 
         public void updateProduct(Product product, int id)
-        {   int idprod=getIdName(product.Name);
+        {   int idprod=getIdName(product);
+            
             int idprov=getIdProvider(product.Provider);
             int idunit=getIdUnit(product.Unit);
-
+            MessageBox.Show("" +id+ idprod+idprov+idunit);
             string queryInsertion = "UPDATE Product_Provider_Unit SET id_prod="+idprod+",id_prov="+idprov+",id_uni="+idunit+" WHERE id="+id;
             c.executeInsertion(queryInsertion);
             
@@ -64,7 +65,7 @@ namespace ControllerLibrary
             string nameQuery = "select id FROM Product where Name = " + "'" + product.Name + "'";
             string providerQuery = "select id FROM Provider where Provider = " + "'" + product.Provider+ "'";
             string unitQuery = "select id FROM Unit where Type = " + "'" + product.Unit + "'";
-            int idProd = c.FindAndGetID(nameQuery)
+            int idProd = getIdName(product)
                 , idProv = c.FindAndGetID(providerQuery)
                 , idUni = c.FindAndGetID(unitQuery);
             int id = searchPPU(idProd, idProv, idUni);

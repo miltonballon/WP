@@ -43,10 +43,12 @@ namespace SistemaGestorDeInformes
         }
         private void atrasButton_Click(object sender, EventArgs e)
         {
+            /*
             registerClassProduct();
 
             pc.insertProduct(product);
             pc.addReferencesToTableProduct_Provider_Unit(product);
+            */
             ShowProducts ShowProducts1 = new ShowProducts();
             ShowProducts1.WindowState = this.WindowState;
             this.Hide();
