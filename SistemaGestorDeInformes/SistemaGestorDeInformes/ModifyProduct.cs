@@ -74,12 +74,8 @@ namespace SistemaGestorDeInformes
         private void Registrar_Button_Click(object sender, EventArgs e)
         {
             registerClassProduct();
-            
-            
             pc.insertProduct(product);
-            MessageBox.Show("" + product.Name + product.Clasification + product.Provider + product.Unit);
             pc.updateProduct(product,idProduct);
-
             MessageBox.Show("Editado exitosamente");
             ShowProducts main = new ShowProducts();
             main.WindowState = this.WindowState;
