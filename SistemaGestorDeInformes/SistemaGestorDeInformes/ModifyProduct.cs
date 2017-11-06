@@ -17,15 +17,7 @@ namespace SistemaGestorDeInformes
         ProductController pc;
         public Product product;
         int idProduct;
-        public ModifyProduct()
-        {
-            InitializeComponent();
-            pc = new ProductController();
-            product = new Product();
-            //registerClassProduct();
-            idProduct = pc.searchProduct(product);
-           
-        }
+        
         public ModifyProduct(Product p)
         {
             InitializeComponent();
