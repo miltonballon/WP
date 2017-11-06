@@ -33,11 +33,10 @@ namespace ControllerLibrary
         }
 
         public void updateProduct(Product product, int id)
-        {   int idprod=getIdName(product);
-            
+        {   
+            int idprod=getIdName(product);
             int idprov=getIdProvider(product.Provider);
             int idunit=getIdUnit(product.Unit);
-            MessageBox.Show("" +id+ idprod+idprov+idunit);
             string queryInsertion = "UPDATE Product_Provider_Unit SET id_prod="+idprod+",id_prov="+idprov+",id_uni="+idunit+" WHERE id="+id;
             c.executeInsertion(queryInsertion);
             
