@@ -24,7 +24,6 @@ namespace SistemaGestorDeInformes
             pc = new ProductController();
             product = p;
             idProduct = pc.searchProduct(product);
-            MessageBox.Show("" + product.Name + product.Clasification + product.Provider + product.Unit);
         }
         public void registerClassProduct()
         {
