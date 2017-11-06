@@ -17,7 +17,6 @@ namespace ControllerLibrary
             trimesterController = new TrimesterController();
             invoiceController = new InvoiceController();
             reportSheetController = new ReportSheetController();
-            //xlWorkSheet.Columns[3].ColumnWidth = 18;
         }
         public ReportSheet GenerateQuotationSheet()
         {
