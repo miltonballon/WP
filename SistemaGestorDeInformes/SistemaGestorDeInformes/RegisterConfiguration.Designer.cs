@@ -51,21 +51,21 @@
             this.NumberOGames_textBox.Location = new System.Drawing.Point(361, 108);
             this.NumberOGames_textBox.Name = "NumberOGames_textBox";
             this.NumberOGames_textBox.Size = new System.Drawing.Size(100, 20);
-            this.NumberOGames_textBox.TabIndex = 0;
+            this.NumberOGames_textBox.TabIndex = 1;
             // 
             // DaysToBeat_textBox
             // 
             this.DaysToBeat_textBox.Location = new System.Drawing.Point(361, 177);
             this.DaysToBeat_textBox.Name = "DaysToBeat_textBox";
             this.DaysToBeat_textBox.Size = new System.Drawing.Size(100, 20);
-            this.DaysToBeat_textBox.TabIndex = 0;
+            this.DaysToBeat_textBox.TabIndex = 2;
             // 
             // MinimumNumberOfScholarships_textBox
             // 
             this.MinimumNumberOfScholarships_textBox.Location = new System.Drawing.Point(361, 241);
             this.MinimumNumberOfScholarships_textBox.Name = "MinimumNumberOfScholarships_textBox";
             this.MinimumNumberOfScholarships_textBox.Size = new System.Drawing.Size(100, 20);
-            this.MinimumNumberOfScholarships_textBox.TabIndex = 0;
+            this.MinimumNumberOfScholarships_textBox.TabIndex = 3;
             // 
             // label1
             // 
@@ -116,7 +116,7 @@
             this.Save_Button.Location = new System.Drawing.Point(224, 326);
             this.Save_Button.Name = "Save_Button";
             this.Save_Button.Size = new System.Drawing.Size(120, 30);
-            this.Save_Button.TabIndex = 2;
+            this.Save_Button.TabIndex = 4;
             this.Save_Button.Text = "Guardar";
             this.Save_Button.UseVisualStyleBackColor = false;
             this.Save_Button.Click += new System.EventHandler(this.Save_Button_Click);
