@@ -73,5 +73,11 @@ namespace EntityLibrary
             get => endDate;
             set => endDate = value;
         }
+
+        public override string ToString()
+        {
+            String output=name+", \nDel: "+initialDate.ToShortDateString()+", \nAl: "+endDate.ToShortDateString();
+            return output;
+        }
     }
 }
