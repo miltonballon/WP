@@ -159,15 +159,15 @@ namespace SistemaGestorDeInformes
             reportSheet = req.GenerateRequestSheet();
             report.Sheets.Add(reportSheet);
             //reportController.insertReport(report,2);
-            try
-            {
+            //try
+            //{
                 int result = reportController.generateExcel(report);
                 printMessage(result);
-            }
-            catch (COMException)
-            {
-                MessageBox.Show("Cierre el archivo Excel por favor");
-            }
+            //}
+            //catch (COMException)
+            //{
+              //  MessageBox.Show("Cierre el archivo Excel por favor");
+            //}
         }
 
         private void printMessage(int input)

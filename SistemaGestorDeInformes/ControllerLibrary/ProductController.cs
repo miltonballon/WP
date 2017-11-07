@@ -18,7 +18,7 @@ namespace ControllerLibrary
 
         public void insertProduct(Product p)
         {
-            if (getIdName(p.Name) == -1) 
+            if (getIdName(p) == -1) 
             {
                 InsertProduct(p.Name, p.Clasification);
             }
@@ -31,8 +31,16 @@ namespace ControllerLibrary
                 InsertUnit(p.Unit);
             }  
         }
-        
 
+        public void updateProduct(Product product, int id)
+        {   
+            int idprod=getIdName(product);
+            int idprov=getIdProvider(product.Provider);
+            int idunit=getIdUnit(product.Unit);
+            string queryInsertion = "UPDATE Product_Provider_Unit SET id_prod="+idprod+",id_prov="+idprov+",id_uni="+idunit+" WHERE id="+id;
+            c.executeInsertion(queryInsertion);
+            
+        }
         public int insertProductAndGetId(Product product)
         {
             string nameQuery = "select id FROM Product where Name = " + "'" + product.Name.ToString() + "'";
@@ -46,6 +54,22 @@ namespace ControllerLibrary
             {
                 insertProduct(product);
                 addReferencesToTableProduct_Provider_Unit(product);
+                id = searchPPU(idProd, idProv, idUni);
+            }
+            return id;
+        }
+
+        public int searchProduct(Product product)
+        {
+            string nameQuery = "select id FROM Product where Name = " + "'" + product.Name + "'";
+            string providerQuery = "select id FROM Provider where Provider = " + "'" + product.Provider+ "'";
+            string unitQuery = "select id FROM Unit where Type = " + "'" + product.Unit + "'";
+            int idProd = getIdName(product)
+                , idProv = c.FindAndGetID(providerQuery)
+                , idUni = c.FindAndGetID(unitQuery);
+            int id = searchPPU(idProd, idProv, idUni);
+            if (id == -1)
+            {
                 id = searchPPU(idProd, idProv, idUni);
             }
             return id;
@@ -177,6 +201,11 @@ namespace ControllerLibrary
         public int getIdName(string name)
         {
             string NameQuery = "select id FROM Product where name = " + "'" + name + "'";
+            return c.FindAndGetID(NameQuery);
+        }
+        public int getIdName(Product p)
+        {
+            string NameQuery = "select id FROM Product where name ='"+p.Name+"' AND clasification='" + p.Clasification + "'";
             return c.FindAndGetID(NameQuery);
         }
         public int getIdProvider(string provider)
