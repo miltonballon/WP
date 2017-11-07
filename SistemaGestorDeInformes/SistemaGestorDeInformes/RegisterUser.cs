@@ -36,6 +36,7 @@ namespace SistemaGestorDeInformes
             {
                 MessageBox.Show("Ocurrio un error");
             }
+
         }
 
         private Boolean ValidateEmail(String email)
