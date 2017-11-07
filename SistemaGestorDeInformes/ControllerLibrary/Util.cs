@@ -226,7 +226,7 @@ namespace ControllerLibrary
             return output;
         }
 
-        private DateTime GetDate(String dateString)
+        public static DateTime GetDate(String dateString)
         {
             DateTime date;
             string[] dates = dateString.Split('/');
