@@ -147,9 +147,12 @@ namespace SistemaGestorDeInformes
         private void RegistrarButton_Click(object sender, EventArgs e)
         {
             QuotationSheetGenerator quot = new QuotationSheetGenerator();
+            ReceptionSheetGenerator sheet2 = new ReceptionSheetGenerator();
             ReportSheet reportSheet = quot.GenerateQuotationSheet();
+            ReportSheet reportSheet2 = sheet2.GenerateReceptionSheet();
             Report report = new Report("prueba");
             report.Sheets.Add(reportSheet);
+            report.Sheets.Add(reportSheet2);
             reportSheet = reportSheetController.GenerateReferentialPricesSheet();
             report.Sheets.Add(reportSheet);
             //reportController.insertReport(report,2);

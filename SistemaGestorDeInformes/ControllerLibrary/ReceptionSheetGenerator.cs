@@ -22,7 +22,7 @@ namespace ControllerLibrary
         public ReportSheet GenerateReceptionSheet()
         {
             Trimester ongoingTrimester = trimesterController.GetLastTrimester();
-            ReportSheet reportSheet = new ReportSheet("cotizacion", "FORMULARIO DE SOLICITUD DE COTIZACION\nm6\nc");
+            ReportSheet reportSheet = new ReportSheet("cotizacion", "ACTA DE CONFORMIDAD\nm6\nc");
             if (ongoingTrimester != null)
             {
                 List<Invoice> invoices = invoiceController.GetAllInvoicesByTrimester(ongoingTrimester);
