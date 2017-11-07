@@ -19,10 +19,12 @@ namespace ControllerLibrary
 
         public void InsertTrimester(Trimester trimester)
         {
-            String query = "INSERT INTO trimester(open, name) VALUES(";
+            String query = "INSERT INTO trimester(open, name,initial_date,end_date) VALUES(";
             int bit = trimester.IsOpen() ? 1 : 0;
-            String name = trimester.GetName();
-            query += bit + ", '"+name+"')";
+            String name = trimester.GetName(),
+                   initialDate =trimester.InitialDate.ToString("dd/MM/yyyy"),
+                   endDate = trimester.EndDate.ToString("dd/MM/yyyy");
+            query += bit + ", '"+name+"','"+initialDate+"','"+endDate+"')";
             c.executeInsertion(query);
         }
 
@@ -58,7 +60,9 @@ namespace ControllerLibrary
             {
                 String name = data[2].ToString();
                 int bit = Int32.Parse(data[1].ToString());
-                trimester = new Trimester(id, name);
+                DateTime initialDate=Util.GetDate(data[3].ToString()), 
+                         endDate = Util.GetDate(data[4].ToString());
+                trimester = new Trimester(id, name,initialDate,endDate);
                 trimester.SetOpen(bit == 1);
             }
             data.Close();
