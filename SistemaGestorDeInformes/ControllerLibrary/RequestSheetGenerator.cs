@@ -12,12 +12,14 @@ namespace ControllerLibrary
         private TrimesterController trimesterController;
         private InvoiceController invoiceController;
         private ReportSheetController reportSheetController;
+        private ConfigurationController configurationController;
 
         public RequestSheetGenerator()
         {
             trimesterController = new TrimesterController();
             invoiceController = new InvoiceController();
             reportSheetController = new ReportSheetController();
+            configurationController = new ConfigurationController();
         }
         public ReportSheet GenerateRequestSheet()
         {
@@ -144,14 +146,53 @@ namespace ControllerLibrary
             for (int i = 0; i < numberCopies; i++)
             {
                 String[] headers = { "ITEM\nw4\nc\nf", "DESCRIPCION\nw50\nc\nt\nf", "UNIDAD\nc\nf", "CANTIDAD\nc\nh25\nf" };
-                cells.AddRange(reportSheetController.FillRowWithText(row + 3, column, headers));
-                cells.AddRange(reportSheetController.GenerateEnumerateTable(row + 3, column, 20, 3));
+                cells.AddRange(GenerateSubHeaderOfRequest(row + 2, column+1));
+                cells.AddRange(reportSheetController.FillRowWithText(row + 9, column, headers));
+                cells.AddRange(reportSheetController.GenerateEnumerateTable(row + 9, column, 20, 3));
                 List<InvoiceRow> invoiceRows = invoices[i].GetInvoiceRows();
-                cells.AddRange(reportSheetController.FillTableWithInvoiceRows(row + 4, column + 1, invoiceRows, 3));
-                cells.AddRange(GenerateFooterOfRequest(row + 26, column - 1));
+                cells.AddRange(reportSheetController.FillTableWithInvoiceRows(row + 10, column + 1, invoiceRows, 3));
+                ReportSheetCell emptyCell = new ReportSheetCell(row+30,column,"","h50");
+                cells.Add(emptyCell);
+                cells.AddRange(GenerateFooterOfRequest(row + 31, column - 1));
                 column += 5;
             }
             return cells;
+        }
+
+        private List<ReportSheetCell> GenerateSubHeaderOfRequest(int row, int column)
+        {
+            List<ReportSheetCell> cells = new List<ReportSheetCell>();
+            List<Trimester> trimesters = trimesterController.GetLastTwoTrimester();
+            //configurationController.
+            String stringFordetail = ToStringTrimester(trimesters);
+            String stringForSchollarShips = ToStringTrimester(trimesters);
+            String stringForDeparture = ToStringTrimester(trimesters);
+            String[] unit = { "UNIDAD/CENTRO:\nb", "ASOCIACION CREAMOS" };
+            String[] detail = { "DETALLE DE GASTOS CORRESPONDIENTE A:\nb", stringFordetail };
+            String[] schollarships = { "N° DE BECAS\nb", "recuperar conf" };
+            String[] departure = { "PARTIDA:\nb", "recuperar conf" };
+            String[] date = { "FECHA:\nb", "en duda" };
+            cells.AddRange(reportSheetController.FillRowWithText(row, column, unit));
+            row++;
+            cells.AddRange(reportSheetController.FillRowWithText(row, column, detail));
+            row++;
+            cells.AddRange(reportSheetController.FillRowWithText(row, column, schollarships));
+            row++;
+            cells.AddRange(reportSheetController.FillRowWithText(row, column, departure));
+            row++;
+            cells.AddRange(reportSheetController.FillRowWithText(row, column, date));
+            row++;
+            return cells;
+        }
+
+        private String ToStringTrimester(List<Trimester> trimesters)
+        {
+            String output = "";
+            foreach (Trimester trimester in trimesters)
+            {
+                output += trimester.GetName() + " ";
+            }
+            return output;
         }
 
         private List<ReportSheetCell> GenerateFooterOfRequest(int row, int column)
