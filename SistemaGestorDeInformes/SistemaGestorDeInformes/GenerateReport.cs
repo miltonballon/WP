@@ -148,6 +148,8 @@ namespace SistemaGestorDeInformes
         {
             QuotationSheetGenerator quot = new QuotationSheetGenerator();
             ReferencialPriceSheetGenerator refe= new ReferencialPriceSheetGenerator();
+            RequestSheetGenerator req = new RequestSheetGenerator();
+            req.GenerateRequestSheet();
             ReportSheet reportSheet = quot.GenerateQuotationSheet();
             Report report = new Report("prueba");
             report.Sheets.Add(reportSheet);

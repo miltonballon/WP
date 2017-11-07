@@ -31,7 +31,6 @@ namespace ControllerLibrary
             }
             return reportSheet;
         }
-
         private List<ReportSheetCell> GenerateHeaderAndTableOfQuotation(List<Invoice> invoices, String title)
         {
             List<ReportSheetCell> cells = new List<ReportSheetCell>();
