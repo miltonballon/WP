@@ -23,11 +23,23 @@ namespace SistemaGestorDeInformes
 
         private void Save_Button_Click(object sender, EventArgs e)
         {
-           // int numero = Convert.ToInt32(NumberOfScholarships_textBox.Text);
             Configuration configuration = new Configuration(Convert.ToInt32(NumberOfScholarships_textBox.Text), Convert.ToInt32(NumberOGames_textBox.Text), Convert.ToInt32(DaysToBeat_textBox.Text), Convert.ToInt32(MinimumNumberOfScholarships_textBox.Text));
             configurationController.insertConfiguration(configuration);
+            MessageBox.Show("Registro guardado con éxito");
+
+            NumberOfScholarships_textBox.Text = "";
+            NumberOGames_textBox.Text = "";
+            DaysToBeat_textBox.Text = "";
+            MinimumNumberOfScholarships_textBox.Text = "";
+            NumberOfScholarships_textBox.Focus();
 
 
+        }
+
+        private void Skip_button_Click(object sender, EventArgs e)
+        {
+            Login mos = new Login();
+            mos.Show();
         }
     }
 }

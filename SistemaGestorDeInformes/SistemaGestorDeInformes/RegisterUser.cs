@@ -37,6 +37,9 @@ namespace SistemaGestorDeInformes
                 MessageBox.Show("Ocurrio un error");
             }
 
+
+            RegisterConfiguration mos = new RegisterConfiguration();
+            mos.Show();
         }
 
         private Boolean ValidateEmail(String email)

@@ -37,6 +37,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.Save_Button = new System.Windows.Forms.Button();
+            this.Skip_button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // NumberOfScholarships_textBox
@@ -113,7 +114,7 @@
             this.Save_Button.BackColor = System.Drawing.Color.Black;
             this.Save_Button.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
             this.Save_Button.ForeColor = System.Drawing.Color.Yellow;
-            this.Save_Button.Location = new System.Drawing.Point(224, 326);
+            this.Save_Button.Location = new System.Drawing.Point(327, 328);
             this.Save_Button.Name = "Save_Button";
             this.Save_Button.Size = new System.Drawing.Size(120, 30);
             this.Save_Button.TabIndex = 4;
@@ -121,12 +122,27 @@
             this.Save_Button.UseVisualStyleBackColor = false;
             this.Save_Button.Click += new System.EventHandler(this.Save_Button_Click);
             // 
+            // Skip_button
+            // 
+            this.Skip_button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.Skip_button.BackColor = System.Drawing.Color.Black;
+            this.Skip_button.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
+            this.Skip_button.ForeColor = System.Drawing.Color.Yellow;
+            this.Skip_button.Location = new System.Drawing.Point(87, 328);
+            this.Skip_button.Name = "Skip_button";
+            this.Skip_button.Size = new System.Drawing.Size(120, 30);
+            this.Skip_button.TabIndex = 5;
+            this.Skip_button.Text = "Omitir";
+            this.Skip_button.UseVisualStyleBackColor = false;
+            this.Skip_button.Click += new System.EventHandler(this.Skip_button_Click);
+            // 
             // RegisterConfiguration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(557, 389);
+            this.Controls.Add(this.Skip_button);
             this.Controls.Add(this.Save_Button);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -155,5 +171,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button Save_Button;
+        private System.Windows.Forms.Button Skip_button;
     }
 }
