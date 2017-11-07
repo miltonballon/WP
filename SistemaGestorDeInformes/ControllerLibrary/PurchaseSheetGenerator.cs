@@ -20,7 +20,7 @@ namespace ControllerLibrary
             reportSheetController = new ReportSheetController();
             //xlWorkSheet.Columns[3].ColumnWidth = 18;
         }
-        public ReportSheet GenerateQuotationSheet()
+        public ReportSheet GeneratePurchaseSheet()
         {
             Trimester ongoingTrimester = trimesterController.GetLastTrimester();
             ReportSheet reportSheet = new ReportSheet("OrdenCompra", "ORDEN DE COMPRA\nm6\nc");
