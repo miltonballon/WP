@@ -55,6 +55,8 @@
             this.Atras_Button = new System.Windows.Forms.Button();
             this.NPartida_textbox = new System.Windows.Forms.TextBox();
             this.becas_Textbox = new System.Windows.Forms.TextBox();
+            this.lbPartida = new System.Windows.Forms.Label();
+            this.lbBecas = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -212,7 +214,7 @@
             // abrirTrimestreToolStripMenuItem
             // 
             this.abrirTrimestreToolStripMenuItem.Name = "abrirTrimestreToolStripMenuItem";
-            this.abrirTrimestreToolStripMenuItem.Size = new System.Drawing.Size(97, 20);
+            this.abrirTrimestreToolStripMenuItem.Size = new System.Drawing.Size(98, 20);
             this.abrirTrimestreToolStripMenuItem.Text = "Abrir Trimestre";
             this.abrirTrimestreToolStripMenuItem.Click += new System.EventHandler(this.abrirTrimestreToolStripMenuItem_Click);
             // 
@@ -304,12 +306,34 @@
             this.becas_Textbox.TabIndex = 1;
             this.becas_Textbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.becas_Textbox_KeyPress);
             // 
+            // lbPartida
+            // 
+            this.lbPartida.AutoSize = true;
+            this.lbPartida.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPartida.ForeColor = System.Drawing.Color.Yellow;
+            this.lbPartida.Location = new System.Drawing.Point(559, 201);
+            this.lbPartida.Name = "lbPartida";
+            this.lbPartida.Size = new System.Drawing.Size(0, 19);
+            this.lbPartida.TabIndex = 24;
+            // 
+            // lbBecas
+            // 
+            this.lbBecas.AutoSize = true;
+            this.lbBecas.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbBecas.ForeColor = System.Drawing.Color.Yellow;
+            this.lbBecas.Location = new System.Drawing.Point(559, 159);
+            this.lbBecas.Name = "lbBecas";
+            this.lbBecas.Size = new System.Drawing.Size(0, 19);
+            this.lbBecas.TabIndex = 25;
+            // 
             // ReportConfiguration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(815, 508);
+            this.Controls.Add(this.lbBecas);
+            this.Controls.Add(this.lbPartida);
             this.Controls.Add(this.ProductoLabel);
             this.Controls.Add(this.ProveedorLabel);
             this.Controls.Add(this.Registrar_Button);
@@ -360,5 +384,7 @@
         private System.Windows.Forms.TextBox becas_Textbox;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inventarioToolStripMenuItem1;
+        private System.Windows.Forms.Label lbPartida;
+        private System.Windows.Forms.Label lbBecas;
     }
 }
