@@ -8,6 +8,14 @@ namespace ControllerLibrary
 {
     class NotificationController
     {
+        InventoryController inventoryController;
+        ConfigurationController configurationController;
+
+        public NotificationController()
+        {
+            inventoryController = new InventoryController();
+            configurationController = new ConfigurationController();
+        }
 
     }
 }
