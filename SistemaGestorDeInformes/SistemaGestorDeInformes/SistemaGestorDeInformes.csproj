@@ -87,6 +87,12 @@
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="RegisterConfiguration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegisterConfiguration.Designer.cs">
+      <DependentUpon>RegisterConfiguration.cs</DependentUpon>
+    </Compile>
     <Compile Include="RegisterInvoice.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -184,6 +190,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegisterConfiguration.resx">
+      <DependentUpon>RegisterConfiguration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RegisterInvoice.resx">
       <DependentUpon>RegisterInvoice.cs</DependentUpon>
