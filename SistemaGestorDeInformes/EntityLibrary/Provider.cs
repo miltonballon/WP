@@ -52,5 +52,11 @@ namespace EntityLibrary
         {
             return "Proveedor: "+name+"\nNIT: "+nit;
         }
+
+        public override bool Equals(object obj)
+        {
+            Provider provider = (Provider)obj;
+            return this.name.Equals(provider.GetName());
+        }
     }
 }

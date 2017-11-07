@@ -173,7 +173,7 @@ namespace ControllerLibrary
             aux = Util.GetHeigth(styles);
             if (aux > 0)
             {
-                workSheet.Columns[column].ColumnHeigth = aux;
+                workSheet.Rows[row].RowHeight = aux;
             }
 
             if (Util.IsTopBordered(styles))

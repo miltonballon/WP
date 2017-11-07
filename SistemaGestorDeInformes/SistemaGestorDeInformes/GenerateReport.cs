@@ -147,15 +147,16 @@ namespace SistemaGestorDeInformes
         private void RegistrarButton_Click(object sender, EventArgs e)
         {
             QuotationSheetGenerator quot = new QuotationSheetGenerator();
-            ReportSheet reportSheet = quot.GenerateQuotationSheet();
-            PurchaseSheetGenerator pur = new PurchaseSheetGenerator();
-            ReportSheet rs2 = pur.GenerateQuotationSheet();
+            ReferencialPriceSheetGenerator refe= new ReferencialPriceSheetGenerator();
+            RequestSheetGenerator req = new RequestSheetGenerator();
 
             Report report = new Report("prueba");
-            report.Sheets.Add(reportSheet);
-            report.Sheets.Add(rs2);
 
-            reportSheet = reportSheetController.GenerateReferentialPricesSheet();
+            ReportSheet reportSheet = quot.GenerateQuotationSheet();
+            report.Sheets.Add(reportSheet);
+            reportSheet = refe.GenerateReferentialPricesSheet();
+            report.Sheets.Add(reportSheet);
+            reportSheet = req.GenerateRequestSheet();
             report.Sheets.Add(reportSheet);
             //reportController.insertReport(report,2);
             //try

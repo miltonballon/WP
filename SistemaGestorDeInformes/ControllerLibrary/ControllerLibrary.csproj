@@ -75,9 +75,11 @@
     <Compile Include="ProviderController.cs" />
     <Compile Include="QuotationSheetGenerator.cs" />
     <Compile Include="ReceptionController.cs" />
+    <Compile Include="ReferencialPriceSheetGenerator.cs" />
     <Compile Include="ReportController.cs" />
     <Compile Include="ReportSheetCellController.cs" />
     <Compile Include="ReportSheetController.cs" />
+    <Compile Include="RequestSheetGenerator.cs" />
     <Compile Include="TrimesterController.cs" />
     <Compile Include="UserController.cs" />
     <Compile Include="Util.cs" />
