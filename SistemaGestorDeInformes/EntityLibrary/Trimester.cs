@@ -25,10 +25,17 @@ namespace EntityLibrary
             this.id = id;
         }
 
-        public Trimester(int id, string name,DateTime initialDate, DateTime endDate)
+        public Trimester(int id, string name, DateTime initialDate, DateTime endDate)
         {
             this.name = name;
             this.id = id;
+            this.initialDate = initialDate;
+            this.endDate = endDate;
+        }
+
+        public Trimester(string name, DateTime initialDate, DateTime endDate)
+        {
+            this.name = name;
             this.initialDate = initialDate;
             this.endDate = endDate;
         }

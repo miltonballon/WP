@@ -62,7 +62,7 @@ namespace ControllerLibrary
                 int bit = Int32.Parse(data[1].ToString());
                 DateTime initialDate=Util.GetDate(data[3].ToString()), 
                          endDate = Util.GetDate(data[4].ToString());
-                trimester = new Trimester(id, name);
+                trimester = new Trimester(id, name,initialDate,endDate);
                 trimester.SetOpen(bit == 1);
             }
             data.Close();
