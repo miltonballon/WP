@@ -18,6 +18,7 @@ namespace SistemaGestorDeInformes
         public RegisterConfiguration()
         {
             InitializeComponent();
+            configurationController = new ConfigurationController();
         }
 
         private void Save_Button_Click(object sender, EventArgs e)
