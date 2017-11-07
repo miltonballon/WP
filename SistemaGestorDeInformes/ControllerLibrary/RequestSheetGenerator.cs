@@ -51,6 +51,7 @@ namespace ControllerLibrary
                 size = invoices.Count;
                 invoices = Match(invoices[0],invoices);
             }
+            invoices.Reverse();
             return invoices;
         }
 
@@ -156,37 +157,10 @@ namespace ControllerLibrary
         private List<ReportSheetCell> GenerateFooterOfRequest(int row, int column)
         {
             List<ReportSheetCell> cells = new List<ReportSheetCell>();
-            ReportSheetCell cell = new ReportSheetCell(row, column, "Se considera causa de invalidación de la cotización, el no llenado de precios unitarios y totales");
+            ReportSheetCell cell = new ReportSheetCell(row, column, "Myriam Roxana Ponce de León\nm4\nb\nc");
             row++;
             cells.Add(cell);
-            cell = new ReportSheetCell(row, column, "Los productos deben ser de primera calidad");
-            row++;
-            cells.Add(cell);
-            cell = new ReportSheetCell(row, column, "Los precios ofertados tendrán vegencia de:");
-            row++;
-            cells.Add(cell);
-            cell = new ReportSheetCell(row, column, "En caso de productos secos, colocar vencimiento:");
-            row++;
-            cells.Add(cell);
-            cell = new ReportSheetCell(row, column, "Condiciones de pago:");
-            row++;
-            cells.Add(cell);
-            cell = new ReportSheetCell(row, column, "Tiempo de Entrega:");
-            row++;
-            cells.Add(cell);
-            cell = new ReportSheetCell(row, column, "Lugar de Entrega:");
-            row++;
-            cells.Add(cell);
-            cell = new ReportSheetCell(row, column, "Dirección del Proveedor:");
-            row++;
-            cells.Add(cell);
-            cell = new ReportSheetCell(row, column, "Teléfono de contacto:");
-            row++;
-            cells.Add(cell);
-            cell = new ReportSheetCell(row, column, "Persona de Contacto:");
-            row++;
-            cells.Add(cell);
-            cell = new ReportSheetCell(row, column, "Cheque a nombre de (Razon Social y/o titular de NIT)");
+            cell = new ReportSheetCell(row, column, "PRESIDENTA ASOCIACION CREAMOS\nm4\nc");
             row++;
             cells.Add(cell);
             return cells;

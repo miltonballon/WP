@@ -64,7 +64,7 @@ namespace ControllerLibrary
             column = 2;
             for (int i = 0; i < numberCopies; i++)
             {
-                String[] headers = { "ITEM\nw4\nc\nv1", "DESCRIPCION\nw50\nb\nc\nv1\nt", "UNIDAD\nc\nv1", "CANTIDAD\nc\nv1","","" , "OBSERVACIONES\nv1\nw18\nc" };
+                String[] headers = { "ITEM\nw4\nc\nv1", "DESCRIPCION\nw50\nb\nc\nv1\nt", "UNIDAD\nc\nv1", "CANTIDAD\nc\nv1", "", "", "OBSERVACIONES\nv1\nw18\nc"};
                 String[] s1 = { "PRECIO EN BS.\nc\nm1" };
                     String[] s2= { "UNITARIO\nc", "TOTAL\nc" };
                 String[] text = { "CENTRO:   ASOCIACION CREAMOS\nb", "", "VIVERES SECOS:", "", "", "VIVERES FRESCOS:	" };
