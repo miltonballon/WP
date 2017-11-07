@@ -65,6 +65,7 @@ namespace ControllerLibrary
                     {
                         invoice.AddInvoiceRow(row);
                     }
+                    MergeRows(invoice);
                 }
                 else
                 {
@@ -73,6 +74,39 @@ namespace ControllerLibrary
             }
             output.Add(invoice);
             return output;
+        }
+
+        private void MergeRows(Invoice invoice)
+        {
+            List<InvoiceRow> invoiceRows = invoice.GetInvoiceRows();
+            int size = 0;
+            while (size != invoiceRows.Count)
+            {
+                size = invoiceRows.Count;
+                invoiceRows = Merge(invoiceRows[0], invoiceRows);
+            }
+            invoiceRows.Reverse();
+            invoice.SetInvoiceRows(invoiceRows);
+        }
+
+        private List<InvoiceRow> Merge(InvoiceRow row, List<InvoiceRow> rows)
+        {
+            List<InvoiceRow> invoiceRows = new List<InvoiceRow>();
+            int nElements = rows.Count;
+            for (int i = 1; i < nElements; i++)
+            {
+                if (row.GetProduct().Equals(rows[i].GetProduct()))
+                {
+                    double quantity = row.GetQuantity();
+                    row.SetQuantity(quantity + rows[i].GetQuantity());
+                }
+                else
+                {
+                    invoiceRows.Add(rows[i]);
+                }
+            }
+            invoiceRows.Add(row);
+            return invoiceRows;
         }
 
         private List<ReportSheetCell> GenerateHeaderAndTableOfRequest(List<Invoice> invoices, String title)
@@ -103,7 +137,7 @@ namespace ControllerLibrary
                 cell = new ReportSheetCell(row, column, title);
                 cell.AddBold();
                 cells.Add(cell);
-                column += 4;
+                column += 5;
             }
             column = 2;
             for (int i = 0; i < numberCopies; i++)
@@ -112,9 +146,9 @@ namespace ControllerLibrary
                 cells.AddRange(reportSheetController.FillRowWithText(row + 3, column, headers));
                 cells.AddRange(reportSheetController.GenerateEnumerateTable(row + 3, column, 20, 3));
                 List<InvoiceRow> invoiceRows = invoices[i].GetInvoiceRows();
-                cells.AddRange(reportSheetController.FillTableWithInvoiceRows(row + 5, column + 1, invoiceRows, 3));
+                cells.AddRange(reportSheetController.FillTableWithInvoiceRows(row + 4, column + 1, invoiceRows, 3));
                 cells.AddRange(GenerateFooterOfRequest(row + 26, column - 1));
-                column += 4;
+                column += 5;
             }
             return cells;
         }
