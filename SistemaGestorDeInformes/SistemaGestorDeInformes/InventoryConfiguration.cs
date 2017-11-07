@@ -7,14 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using EntityLibrary;
+using ControllerLibrary;
 
 namespace SistemaGestorDeInformes
 {
     public partial class InventoryConfiguration : Form
     {
+        private ConfigurationController configurationController;
         public InventoryConfiguration()
         {
             InitializeComponent();
+            configurationController = new ConfigurationController();
         }
 
         private void pantallaPrincipalToolStripMenuItem_Click(object sender, EventArgs e)
@@ -117,6 +121,28 @@ namespace SistemaGestorDeInformes
         {
             if (e.KeyChar != 08 && e.KeyChar != '1' && e.KeyChar != '2' && e.KeyChar != '3' && e.KeyChar != '4' && e.KeyChar != '5' && e.KeyChar != '6' && e.KeyChar != '7' && e.KeyChar != '8' && e.KeyChar != '9' && e.KeyChar != '0')
                 e.Handled = true;
+        }
+
+        private void InventoryConfiguration_Load(object sender, EventArgs e)
+        {
+            FillLabels();
+        }
+
+        private void FillLabels()
+        {
+            Configuration configuration = configurationController.GetConfiguration();
+            String days = configuration.getNDaysLeft() + "",
+                units = configuration.getMinimumQuantity() + "";
+            if (configuration != null || !(days.Equals("0") && units.Equals("0")))
+            {
+                lbDias.Text = "Datos actuales: " + days;
+                lbUnidades.Text = "Datos actuales: " + units;
+            }
+            else
+            {
+                lbDias.Text = "Sin Datos";
+                lbUnidades.Text = "Sin Datos";
+            }
         }
     }
 }

@@ -122,7 +122,26 @@ namespace SistemaGestorDeInformes
             becas_Textbox.ShortcutsEnabled = false;
             NPartida_textbox.ShortcutsEnabled = false;
 
+            FillLabels();
+
             KeyPreview = true;
+        }
+
+        private void FillLabels()
+        {
+            Configuration configuration = configurationController.GetConfiguration();
+            if (configuration != null)
+            {
+                String schollarships = configuration.getScholarships() + "",
+                departure = configuration.getNDeparture() + "";
+                lbBecas.Text = "Datos actuales: "+schollarships;
+                lbPartida.Text = "Datos actuales:"+departure;
+            }
+            else
+            {
+                lbBecas.Text = "Sin Datos";
+                lbPartida.Text = "Sin Datos";
+            }
         }
 
         private void ReportConfiguration_KeyUp(object sender, KeyEventArgs e)
@@ -158,6 +177,7 @@ namespace SistemaGestorDeInformes
                 nPar = Int32.Parse(NPartida_textbox.Text);
             Configuration conf = new Configuration(nScho, nPar);
             configurationController.insertConfiguration(conf);
+            FillLabels();
             MessageBox.Show("Se guardo la configuración correctamente");
         }
 

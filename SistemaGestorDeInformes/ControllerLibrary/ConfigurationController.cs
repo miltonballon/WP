@@ -17,6 +17,24 @@ namespace ControllerLibrary
             c.connect();
         }
 
+        public Configuration GetConfiguration()
+        {
+            Configuration configuration=null;
+            String query = "SELECT * FROM Configuration WHERE id=1";
+            SQLiteDataReader data = c.query_show(query);
+            if (data.Read())
+            {
+                int schollarships = Int32.Parse(data[1].ToString()), 
+                    departure = Int32.Parse(data[2].ToString()), 
+                    numberDays = Int32.Parse(data[3].ToString()), 
+                    minimumQuantity = Int32.Parse(data[4].ToString());
+                configuration = new Configuration(schollarships,departure,numberDays,minimumQuantity);
+            }
+            data.Close();
+            c.dataClose();
+            return configuration;
+        }
+
         public void insertConfiguration(Configuration configuration)
         {
             /*
