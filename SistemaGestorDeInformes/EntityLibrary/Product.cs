@@ -59,6 +59,12 @@ namespace EntityLibrary
 
         }
 
+        public override bool Equals(object obj)
+        {
+            Product product = (Product)obj;
+            return this.Name.Equals(product.Name) && this.Unit.Equals(product.Unit);
+        }
+
     }
 
 }

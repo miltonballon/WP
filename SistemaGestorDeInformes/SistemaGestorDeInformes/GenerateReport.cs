@@ -166,7 +166,12 @@ namespace SistemaGestorDeInformes
             report.Sheets.Add(reportSheet2);
             reportSheet = reportSheetController.GenerateReferentialPricesSheet();
             report.Sheets.Add(reportSheet);
-            //reportController.insertReport(report,2);
+            reportSheet = req.GenerateRequestSheet();
+            report.Sheets.Add(reportSheet);
+            reportSheet = pur.GeneratePurchaseSheet();
+            report.Sheets.Add(reportSheet);
+
+            reportController.insertReport(report,2);
             try
             {
                 int result = reportController.generateExcel(report, route);

@@ -225,5 +225,16 @@ namespace ControllerLibrary
             }
             return output;
         }
+
+        public static DateTime GetDate(String dateString)
+        {
+            DateTime date;
+            string[] dates = dateString.Split('/');
+            int day = Int32.Parse(dates[0])
+                , month = Int32.Parse(dates[1])
+                , year = Int32.Parse(dates[2]);
+            date = new DateTime(year, month, day);
+            return date;
+        }
     }
 }
