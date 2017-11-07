@@ -44,10 +44,11 @@ namespace ControllerLibrary
 
         public List<Invoice> MatchProviders(List<Invoice> invoicesIn)
         {
-            List<Invoice> invoices = new List<Invoice>();
+            List<Invoice> invoices = invoicesIn;
             int size = 0;
             while (size!=invoices.Count)
             {
+                size = invoices.Count;
                 invoices = Match(invoices[0],invoices);
             }
             return invoices;
@@ -56,7 +57,21 @@ namespace ControllerLibrary
         private List<Invoice> Match(Invoice invoice, List<Invoice> invoices)
         {
             List<Invoice> output = new List<Invoice>();
-
+            for (int i = 1; i < invoices.Count; i++)
+            {
+                if (invoice.GetProvider().Equals(invoices[i].GetProvider()))
+                {
+                    foreach (InvoiceRow row in invoices[i].GetInvoiceRows())
+                    {
+                        invoice.AddInvoiceRow(row);
+                    }
+                }
+                else
+                {
+                    output.Add(invoices[i]);
+                }
+            }
+            output.Add(invoice);
             return output;
         }
 
@@ -88,24 +103,18 @@ namespace ControllerLibrary
                 cell = new ReportSheetCell(row, column, title);
                 cell.AddBold();
                 cells.Add(cell);
-                column += 7;
+                column += 4;
             }
             column = 2;
             for (int i = 0; i < numberCopies; i++)
             {
-                String[] headers = { "ITEM\nw4\nc\nv1", "DESCRIPCION\nw50\nb\nc\nv1\nt", "UNIDAD\nc\nv1", "CANTIDAD\nc\nv1", "", "", "OBSERVACIONES\nv1\nw18\nc" };
-                String[] s1 = { "PRECIO EN BS.\nc\nm1" };
-                String[] s2 = { "UNITARIO\nc", "TOTAL\nc" };
-                String[] text = { "CENTRO:   ASOCIACION CREAMOS\nb", "", "VIVERES SECOS:", "", "", "VIVERES FRESCOS:	" };
-                cells.AddRange(reportSheetController.FillRowWithText(row + 2, column, text));
+                String[] headers = { "ITEM\nw4\nc\nf", "DESCRIPCION\nw50\nc\nt\nf", "UNIDAD\nc\nf", "CANTIDAD\nc\nh25\nf" };
                 cells.AddRange(reportSheetController.FillRowWithText(row + 3, column, headers));
-                cells.AddRange(reportSheetController.FillRowWithText(row + 3, column + 4, s1));
-                cells.AddRange(reportSheetController.FillRowWithText(row + 4, column + 4, s2));
-                cells.AddRange(reportSheetController.GenerateEnumerateTable(row + 4, column, 15, 6));
+                cells.AddRange(reportSheetController.GenerateEnumerateTable(row + 3, column, 20, 3));
                 List<InvoiceRow> invoiceRows = invoices[i].GetInvoiceRows();
                 cells.AddRange(reportSheetController.FillTableWithInvoiceRows(row + 5, column + 1, invoiceRows, 3));
-                cells.AddRange(GenerateFooterOfRequest(row + 20, column - 1));
-                column += 8;
+                cells.AddRange(GenerateFooterOfRequest(row + 26, column - 1));
+                column += 4;
             }
             return cells;
         }

@@ -89,12 +89,28 @@ namespace ControllerLibrary
             List<ReportSheetCell> cells = new List<ReportSheetCell>();
             for (int row = (initialRow)+1; row <= (initialRow + heigth); row++)
             {
-                ReportSheetCell cell = new ReportSheetCell(row,initialColumn,(row-initialRow)+"","c,y");
-                cells.Add(cell);
+                if (row == (initialRow) + 1)
+                {
+                    ReportSheetCell cell = new ReportSheetCell(row, initialColumn, (row - initialRow) + "", "c,o,h,k");
+                    cells.Add(cell);
+                }
+                else
+                {
+                    ReportSheetCell cell = new ReportSheetCell(row, initialColumn, (row - initialRow) + "", "c,y");
+                    cells.Add(cell);
+                }
                 for (int column = initialColumn + 1; column <= (initialColumn + length); column++)
                 {
-                    ReportSheetCell emptyCell = new ReportSheetCell(row, column, "","y");
-                    cells.Add(emptyCell);
+                    if (row == (initialRow) + 1)
+                    {
+                        ReportSheetCell emptyCell = new ReportSheetCell(row, column, "", "o,h,k");
+                        cells.Add(emptyCell);
+                    }
+                    else
+                    {
+                        ReportSheetCell emptyCell = new ReportSheetCell(row, column, "", "y");
+                        cells.Add(emptyCell);
+                    }
                 }
             }
             return cells;

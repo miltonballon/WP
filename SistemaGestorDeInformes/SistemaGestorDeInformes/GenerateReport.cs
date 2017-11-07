@@ -149,11 +149,14 @@ namespace SistemaGestorDeInformes
             QuotationSheetGenerator quot = new QuotationSheetGenerator();
             ReferencialPriceSheetGenerator refe= new ReferencialPriceSheetGenerator();
             RequestSheetGenerator req = new RequestSheetGenerator();
-            req.GenerateRequestSheet();
-            ReportSheet reportSheet = quot.GenerateQuotationSheet();
+
             Report report = new Report("prueba");
+
+            ReportSheet reportSheet = quot.GenerateQuotationSheet();
             report.Sheets.Add(reportSheet);
             reportSheet = refe.GenerateReferentialPricesSheet();
+            report.Sheets.Add(reportSheet);
+            reportSheet = req.GenerateRequestSheet();
             report.Sheets.Add(reportSheet);
             //reportController.insertReport(report,2);
             try
