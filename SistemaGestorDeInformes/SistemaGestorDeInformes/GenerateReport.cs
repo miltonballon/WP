@@ -158,20 +158,24 @@ namespace SistemaGestorDeInformes
 
         
             QuotationSheetGenerator quot = new QuotationSheetGenerator();
-            ReceptionSheetGenerator sheet2 = new ReceptionSheetGenerator();
-            ReportSheet reportSheet = quot.GenerateQuotationSheet();
-            ReportSheet reportSheet2 = sheet2.GenerateReceptionSheet();
+            ReceptionSheetGenerator recep = new ReceptionSheetGenerator();
+            ReferencialPriceSheetGenerator refe = new ReferencialPriceSheetGenerator();
+            RequestSheetGenerator req = new RequestSheetGenerator();
+            PurchaseSheetGenerator pur = new PurchaseSheetGenerator();
+
             Report report = new Report("");
+            ReportSheet reportSheet = quot.GenerateQuotationSheet();
             report.Sheets.Add(reportSheet);
-            report.Sheets.Add(reportSheet2);
-            reportSheet = reportSheetController.GenerateReferentialPricesSheet();
+            reportSheet = refe.GenerateReferentialPricesSheet();
+            report.Sheets.Add(reportSheet);
+            reportSheet = recep.GenerateReceptionSheet();
             report.Sheets.Add(reportSheet);
             reportSheet = req.GenerateRequestSheet();
             report.Sheets.Add(reportSheet);
             reportSheet = pur.GeneratePurchaseSheet();
             report.Sheets.Add(reportSheet);
 
-            reportController.insertReport(report,2);
+            //reportController.insertReport(report,2);
             try
             {
                 int result = reportController.generateExcel(report, route);
