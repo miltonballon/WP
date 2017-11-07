@@ -32,6 +32,10 @@ namespace SistemaGestorDeInformes
             DaysToBeat_textBox.Text = "";
             MinimumNumberOfScholarships_textBox.Text = "";
             NumberOfScholarships_textBox.Focus();
+            this.Hide();
+
+            Main mos = new Main();
+            mos.Show();
 
 
         }

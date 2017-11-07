@@ -18,9 +18,9 @@ namespace SistemaGestorDeInformes
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new InterfazPrincipal());
             // Application.Run(new Login());
-            Application.Run(new RegisterConfiguration());
-            //Application.Run(new FirstSetup());
-            //Application.Run(new Login());
+            
+            Application.Run(new FirstSetup());
+            Application.Run(new Login());
         }
     }
 }
