@@ -58,6 +58,8 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Unidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lbDias = new System.Windows.Forms.Label();
+            this.lbUnidades = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -243,7 +245,7 @@
             // abrirTrimestreToolStripMenuItem
             // 
             this.abrirTrimestreToolStripMenuItem.Name = "abrirTrimestreToolStripMenuItem";
-            this.abrirTrimestreToolStripMenuItem.Size = new System.Drawing.Size(97, 20);
+            this.abrirTrimestreToolStripMenuItem.Size = new System.Drawing.Size(98, 20);
             this.abrirTrimestreToolStripMenuItem.Text = "Abrir Trimestre";
             this.abrirTrimestreToolStripMenuItem.Click += new System.EventHandler(this.abrirTrimestreToolStripMenuItem_Click);
             // 
@@ -285,7 +287,6 @@
             this.Becas_textbox.Name = "Becas_textbox";
             this.Becas_textbox.Size = new System.Drawing.Size(241, 20);
             this.Becas_textbox.TabIndex = 41;
-            //this.txtboxbecas.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtboxbecas_KeyPress);
             // 
             // labelInformaciónBásica
             // 
@@ -332,10 +333,25 @@
             this.Cantidad.HeaderText = "Cantidad";
             this.Cantidad.Name = "Cantidad";
             // 
-            // Cantidad
+            // lbDias
             // 
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.Name = "Cantidad";
+            this.lbDias.AutoSize = true;
+            this.lbDias.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDias.ForeColor = System.Drawing.Color.Yellow;
+            this.lbDias.Location = new System.Drawing.Point(558, 118);
+            this.lbDias.Name = "lbDias";
+            this.lbDias.Size = new System.Drawing.Size(0, 19);
+            this.lbDias.TabIndex = 48;
+            // 
+            // lbUnidades
+            // 
+            this.lbUnidades.AutoSize = true;
+            this.lbUnidades.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbUnidades.ForeColor = System.Drawing.Color.Yellow;
+            this.lbUnidades.Location = new System.Drawing.Point(548, 294);
+            this.lbUnidades.Name = "lbUnidades";
+            this.lbUnidades.Size = new System.Drawing.Size(0, 19);
+            this.lbUnidades.TabIndex = 49;
             // 
             // InventoryConfiguration
             // 
@@ -343,6 +359,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(815, 508);
+            this.Controls.Add(this.lbUnidades);
+            this.Controls.Add(this.lbDias);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ProductoLabel);
@@ -356,6 +374,7 @@
             this.Name = "InventoryConfiguration";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Configuración del Inventario";
+            this.Load += new System.EventHandler(this.InventoryConfiguration_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -396,5 +415,7 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Unidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
+        private System.Windows.Forms.Label lbDias;
+        private System.Windows.Forms.Label lbUnidades;
     }
 }

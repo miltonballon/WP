@@ -8,7 +8,7 @@ namespace ControllerLibrary
 {
     class Util
     {
-        public static string toSpelling(string num)
+        public static string NumberToString(string num)
         {
             string res, dec = "";
             Int64 entero;
@@ -100,6 +100,141 @@ namespace ControllerLibrary
             }
             return Num2Text;
 
+        }
+
+        public static bool IsBold(String styles)
+        {
+            return styles.Contains("b");
+        }
+
+        public static bool IsCenter(String styles)
+        {
+            return styles.Contains("c");
+        }
+
+        public static bool IsTopBordered(String styles)
+        {
+            return styles.Contains("t");
+        }
+
+        public static bool IsBottomBordered(String styles)
+        {
+            return styles.Contains("d");
+        }
+
+        public static bool IsLeftBordered(String styles)
+        {
+            return styles.Contains("l");
+        }
+
+        public static bool IsRightBordered(String styles)
+        {
+            return styles.Contains("r");
+        }
+
+        public static bool IsFullBordered(String styles)
+        {
+            return styles.Contains("f");
+        }
+
+        public static bool IsTopBorderedDot(String styles)
+        {
+            return styles.Contains("q");
+        }
+
+        public static bool IsBottomBorderedDot(String styles)
+        {
+            return styles.Contains("o");
+        }
+
+        public static bool IsLeftBorderedDot(String styles)
+        {
+            return styles.Contains("h");
+        }
+
+        public static bool IsRightBorderedDot(String styles)
+        {
+            return styles.Contains("k");
+        }
+
+        public static bool IsFullBorderedDot(String styles)
+        {
+            return styles.Contains("y");
+        }
+
+        public static int GetWidth(String styles)
+        {
+            int output=-1;
+            String token = LookFor('w',styles);
+            if (!token.Equals(""))
+            {
+                output = Int32.Parse(token);
+            }
+            return output;
+        }
+
+        public static int GetHeigth(String styles)
+        {
+            int output = -1;
+            String token = LookFor('h', styles);
+            if (!token.Equals(""))
+            {
+                output = Int32.Parse(token);
+            }
+            return output;
+        }
+
+        public static int GetMergeHorizontally(String styles)
+        {
+            int output = -1;
+            String token = LookFor('m', styles);
+            if (!token.Equals(""))
+            {
+                output = Int32.Parse(token);
+            }
+            return output;
+        }
+
+        public static int GetMergeVertically(String styles)
+        {
+            int output = -1;
+            String token = LookFor('v', styles);
+            if (!token.Equals(""))
+            {
+                output = Int32.Parse(token);
+            }
+            return output;
+        }
+
+        private static String LookFor(char style,string styles)
+        {
+            int initialIndex = styles.IndexOf(style);
+            String output = "";
+            if (initialIndex >= 0)
+            {
+                string sub = styles.Substring(initialIndex+1);
+                int lastIndex = sub.IndexOf(',');
+                if (lastIndex >= 0)
+                {
+                    output = sub.Substring(0, lastIndex);
+                }
+                else
+                {
+                    output = sub;
+                }
+            }
+            return output;
+        }
+
+        public static DateTime GetDate(String dateString)
+        {
+            DateTime date;
+            string[] dates = dateString.Split('/');
+            int day = Int32.Parse(dates[0])
+                , month = Int32.Parse(dates[1])
+                , year = Int32.Parse(dates[2]);
+            date = new DateTime(year, month, day);
+            return date;
         }
     }
 }

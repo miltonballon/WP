@@ -21,23 +21,23 @@ namespace ControllerLibrary
             productController = new ProductController();
         }
 
-        public int registerInvoicesRows(Invoice invoice, int invoiceId)
+        public int RegisterInvoicesRows(Invoice invoice, int invoiceId)
         {
             int counter = 0;
-            foreach (InvoiceRow row in invoice.getInvoiceRows())
+            foreach (InvoiceRow row in invoice.GetInvoiceRows())
             {
-                registerInvoiceRow(row, invoiceId);
+                RegisterInvoiceRow(row, invoiceId);
                 counter++;
             }
             return counter;
         }
 
-        public void registerInvoiceRow(InvoiceRow row, int invoiceId)
+        public void RegisterInvoiceRow(InvoiceRow row, int invoiceId)
         {
-            String quantity = row.getQuantity() + ""
-                , unitPrice = row.getUnitPrice() + ""
-                , total = row.getTotal() + "";
-            int idPpu = productController.insertProductAndGetId(row.getProduct());
+            String quantity = row.GetQuantity() + ""
+                , unitPrice = row.GetUnitPrice() + ""
+                , total = row.GetTotal() + "";
+            int idPpu = productController.insertProductAndGetId(row.GetProduct());
             String queryInsertion = "INSERT INTO invoice_row (id_invoice, id_ppu, quantity, unit_price, total) VALUES(";
             queryInsertion += invoiceId + ", ";
             queryInsertion += idPpu + ", ";
@@ -47,7 +47,7 @@ namespace ControllerLibrary
             c.executeInsertion(queryInsertion);
         }
 
-        public List<InvoiceRow> getAllInvoicesRowByNInvoice(int idInvoice)
+        public List<InvoiceRow> GetAllInvoicesRowByNInvoice(int idInvoice)
         {
             List<InvoiceRow> output = new List<InvoiceRow>();
             string query = "SELECT * FROM invoice_row WHERE id_invoice=" + idInvoice;
@@ -73,28 +73,28 @@ namespace ControllerLibrary
             return output;
         }
 
-        public void updateAllRowsOrInsert(List<InvoiceRow> rows, int invoiceId)
+        public void UpdateAllRowsOrInsert(List<InvoiceRow> rows, int invoiceId)
         {
             foreach (InvoiceRow row in rows)
             {
-                if (row.getId() > 0)
+                if (row.GetId() > 0)
                 {
-                    updateInvoiceRow(row);
+                    UpdateInvoiceRow(row);
                 }
                 else
                 {
-                    registerInvoiceRow(row,invoiceId);
+                    RegisterInvoiceRow(row,invoiceId);
                 }
             }
         }
 
-        public void updateInvoiceRow(InvoiceRow row)
+        public void UpdateInvoiceRow(InvoiceRow row)
         {
-            String quantity = row.getQuantity() + ""
-                , unitPrice = row.getUnitPrice() + ""
-                , total = row.getTotal() + "";
-            int idPpu = productController.insertProductAndGetId(row.getProduct()),
-                id=row.getId();
+            String quantity = row.GetQuantity() + ""
+                , unitPrice = row.GetUnitPrice() + ""
+                , total = row.GetTotal() + "";
+            int idPpu = productController.insertProductAndGetId(row.GetProduct()),
+                id=row.GetId();
             String queryInsertion = "UPDATE invoice_row SET id_ppu='" + idPpu+ "', quantity='" + quantity+ "', unit_price='" + unitPrice+ "', total='" + total+"' WHERE id="+id;
             c.executeInsertion(queryInsertion);
         }

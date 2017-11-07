@@ -21,6 +21,8 @@ namespace SistemaGestorDeInformes
             InitializeComponent();
             trimesterController = new TrimesterController();
             isRegistering = false;
+            setLbTrimText();
+            hideCreationForms();
         }
 
         private void atrasButton_Click(object sender, EventArgs e)
@@ -81,20 +83,20 @@ namespace SistemaGestorDeInformes
 
         private void saveNewTrimester(Trimester trimester)
         {
-            Trimester last=trimesterController.getLastTrimester();
+            Trimester last=trimesterController.GetLastTrimester();
             if (last != null)
             {
-                last.setOpen(false);
-                trimesterController.updateTrimester(last);
+                last.SetOpen(false);
+                trimesterController.UpdateTrimester(last);
             }
-            trimesterController.insertTrimester(trimester);
+            trimesterController.InsertTrimester(trimester);
         }
         
 
         private void OpenQuarter_Load(object sender, EventArgs e)
         {
             setLbTrimText();
-            hideNombreForms();
+            hideCreationForms();
 
             Nombre_Textbox.MaxLength = 70;
             Nombre_Textbox.ShortcutsEnabled = false;
@@ -104,10 +106,10 @@ namespace SistemaGestorDeInformes
 
         private void setLbTrimText()
         {
-            Trimester trimester=trimesterController.getLastTrimester();
+            Trimester trimester=trimesterController.GetLastTrimester();
             if (trimester != null)
             {
-                lbTrim.Text = trimester.getName();
+                lbTrim.Text = trimester.ToString();
             }
             else
             {
@@ -115,16 +117,30 @@ namespace SistemaGestorDeInformes
             }
         }
 
-        private void hideNombreForms()
+        private void hideCreationForms()
         {
             lbNombre.Hide();
             Nombre_Textbox.Hide();
+            lbFecFin.Hide();
+            DTPicker_Fin.Hide();
+            DTPicker_Inicio.Hide();
+            lbFecIni.Hide();
+            int xPosition = 299,
+                yPosition = 229;
+            Registrar_Button.Location = new Point(xPosition, yPosition);
         }
 
-        private void showNombreForms()
+        private void showCreationForms()
         {
             lbNombre.Show();
             Nombre_Textbox.Show();
+            lbFecFin.Show();
+            DTPicker_Fin.Show();
+            DTPicker_Inicio.Show();
+            lbFecIni.Show();
+            int xPosition= Registrar_Button.Location.X, 
+                yPosition= Registrar_Button.Location.Y+25;
+            Registrar_Button.Location = new Point(xPosition,yPosition);
         }
        
 
@@ -192,15 +208,17 @@ namespace SistemaGestorDeInformes
             if (isRegistering)
             {
                 String name = Nombre_Textbox.Text;
+                DateTime initial=DTPicker_Inicio.Value, 
+                    end=DTPicker_Fin.Value;
                 if (!name.Equals(""))
                 {
-                    Trimester trimester = new Trimester(name);
-                    trimester.setOpen(true);
+                    Trimester trimester = new Trimester(name,initial,end);
+                    trimester.SetOpen(true);
                     saveNewTrimester(trimester);
-                    hideNombreForms();
+                    hideCreationForms();
                     Registrar_Button.Text = "Nuevo Trimestre";
                     setLbTrimText();
-                    MessageBox.Show("Nuevo trimestre creado: " + trimester.getName());
+                    MessageBox.Show("Nuevo trimestre creado: " + trimester.GetName());
                     isRegistering = !isRegistering;
                 }
                 else
@@ -210,10 +228,15 @@ namespace SistemaGestorDeInformes
             }
             else
             {
-                showNombreForms();
+                showCreationForms();
                 Registrar_Button.Text = "Guardar";
                 isRegistering = !isRegistering;
             }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

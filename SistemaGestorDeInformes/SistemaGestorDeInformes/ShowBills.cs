@@ -107,14 +107,14 @@ namespace SistemaGestorDeInformes
 
         private void chargeData()
         {
-            List<Invoice> invoices = invoiceController.getAllInvoices();
+            List<Invoice> invoices = invoiceController.GetAllInvoices();
             foreach (Invoice invoice in invoices)
             {
-                String nInvo = invoice.getNInvoice() + "",
-                       nAuto = invoice.getNAutorization() + "",
-                       nit = invoice.getProvider().getNit() + "",
-                       date = invoice.getDate().ToShortDateString(),
-                       providersName = invoice.getProvider().getName();
+                String nInvo = invoice.GetNInvoice() + "",
+                       nAuto = invoice.GetNAutorization() + "",
+                       nit = invoice.GetProvider().GetNit() + "",
+                       date = invoice.GetDate().ToShortDateString(),
+                       providersName = invoice.GetProvider().GetName();
 
                 String[] row = new String[] {nInvo,nAuto,providersName,nit,date};
                 dataGridView1.Rows.Add(row);
@@ -135,8 +135,8 @@ namespace SistemaGestorDeInformes
         {
             String providersName= dataGridView1.CurrentRow.Cells[2].Value.ToString();
             int nInvoice = Int32.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString());
-            int providerId = providerController.findProviderIdByName(providersName);
-            Invoice invoice = invoiceController.getInvoiceByNInvoiceAndProviderId(nInvoice,providerId);
+            int providerId = providerController.FindProviderIdByName(providersName);
+            Invoice invoice = invoiceController.GetInvoiceByNInvoiceAndProviderId(nInvoice,providerId);
             openModify(invoice);
         }
 

@@ -1,9 +1,8 @@
 CREATE TABLE `Invoice` (
 	`id`			INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-	`n_invoice`		INTEGER,
-	`n_autorization`	INTEGER,
+	`n_invoice`		TEXT,
+	`n_autorization`	TEXT,
 	`id_provider`		INTEGER,
-	`nit`			INTEGER,
 	`date`			TEXT,
 	`id_trimester`		INTEGER,
 	FOREIGN KEY(`id_provider`) REFERENCES `Provider`(`id`),
@@ -18,9 +17,16 @@ CREATE TABLE `Product` (
 );
 CREATE TABLE `Provider` (
 	`id`	INTEGER PRIMARY KEY AUTOINCREMENT,
-	`Provider`	TEXT,
-	`NIT`		INTEGER
+	`name`		TEXT,
+	`NIT`		TEXT
 	
+);
+CREATE TABLE `Contact` (
+	`id`	INTEGER PRIMARY KEY AUTOINCREMENT,
+	`name`		TEXT,
+	`phone`		TEXT,
+	`id_provider`	INTEGER,	
+	FOREIGN KEY(`id_provider`) REFERENCES `Provider`(`id`)	
 );
 CREATE TABLE `Unit` (
 	`id`	INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -28,12 +34,12 @@ CREATE TABLE `Unit` (
 );
 CREATE TABLE `Product_Provider_Unit` (
 	`id`	INTEGER PRIMARY KEY AUTOINCREMENT,	
-	`id_prod`	INTEGER,
-	`id_prov`	INTEGER,
-	`id_uni`	INTEGER,
-	FOREIGN KEY(`id_prov`) REFERENCES `Provider`(`id`),
-	FOREIGN KEY(`id_uni`) REFERENCES `Unit`(`id`),
-	FOREIGN KEY(`id_prod`) REFERENCES `Product`(`id`)
+	`id_product`	INTEGER,
+	`id_provider`	INTEGER,
+	`id_unit`	INTEGER,
+	FOREIGN KEY(`id_provider`) REFERENCES `Provider`(`id`),
+	FOREIGN KEY(`id_unit`) REFERENCES `Unit`(`id`),
+	FOREIGN KEY(`id_product`) REFERENCES `Product`(`id`)
 );
 
 CREATE TABLE `invoice_row` (
@@ -59,7 +65,9 @@ CREATE TABLE `Configuration` (
 CREATE TABLE `trimester` (
 	`id`		INTEGER PRIMARY KEY AUTOINCREMENT,
 	`open`		INTEGER,
-	`name`		TEXT
+	`name`		TEXT,
+	`initial_date`	TEXT,
+	`end_date`	TEXT
 );
 
 CREATE TABLE `User` (
@@ -106,6 +114,7 @@ CREATE TABLE `Report_sheet_cell` (
 	`row`			INTEGER,
 	`column`		INTEGER,
 	`content`		TEXT,
+	`styles`		TEXT,
 	FOREIGN KEY(`id_report_sheet`) REFERENCES `Report_sheet`(`id`)
 );
 CREATE TABLE `Inventory` (

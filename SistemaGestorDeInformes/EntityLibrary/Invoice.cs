@@ -35,84 +35,84 @@ namespace EntityLibrary
             InvoiceRows = new List<InvoiceRow>();
         }
 
-        public void setProvider(Provider provider)
+        public void SetProvider(Provider provider)
         {
             this.provider = provider;
         }
 
-        public void setNInvoice(int nInvoice_1)
+        public void SetNInvoice(int nInvoice_1)
         {
             nInvoice = nInvoice_1;
         }
 
-        public void setNAutorization(int nAutorization_1)
+        public void SetNAutorization(int nAutorization_1)
         {
             nAutorization = nAutorization_1;
         }
 
-        public void setDate(DateTime date_1)
+        public void SetDate(DateTime date_1)
         {
             date = date_1;
         }
 
-        public Provider getProvider()
+        public Provider GetProvider()
         {
             return provider;
         }
 
-        public int getNInvoice()
+        public int GetNInvoice()
         {
             return nInvoice;
         }
 
-        public int getNAutorization()
+        public int GetNAutorization()
         {
             return nAutorization;
         }
 
-        public DateTime getDate()
+        public DateTime GetDate()
         {
             return date;
         }
 
-        public List<InvoiceRow> getInvoiceRows()
+        public List<InvoiceRow> GetInvoiceRows()
         {
             return InvoiceRows;
         }
 
-        public void addInvoiceRow(InvoiceRow invoiceRow)
+        public void AddInvoiceRow(InvoiceRow invoiceRow)
         {
             InvoiceRows.Add(invoiceRow);
         }
 
-        public void setInvoiceRows(List<InvoiceRow> invoiceRows)
+        public void SetInvoiceRows(List<InvoiceRow> invoiceRows)
         {
             InvoiceRows = invoiceRows;
         }
 
-        public int getId()
+        public int GetId()
         {
             return id;
         }
 
-        public void setId(int id)
+        public void SetId(int id)
         {
             this.id = id;
         }
 
-        public void setTotal()
+        public void SetTotal()
         {
             double addition = 0;
             foreach (InvoiceRow row in InvoiceRows)
             {
-                addition += row.getTotal();
+                addition += row.GetTotal();
             }
             total = addition;
         }
 
-        public double getTotal()
+        public double GetTotal()
         {
-            setTotal();
+            SetTotal();
             return total;
         }
 

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ControllerLibrary;
 using EntityLibrary;
+using System.Runtime.InteropServices;
 
 namespace SistemaGestorDeInformes
 {
@@ -145,13 +146,45 @@ namespace SistemaGestorDeInformes
 
         private void RegistrarButton_Click(object sender, EventArgs e)
         {
-            ReportSheet reportSheet = reportSheetController.generateQuotationSheet();
-            Report report = new Report("prueba");
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "Archivos xls(*.xls)|*.xls";
+            sfd.Title = "Generar";
+            String route= " ";
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                route = sfd.FileName;
+            }
+            sfd.Dispose();
+
+        
+            QuotationSheetGenerator quot = new QuotationSheetGenerator();
+            ReceptionSheetGenerator recep = new ReceptionSheetGenerator();
+            ReferencialPriceSheetGenerator refe = new ReferencialPriceSheetGenerator();
+            RequestSheetGenerator req = new RequestSheetGenerator();
+            PurchaseSheetGenerator pur = new PurchaseSheetGenerator();
+
+            Report report = new Report("");
+            ReportSheet reportSheet = quot.GenerateQuotationSheet();
             report.Sheets.Add(reportSheet);
-            reportSheet = reportSheetController.generateReferentialPricesSheet();
+            reportSheet = refe.GenerateReferentialPricesSheet();
             report.Sheets.Add(reportSheet);
-            int result = reportController.generateExcel(report);
-            printMessage(result);
+            reportSheet = recep.GenerateReceptionSheet();
+            report.Sheets.Add(reportSheet);
+            reportSheet = req.GenerateRequestSheet();
+            report.Sheets.Add(reportSheet);
+            reportSheet = pur.GeneratePurchaseSheet();
+            report.Sheets.Add(reportSheet);
+
+            //reportController.insertReport(report,2);
+            try
+            {
+                int result = reportController.generateExcel(report, route);
+                printMessage(result);
+            }
+            catch (COMException)
+            {
+                MessageBox.Show("Cierre el archivo Excel por favor");
+            }
         }
 
         private void printMessage(int input)

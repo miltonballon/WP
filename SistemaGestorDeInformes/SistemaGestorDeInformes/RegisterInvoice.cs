@@ -39,7 +39,7 @@ namespace SistemaGestorDeInformes
         {
             InitializeComponent();
             this.invoice = invoice;
-            this.provider = invoice.getProvider();
+            this.provider = invoice.GetProvider();
             this.textBoxNit.KeyPress += new KeyPressEventHandler(textBoxNit_TextChanged);//Para impedir que se pongan letras y espacios en el NIT
             this.textBoxNFactura.KeyPress += new KeyPressEventHandler(textBoxNFactura_TextChanged);//Para impedir que se pongan letras y espacios en el N.FACTURA
             this.textBoxNAutorizacion.KeyPress += new KeyPressEventHandler(textBoxNAutorizacion_TextChanged);//Para impedir que se pongan letras y espacios en el N.AUTORIZACION 
@@ -54,15 +54,15 @@ namespace SistemaGestorDeInformes
 
         private void chargeData()
         {
-            List<InvoiceRow> invoiceRows = invoice.getInvoiceRows();
+            List<InvoiceRow> invoiceRows = invoice.GetInvoiceRows();
             foreach (InvoiceRow row in invoiceRows)
             {
-                Product product = row.getProduct();
+                Product product = row.GetProduct();
                 String productsName = product.Name,
                        unit = product.Unit,
-                       quantity = row.getQuantity()+"",
-                       unitPrice=row.getUnitPrice()+"",
-                       total=row.getTotal()+"";
+                       quantity = row.GetQuantity()+"",
+                       unitPrice=row.GetUnitPrice()+"",
+                       total=row.GetTotal()+"";
 
                 String[] rowData = new String[] { productsName, unit,quantity,unitPrice,total};
                 dataGridView1.Rows.Add(rowData);
@@ -71,16 +71,16 @@ namespace SistemaGestorDeInformes
 
         private void fillTextBoxes()
         {
-            textBoxProveedor.Text = invoice.getProvider().getName();
-            textBoxNit.Text = invoice.getProvider().getNit()+"";
-            textBoxNFactura.Text = invoice.getNInvoice() + "";
-            textBoxNAutorizacion.Text = invoice.getNAutorization() + "";
-            dateFecha.Value = invoice.getDate();
+            textBoxProveedor.Text = invoice.GetProvider().GetName();
+            textBoxNit.Text = invoice.GetProvider().GetNit()+"";
+            textBoxNFactura.Text = invoice.GetNInvoice() + "";
+            textBoxNAutorizacion.Text = invoice.GetNAutorization() + "";
+            dateFecha.Value = invoice.GetDate();
         }
 
         private void loadProviders()
         {
-            providers=providerController.getAllProviders();
+            providers=providerController.GetAllProviders();
         }
 
         private void InterfazRegistrarFactura_Load(object sender, EventArgs e)
@@ -103,7 +103,7 @@ namespace SistemaGestorDeInformes
             AutoCompleteStringCollection output = new AutoCompleteStringCollection();
             foreach (Provider p in providers)
             {
-                output.Add(p.getName());
+                output.Add(p.GetName());
             }
             return output;
         }
@@ -159,8 +159,8 @@ namespace SistemaGestorDeInformes
             AutoCompleteStringCollection output = new AutoCompleteStringCollection();
             if (provider != null)
             {
-                List<Product> products = productController.showAllProductsByProvider(provider.getName());
-                provider.setProducts(products);
+                List<Product> products = productController.showAllProductsByProvider(provider.GetName());
+                provider.SetProducts(products);
                 foreach (Product product in products)
                 {
                     output.Add(product.Name);
@@ -188,7 +188,7 @@ namespace SistemaGestorDeInformes
         private String getUnitByNameOfProvidersProducts(String name,Object value)
         {
             String output = "";
-            foreach (Product p in provider.getProducts())
+            foreach (Product p in provider.GetProducts())
             {
                 if (p.Name.Equals(name))
                 {
@@ -252,14 +252,14 @@ namespace SistemaGestorDeInformes
         {
             int nInvoice = Int32.Parse(textBoxNFactura.Text),
                 nAutorization = Int32.Parse(textBoxNAutorizacion.Text),
-                id=invoiceController.getInvoiceIdByObjectInvoice(invoice);
+                id=invoiceController.GetInvoiceIdByObjectInvoice(invoice);
             DateTime date = dateFecha.Value;
-            invoice.setNInvoice(nInvoice);
-            invoice.setNAutorization(nAutorization);
-            invoice.setProvider(provider);
-            invoice.setDate(date);
+            invoice.SetNInvoice(nInvoice);
+            invoice.SetNAutorization(nAutorization);
+            invoice.SetProvider(provider);
+            invoice.SetDate(date);
             setRows();
-            invoiceController.updateInvoice(invoice,id);
+            invoiceController.UpdateInvoice(invoice,id);
             MessageBox.Show("Se logro actualizar los datos de la Factura");
             changeToShowBills();
         }
@@ -277,11 +277,11 @@ namespace SistemaGestorDeInformes
             if (provider == null)
             {
                 newProvider();
-                providerController.insertProvider(provider);
+                providerController.InsertProvider(provider);
             }
             invoice = createInvoice();
             createAndAddProducts();
-            int res=invoiceController.insertInvoice(invoice);
+            int res=invoiceController.InsertInvoice(invoice);
             messages(res);
         }
 
@@ -290,7 +290,7 @@ namespace SistemaGestorDeInformes
             switch (cod)
             {
                 case -1:
-                    String providersName = invoice.getProvider().getName();
+                    String providersName = invoice.GetProvider().GetName();
                     MessageBox.Show("El 'N. Factura' introducido con este proveedor: '" + providersName + "' ya existe.\nPor favor revise los datos introducidos.", "Error");
                     break;
                 case -2:
@@ -331,13 +331,13 @@ namespace SistemaGestorDeInformes
                     data[j]=dataGridView1.Rows[i].Cells[j].Value;
                 }
                 InvoiceRow row = new InvoiceRow(data, provider);
-                invoice.addInvoiceRow(row);
+                invoice.AddInvoiceRow(row);
             }
         }
 
         private void setRows()
         {
-            int maxSize = invoice.getInvoiceRows().Count, 
+            int maxSize = invoice.GetInvoiceRows().Count, 
                 size = (dataGridView1.Rows.Count) - 1;
             Object[] data = new Object[5];
             String provider = textBoxProveedor.Text;
@@ -350,12 +350,12 @@ namespace SistemaGestorDeInformes
 
                 if (i < maxSize)
                 {
-                    invoice.getInvoiceRows()[i].setAllAttributes(data,provider);
+                    invoice.GetInvoiceRows()[i].SetAllAttributes(data,provider);
                 }
                 else
                 {
                     InvoiceRow row = new InvoiceRow(data, provider);
-                    invoice.addInvoiceRow(row);
+                    invoice.AddInvoiceRow(row);
                 }
             }
         }
@@ -382,11 +382,11 @@ namespace SistemaGestorDeInformes
 
         private void setProvider()
         {
-            Provider provider = getProviderByName(textBoxProveedor.Text);
+            Provider provider = GetProviderByName(textBoxProveedor.Text);
             if (provider != null)
             {
                 this.provider = provider;
-                textBoxNit.Text = provider.getNit() + "";
+                textBoxNit.Text = provider.GetNit() + "";
             }
             else
             {
@@ -395,12 +395,12 @@ namespace SistemaGestorDeInformes
             }
         }
 
-        private Provider getProviderByName(String name)
+        private Provider GetProviderByName(String name)
         {
             Provider output = null;
             foreach (Provider p in providers)
             {
-                if (p.getName().Equals(name))
+                if (p.GetName().Equals(name))
                 {
                     output = p;
                     break;
