@@ -146,16 +146,25 @@ namespace SistemaGestorDeInformes
 
         private void RegistrarButton_Click(object sender, EventArgs e)
         {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "Archivos xls(*.xls)|*.xls";
+            sfd.Title = "Generar";
+            String route= " ";
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                route = sfd.FileName;
+            }
+            sfd.Dispose();
+
+        
             QuotationSheetGenerator quot = new QuotationSheetGenerator();
-            ReferencialPriceSheetGenerator refe= new ReferencialPriceSheetGenerator();
-            RequestSheetGenerator req = new RequestSheetGenerator();
-            PurchaseSheetGenerator pur = new PurchaseSheetGenerator();
-
-            Report report = new Report("prueba");
-
+            ReceptionSheetGenerator sheet2 = new ReceptionSheetGenerator();
             ReportSheet reportSheet = quot.GenerateQuotationSheet();
+            ReportSheet reportSheet2 = sheet2.GenerateReceptionSheet();
+            Report report = new Report("");
             report.Sheets.Add(reportSheet);
-            reportSheet = refe.GenerateReferentialPricesSheet();
+            report.Sheets.Add(reportSheet2);
+            reportSheet = reportSheetController.GenerateReferentialPricesSheet();
             report.Sheets.Add(reportSheet);
             reportSheet = req.GenerateRequestSheet();
             report.Sheets.Add(reportSheet);
@@ -165,7 +174,7 @@ namespace SistemaGestorDeInformes
             reportController.insertReport(report,2);
             try
             {
-                int result = reportController.generateExcel(report);
+                int result = reportController.generateExcel(report, route);
                 printMessage(result);
             }
             catch (COMException)

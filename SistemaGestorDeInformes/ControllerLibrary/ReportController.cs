@@ -84,8 +84,9 @@ namespace ControllerLibrary
             return date;
         }
 
-        public int generateExcel(Report report)
+        public int generateExcel(Report report, String route)
         {
+
             int output;
             Application xlApp = new Microsoft.Office.Interop.Excel.Application();
 
@@ -116,7 +117,7 @@ namespace ControllerLibrary
                     numSheet++;
                 }
 
-                xlWorkBook.SaveAs("d:\\"+report.Name+".xls", XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
+                xlWorkBook.SaveAs(route+report.Name, XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
                 xlWorkBook.Close(true, misValue, misValue);
                 xlApp.Quit();
                 foreach (Worksheet worksheet in workSheets)
