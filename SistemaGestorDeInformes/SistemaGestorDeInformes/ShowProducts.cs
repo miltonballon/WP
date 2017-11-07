@@ -177,29 +177,29 @@ namespace SistemaGestorDeInformes
         {
             Product p = new Product(dataGridView1.SelectedRows[0].Cells[0].Value.ToString(), dataGridView1.SelectedRows[0].Cells[1].Value.ToString(), dataGridView1.SelectedRows[0].Cells[2].Value.ToString(), dataGridView1.SelectedRows[0].Cells[3].Value.ToString());
 
-            ModifyProduct edit = new ModifyProduct();
+            ModifyProduct edit = new ModifyProduct(p);
             edit.Product_TextBox.Text = p.Name;
             edit.Provider_TextBox.Text = p.Provider;
             edit.Unit_TextBox.Text = p.Unit;
             if (p.Clasification == "Fresco")
             {
                 edit.FreshRadioButton.Checked = true;
+                edit.product.Clasification="Fresco";
             }
             else
             {
                 edit.DryRadioButton.Checked = true;
+                edit.product.Clasification = "Seco";
             }
+                //MessageBox.Show("A" + pc.getIdName(p.Name) + "T" + pc.getIdProvider(p.Provider) + "B" + pc.getIdUnit(p.Unit));
+            
+                //pc.DeleteProduct_Provider_Unit(1,1,1);
+                //pc.DeleteProduct_Provider_Unit(pc.getIdName(p.Name), pc.getIdProvider(p.Provider), pc.getIdUnit(p.Unit));
 
-
-            //MessageBox.Show("A" + pc.getIdName(p.Name) + "T" + pc.getIdProvider(p.Provider) + "B" + pc.getIdUnit(p.Unit));
-
-            //pc.DeleteProduct_Provider_Unit(1,1,1);
-            pc.DeleteProduct_Provider_Unit(pc.getIdName(p.Name), pc.getIdProvider(p.Provider), pc.getIdUnit(p.Unit));
-
-            edit.Show();
-            this.Close();
-        }
-
+                edit.Show();
+                //this.Close();
+            }
+        
         private void clearSearch_Button_Click(object sender, EventArgs e)
         {
             Buscar_textBox.Text = "";
