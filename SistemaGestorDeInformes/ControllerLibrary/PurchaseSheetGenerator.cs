@@ -99,7 +99,7 @@ namespace ControllerLibrary
             double total = invoice.GetTotal();
             List<ReportSheetCell> cells = new List<ReportSheetCell>();
             String[] text = { "TOTAL", total + "" };
-            cells.AddRange(reportSheetController.FillRowWithText(row, column + 5, text));
+            cells.AddRange(reportSheetController.FillRowWithText(row, column + 4, text));
             row++;
             String spellNumber = Util.NumberToString(total + "");
             String[] text1 = { "Son", spellNumber };
