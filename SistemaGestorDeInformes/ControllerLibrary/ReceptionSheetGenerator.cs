@@ -59,6 +59,10 @@ namespace ControllerLibrary
                 row += 2;
                 cells.Add(cell);
                 cell = new ReportSheetCell(row, column, title);
+                row++;
+                cells.Add(cell);
+                cell = new ReportSheetCell(row, column, "En la ciudad de Cochabamba, dentrro del segundo trimestre");
+
                 cell.AddBold();
                 cells.Add(cell);
                 column += 7;
@@ -85,38 +89,14 @@ namespace ControllerLibrary
 
         private List<ReportSheetCell> GenerateFooterOfReception(int row, int column)
         {
+            String[] s1 = { "Entrega\nw4\nc\nv1", "Proveedor: Firma y Sello\nw50\nb\nc\nv1\nt", "\nc\nv1"};
+            String[] s2 = { "Recibe\nw4\nc\nv1", "Presidenta\nw50\nb\nc\nv1\nt", "Responsable de Recursos Asociación Creamos\nw50\nb\nc\nv1\nt" };
+            String[] s3 = { "", "Myriam Roxana Ponce de León\nw50\nb\nc\nv1\nt", "Alexandra Navarrete Chacón\nw50\nb\nc\nv1\nt" };
             List<ReportSheetCell> cells = new List<ReportSheetCell>();
-            ReportSheetCell cell = new ReportSheetCell(row, column, "Se considera causa de invalidación de la cotización, el no llenado de precios unitarios y totales");
+            ReportSheetCell cell = new ReportSheetCell(row, column, "En Señal de conformidad firman:");
             row++;
             cells.Add(cell);
             cell = new ReportSheetCell(row, column, "Los productos deben ser de primera calidad");
-            row++;
-            cells.Add(cell);
-            cell = new ReportSheetCell(row, column, "Los precios ofertados tendrán vegencia de:");
-            row++;
-            cells.Add(cell);
-            cell = new ReportSheetCell(row, column, "En caso de productos secos, colocar vencimiento:");
-            row++;
-            cells.Add(cell);
-            cell = new ReportSheetCell(row, column, "Condiciones de pago:");
-            row++;
-            cells.Add(cell);
-            cell = new ReportSheetCell(row, column, "Tiempo de Entrega:");
-            row++;
-            cells.Add(cell);
-            cell = new ReportSheetCell(row, column, "Lugar de Entrega:");
-            row++;
-            cells.Add(cell);
-            cell = new ReportSheetCell(row, column, "Dirección del Proveedor:");
-            row++;
-            cells.Add(cell);
-            cell = new ReportSheetCell(row, column, "Teléfono de contacto:");
-            row++;
-            cells.Add(cell);
-            cell = new ReportSheetCell(row, column, "Persona de Contacto:");
-            row++;
-            cells.Add(cell);
-            cell = new ReportSheetCell(row, column, "Cheque a nombre de (Razon Social y/o titular de NIT)");
             row++;
             cells.Add(cell);
             return cells;
