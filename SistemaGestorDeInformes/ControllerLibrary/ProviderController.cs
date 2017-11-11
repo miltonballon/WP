@@ -10,9 +10,10 @@ namespace ControllerLibrary
 {
     public class ProviderController
     {
-        private Connection c = new Connection();
+        private Connection c;
         public ProviderController()
         {
+            c = new Connection();
             c.connect();
         }
         public Provider GetProviderById(int id)

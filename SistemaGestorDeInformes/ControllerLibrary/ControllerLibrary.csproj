@@ -65,6 +65,7 @@
   <ItemGroup>
     <Compile Include="ConfigurationController.cs" />
     <Compile Include="Connection.cs" />
+    <Compile Include="ContactController.cs" />
     <Compile Include="GenerateInvoiceDetailSheet.cs" />
     <Compile Include="InvoiceSheetController.cs" />
     <Compile Include="PurchaseSheetGenerator.cs" />
