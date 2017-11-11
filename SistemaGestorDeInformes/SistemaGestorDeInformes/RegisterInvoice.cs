@@ -306,7 +306,7 @@ namespace SistemaGestorDeInformes
         private void newProvider()
         {
             String name = textBoxProveedor.Text;
-            int nit = Int32.Parse(textBoxNit.Text);
+            String nit = textBoxNit.Text;
             provider = new Provider(name, nit);
         }
 

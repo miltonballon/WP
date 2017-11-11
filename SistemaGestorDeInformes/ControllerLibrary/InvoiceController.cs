@@ -64,9 +64,9 @@ namespace ControllerLibrary
         {
             Provider provider = invoice.GetProvider();
             int nInvoice = invoice.GetNInvoice(),
-                nAutorization = invoice.GetNAutorization(), 
-                idProvider = providerController.ForceSearchProvider(provider), 
-                nit=provider.GetNit();
+                nAutorization = invoice.GetNAutorization(),
+                idProvider = providerController.ForceSearchProvider(provider);
+            String nit=provider.GetNit();
             String date = invoice.GetDate().ToShortDateString();
             String query = "UPDATE Invoice SET n_invoice="+nInvoice+", n_autorization="+nAutorization+", id_provider="+idProvider+", nit="+nit+", date='"+date+"' WHERE id="+id;
             c.executeInsertion(query);
