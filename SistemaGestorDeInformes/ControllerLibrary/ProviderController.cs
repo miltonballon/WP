@@ -34,7 +34,7 @@ namespace ControllerLibrary
 
         public int FindProviderIdByName(String name)
         {
-            String query = "SELECT id FROM Provider WHERE Provider='"+name+"'";
+            String query = "SELECT id FROM Provider WHERE name='"+name+"'";
             int idProvider= c.FindAndGetID(query);
             return idProvider;
         }
@@ -81,7 +81,7 @@ namespace ControllerLibrary
             String name = provider.GetName(),
             NIT = provider.GetNit() ;
             int id = provider.GetId();
-            query += name + "', NIT='"+NIT+"' WHERE id='" + id + "'";
+            query += name + "', NIT='"+NIT+"' WHERE id=" + id + "";
             c.executeInsertion(query);
         }
     }
