@@ -35,11 +35,10 @@ namespace ControllerLibrary
                 idProvider = providerController.ForceSearchProvider(invoice.GetProvider()),
                 idTrimester = trimester.GetId();
                 DateTime date = invoice.GetDate();
-                String query = "INSERT INTO Invoice(n_invoice, n_autorization, id_provider, nit, date, id_trimester) VALUES (";
+                String query = "INSERT INTO Invoice(n_invoice, n_autorization, id_provider, date, id_trimester) VALUES (";
                 query += nInvoice + ", ";
                 query += nAutorization + ", ";
                 query += idProvider + ", ";
-                query += invoice.GetProvider().GetNit() + ", '";
                 query += date.ToString("dd/MM/yyyy") + "',";
                 query += idTrimester + ")";
                 try
@@ -66,9 +65,8 @@ namespace ControllerLibrary
             int nInvoice = invoice.GetNInvoice(),
                 nAutorization = invoice.GetNAutorization(),
                 idProvider = providerController.ForceSearchProvider(provider);
-            String nit=provider.GetNit();
             String date = invoice.GetDate().ToShortDateString();
-            String query = "UPDATE Invoice SET n_invoice="+nInvoice+", n_autorization="+nAutorization+", id_provider="+idProvider+", nit="+nit+", date='"+date+"' WHERE id="+id;
+            String query = "UPDATE Invoice SET n_invoice="+nInvoice+", n_autorization="+nAutorization+", id_provider="+idProvider+", date='"+date+"' WHERE id="+id;
             c.executeInsertion(query);
             invoiceRowController.UpdateAllRowsOrInsert(invoice.GetInvoiceRows(),GetInvoiceIdByObjectInvoice(invoice));
         }
@@ -84,6 +82,28 @@ namespace ControllerLibrary
             return id;
         }
 
+        public Invoice GetInvoiceById(int id)
+        {
+            Invoice invoice = null;
+            string query = "SELECT * FROM Invoice WHERE id=" + id;
+            SQLiteDataReader data = c.query_show(query);
+            while (data.Read())
+            {
+                int invoiceId = Int32.Parse(data[0].ToString()),
+                    nInvoice= Int32.Parse(data[1].ToString()),
+                    nAut = Int32.Parse(data[2].ToString()),
+                    provId = Int32.Parse(data[3].ToString());
+                DateTime date = Util.GetDate(data[5].ToString());
+                Provider provider = providerController.GetProviderById(provId);
+                invoice = new Invoice(provider, nInvoice, nAut, date);
+                List<InvoiceRow> invoiceRows = invoiceRowController.GetAllInvoicesRowByNInvoice(invoiceId);
+                invoice.SetInvoiceRows(invoiceRows);
+            }
+            c.dataClose();
+            data.Close();
+            return invoice;
+        }
+
         public Invoice GetInvoiceByNInvoiceAndProviderId(int nInvoice, int providerId)
         {
             Invoice invoice = null;
@@ -91,14 +111,8 @@ namespace ControllerLibrary
             SQLiteDataReader data = c.query_show(query);
             while (data.Read())
             {
-                int invoiceId = Int32.Parse(data[0].ToString()),
-                    nAut = Int32.Parse(data[2].ToString()),
-                    provId = Int32.Parse(data[3].ToString());
-                DateTime date = GetDate(data[5].ToString());
-                Provider provider = providerController.GetProviderById(provId);
-                invoice = new Invoice(provider, nInvoice, nAut, date);
-                List<InvoiceRow> invoiceRows = invoiceRowController.GetAllInvoicesRowByNInvoice(invoiceId);
-                invoice.SetInvoiceRows(invoiceRows);
+                int invoiceId = Int32.Parse(data[0].ToString());
+                invoice = GetInvoiceById(invoiceId);
             }
             c.dataClose();
             data.Close();
@@ -112,15 +126,8 @@ namespace ControllerLibrary
             SQLiteDataReader data = c.query_show(query);
             while (data.Read())
             {
-                int invoiceId= Int32.Parse(data[0].ToString()),
-                    nInvoice = Int32.Parse(data[1].ToString()),
-                    nAut = Int32.Parse(data[2].ToString()),
-                    provId = Int32.Parse(data[3].ToString());
-                DateTime date = GetDate(data[5].ToString());
-                Provider provider = providerController.GetProviderById(provId);
-                Invoice invoice = new Invoice(provider, nInvoice, nAut, date);
-                List<InvoiceRow> invoiceRows = invoiceRowController.GetAllInvoicesRowByNInvoice(invoiceId);
-                invoice.SetInvoiceRows(invoiceRows);
+                int invoiceId = Int32.Parse(data[0].ToString());
+                Invoice invoice = GetInvoiceById(invoiceId);
                 output.Add(invoice);
             }
             data.Close();
@@ -136,31 +143,13 @@ namespace ControllerLibrary
             SQLiteDataReader data = c.query_show(query);
             while (data.Read())
             {
-                int invoiceId = Int32.Parse(data[0].ToString()),
-                    nInvoice = Int32.Parse(data[1].ToString()),
-                    nAut = Int32.Parse(data[2].ToString()),
-                    provId = Int32.Parse(data[3].ToString());
-                DateTime date = GetDate(data[5].ToString());
-                Provider provider = providerController.GetProviderById(provId);
-                Invoice invoice = new Invoice(provider, nInvoice, nAut, date);
-                List<InvoiceRow> invoiceRows = invoiceRowController.GetAllInvoicesRowByNInvoice(invoiceId);
-                invoice.SetInvoiceRows(invoiceRows);
+                int invoiceId = Int32.Parse(data[0].ToString());
+                Invoice invoice = GetInvoiceById(invoiceId);
                 output.Add(invoice);
             }
             data.Close();
             c.dataClose();
             return output;
-        }
-
-        private DateTime GetDate(String dateString)
-        {
-            DateTime date;
-            string[] dates = dateString.Split('/');
-            int day = Int32.Parse(dates[0])
-                , month= Int32.Parse(dates[1])
-                , year = Int32.Parse(dates[2]);
-            date = new DateTime(year, month, day);
-            return date;
         }
     }
 }
