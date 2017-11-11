@@ -23,9 +23,9 @@ namespace ControllerLibrary
             Provider provider=null;
             while (data.Read())
             {
-                String name = data[1].ToString();
-                int nit = Int32.Parse(data[2].ToString());
-                provider = new Provider(name, nit);
+                String name = data[1].ToString(), 
+                    nit = data[2].ToString();
+                provider = new Provider(id, name, nit);
             }
             c.dataClose();
             data.Close();
@@ -41,9 +41,9 @@ namespace ControllerLibrary
 
         public int InsertProvider(Provider provider)
         {
-            String name = provider.GetName();
-            int nit = provider.GetNit();
-            String query = "INSERT INTO Provider(Provider, NIT) VALUES ('"+name+"',"+nit+")";
+            String name = provider.GetName(),
+                nit = provider.GetNit();
+            String query = "INSERT INTO Provider(name, NIT) VALUES ('"+name+"','"+nit+"')";
             c.executeInsertion(query);
             int idProvider = FindProviderIdByName(name);
             return idProvider;
@@ -56,9 +56,8 @@ namespace ControllerLibrary
             SQLiteDataReader data = c.query_show(query);
             while (data.Read())
             {
-                String name = data[1].ToString();
-                int nit = Int32.Parse(data[2].ToString());
-                Provider provider = new Provider(name, nit);
+                int id = Int32.Parse(data[0].ToString());
+                Provider provider = GetProviderById(id);
                 output.Add(provider);
             }
             data.Close();
@@ -74,6 +73,16 @@ namespace ControllerLibrary
                 InsertProvider(provider);
             }
             return id;
+        }
+
+        public void updateProvider(Provider provider)
+        {
+            String query = "UPDATE Provider SET name='";
+            String name = provider.GetName(),
+            NIT = provider.GetNit() ;
+            int id = provider.GetId();
+            query += name + "', NIT='"+NIT+"' WHERE id='" + id + "'";
+            c.executeInsertion(query);
         }
     }
 
