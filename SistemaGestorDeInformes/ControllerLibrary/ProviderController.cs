@@ -15,7 +15,6 @@ namespace ControllerLibrary
         {
             c.connect();
         }
-
         public Provider GetProviderById(int id)
         {
             String query = "SELECT * FROM Provider WHERE id="+id;
@@ -24,31 +23,30 @@ namespace ControllerLibrary
             while (data.Read())
             {
                 String name = data[1].ToString(), 
-                    nit = data[2].ToString();
-                provider = new Provider(id, name, nit);
+                    nit = data[2].ToString(),
+                    address= data[3].ToString();
+                provider = new Provider(id, name, nit,address);
             }
             c.dataClose();
             data.Close();
             return provider;
         }
-
         public int FindProviderIdByName(String name)
         {
             String query = "SELECT id FROM Provider WHERE name='"+name+"'";
             int idProvider= c.FindAndGetID(query);
             return idProvider;
         }
-
         public int InsertProvider(Provider provider)
         {
             String name = provider.GetName(),
-                nit = provider.GetNit();
-            String query = "INSERT INTO Provider(name, NIT) VALUES ('"+name+"','"+nit+"')";
+                nit = provider.GetNit(),
+                address=provider.GetAddress();
+            String query = "INSERT INTO Provider(name, NIT, address) VALUES ('"+name+"','"+nit+"', '"+address+"')";
             c.executeInsertion(query);
             int idProvider = FindProviderIdByName(name);
             return idProvider;
         }
-
         public List<Provider> GetAllProviders()
         {
             List<Provider> output = new List<Provider>();
@@ -64,7 +62,6 @@ namespace ControllerLibrary
             c.dataClose();
             return output;
         }
-
         public int ForceSearchProvider(Provider provider)
         {
             int id = FindProviderIdByName(provider.GetName());
@@ -74,14 +71,14 @@ namespace ControllerLibrary
             }
             return id;
         }
-
         public void updateProvider(Provider provider)
         {
             String query = "UPDATE Provider SET name='";
             String name = provider.GetName(),
-            NIT = provider.GetNit() ;
+                   NIT = provider.GetNit(),
+                   address=provider.GetAddress();
             int id = provider.GetId();
-            query += name + "', NIT='"+NIT+"' WHERE id=" + id + "";
+            query += name + "', NIT='"+NIT+"', address='"+address+"' WHERE id=" + id;
             c.executeInsertion(query);
         }
     }

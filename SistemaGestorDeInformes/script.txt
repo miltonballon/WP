@@ -18,7 +18,8 @@ CREATE TABLE `Product` (
 CREATE TABLE `Provider` (
 	`id`	INTEGER PRIMARY KEY AUTOINCREMENT,
 	`name`		TEXT,
-	`NIT`		TEXT
+	`NIT`		TEXT,
+	`address`	TEXT
 	
 );
 CREATE TABLE `Contact` (

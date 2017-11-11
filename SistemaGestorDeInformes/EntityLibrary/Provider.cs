@@ -11,6 +11,7 @@ namespace EntityLibrary
         private int id;
         private String name;
         private String nit;
+        private String address;
         private List<Product> products;
 
         public Provider(int id,string name, String nit)
@@ -20,13 +21,28 @@ namespace EntityLibrary
             this.nit = nit;
             products = new List<Product>();
         }
+        public Provider(int id, string name, String nit, String address)
+        {
+            this.id = id;
+            this.name = name;
+            this.nit = nit;
+            this.address = address;
+            products = new List<Product>();
+        }
+
         public Provider(string name, String nit)
         {
             this.name = name;
             this.nit = nit;
             products = new List<Product>();
         }
-
+        public Provider(string name, String nit,String address)
+        {
+            this.name = name;
+            this.nit = nit;
+            this.address = address;
+            products = new List<Product>();
+        }
         public String GetName()
         {
             return name;
@@ -61,9 +77,14 @@ namespace EntityLibrary
             return this.id;
         }
 
-        public void SetString(String nit)
+        public String GetAddress()
         {
-            this.nit = nit;
+            return address;
+        }
+
+        public void SetAddress(String address)
+        {
+            this.address = address;
         }
 
         public override string ToString()
