@@ -8,23 +8,47 @@ namespace EntityLibrary
 {
     public class Provider
     {
+        private int id;
         private String name;
-        private int nit;
+        private String nit;
+        private String address;
         private List<Product> products;
 
-        public Provider(string name, int nit)
+        public Provider(int id,string name, String nit)
+        {
+            this.id = id;
+            this.name = name;
+            this.nit = nit;
+            products = new List<Product>();
+        }
+        public Provider(int id, string name, String nit, String address)
+        {
+            this.id = id;
+            this.name = name;
+            this.nit = nit;
+            this.address = address;
+            products = new List<Product>();
+        }
+
+        public Provider(string name, String nit)
         {
             this.name = name;
             this.nit = nit;
             products = new List<Product>();
         }
-
+        public Provider(string name, String nit,String address)
+        {
+            this.name = name;
+            this.nit = nit;
+            this.address = address;
+            products = new List<Product>();
+        }
         public String GetName()
         {
             return name;
         }
 
-        public int GetNit()
+        public String GetNit()
         {
             return nit;
         }
@@ -39,13 +63,28 @@ namespace EntityLibrary
             this.name = name;
         }
 
-        public void SetNit(int nit)
+        public void SetNit(String nit)
         {
             this.nit = nit;
         }
         public void SetProducts(List<Product> products)
         {
             this.products = products;
+        }
+
+        public int GetId()
+        {
+            return this.id;
+        }
+
+        public String GetAddress()
+        {
+            return address;
+        }
+
+        public void SetAddress(String address)
+        {
+            this.address = address;
         }
 
         public override string ToString()

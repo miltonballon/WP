@@ -18,7 +18,8 @@ CREATE TABLE `Product` (
 CREATE TABLE `Provider` (
 	`id`	INTEGER PRIMARY KEY AUTOINCREMENT,
 	`name`		TEXT,
-	`NIT`		TEXT
+	`NIT`		TEXT,
+	`address`	TEXT
 	
 );
 CREATE TABLE `Contact` (
@@ -134,13 +135,13 @@ INSERT INTO Unit(Type) VALUES ('Lts.');
 INSERT INTO Unit(Type) VALUES ('Kg.');
 INSERT INTO Unit(Type) VALUES ('Lata');
 
-INSERT INTO Provider(Provider, NIT) VALUES ('HiperMaxi',123);
-INSERT INTO Provider(Provider, NIT) VALUES ('FarmaCorp',456);
+INSERT INTO Provider(name, NIT) VALUES ('HiperMaxi',123);
+INSERT INTO Provider(name, NIT) VALUES ('FarmaCorp',456);
 
-INSERT INTO Product_Provider_Unit(id_prod, id_prov, id_uni) VALUES (1, 1, 1);
-INSERT INTO Product_Provider_Unit(id_prod, id_prov, id_uni) VALUES (2, 1, 2);
-INSERT INTO Product_Provider_Unit(id_prod, id_prov, id_uni) VALUES (3, 1, 3);
-INSERT INTO Product_Provider_Unit(id_prod, id_prov, id_uni) VALUES (4, 1, 3);
-INSERT INTO Product_Provider_Unit(id_prod, id_prov, id_uni) VALUES (5, 2, 4);
+INSERT INTO Product_Provider_Unit(id_product, id_provider, id_unit) VALUES (1, 1, 1);
+INSERT INTO Product_Provider_Unit(id_product, id_provider, id_unit) VALUES (2, 1, 2);
+INSERT INTO Product_Provider_Unit(id_product, id_provider, id_unit) VALUES (3, 1, 3);
+INSERT INTO Product_Provider_Unit(id_product, id_provider, id_unit) VALUES (4, 1, 3);
+INSERT INTO Product_Provider_Unit(id_product, id_provider, id_unit) VALUES (5, 2, 4);
 
 INSERT INTO trimester(open, name) VALUES (1, 'III 2017');

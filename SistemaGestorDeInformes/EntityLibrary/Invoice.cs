@@ -9,14 +9,14 @@ namespace EntityLibrary
     public class Invoice
     {
         private int id;
-        private int nInvoice;
-        private int nAutorization;
+        private String nInvoice;
+        private String nAutorization;
         private DateTime date;
         private List<InvoiceRow> InvoiceRows;
         private Provider provider;
         private double total;
 
-        public Invoice(Provider provider, int nInvoice, int nAutorization, DateTime date)
+        public Invoice(Provider provider, String nInvoice, String nAutorization, DateTime date)
         {
             this.provider = provider;
             this.nInvoice = nInvoice;
@@ -25,7 +25,7 @@ namespace EntityLibrary
             InvoiceRows = new List<InvoiceRow>();
         }
 
-        public Invoice(int id,Provider provider, int nInvoice, int nAutorization, DateTime date)
+        public Invoice(int id,Provider provider, String nInvoice, String nAutorization, DateTime date)
         {
             this.id = id;
             this.provider = provider;
@@ -40,12 +40,12 @@ namespace EntityLibrary
             this.provider = provider;
         }
 
-        public void SetNInvoice(int nInvoice_1)
+        public void SetNInvoice(String nInvoice_1)
         {
             nInvoice = nInvoice_1;
         }
 
-        public void SetNAutorization(int nAutorization_1)
+        public void SetNAutorization(String nAutorization_1)
         {
             nAutorization = nAutorization_1;
         }
@@ -60,12 +60,12 @@ namespace EntityLibrary
             return provider;
         }
 
-        public int GetNInvoice()
+        public String GetNInvoice()
         {
             return nInvoice;
         }
 
-        public int GetNAutorization()
+        public String GetNAutorization()
         {
             return nAutorization;
         }

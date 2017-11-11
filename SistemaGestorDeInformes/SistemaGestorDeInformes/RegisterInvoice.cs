@@ -250,9 +250,9 @@ namespace SistemaGestorDeInformes
 
         private void modifyInvoice()
         {
-            int nInvoice = Int32.Parse(textBoxNFactura.Text),
-                nAutorization = Int32.Parse(textBoxNAutorizacion.Text),
-                id=invoiceController.GetInvoiceIdByObjectInvoice(invoice);
+            String nInvoice = textBoxNFactura.Text,
+                nAutorization = textBoxNAutorizacion.Text;
+            int id=invoiceController.GetInvoiceIdByObjectInvoice(invoice);
             DateTime date = dateFecha.Value;
             invoice.SetNInvoice(nInvoice);
             invoice.SetNAutorization(nAutorization);
@@ -306,14 +306,14 @@ namespace SistemaGestorDeInformes
         private void newProvider()
         {
             String name = textBoxProveedor.Text;
-            int nit = Int32.Parse(textBoxNit.Text);
+            String nit = textBoxNit.Text;
             provider = new Provider(name, nit);
         }
 
         private Invoice createInvoice()
         {
-            int nInvoice = Int32.Parse(textBoxNFactura.Text),
-                nAutorization = Int32.Parse(textBoxNAutorizacion.Text);
+            String nInvoice = textBoxNFactura.Text,
+                nAutorization = textBoxNAutorizacion.Text;
             DateTime date = dateFecha.Value;
             invoice = new Invoice(provider, nInvoice, nAutorization, date);
             return invoice;
