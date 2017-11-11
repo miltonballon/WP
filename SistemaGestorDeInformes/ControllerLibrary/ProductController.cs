@@ -44,7 +44,7 @@ namespace ControllerLibrary
         public int insertProductAndGetId(Product product)
         {
             string nameQuery = "select id FROM Product where Name = " + "'" + product.Name.ToString() + "'";
-            string providerQuery = "select id FROM Provider where Provider = " + "'" + product.Provider.ToString() + "'";
+            string providerQuery = "select id FROM Provider where name = '" + product.Provider.ToString() + "'";
             string unitQuery = "select id FROM Unit where Type = " + "'" + product.Unit.ToString() + "'";
             int idProd = c.FindAndGetID(nameQuery)
                 , idProv = c.FindAndGetID(providerQuery)
@@ -62,7 +62,7 @@ namespace ControllerLibrary
         public int searchProduct(Product product)
         {
             string nameQuery = "select id FROM Product where Name = " + "'" + product.Name + "'";
-            string providerQuery = "select id FROM Provider where Provider = " + "'" + product.Provider+ "'";
+            string providerQuery = "select id FROM Provider where name ='" + product.Provider+ "'";
             string unitQuery = "select id FROM Unit where Type = " + "'" + product.Unit + "'";
             int idProd = getIdName(product)
                 , idProv = c.FindAndGetID(providerQuery)
@@ -78,7 +78,7 @@ namespace ControllerLibrary
         private int searchPPU(int idProd, int idProv, int idUni)
         {
             String query = "SELECT id FROM Product_Provider_Unit WHERE "
-                + "id_prod=" + idProd + " and id_prov=" + idProv + " and id_uni=" + idUni + "";
+                + "id_product=" + idProd + " and id_provider=" + idProv + " and id_unit=" + idUni + "";
             return c.FindAndGetID(query);
         }
 
@@ -91,7 +91,7 @@ namespace ControllerLibrary
         public List<Product> showProducts()
         {
             List<Product> products = new List<Product>();
-            string query = "select name, Provider, Type, clasification FROM Product AS PROD, Provider AS PRO, Unit AS Un, Product_Provider_Unit AS PPU WHERE PROD.id = PPU.Id_prod AND PRO.id= PPU.id_prov AND Un.id= PPU.id_uni";
+            string query = "select name, name, Type, clasification FROM Product AS PROD, Provider AS PRO, Unit AS Un, Product_Provider_Unit AS PPU WHERE PROD.id = PPU.Id_product AND PRO.id= PPU.id_provider AND Un.id= PPU.id_unit";
             SQLiteDataReader data = c.query_show(query);
             SQLiteDataReader data2 = c.query_show(query);
             while (data.Read())
@@ -108,7 +108,7 @@ namespace ControllerLibrary
         public List<Product> showAllProductsByProvider(String providersName)
         {
             List<Product> products = new List<Product>();
-            string query = "select name, Provider, Type, clasification FROM Product AS PROD, Provider AS PRO, Unit AS Un, Product_Provider_Unit AS PPU WHERE PROD.id = PPU.Id_prod AND PRO.id= PPU.id_prov AND Un.id= PPU.id_uni";
+            string query = "select name, name, Type, clasification FROM Product AS PROD, Provider AS PRO, Unit AS Un, Product_Provider_Unit AS PPU WHERE PROD.id = PPU.Id_product AND PRO.id= PPU.id_provider AND Un.id= PPU.id_unit";
             SQLiteDataReader data = c.query_show(query);
             while (data.Read())
             {
@@ -161,7 +161,7 @@ namespace ControllerLibrary
         public List<Product> searchProduct(string name)
         {
             List<Product> products = new List<Product>();
-            string query = "select name, Provider, Type, clasification FROM Product AS PROD, Provider AS PRO, Unit AS Un, Product_Provider_Unit AS PPU WHERE PROD.id = PPU.Id_prod AND PRO.id= PPU.id_prov AND Un.id= PPU.id_uni and UPPER (PROD.name)= UPPER(" + "'" + name + "')";
+            string query = "select name, name, Type, clasification FROM Product AS PROD, Provider AS PRO, Unit AS Un, Product_Provider_Unit AS PPU WHERE PROD.id = PPU.Id_product AND PRO.id= PPU.id_provider AND Un.id= PPU.id_unit and UPPER (PROD.name)= UPPER(" + "'" + name + "')";
             SQLiteDataReader data = c.query_show(query);
             while (data.Read())
             {
@@ -210,7 +210,7 @@ namespace ControllerLibrary
         }
         public int getIdProvider(string provider)
         {
-            string ProviderQuery = "select id FROM Provider where Provider = " + "'" + provider + "'";
+            string ProviderQuery = "select id FROM Provider where name = " + "'" + provider + "'";
             return c.FindAndGetID(ProviderQuery);
         }
         public int getIdUnit(string unit)
@@ -226,7 +226,7 @@ namespace ControllerLibrary
         }
         public void InsertProvider(string provider)
         {
-            string query = "insert into Provider (Provider) values('" + provider + "')";
+            string query = "insert into Provider (name) values('" + provider + "')";
             c.executeInsertion(query);
         }
         public void InsertUnit(string unit)
@@ -236,13 +236,13 @@ namespace ControllerLibrary
         }
         public void InsertProduct_Provider_Unit(int IDProduct ,int IDProvider,int IDUnit)
         {
-            string query = "insert into Product_Provider_Unit (Id_prod,id_prov,id_uni) values('" + IDProduct + "','" + IDProvider + "','" + IDUnit + "')";
+            string query = "insert into Product_Provider_Unit (Id_product,id_provider,id_unit) values('" + IDProduct + "','" + IDProvider + "','" + IDUnit + "')";
             c.executeInsertion(query);
         }
         public void DeleteProduct_Provider_Unit(int IDProduct, int IDProvider, int IDUnit)
         {
             
-            string query = "delete from Product_Provider_Unit where Id_prod='" + IDProduct + "' and id_prov='" + IDProvider + "' and id_uni='" + IDUnit + "'";
+            string query = "delete from Product_Provider_Unit where Id_product='" + IDProduct + "' and id_provider='" + IDProvider + "' and id_unit='" + IDUnit + "'";
            
             c.executeInsertion(query);
         }
