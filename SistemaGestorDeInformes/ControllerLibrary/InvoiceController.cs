@@ -30,21 +30,21 @@ namespace ControllerLibrary
             Trimester trimester = trimesterController.GetLastTrimester();
             if (trimester != null)
             {
-                int nInvoice = invoice.GetNInvoice(),
-                nAutorization = invoice.GetNAutorization(),
-                idProvider = providerController.ForceSearchProvider(invoice.GetProvider()),
+                String nInvoice = invoice.GetNInvoice(),
+                nAutorization = invoice.GetNAutorization();
+                int idProvider = providerController.ForceSearchProvider(invoice.GetProvider()),
                 idTrimester = trimester.GetId();
                 DateTime date = invoice.GetDate();
-                String query = "INSERT INTO Invoice(n_invoice, n_autorization, id_provider, date, id_trimester) VALUES (";
-                query += nInvoice + ", ";
-                query += nAutorization + ", ";
-                query += idProvider + ", ";
+                String query = "INSERT INTO Invoice(n_invoice, n_autorization, id_provider, date, id_trimester) VALUES ('";
+                query += nInvoice + "', '";
+                query += nAutorization + "', ";
+                query += idProvider + ", '";
                 query += date.ToString("dd/MM/yyyy") + "',";
                 query += idTrimester + ")";
                 try
                 {
                     c.executeInsertion(query);
-                    int id = c.FindAndGetID("select id FROM Invoice where n_invoice = " + nInvoice + " AND id_provider=" + idProvider);
+                    int id = c.FindAndGetID("select id FROM Invoice where n_invoice = '" + nInvoice + "' AND id_provider=" + idProvider);
                     output = invoiceRowController.RegisterInvoicesRows(invoice, id);
                 }
                 catch (Exception)
@@ -62,11 +62,11 @@ namespace ControllerLibrary
         public void UpdateInvoice(Invoice invoice,int id)
         {
             Provider provider = invoice.GetProvider();
-            int nInvoice = invoice.GetNInvoice(),
-                nAutorization = invoice.GetNAutorization(),
-                idProvider = providerController.ForceSearchProvider(provider);
+            String nInvoice = invoice.GetNInvoice(),
+                nAutorization = invoice.GetNAutorization();
+            int idProvider = providerController.ForceSearchProvider(provider);
             String date = invoice.GetDate().ToShortDateString();
-            String query = "UPDATE Invoice SET n_invoice="+nInvoice+", n_autorization="+nAutorization+", id_provider="+idProvider+", date='"+date+"' WHERE id="+id;
+            String query = "UPDATE Invoice SET n_invoice='"+nInvoice+"', n_autorization='"+nAutorization+"', id_provider="+idProvider+", date='"+date+"' WHERE id="+id;
             c.executeInsertion(query);
             invoiceRowController.UpdateAllRowsOrInsert(invoice.GetInvoiceRows(),GetInvoiceIdByObjectInvoice(invoice));
         }
@@ -74,9 +74,9 @@ namespace ControllerLibrary
         public int GetInvoiceIdByObjectInvoice(Invoice invoice)
         {
             int id = 0;
-            int nInvoice = invoice.GetNInvoice(),
-                providerId= providerController.ForceSearchProvider(invoice.GetProvider());
-            String query = "SELECT id FROM Invoice WHERE n_invoice="+nInvoice+" AND id_provider="+providerId;
+            String nInvoice = invoice.GetNInvoice();
+            int providerId= providerController.ForceSearchProvider(invoice.GetProvider());
+            String query = "SELECT id FROM Invoice WHERE n_invoice='"+nInvoice+"' AND id_provider="+providerId;
             id = c.FindAndGetID(query);
             c.dataClose();
             return id;
@@ -89,9 +89,9 @@ namespace ControllerLibrary
             SQLiteDataReader data = c.query_show(query);
             while (data.Read())
             {
+                String nAut = data[2].ToString(),
+                    nInvoice = data[1].ToString();
                 int invoiceId = Int32.Parse(data[0].ToString()),
-                    nInvoice= Int32.Parse(data[1].ToString()),
-                    nAut = Int32.Parse(data[2].ToString()),
                     provId = Int32.Parse(data[3].ToString());
                 DateTime date = Util.GetDate(data[5].ToString());
                 Provider provider = providerController.GetProviderById(provId);
