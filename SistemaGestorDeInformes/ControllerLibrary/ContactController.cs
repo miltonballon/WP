@@ -50,5 +50,14 @@ namespace ControllerLibrary
             c.dataClose();
             return contact;
         }
+
+        public void UpdateContact(Contact contact)
+        {
+            int id = contact.Id;
+            String name=contact.Name, 
+                   lastName=contact.Lastname, 
+                   phone=contact.Phone;
+            String query = "UPDATE Contact SET name='"+name+"', last_name='"+lastName+"', phone='"+phone+"' WHERE id="+id;
+        }
     }
 }
