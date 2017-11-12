@@ -28,6 +28,7 @@ namespace ControllerLibrary
             String name = trimester.GetName(),
                    initialDate =trimester.InitialDate.ToString("dd/MM/yyyy"),
                    endDate = trimester.EndDate.ToString("dd/MM/yyyy");
+
             SQLiteCommand command = new SQLiteCommand(query,connectionString);
             command.Parameters.Add("@open",DbType.Int32);
             command.Parameters.Add("@name",DbType.String);
@@ -37,6 +38,7 @@ namespace ControllerLibrary
             command.Parameters["@name"].Value = name;
             command.Parameters["@initial"].Value = initialDate;
             command.Parameters["@end"].Value = endDate;
+
             c.executeInsertion(command);
         }
 
@@ -105,11 +107,13 @@ namespace ControllerLibrary
             String query = "UPDATE trimester SET open = @open WHERE id = @ID";
             int bit = trimester.IsOpen() ? 1 : 0;
             int id = trimester.GetId();
+
             SQLiteCommand command = new SQLiteCommand(query, connectionString);
             command.Parameters.Add("@ID", DbType.Int32);
             command.Parameters.Add("@open", DbType.Int32);
             command.Parameters["@ID"].Value = id;
             command.Parameters["@open"].Value = bit;
+
             c.executeInsertion(command);
         }
 
