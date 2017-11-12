@@ -129,7 +129,7 @@ namespace ControllerLibrary
                     nInvoice = data[1].ToString();
                 int invoiceId = Int32.Parse(data[0].ToString()),
                     provId = Int32.Parse(data[3].ToString());
-                DateTime date = Util.GetDate(data[5].ToString());
+                DateTime date = Util.GetDate(data[4].ToString());
                 Provider provider = providerController.GetProviderById(provId);
                 invoice = new Invoice(provider, nInvoice, nAut, date);
                 List<InvoiceRow> invoiceRows = invoiceRowController.GetAllInvoicesRowByNInvoice(invoiceId);

@@ -37,7 +37,7 @@ namespace ControllerLibrary
             int idprod=getIdName(product);
             int idprov=getIdProvider(product.Provider);
             int idunit=getIdUnit(product.Unit);
-            string queryInsertion = "UPDATE Product_Provider_Unit SET id_prod="+idprod+",id_prov="+idprov+",id_uni="+idunit+" WHERE id="+id;
+            string queryInsertion = "UPDATE Product_Provider_Unit SET id_product="+idprod+",id_provider="+idprov+",id_unit="+idunit+" WHERE id="+id;
             c.executeInsertion(queryInsertion);
             
         }
@@ -91,7 +91,7 @@ namespace ControllerLibrary
         public List<Product> showProducts()
         {
             List<Product> products = new List<Product>();
-            string query = "select name, name, Type, clasification FROM Product AS PROD, Provider AS PRO, Unit AS Un, Product_Provider_Unit AS PPU WHERE PROD.id = PPU.Id_product AND PRO.id= PPU.id_provider AND Un.id= PPU.id_unit";
+            string query = "select PROD.name, PRO.name, Type, clasification FROM Product AS PROD, Provider AS PRO, Unit AS Un, Product_Provider_Unit AS PPU WHERE PROD.id = PPU.Id_product AND PRO.id= PPU.id_provider AND Un.id= PPU.id_unit";
             SQLiteDataReader data = c.query_show(query);
             SQLiteDataReader data2 = c.query_show(query);
             while (data.Read())
@@ -108,7 +108,7 @@ namespace ControllerLibrary
         public List<Product> showAllProductsByProvider(String providersName)
         {
             List<Product> products = new List<Product>();
-            string query = "select name, name, Type, clasification FROM Product AS PROD, Provider AS PRO, Unit AS Un, Product_Provider_Unit AS PPU WHERE PROD.id = PPU.Id_product AND PRO.id= PPU.id_provider AND Un.id= PPU.id_unit";
+            string query = "select PROD.name, PRO.name, Type, clasification FROM Product AS PROD, Provider AS PRO, Unit AS Un, Product_Provider_Unit AS PPU WHERE PROD.id = PPU.Id_product AND PRO.id= PPU.id_provider AND Un.id= PPU.id_unit";
             SQLiteDataReader data = c.query_show(query);
             while (data.Read())
             {
@@ -161,7 +161,7 @@ namespace ControllerLibrary
         public List<Product> searchProduct(string name)
         {
             List<Product> products = new List<Product>();
-            string query = "select name, name, Type, clasification FROM Product AS PROD, Provider AS PRO, Unit AS Un, Product_Provider_Unit AS PPU WHERE PROD.id = PPU.Id_product AND PRO.id= PPU.id_provider AND Un.id= PPU.id_unit and UPPER (PROD.name)= UPPER(" + "'" + name + "')";
+            string query = "select PROD.name, PRO.name, Type, clasification FROM Product AS PROD, Provider AS PRO, Unit AS Un, Product_Provider_Unit AS PPU WHERE PROD.id = PPU.Id_product AND PRO.id= PPU.id_provider AND Un.id= PPU.id_unit and UPPER (PROD.name)= UPPER(" + "'" + name + "')";
             SQLiteDataReader data = c.query_show(query);
             while (data.Read())
             {

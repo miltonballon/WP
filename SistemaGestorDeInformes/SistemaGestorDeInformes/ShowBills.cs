@@ -108,6 +108,7 @@ namespace SistemaGestorDeInformes
         private void chargeData()
         {
             List<Invoice> invoices = invoiceController.GetAllInvoices();
+            
             foreach (Invoice invoice in invoices)
             {
                 String nInvo = invoice.GetNInvoice() + "",
