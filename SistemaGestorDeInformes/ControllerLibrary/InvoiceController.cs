@@ -77,7 +77,7 @@ namespace ControllerLibrary
                 nAutorization = invoice.GetNAutorization();
             int idProvider = providerController.ForceSearchProvider(provider);
             String date = invoice.GetDate().ToString("dd/MM/yyyy");
-            String query = "UPDATE Invoice SET n_invoice = @nInvoice, n_autorization = @nAuto, id_provider = @IDProv, date = @date' WHERE id = @ID";
+            String query = "UPDATE Invoice SET n_invoice = @nInvoice, n_autorization = @nAuto, id_provider = @IDProv, date = @date WHERE id = @ID";
 
             SQLiteCommand command = new SQLiteCommand(query, connectionString);
             command.Parameters.Add("@nInvoice", DbType.String);
