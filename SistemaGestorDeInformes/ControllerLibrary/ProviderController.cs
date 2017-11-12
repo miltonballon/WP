@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Data.SQLite;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,15 +12,20 @@ namespace ControllerLibrary
     public class ProviderController
     {
         private Connection c;
+        private SQLiteConnection connectionString;
         public ProviderController()
         {
             c = new Connection();
             c.connect();
+            connectionString = c.ConnectionString;
         }
         public Provider GetProviderById(int id)
         {
-            String query = "SELECT * FROM Provider WHERE id="+id;
-            SQLiteDataReader data=c.query_show(query);
+            String query = "SELECT * FROM Provider WHERE id = @ID";
+            SQLiteCommand command = new SQLiteCommand(query, connectionString);
+            command.Parameters.Add("@ID", DbType.Int32);
+            command.Parameters["@ID"].Value = id;
+            SQLiteDataReader data=c.query_show(command);
             Provider provider=null;
             while (data.Read())
             {
@@ -34,8 +40,11 @@ namespace ControllerLibrary
         }
         public int FindProviderIdByName(String name)
         {
-            String query = "SELECT id FROM Provider WHERE name='"+name+"'";
-            int idProvider= c.FindAndGetID(query);
+            String query = "SELECT id FROM Provider WHERE name = @name";
+            SQLiteCommand command = new SQLiteCommand(query, connectionString);
+            command.Parameters.Add("@name", DbType.String);
+            command.Parameters["@name"].Value = name;
+            int idProvider= c.FindAndGetID(command);
             return idProvider;
         }
         public int InsertProvider(Provider provider)
@@ -43,8 +52,17 @@ namespace ControllerLibrary
             String name = provider.GetName(),
                 nit = provider.GetNit(),
                 address=provider.GetAddress();
-            String query = "INSERT INTO Provider(name, NIT, address) VALUES ('"+name+"','"+nit+"', '"+address+"')";
-            c.executeInsertion(query);
+            String query = "INSERT INTO Provider(name, NIT, address) VALUES (@name, @NIT, @address)";
+
+            SQLiteCommand command = new SQLiteCommand(query, connectionString);
+            command.Parameters.Add("@name", DbType.String);
+            command.Parameters.Add("@NIT", DbType.String);
+            command.Parameters.Add("@address", DbType.String);
+            command.Parameters["@name"].Value = name;
+            command.Parameters["@NIT"].Value = nit;
+            command.Parameters["@address"].Value = address;
+
+            c.executeInsertion(command);
             int idProvider = FindProviderIdByName(name);
             return idProvider;
         }
@@ -74,13 +92,23 @@ namespace ControllerLibrary
         }
         public void updateProvider(Provider provider)
         {
-            String query = "UPDATE Provider SET name='";
+            String query = "UPDATE Provider SET name=@name, NIT=@NIT, address=@address WHERE id=@ID";
             String name = provider.GetName(),
-                   NIT = provider.GetNit(),
+                   nit = provider.GetNit(),
                    address=provider.GetAddress();
             int id = provider.GetId();
-            query += name + "', NIT='"+NIT+"', address='"+address+"' WHERE id=" + id;
-            c.executeInsertion(query);
+
+            SQLiteCommand command = new SQLiteCommand(query, connectionString);
+            command.Parameters.Add("@name", DbType.String);
+            command.Parameters.Add("@NIT", DbType.String);
+            command.Parameters.Add("@address", DbType.String);
+            command.Parameters.Add("@ID", DbType.Int32);
+            command.Parameters["@name"].Value = name;
+            command.Parameters["@NIT"].Value = nit;
+            command.Parameters["@address"].Value = address;
+            command.Parameters["@ID"].Value = id;
+
+            c.executeInsertion(command);
         }
     }
 }

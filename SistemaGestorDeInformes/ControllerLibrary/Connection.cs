@@ -39,7 +39,7 @@ namespace ControllerLibrary
             }
             
         }
-        public int FindAndGetIDCom(SQLiteCommand command)
+        public int FindAndGetID(SQLiteCommand command)
         {
             int answer = -1;
             query_show(command);  
