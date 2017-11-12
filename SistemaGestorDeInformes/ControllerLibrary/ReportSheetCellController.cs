@@ -5,16 +5,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SQLite;
 using EntityLibrary;
+using System.Data;
 
 namespace ControllerLibrary
 {
     class ReportSheetCellController
     {
         private Connection c;
+        private SQLiteConnection connectionString;
         public ReportSheetCellController()
         {
             c = new Connection();
             c.connect();
+            connectionString = c.ConnectionString;
         }
 
         public int InsertReportSheetCell(ReportSheetCell reportSheetCell, int idReporSheet)
@@ -23,16 +26,37 @@ namespace ControllerLibrary
                 column = reportSheetCell.Column;
             String content = reportSheetCell.Content,
                    styles=reportSheetCell.Styles;
-            String query = "INSERT INTO Report_sheet_cell(id_report_sheet, row, column, content, styles) VALUES("
-                +idReporSheet+", "+row+", "+column+" ,'"+content+"','"+styles+"')";
-            c.executeInsertion(query);
+            String query = "INSERT INTO Report_sheet_cell(id_report_sheet, row, column, content, styles) VALUES(@IDReportSheet, @row, @column, @content, @styles)";
+
+            SQLiteCommand command = new SQLiteCommand(query, connectionString);
+            command.Parameters.Add("@IDReportSheet",DbType.Int32);
+            command.Parameters.Add("@row",DbType.Int32);
+            command.Parameters.Add("@column", DbType.Int32);
+            command.Parameters.Add("@content", DbType.String);
+            command.Parameters.Add("@styles", DbType.String);
+            command.Parameters["@IDReportSheet"].Value = idReporSheet;
+            command.Parameters["@row"].Value = row;
+            command.Parameters["@column"].Value = column;
+            command.Parameters["@content"].Value = content;
+            command.Parameters["@styles"].Value = styles;
+
+            c.executeInsertion(command);
             return GetIdByUniqueFields(idReporSheet,row,column);
         }
 
         public int GetIdByUniqueFields(int idReporSheet, int row, int column)
         {
-            String query = "SELECT id FROM Report_sheet_cell WHERE id_report_sheet="+idReporSheet+" AND row="+row+" AND column="+column;
-            return c.FindAndGetID(query);
+            String query = "SELECT id FROM Report_sheet_cell WHERE id_report_sheet = @IDReportSheet AND row = @row AND column = @column";
+
+            SQLiteCommand command = new SQLiteCommand(query, connectionString);
+            command.Parameters.Add("@IDReportSheet", DbType.Int32);
+            command.Parameters.Add("@row", DbType.Int32);
+            command.Parameters.Add("@column", DbType.Int32);
+            command.Parameters["@IDReportSheet"].Value = idReporSheet;
+            command.Parameters["@row"].Value = row;
+            command.Parameters["@column"].Value = column;
+
+            return c.FindAndGetID(command);
         }
 
         public void InsertAllReportSheetsCells(ReportSheet reportSheet)
@@ -48,8 +72,13 @@ namespace ControllerLibrary
         public ReportSheetCell GetReportSheetCellById(int id)
         {
             ReportSheetCell reportSheetCell = null;
-            String query = "SELECT * FROM Report_sheet_cell WHERE id=" + id;
-            SQLiteDataReader data=c.query_show(query);
+            String query = "SELECT * FROM Report_sheet_cell WHERE id = @ID";
+
+            SQLiteCommand command = new SQLiteCommand(query, connectionString);
+            command.Parameters.Add("@ID", DbType.Int32);
+            command.Parameters["@ID"].Value = id;
+
+            SQLiteDataReader data=c.query_show(command);
             if (data.Read())
             {
                 int row=Int32.Parse(data[2].ToString()), 
@@ -66,8 +95,13 @@ namespace ControllerLibrary
         public List<ReportSheetCell> GetAllReportSheetsCellsByReportSheetId(int reportSheetId)
         {
             List<ReportSheetCell> reportSheetsCells = new List<ReportSheetCell>();
-            String query = "SELECT * FROM Report_sheet_cell WHERE id_report_sheet=" + reportSheetId;
-            SQLiteDataReader data = c.query_show(query);
+            String query = "SELECT * FROM Report_sheet_cell WHERE id_report_sheet = @IDReportSheet";
+
+            SQLiteCommand command = new SQLiteCommand(query, connectionString);
+            command.Parameters.Add("@IDReportSheet", DbType.Int32);
+            command.Parameters["@IDReportSheet"].Value = reportSheetId;
+
+            SQLiteDataReader data = c.query_show(command);
             if (data.Read())
             {
                 int id = Int32.Parse(data[0].ToString());

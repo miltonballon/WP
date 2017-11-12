@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using EntityLibrary;
 using System.Data.SQLite;
+using System.Data;
 
 namespace ControllerLibrary
 {
@@ -14,6 +15,7 @@ namespace ControllerLibrary
         private ReportSheetCellController reportSheetCellController;
         private InvoiceController invoiceController;
         private TrimesterController trimesterController;
+        private SQLiteConnection connectionString;
         public ReportSheetController()
         {
             c = new Connection();
@@ -21,14 +23,24 @@ namespace ControllerLibrary
             reportSheetCellController = new ReportSheetCellController();
             invoiceController = new InvoiceController();
             trimesterController = new TrimesterController();
+            connectionString = c.ConnectionString;
         }
 
         public int InsertReportSheet(ReportSheet reportSheet, int idReport)
         {
             String type = reportSheet.Type,
                    tittle=reportSheet.Tittle;
-            String query = "INSERT INTO Report_sheet(id_report, type, tittle) VALUES("+idReport+", '"+type+"','"+tittle+"')";
-            c.executeInsertion(query);
+            String query = "INSERT INTO Report_sheet(id_report, type, tittle) VALUES(@IDReport, @type, @tittle)";
+
+            SQLiteCommand command = new SQLiteCommand(query, connectionString);
+            command.Parameters.Add("@IDReport", DbType.Int32);
+            command.Parameters.Add("@type", DbType.String);
+            command.Parameters.Add("@tittle", DbType.String);
+            command.Parameters["@IdReport"].Value = idReport;
+            command.Parameters["@type"].Value = type;
+            command.Parameters["@tittle"].Value = tittle;
+
+            c.executeInsertion(command);
             int id= GetIdByUniqueFields(idReport, type);
             reportSheet.Id = id;
             reportSheetCellController.InsertAllReportSheetsCells(reportSheet);
@@ -37,8 +49,15 @@ namespace ControllerLibrary
 
         public int GetIdByUniqueFields(int idReport, String type)
         {
-            String query = "SELECT id FROM Report_sheet WHERE id_report=" + idReport + " AND type='" + type+"'";
-            return c.FindAndGetID(query);
+            String query = "SELECT id FROM Report_sheet WHERE id_report=@IDReport AND type=@type";
+
+            SQLiteCommand command = new SQLiteCommand(query, connectionString);
+            command.Parameters.Add("@type", DbType.String);
+            command.Parameters.Add("@IDReport", DbType.Int32);
+            command.Parameters["@IDReport"].Value = idReport;
+            command.Parameters["@type"].Value = type;
+
+            return c.FindAndGetID(command);
         }
 
         public void InsertAllReportSheets(Report report)
@@ -54,8 +73,13 @@ namespace ControllerLibrary
         public ReportSheet GetReportSheetById(int id)
         {
             ReportSheet reportSheet = null;
-            String query = "SELECT * FROM Report_sheet WHERE id=" + id;
-            SQLiteDataReader data = c.query_show(query);
+            String query = "SELECT * FROM Report_sheet WHERE id=@ID";
+
+            SQLiteCommand command = new SQLiteCommand(query, connectionString);
+            command.Parameters.Add("@ID", DbType.Int32);
+            command.Parameters["@ID"].Value = id;
+
+            SQLiteDataReader data = c.query_show(command);
             if (data.Read())
             {
                 String type = data[2].ToString(),
@@ -71,8 +95,13 @@ namespace ControllerLibrary
         public List<ReportSheet> GetAllReportSheetsByReportId(int reportId)
         {
             List<ReportSheet> reportSheets = new List<ReportSheet>();
-            String query = "SELECT * FROM Report_sheet WHERE id_report=" + reportId;
-            SQLiteDataReader data = c.query_show(query);
+            String query = "SELECT * FROM Report_sheet WHERE id_report = @IDReport";
+
+            SQLiteCommand command = new SQLiteCommand(query, connectionString);
+            command.Parameters.Add("@IDReport", DbType.Int32);
+            command.Parameters["@IDReport"].Value = reportId;
+
+            SQLiteDataReader data = c.query_show(command);
             if (data.Read())
             {
                 int id = Int32.Parse(data[0].ToString());

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using EntityLibrary;
 using System.Data.SQLite;
+using System.Data;
 
 namespace ControllerLibrary
 {
@@ -13,12 +14,14 @@ namespace ControllerLibrary
         private ProviderController providerController;
         private ProductController productController;
         private Connection c;
+        private SQLiteConnection connectionString;
         public InvoiceRowController()
         {
             c = new Connection();
             c.connect();
             providerController = new ProviderController();
             productController = new ProductController();
+            connectionString = c.ConnectionString;
         }
 
         public int RegisterInvoicesRows(Invoice invoice, int invoiceId)
@@ -38,22 +41,35 @@ namespace ControllerLibrary
                 , unitPrice = row.GetUnitPrice() + ""
                 , total = row.GetTotal() + "";
             int idPpu = productController.insertProductAndGetId(row.GetProduct());
-            String queryInsertion = "INSERT INTO invoice_row (id_invoice, id_ppu, quantity, unit_price, total) VALUES(";
-            queryInsertion += invoiceId + ", ";
-            queryInsertion += idPpu + ", ";
-            queryInsertion += "'" + quantity + "', ";
-            queryInsertion += "'" + unitPrice + "', ";
-            queryInsertion += "'" + total + "')";
-            c.executeInsertion(queryInsertion);
+            String query = "INSERT INTO invoice_row (id_invoice, id_ppu, quantity, unit_price, total) VALUES(@IDInvoice, @IDPpu, @quantity, @unit_price, @total)";
+
+            SQLiteCommand command = new SQLiteCommand(query, connectionString);
+            command.Parameters.Add("@IDInvoice", DbType.Int32);
+            command.Parameters.Add("@IDPpu", DbType.Int32);
+            command.Parameters.Add("@quantity", DbType.String);
+            command.Parameters.Add("@unit_price", DbType.String);
+            command.Parameters.Add("@total", DbType.String);
+            command.Parameters["@IDInvoice"].Value = invoiceId;
+            command.Parameters["@IDPpu"].Value = idPpu;
+            command.Parameters["@quantity"].Value = quantity;
+            command.Parameters["@unit_price"].Value = unitPrice;
+            command.Parameters["@total"].Value = total;
+
+            c.executeInsertion(command);
         }
 
         public List<InvoiceRow> GetAllInvoicesRowByNInvoice(int idInvoice)
         {
             List<InvoiceRow> output = new List<InvoiceRow>();
-            string query = "SELECT * FROM invoice_row WHERE id_invoice=" + idInvoice;
+            string query = "SELECT * FROM invoice_row WHERE id_invoice = @IDInvoice";
+
+            SQLiteCommand command = new SQLiteCommand(query, connectionString);
+            command.Parameters.Add("@IDInvoice", DbType.Int32);
+            command.Parameters["@IDInvoice"].Value = idInvoice;
+
             try
             {
-                SQLiteDataReader data = c.query_show(query);
+                SQLiteDataReader data = c.query_show(command);
                 while (data.Read())
                 {
                     int ppuId = Int32.Parse(data[2].ToString()),
@@ -95,8 +111,21 @@ namespace ControllerLibrary
                 , total = row.GetTotal() + "";
             int idPpu = productController.insertProductAndGetId(row.GetProduct()),
                 id=row.GetId();
-            String queryInsertion = "UPDATE invoice_row SET id_ppu='" + idPpu+ "', quantity='" + quantity+ "', unit_price='" + unitPrice+ "', total='" + total+"' WHERE id="+id;
-            c.executeInsertion(queryInsertion);
+            String query = "UPDATE invoice_row SET id_ppu = @IDPpu, quantity = @quantity, unit_price = @unit_price, total = @total WHERE id = @ID";
+
+            SQLiteCommand command = new SQLiteCommand(query, connectionString);
+            command.Parameters.Add("@ID", DbType.Int32);
+            command.Parameters.Add("@IDPpu", DbType.Int32);
+            command.Parameters.Add("@quantity", DbType.String);
+            command.Parameters.Add("@unit_price", DbType.String);
+            command.Parameters.Add("@total", DbType.String);
+            command.Parameters["@ID"].Value = id;
+            command.Parameters["@IDPpu"].Value = idPpu;
+            command.Parameters["@quantity"].Value = quantity;
+            command.Parameters["@unit_price"].Value = unitPrice;
+            command.Parameters["@total"].Value = total;
+
+            c.executeInsertion(command);
         }
     }
 }

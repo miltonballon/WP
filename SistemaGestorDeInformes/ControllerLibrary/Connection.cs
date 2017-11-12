@@ -16,6 +16,9 @@ namespace ControllerLibrary
         SQLiteConnection connectionString;
         SQLiteCommand command;
         SQLiteDataReader data;
+
+        public SQLiteConnection ConnectionString { get => connectionString; set => connectionString = value; }
+
         public SQLiteCommand getCommmand() { return command; }
         public SQLiteDataReader getData() { return data; }
         public Connection()
@@ -36,11 +39,10 @@ namespace ControllerLibrary
             }
             
         }
-        public int FindAndGetID(string query)
+        public int FindAndGetID(SQLiteCommand command)
         {
             int answer = -1;
-            string searchQuery = query;
-            query_show(searchQuery);  
+            query_show(command);  
                 while (data.Read())
                 {
                     string r=data[0].ToString();
@@ -50,21 +52,43 @@ namespace ControllerLibrary
           return answer;
         }
         
+        public SQLiteDataReader query_show(SQLiteCommand com)
+        {
+            command = com;
+            data= command.ExecuteReader();
+            return data;
+        }
+        public void executeInsertion(SQLiteCommand com)
+        {
+            command = com;
+            command.ExecuteNonQuery();  
+        }
+        public int FindAndGetID(string query)
+        {
+            int answer = -1;
+            string searchQuery = query;
+            query_show(searchQuery);
+            while (data.Read())
+            {
+                string r = data[0].ToString();
+                answer = Int32.Parse(r);
+            }
+            data.Close();
+            return answer;
+        }
+
         public SQLiteDataReader query_show(string query)
         {
             command = new SQLiteCommand(query, connectionString);
-            data= command.ExecuteReader();
+            data = command.ExecuteReader();
             return data;
         }
         public void executeInsertion(string query)
         {
-     
-            
             command = new SQLiteCommand(query, connectionString);
             command.ExecuteNonQuery();
-        
-          
         }
+
         public void dataClose()
         {
             data.Close();

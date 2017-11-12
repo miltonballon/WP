@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 using System.Data.SQLite;
 using EntityLibrary;
 
@@ -10,22 +11,35 @@ namespace ControllerLibrary
 {
     public class TrimesterController
     {
-        private Connection c = new Connection();
+        private Connection c;
+        private SQLiteConnection connectionString;
 
         public TrimesterController()
         {
+            c = new Connection();
             c.connect();
+            connectionString = c.ConnectionString;
         }
 
         public void InsertTrimester(Trimester trimester)
         {
-            String query = "INSERT INTO trimester(open, name,initial_date,end_date) VALUES(";
+            String query = "INSERT INTO trimester(open, name,initial_date,end_date) VALUES(@open, @name, @initial, @end)";
             int bit = trimester.IsOpen() ? 1 : 0;
             String name = trimester.GetName(),
                    initialDate =trimester.InitialDate.ToString("dd/MM/yyyy"),
                    endDate = trimester.EndDate.ToString("dd/MM/yyyy");
-            query += bit + ", '"+name+"','"+initialDate+"','"+endDate+"')";
-            c.executeInsertion(query);
+
+            SQLiteCommand command = new SQLiteCommand(query,connectionString);
+            command.Parameters.Add("@open",DbType.Int32);
+            command.Parameters.Add("@name",DbType.String);
+            command.Parameters.Add("@initial", DbType.String);
+            command.Parameters.Add("@end", DbType.String);
+            command.Parameters["@open"].Value = bit;
+            command.Parameters["@name"].Value = name;
+            command.Parameters["@initial"].Value = initialDate;
+            command.Parameters["@end"].Value = endDate;
+
+            c.executeInsertion(command);
         }
 
         public List<Trimester> GetLastTwoTrimester()
@@ -54,8 +68,11 @@ namespace ControllerLibrary
         public Trimester GetTrimesterById(int id)
         {
             Trimester trimester = null;
-            String query = "SELECT * FROM trimester WHERE id="+id;
-            SQLiteDataReader data = c.query_show(query);
+            String query = "SELECT * FROM trimester WHERE id = @ID";
+            SQLiteCommand command = new SQLiteCommand(query, connectionString);
+            command.Parameters.Add("@ID", DbType.Int32);
+            command.Parameters["@ID"].Value = id;
+            SQLiteDataReader data = c.query_show(command);
             if (data.Read())
             {
                 String name = data[2].ToString();
@@ -87,11 +104,17 @@ namespace ControllerLibrary
 
         public void UpdateTrimester(Trimester trimester)
         {
-            String query = "UPDATE trimester SET open=";
+            String query = "UPDATE trimester SET open = @open WHERE id = @ID";
             int bit = trimester.IsOpen() ? 1 : 0;
             int id = trimester.GetId();
-            query += bit + " WHERE id='" + id + "'";
-            c.executeInsertion(query);
+
+            SQLiteCommand command = new SQLiteCommand(query, connectionString);
+            command.Parameters.Add("@ID", DbType.Int32);
+            command.Parameters.Add("@open", DbType.Int32);
+            command.Parameters["@ID"].Value = id;
+            command.Parameters["@open"].Value = bit;
+
+            c.executeInsertion(command);
         }
 
     }
