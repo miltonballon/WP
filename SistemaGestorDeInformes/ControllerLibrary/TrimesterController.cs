@@ -11,11 +11,12 @@ namespace ControllerLibrary
 {
     public class TrimesterController
     {
-        private Connection c = new Connection();
+        private Connection c;
         private SQLiteConnection connectionString;
 
         public TrimesterController()
         {
+            c = new Connection();
             c.connect();
             connectionString = c.ConnectionString;
         }
