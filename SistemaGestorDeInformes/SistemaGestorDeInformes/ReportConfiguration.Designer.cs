@@ -57,6 +57,9 @@
             this.becas_Textbox = new System.Windows.Forms.TextBox();
             this.lbPartida = new System.Windows.Forms.Label();
             this.lbBecas = new System.Windows.Forms.Label();
+            this.proveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registrarProveedorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verProveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,6 +72,7 @@
             this.productosToolStripMenuItem,
             this.informeToolStripMenuItem1,
             this.inventarioToolStripMenuItem,
+            this.proveedoresToolStripMenuItem,
             this.configuraciónToolStripMenuItem,
             this.abrirTrimestreToolStripMenuItem,
             this.salirToolStripMenuItem});
@@ -214,7 +218,7 @@
             // abrirTrimestreToolStripMenuItem
             // 
             this.abrirTrimestreToolStripMenuItem.Name = "abrirTrimestreToolStripMenuItem";
-            this.abrirTrimestreToolStripMenuItem.Size = new System.Drawing.Size(98, 20);
+            this.abrirTrimestreToolStripMenuItem.Size = new System.Drawing.Size(97, 20);
             this.abrirTrimestreToolStripMenuItem.Text = "Abrir Trimestre";
             this.abrirTrimestreToolStripMenuItem.Click += new System.EventHandler(this.abrirTrimestreToolStripMenuItem_Click);
             // 
@@ -326,6 +330,29 @@
             this.lbBecas.Size = new System.Drawing.Size(0, 19);
             this.lbBecas.TabIndex = 25;
             // 
+            // proveedoresToolStripMenuItem
+            // 
+            this.proveedoresToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.registrarProveedorToolStripMenuItem,
+            this.verProveedoresToolStripMenuItem});
+            this.proveedoresToolStripMenuItem.Name = "proveedoresToolStripMenuItem";
+            this.proveedoresToolStripMenuItem.Size = new System.Drawing.Size(84, 20);
+            this.proveedoresToolStripMenuItem.Text = "Proveedores";
+            // 
+            // registrarProveedorToolStripMenuItem
+            // 
+            this.registrarProveedorToolStripMenuItem.Name = "registrarProveedorToolStripMenuItem";
+            this.registrarProveedorToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.registrarProveedorToolStripMenuItem.Text = "Registrar Proveedor";
+            this.registrarProveedorToolStripMenuItem.Click += new System.EventHandler(this.registrarProveedorToolStripMenuItem_Click);
+            // 
+            // verProveedoresToolStripMenuItem
+            // 
+            this.verProveedoresToolStripMenuItem.Name = "verProveedoresToolStripMenuItem";
+            this.verProveedoresToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.verProveedoresToolStripMenuItem.Text = "Ver Proveedores";
+            this.verProveedoresToolStripMenuItem.Click += new System.EventHandler(this.verProveedoresToolStripMenuItem_Click);
+            // 
             // ReportConfiguration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -386,5 +413,8 @@
         private System.Windows.Forms.ToolStripMenuItem inventarioToolStripMenuItem1;
         private System.Windows.Forms.Label lbPartida;
         private System.Windows.Forms.Label lbBecas;
+        private System.Windows.Forms.ToolStripMenuItem proveedoresToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem registrarProveedorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem verProveedoresToolStripMenuItem;
     }
 }

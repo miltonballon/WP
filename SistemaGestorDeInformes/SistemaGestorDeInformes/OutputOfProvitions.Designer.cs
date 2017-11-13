@@ -59,6 +59,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.OutputDate_TextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.proveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registrarProveedorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verProveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,6 +74,7 @@
             this.productosToolStripMenuItem,
             this.informeToolStripMenuItem1,
             this.inventarioToolStripMenuItem,
+            this.proveedoresToolStripMenuItem,
             this.configuraciónToolStripMenuItem,
             this.abrirTrimestreToolStripMenuItem,
             this.salirToolStripMenuItem});
@@ -149,7 +153,6 @@
             this.generarInformeToolStripMenuItem.Name = "generarInformeToolStripMenuItem";
             this.generarInformeToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.generarInformeToolStripMenuItem.Text = "Generar Informe";
-            //this.generarInformeToolStripMenuItem.Click += new System.EventHandler(this.generarInformeToolStripMenuItem_Click);
             // 
             // verInformeToolStripMenuItem
             // 
@@ -213,7 +216,6 @@
             this.inventarioToolStripMenuItem1.Name = "inventarioToolStripMenuItem1";
             this.inventarioToolStripMenuItem1.Size = new System.Drawing.Size(127, 22);
             this.inventarioToolStripMenuItem1.Text = "Inventario";
-            //this.inventarioToolStripMenuItem1.Click += new System.EventHandler(this.inventarioToolStripMenuItem1_Click);
             // 
             // abrirTrimestreToolStripMenuItem
             // 
@@ -237,7 +239,6 @@
             this.Total_TextBox.Name = "Total_TextBox";
             this.Total_TextBox.Size = new System.Drawing.Size(250, 23);
             this.Total_TextBox.TabIndex = 37;
-            //this.Total_TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Total_TextBox_KeyPress);
             // 
             // Product_TextBox
             // 
@@ -249,7 +250,6 @@
             this.Product_TextBox.Name = "Product_TextBox";
             this.Product_TextBox.Size = new System.Drawing.Size(250, 23);
             this.Product_TextBox.TabIndex = 35;
-            //this.Product_TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Product_TextBox_KeyPress);
             // 
             // labelNFactura
             // 
@@ -312,7 +312,6 @@
             this.Register_Button.TabIndex = 39;
             this.Register_Button.Text = "Registrar";
             this.Register_Button.UseVisualStyleBackColor = false;
-            //this.Register_Button.Click += new System.EventHandler(this.Register_Button_Click);
             // 
             // Unit_TextBox
             // 
@@ -324,7 +323,6 @@
             this.Unit_TextBox.Name = "Unit_TextBox";
             this.Unit_TextBox.Size = new System.Drawing.Size(250, 23);
             this.Unit_TextBox.TabIndex = 36;
-            //this.Unit_TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Unit_TextBox_KeyPress);
             // 
             // label1
             // 
@@ -346,7 +344,6 @@
             this.OutputDate_TextBox.Name = "OutputDate_TextBox";
             this.OutputDate_TextBox.Size = new System.Drawing.Size(250, 23);
             this.OutputDate_TextBox.TabIndex = 38;
-            //this.OutputDate_TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OutputDate_TextBox_KeyPress);
             // 
             // label2
             // 
@@ -359,6 +356,29 @@
             this.label2.Size = new System.Drawing.Size(62, 19);
             this.label2.TabIndex = 53;
             this.label2.Text = "FECHA:";
+            // 
+            // proveedoresToolStripMenuItem
+            // 
+            this.proveedoresToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.registrarProveedorToolStripMenuItem,
+            this.verProveedoresToolStripMenuItem});
+            this.proveedoresToolStripMenuItem.Name = "proveedoresToolStripMenuItem";
+            this.proveedoresToolStripMenuItem.Size = new System.Drawing.Size(84, 20);
+            this.proveedoresToolStripMenuItem.Text = "Proveedores";
+            // 
+            // registrarProveedorToolStripMenuItem
+            // 
+            this.registrarProveedorToolStripMenuItem.Name = "registrarProveedorToolStripMenuItem";
+            this.registrarProveedorToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.registrarProveedorToolStripMenuItem.Text = "Registrar Proveedor";
+            this.registrarProveedorToolStripMenuItem.Click += new System.EventHandler(this.registrarProveedorToolStripMenuItem_Click);
+            // 
+            // verProveedoresToolStripMenuItem
+            // 
+            this.verProveedoresToolStripMenuItem.Name = "verProveedoresToolStripMenuItem";
+            this.verProveedoresToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.verProveedoresToolStripMenuItem.Text = "Ver Proveedores";
+            this.verProveedoresToolStripMenuItem.Click += new System.EventHandler(this.verProveedoresToolStripMenuItem_Click);
             // 
             // OutputOfProvitions
             // 
@@ -381,9 +401,7 @@
             this.Name = "OutputOfProvitions";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registrar Salida";
-            //this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.OutputOfProvitions_FormClosing);
             this.Load += new System.EventHandler(this.OutputOfProvitions_Load);
-            //this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.OutputOfProvitions_KeyUp);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -424,5 +442,8 @@
         private System.Windows.Forms.TextBox OutputDate_TextBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ToolStripMenuItem inventarioToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem proveedoresToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem registrarProveedorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem verProveedoresToolStripMenuItem;
     }
 }

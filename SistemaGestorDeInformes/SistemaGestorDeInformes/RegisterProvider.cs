@@ -7,25 +7,38 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ControllerLibrary;
 
 namespace SistemaGestorDeInformes
 {
-    public partial class Main : Form
+    public partial class RegisterProvider : Form
     {
-        Connection c = new Connection();
-        public Main()
+        public RegisterProvider()
         {
             InitializeComponent();
-            c.connect();
-            //c.connectionOpen();
         }
 
-
-        private void button3_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-            RegisterInvoice InterfazRegistrarFactura1 = new RegisterInvoice();
-            InterfazRegistrarFactura1.Show();
+            Main main = new Main();
+            main.WindowState = this.WindowState;
+            this.Hide();
+            main.Show();
+        }
+
+        private void verProveedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowProviders Interfaz = new ShowProviders();
+            Interfaz.WindowState = this.WindowState;
+            this.Hide();
+            Interfaz.Show();
+        }
+
+        private void pantallaPrincipalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Main main = new Main();
+            main.WindowState = this.WindowState;
+            this.Hide();
+            main.Show();
         }
 
         private void registrarFacturaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -58,6 +71,14 @@ namespace SistemaGestorDeInformes
             ShowProducts1.WindowState = this.WindowState;
             this.Hide();
             ShowProducts1.Show();
+        }
+
+        private void generarInformeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GenerateReport Interfaz = new GenerateReport();
+            Interfaz.WindowState = this.WindowState;
+            this.Hide();
+            Interfaz.Show();
         }
 
         private void informeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -107,20 +128,6 @@ namespace SistemaGestorDeInformes
             Interfaz.Show();
         }
 
-        private void InterfazPrincipal_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Application.Exit();
-        }
-
-                
-        private void generarInformeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            GenerateReport Interfaz = new GenerateReport();
-            Interfaz.WindowState = this.WindowState;
-            this.Hide();
-            Interfaz.Show();
-        }
-
         private void inventarioToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             InventoryConfiguration Interfaz = new InventoryConfiguration();
@@ -135,22 +142,6 @@ namespace SistemaGestorDeInformes
             ViewReport.WindowState = this.WindowState;
             this.Hide();
             ViewReport.Show();
-        }
-
-        private void registrarProveedorToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            RegisterProvider Interfaz = new RegisterProvider();
-            Interfaz.WindowState = this.WindowState;
-            this.Hide();
-            Interfaz.Show();
-        }
-
-        private void verProveedoresToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ShowProviders Interfaz = new ShowProviders();
-            Interfaz.WindowState = this.WindowState;
-            this.Hide();
-            Interfaz.Show();
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace SistemaGestorDeInformes
 {
-    partial class GenerateReport
+    partial class ShowProviders
     {
         /// <summary>
         /// Required designer variable.
@@ -43,20 +43,25 @@
             this.registrarEntradaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarSalidaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verInventarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.proveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registrarProveedorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verProveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.configuraciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inventarioToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.abrirTrimestreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lbTrim = new System.Windows.Forms.Label();
-            this.RegistrarButton = new System.Windows.Forms.Button();
-            this.atrasButton = new System.Windows.Forms.Button();
-            this.labelInformaciónBásica = new System.Windows.Forms.Label();
-            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.proveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.registrarProveedorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.verProveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.Atras_Button = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -75,12 +80,12 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(815, 24);
-            this.menuStrip1.TabIndex = 2;
+            this.menuStrip1.TabIndex = 53;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // pantallaPrincipalToolStripMenuItem
             // 
-            this.pantallaPrincipalToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.pantallaPrincipalToolStripMenuItem.BackColor = System.Drawing.Color.White;
             this.pantallaPrincipalToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.pantallaPrincipalToolStripMenuItem.Name = "pantallaPrincipalToolStripMenuItem";
             this.pantallaPrincipalToolStripMenuItem.Size = new System.Drawing.Size(110, 20);
@@ -135,28 +140,26 @@
             // 
             // informeToolStripMenuItem1
             // 
-            this.informeToolStripMenuItem1.BackColor = System.Drawing.Color.Black;
             this.informeToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.generarInformeToolStripMenuItem,
             this.verInformeToolStripMenuItem});
-            this.informeToolStripMenuItem1.ForeColor = System.Drawing.Color.White;
             this.informeToolStripMenuItem1.Name = "informeToolStripMenuItem1";
             this.informeToolStripMenuItem1.Size = new System.Drawing.Size(61, 20);
             this.informeToolStripMenuItem1.Text = "Informe";
             // 
             // generarInformeToolStripMenuItem
             // 
-            this.generarInformeToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
-            this.generarInformeToolStripMenuItem.ForeColor = System.Drawing.Color.Gray;
             this.generarInformeToolStripMenuItem.Name = "generarInformeToolStripMenuItem";
             this.generarInformeToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.generarInformeToolStripMenuItem.Text = "Generar Informe";
+            this.generarInformeToolStripMenuItem.Click += new System.EventHandler(this.generarInformeToolStripMenuItem_Click);
             // 
             // verInformeToolStripMenuItem
             // 
             this.verInformeToolStripMenuItem.Name = "verInformeToolStripMenuItem";
             this.verInformeToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.verInformeToolStripMenuItem.Text = "Ver Informe";
+            this.verInformeToolStripMenuItem.Click += new System.EventHandler(this.verInformeToolStripMenuItem_Click);
             // 
             // inventarioToolStripMenuItem
             // 
@@ -189,26 +192,55 @@
             this.verInventarioToolStripMenuItem.Text = "Ver Inventario";
             this.verInventarioToolStripMenuItem.Click += new System.EventHandler(this.verInventarioToolStripMenuItem_Click);
             // 
+            // proveedoresToolStripMenuItem
+            // 
+            this.proveedoresToolStripMenuItem.BackColor = System.Drawing.Color.Black;
+            this.proveedoresToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.registrarProveedorToolStripMenuItem,
+            this.verProveedoresToolStripMenuItem});
+            this.proveedoresToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.proveedoresToolStripMenuItem.Name = "proveedoresToolStripMenuItem";
+            this.proveedoresToolStripMenuItem.Size = new System.Drawing.Size(84, 20);
+            this.proveedoresToolStripMenuItem.Text = "Proveedores";
+            // 
+            // registrarProveedorToolStripMenuItem
+            // 
+            this.registrarProveedorToolStripMenuItem.Name = "registrarProveedorToolStripMenuItem";
+            this.registrarProveedorToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.registrarProveedorToolStripMenuItem.Text = "Registrar Proveedor";
+            this.registrarProveedorToolStripMenuItem.Click += new System.EventHandler(this.registrarProveedorToolStripMenuItem_Click);
+            // 
+            // verProveedoresToolStripMenuItem
+            // 
+            this.verProveedoresToolStripMenuItem.ForeColor = System.Drawing.Color.Gray;
+            this.verProveedoresToolStripMenuItem.Name = "verProveedoresToolStripMenuItem";
+            this.verProveedoresToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.verProveedoresToolStripMenuItem.Text = "Ver Proveedores";
+            // 
             // configuraciónToolStripMenuItem
             // 
+            this.configuraciónToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.configuraciónToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.informeToolStripMenuItem,
             this.inventarioToolStripMenuItem1});
+            this.configuraciónToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.configuraciónToolStripMenuItem.Name = "configuraciónToolStripMenuItem";
             this.configuraciónToolStripMenuItem.Size = new System.Drawing.Size(95, 20);
             this.configuraciónToolStripMenuItem.Text = "Configuración";
             // 
             // informeToolStripMenuItem
             // 
+            this.informeToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.informeToolStripMenuItem.Name = "informeToolStripMenuItem";
-            this.informeToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.informeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.informeToolStripMenuItem.Text = "Informe";
             this.informeToolStripMenuItem.Click += new System.EventHandler(this.informeToolStripMenuItem_Click);
             // 
             // inventarioToolStripMenuItem1
             // 
+            this.inventarioToolStripMenuItem1.ForeColor = System.Drawing.Color.Black;
             this.inventarioToolStripMenuItem1.Name = "inventarioToolStripMenuItem1";
-            this.inventarioToolStripMenuItem1.Size = new System.Drawing.Size(127, 22);
+            this.inventarioToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.inventarioToolStripMenuItem1.Text = "Inventario";
             this.inventarioToolStripMenuItem1.Click += new System.EventHandler(this.inventarioToolStripMenuItem1_Click);
             // 
@@ -226,98 +258,93 @@
             this.salirToolStripMenuItem.Text = "Cerrar Sesión";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
-            // lbTrim
+            // dataGridView1
             // 
-            this.lbTrim.AutoSize = true;
-            this.lbTrim.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTrim.ForeColor = System.Drawing.Color.Yellow;
-            this.lbTrim.Location = new System.Drawing.Point(204, 66);
-            this.lbTrim.Name = "lbTrim";
-            this.lbTrim.Size = new System.Drawing.Size(0, 19);
-            this.lbTrim.TabIndex = 36;
+            this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column6});
+            this.dataGridView1.Location = new System.Drawing.Point(56, 71);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(643, 371);
+            this.dataGridView1.TabIndex = 56;
             // 
-            // RegistrarButton
+            // Column1
             // 
-            this.RegistrarButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.RegistrarButton.BackColor = System.Drawing.Color.Black;
-            this.RegistrarButton.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
-            this.RegistrarButton.ForeColor = System.Drawing.Color.Yellow;
-            this.RegistrarButton.Location = new System.Drawing.Point(303, 229);
-            this.RegistrarButton.Name = "RegistrarButton";
-            this.RegistrarButton.Size = new System.Drawing.Size(153, 66);
-            this.RegistrarButton.TabIndex = 32;
-            this.RegistrarButton.Text = "Generar Informe";
-            this.RegistrarButton.UseVisualStyleBackColor = false;
-            this.RegistrarButton.Click += new System.EventHandler(this.RegistrarButton_Click);
+            this.Column1.HeaderText = "Nombre del Proveedor";
+            this.Column1.Name = "Column1";
             // 
-            // atrasButton
+            // Column2
             // 
-            this.atrasButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.atrasButton.BackColor = System.Drawing.Color.Black;
-            this.atrasButton.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
-            this.atrasButton.ForeColor = System.Drawing.Color.Yellow;
-            this.atrasButton.Location = new System.Drawing.Point(3, 472);
-            this.atrasButton.Name = "atrasButton";
-            this.atrasButton.Size = new System.Drawing.Size(120, 30);
-            this.atrasButton.TabIndex = 35;
-            this.atrasButton.Text = "Atrás";
-            this.atrasButton.UseVisualStyleBackColor = false;
-            this.atrasButton.Click += new System.EventHandler(this.atrasButton_Click);
+            this.Column2.HeaderText = "NIT del Proveedor";
+            this.Column2.Name = "Column2";
             // 
-            // labelInformaciónBásica
+            // Column3
             // 
-            this.labelInformaciónBásica.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelInformaciónBásica.AutoSize = true;
-            this.labelInformaciónBásica.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelInformaciónBásica.ForeColor = System.Drawing.Color.Yellow;
-            this.labelInformaciónBásica.Location = new System.Drawing.Point(91, 159);
-            this.labelInformaciónBásica.Name = "labelInformaciónBásica";
-            this.labelInformaciónBásica.Size = new System.Drawing.Size(608, 19);
-            this.labelInformaciónBásica.TabIndex = 34;
-            this.labelInformaciónBásica.Text = "¿Desea Generar el Informe con las Facturas y los Productos Registrados?";
+            this.Column3.HeaderText = "Dirección del Proveedor";
+            this.Column3.Name = "Column3";
             // 
-            // proveedoresToolStripMenuItem
+            // Column4
             // 
-            this.proveedoresToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.registrarProveedorToolStripMenuItem,
-            this.verProveedoresToolStripMenuItem});
-            this.proveedoresToolStripMenuItem.Name = "proveedoresToolStripMenuItem";
-            this.proveedoresToolStripMenuItem.Size = new System.Drawing.Size(84, 20);
-            this.proveedoresToolStripMenuItem.Text = "Proveedores";
+            this.Column4.HeaderText = "Nombre del Contacto";
+            this.Column4.Name = "Column4";
             // 
-            // registrarProveedorToolStripMenuItem
+            // Column5
             // 
-            this.registrarProveedorToolStripMenuItem.Name = "registrarProveedorToolStripMenuItem";
-            this.registrarProveedorToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
-            this.registrarProveedorToolStripMenuItem.Text = "Registrar Proveedor";
-            this.registrarProveedorToolStripMenuItem.Click += new System.EventHandler(this.registrarProveedorToolStripMenuItem_Click);
+            this.Column5.HeaderText = "Apellido del Contacto";
+            this.Column5.Name = "Column5";
             // 
-            // verProveedoresToolStripMenuItem
+            // Column6
             // 
-            this.verProveedoresToolStripMenuItem.Name = "verProveedoresToolStripMenuItem";
-            this.verProveedoresToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
-            this.verProveedoresToolStripMenuItem.Text = "Ver Proveedores";
-            this.verProveedoresToolStripMenuItem.Click += new System.EventHandler(this.verProveedoresToolStripMenuItem_Click);
+            this.Column6.HeaderText = "Telefono del Contacto";
+            this.Column6.Name = "Column6";
             // 
-            // GenerateReport
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.Yellow;
+            this.label1.Location = new System.Drawing.Point(12, 34);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(110, 19);
+            this.label1.TabIndex = 55;
+            this.label1.Text = "Proveedores";
+            // 
+            // Atras_Button
+            // 
+            this.Atras_Button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.Atras_Button.BackColor = System.Drawing.Color.Black;
+            this.Atras_Button.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Atras_Button.ForeColor = System.Drawing.Color.Yellow;
+            this.Atras_Button.Location = new System.Drawing.Point(3, 472);
+            this.Atras_Button.Name = "Atras_Button";
+            this.Atras_Button.Size = new System.Drawing.Size(120, 30);
+            this.Atras_Button.TabIndex = 54;
+            this.Atras_Button.Text = "Atrás";
+            this.Atras_Button.UseVisualStyleBackColor = false;
+            this.Atras_Button.Click += new System.EventHandler(this.Atras_Button_Click);
+            // 
+            // ShowProviders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(815, 508);
-            this.Controls.Add(this.lbTrim);
-            this.Controls.Add(this.RegistrarButton);
-            this.Controls.Add(this.atrasButton);
-            this.Controls.Add(this.labelInformaciónBásica);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.Atras_Button);
             this.Controls.Add(this.menuStrip1);
-            this.Name = "GenerateReport";
+            this.Name = "ShowProviders";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Generar Informe";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GenerateReport_FormClosing);
-            this.Load += new System.EventHandler(this.GenerateReport_Load);
-            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.GenerateReport_KeyUp);
+            this.Text = "Ver Proveedores";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -340,18 +367,22 @@
         private System.Windows.Forms.ToolStripMenuItem registrarEntradaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registrarSalidaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verInventarioToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem configuraciónToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem informeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem abrirTrimestreToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
-        private System.Windows.Forms.Label lbTrim;
-        private System.Windows.Forms.Button RegistrarButton;
-        private System.Windows.Forms.Button atrasButton;
-        private System.Windows.Forms.Label labelInformaciónBásica;
-        private System.Windows.Forms.ToolStripMenuItem inventarioToolStripMenuItem1;
-        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.ToolStripMenuItem proveedoresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registrarProveedorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verProveedoresToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem configuraciónToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem informeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem inventarioToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem abrirTrimestreToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button Atras_Button;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
     }
 }
