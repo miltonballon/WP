@@ -31,7 +31,7 @@ namespace ControllerLibrary
             int idUnit = getIdUnit(reception.Product.Unit);
             int notExist = -1;
             int resul = -1;
-            string queryPPU = "SELECT id FROM Product_Provider_Unit where id_prod='" + idName + "' and id_prov='" + idProvider + "' and id_uni='" + idUnit + "'";
+            string queryPPU = "SELECT id FROM Product_Provider_Unit where id_product='" + idName + "' and id_provider='" + idProvider + "' and id_unit='" + idUnit + "'";
             SQLiteDataReader data = c.query_show(queryPPU);
             while (data.Read())
             {
@@ -124,12 +124,12 @@ namespace ControllerLibrary
 
         public void ProviderAutoComplete(TextBox Provider)
         {
-            string query = "SELECT Provider FROM Provider";
+            string query = "SELECT name FROM Provider";
 
             SQLiteDataReader data = c.query_show(query);
             while (data.Read())
             {
-                Provider.AutoCompleteCustomSource.Add(data["Provider"].ToString());
+                Provider.AutoCompleteCustomSource.Add(data["name"].ToString());
             }
             c.dataClose();
             data.Close();
@@ -162,7 +162,7 @@ namespace ControllerLibrary
         }
         public int getIdProvider(string provider)
         {
-            string ProviderQuery = "select id FROM Provider where Provider = " + "'" + provider + "'";
+            string ProviderQuery = "select id FROM Provider where name = " + "'" + provider + "'";
             return c.FindAndGetID(ProviderQuery);
         }
         public int getIdUnit(string unit)

@@ -143,5 +143,13 @@ namespace SistemaGestorDeInformes
             this.Hide();
             ViewReport.Show();
         }
+
+        private void historiaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            HistoricReceptions Interfaz = new HistoricReceptions();
+            Interfaz.WindowState = this.WindowState;
+            this.Hide();
+            Interfaz.Show();
+        }
     }
 }
