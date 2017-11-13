@@ -61,7 +61,7 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(245, 44);
+            this.dateTimePicker1.Location = new System.Drawing.Point(245, 45);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 0;
@@ -80,7 +80,7 @@
             // 
             // SearchButton
             // 
-            this.SearchButton.Location = new System.Drawing.Point(463, 41);
+            this.SearchButton.Location = new System.Drawing.Point(463, 45);
             this.SearchButton.Name = "SearchButton";
             this.SearchButton.Size = new System.Drawing.Size(75, 23);
             this.SearchButton.TabIndex = 36;
@@ -110,7 +110,7 @@
             this.salirToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(589, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(756, 24);
             this.menuStrip1.TabIndex = 38;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -235,6 +235,7 @@
             this.registrarProveedorToolStripMenuItem.Name = "registrarProveedorToolStripMenuItem";
             this.registrarProveedorToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
             this.registrarProveedorToolStripMenuItem.Text = "Registrar Proveedor";
+            this.registrarProveedorToolStripMenuItem.Click += new System.EventHandler(this.registrarProveedorToolStripMenuItem_Click);
             // 
             // verProveedoresToolStripMenuItem
             // 
@@ -282,7 +283,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(589, 272);
+            this.ClientSize = new System.Drawing.Size(756, 283);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.SearchButton);
