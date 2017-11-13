@@ -124,12 +124,12 @@ namespace ControllerLibrary
 
         public void ProviderAutoComplete(TextBox Provider)
         {
-            string query = "SELECT Provider FROM Provider";
+            string query = "SELECT name FROM Provider";
 
             SQLiteDataReader data = c.query_show(query);
             while (data.Read())
             {
-                Provider.AutoCompleteCustomSource.Add(data["Provider"].ToString());
+                Provider.AutoCompleteCustomSource.Add(data["name"].ToString());
             }
             c.dataClose();
             data.Close();
@@ -162,7 +162,7 @@ namespace ControllerLibrary
         }
         public int getIdProvider(string provider)
         {
-            string ProviderQuery = "select id FROM Provider where Provider = " + "'" + provider + "'";
+            string ProviderQuery = "select id FROM Provider where name5 = " + "'" + provider + "'";
             return c.FindAndGetID(ProviderQuery);
         }
         public int getIdUnit(string unit)

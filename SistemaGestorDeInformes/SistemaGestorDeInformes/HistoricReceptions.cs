@@ -19,10 +19,7 @@ namespace SistemaGestorDeInformes
 
         private void HistoricReceptions_Load(object sender, EventArgs e)
         {
-            GenerateReport Interfaz = new GenerateReport();
-            Interfaz.WindowState = this.WindowState;
-            this.Hide();
-            Interfaz.Show();
+         
         }
 
         private void registrarEntradaToolStripMenuItem_Click(object sender, EventArgs e)

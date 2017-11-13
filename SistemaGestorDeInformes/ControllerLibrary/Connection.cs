@@ -17,8 +17,13 @@ namespace ControllerLibrary
         SQLiteCommand command;
         SQLiteDataReader data;
 
-        public SQLiteConnection ConnectionString { get => connectionString; set => connectionString = value; }
+        //public SQLiteConnection ConnectionString { get => connectionString; set => connectionString = value; }
 
+        public SQLiteConnection ConnectionString
+        {
+            get { return connectionString; }
+            set { connectionString = value; }
+        }
         public SQLiteCommand getCommmand() { return command; }
         public SQLiteDataReader getData() { return data; }
         public Connection()
