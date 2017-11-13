@@ -62,6 +62,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.OutputDate_TextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.historialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -167,6 +168,7 @@
             this.inventarioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.registrarEntradaToolStripMenuItem,
             this.registrarSalidaToolStripMenuItem,
+            this.historialToolStripMenuItem,
             this.verInventarioToolStripMenuItem});
             this.inventarioToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.inventarioToolStripMenuItem.Name = "inventarioToolStripMenuItem";
@@ -381,6 +383,13 @@
             this.label2.TabIndex = 53;
             this.label2.Text = "FECHA:";
             // 
+            // historialToolStripMenuItem
+            // 
+            this.historialToolStripMenuItem.Name = "historialToolStripMenuItem";
+            this.historialToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.historialToolStripMenuItem.Text = "Historial";
+            this.historialToolStripMenuItem.Click += new System.EventHandler(this.historialToolStripMenuItem_Click);
+            // 
             // OutputOfProvitions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -446,5 +455,6 @@
         private System.Windows.Forms.ToolStripMenuItem proveedoresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registrarProveedorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verProveedoresToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem historialToolStripMenuItem;
     }
 }
