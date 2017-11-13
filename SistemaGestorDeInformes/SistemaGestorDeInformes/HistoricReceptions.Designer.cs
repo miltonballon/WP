@@ -167,6 +167,7 @@
             this.verProductosToolStripMenuItem.Name = "verProductosToolStripMenuItem";
             this.verProductosToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.verProductosToolStripMenuItem.Text = "Ver Productos";
+            this.verProductosToolStripMenuItem.Click += new System.EventHandler(this.verProductosToolStripMenuItem_Click);
             // 
             // informeToolStripMenuItem1
             // 
