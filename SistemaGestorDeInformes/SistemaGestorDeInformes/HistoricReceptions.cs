@@ -7,19 +7,41 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using EntityLibrary;
+using ControllerLibrary;
 namespace SistemaGestorDeInformes
+
 {
     public partial class HistoricReceptions : Form
     {
+        ReceptionController receptionController;
+        InventoryController inventoryController;
         public HistoricReceptions()
         {
             InitializeComponent();
+            receptionController = new ReceptionController();
+            inventoryController = new InventoryController();
         }
 
         private void HistoricReceptions_Load(object sender, EventArgs e)
         {
-         
+            chargeData();
+        }
+        private void chargeData()
+        {
+            List<Reception> products = receptionController.getAllReceptions();
+            
+            foreach (Reception inventory in products)
+            {
+                Product product = inventory.Product;
+                String productsName = product.Name,
+                       unit = product.Unit,
+                       total = inventory.Total + "";
+
+                String[] row = new String[] { productsName, unit, total };
+                dataGridView1.Rows.Add(row);
+            }
+
         }
 
         private void registrarEntradaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -134,6 +156,11 @@ namespace SistemaGestorDeInformes
         }
 
         private void historialToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

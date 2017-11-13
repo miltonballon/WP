@@ -31,7 +31,7 @@ namespace ControllerLibrary
             int idUnit = getIdUnit(reception.Product.Unit);
             int notExist = -1;
             int resul = -1;
-            string queryPPU = "SELECT id FROM Product_Provider_Unit where id_prod='" + idName + "' and id_prov='" + idProvider + "' and id_uni='" + idUnit + "'";
+            string queryPPU = "SELECT id FROM Product_Provider_Unit where id_product='" + idName + "' and id_provider='" + idProvider + "' and id_unit='" + idUnit + "'";
             SQLiteDataReader data = c.query_show(queryPPU);
             while (data.Read())
             {
@@ -162,7 +162,7 @@ namespace ControllerLibrary
         }
         public int getIdProvider(string provider)
         {
-            string ProviderQuery = "select id FROM Provider where name5 = " + "'" + provider + "'";
+            string ProviderQuery = "select id FROM Provider where name = " + "'" + provider + "'";
             return c.FindAndGetID(ProviderQuery);
         }
         public int getIdUnit(string unit)
