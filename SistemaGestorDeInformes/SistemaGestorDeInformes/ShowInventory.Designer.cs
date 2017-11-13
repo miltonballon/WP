@@ -57,6 +57,9 @@
             this.search_Textbox = new System.Windows.Forms.TextBox();
             this.Search_Button = new System.Windows.Forms.Button();
             this.Clean_Button = new System.Windows.Forms.Button();
+            this.proveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registrarProveedorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verProveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -115,7 +118,8 @@
             this.inventarioToolStripMenuItem,
             this.configuraciónToolStripMenuItem,
             this.abrirTrimestreToolStripMenuItem,
-            this.salirToolStripMenuItem});
+            this.salirToolStripMenuItem,
+            this.proveedoresToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(815, 24);
@@ -301,6 +305,7 @@
             this.Search_Button.Click += new System.EventHandler(this.Search_Button_Click);
             // 
             // Clean_Button
+            // 
             this.Clean_Button.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Clean_Button.Location = new System.Drawing.Point(406, 136);
             this.Clean_Button.Name = "Clean_Button";
@@ -309,6 +314,28 @@
             this.Clean_Button.Text = "Limpiar";
             this.Clean_Button.UseVisualStyleBackColor = true;
             this.Clean_Button.Click += new System.EventHandler(this.Clean_Button_Click);
+            // 
+            // proveedoresToolStripMenuItem
+            // 
+            this.proveedoresToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.registrarProveedorToolStripMenuItem,
+            this.verProveedoresToolStripMenuItem});
+            this.proveedoresToolStripMenuItem.Name = "proveedoresToolStripMenuItem";
+            this.proveedoresToolStripMenuItem.Size = new System.Drawing.Size(84, 20);
+            this.proveedoresToolStripMenuItem.Text = "Proveedores";
+            // 
+            // registrarProveedorToolStripMenuItem
+            // 
+            this.registrarProveedorToolStripMenuItem.Name = "registrarProveedorToolStripMenuItem";
+            this.registrarProveedorToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.registrarProveedorToolStripMenuItem.Text = "Registrar Proveedor";
+            // 
+            // verProveedoresToolStripMenuItem
+            // 
+            this.verProveedoresToolStripMenuItem.Name = "verProveedoresToolStripMenuItem";
+            this.verProveedoresToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.verProveedoresToolStripMenuItem.Text = "Ver Proveedores";
+            // 
             // ShowInventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -367,5 +394,8 @@
         private System.Windows.Forms.Button Search_Button;
         private System.Windows.Forms.Button Clean_Button;
         private System.Windows.Forms.ToolStripMenuItem inventarioToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem proveedoresToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem registrarProveedorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem verProveedoresToolStripMenuItem;
     }
 }

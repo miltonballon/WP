@@ -64,6 +64,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.proveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registrarProveedorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verProveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -89,7 +92,8 @@
             this.inventarioToolStripMenuItem,
             this.configuraciónToolStripMenuItem,
             this.abrirTrimestreToolStripMenuItem,
-            this.salirToolStripMenuItem});
+            this.salirToolStripMenuItem,
+            this.proveedoresToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(815, 24);
@@ -197,11 +201,11 @@
             // 
             // configuraciónToolStripMenuItem
             // 
-            this.configuraciónToolStripMenuItem.BackColor = System.Drawing.Color.Black;
+            this.configuraciónToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.configuraciónToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.informeToolStripMenuItem,
             this.inventarioToolStripMenuItem1});
-            this.configuraciónToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.configuraciónToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.configuraciónToolStripMenuItem.Name = "configuraciónToolStripMenuItem";
             this.configuraciónToolStripMenuItem.Size = new System.Drawing.Size(95, 20);
             this.configuraciónToolStripMenuItem.Text = "Configuración";
@@ -242,7 +246,7 @@
             this.Registrar_Button.Name = "Registrar_Button";
             this.Registrar_Button.Size = new System.Drawing.Size(120, 30);
             this.Registrar_Button.TabIndex = 51;
-            this.Registrar_Button.Text = "Guardar";
+            this.Registrar_Button.Text = "Registrar";
             this.Registrar_Button.UseVisualStyleBackColor = false;
             // 
             // button2
@@ -403,6 +407,27 @@
             this.label5.TabIndex = 67;
             this.label5.Text = "Contacto";
             // 
+            // proveedoresToolStripMenuItem
+            // 
+            this.proveedoresToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.registrarProveedorToolStripMenuItem,
+            this.verProveedoresToolStripMenuItem});
+            this.proveedoresToolStripMenuItem.Name = "proveedoresToolStripMenuItem";
+            this.proveedoresToolStripMenuItem.Size = new System.Drawing.Size(84, 20);
+            this.proveedoresToolStripMenuItem.Text = "Proveedores";
+            // 
+            // registrarProveedorToolStripMenuItem
+            // 
+            this.registrarProveedorToolStripMenuItem.Name = "registrarProveedorToolStripMenuItem";
+            this.registrarProveedorToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.registrarProveedorToolStripMenuItem.Text = "Registrar Proveedor";
+            // 
+            // verProveedoresToolStripMenuItem
+            // 
+            this.verProveedoresToolStripMenuItem.Name = "verProveedoresToolStripMenuItem";
+            this.verProveedoresToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.verProveedoresToolStripMenuItem.Text = "Ver Proveedores";
+            // 
             // RegisterAndModifyProvider
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -473,5 +498,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ToolStripMenuItem proveedoresToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem registrarProveedorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem verProveedoresToolStripMenuItem;
     }
 }
