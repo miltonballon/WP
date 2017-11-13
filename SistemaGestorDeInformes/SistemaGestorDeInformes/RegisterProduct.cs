@@ -214,5 +214,13 @@ namespace SistemaGestorDeInformes
             this.Hide();
             Interfaz.Show();
         }
+
+        private void verProveedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowProviders Interfaz = new ShowProviders();
+            Interfaz.WindowState = this.WindowState;
+            this.Hide();
+            Interfaz.Show();
+        }
     }
 }
