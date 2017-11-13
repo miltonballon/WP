@@ -259,5 +259,18 @@ namespace SistemaGestorDeInformes
         {
 
         }
+
+        private void verInformeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void historialDeRecepcionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            HistoricReceptions Interfaz = new HistoricReceptions();
+            Interfaz.WindowState = this.WindowState;
+            this.Hide();
+            Interfaz.Show();
+        }
     }
 }
