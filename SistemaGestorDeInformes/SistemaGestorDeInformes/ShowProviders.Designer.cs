@@ -52,14 +52,14 @@
             this.abrirTrimestreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.Atras_Button = new System.Windows.Forms.Button();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.Atras_Button = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -222,14 +222,14 @@
             // 
             this.informeToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.informeToolStripMenuItem.Name = "informeToolStripMenuItem";
-            this.informeToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.informeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.informeToolStripMenuItem.Text = "Informe";
             // 
             // inventarioToolStripMenuItem1
             // 
-            this.inventarioToolStripMenuItem1.ForeColor = System.Drawing.Color.Gray;
+            this.inventarioToolStripMenuItem1.ForeColor = System.Drawing.Color.Black;
             this.inventarioToolStripMenuItem1.Name = "inventarioToolStripMenuItem1";
-            this.inventarioToolStripMenuItem1.Size = new System.Drawing.Size(127, 22);
+            this.inventarioToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.inventarioToolStripMenuItem1.Text = "Inventario";
             // 
             // abrirTrimestreToolStripMenuItem
@@ -260,31 +260,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(643, 371);
             this.dataGridView1.TabIndex = 56;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.Color.Yellow;
-            this.label1.Location = new System.Drawing.Point(12, 34);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 19);
-            this.label1.TabIndex = 55;
-            this.label1.Text = "Proveedores";
-            // 
-            // Atras_Button
-            // 
-            this.Atras_Button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.Atras_Button.BackColor = System.Drawing.Color.Black;
-            this.Atras_Button.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Atras_Button.ForeColor = System.Drawing.Color.Yellow;
-            this.Atras_Button.Location = new System.Drawing.Point(3, 472);
-            this.Atras_Button.Name = "Atras_Button";
-            this.Atras_Button.Size = new System.Drawing.Size(120, 30);
-            this.Atras_Button.TabIndex = 54;
-            this.Atras_Button.Text = "Atrás";
-            this.Atras_Button.UseVisualStyleBackColor = false;
-            this.Atras_Button.Click += new System.EventHandler(this.Atras_Button_Click);
-            // 
             // Column1
             // 
             this.Column1.HeaderText = "Nombre del Proveedor";
@@ -314,6 +289,31 @@
             // 
             this.Column6.HeaderText = "Telefono del Contacto";
             this.Column6.Name = "Column6";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.Yellow;
+            this.label1.Location = new System.Drawing.Point(12, 34);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(110, 19);
+            this.label1.TabIndex = 55;
+            this.label1.Text = "Proveedores";
+            // 
+            // Atras_Button
+            // 
+            this.Atras_Button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.Atras_Button.BackColor = System.Drawing.Color.Black;
+            this.Atras_Button.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Atras_Button.ForeColor = System.Drawing.Color.Yellow;
+            this.Atras_Button.Location = new System.Drawing.Point(3, 472);
+            this.Atras_Button.Name = "Atras_Button";
+            this.Atras_Button.Size = new System.Drawing.Size(120, 30);
+            this.Atras_Button.TabIndex = 54;
+            this.Atras_Button.Text = "Atrás";
+            this.Atras_Button.UseVisualStyleBackColor = false;
+            this.Atras_Button.Click += new System.EventHandler(this.Atras_Button_Click);
             // 
             // ShowProviders
             // 
