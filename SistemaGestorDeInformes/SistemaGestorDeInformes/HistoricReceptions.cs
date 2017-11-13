@@ -16,5 +16,10 @@ namespace SistemaGestorDeInformes
         {
             InitializeComponent();
         }
+
+        private void HistoricReceptions_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
