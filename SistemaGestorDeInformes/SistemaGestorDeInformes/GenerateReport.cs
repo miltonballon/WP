@@ -230,5 +230,13 @@ namespace SistemaGestorDeInformes
         {
 
         }
+
+        private void historialToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            HistoricReceptions Interfaz = new HistoricReceptions();
+            Interfaz.WindowState = this.WindowState;
+            this.Hide();
+            Interfaz.Show();
+        }
     }
 }
