@@ -201,6 +201,7 @@
             // 
             // verProveedoresToolStripMenuItem
             // 
+            this.verProveedoresToolStripMenuItem.ForeColor = System.Drawing.Color.Gray;
             this.verProveedoresToolStripMenuItem.Name = "verProveedoresToolStripMenuItem";
             this.verProveedoresToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
             this.verProveedoresToolStripMenuItem.Text = "Ver Proveedores";
