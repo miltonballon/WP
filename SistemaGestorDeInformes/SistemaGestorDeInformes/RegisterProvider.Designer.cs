@@ -201,9 +201,11 @@
             // 
             // proveedoresToolStripMenuItem
             // 
+            this.proveedoresToolStripMenuItem.BackColor = System.Drawing.Color.Black;
             this.proveedoresToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.registrarProveedorToolStripMenuItem,
             this.verProveedoresToolStripMenuItem});
+            this.proveedoresToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.proveedoresToolStripMenuItem.Name = "proveedoresToolStripMenuItem";
             this.proveedoresToolStripMenuItem.Size = new System.Drawing.Size(84, 20);
             this.proveedoresToolStripMenuItem.Text = "Proveedores";
