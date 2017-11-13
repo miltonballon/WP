@@ -24,10 +24,5 @@ namespace SistemaGestorDeInformes
             this.Hide();
             main.Show();
         }
-
-        private void registrarProveedorToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
