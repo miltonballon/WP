@@ -75,6 +75,12 @@
     <Compile Include="GenerateReport.Designer.cs">
       <DependentUpon>GenerateReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="HistoricReceptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HistoricReceptions.Designer.cs">
+      <DependentUpon>HistoricReceptions.cs</DependentUpon>
+    </Compile>
     <Compile Include="InventoryConfiguration.cs">
       <SubType>Form</SubType>
     </Compile>
