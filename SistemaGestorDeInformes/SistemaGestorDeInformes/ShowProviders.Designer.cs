@@ -37,7 +37,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(815, 508);
             this.Name = "ShowProviders";
-            this.Text = "ShowProviders";
+            this.Text = "Ver Proveedores";
             this.ResumeLayout(false);
 
         }
