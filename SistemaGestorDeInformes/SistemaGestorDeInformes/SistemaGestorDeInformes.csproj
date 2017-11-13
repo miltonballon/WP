@@ -203,6 +203,9 @@
     <EmbeddedResource Include="GenerateReport.resx">
       <DependentUpon>GenerateReport.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="HistoricReceptions.resx">
+      <DependentUpon>HistoricReceptions.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InventoryConfiguration.resx">
       <DependentUpon>InventoryConfiguration.cs</DependentUpon>
     </EmbeddedResource>
