@@ -125,5 +125,12 @@ namespace SistemaGestorDeInformes
             this.Hide();
             Interfaz.Show();
         }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Login Interfaz = new Login();
+            this.Hide();
+            Interfaz.Show();
+        }
     }
 }
