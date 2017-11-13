@@ -225,5 +225,10 @@ namespace SistemaGestorDeInformes
         {
 
         }
+
+        private void configuraciónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
