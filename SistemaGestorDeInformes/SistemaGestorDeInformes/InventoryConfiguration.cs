@@ -144,5 +144,13 @@ namespace SistemaGestorDeInformes
                 lbUnidades.Text = "Sin Datos";
             }
         }
+
+        private void registrarProveedorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RegisterProvider Interfaz = new RegisterProvider();
+            Interfaz.WindowState = this.WindowState;
+            this.Hide();
+            Interfaz.Show();
+        }
     }
 }

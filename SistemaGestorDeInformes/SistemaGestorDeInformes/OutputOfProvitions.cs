@@ -196,6 +196,14 @@ namespace SistemaGestorDeInformes
             {
                 //rc.registerOutputReception(Product_TextBox, Unit_TextBox, OutputDate_TextBox, Total_TextBox);
             }
+
+        private void registrarProveedorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RegisterProvider Interfaz = new RegisterProvider();
+            Interfaz.WindowState = this.WindowState;
+            this.Hide();
+            Interfaz.Show();
         }
+    }
     }
 

@@ -188,5 +188,13 @@ namespace SistemaGestorDeInformes
             this.Hide();
             principal.Show();
         }
+
+        private void registrarProveedorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RegisterProvider Interfaz = new RegisterProvider();
+            Interfaz.WindowState = this.WindowState;
+            this.Hide();
+            Interfaz.Show();
+        }
     }
 }
