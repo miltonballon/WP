@@ -16,5 +16,13 @@ namespace SistemaGestorDeInformes
         {
             InitializeComponent();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Main main = new Main();
+            main.WindowState = this.WindowState;
+            this.Hide();
+            main.Show();
+        }
     }
 }
