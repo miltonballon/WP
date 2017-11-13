@@ -135,5 +135,10 @@ namespace SistemaGestorDeInformes
             this.Hide();
             Interfaz.Show();
         }
+
+        private void historialToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
