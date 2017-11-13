@@ -282,6 +282,7 @@
             this.Atras_Button.TabIndex = 54;
             this.Atras_Button.Text = "Atrás";
             this.Atras_Button.UseVisualStyleBackColor = false;
+            this.Atras_Button.Click += new System.EventHandler(this.Atras_Button_Click);
             // 
             // Column1
             // 

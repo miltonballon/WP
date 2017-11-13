@@ -16,5 +16,13 @@ namespace SistemaGestorDeInformes
         {
             InitializeComponent();
         }
+
+        private void Atras_Button_Click(object sender, EventArgs e)
+        {
+            Main main = new Main();
+            main.WindowState = this.WindowState;
+            this.Hide();
+            main.Show();
+        }
     }
 }
