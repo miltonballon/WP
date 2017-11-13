@@ -74,6 +74,8 @@ namespace ControllerLibrary
             c.dataClose();
             return receptions;
         }
+
+       
         public List<Reception> searchReception(string name)
         {
             List<Reception> reception = new List<Reception>();

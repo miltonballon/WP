@@ -225,6 +225,22 @@ namespace SistemaGestorDeInformes
             this.Hide();
             Interfaz.Show();
         }
+
+        private void Register_Button_Click_1(object sender, EventArgs e)
+        {
+            OutputReception outputReception = new OutputReception();
+            outputReception.Reception.Product.Name = Product_TextBox.Text;
+            outputReception.Reception.Product.Unit = Unit_TextBox.Text;
+            outputReception.OutputDate = OutputDate_TextBox.Text;
+            outputReception.Total = Int32.Parse(Total_TextBox.Text);
+
+            rc.InsertOutputReceptionAndInventory(outputReception);
+        }
+
+        private void Product_TextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
     }
 

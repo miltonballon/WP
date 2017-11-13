@@ -15,17 +15,20 @@ namespace SistemaGestorDeInformes
     public partial class HistoricReceptions : Form
     {
         ReceptionController receptionController;
+        OutputReceptionController outputReceptionController;
         InventoryController inventoryController;
         public HistoricReceptions()
         {
             InitializeComponent();
             receptionController = new ReceptionController();
             inventoryController = new InventoryController();
+            outputReceptionController = new OutputReceptionController();
         }
 
         private void HistoricReceptions_Load(object sender, EventArgs e)
         {
             chargeData();
+            chargeOutputs();
         }
         private void chargeData()
         {
@@ -35,15 +38,48 @@ namespace SistemaGestorDeInformes
             {
                 Product product = inventory.Product;
                 String productsName = product.Name,
+                       provider = product.Provider,
                        unit = product.Unit,
+                       reception= inventory.ReceptionDate,
+                       expiration = inventory.ExpirationDate,
                        total = inventory.Total + "";
 
-                String[] row = new String[] { productsName, unit, total };
+                String[] row = new String[] { productsName,provider, unit,reception,expiration, total };
                 dataGridView1.Rows.Add(row);
+                
             }
 
         }
 
+        private void chargeOutputs()
+        {
+           
+            List<OutputReception> products = outputReceptionController.getAllOutputReceptions();
+
+
+            if (products != null)
+            {
+                foreach (OutputReception inventory in products)
+                {
+                    //Product product = inventory.Product;
+
+                    Reception rec = inventory.Reception;
+
+                    String productsName = rec.Product.Name,
+                           unit = rec.Product.Unit,
+
+                           outputDate = inventory.OutputDate,
+                           total = inventory.Total + "";
+
+                    String[] row = new String[] { productsName, unit, total, outputDate };
+
+                    dataGridView2.Rows.Add(row);
+
+                }
+            }
+            
+
+        }
         private void registrarEntradaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             InputOfProvitions Interfaz = new InputOfProvitions();
@@ -161,6 +197,16 @@ namespace SistemaGestorDeInformes
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

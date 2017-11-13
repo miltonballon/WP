@@ -23,6 +23,33 @@ namespace ControllerLibrary
             receptionController = new ReceptionController();
             inventoryController = new InventoryController();
         }
+
+        public List<OutputReception> getAllOutputReceptions()
+        {
+            List<OutputReception> receptions = new List<OutputReception>();
+           
+            string query = "SELECT * FROM OutputReception";
+            try
+            {
+                SQLiteDataReader data = c.query_show(query);
+                while (data.Read())
+                {
+                    int ppuId = Int32.Parse(data[1].ToString()),
+                        total = Int32.Parse(data[2].ToString());
+                    String outputDate = data[3].ToString();
+                    
+                    //Product product = productController.getProductByPPUId(ppuId);
+                    Reception rec = receptionController.getReceptionById(ppuId);
+                
+                    OutputReception reception = new OutputReception(rec, outputDate, total);
+                    receptions.Add(reception);
+                }
+            }
+            catch (Exception)
+            { }
+            c.dataClose();
+            return receptions;
+        }
         public void ProductAutoComplete(TextBox Product)
         {
             string query = "SELECT name FROM Product";
@@ -67,7 +94,7 @@ namespace ControllerLibrary
 
             int idUnit = getIdUnit(outputReception.Reception.Product.Unit);
             int notExist = -1;
-            string queryPPU = "SELECT id FROM Product_Provider_Unit where id_prod='" + idName + "' and id_uni='" + idUnit + "'";
+            string queryPPU = "SELECT id FROM Product_Provider_Unit where id_product='" + idName + "' and id_unit='" + idUnit + "'";
             SQLiteDataReader data = c.query_show(queryPPU);
             
             int resul = -1;
@@ -120,7 +147,7 @@ namespace ControllerLibrary
         }
         public int getIdProvider(string provider)
         {
-            string ProviderQuery = "select id FROM Provider where Provider = " + "'" + provider + "'";
+            string ProviderQuery = "select id FROM Provider where name = " + "'" + provider + "'";
             return c.FindAndGetID(ProviderQuery);
         }
         public int getIdUnit(string unit)
