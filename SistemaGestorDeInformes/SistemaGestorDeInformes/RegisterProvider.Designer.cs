@@ -212,6 +212,7 @@
             // 
             // registrarProveedorToolStripMenuItem
             // 
+            this.registrarProveedorToolStripMenuItem.ForeColor = System.Drawing.Color.Gray;
             this.registrarProveedorToolStripMenuItem.Name = "registrarProveedorToolStripMenuItem";
             this.registrarProveedorToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
             this.registrarProveedorToolStripMenuItem.Text = "Registrar Proveedor";
