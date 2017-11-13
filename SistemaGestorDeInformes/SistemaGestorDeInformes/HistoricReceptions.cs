@@ -117,5 +117,13 @@ namespace SistemaGestorDeInformes
             this.Hide();
             Interfaz.Show();
         }
+
+        private void abrirTrimestreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenQuarter Interfaz = new OpenQuarter();
+            Interfaz.WindowState = this.WindowState;
+            this.Hide();
+            Interfaz.Show();
+        }
     }
 }
