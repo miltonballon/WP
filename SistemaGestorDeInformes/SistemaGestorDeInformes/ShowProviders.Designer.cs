@@ -51,7 +51,16 @@
             this.inventarioToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.abrirTrimestreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.NFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NAutorizacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Proveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.Atras_Button = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -230,18 +239,86 @@
             this.salirToolStripMenuItem.Size = new System.Drawing.Size(88, 20);
             this.salirToolStripMenuItem.Text = "Cerrar Sesión";
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.NFactura,
+            this.NAutorizacion,
+            this.Proveedor,
+            this.Nit,
+            this.Fecha});
+            this.dataGridView1.Location = new System.Drawing.Point(56, 71);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(547, 371);
+            this.dataGridView1.TabIndex = 56;
+            // 
+            // NFactura
+            // 
+            this.NFactura.HeaderText = "N° Factura";
+            this.NFactura.Name = "NFactura";
+            // 
+            // NAutorizacion
+            // 
+            this.NAutorizacion.HeaderText = "N° Autorizacion";
+            this.NAutorizacion.Name = "NAutorizacion";
+            // 
+            // Proveedor
+            // 
+            this.Proveedor.HeaderText = "Proveedor";
+            this.Proveedor.Name = "Proveedor";
+            // 
+            // Nit
+            // 
+            this.Nit.HeaderText = "NIT";
+            this.Nit.Name = "Nit";
+            // 
+            // Fecha
+            // 
+            this.Fecha.HeaderText = "Fecha";
+            this.Fecha.Name = "Fecha";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.Yellow;
+            this.label1.Location = new System.Drawing.Point(12, 34);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(110, 19);
+            this.label1.TabIndex = 55;
+            this.label1.Text = "Proveedores";
+            // 
+            // Atras_Button
+            // 
+            this.Atras_Button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.Atras_Button.BackColor = System.Drawing.Color.Black;
+            this.Atras_Button.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Atras_Button.ForeColor = System.Drawing.Color.Yellow;
+            this.Atras_Button.Location = new System.Drawing.Point(3, 472);
+            this.Atras_Button.Name = "Atras_Button";
+            this.Atras_Button.Size = new System.Drawing.Size(120, 30);
+            this.Atras_Button.TabIndex = 54;
+            this.Atras_Button.Text = "Atrás";
+            this.Atras_Button.UseVisualStyleBackColor = false;
+            // 
             // ShowProviders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(815, 508);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.Atras_Button);
             this.Controls.Add(this.menuStrip1);
             this.Name = "ShowProviders";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ver Proveedores";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -272,5 +349,13 @@
         private System.Windows.Forms.ToolStripMenuItem inventarioToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem abrirTrimestreToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NFactura;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NAutorizacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Proveedor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button Atras_Button;
     }
 }
