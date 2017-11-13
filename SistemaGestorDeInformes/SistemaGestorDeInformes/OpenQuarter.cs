@@ -254,5 +254,10 @@ namespace SistemaGestorDeInformes
             this.Hide();
             Interfaz.Show();
         }
+
+        private void configuraciónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -101,5 +101,13 @@ namespace SistemaGestorDeInformes
             this.Hide();
             Interfaz.Show();
         }
+
+        private void informeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ReportConfiguration Interfaz = new ReportConfiguration();
+            Interfaz.WindowState = this.WindowState;
+            this.Hide();
+            Interfaz.Show();
+        }
     }
 }
