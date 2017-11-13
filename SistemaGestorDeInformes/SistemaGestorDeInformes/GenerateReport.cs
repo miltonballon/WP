@@ -215,5 +215,15 @@ namespace SistemaGestorDeInformes
             this.Hide();
             Interfaz.Show();
         }
+
+        private void generarInformeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void verInformeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

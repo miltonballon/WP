@@ -24,7 +24,10 @@ namespace SistemaGestorDeInformes
 
         private void registrarEntradaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            InputOfProvitions Interfaz = new InputOfProvitions();
+            Interfaz.WindowState = this.WindowState;
+            this.Hide();
+            Interfaz.Show();
         }
 
         private void pantallaPrincipalToolStripMenuItem_Click(object sender, EventArgs e)
