@@ -1,6 +1,6 @@
 ﻿namespace SistemaGestorDeInformes
 {
-    partial class RegisterAndModifyProvider
+    partial class RegisterProvider
     {
         /// <summary>
         /// Required designer variable.

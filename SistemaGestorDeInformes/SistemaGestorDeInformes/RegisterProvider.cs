@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SistemaGestorDeInformes
 {
-    public partial class RegisterAndModifyProvider : Form
+    public partial class RegisterProvider : Form
     {
-        public RegisterAndModifyProvider()
+        public RegisterProvider()
         {
             InitializeComponent();
         }
