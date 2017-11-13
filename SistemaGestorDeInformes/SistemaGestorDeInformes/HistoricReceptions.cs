@@ -69,5 +69,13 @@ namespace SistemaGestorDeInformes
             this.Hide();
             Interfaz.Show();
         }
+
+        private void registrarSalidaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OutputOfProvitions Interfaz = new OutputOfProvitions();
+            Interfaz.WindowState = this.WindowState;
+            this.Hide();
+            Interfaz.Show();
+        }
     }
 }
