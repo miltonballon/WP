@@ -44,7 +44,7 @@ namespace SistemaGestorDeInformes
                        expiration = inventory.ExpirationDate,
                        total = inventory.Total + "";
 
-                String[] row = new String[] { productsName,provider, unit,reception,expiration, total };
+                String[] row = new String[] { productsName,provider, unit, total, reception,expiration };
                 dataGridView1.Rows.Add(row);
                 
             }
@@ -226,7 +226,7 @@ namespace SistemaGestorDeInformes
                        expiration = inventory.ExpirationDate,
                        total = inventory.Total + "";
 
-                String[] row = new String[] { productsName, provider, unit, reception, expiration, total };
+                String[] row = new String[] { productsName, provider, unit, total, reception, expiration };
                 dataGridView1.Rows.Add(row);
 
             }
@@ -263,8 +263,6 @@ namespace SistemaGestorDeInformes
         }
         private void SearchButton_Click(object sender, EventArgs e)
         {
-            
-            MessageBox.Show(dateTimePicker1.Value.ToString("dd/MM/yyyy"));
             inputReceptionsByDate();
             outputReceptionsByDate();
 

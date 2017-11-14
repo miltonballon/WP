@@ -77,7 +77,7 @@ namespace ControllerLibrary
         public List<Reception> getReceptionsByDate(string date)
         {
             List<Reception> receptions = new List<Reception>();
-            string query = "SELECT * FROM Reception where receptionDAte > '"+date+"'";
+            string query = "SELECT * FROM Reception where receptionDAte >= '"+date+"'";
             try
             {
                 SQLiteDataReader data = c.query_show(query);

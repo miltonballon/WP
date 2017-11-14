@@ -33,7 +33,7 @@ namespace SistemaGestorDeInformes
         }
         public void LoadDataGridView()
         {
-            String[] row = new String[] { Produc_TextBox.Text, Provider_TextBox.Text, Unit_TextBox.Text, ReceptionDate.Value.ToString("dd/MM/yyyy"), ExpirationDate.Value.ToString("dd/MM/yyyy"), TotalReception_Textbox.Text };
+            String[] row = new String[] { Produc_TextBox.Text, Provider_TextBox.Text, Unit_TextBox.Text, TotalReception_Textbox.Text, ExpirationDate.Value.ToString("dd/MM/yyyy"), ReceptionDate.Value.ToString("dd/MM/yyyy")};
             dataGridView1.Rows.Add(row);
         }
        

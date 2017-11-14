@@ -173,7 +173,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(125, 217);
+            this.label8.Location = new System.Drawing.Point(128, 216);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(191, 19);
             this.label8.TabIndex = 24;
@@ -195,10 +195,10 @@
             // 
             this.ExpirationDate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ExpirationDate.Font = new System.Drawing.Font("Bookman Old Style", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExpirationDate.Location = new System.Drawing.Point(325, 213);
+            this.ExpirationDate.Location = new System.Drawing.Point(325, 253);
             this.ExpirationDate.Name = "ExpirationDate";
             this.ExpirationDate.Size = new System.Drawing.Size(250, 23);
-            this.ExpirationDate.TabIndex = 3;
+            this.ExpirationDate.TabIndex = 4;
             this.ExpirationDate.ValueChanged += new System.EventHandler(this.ExpirationDate_ValueChanged);
             // 
             // Unit_TextBox
@@ -243,10 +243,10 @@
             // 
             this.ReceptionDate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ReceptionDate.Font = new System.Drawing.Font("Bookman Old Style", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ReceptionDate.Location = new System.Drawing.Point(325, 253);
+            this.ReceptionDate.Location = new System.Drawing.Point(325, 216);
             this.ReceptionDate.Name = "ReceptionDate";
             this.ReceptionDate.Size = new System.Drawing.Size(250, 23);
-            this.ReceptionDate.TabIndex = 4;
+            this.ReceptionDate.TabIndex = 3;
             // 
             // TotalReception_Textbox
             // 

@@ -54,7 +54,7 @@ namespace ControllerLibrary
         {
             List<OutputReception> receptions = new List<OutputReception>();
 
-            string query = "SELECT * FROM OutputReception where output_date > '" + date + "'";
+            string query = "SELECT * FROM OutputReception where output_date >= '" + date + "'";
             try
             {
                 SQLiteDataReader data = c.query_show(query);
