@@ -61,8 +61,8 @@
             this.Register_Button = new System.Windows.Forms.Button();
             this.Unit_TextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.OutputDate_TextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.OutputDate_TextBox = new System.Windows.Forms.DateTimePicker();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -371,15 +371,6 @@
             this.label1.TabIndex = 51;
             this.label1.Text = "UNIDAD:";
             // 
-            // OutputDate_TextBox
-            // 
-            this.OutputDate_TextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.OutputDate_TextBox.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OutputDate_TextBox.Location = new System.Drawing.Point(325, 267);
-            this.OutputDate_TextBox.Name = "OutputDate_TextBox";
-            this.OutputDate_TextBox.Size = new System.Drawing.Size(250, 23);
-            this.OutputDate_TextBox.TabIndex = 38;
-            // 
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -392,14 +383,21 @@
             this.label2.TabIndex = 53;
             this.label2.Text = "FECHA:";
             // 
+            // OutputDate_TextBox
+            // 
+            this.OutputDate_TextBox.Location = new System.Drawing.Point(325, 269);
+            this.OutputDate_TextBox.Name = "OutputDate_TextBox";
+            this.OutputDate_TextBox.Size = new System.Drawing.Size(250, 20);
+            this.OutputDate_TextBox.TabIndex = 54;
+            // 
             // OutputOfProvitions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(815, 508);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.OutputDate_TextBox);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Unit_TextBox);
             this.Controls.Add(this.menuStrip1);
@@ -451,12 +449,12 @@
         private System.Windows.Forms.Button Register_Button;
         private System.Windows.Forms.TextBox Unit_TextBox;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox OutputDate_TextBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ToolStripMenuItem inventarioToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem proveedoresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registrarProveedorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verProveedoresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem historialToolStripMenuItem;
+        private System.Windows.Forms.DateTimePicker OutputDate_TextBox;
     }
 }

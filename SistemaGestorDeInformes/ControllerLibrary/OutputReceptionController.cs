@@ -50,6 +50,32 @@ namespace ControllerLibrary
             c.dataClose();
             return receptions;
         }
+        public List<OutputReception> getOutputReceptionsByDate(string date)
+        {
+            List<OutputReception> receptions = new List<OutputReception>();
+
+            string query = "SELECT * FROM OutputReception where output_date > '" + date + "'";
+            try
+            {
+                SQLiteDataReader data = c.query_show(query);
+                while (data.Read())
+                {
+                    int ppuId = Int32.Parse(data[1].ToString()),
+                        total = Int32.Parse(data[2].ToString());
+                    String outputDate = data[3].ToString();
+
+                    //Product product = productController.getProductByPPUId(ppuId);
+                    Reception rec = receptionController.getReceptionById(ppuId);
+
+                    OutputReception reception = new OutputReception(rec, outputDate, total);
+                    receptions.Add(reception);
+                }
+            }
+            catch (Exception)
+            { }
+            c.dataClose();
+            return receptions;
+        }
         public void ProductAutoComplete(TextBox Product)
         {
             string query = "SELECT name FROM Product";

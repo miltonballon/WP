@@ -210,12 +210,10 @@ namespace SistemaGestorDeInformes
         {
 
         }
-
-        private void SearchButton_Click(object sender, EventArgs e)
+        public void inputReceptionsByDate()
         {
             dataGridView1.Rows.Clear();
             dataGridView1.Refresh();
-            MessageBox.Show(dateTimePicker1.Value.ToString("dd/MM/yyyy"));
             List<Reception> products = receptionController.getReceptionsByDate(dateTimePicker1.Value.ToString("dd/MM/yyyy"));
 
             foreach (Reception inventory in products)
@@ -232,6 +230,44 @@ namespace SistemaGestorDeInformes
                 dataGridView1.Rows.Add(row);
 
             }
+        }
+        private void outputReceptionsByDate()
+        {
+            dataGridView2.Rows.Clear();
+            dataGridView2.Refresh();
+            List<OutputReception> products = outputReceptionController.getOutputReceptionsByDate(dateTimePicker1.Value.ToString("dd/MM/yyyy"));
+
+
+            if (products != null)
+            {
+                foreach (OutputReception inventory in products)
+                {
+                    //Product product = inventory.Product;
+
+                    Reception rec = inventory.Reception;
+
+                    String productsName = rec.Product.Name,
+                           unit = rec.Product.Unit,
+
+                           outputDate = inventory.OutputDate,
+                           total = inventory.Total + "";
+
+                    String[] row = new String[] { productsName, unit, total, outputDate };
+
+                    dataGridView2.Rows.Add(row);
+
+                }
+            }
+
+
+        }
+        private void SearchButton_Click(object sender, EventArgs e)
+        {
+            
+            MessageBox.Show(dateTimePicker1.Value.ToString("dd/MM/yyyy"));
+            inputReceptionsByDate();
+            outputReceptionsByDate();
+
         }
     }
 }

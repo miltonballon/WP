@@ -116,12 +116,12 @@ namespace SistemaGestorDeInformes
             Product_TextBox.MaxLength = 70;
             Unit_TextBox.MaxLength = 20;
             Total_TextBox.MaxLength = 15;
-            OutputDate_TextBox.MaxLength = 10;
+           // OutputDate_TextBox.MaxLength = 10;
 
             Product_TextBox.ShortcutsEnabled = false;
             Unit_TextBox.ShortcutsEnabled = false;
             Total_TextBox.ShortcutsEnabled = false;
-            OutputDate_TextBox.ShortcutsEnabled = false;
+           // OutputDate_TextBox.ShortcutsEnabled = false;
 
             KeyPreview = true;
         }
@@ -231,7 +231,7 @@ namespace SistemaGestorDeInformes
             OutputReception outputReception = new OutputReception();
             outputReception.Reception.Product.Name = Product_TextBox.Text;
             outputReception.Reception.Product.Unit = Unit_TextBox.Text;
-            outputReception.OutputDate = OutputDate_TextBox.Text;
+            outputReception.OutputDate = OutputDate_TextBox.Value.ToString("dd/MM/yyyy");
             outputReception.Total = Int32.Parse(Total_TextBox.Text);
 
             rc.InsertOutputReceptionAndInventory(outputReception);
