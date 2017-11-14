@@ -28,6 +28,12 @@ namespace SistemaGestorDeInformes
             this.Hide();
             main.Show();
         }
+        public void LoadDataGridView()
+        {
+            String[] row = new String[] { Product_TextBox.Text, Unit_TextBox.Text, Total_TextBox.Text, OutputDate_TextBox.Value.ToString("dd/MM/yyyy") };
+            dataGridView1.Rows.Add(row);
+           
+        }
 
         private void pantallaPrincipalToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -136,6 +142,7 @@ namespace SistemaGestorDeInformes
             outputReception.Total = Int32.Parse(Total_TextBox.Text);
 
             rc.InsertOutputReceptionAndInventory(outputReception);
+            
         }
             private void generarInformeToolStripMenuItem_Click(object sender, EventArgs e)
             {
@@ -235,6 +242,7 @@ namespace SistemaGestorDeInformes
             outputReception.Total = Int32.Parse(Total_TextBox.Text);
 
             rc.InsertOutputReceptionAndInventory(outputReception);
+            LoadDataGridView();
         }
 
         private void Product_TextBox_TextChanged(object sender, EventArgs e)

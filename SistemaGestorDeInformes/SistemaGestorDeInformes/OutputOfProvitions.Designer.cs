@@ -63,7 +63,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.OutputDate_TextBox = new System.Windows.Forms.DateTimePicker();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -268,7 +274,7 @@
             // 
             this.Total_TextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Total_TextBox.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Total_TextBox.Location = new System.Drawing.Point(325, 238);
+            this.Total_TextBox.Location = new System.Drawing.Point(325, 193);
             this.Total_TextBox.Name = "Total_TextBox";
             this.Total_TextBox.Size = new System.Drawing.Size(250, 23);
             this.Total_TextBox.TabIndex = 37;
@@ -279,7 +285,7 @@
             this.Product_TextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.Product_TextBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.Product_TextBox.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Product_TextBox.Location = new System.Drawing.Point(325, 179);
+            this.Product_TextBox.Location = new System.Drawing.Point(326, 111);
             this.Product_TextBox.Name = "Product_TextBox";
             this.Product_TextBox.Size = new System.Drawing.Size(250, 23);
             this.Product_TextBox.TabIndex = 35;
@@ -291,7 +297,7 @@
             this.labelNFactura.AutoSize = true;
             this.labelNFactura.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNFactura.ForeColor = System.Drawing.Color.White;
-            this.labelNFactura.Location = new System.Drawing.Point(125, 238);
+            this.labelNFactura.Location = new System.Drawing.Point(125, 193);
             this.labelNFactura.Name = "labelNFactura";
             this.labelNFactura.Size = new System.Drawing.Size(89, 19);
             this.labelNFactura.TabIndex = 45;
@@ -303,7 +309,7 @@
             this.labelNit.AutoSize = true;
             this.labelNit.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNit.ForeColor = System.Drawing.Color.White;
-            this.labelNit.Location = new System.Drawing.Point(125, 179);
+            this.labelNit.Location = new System.Drawing.Point(125, 115);
             this.labelNit.Name = "labelNit";
             this.labelNit.Size = new System.Drawing.Size(94, 19);
             this.labelNit.TabIndex = 44;
@@ -315,7 +321,7 @@
             this.buttonAtrás.BackColor = System.Drawing.Color.Black;
             this.buttonAtrás.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAtrás.ForeColor = System.Drawing.Color.Yellow;
-            this.buttonAtrás.Location = new System.Drawing.Point(3, 472);
+            this.buttonAtrás.Location = new System.Drawing.Point(455, 271);
             this.buttonAtrás.Name = "buttonAtrás";
             this.buttonAtrás.Size = new System.Drawing.Size(120, 30);
             this.buttonAtrás.TabIndex = 41;
@@ -340,7 +346,7 @@
             this.Register_Button.BackColor = System.Drawing.Color.Black;
             this.Register_Button.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
             this.Register_Button.ForeColor = System.Drawing.Color.Yellow;
-            this.Register_Button.Location = new System.Drawing.Point(325, 307);
+            this.Register_Button.Location = new System.Drawing.Point(325, 271);
             this.Register_Button.Name = "Register_Button";
             this.Register_Button.Size = new System.Drawing.Size(120, 30);
             this.Register_Button.TabIndex = 39;
@@ -354,7 +360,7 @@
             this.Unit_TextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.Unit_TextBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.Unit_TextBox.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Unit_TextBox.Location = new System.Drawing.Point(325, 208);
+            this.Unit_TextBox.Location = new System.Drawing.Point(326, 152);
             this.Unit_TextBox.Name = "Unit_TextBox";
             this.Unit_TextBox.Size = new System.Drawing.Size(250, 23);
             this.Unit_TextBox.TabIndex = 36;
@@ -365,7 +371,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(125, 208);
+            this.label1.Location = new System.Drawing.Point(125, 152);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(70, 19);
             this.label1.TabIndex = 51;
@@ -377,7 +383,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(125, 271);
+            this.label2.Location = new System.Drawing.Point(125, 233);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(62, 19);
             this.label2.TabIndex = 53;
@@ -385,17 +391,52 @@
             // 
             // OutputDate_TextBox
             // 
-            this.OutputDate_TextBox.Location = new System.Drawing.Point(325, 269);
+            this.OutputDate_TextBox.Location = new System.Drawing.Point(326, 231);
             this.OutputDate_TextBox.Name = "OutputDate_TextBox";
             this.OutputDate_TextBox.Size = new System.Drawing.Size(250, 20);
             this.OutputDate_TextBox.TabIndex = 54;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.Fecha});
+            this.dataGridView1.Location = new System.Drawing.Point(129, 328);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(447, 207);
+            this.dataGridView1.TabIndex = 55;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Nombre";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "Unidad";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "Cantidad";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // Fecha
+            // 
+            this.Fecha.HeaderText = "Fecha";
+            this.Fecha.Name = "Fecha";
             // 
             // OutputOfProvitions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(815, 508);
+            this.ClientSize = new System.Drawing.Size(815, 554);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.OutputDate_TextBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -414,6 +455,7 @@
             this.Load += new System.EventHandler(this.OutputOfProvitions_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -456,5 +498,10 @@
         private System.Windows.Forms.ToolStripMenuItem verProveedoresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem historialToolStripMenuItem;
         private System.Windows.Forms.DateTimePicker OutputDate_TextBox;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
     }
 }
