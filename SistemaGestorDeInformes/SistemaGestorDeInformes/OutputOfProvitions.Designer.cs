@@ -42,6 +42,7 @@
             this.inventarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarEntradaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarSalidaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.historialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verInventarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.proveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarProveedorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -62,7 +63,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.OutputDate_TextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.historialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -190,6 +190,13 @@
             this.registrarSalidaToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.registrarSalidaToolStripMenuItem.Text = "Registrar Salida";
             // 
+            // historialToolStripMenuItem
+            // 
+            this.historialToolStripMenuItem.Name = "historialToolStripMenuItem";
+            this.historialToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.historialToolStripMenuItem.Text = "Historial";
+            this.historialToolStripMenuItem.Click += new System.EventHandler(this.historialToolStripMenuItem_Click);
+            // 
             // verInventarioToolStripMenuItem
             // 
             this.verInventarioToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
@@ -276,6 +283,7 @@
             this.Product_TextBox.Name = "Product_TextBox";
             this.Product_TextBox.Size = new System.Drawing.Size(250, 23);
             this.Product_TextBox.TabIndex = 35;
+            this.Product_TextBox.TextChanged += new System.EventHandler(this.Product_TextBox_TextChanged);
             // 
             // labelNFactura
             // 
@@ -338,6 +346,7 @@
             this.Register_Button.TabIndex = 39;
             this.Register_Button.Text = "Registrar";
             this.Register_Button.UseVisualStyleBackColor = false;
+            this.Register_Button.Click += new System.EventHandler(this.Register_Button_Click_1);
             // 
             // Unit_TextBox
             // 
@@ -382,13 +391,6 @@
             this.label2.Size = new System.Drawing.Size(62, 19);
             this.label2.TabIndex = 53;
             this.label2.Text = "FECHA:";
-            // 
-            // historialToolStripMenuItem
-            // 
-            this.historialToolStripMenuItem.Name = "historialToolStripMenuItem";
-            this.historialToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
-            this.historialToolStripMenuItem.Text = "Historial";
-            this.historialToolStripMenuItem.Click += new System.EventHandler(this.historialToolStripMenuItem_Click);
             // 
             // OutputOfProvitions
             // 
