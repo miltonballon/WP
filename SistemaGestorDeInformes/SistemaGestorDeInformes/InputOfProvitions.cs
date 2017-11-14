@@ -30,7 +30,12 @@ namespace SistemaGestorDeInformes
             
             Inventory inventory = new Inventory(product, Int32.Parse(TotalReception_Textbox.Text), ExpirationDate.Value.ToString("dd/MM/yyyy"));
 
-        }        
+        }
+        public void LoadDataGridView()
+        {
+            String[] row = new String[] { Produc_TextBox.Text, Provider_TextBox.Text, Unit_TextBox.Text, ReceptionDate.Value.ToString("dd/MM/yyyy"), ExpirationDate.Value.ToString("dd/MM/yyyy"), TotalReception_Textbox.Text };
+            dataGridView1.Rows.Add(row);
+        }
        
         private void RegisterReception_Load(object sender, EventArgs e)
         {
@@ -198,6 +203,7 @@ namespace SistemaGestorDeInformes
 
             Reception reception = new Reception(product, ExpirationDate.Value.ToString("dd/MM/yyyy"), ReceptionDate.Value.ToString("dd/MM/yyyy"), Int32.Parse(TotalReception_Textbox.Text));
             rc.RegisterReception(reception);
+            LoadDataGridView();
         }
 
         private void registrarProveedorToolStripMenuItem_Click(object sender, EventArgs e)

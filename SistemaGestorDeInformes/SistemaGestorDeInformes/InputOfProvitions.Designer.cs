@@ -69,7 +69,15 @@
             this.verProveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.FreshRadioButton = new System.Windows.Forms.RadioButton();
             this.DryRadioButton = new System.Windows.Forms.RadioButton();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Proveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Unidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Recepcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Expiracion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // Register_Button
@@ -78,7 +86,7 @@
             this.Register_Button.BackColor = System.Drawing.Color.Black;
             this.Register_Button.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
             this.Register_Button.ForeColor = System.Drawing.Color.Yellow;
-            this.Register_Button.Location = new System.Drawing.Point(325, 393);
+            this.Register_Button.Location = new System.Drawing.Point(337, 356);
             this.Register_Button.Name = "Register_Button";
             this.Register_Button.Size = new System.Drawing.Size(120, 30);
             this.Register_Button.TabIndex = 6;
@@ -103,7 +111,7 @@
             this.buttonAtrás.BackColor = System.Drawing.Color.Black;
             this.buttonAtrás.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAtrás.ForeColor = System.Drawing.Color.Yellow;
-            this.buttonAtrás.Location = new System.Drawing.Point(3, 472);
+            this.buttonAtrás.Location = new System.Drawing.Point(484, 356);
             this.buttonAtrás.Name = "buttonAtrás";
             this.buttonAtrás.Size = new System.Drawing.Size(120, 30);
             this.buttonAtrás.TabIndex = 7;
@@ -117,7 +125,7 @@
             this.labelNFactura.AutoSize = true;
             this.labelNFactura.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNFactura.ForeColor = System.Drawing.Color.White;
-            this.labelNFactura.Location = new System.Drawing.Point(125, 216);
+            this.labelNFactura.Location = new System.Drawing.Point(246, 173);
             this.labelNFactura.Name = "labelNFactura";
             this.labelNFactura.Size = new System.Drawing.Size(70, 19);
             this.labelNFactura.TabIndex = 23;
@@ -129,7 +137,7 @@
             this.labelNit.AutoSize = true;
             this.labelNit.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNit.ForeColor = System.Drawing.Color.White;
-            this.labelNit.Location = new System.Drawing.Point(125, 176);
+            this.labelNit.Location = new System.Drawing.Point(213, 132);
             this.labelNit.Name = "labelNit";
             this.labelNit.Size = new System.Drawing.Size(103, 19);
             this.labelNit.TabIndex = 22;
@@ -141,7 +149,7 @@
             this.labelProveedor.AutoSize = true;
             this.labelProveedor.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelProveedor.ForeColor = System.Drawing.Color.White;
-            this.labelProveedor.Location = new System.Drawing.Point(125, 136);
+            this.labelProveedor.Location = new System.Drawing.Point(222, 93);
             this.labelProveedor.Name = "labelProveedor";
             this.labelProveedor.Size = new System.Drawing.Size(94, 19);
             this.labelProveedor.TabIndex = 21;
@@ -153,7 +161,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(125, 296);
+            this.label7.Location = new System.Drawing.Point(161, 253);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(155, 19);
             this.label7.TabIndex = 25;
@@ -165,7 +173,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(125, 256);
+            this.label8.Location = new System.Drawing.Point(125, 217);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(191, 19);
             this.label8.TabIndex = 24;
@@ -177,7 +185,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(125, 336);
+            this.label9.Location = new System.Drawing.Point(176, 292);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(140, 19);
             this.label9.TabIndex = 26;
@@ -187,7 +195,7 @@
             // 
             this.ExpirationDate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ExpirationDate.Font = new System.Drawing.Font("Bookman Old Style", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExpirationDate.Location = new System.Drawing.Point(325, 256);
+            this.ExpirationDate.Location = new System.Drawing.Point(325, 213);
             this.ExpirationDate.Name = "ExpirationDate";
             this.ExpirationDate.Size = new System.Drawing.Size(250, 23);
             this.ExpirationDate.TabIndex = 3;
@@ -199,7 +207,7 @@
             this.Unit_TextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.Unit_TextBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.Unit_TextBox.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Unit_TextBox.Location = new System.Drawing.Point(325, 216);
+            this.Unit_TextBox.Location = new System.Drawing.Point(325, 173);
             this.Unit_TextBox.Name = "Unit_TextBox";
             this.Unit_TextBox.Size = new System.Drawing.Size(250, 23);
             this.Unit_TextBox.TabIndex = 2;
@@ -211,7 +219,7 @@
             this.Provider_TextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.Provider_TextBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.Provider_TextBox.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Provider_TextBox.Location = new System.Drawing.Point(325, 176);
+            this.Provider_TextBox.Location = new System.Drawing.Point(325, 132);
             this.Provider_TextBox.MaxLength = 64;
             this.Provider_TextBox.Name = "Provider_TextBox";
             this.Provider_TextBox.Size = new System.Drawing.Size(250, 23);
@@ -224,7 +232,7 @@
             this.Produc_TextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.Produc_TextBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.Produc_TextBox.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Produc_TextBox.Location = new System.Drawing.Point(325, 136);
+            this.Produc_TextBox.Location = new System.Drawing.Point(325, 90);
             this.Produc_TextBox.MaxLength = 64;
             this.Produc_TextBox.Name = "Produc_TextBox";
             this.Produc_TextBox.Size = new System.Drawing.Size(250, 23);
@@ -235,7 +243,7 @@
             // 
             this.ReceptionDate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ReceptionDate.Font = new System.Drawing.Font("Bookman Old Style", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ReceptionDate.Location = new System.Drawing.Point(325, 296);
+            this.ReceptionDate.Location = new System.Drawing.Point(325, 253);
             this.ReceptionDate.Name = "ReceptionDate";
             this.ReceptionDate.Size = new System.Drawing.Size(250, 23);
             this.ReceptionDate.TabIndex = 4;
@@ -244,7 +252,7 @@
             // 
             this.TotalReception_Textbox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TotalReception_Textbox.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TotalReception_Textbox.Location = new System.Drawing.Point(325, 336);
+            this.TotalReception_Textbox.Location = new System.Drawing.Point(325, 292);
             this.TotalReception_Textbox.Name = "TotalReception_Textbox";
             this.TotalReception_Textbox.Size = new System.Drawing.Size(250, 23);
             this.TotalReception_Textbox.TabIndex = 5;
@@ -452,7 +460,7 @@
             // 
             this.FreshRadioButton.AutoSize = true;
             this.FreshRadioButton.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.FreshRadioButton.Location = new System.Drawing.Point(325, 370);
+            this.FreshRadioButton.Location = new System.Drawing.Point(337, 333);
             this.FreshRadioButton.Name = "FreshRadioButton";
             this.FreshRadioButton.Size = new System.Drawing.Size(68, 17);
             this.FreshRadioButton.TabIndex = 34;
@@ -464,7 +472,7 @@
             // 
             this.DryRadioButton.AutoSize = true;
             this.DryRadioButton.ForeColor = System.Drawing.SystemColors.Control;
-            this.DryRadioButton.Location = new System.Drawing.Point(408, 370);
+            this.DryRadioButton.Location = new System.Drawing.Point(440, 333);
             this.DryRadioButton.Name = "DryRadioButton";
             this.DryRadioButton.Size = new System.Drawing.Size(54, 17);
             this.DryRadioButton.TabIndex = 35;
@@ -472,12 +480,59 @@
             this.DryRadioButton.Text = "SECO";
             this.DryRadioButton.UseVisualStyleBackColor = true;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Nombre,
+            this.Proveedor,
+            this.Unidad,
+            this.Cantidad,
+            this.Recepcion,
+            this.Expiracion});
+            this.dataGridView1.Location = new System.Drawing.Point(129, 392);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(646, 278);
+            this.dataGridView1.TabIndex = 40;
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            // 
+            // Proveedor
+            // 
+            this.Proveedor.HeaderText = "Proveedor";
+            this.Proveedor.Name = "Proveedor";
+            // 
+            // Unidad
+            // 
+            this.Unidad.HeaderText = "Unidad";
+            this.Unidad.Name = "Unidad";
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            // 
+            // Recepcion
+            // 
+            this.Recepcion.HeaderText = "Recepcion";
+            this.Recepcion.Name = "Recepcion";
+            // 
+            // Expiracion
+            // 
+            this.Expiracion.HeaderText = "Expiracion";
+            this.Expiracion.Name = "Expiracion";
+            // 
             // InputOfProvitions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(815, 508);
+            this.ClientSize = new System.Drawing.Size(815, 697);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.DryRadioButton);
             this.Controls.Add(this.FreshRadioButton);
             this.Controls.Add(this.menuStrip1);
@@ -504,6 +559,7 @@
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.InputOfProvitions_KeyUp);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -551,5 +607,12 @@
         private System.Windows.Forms.ToolStripMenuItem registrarProveedorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verProveedoresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem historialToolStripMenuItem;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Proveedor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Unidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Recepcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Expiracion;
     }
 }
