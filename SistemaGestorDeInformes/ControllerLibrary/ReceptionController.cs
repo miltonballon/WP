@@ -74,13 +74,37 @@ namespace ControllerLibrary
             c.dataClose();
             return receptions;
         }
+        public List<Reception> getReceptionsByDate(string date)
+        {
+            List<Reception> receptions = new List<Reception>();
+            string query = "SELECT * FROM Reception where receptionDAte > '"+date+"'";
+            try
+            {
+                SQLiteDataReader data = c.query_show(query);
+                while (data.Read())
+                {
+                    int ppuId = Int32.Parse(data[1].ToString()),
+                        total = Int32.Parse(data[4].ToString());
+                    String recDate = data[2].ToString(),
+                           expDate = data[3].ToString();
+                    Product product = productController.getProductByPPUId(ppuId);
+                    Reception reception = new Reception(product, recDate, expDate, total);
+                    receptions.Add(reception);
+                }
+            }
+            catch (Exception)
+            { }
+            c.dataClose();
+            return receptions;
+        }
 
-       
+
+
         public List<Reception> searchReception(string name)
         {
             List<Reception> reception = new List<Reception>();
             
-            string query = "select name, Type, total  FROM Reception AS REC, Product AS PROD, Provider AS PRO, Unit AS Un, Product_Provider_Unit AS PPU WHERE PROD.id = PPU.Id_prod AND PRO.id= PPU.id_prov AND Un.id= PPU.id_uni AND REC.ppu_id=PPU.id AND UPPER (PROD.name)= UPPER(" + "'" + name + "')";
+            string query = "select PROD.name, Type, total  FROM Reception AS REC, Product AS PROD, Provider AS PRO, Unit AS Un, Product_Provider_Unit AS PPU WHERE PROD.id = PPU.Id_product AND PRO.id= PPU.id_provider AND Un.id= PPU.id_unit AND REC.ppu_id=PPU.id AND UPPER (PROD.name)= UPPER(" + "'" + name + "')";
             SQLiteDataReader data = c.query_show(query);
             while (data.Read())
             {

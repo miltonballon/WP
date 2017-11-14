@@ -223,5 +223,10 @@ namespace SistemaGestorDeInformes
             this.Hide();
             Interfaz.Show();
         }
+
+        private void ExpirationDate_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

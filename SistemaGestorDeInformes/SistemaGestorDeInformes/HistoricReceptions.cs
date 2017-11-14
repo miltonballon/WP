@@ -210,5 +210,28 @@ namespace SistemaGestorDeInformes
         {
 
         }
+
+        private void SearchButton_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Rows.Clear();
+            dataGridView1.Refresh();
+            MessageBox.Show(dateTimePicker1.Value.ToString("dd/MM/yyyy"));
+            List<Reception> products = receptionController.getReceptionsByDate(dateTimePicker1.Value.ToString("dd/MM/yyyy"));
+
+            foreach (Reception inventory in products)
+            {
+                Product product = inventory.Product;
+                String productsName = product.Name,
+                       provider = product.Provider,
+                       unit = product.Unit,
+                       reception = inventory.ReceptionDate,
+                       expiration = inventory.ExpirationDate,
+                       total = inventory.Total + "";
+
+                String[] row = new String[] { productsName, provider, unit, reception, expiration, total };
+                dataGridView1.Rows.Add(row);
+
+            }
+        }
     }
 }
