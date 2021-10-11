@@ -1,0 +1,22 @@
+{
+  "summary": {
+    "title": "New Model",
+    "owner": "Milton",
+    "description": "Hi"
+  },
+  "detail": {
+    "contributors": [
+      {
+        "name": "milton-ballon-incontact"
+      }
+    ],
+    "diagrams": [
+      {
+        "title": "diagrama",
+        "thumbnail": "./public/content/images/thumbnail.jpg",
+        "id": 0
+      }
+    ],
+    "reviewer": "Milton"
+  }
+}
